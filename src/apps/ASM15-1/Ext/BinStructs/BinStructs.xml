@@ -1,0 +1,1029 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<BinStructProject>
+	<!-- PlcStruct -->
+	<Struct
+		Usings="ZC.BinStructs;"
+		Namespace="ZitApp.BinStructs"
+		Name="PlcStruct"
+		Length="20" LengthUnit="2" ByteFormat="ByteFormat.CDAB"
+		OutputFile="E:\XKJ-ZEBER\src\apps\ASM15-1\Ext\BinStructs\PlcStruct.gen.cs">
+		<BinaryPointGroup Name="交互toPC_Part1" Start="22000" End="22099"/>
+		<BinaryPointGroup Name="交互toPC_Part2" Start="22100" End="22199"/>
+		<BinaryPointGroup Name="交互toPC_Part3" Start="22200" End="22299"/>
+		<BinaryPointGroup Name="交互toPC_Part4" Start="22300" End="22399"/>
+		<BinaryPointGroup Name="交互toPC_Part5" Start="22400" End="22499"/>
+
+		<BinaryPointGroup Name="交互toPLC_Part1" Start="21000" End="21099"/>
+		<BinaryPointGroup Name="交互toPLC_Part2" Start="21100" End="21199"/>
+		<BinaryPointGroup Name="交互toPLC_Part3" Start="21200" End="21299"/>
+		<BinaryPointGroup Name="交互toPLC_Part4" Start="21300" End="21399"/>
+		<BinaryPointGroup Name="交互toPLC_Part5" Start="21400" End="21499"/>
+		<CsvIncludePoints
+			Name="交互信号PLC->PC"
+			CsvHeaders="Name,DataDir,Offset,DataType,Description">
+			<Setter Property="DataType" Value="float"/>
+			<Setter Property="BeforeToken" Value="public"/>
+			<Setter Property="Tags">交互信号PLC->PC</Setter>
+			<Setter Property="Category">PLC/PLC->PC</Setter>
+			<Setter Property="ReaderData">PLC</Setter>
+			<Setter Property="WriterData">PLC</Setter>
+			<![CDATA[
+			PLC心跳,PLC->PC,22000,short,
+			PLC状态,PLC->PC,22001,short,"1=启动,2=停止,3=初始化中,4=报警中"
+			PLC错误码,PLC->PC,22002,short,
+			设备1状态,PLC->PC,22003,short,"1=启动,2=停止,3=初始化中,4=报警中"
+			设备2状态,PLC->PC,22004,short,"1=启动,2=停止,3=初始化中,4=报警中"
+			设备3状态,PLC->PC,22205,short,"1=启动,2=停止,3=初始化中,4=报警中"
+			PLC当前配方ID,PLC->PC,22010,short,PLC初始化使用的配方ID
+			PLC配方写入PC地址响应,PLC->PC,22011,short,"1=已完成,0=无请求 "
+			数据上报请求,PLC->PC,22015,short,1=触发，收到响应后复位 
+			扫码枪1触发,PLC->PC,22020,short,1=触发，收到响应后复位
+			扫码枪2触发,PLC->PC,22021,short,1=触发，收到响应后复位
+			打印机1触发,PLC->PC,22025,short,1=触发，收到响应后复位
+			打印机2触发,PLC->PC,22026,short,1=触发，收到响应后复位
+			相机1连接状态,PLC->PC,22030,short,1=正常，2断开
+			相机2连接状态,PLC->PC,22031,short,1=正常，2断开
+			相机3连接状态,PLC->PC,22032,short,1=正常，2断开
+			相机4连接状态,PLC->PC,22033,short,1=正常，2断开
+			已生产数量,PLC->PC,22050,int,
+			良率,PLC->PC,22052,float,
+			CT,PLC->PC,22054,float,单位ms
+			报警列表,PLC->PC,22500,bool[],
+			Feeder1料号,PLC->PC,22200,int,
+			Feeder1物料上料数量,PLC->PC,22202,int,
+			Feeder1物料剩余数量,PLC->PC,22204,int,
+			Feeder1抛料率,PLC->PC,22206,float,
+			Feeder1解锁响应,PLC->PC,22208,short,预留
+			Feeder1换料响应,PLC->PC,22209,short,"0=不允许换料，1=允许换料,2=收到换料中,3=收到换料完成"
+			Feeder2料号,PLC->PC,22220,int,
+			Feeder2物料上料数量,PLC->PC,22222,int,
+			Feeder2物料剩余数量,PLC->PC,22224,int,
+			Feeder2抛料率,PLC->PC,22226,float,
+			Feeder2解锁响应,PLC->PC,22228,short,预留
+			Feeder2换料响应,PLC->PC,22229,short,"0=不允许换料，1=允许换料,2=收到换料中,3=收到换料完成"
+			Feeder3料号,PLC->PC,22240,int,
+			Feeder3物料上料数量,PLC->PC,22242,int,
+			Feeder3物料剩余数量,PLC->PC,22244,int,
+			Feeder3抛料率,PLC->PC,22246,float,
+			Feeder3解锁响应,PLC->PC,22248,short,预留
+			Feeder3换料响应,PLC->PC,22249,short,"0=不允许换料，1=允许换料,2=收到换料中,3=收到换料完成"
+			Feeder4料号,PLC->PC,22260,int,
+			Feeder4物料上料数量,PLC->PC,22262,int,
+			Feeder4物料剩余数量,PLC->PC,22264,int,
+			Feeder4抛料率,PLC->PC,22266,float,
+			Feeder4解锁响应,PLC->PC,22268,short,预留
+			Feeder4换料响应,PLC->PC,22269,short,"0=不允许换料，1=允许换料,2=收到换料中,3=收到换料完成"
+			Feeder5料号,PLC->PC,22280,int,
+			Feeder5物料上料数量,PLC->PC,22282,int,
+			Feeder5物料剩余数量,PLC->PC,22284,int,
+			Feeder5抛料率,PLC->PC,22286,float,
+			Feeder5解锁响应,PLC->PC,22288,short,预留
+			Feeder5换料响应,PLC->PC,22289,short,"0=不允许换料，1=允许换料,2=收到换料中,3=收到换料完成"
+			Feeder6料号,PLC->PC,22300,int,
+			Feeder6物料上料数量,PLC->PC,22302,int,
+			Feeder6物料剩余数量,PLC->PC,22304,int,
+			Feeder6抛料率,PLC->PC,22306,float,
+			Feeder6解锁响应,PLC->PC,22308,short,预留
+			Feeder6换料响应,PLC->PC,22309,short,"0=不允许换料，1=允许换料,2=收到换料中,3=收到换料完成"
+			吸头1料号,PLC->PC,22400,int,
+			吸头1良率,PLC->PC,22402,float,
+			吸头2料号,PLC->PC,22410,int,
+			吸头2良率,PLC->PC,22412,float,
+			吸头3料号,PLC->PC,22420,int,
+			吸头3良率,PLC->PC,22422,float,
+			吸头4料号,PLC->PC,22430,int,
+			吸头4良率,PLC->PC,22432,float,
+			吸头5料号,PLC->PC,22440,int,
+			吸头5良率,PLC->PC,22442,float,
+			吸头6料号,PLC->PC,22450,int,
+			吸头6良率,PLC->PC,22452,float,
+			吸头7料号,PLC->PC,22460,int,
+			吸头7良率,PLC->PC,22462,float,
+			吸头8料号,PLC->PC,22470,int,
+			吸头8良率,PLC->PC,22472,float,
+			吸头9料号,PLC->PC,22480,int,
+			吸头9良率,PLC->PC,22482,float,
+			吸头10料号,PLC->PC,22490,int,
+			吸头10良率,PLC->PC,22492,float,			
+		]]>
+		</CsvIncludePoints>
+		<CsvIncludePoints
+			Name="交互信号PC->PLC"
+			CsvHeaders="Name,DataDir,Offset,DataType,Description,InitExpr">
+			<Setter Property="DataType" Value="float"/>
+			<Setter Property="BeforeToken" Value="public"/>
+			<Setter Property="Tags">交互信号PC->PLC</Setter>
+			<Setter Property="Category">PLC/PC->PLC</Setter>
+			<Setter Property="ReaderData">PLC</Setter>
+			<Setter Property="WriterData">PLC</Setter>
+			<![CDATA[
+			上位机心跳,PC->PLC,21000,short,0-1跳变 1S间隔
+			上位机状态,PC->PLC,21001,short,1=就绪，2=故障
+			上位机错误码,PC->PLC,21002,long,"1=扫码枪未连接,2=MES未连接 ,3=IOT未连接,4=EAP未连接,5=打印机未连接"
+			上位机当前配方ID,PC->PLC,21010,short,上位机下发到PLC的配方ID
+			PLC配方写入PC地址请求,PC->PLC,21011,short,"1=请求,0=无请求"
+			数据上报响应,PC->PLC,21015,short,"1=OK,2=NG"
+			扫码枪1触发结果,PC->PLC,21020,short,"1=OK,2=扫码枪连接错误,3=MES返回错误"
+			扫码枪2触发结果,PC->PLC,21021,short,"1=OK,2=扫码枪连接错误,3=MES返回错误"
+			打印机1触发结果,PC->PLC,21025,short,"1=OK,2=扫码枪连接错误,3=MES返回错误"
+			打印机2触发结果,PC->PLC,21026,short,"1=OK,2=扫码枪连接错误,3=MES返回错误"
+			工单号PC下发,PC->PLC,21100,byte[],
+			工号PC下发,PC->PLC,21140,byte[],
+			Feeder1PC下发料号,PLC->PC,21200,int,
+			Feeder1PC下发物料上料数量,PLC->PC,21202,int,
+			Feeder1解锁请求,PC->PLC,21208,short,预留
+			Feeder1换料请求,PC->PLC,21209,short,"1=查询是否允许换料,2=换料中,3=换料完成"
+			Feeder2PC下发料号,PLC->PC,21220,int,
+			Feeder2PC下发物料上料数量,PLC->PC,21222,int,
+			Feeder2解锁请求,PC->PLC,21228,short,预留
+			Feeder2换料请求,PC->PLC,21229,short,"1=查询是否允许换料,2=换料中,3=换料完成"
+			Feeder3PC下发料号,PLC->PC,21240,int,
+			Feeder3PC下发物料上料数量,PLC->PC,21242,int,
+			Feeder3解锁请求,PC->PLC,21248,short,预留
+			Feeder3换料请求,PC->PLC,21249,short,"1=查询是否允许换料,2=换料中,3=换料完成"
+			Feeder4PC下发料号,PLC->PC,21260,int,
+			Feeder4PC下发物料上料数量,PLC->PC,21262,int,
+			Feeder4解锁请求,PC->PLC,21268,short,预留
+			Feeder4换料请求,PC->PLC,21269,short,"1=查询是否允许换料,2=换料中,3=换料完成"
+			Feeder5PC下发料号,PLC->PC,21280,int,
+			Feeder5PC下发物料上料数量,PLC->PC,21282,int,
+			Feeder5解锁请求,PC->PLC,21288,short,预留
+			Feeder5换料请求,PC->PLC,21289,short,"1=查询是否允许换料,2=换料中,3=换料完成"
+			Feeder6PC下发料号,PLC->PC,21300,int,
+			Feeder6PC下发物料上料数量,PLC->PC,21302,int,
+			Feeder6解锁请求,PC->PLC,21308,short,预留
+			Feeder6换料请求,PC->PLC,21309,short,"1=查询是否允许换料,2=换料中,3=换料完成"
+			吸头1PC下发料号,PC->PLC,21400,int,
+			吸头2PC下发料号,PC->PLC,21410,int,
+			吸头3PC下发料号,PC->PLC,21420,int,
+			吸头4PC下发料号,PC->PLC,21430,int,
+			吸头5PC下发料号,PC->PLC,21440,int,
+			吸头6PC下发料号,PC->PLC,21450,int,
+			吸头7PC下发料号,PC->PLC,21460,int,
+			吸头8PC下发料号,PC->PLC,21470,int,
+			吸头9PC下发料号,PC->PLC,21480,int,
+			吸头10PC下发料号,PC->PLC,21490,int,
+			]]>
+		</CsvIncludePoints>
+	</Struct>
+
+	<!-- PlcAlarmStruct -->
+	<Struct
+		Usings="ZC.BinStructs;"
+		Namespace="ZitApp.BinStructs"
+		Name="PlcAlarmStruct"
+		Length="20" LengthUnit="2" ByteFormat="ByteFormat.CDAB"
+		OutputFile="E:\XKJ-ZEBER\src\apps\ASM15-1\Ext\BinStructs\PlcStruct.gen.cs">
+		<CsvIncludePoints
+			Name="报警"
+			CsvHeaders="Name,DataDir,Offset,DataType,Description">
+			<Setter Property="DataType" Value="float"/>
+			<Setter Property="BeforeToken" Value="public"/>
+			<Setter Property="Tags">交互信号PLC->PC</Setter>
+			<Setter Property="Category">PLC/PLC->PC</Setter>
+			<Setter Property="ReaderData">PLC</Setter>
+			<Setter Property="WriterData">PLC</Setter>
+			<![CDATA[
+			PLC心跳,PLC->PC,22000,short,
+			PLC状态,PLC->PC,22001,short,"1=启动,2=停止,3=初始化中,4=报警中"
+			PLC错误码,PLC->PC,22002,short,
+			设备1状态,PLC->PC,22003,short,"1=启动,2=停止,3=初始化中,4=报警中"
+			设备2状态,PLC->PC,22004,short,"1=启动,2=停止,3=初始化中,4=报警中"
+			设备3状态,PLC->PC,22205,short,"1=启动,2=停止,3=初始化中,4=报警中"
+			PLC当前配方ID,PLC->PC,22010,short,PLC初始化使用的配方ID
+			PLC配方写入PC地址响应,PLC->PC,22011,short,"1=已完成,0=无请求 "
+			数据上报请求,PLC->PC,22015,short,1=触发，收到响应后复位 
+			扫码枪1触发,PLC->PC,22020,short,1=触发，收到响应后复位
+			扫码枪2触发,PLC->PC,22021,short,1=触发，收到响应后复位
+			打印机1触发,PLC->PC,22025,short,1=触发，收到响应后复位
+			打印机2触发,PLC->PC,22026,short,1=触发，收到响应后复位
+			相机1连接状态,PLC->PC,22030,short,1=正常，2断开
+			相机2连接状态,PLC->PC,22031,short,1=正常，2断开
+			相机3连接状态,PLC->PC,22032,short,1=正常，2断开
+			相机4连接状态,PLC->PC,22033,short,1=正常，2断开
+			已生产数量,PLC->PC,22050,int,
+			良率,PLC->PC,22052,float,
+			CT,PLC->PC,22054,float,单位ms
+			报警列表,PLC->PC,22500,bool[],
+			Feeder1料号,PLC->PC,22200,int,
+			Feeder1物料上料数量,PLC->PC,22202,int,
+			Feeder1物料剩余数量,PLC->PC,22204,int,
+			Feeder1抛料率,PLC->PC,22206,float,
+			Feeder1解锁响应,PLC->PC,22208,short,预留
+			Feeder1换料响应,PLC->PC,22209,short,"0=不允许换料，1=允许换料,2=收到换料中,3=收到换料完成"
+			Feeder2料号,PLC->PC,22220,int,
+			Feeder2物料上料数量,PLC->PC,22222,int,
+			Feeder2物料剩余数量,PLC->PC,22224,int,
+			Feeder2抛料率,PLC->PC,22226,float,
+			Feeder2解锁响应,PLC->PC,22228,short,预留
+			Feeder2换料响应,PLC->PC,22229,short,"0=不允许换料，1=允许换料,2=收到换料中,3=收到换料完成"
+			Feeder3料号,PLC->PC,22240,int,
+			Feeder3物料上料数量,PLC->PC,22242,int,
+			Feeder3物料剩余数量,PLC->PC,22244,int,
+			Feeder3抛料率,PLC->PC,22246,float,
+			Feeder3解锁响应,PLC->PC,22248,short,预留
+			Feeder3换料响应,PLC->PC,22249,short,"0=不允许换料，1=允许换料,2=收到换料中,3=收到换料完成"
+			Feeder4料号,PLC->PC,22260,int,
+			Feeder4物料上料数量,PLC->PC,22262,int,
+			Feeder4物料剩余数量,PLC->PC,22264,int,
+			Feeder4抛料率,PLC->PC,22266,float,
+			Feeder4解锁响应,PLC->PC,22268,short,预留
+			Feeder4换料响应,PLC->PC,22269,short,"0=不允许换料，1=允许换料,2=收到换料中,3=收到换料完成"
+			Feeder5料号,PLC->PC,22280,int,
+			Feeder5物料上料数量,PLC->PC,22282,int,
+			Feeder5物料剩余数量,PLC->PC,22284,int,
+			Feeder5抛料率,PLC->PC,22286,float,
+			Feeder5解锁响应,PLC->PC,22288,short,预留
+			Feeder5换料响应,PLC->PC,22289,short,"0=不允许换料，1=允许换料,2=收到换料中,3=收到换料完成"
+			Feeder6料号,PLC->PC,22300,int,
+			Feeder6物料上料数量,PLC->PC,22302,int,
+			Feeder6物料剩余数量,PLC->PC,22304,int,
+			Feeder6抛料率,PLC->PC,22306,float,
+			Feeder6解锁响应,PLC->PC,22308,short,预留
+			Feeder6换料响应,PLC->PC,22309,short,"0=不允许换料，1=允许换料,2=收到换料中,3=收到换料完成"
+			吸头1料号,PLC->PC,22400,int,
+			吸头1良率,PLC->PC,22402,float,
+			吸头2料号,PLC->PC,22410,int,
+			吸头2良率,PLC->PC,22412,float,
+			吸头3料号,PLC->PC,22420,int,
+			吸头3良率,PLC->PC,22422,float,
+			吸头4料号,PLC->PC,22430,int,
+			吸头4良率,PLC->PC,22432,float,
+			吸头5料号,PLC->PC,22440,int,
+			吸头5良率,PLC->PC,22442,float,
+			吸头6料号,PLC->PC,22450,int,
+			吸头6良率,PLC->PC,22452,float,
+			吸头7料号,PLC->PC,22460,int,
+			吸头7良率,PLC->PC,22462,float,
+			吸头8料号,PLC->PC,22470,int,
+			吸头8良率,PLC->PC,22472,float,
+			吸头9料号,PLC->PC,22480,int,
+			吸头9良率,PLC->PC,22482,float,
+			吸头10料号,PLC->PC,22490,int,
+			吸头10良率,PLC->PC,22492,float,			
+		]]>
+		</CsvIncludePoints>
+	</Struct>
+	<!-- ProductRecipe -->
+	<Struct
+		Usings="ZC.BinStructs;"
+		Namespace="ZitApp.BinStructs"
+		Name="ProductRecipe"
+		Length="20" LengthUnit="2" ByteFormat="ByteFormat.CDAB"
+		OutputFile="E:\XKJ-ZEBER\src\apps\ASM15-1\Ext\BinStructs\RecipeStruct.gen.cs">
+		<BinaryPointGroup Name="信捷Z1轴" Start="3000" End="3199"/>
+		<BinaryPointGroup Name="信捷Z2轴" Start="3200" End="3399"/>
+		<BinaryPointGroup Name="信捷X1轴" Start="3400" End="3599"/>
+		<BinaryPointGroup Name="信捷X2轴" Start="3600" End="3799"/>
+		<BinaryPointGroup Name="信捷Y1轴" Start="3800" End="3999"/>
+		<BinaryPointGroup Name="信捷Y2轴" Start="4000" End="4199"/>
+		<BinaryPointGroup Name="雷赛步进Z1轴" Start="4200" End="4399"/>
+		<BinaryPointGroup Name="雷赛步进Z2轴" Start="4400" End="4599"/>
+		<BinaryPointGroup Name="固高直线Y1轴" Start="4600" End="4799"/>
+		<BinaryPointGroup Name="固高直线Y2轴" Start="4800" End="4999"/>
+		<!-- 模板 -->
+		<CsvIncludePoints
+			Name="模板"
+			CsvHeaders="Name,Offset,Desc">
+			<Setter Property="DataType" Value="float"/>
+			<Setter Property="BeforeToken" Value="public"/>
+			<Setter Property="Tags">轴位置</Setter>
+			<Setter Property="Category">SCREW-L/TASK1</Setter>
+			<Setter Property="ReaderData">PLC</Setter>
+			<Setter Property="WriterData">PLC</Setter>
+			<![CDATA[
+			]]>
+		</CsvIncludePoints>
+		<!-- SCREW-L -->
+		<CsvIncludePoints
+			Name="SCREW-L"
+			CsvHeaders="Name,DataType,Offset,Unit,MinValue,MaxValue,Description">
+			<Setter Property="DataType" Value="float"/>
+			<Setter Property="BeforeToken" Value="public"/>
+			<Setter Property="Tags">SCREW</Setter>
+			<Setter Property="Category">SCREW-L/TASK1</Setter>
+			<Setter Property="ReaderData">SCREW-L</Setter>
+			<Setter Property="WriterData">SCREW-L</Setter>
+			<![CDATA[
+			LeftScrew_拧紧的模式,ushort,4000,,0,9,0--精度优先，2--速度优先(自攻牙螺丝)
+			LeftScrew_拧紧旋转方向,ushort,4001,,0,1,0--CW，1--CCW
+			LeftScrew_目标扭力,ushort,4002,N.m,0.001,32.764,
+			LeftScrew_扭力保持时间,ushort,4008,ms,0,4000,
+			LeftScrew_扭力补偿值,ushort,4014,0.01A,-1000,1000,
+			LeftScrew_开启浮高滑牙检测,ushort,4016,,0,1,0--不开启，1--开启
+			LeftScrew_待机调整时间,ushort,4022,ms,0,4000,
+			LeftScrew_Step0_拧紧圈数,ushort,4060,r,0,4000,
+			LeftScrew_Step0_拧紧速度,ushort,4061,rpm,0,4000,
+			LeftScrew_Step0_扭力,ushort,4062,N.m,0,4000,
+			LeftScrew_Step1_拧紧圈数,ushort,4065,r,0,4000,
+			LeftScrew_Step1_拧紧速度,ushort,4066,rpm,0,4000,
+			LeftScrew_Step1_扭力,ushort,4067,N.m,0,4000,
+			LeftScrew_Step2_拧紧圈数,ushort,4070,r,0,4000,
+			LeftScrew_Step2_拧紧速度,ushort,4071,rpm,0,4000,
+			LeftScrew_Step2_扭力,ushort,4072,N.m,0,4000,
+			LeftScrew_Step3_拧紧圈数,ushort,4075,r,0,4000,
+			LeftScrew_Step3_拧紧速度,ushort,4076,rpm,0,4000,
+			LeftScrew_Step3_扭力,ushort,4077,N.m,0,4000,
+			LeftScrew_Step4_拧紧圈数,ushort,4080,r,0,4000,
+			LeftScrew_Step4_拧紧速度,ushort,4081,rpm,0,4000,
+			LeftScrew_Step4_扭力,ushort,4082,N.m,0,4000,
+			LeftScrew_Step5_拧紧圈数,ushort,4085,r,0,4000,
+			LeftScrew_Step5_拧紧速度,ushort,4086,rpm,0,4000,
+			LeftScrew_Step5_扭力,ushort,4087,N.m,0,4000,
+			LeftScrew_Step6_拧紧圈数,ushort,4090,r,0,4000,
+			LeftScrew_Step6_拧紧速度,ushort,4091,rpm,0,4000,
+			LeftScrew_Step6_扭力,ushort,4092,N.m,0,4000,
+			LeftScrew_Step7_拧紧圈数,ushort,4095,r,0,4000,
+			LeftScrew_Step7_拧紧速度,ushort,4096,rpm,0,4000,
+			LeftScrew_Step7_扭力,ushort,4097,N.m,0,4000,
+			]]>
+		</CsvIncludePoints>
+		<!-- SCREW-R -->
+		<CsvIncludePoints
+			Name="SCREW-R"
+			CsvHeaders="Name,DataType,Offset,Unit,MinValue,MaxValue,Description">
+			<Setter Property="DataType" Value="float"/>
+			<Setter Property="BeforeToken" Value="public"/>
+			<Setter Property="Tags">SCREW</Setter>
+			<Setter Property="Category">SCREW-R/TASK1</Setter>
+			<Setter Property="ReaderData">SCREW-R</Setter>
+			<Setter Property="WriterData">SCREW-R</Setter>
+			<![CDATA[
+			RightScrew_拧紧的模式,ushort,4000,,0,9,0--精度优先，2--速度优先(自攻牙螺丝)
+			RightScrew_拧紧旋转方向,ushort,4001,,0,1,0--CW，1--CCW
+			RightScrew_目标扭力,ushort,4002,N.m,0.001,32.764,
+			RightScrew_扭力保持时间,ushort,4008,ms,0,4000,
+			RightScrew_扭力补偿值,ushort,4014,0.01A,-1000,1000,
+			RightScrew_开启浮高滑牙检测,ushort,4016,,0,1,0--不开启，1--开启
+			RightScrew_待机调整时间,ushort,4022,ms,0,4000,
+			RightScrew_Step0_拧紧圈数,ushort,4060,r,0,4000,
+			RightScrew_Step0_拧紧速度,ushort,4061,rpm,0,4000,
+			RightScrew_Step0_扭力,ushort,4062,N.m,0,4000,
+			RightScrew_Step1_拧紧圈数,ushort,4065,r,0,4000,
+			RightScrew_Step1_拧紧速度,ushort,4066,rpm,0,4000,
+			RightScrew_Step1_扭力,ushort,4067,N.m,0,4000,
+			RightScrew_Step2_拧紧圈数,ushort,4070,r,0,4000,
+			RightScrew_Step2_拧紧速度,ushort,4071,rpm,0,4000,
+			RightScrew_Step2_扭力,ushort,4072,N.m,0,4000,
+			RightScrew_Step3_拧紧圈数,ushort,4075,r,0,4000,
+			RightScrew_Step3_拧紧速度,ushort,4076,rpm,0,4000,
+			RightScrew_Step3_扭力,ushort,4077,N.m,0,4000,
+			RightScrew_Step4_拧紧圈数,ushort,4080,r,0,4000,
+			RightScrew_Step4_拧紧速度,ushort,4081,rpm,0,4000,
+			RightScrew_Step4_扭力,ushort,4082,N.m,0,4000,
+			RightScrew_Step5_拧紧圈数,ushort,4085,r,0,4000,
+			RightScrew_Step5_拧紧速度,ushort,4086,rpm,0,4000,
+			RightScrew_Step5_扭力,ushort,4087,N.m,0,4000,
+			RightScrew_Step6_拧紧圈数,ushort,4090,r,0,4000,
+			RightScrew_Step6_拧紧速度,ushort,4091,rpm,0,4000,
+			RightScrew_Step6_扭力,ushort,4092,N.m,0,4000,
+			RightScrew_Step7_拧紧圈数,ushort,4095,r,0,4000,
+			RightScrew_Step7_拧紧速度,ushort,4096,rpm,0,4000,
+			RightScrew_Step7_扭力,ushort,4097,N.m,0,4000,
+			]]>
+		</CsvIncludePoints>
+
+		<!-- 信捷Z1轴 -->
+		<CsvIncludePoints
+			Name="信捷Z1轴"
+			CsvHeaders="Name,Offset,Desc">
+			<Setter Property="DataType" Value="float"/>
+			<Setter Property="BeforeToken" Value="public"/>
+			<Setter Property="Tags">轴位置</Setter>
+			<Setter Property="ReaderData">PLC</Setter>
+			<Setter Property="WriterData">PLC</Setter>
+			<Setter Property="MinValue">0</Setter>
+			<Setter Property="MaxValue">4096</Setter>
+			<Setter Property="Category">PLC/信捷Z1轴</Setter>
+			<![CDATA[
+			信捷Z1轴_位置0,3000
+			信捷Z1轴_位置1,3002
+			信捷Z1轴_位置2,3004
+			信捷Z1轴_位置3,3006
+			信捷Z1轴_位置4,3008
+			信捷Z1轴_位置5,3010
+			信捷Z1轴_位置6,3012
+			信捷Z1轴_位置7,3014
+			信捷Z1轴_位置8,3016
+			信捷Z1轴_位置9,3018
+			信捷Z1轴_位置10,3020
+			信捷Z1轴_位置11,3022
+			信捷Z1轴_位置12,3024
+			信捷Z1轴_位置13,3026
+			信捷Z1轴_位置14,3028
+			信捷Z1轴_位置15,3030
+			信捷Z1轴_位置16,3032
+			信捷Z1轴_位置17,3034
+			信捷Z1轴_位置18,3036
+			信捷Z1轴_位置19,3038
+			信捷Z1轴_位置20,3040
+			信捷Z1轴_位置21,3042
+			信捷Z1轴_位置22,3044
+			信捷Z1轴_位置23,3046
+			信捷Z1轴_位置24,3048
+			信捷Z1轴_位置25,3050
+			信捷Z1轴_位置26,3052
+			信捷Z1轴_位置27,3054
+			信捷Z1轴_位置28,3056
+			信捷Z1轴_位置29,3058
+			信捷Z1轴_位置30,3060
+			信捷Z1轴_位置31,3062
+			信捷Z1轴_位置32,3064
+			信捷Z1轴_位置33,3066
+			信捷Z1轴_位置34,3068
+			信捷Z1轴_位置35,3070
+			信捷Z1轴_位置36,3072
+			信捷Z1轴_位置37,3074
+			信捷Z1轴_位置38,3076
+			信捷Z1轴_位置39,3078
+			信捷Z1轴_位置40,3080
+			信捷Z1轴_位置41,3082
+			信捷Z1轴_位置42,3084
+			信捷Z1轴_位置43,3086
+			信捷Z1轴_位置44,3088
+			信捷Z1轴_位置45,3090
+			信捷Z1轴_位置46,3092
+			信捷Z1轴_位置47,3094
+			信捷Z1轴_位置48,3096
+			信捷Z1轴_位置49,3098
+			信捷Z1轴_位置50,3100			
+			]]>
+		</CsvIncludePoints>
+		<!-- 信捷Z2轴 -->
+		<CsvIncludePoints
+			Name="信捷Z2轴"
+			CsvHeaders="Name,Offset,Desc">
+			<Setter Property="DataType" Value="float"/>
+			<Setter Property="BeforeToken" Value="public"/>
+			<Setter Property="Tags">轴位置</Setter>
+			<Setter Property="ReaderData">PLC</Setter>
+			<Setter Property="WriterData">PLC</Setter>
+			<Setter Property="Category">PLC/信捷Z2轴</Setter>
+			<![CDATA[
+			信捷Z2轴_位置0,3200
+			信捷Z2轴_位置1,3202
+			信捷Z2轴_位置2,3204
+			信捷Z2轴_位置3,3206
+			信捷Z2轴_位置4,3208
+			信捷Z2轴_位置5,3210
+			信捷Z2轴_位置6,3212
+			信捷Z2轴_位置7,3214
+			信捷Z2轴_位置8,3216
+			信捷Z2轴_位置9,3218
+			信捷Z2轴_位置10,3220
+			信捷Z2轴_位置11,3222
+			信捷Z2轴_位置12,3224
+			信捷Z2轴_位置13,3226
+			信捷Z2轴_位置14,3228
+			信捷Z2轴_位置15,3230
+			信捷Z2轴_位置16,3232
+			信捷Z2轴_位置17,3234
+			信捷Z2轴_位置18,3236
+			信捷Z2轴_位置19,3238
+			信捷Z2轴_位置20,3240
+			信捷Z2轴_位置21,3242
+			信捷Z2轴_位置22,3244
+			信捷Z2轴_位置23,3246
+			信捷Z2轴_位置24,3248
+			信捷Z2轴_位置25,3250
+			信捷Z2轴_位置26,3252
+			信捷Z2轴_位置27,3254
+			信捷Z2轴_位置28,3256
+			信捷Z2轴_位置29,3258
+			信捷Z2轴_位置30,3260
+			信捷Z2轴_位置31,3262
+			信捷Z2轴_位置32,3264
+			信捷Z2轴_位置33,3266
+			信捷Z2轴_位置34,3268
+			信捷Z2轴_位置35,3270
+			信捷Z2轴_位置36,3272
+			信捷Z2轴_位置37,3274
+			信捷Z2轴_位置38,3276
+			信捷Z2轴_位置39,3278
+			信捷Z2轴_位置40,3280
+			信捷Z2轴_位置41,3282
+			信捷Z2轴_位置42,3284
+			信捷Z2轴_位置43,3286
+			信捷Z2轴_位置44,3288
+			信捷Z2轴_位置45,3290
+			信捷Z2轴_位置46,3292
+			信捷Z2轴_位置47,3294
+			信捷Z2轴_位置48,3296
+			信捷Z2轴_位置49,3298
+			信捷Z2轴_位置50,3300
+			]]>
+		</CsvIncludePoints>
+		<!-- 信捷X1轴 -->
+		<CsvIncludePoints
+			Name="信捷X1轴"
+			CsvHeaders="Name,Offset,Desc">
+			<Setter Property="DataType" Value="float"/>
+			<Setter Property="BeforeToken" Value="public"/>
+			<Setter Property="Tags">轴位置</Setter>
+			<Setter Property="ReaderData">PLC</Setter>
+			<Setter Property="WriterData">PLC</Setter>
+			<Setter Property="Category">PLC/信捷X1轴</Setter>
+			<![CDATA[
+			信捷X1轴_位置0,3400
+			信捷X1轴_位置1,3402
+			信捷X1轴_位置2,3404
+			信捷X1轴_位置3,3406
+			信捷X1轴_位置4,3408
+			信捷X1轴_位置5,3410
+			信捷X1轴_位置6,3412
+			信捷X1轴_位置7,3414
+			信捷X1轴_位置8,3416
+			信捷X1轴_位置9,3418
+			信捷X1轴_位置10,3420
+			信捷X1轴_位置11,3422
+			信捷X1轴_位置12,3424
+			信捷X1轴_位置13,3426
+			信捷X1轴_位置14,3428
+			信捷X1轴_位置15,3430
+			信捷X1轴_位置16,3432
+			信捷X1轴_位置17,3434
+			信捷X1轴_位置18,3436
+			信捷X1轴_位置19,3438
+			信捷X1轴_位置20,3440
+			信捷X1轴_位置21,3442
+			信捷X1轴_位置22,3444
+			信捷X1轴_位置23,3446
+			信捷X1轴_位置24,3448
+			信捷X1轴_位置25,3450
+			信捷X1轴_位置26,3452
+			信捷X1轴_位置27,3454
+			信捷X1轴_位置28,3456
+			信捷X1轴_位置29,3458
+			信捷X1轴_位置30,3460
+			信捷X1轴_位置31,3462
+			信捷X1轴_位置32,3464
+			信捷X1轴_位置33,3466
+			信捷X1轴_位置34,3468
+			信捷X1轴_位置35,3470
+			信捷X1轴_位置36,3472
+			信捷X1轴_位置37,3474
+			信捷X1轴_位置38,3476
+			信捷X1轴_位置39,3478
+			信捷X1轴_位置40,3480
+			信捷X1轴_位置41,3482
+			信捷X1轴_位置42,3484
+			信捷X1轴_位置43,3486
+			信捷X1轴_位置44,3488
+			信捷X1轴_位置45,3490
+			信捷X1轴_位置46,3492
+			信捷X1轴_位置47,3494
+			信捷X1轴_位置48,3496
+			信捷X1轴_位置49,3498
+			信捷X1轴_位置50,3500
+			]]>
+		</CsvIncludePoints>
+		<!-- 信捷X2轴 -->
+		<CsvIncludePoints
+			Name="信捷X2轴"
+			CsvHeaders="Name,Offset,Desc">
+			<Setter Property="DataType" Value="float"/>
+			<Setter Property="BeforeToken" Value="public"/>
+			<Setter Property="Tags">轴位置</Setter>
+			<Setter Property="ReaderData">PLC</Setter>
+			<Setter Property="WriterData">PLC</Setter>
+			<Setter Property="Category">PLC/信捷X2轴</Setter>
+			<![CDATA[
+			信捷X2轴_位置0,3600
+			信捷X2轴_位置1,3602
+			信捷X2轴_位置2,3604
+			信捷X2轴_位置3,3606
+			信捷X2轴_位置4,3608
+			信捷X2轴_位置5,3610
+			信捷X2轴_位置6,3612
+			信捷X2轴_位置7,3614
+			信捷X2轴_位置8,3616
+			信捷X2轴_位置9,3618
+			信捷X2轴_位置10,3620
+			信捷X2轴_位置11,3622
+			信捷X2轴_位置12,3624
+			信捷X2轴_位置13,3626
+			信捷X2轴_位置14,3628
+			信捷X2轴_位置15,3630
+			信捷X2轴_位置16,3632
+			信捷X2轴_位置17,3634
+			信捷X2轴_位置18,3636
+			信捷X2轴_位置19,3638
+			信捷X2轴_位置20,3640
+			信捷X2轴_位置21,3642
+			信捷X2轴_位置22,3644
+			信捷X2轴_位置23,3646
+			信捷X2轴_位置24,3648
+			信捷X2轴_位置25,3650
+			信捷X2轴_位置26,3652
+			信捷X2轴_位置27,3654
+			信捷X2轴_位置28,3656
+			信捷X2轴_位置29,3658
+			信捷X2轴_位置30,3660
+			信捷X2轴_位置31,3662
+			信捷X2轴_位置32,3664
+			信捷X2轴_位置33,3666
+			信捷X2轴_位置34,3668
+			信捷X2轴_位置35,3670
+			信捷X2轴_位置36,3672
+			信捷X2轴_位置37,3674
+			信捷X2轴_位置38,3676
+			信捷X2轴_位置39,3678
+			信捷X2轴_位置40,3680
+			信捷X2轴_位置41,3682
+			信捷X2轴_位置42,3684
+			信捷X2轴_位置43,3686
+			信捷X2轴_位置44,3688
+			信捷X2轴_位置45,3690
+			信捷X2轴_位置46,3692
+			信捷X2轴_位置47,3694
+			信捷X2轴_位置48,3696
+			信捷X2轴_位置49,3698
+			信捷X2轴_位置50,3700
+			]]>
+		</CsvIncludePoints>
+		<!-- 信捷Y1轴 -->
+		<CsvIncludePoints
+			Name="信捷Y1轴"
+			CsvHeaders="Name,Offset,Desc">
+			<Setter Property="DataType" Value="float"/>
+			<Setter Property="BeforeToken" Value="public"/>
+			<Setter Property="Tags">轴位置</Setter>
+			<Setter Property="ReaderData">PLC</Setter>
+			<Setter Property="WriterData">PLC</Setter>
+			<Setter Property="Category">PLC/信捷Y1轴</Setter>
+			<![CDATA[
+			信捷Y1轴_位置0,3800
+			信捷Y1轴_位置1,3802
+			信捷Y1轴_位置2,3804
+			信捷Y1轴_位置3,3806
+			信捷Y1轴_位置4,3808
+			信捷Y1轴_位置5,3810
+			信捷Y1轴_位置6,3812
+			信捷Y1轴_位置7,3814
+			信捷Y1轴_位置8,3816
+			信捷Y1轴_位置9,3818
+			信捷Y1轴_位置10,3820
+			信捷Y1轴_位置11,3822
+			信捷Y1轴_位置12,3824
+			信捷Y1轴_位置13,3826
+			信捷Y1轴_位置14,3828
+			信捷Y1轴_位置15,3830
+			信捷Y1轴_位置16,3832
+			信捷Y1轴_位置17,3834
+			信捷Y1轴_位置18,3836
+			信捷Y1轴_位置19,3838
+			信捷Y1轴_位置20,3840
+			信捷Y1轴_位置21,3842
+			信捷Y1轴_位置22,3844
+			信捷Y1轴_位置23,3846
+			信捷Y1轴_位置24,3848
+			信捷Y1轴_位置25,3850
+			信捷Y1轴_位置26,3852
+			信捷Y1轴_位置27,3854
+			信捷Y1轴_位置28,3856
+			信捷Y1轴_位置29,3858
+			信捷Y1轴_位置30,3860
+			信捷Y1轴_位置31,3862
+			信捷Y1轴_位置32,3864
+			信捷Y1轴_位置33,3866
+			信捷Y1轴_位置34,3868
+			信捷Y1轴_位置35,3870
+			信捷Y1轴_位置36,3872
+			信捷Y1轴_位置37,3874
+			信捷Y1轴_位置38,3876
+			信捷Y1轴_位置39,3878
+			信捷Y1轴_位置40,3880
+			信捷Y1轴_位置41,3882
+			信捷Y1轴_位置42,3884
+			信捷Y1轴_位置43,3886
+			信捷Y1轴_位置44,3888
+			信捷Y1轴_位置45,3890
+			信捷Y1轴_位置46,3892
+			信捷Y1轴_位置47,3894
+			信捷Y1轴_位置48,3896
+			信捷Y1轴_位置49,3898
+			信捷Y1轴_位置50,3900
+			]]>
+		</CsvIncludePoints>
+		<!-- 信捷Y2轴 -->
+		<CsvIncludePoints
+			Name="信捷Y2轴"
+			CsvHeaders="Name,Offset,Desc">
+			<Setter Property="DataType" Value="float"/>
+			<Setter Property="BeforeToken" Value="public"/>
+			<Setter Property="Tags">轴位置</Setter>
+			<Setter Property="ReaderData">PLC</Setter>
+			<Setter Property="WriterData">PLC</Setter>
+			<Setter Property="Category">PLC/信捷Y2轴</Setter>
+			<![CDATA[
+			信捷Y2轴_位置0,4000
+			信捷Y2轴_位置1,4002
+			信捷Y2轴_位置2,4004
+			信捷Y2轴_位置3,4006
+			信捷Y2轴_位置4,4008
+			信捷Y2轴_位置5,4010
+			信捷Y2轴_位置6,4012
+			信捷Y2轴_位置7,4014
+			信捷Y2轴_位置8,4016
+			信捷Y2轴_位置9,4018
+			信捷Y2轴_位置10,4020
+			信捷Y2轴_位置11,4022
+			信捷Y2轴_位置12,4024
+			信捷Y2轴_位置13,4026
+			信捷Y2轴_位置14,4028
+			信捷Y2轴_位置15,4030
+			信捷Y2轴_位置16,4032
+			信捷Y2轴_位置17,4034
+			信捷Y2轴_位置18,4036
+			信捷Y2轴_位置19,4038
+			信捷Y2轴_位置20,4040
+			信捷Y2轴_位置21,4042
+			信捷Y2轴_位置22,4044
+			信捷Y2轴_位置23,4046
+			信捷Y2轴_位置24,4048
+			信捷Y2轴_位置25,4050
+			信捷Y2轴_位置26,4052
+			信捷Y2轴_位置27,4054
+			信捷Y2轴_位置28,4056
+			信捷Y2轴_位置29,4058
+			信捷Y2轴_位置30,4060
+			信捷Y2轴_位置31,4062
+			信捷Y2轴_位置32,4064
+			信捷Y2轴_位置33,4066
+			信捷Y2轴_位置34,4068
+			信捷Y2轴_位置35,4070
+			信捷Y2轴_位置36,4072
+			信捷Y2轴_位置37,4074
+			信捷Y2轴_位置38,4076
+			信捷Y2轴_位置39,4078
+			信捷Y2轴_位置40,4080
+			信捷Y2轴_位置41,4082
+			信捷Y2轴_位置42,4084
+			信捷Y2轴_位置43,4086
+			信捷Y2轴_位置44,4088
+			信捷Y2轴_位置45,4090
+			信捷Y2轴_位置46,4092
+			信捷Y2轴_位置47,4094
+			信捷Y2轴_位置48,4096
+			信捷Y2轴_位置49,4098
+			信捷Y2轴_位置50,4100
+			]]>
+		</CsvIncludePoints>
+		<!-- 雷赛步进Z1轴 -->
+		<CsvIncludePoints
+			Name="雷赛步进Z1轴"
+			CsvHeaders="Name,Offset,Desc">
+			<Setter Property="DataType" Value="float"/>
+			<Setter Property="BeforeToken" Value="public"/>
+			<Setter Property="Tags">轴位置</Setter>
+			<Setter Property="ReaderData">PLC</Setter>
+			<Setter Property="WriterData">PLC</Setter>
+			<Setter Property="Category">PLC/雷赛步进Z1轴</Setter>
+			<![CDATA[
+			雷赛步进Z1轴_位置0,4200
+			雷赛步进Z1轴_位置1,4202
+			雷赛步进Z1轴_位置2,4204
+			雷赛步进Z1轴_位置3,4206
+			雷赛步进Z1轴_位置4,4208
+			雷赛步进Z1轴_位置5,4210
+			雷赛步进Z1轴_位置6,4212
+			雷赛步进Z1轴_位置7,4214
+			雷赛步进Z1轴_位置8,4216
+			雷赛步进Z1轴_位置9,4218
+			雷赛步进Z1轴_位置10,4220
+			雷赛步进Z1轴_位置11,4222
+			雷赛步进Z1轴_位置12,4224
+			雷赛步进Z1轴_位置13,4226
+			雷赛步进Z1轴_位置14,4228
+			雷赛步进Z1轴_位置15,4230
+			雷赛步进Z1轴_位置16,4232
+			雷赛步进Z1轴_位置17,4234
+			雷赛步进Z1轴_位置18,4236
+			雷赛步进Z1轴_位置19,4238
+			雷赛步进Z1轴_位置20,4240
+			雷赛步进Z1轴_位置21,4242
+			雷赛步进Z1轴_位置22,4244
+			雷赛步进Z1轴_位置23,4246
+			雷赛步进Z1轴_位置24,4248
+			雷赛步进Z1轴_位置25,4250
+			雷赛步进Z1轴_位置26,4252
+			雷赛步进Z1轴_位置27,4254
+			雷赛步进Z1轴_位置28,4256
+			雷赛步进Z1轴_位置29,4258
+			雷赛步进Z1轴_位置30,4260
+			雷赛步进Z1轴_位置31,4262
+			雷赛步进Z1轴_位置32,4264
+			雷赛步进Z1轴_位置33,4266
+			雷赛步进Z1轴_位置34,4268
+			雷赛步进Z1轴_位置35,4270
+			雷赛步进Z1轴_位置36,4272
+			雷赛步进Z1轴_位置37,4274
+			雷赛步进Z1轴_位置38,4276
+			雷赛步进Z1轴_位置39,4278
+			雷赛步进Z1轴_位置40,4280
+			雷赛步进Z1轴_位置41,4282
+			雷赛步进Z1轴_位置42,4284
+			雷赛步进Z1轴_位置43,4286
+			雷赛步进Z1轴_位置44,4288
+			雷赛步进Z1轴_位置45,4290
+			雷赛步进Z1轴_位置46,4292
+			雷赛步进Z1轴_位置47,4294
+			雷赛步进Z1轴_位置48,4296
+			雷赛步进Z1轴_位置49,4298
+			雷赛步进Z1轴_位置50,4300
+			]]>
+		</CsvIncludePoints>
+		<!-- 雷赛步进Z2轴 -->
+		<CsvIncludePoints
+			Name="雷赛步进Z2轴"
+			CsvHeaders="Name,Offset,Desc">
+			<Setter Property="DataType" Value="float"/>
+			<Setter Property="BeforeToken" Value="public"/>
+			<Setter Property="Tags">轴位置</Setter>
+			<Setter Property="ReaderData">PLC</Setter>
+			<Setter Property="WriterData">PLC</Setter>
+			<Setter Property="Category">PLC/雷赛步进Z2轴</Setter>
+			<![CDATA[
+			雷赛步进Z2轴_位置0,4400
+			雷赛步进Z2轴_位置1,4402
+			雷赛步进Z2轴_位置2,4404
+			雷赛步进Z2轴_位置3,4406
+			雷赛步进Z2轴_位置4,4408
+			雷赛步进Z2轴_位置5,4410
+			雷赛步进Z2轴_位置6,4412
+			雷赛步进Z2轴_位置7,4414
+			雷赛步进Z2轴_位置8,4416
+			雷赛步进Z2轴_位置9,4418
+			雷赛步进Z2轴_位置10,4420
+			雷赛步进Z2轴_位置11,4422
+			雷赛步进Z2轴_位置12,4424
+			雷赛步进Z2轴_位置13,4426
+			雷赛步进Z2轴_位置14,4428
+			雷赛步进Z2轴_位置15,4430
+			雷赛步进Z2轴_位置16,4432
+			雷赛步进Z2轴_位置17,4434
+			雷赛步进Z2轴_位置18,4436
+			雷赛步进Z2轴_位置19,4438
+			雷赛步进Z2轴_位置20,4440
+			雷赛步进Z2轴_位置21,4442
+			雷赛步进Z2轴_位置22,4444
+			雷赛步进Z2轴_位置23,4446
+			雷赛步进Z2轴_位置24,4448
+			雷赛步进Z2轴_位置25,4450
+			雷赛步进Z2轴_位置26,4452
+			雷赛步进Z2轴_位置27,4454
+			雷赛步进Z2轴_位置28,4456
+			雷赛步进Z2轴_位置29,4458
+			雷赛步进Z2轴_位置30,4460
+			雷赛步进Z2轴_位置31,4462
+			雷赛步进Z2轴_位置32,4464
+			雷赛步进Z2轴_位置33,4466
+			雷赛步进Z2轴_位置34,4468
+			雷赛步进Z2轴_位置35,4470
+			雷赛步进Z2轴_位置36,4472
+			雷赛步进Z2轴_位置37,4474
+			雷赛步进Z2轴_位置38,4476
+			雷赛步进Z2轴_位置39,4478
+			雷赛步进Z2轴_位置40,4480
+			雷赛步进Z2轴_位置41,4482
+			雷赛步进Z2轴_位置42,4484
+			雷赛步进Z2轴_位置43,4486
+			雷赛步进Z2轴_位置44,4488
+			雷赛步进Z2轴_位置45,4490
+			雷赛步进Z2轴_位置46,4492
+			雷赛步进Z2轴_位置47,4494
+			雷赛步进Z2轴_位置48,4496
+			雷赛步进Z2轴_位置49,4498
+			雷赛步进Z2轴_位置50,4500
+			]]>
+		</CsvIncludePoints>
+		<!-- 固高直线Y1轴 -->
+		<CsvIncludePoints
+			Name="固高直线Y1轴"
+			CsvHeaders="Name,Offset,Desc">
+			<Setter Property="DataType" Value="float"/>
+			<Setter Property="BeforeToken" Value="public"/>
+			<Setter Property="Tags">轴位置</Setter>
+			<Setter Property="ReaderData">PLC</Setter>
+			<Setter Property="WriterData">PLC</Setter>
+			<Setter Property="Category">PLC/固高直线Y1轴</Setter>
+			<![CDATA[
+			固高直线Y1轴_位置0,4600
+			固高直线Y1轴_位置1,4602
+			固高直线Y1轴_位置2,4604
+			固高直线Y1轴_位置3,4606
+			固高直线Y1轴_位置4,4608
+			固高直线Y1轴_位置5,4610
+			固高直线Y1轴_位置6,4612
+			固高直线Y1轴_位置7,4614
+			固高直线Y1轴_位置8,4616
+			固高直线Y1轴_位置9,4618
+			固高直线Y1轴_位置10,4620
+			固高直线Y1轴_位置11,4622
+			固高直线Y1轴_位置12,4624
+			固高直线Y1轴_位置13,4626
+			固高直线Y1轴_位置14,4628
+			固高直线Y1轴_位置15,4630
+			固高直线Y1轴_位置16,4632
+			固高直线Y1轴_位置17,4634
+			固高直线Y1轴_位置18,4636
+			固高直线Y1轴_位置19,4638
+			固高直线Y1轴_位置20,4640
+			固高直线Y1轴_位置21,4642
+			固高直线Y1轴_位置22,4644
+			固高直线Y1轴_位置23,4646
+			固高直线Y1轴_位置24,4648
+			固高直线Y1轴_位置25,4650
+			固高直线Y1轴_位置26,4652
+			固高直线Y1轴_位置27,4654
+			固高直线Y1轴_位置28,4656
+			固高直线Y1轴_位置29,4658
+			固高直线Y1轴_位置30,4660
+			固高直线Y1轴_位置31,4662
+			固高直线Y1轴_位置32,4664
+			固高直线Y1轴_位置33,4666
+			固高直线Y1轴_位置34,4668
+			固高直线Y1轴_位置35,4670
+			固高直线Y1轴_位置36,4672
+			固高直线Y1轴_位置37,4674
+			固高直线Y1轴_位置38,4676
+			固高直线Y1轴_位置39,4678
+			固高直线Y1轴_位置40,4680
+			固高直线Y1轴_位置41,4682
+			固高直线Y1轴_位置42,4684
+			固高直线Y1轴_位置43,4686
+			固高直线Y1轴_位置44,4688
+			固高直线Y1轴_位置45,4690
+			固高直线Y1轴_位置46,4692
+			固高直线Y1轴_位置47,4694
+			固高直线Y1轴_位置48,4696
+			固高直线Y1轴_位置49,4698
+			固高直线Y1轴_位置50,4700
+			]]>
+		</CsvIncludePoints>
+		<!-- 固高直线Y2轴 -->
+		<CsvIncludePoints
+			Name="固高直线Y2轴"
+			CsvHeaders="Name,Offset,Desc">
+			<Setter Property="DataType" Value="float"/>
+			<Setter Property="BeforeToken" Value="public"/>
+			<Setter Property="Tags">轴位置</Setter>
+			<Setter Property="ReaderData">PLC</Setter>
+			<Setter Property="WriterData">PLC</Setter>
+			<Setter Property="Category">PLC/固高直线Y2轴</Setter>
+			<![CDATA[
+			固高直线Y2轴_位置0,4800
+			固高直线Y2轴_位置1,4802
+			固高直线Y2轴_位置2,4804
+			固高直线Y2轴_位置3,4806
+			固高直线Y2轴_位置4,4808
+			固高直线Y2轴_位置5,4810
+			固高直线Y2轴_位置6,4812
+			固高直线Y2轴_位置7,4814
+			固高直线Y2轴_位置8,4816
+			固高直线Y2轴_位置9,4818
+			固高直线Y2轴_位置10,4820
+			固高直线Y2轴_位置11,4822
+			固高直线Y2轴_位置12,4824
+			固高直线Y2轴_位置13,4826
+			固高直线Y2轴_位置14,4828
+			固高直线Y2轴_位置15,4830
+			固高直线Y2轴_位置16,4832
+			固高直线Y2轴_位置17,4834
+			固高直线Y2轴_位置18,4836
+			固高直线Y2轴_位置19,4838
+			固高直线Y2轴_位置20,4840
+			固高直线Y2轴_位置21,4842
+			固高直线Y2轴_位置22,4844
+			固高直线Y2轴_位置23,4846
+			固高直线Y2轴_位置24,4848
+			固高直线Y2轴_位置25,4850
+			固高直线Y2轴_位置26,4852
+			固高直线Y2轴_位置27,4854
+			固高直线Y2轴_位置28,4856
+			固高直线Y2轴_位置29,4858
+			固高直线Y2轴_位置30,4860
+			固高直线Y2轴_位置31,4862
+			固高直线Y2轴_位置32,4864
+			固高直线Y2轴_位置33,4866
+			固高直线Y2轴_位置34,4868
+			固高直线Y2轴_位置35,4870
+			固高直线Y2轴_位置36,4872
+			固高直线Y2轴_位置37,4874
+			固高直线Y2轴_位置38,4876
+			固高直线Y2轴_位置39,4878
+			固高直线Y2轴_位置40,4880
+			固高直线Y2轴_位置41,4882
+			固高直线Y2轴_位置42,4884
+			固高直线Y2轴_位置43,4886
+			固高直线Y2轴_位置44,4888
+			固高直线Y2轴_位置45,4890
+			固高直线Y2轴_位置46,4892
+			固高直线Y2轴_位置47,4894
+			固高直线Y2轴_位置48,4896
+			固高直线Y2轴_位置49,4898
+			固高直线Y2轴_位置50,4900
+			]]>
+		</CsvIncludePoints>
+	</Struct>
+</BinStructProject>

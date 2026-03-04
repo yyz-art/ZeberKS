@@ -1,0 +1,28 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+							xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+	<x:Double x:Key="Height-S3">24</x:Double>
+	<x:Double x:Key="Height-S2">26</x:Double>
+	<x:Double x:Key="Height-S1">28</x:Double>
+	<x:Double x:Key="Height-D0">32</x:Double>
+	<x:Double x:Key="Height-L1">36</x:Double>
+	<x:Double x:Key="Height-L2">38</x:Double>
+	<x:Double x:Key="Height-L3">40</x:Double>
+
+	<x:Double x:Key="Width-IconS3">8</x:Double>
+	<x:Double x:Key="Width-IconS2">10</x:Double>
+	<x:Double x:Key="Width-IconS1">12</x:Double>
+	<x:Double x:Key="Width-IconD0">16</x:Double>
+	<x:Double x:Key="Width-IconL1">20</x:Double>
+	<x:Double x:Key="Width-IconL2">22</x:Double>
+	<x:Double x:Key="Width-IconL3">24</x:Double>
+
+	<x:Double x:Key="Height-ControlSmall">22</x:Double> <!-- 表单项高度 - 小尺寸 -->
+	<x:Double x:Key="Height-ControlDefault">28</x:Double> <!-- 表单项高度 - 默认尺寸 -->
+	<x:Double x:Key="Height-ControlLarge">36</x:Double> <!-- 表单项高度 - 大尺寸 -->
+	<x:Double x:Key="Width-IconExtraSmall">8</x:Double> <!-- 图标尺寸 - 超小 -->
+	<x:Double x:Key="Width-IconSmall">12</x:Double> <!-- 图标尺寸 - 小 -->
+	<x:Double x:Key="Width-IconMedium">16</x:Double> <!-- 图标尺寸 - 中 -->
+	<x:Double x:Key="Width-IconLarge">20</x:Double> <!-- 图标尺寸 - 大 -->
+	<x:Double x:Key="Width-IconExtraLarge">24</x:Double> <!-- 图标尺寸 - 超大 -->
+</ResourceDictionary>

@@ -1,0 +1,75 @@
+﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
+							xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+							xmlns:u="https://zc.com/ui">
+	<ControlTheme x:Key="{x:Type DialogWindow}" TargetType="DialogWindow">
+		<Setter Property="Title" Value="{x:Null}" />
+		<Setter Property="Background" Value="{DynamicResource Brush-Background2}" />
+		<Setter Property="TransparencyBackgroundFallback" Value="{DynamicResource Window.DefaultBackground}" />
+		<Setter Property="Foreground" Value="{DynamicResource Window.DefaultForeground}" />
+		<Setter Property="FontSize" Value="{DynamicResource Default.FontSize}" />
+		<Setter Property="FontFamily" Value="{DynamicResource Default.FontFamily}" />
+		<Setter Property="Padding" Value="48 24" />
+		<Setter Property="SizeToContent" Value="WidthAndHeight" />
+		<Setter Property="WindowStartupLocation" Value="CenterOwner" />
+		<Setter Property="ExtendClientAreaTitleBarHeightHint" Value="1" />
+		<Setter Property="ExtendClientAreaToDecorationsHint" Value="True" />
+		<Setter Property="ExtendClientAreaChromeHints" Value="SystemChrome" />
+		<Setter Property="MinWidth" Value="{DynamicResource DialogMinWidth}" />
+		<Setter Property="MinHeight" Value="{DynamicResource DialogMinHeight}" />
+		<Setter Property="SystemDecorations">
+			<OnPlatform>
+				<OnPlatform.Windows>
+					<SystemDecorations>Full</SystemDecorations>
+				</OnPlatform.Windows>
+				<OnPlatform.Default>
+					<SystemDecorations>BorderOnly</SystemDecorations>
+				</OnPlatform.Default>
+			</OnPlatform>
+		</Setter>
+		<Setter Property="CanResize" Value="False" />
+		<Setter Property="Template">
+			<ControlTemplate TargetType="DialogWindow">
+				<Panel>
+					<Border Name="PART_TransparencyFallback" IsHitTestVisible="False" />
+					<Border
+						Background="{TemplateBinding Background}"
+						BackgroundSizing="InnerBorderEdge"
+						BorderBrush="{TemplateBinding BorderBrush}"
+						BorderThickness="{TemplateBinding BorderThickness}"
+						IsHitTestVisible="False" />
+					<Panel Margin="{TemplateBinding WindowDecorationMargin}" Background="Transparent" />
+					<VisualLayerManager>
+						<Grid RowDefinitions="Auto, *">
+							<ContentPresenter
+								Grid.Row="0"
+								Grid.RowSpan="2"
+								Content="{TemplateBinding Content}" />
+							<Grid Grid.Row="0" ColumnDefinitions="*, Auto">
+								<Panel
+									Name="{x:Static DialogWindow.PART_TitleArea}"
+									Grid.Column="0"
+									Grid.ColumnSpan="2"
+									Background="Transparent" />
+								<TextBlock
+									Grid.Column="0"
+									Margin="24,24,0,0"
+									FontSize="14"
+									FontWeight="{DynamicResource TextBlock.TitleFontWeight}"
+									Text="{TemplateBinding Title}"
+									TextTrimming="CharacterEllipsis"
+									TextWrapping="NoWrap" />
+								<Button
+									Name="{x:Static u:MessageBoxWindow.PART_CloseButton}"
+									Grid.Column="1"
+									Margin="0,24,24,0"
+									Theme="{DynamicResource CloseButton}" />
+							</Grid>
+
+						</Grid>
+					</VisualLayerManager>
+					<u:WindowResizer IsVisible="{TemplateBinding IsManagedResizerVisible}" />
+				</Panel>
+			</ControlTemplate>
+		</Setter>
+	</ControlTheme>
+</ResourceDictionary>

@@ -1,0 +1,190 @@
+﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
+							xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+							xmlns:u="https://zc.com/ui">
+	<Design.PreviewWith>
+		<StackPanel Orientation="Horizontal" Margin="20">
+			<CustomDialog Mode="Info" Padding="10" ContentPadding="10">
+				<CustomDialog.TopContent>
+					<TextBlock Text="124" />
+				</CustomDialog.TopContent>
+				<TextBlock Text="123"></TextBlock>
+				<CustomDialog.BottomContent>
+					<Button Content="OK"></Button>
+				</CustomDialog.BottomContent>
+			</CustomDialog>
+		</StackPanel>
+	</Design.PreviewWith>
+	<ControlTheme x:Key="{x:Type CustomDialog}" TargetType="CustomDialog">
+		<Setter Property="MinWidth" Value="{DynamicResource DialogMinWidth}" />
+		<Setter Property="MinHeight" Value="{DynamicResource DialogMinHeight}" />
+		<Setter Property="CornerRadius" Value="{DynamicResource DialogCornerRadius}" />
+		<Setter Property="Transitions">
+			<Transitions>
+				<TransformOperationsTransition Property="RenderTransform" Duration="0.2" />
+			</Transitions>
+		</Setter>
+		<Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto" />
+		<Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
+		<Setter Property="RenderTransform" Value="scale(1.0)" />
+		<Setter Property="Template">
+			<ControlTemplate TargetType="CustomDialog">
+				<Panel>
+					<Border
+						Name="PART_Border"
+						Padding="0"
+						HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
+						VerticalAlignment="{TemplateBinding VerticalAlignment}"
+						Background="{DynamicResource Brush-Background2}"
+						Classes="Shadow"
+						ClipToBounds="False"
+						CornerRadius="{TemplateBinding CornerRadius}"
+						Focusable="True"
+						IsHitTestVisible="True"
+						Theme="{DynamicResource Border-Card}">
+						<Border ClipToBounds="True" CornerRadius="{TemplateBinding CornerRadius}">
+							<Grid RowDefinitions="Auto, *,Auto" ColumnDefinitions="Auto,*,Auto" ColumnSpacing="5"
+									Margin="{TemplateBinding Padding}">
+								<Panel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3"
+										Name="{x:Static DialogBase.PART_TitleArea}"
+										Background="Transparent" />
+								<PathIcon Grid.Row="0" Grid.Column="0"
+											Name="PART_Icon"
+											VerticalAlignment="Center"
+											Classes="ExtraLarge"
+											Theme="{StaticResource PathIcon-Inner}" />
+								<ContentPresenter VerticalAlignment="Center"
+														Grid.Row="0" Grid.Column="1"
+														Name="PART_TopContentPresenter" Content="{TemplateBinding TopContent}" />
+								<Button Grid.Row="0" Grid.Column="2"
+											Name="{x:Static u:MessageBoxWindow.PART_CloseButton}"
+											Margin="0,0,0,0"
+											DockPanel.Dock="Right"
+											Theme="{DynamicResource OverlayCloseButton}" />
+								<ScrollViewer
+									Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3"
+									HorizontalScrollBarVisibility="{Binding (ScrollViewer.HorizontalScrollBarVisibility), RelativeSource={RelativeSource TemplatedParent}}"
+									VerticalScrollBarVisibility="{Binding (ScrollViewer.VerticalScrollBarVisibility), RelativeSource={RelativeSource TemplatedParent}}">
+									<ContentPresenter Name="PART_ContentPresenter"
+															Margin="{TemplateBinding ContentMargin}"
+															Padding="{TemplateBinding ContentPadding}"
+															Content="{TemplateBinding Content}" />
+								</ScrollViewer>
+								<ContentPresenter
+									Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" Name="PART_BottomContentPresenter"
+									Content="{TemplateBinding BottomContent}" />
+							</Grid>
+						</Border>
+					</Border>
+					<u:DialogResizer Margin="{Binding #PART_Border.Margin}" IsVisible="{TemplateBinding CanResize}" />
+				</Panel>
+			</ControlTemplate>
+		</Setter>
+		<Style Selector="^:full-screen">
+			<Setter Property="CornerRadius" Value="0" />
+			<Style Selector="^ /template/ Border#PART_Border">
+				<Setter Property="HorizontalAlignment" Value="Stretch" />
+				<Setter Property="VerticalAlignment" Value="Stretch" />
+				<Setter Property="Theme" Value="{x:Null}" />
+				<Setter Property="Margin" Value="0" />
+				<Setter Property="Background" Value="{DynamicResource Border.CardBackground}" />
+			</Style>
+		</Style>
+		<Style Selector="^ /template/ Panel#PART_TitleArea">
+			<Setter Property="ContextFlyout">
+				<MenuFlyout>
+					<MenuItem Command="{Binding $parent[DialogBase].Close}"
+								Header="{DynamicResource STRING_MENU_DIALOG_CLOSE}">
+						<MenuItem.Icon>
+							<PathIcon Data="{DynamicResource Icon-Close}" Theme="{StaticResource PathIcon-Inner}" />
+						</MenuItem.Icon>
+					</MenuItem>
+				</MenuFlyout>
+			</Setter>
+		</Style>
+		<Style Selector="^:not(:modal) /template/ Panel#PART_TitleArea">
+			<Setter Property="ContextFlyout">
+				<MenuFlyout>
+					<MenuItem
+						Command="{Binding $parent[DialogBase].UpdateLayer}"
+						CommandParameter="{x:Static DialogLayerChangeType.BringForward}"
+						Header="{DynamicResource STRING_MENU_BRING_FORWARD}">
+						<MenuItem.Icon>
+							<PathIcon Data="{DynamicResource DialogArrangeBringForwardGlyph}" Theme="{StaticResource PathIcon-Inner}" />
+						</MenuItem.Icon>
+					</MenuItem>
+					<MenuItem
+						Command="{Binding $parent[DialogBase].UpdateLayer}"
+						CommandParameter="{x:Static DialogLayerChangeType.BringToFront}"
+						Header="{DynamicResource STRING_MENU_BRING_TO_FRONT}">
+						<MenuItem.Icon>
+							<PathIcon Data="{DynamicResource DialogArrangeBringToFrontGlyph}" Theme="{StaticResource PathIcon-Inner}" />
+						</MenuItem.Icon>
+					</MenuItem>
+					<MenuItem
+						Command="{Binding $parent[DialogBase].UpdateLayer}"
+						CommandParameter="{x:Static DialogLayerChangeType.SendBackward}"
+						Header="{DynamicResource STRING_MENU_SEND_BACKWARD}">
+						<MenuItem.Icon>
+							<PathIcon Data="{DynamicResource DialogArrangeSendBackwardGlyph}" Theme="{StaticResource PathIcon-Inner}" />
+						</MenuItem.Icon>
+					</MenuItem>
+					<MenuItem
+						Command="{Binding $parent[DialogBase].UpdateLayer}"
+						CommandParameter="{x:Static DialogLayerChangeType.SendToBack}"
+						Header="{DynamicResource STRING_MENU_SEND_TO_BACK}">
+						<MenuItem.Icon>
+							<PathIcon Data="{DynamicResource DialogArrangeSendToBackGlyph}" Theme="{StaticResource PathIcon-Inner}" />
+						</MenuItem.Icon>
+					</MenuItem>
+					<MenuItem Command="{Binding $parent[DialogBase].Close}"
+								Header="{DynamicResource STRING_MENU_DIALOG_CLOSE}">
+						<MenuItem.Icon>
+							<PathIcon Data="{DynamicResource Icon-Close}" Theme="{StaticResource PathIcon-Inner}" />
+						</MenuItem.Icon>
+					</MenuItem>
+				</MenuFlyout>
+			</Setter>
+		</Style>
+
+		<Style Selector="^[Mode=None]">
+			<Style Selector="^ /template/ PathIcon#PART_Icon">
+				<Setter Property="IsVisible" Value="False" />
+			</Style>
+		</Style>
+		<Style Selector="^[Mode=Info]">
+			<Style Selector="^ /template/ PathIcon#PART_Icon">
+				<Setter Property="IsVisible" Value="True" />
+				<Setter Property="Data" Value="{DynamicResource DialogInformationIconGlyph}" />
+				<Setter Property="Foreground" Value="{DynamicResource Brush-Blue6}" />
+			</Style>
+		</Style>
+		<Style Selector="^[Mode=Warning]">
+			<Style Selector="^ /template/ PathIcon#PART_Icon">
+				<Setter Property="IsVisible" Value="True" />
+				<Setter Property="Data" Value="{DynamicResource DialogWarningIconGlyph}" />
+				<Setter Property="Foreground" Value="{DynamicResource Brush-Orange6}" />
+			</Style>
+		</Style>
+		<Style Selector="^[Mode=Error]">
+			<Style Selector="^ /template/ PathIcon#PART_Icon">
+				<Setter Property="IsVisible" Value="True" />
+				<Setter Property="Data" Value="{DynamicResource DialogErrorIconGlyph}" />
+				<Setter Property="Foreground" Value="{DynamicResource Brush-Red6}" />
+			</Style>
+		</Style>
+		<Style Selector="^[Mode=Question]">
+			<Style Selector="^ /template/ PathIcon#PART_Icon">
+				<Setter Property="IsVisible" Value="True" />
+				<Setter Property="Data" Value="{DynamicResource DialogQuestionIconGlyph}" />
+				<Setter Property="Foreground" Value="{DynamicResource Brush-Blue6}" />
+			</Style>
+		</Style>
+		<Style Selector="^[Mode=Success]">
+			<Style Selector="^ /template/ PathIcon#PART_Icon">
+				<Setter Property="IsVisible" Value="True" />
+				<Setter Property="Data" Value="{DynamicResource DialogSuccessIconGlyph}" />
+				<Setter Property="Foreground" Value="{DynamicResource Brush-Green6}" />
+			</Style>
+		</Style>
+	</ControlTheme>
+</ResourceDictionary>

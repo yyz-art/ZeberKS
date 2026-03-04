@@ -1,0 +1,19 @@
+﻿<UserControl
+	x:Class="OinetApp.UI.Views.Demo.Ext.ClockDemo"
+	xmlns="https://github.com/avaloniaui"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:u="https://oinet.com/ui"
+	xmlns:vm="clr-namespace:OinetApp.UI.Views.Demo.Ext"
+	xmlns:ext="clr-namespace:OinetApp.UI.Views.Demo.Ext"
+	x:DataType="ext:ClockDemoViewModel"
+	x:CompileBindings="True"
+	d:DesignHeight="450"
+	d:DesignWidth="800"
+	mc:Ignorable="d">
+	<Grid RowDefinitions="Auto, *">
+		<ToggleSwitch Content="Smooth" Name="smooth"></ToggleSwitch>
+		<u:Clock Grid.Row="1" HorizontalAlignment="Left" IsSmooth="{Binding #smooth.IsChecked}" Time="{Binding Time}"></u:Clock>
+	</Grid>
+</UserControl>

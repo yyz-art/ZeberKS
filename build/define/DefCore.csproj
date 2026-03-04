@@ -1,0 +1,113 @@
+<Project>
+	<!--文件结构 -->
+	<ItemGroup>
+		<Compile Update="Global.cs" DependentUpon="App.cs"/>
+		<None Update="$(ProjectName).csproj.DotSettings" DependentUpon="App.cs"/>
+		<None Include="bin/Debug/**/*.*" Link="Assets/.bin-debug/%(RecursiveDir)%(Filename)%(Extension)"/>
+		<None Include="bin/Release/**/*.*" Link="Assets/.bin-release/%(RecursiveDir)%(Filename)%(Extension)"/>
+		<None Include="Assets/.generated/**/*"/>
+	</ItemGroup>
+	<!-- Nuget引用	-->
+	<ItemGroup>
+		<Reference Include="$(CommonAssemblyPath)HslCommunication.dll"/>
+		<PackageReference Include="NLog" Version="$(NLogVersion)"/>
+		<PackageReference Include="NLog.Database" Version="$(NLogVersion)"/>
+		<PackageReference Include="SqlSugarCoreNoDrive" Version="$(SqlSugarVersion)"/>
+		<PackageReference Include="Microsoft.Data.Sqlite" Version="$(SqliteVersion)"/>
+		<PackageReference Include="Newtonsoft.Json" Version="$(NewtonsoftJsonVersion)"/>
+	</ItemGroup>
+	
+	<!-- Framework Include	-->
+	<ItemGroup Condition="'$(FrameworkUsingMode)'=='project'">
+		<ProjectReference Include="$(FrameworkProjectPath)RoslynGen/RoslynGen.csproj" OutputItemType="Analyzer"/>
+		<ProjectReference Include="$(FrameworkProjectPath)Application/Application.csproj"/>
+		<ProjectReference Include="$(FrameworkProjectPath)Base/Base.csproj"/>
+		<ProjectReference Include="$(FrameworkProjectPath)Tasks/Tasks.csproj"/>
+		<ProjectReference Include="$(FrameworkProjectPath)IOC/IOC.csproj"/>
+		<ProjectReference Include="$(FrameworkProjectPath)Mvvm/Mvvm.csproj"/>
+		<ProjectReference Include="$(FrameworkProjectPath)DB/DB.csproj"/>
+		<ProjectReference Include="$(FrameworkProjectPath)CFG/CFG.csproj"/>
+		<ProjectReference Include="$(FrameworkProjectPath)RES/RES.csproj"/>
+		<ProjectReference Include="$(FrameworkProjectPath)Web.Server/Web.Server.csproj"/>
+		<ProjectReference Include="$(FrameworkProjectPath)BinStructs/BinStructs.csproj"/>
+		<ProjectReference Include="$(FrameworkProjectPath)Enhance/Enhance.csproj"/>
+	</ItemGroup>
+	<ItemGroup Condition="'$(FrameworkUsingMode)'=='single-project'">
+		<ProjectReference Include="$(FrameworkProjectPath)RoslynGen/RoslynGen.csproj" OutputItemType="Analyzer"/>
+		<ProjectReference Include="$(FrameworkProjectPath)Framework/Framework.csproj"/>
+	</ItemGroup>
+	<ItemGroup Condition="'$(FrameworkUsingMode)'=='single-assembly'">
+		<Analyzer Include="$(FrameworkAssemblyPath)$(FrameworkName).RoslynGen.dll"/>
+		<Reference Include="$(FrameworkAssemblyPath)$(FrameworkName).Framework.dll"/>
+	</ItemGroup>
+	<ItemGroup Condition="'$(FrameworkUsingMode)'=='assembly'">
+		<Analyzer Include="$(FrameworkAssemblyPath)$(FrameworkName).RoslynGen.dll"/>
+		<Reference Include="$(FrameworkAssemblyPath)$(FrameworkName).Application.dll"/>
+		<Reference Include="$(FrameworkAssemblyPath)$(FrameworkName).Base.dll"/>
+		<Reference Include="$(FrameworkAssemblyPath)$(FrameworkName).Tasks.dll"/>
+		<Reference Include="$(FrameworkAssemblyPath)$(FrameworkName).IOC.dll"/>
+		<Reference Include="$(FrameworkAssemblyPath)$(FrameworkName).Mvvm.dll"/>
+		<Reference Include="$(FrameworkAssemblyPath)$(FrameworkName).DB.dll"/>
+		<Reference Include="$(FrameworkAssemblyPath)$(FrameworkName).CFG.dll"/>
+		<Reference Include="$(FrameworkAssemblyPath)$(FrameworkName).RES.dll"/>
+		<Reference Include="$(FrameworkAssemblyPath)$(FrameworkName).Web.Server.dll"/>
+		<Reference Include="$(FrameworkAssemblyPath)$(FrameworkName).BinStructs.dll"/>
+		<Reference Include="$(FrameworkAssemblyPath)$(FrameworkName).Enhance.dll"/>
+	</ItemGroup>
+
+
+	<Target Name="AssetsFileCopy" AfterTargets="Build">
+		<ItemGroup>
+			<AssetsFiles
+				Include="Assets/**/*.*"
+				Exclude="Assets/@bin/**/*.*;Assets/@data/**/*.*;Assets/@libs/**/*.*;
+               Assets/**/*.cs;Assets/**/*.private.*;Assets/Styles/**/*.*;Assets/UI/**/*.*;"/>
+			<ToBinFiles Include="Assets/@bin/**/*.*"/>
+			<ToDataFiles Include="Assets/@data/**/*.*"/>
+			<ToLibsFiles Include="Assets/@libs/**/*.*"/>
+			<WebFiles Include="UI/dist/**/*.*"/>
+		</ItemGroup>
+
+		<FileCopyTask SourceFiles="@(AssetsFiles)" DestRoot="$(OutDir)assets" Mode="incremental"/>
+		<FileCopyTask SourceFiles="@(ToBinFiles)" DestRoot="$(OutDir)" Mode="incremental"/>
+		<FileCopyTask SourceFiles="@(ToDataFiles)" DestRoot="$(OutDir)data" Mode="incremental"/>
+		<FileCopyTask SourceFiles="@(ToLibsFiles)" DestRoot="$(OutDir)libs" Mode="incremental"/>
+		<FileCopyTask SourceFiles="@(WebFiles)" DestRoot="$(OutDir)assets/www" Mode="incremental"/>
+	</Target>
+
+	
+	<Target Name="OutDirFileStructFormat-Release"
+			  AfterTargets="Build"
+			  Condition="'$(Configuration)' == 'Release'">
+		<ItemGroup>
+			<LibsDirFrameworkFiles
+				Include="$(OutDir)$(FrameworkName).*;"/>
+		</ItemGroup>
+		<Move SourceFiles="@(LibsDirFrameworkFiles)"
+				DestinationFolder="$(OutDir)libs/framework"
+				OverwriteReadOnlyFiles="true"/>
+		<ItemGroup>
+			<LibsDirFiles
+				Include="$(OutDir)*.dll;$(OutDir)*.pdb;"
+				Exclude="
+					$(OutDir)$(AssemblyName).*;
+					$(OutDir)$(ProjectApplicationBaseName).*.*;"/>
+		</ItemGroup>
+		<Move SourceFiles="@(LibsDirFiles)"
+				DestinationFolder="$(OutDir)libs/common"
+				OverwriteReadOnlyFiles="true"/>
+	</Target>
+
+	<Target Name="OutDirFileStructFormat-Debug"
+			  AfterTargets="Build"
+			  Condition="'$(Configuration)' == 'Debug'">
+		<ItemGroup>
+			<DebugFiles Include="$(OutDir)$(AssemblyName).*;$(OutDir)$(ProjectApplicationBaseName).*.*;"/>
+		</ItemGroup>
+		<RemoveDir Directories="$(OutDir)@debug/"/>
+		<Copy SourceFiles="@(DebugFiles)"
+				DestinationFolder="$(OutDir)@debug/"
+				OverwriteReadOnlyFiles="true"/>
+	</Target>
+
+</Project>

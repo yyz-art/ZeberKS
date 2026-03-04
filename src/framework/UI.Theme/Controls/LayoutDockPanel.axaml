@@ -1,0 +1,137 @@
+<ResourceDictionary
+	xmlns="https://github.com/avaloniaui"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	x:CompileBindings="True">
+	<Design.PreviewWith>
+		<LayoutDockPanel Width="800" Height="400">
+			<LayoutDockPanel.TopBar>
+				<LinearPanel Orientation="Horizontal" Background="LightBlue">
+					<Button Content="Hello"></Button>
+				</LinearPanel>
+			</LayoutDockPanel.TopBar>
+
+			<LayoutDockPanel.LeftBar>
+				<LinearPanel Orientation="Vertical" Background="GreenYellow">
+					<Button Content="1"></Button>
+				</LinearPanel>
+			</LayoutDockPanel.LeftBar>
+
+			<LayoutDockPanel.RightBar>
+				<LinearPanel Orientation="Vertical" Background="GreenYellow">
+					<Button Content="1"></Button>
+				</LinearPanel>
+			</LayoutDockPanel.RightBar>
+
+			<LayoutDockPanel.BottomBar>
+				<LinearPanel Orientation="Horizontal" Background="Pink">
+					<Button Content="1"></Button>
+				</LinearPanel>
+			</LayoutDockPanel.BottomBar>
+
+			<LayoutDockPanel.LeftTopContent>
+				<Label Content="123"></Label>
+			</LayoutDockPanel.LeftTopContent>
+
+			<LayoutDockPanel.LeftBottomContent>
+				<Label Content="123"></Label>
+			</LayoutDockPanel.LeftBottomContent>
+		</LayoutDockPanel>
+	</Design.PreviewWith>
+
+	<ControlTheme x:Key="{x:Type LayoutDockPanel}" TargetType="LayoutDockPanel">
+		<Setter Property="Template">
+			<ControlTemplate TargetType="LayoutDockPanel">
+				<Grid Name="{x:Static LayoutDockPanel.PART_LayoutPanel}" Margin="{TemplateBinding Margin}"
+							Background="{TemplateBinding Background}"
+							Height="{TemplateBinding Height}"
+							Width="{TemplateBinding Width}"
+							HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
+							VerticalAlignment="{TemplateBinding VerticalAlignment}"
+							ShowGridLines="False">
+					<Grid.RowDefinitions>
+						<RowDefinition Height="{Binding TopBarHeight, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" />
+						<RowDefinition Height="*" />
+						<RowDefinition Height="5" />
+						<RowDefinition Height="{Binding BottomContentHeight, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" />
+						<RowDefinition Height="{Binding BottomBarHeight, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" />
+					</Grid.RowDefinitions>
+
+
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="{Binding LeftBarWidth, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" />
+						<ColumnDefinition Width="{Binding LeftContentWidth, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" />
+						<ColumnDefinition Width="5" />
+						<ColumnDefinition Width="*" />
+						<ColumnDefinition Width="5" />
+						<ColumnDefinition Width="{Binding RightContentWidth, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" />
+						<ColumnDefinition Width="{Binding RightBarWidth, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" />
+					</Grid.ColumnDefinitions>
+
+
+					<!-- Bottom Container Top Splitter -->
+					<GridSplitter Name="BottomContainerTopSplitter" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="5" />
+					<!-- Left Container Right Splitter -->
+					<GridSplitter Name="LeftContainerRightSplitter" Grid.Row="1" Grid.Column="2" Grid.RowSpan="2" />
+					<!-- Right Container Left Splitter -->
+					<GridSplitter Name="RightContainerLeftSplitter" Grid.Row="1" Grid.Column="4" Grid.RowSpan="2" />
+
+					<!-- Top Bar -->
+					<Border Name="{x:Static LayoutDockPanel.PART_TopBar}" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="7"
+									Child="{TemplateBinding TopBar}" />
+					<!-- Left Bar -->
+					<Border Name="{x:Static LayoutDockPanel.PART_LeftBar}" Grid.Row="1" Grid.Column="0" Grid.RowSpan="4"
+									Child="{TemplateBinding LeftBar}" />
+					<!-- Right Bar -->
+					<Border Name="{x:Static LayoutDockPanel.PART_RightBar}" Grid.Row="1" Grid.Column="6" Grid.RowSpan="4"
+									Child="{TemplateBinding RightBar}" />
+					<!-- Bottom Bar -->
+					<Border Name="{x:Static LayoutDockPanel.PART_BottomBar}" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="7"
+									Child="{TemplateBinding BottomBar}" />
+
+					<!-- Left Container -->
+					<Grid Name="LeftContainer" Grid.Row="1" Grid.Column="1">
+						<Grid.RowDefinitions>
+							<RowDefinition Height="{Binding LeftTopContentHeight, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"/>
+							<RowDefinition Height="4"/>
+							<RowDefinition Height="{Binding LeftBottomContentHeight, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"/>
+						</Grid.RowDefinitions>
+						<Border Name="{x:Static LayoutDockPanel.PART_LeftTopContent}" Grid.Row="0"
+										Child="{TemplateBinding LeftTopContent}" />
+						<GridSplitter Name="LeftContainerMidSplitter" Grid.Row="1" />
+						<Border Name="{x:Static LayoutDockPanel.PART_LeftBottomContent}" Grid.Row="2"
+										Child="{TemplateBinding LeftBottomContent}" />
+					</Grid>
+					<!-- Right Container -->
+					<Grid Name="RightContainer" Grid.Row="1" Grid.Column="5" >
+						<Grid.RowDefinitions>
+							<RowDefinition Height="{Binding RightTopContentHeight, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"/>
+							<RowDefinition Height="4"/>
+							<RowDefinition Height="{Binding RightBottomContentHeight, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"/>
+						</Grid.RowDefinitions>
+						<Border Name="{x:Static LayoutDockPanel.PART_RightTopContent}" Grid.Row="0"
+										Child="{TemplateBinding RightTopContent}" />
+						<GridSplitter Name="RightContainerMidSplitter" Grid.Row="1" />
+						<Border Name="{x:Static LayoutDockPanel.PART_RightBottomContent}" Grid.Row="2"
+										Child="{TemplateBinding RightBottomContent}" />
+					</Grid>
+					<!-- Bottom Container -->
+					<Grid Name="BottomContainer" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="5">
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="{Binding BottomLeftContentWidth, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" />
+							<ColumnDefinition Width="4" />
+							<ColumnDefinition Width="{Binding BottomRightContentWidth, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" />
+						</Grid.ColumnDefinitions>
+						<Border Name="{x:Static LayoutDockPanel.PART_BottomLeftContent}" Grid.Column="0"
+										Child="{TemplateBinding BottomLeftContent}" />
+						<GridSplitter Name="BottomContainerMidSplitter" Grid.Column="1" />
+						<Border Name="{x:Static LayoutDockPanel.PART_BottomRightContent}" Grid.Column="2"
+										Child="{TemplateBinding BottomRightContent}" />
+					</Grid>
+					<!-- Center Container -->
+					<Border Name="{x:Static LayoutDockPanel.PART_CenterContent}" Grid.Row="1" Grid.Column="3"
+									Child="{TemplateBinding CenterContent}" />
+				</Grid>
+			</ControlTemplate>
+		</Setter>
+	</ControlTheme>
+</ResourceDictionary>

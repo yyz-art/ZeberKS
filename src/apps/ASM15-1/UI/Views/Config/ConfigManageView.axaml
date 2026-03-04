@@ -1,0 +1,62 @@
+﻿<UiView xmlns="https://github.com/avaloniaui"
+				xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+				xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+				xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+				xmlns:config="clr-namespace:ZitApp.UI.Config"
+				mc:Ignorable="d" d:DesignWidth="1920" d:DesignHeight="1000"
+				x:Class="ZitApp.UI.Config.ConfigManageView">
+	<Design.DataContext>
+		<config:ConfigManageVM />
+	</Design.DataContext>
+
+	<TabControl>
+
+		<TabItem Header="{StaticResource I18N.Common.系统配置}">
+			<ScrollViewer HorizontalAlignment="Center" MinWidth="1000" Margin="200 50">
+				<Grid ColumnDefinitions="*,*" ColumnSpacing="50" Margin="10">
+					<StackPanel Grid.Column="0" Spacing="20">
+						<HeaderedContentControl Theme="{StaticResource HCC-GroupBox}">
+							<HeaderedContentControl.Header>
+								<TextBlock Text="PLC" Margin="4" />
+							</HeaderedContentControl.Header>
+							<GridPanel Orientation="Horizontal" MainAxisDefinitions="Auto,*" MainSpacing="10" Margin="4" SecondSpacing="6">
+								<TextBlock Text="IP:" VerticalAlignment="Center" />
+								<TextBox Text="{Binding AppConfig.Plc.IpAddress}" />
+								<TextBlock Text="Port:" VerticalAlignment="Center" />
+								<TextBox Text="{Binding AppConfig.Plc.Port}" />
+							</GridPanel>
+						</HeaderedContentControl>
+
+						<HeaderedContentControl Theme="{StaticResource HCC-GroupBox}">
+							<HeaderedContentControl.Header>
+								<TextBlock Text="SCREW1" Margin="4" />
+							</HeaderedContentControl.Header>
+							<GridPanel Orientation="Horizontal" MainAxisDefinitions="Auto,*" MainSpacing="10" Margin="4" SecondSpacing="6">
+								<TextBlock Text="IP:" VerticalAlignment="Center" />
+								<TextBox Text="{Binding AppConfig.Screw1.IpAddress}" />
+								<TextBlock Text="Port:" VerticalAlignment="Center" />
+								<TextBox Text="{Binding AppConfig.Screw1.Port}" />
+							</GridPanel>
+						</HeaderedContentControl>
+
+						<HeaderedContentControl Theme="{StaticResource HCC-GroupBox}">
+							<HeaderedContentControl.Header>
+								<TextBlock Text="SCREW2" Margin="4" />
+							</HeaderedContentControl.Header>
+							<GridPanel Orientation="Horizontal" MainAxisDefinitions="Auto,*" MainSpacing="10" Margin="4" SecondSpacing="6">
+								<TextBlock Text="IP:" VerticalAlignment="Center" />
+								<TextBox Text="{Binding AppConfig.Screw2.IpAddress}" />
+								<TextBlock Text="Port:" VerticalAlignment="Center" />
+								<TextBox Text="{Binding AppConfig.Screw2.Port}" />
+							</GridPanel>
+						</HeaderedContentControl>
+					</StackPanel>
+
+					<StackPanel Grid.Column="1" Spacing="20">
+
+					</StackPanel>
+				</Grid>
+			</ScrollViewer>
+		</TabItem>
+	</TabControl>
+</UiView>

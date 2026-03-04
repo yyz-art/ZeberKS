@@ -1,0 +1,11 @@
+<Project>
+	<PropertyGroup>
+		<HotAvaloniaHotkey>F5</HotAvaloniaHotkey>
+		<HotAvaloniaTimeout>disable</HotAvaloniaTimeout>
+		<HotAvaloniaMinLogLevel>error</HotAvaloniaMinLogLevel>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="HotAvalonia" Condition="'$(Configuration)' == 'Debug'" Version="$(HotAvaloniaVersion)" PrivateAssets="All" Publish="True"/>
+	</ItemGroup>
+</Project>

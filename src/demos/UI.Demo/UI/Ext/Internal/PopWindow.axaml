@@ -1,0 +1,25 @@
+﻿<UiTopLevelWindow
+	xmlns="https://github.com/avaloniaui"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:ui="clr-namespace:OinetApp.UI"
+	xmlns:internal="clr-namespace:OinetApp.UI.Internal"
+	x:Class="OinetApp.UI.Internal.PopWindow"
+	Name="TopLevelWindow"
+	Title="{Binding Title}"
+	WindowStartupLocation="CenterScreen"
+	WindowState="Normal"
+
+	UseLayoutRounding="True"
+	RenderOptions.BitmapInterpolationMode="HighQuality"
+	TransparencyLevelHint="AcrylicBlur"
+	Width="1280" Height="720"
+	SystemDecorations="BorderOnly"
+	ExtendClientAreaChromeHints="NoChrome"
+	ExtendClientAreaToDecorationsHint="True"
+	ExtendClientAreaTitleBarHeightHint="30"
+	x:DataType="internal:PopVM"
+	Content="{Binding Content}">
+	<Design.DataContext>
+		<internal:PopVM />
+	</Design.DataContext>
+</UiTopLevelWindow>

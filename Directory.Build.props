@@ -1,0 +1,80 @@
+<Project>
+
+	<PropertyGroup>
+
+		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+		<AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+
+		<Title>ZC dotnet framework</Title>
+		<Product>ZC dotnet framework</Product>
+		<Description>ZC dotnet framework</Description>
+		<Version>26.2.1</Version>
+		<AssemblyVersion>26.2.1</AssemblyVersion>
+		<FileVersion>26.2.1</FileVersion>
+		<Authors>AINOXE</Authors>
+		<Company>ZC AINOXE</Company>
+		<NeutralLanguage>zh</NeutralLanguage>
+		<Copyright>ZC.space</Copyright>
+		<PackageProjectUrl>https://github.com/ZC/Framework</PackageProjectUrl>
+		<PackageLicenseUrl>None</PackageLicenseUrl>
+		<RepositoryUrl>https://github.com/ZC/Framework</RepositoryUrl>
+		<RepositoryType>Github</RepositoryType>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(IsFrameworkProject)' == 'true' ">
+		<ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+		<ProduceReferenceAssemblyInOutDir>true</ProduceReferenceAssemblyInOutDir>
+	</PropertyGroup>
+	<!-- 自定义变量 -->
+	<PropertyGroup>
+		<CSharpLangVersion>preview</CSharpLangVersion>
+		<FrameworkName>ZC</FrameworkName>
+		<ProjectApplicationBaseName>ZitApp</ProjectApplicationBaseName>
+		<SlnName>ZC</SlnName>
+		<FrameworkUsingMode>single-assembly</FrameworkUsingMode> <!--	options: [single-]project , [single-]assembly -->
+		<DotnetTargetFrameworkVersion>net10.0</DotnetTargetFrameworkVersion>
+		<DotnetLangVersion>preview</DotnetLangVersion>
+		<BuildWithSerialPortsEnable>false</BuildWithSerialPortsEnable>
+		<FrameworkProjectPath>$(SolutionDir)src/framework/</FrameworkProjectPath>
+		<FrameworkAssemblyPath>$(SolutionDir)libs/framework/</FrameworkAssemblyPath>
+		<CommonAssemblyPath>$(SolutionDir)libs/common/</CommonAssemblyPath>
+		<CommonProjectPath>$(SolutionDir)src/common/</CommonProjectPath>
+	</PropertyGroup>
+	<!-- Nuget 打包 -->
+	<PropertyGroup>
+		<PackageTags>DEV</PackageTags>
+		<PackageReleaseNotes>DEV TEST</PackageReleaseNotes>
+		<GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+		<PackageOutputPath>$(SolutionDir)\-\.nuget\@proj</PackageOutputPath>
+		<IncludeSymbols>false</IncludeSymbols>
+		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
+	</PropertyGroup>
+	<!-- 依赖版本 -->
+	<PropertyGroup>
+		<HotAvaloniaVersion>3.*</HotAvaloniaVersion>
+		<LiveChartsVersion>2.0.0-rc6.1</LiveChartsVersion>
+		<AppFrameworkVersion>1.0.0</AppFrameworkVersion>
+		<AvaloniaVersion>11.3.11</AvaloniaVersion>
+		<AvaloniaTreeDataGridVersion>11.1.1</AvaloniaTreeDataGridVersion>
+
+		<ReactiveUIVersion>22.2.1</ReactiveUIVersion>
+		<ReactiveUIAvaloniaVersion>11.3.8</ReactiveUIAvaloniaVersion>
+		<DataGridVersion>11.3.6</DataGridVersion>
+		<AvaloniaEditVersion>11.3.0</AvaloniaEditVersion>
+		<MvvmTookitVersion>8.4.0</MvvmTookitVersion>
+
+		<SqlSugarVersion>5.1.4.205</SqlSugarVersion>
+		<SqlSugarCoreNoDriveVersion>5.1.4.205</SqlSugarCoreNoDriveVersion>
+		<SqliteVersion>10.0.0-preview.7.25380.108</SqliteVersion>
+		<SqlSugarVersion>5.1.4.203</SqlSugarVersion>
+		<SqliteVersion>9.0.9</SqliteVersion>
+		<NpgSqlVersion>9.0.3</NpgSqlVersion>
+
+		<NLuaVersion>1.7.5</NLuaVersion>
+		<NLogVersion>6.0.3</NLogVersion>
+		<SystemIOPortsVersion>10.0.2</SystemIOPortsVersion>
+		<JetBrainsAnnotationsVersion>2025.2.4</JetBrainsAnnotationsVersion>
+		<NewtonsoftJsonVersion>13.0.4</NewtonsoftJsonVersion>
+		<OpenCVSharpVersion>4.11.0.20250507</OpenCVSharpVersion>
+	</PropertyGroup>
+
+</Project>

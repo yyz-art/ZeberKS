@@ -1,0 +1,17 @@
+﻿global using Avalonia;
+global using Avalonia.Controls;
+global using Oinet.Annotations;
+global using Oinet.IOC;
+global using Oinet.UI;
+global using Oinet.UI.ControlLibs;
+global using OinetApp.UI.Controls;
+global using Oinet.UI.Navigation;
+global using Oinet.Tasks;
+global using Oinet.UI.DSL;
+global using UiApp = OinetApp.UI.UiApp;
+global using OinetApp;
+global using OinetApp.UI;
+global using System.Diagnostics;
+// global using System.Runtime.InteropServices;
+using System.Reflection;
+using System.Runtime.CompilerServices;

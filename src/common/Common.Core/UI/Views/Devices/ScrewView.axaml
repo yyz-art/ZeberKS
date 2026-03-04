@@ -1,0 +1,184 @@
+﻿<UiView xmlns="https://github.com/avaloniaui"
+				xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+				xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+				xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+				xmlns:devices="using:ZitApp.UI.Views.Devices"
+				xmlns:screw="using:ZitApp.Devices.Screw"
+				xmlns:lvc="using:LiveChartsCore.SkiaSharpView.Avalonia"
+				xmlns:draw="using:LiveChartsCore.SkiaSharpView.Drawing.Geometries"
+				mc:Ignorable="d" d:DesignWidth="1280" d:DesignHeight="720"
+				x:Class="ZitApp.UI.Views.Devices.ScrewView"
+				UiTickCommand="{Binding UiTickCommand}"
+				UiTickInterval="{Binding UiTickInterval}"
+	>
+	<Design.DataContext>
+		<devices:ScrewVM />
+	</Design.DataContext>
+	<Grid RowDefinitions="Auto,*">
+		<LinearPanel Grid.Row="0">
+
+		</LinearPanel>
+		<TabControl Grid.Row="1" TabStripPlacement="Left" Theme="{DynamicResource TabControl-Line}">
+			<TabItem Header="运行控制">
+				<Grid ColumnDefinitions="*,300">
+					<Grid Grid.Column="0">
+						<lvc:CartesianChart ZoomMode="X">
+							<lvc:CartesianChart.Title>
+								<lvc:XamlDrawnLabelVisual
+									Text="位置扭矩"
+									Paint="{lvc:SolidColorPaint Color='#303030'}"
+									TextSize="25"
+									Padding="{lvc:Padding '15'}" />
+							</lvc:CartesianChart.Title>
+
+							<lvc:CartesianChart.Series>
+								<lvc:XamlLineSeries
+									x:TypeArguments="x:Int32, draw:StarGeometry"
+									Values="{Binding Values2}"
+									Fill="{x:Null}"
+									GeometrySize="20" />
+							</lvc:CartesianChart.Series>
+						</lvc:CartesianChart>
+					</Grid>
+
+					<LinearPanel Grid.Column="1" Orientation="Vertical" Spacing="10">
+						<Label Content="Ready" Foreground="#ed7d31" Background="#c5e0b4" FontWeight="ExtraBold"
+									HorizontalContentAlignment="Center"
+									VerticalContentAlignment="Center"
+									Padding="30"
+									CornerRadius="15"
+									FontSize="{StaticResource FontSize-B6}">
+						</Label>
+						<Label Padding="10" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center"
+									Content="{Binding 实时控制指令, StringFormat='当前控制指令: {0}'}" Classes="Blue Ghost"
+									Theme="{DynamicResource Label-Tag}">
+						</Label>
+						<UniformGrid Columns="2" VerticalAlignment="Top" RowSpacing="10" ColumnSpacing="10">
+							<Button Content="开始拧紧" Classes="Success" Padding="10" HorizontalAlignment="Stretch"
+											Command="{Binding SendControlCommandCommand}"
+											CommandParameter="{x:Static screw:ScrewMachineControlCommand.开始拧紧}"
+											Theme="{DynamicResource Button-Solid}" />
+							<Button Content="停止拧紧" Classes="Warning" Padding="10" HorizontalAlignment="Stretch"
+											Theme="{DynamicResource Button-Solid}"
+											Command="{Binding SendControlCommandCommand}"
+											CommandParameter="{x:Static screw:ScrewMachineControlCommand.停止拧紧}" />
+							<Button Content="开始拧松" Classes="Success" Padding="10" HorizontalAlignment="Stretch"
+											Theme="{DynamicResource Button-Solid}"
+											Command="{Binding SendControlCommandCommand}"
+											CommandParameter="{x:Static screw:ScrewMachineControlCommand.开始拧松}" />
+							<Button Content="停止拧松" Classes="Warning" Padding="10" HorizontalAlignment="Stretch"
+											Theme="{DynamicResource Button-Solid}"
+											Command="{Binding SendControlCommandCommand}"
+											CommandParameter="{x:Static screw:ScrewMachineControlCommand.停止拧松}" />
+							<Button Content="开始自由转" Classes="Success" Padding="10" HorizontalAlignment="Stretch"
+											Theme="{DynamicResource Button-Solid}"
+											Command="{Binding SendControlCommandCommand}"
+											CommandParameter="{x:Static screw:ScrewMachineControlCommand.开始自由转}" />
+							<Button Content="停止自由转" Classes="Warning" Padding="10" HorizontalAlignment="Stretch"
+											Theme="{DynamicResource Button-Solid}"
+											Command="{Binding SendControlCommandCommand}"
+											CommandParameter="{x:Static screw:ScrewMachineControlCommand.停止自由转}" />
+						</UniformGrid>
+
+						<Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto" ColumnDefinitions="80,*" HorizontalAlignment="Stretch"
+									ColumnSpacing="0" RowSpacing="0">
+							<Grid.Styles>
+								<Style Selector="Label">
+									<Setter Property="BorderBrush" Value="{DynamicResource Brush-Border}" />
+									<Setter Property="BorderThickness" Value="1" />
+									<Setter Property="Padding" Value="6" />
+									<Setter Property="FontWeight" Value="Bold" />
+								</Style>
+							</Grid.Styles>
+							<Label Grid.Row="0" Grid.Column="0" Foreground="#008000" Content="扭力" />
+							<Label Grid.Row="0" Grid.Column="1" Foreground="#008000"
+										Content="{Binding 实时扭力, StringFormat='{}{0}N.m'}" />
+							<Label Grid.Row="1" Grid.Column="0" Foreground="#808000" Content="任务" />
+							<Label Grid.Row="1" Grid.Column="1" Foreground="#808000"
+										Content="{Binding 实时任务}" />
+							<Label Grid.Row="2" Grid.Column="0" Foreground="#ff1493" Content="圈数" />
+							<Label Grid.Row="2" Grid.Column="1" Foreground="#ff1493"
+										Content="{Binding 实时圈数, StringFormat='{}{0}r'}" />
+							<Label Grid.Row="3" Grid.Column="0" Foreground="#0000ff" Content="耗时" />
+							<Label Grid.Row="3" Grid.Column="1" Foreground="#0000ff"
+										Content="{Binding 实时耗时, StringFormat='{}{0}ms'}" />
+							<Label Grid.Row="4" Grid.Column="0" Foreground="#ff4500" Content="报警" />
+							<Label Grid.Row="4" Grid.Column="1" Foreground="#ff4500"
+										Content="{Binding 实时报警}" />
+						</Grid>
+
+						<HeaderedContentControl Theme="{DynamicResource HCC-GroupBox}" LinearPanel.Weight="1">
+							<HeaderedContentControl.Header>
+								<Label Content="运行记录" FontWeight="Bold" Padding="5" />
+							</HeaderedContentControl.Header>
+							<DataGrid>
+								<DataGrid.Columns>
+									<DataGridTextColumn Header="时间" />
+									<DataGridTextColumn Header="扭矩" />
+									<DataGridTextColumn Header="结果" />
+								</DataGrid.Columns>
+							</DataGrid>
+						</HeaderedContentControl>
+					</LinearPanel>
+				</Grid>
+
+			</TabItem>
+			<TabItem Header="配方编辑">
+				<HeaderedContentControl Theme="{DynamicResource HCC-GroupBox}" Margin="10">
+					<HeaderedContentControl.Header>
+
+						<LinearPanel Grid.Column="1" Grid.Row="0" Orientation="Horizontal" Spacing="5" Padding="5">
+							<Label Content="任务编辑" Padding="3" FontSize="{DynamicResource FontSize-B2}" FontWeight="Bold"
+										VerticalAlignment="Center">
+							</Label>
+							<Control LinearPanel.Weight="1" />
+							<!-- <Label Content="通道:" FontWeight="Normal" VerticalAlignment="Center" /> -->
+							<!-- <ComboBox MinWidth="50" VerticalAlignment="Stretch"  -->
+							<!-- 					SelectedItem="{Binding EditScrewMachineTaskChannel}" -->
+							<!-- 					ItemsSource="{Binding ScrewMachineTaskChannelIds}" /> -->
+
+							<Button Content="全部写入" VerticalAlignment="Stretch" Classes="Primary" Theme="{DynamicResource Button-Solid}"
+											Command="{Binding WriteAllPointCommand}" />
+							<Button Content="全部读取" VerticalAlignment="Stretch" Classes="Warning" Theme="{DynamicResource Button-Solid}"
+											Command="{Binding ReadAllPointCommand}" />
+							<Button Content="保存全部读取值" VerticalAlignment="Stretch" Classes="Success" Theme="{DynamicResource Button-Solid}"
+											Command="{Binding SaveAllPointCommand}" />
+						</LinearPanel>
+					</HeaderedContentControl.Header>
+					<DataGrid BorderBrush="{DynamicResource Brush-Border}" BorderThickness="1"
+										ItemsSource="{Binding EditRecipePropertyInstances}" GridLinesVisibility="All">
+						<DataGrid.Columns>
+							<DataGridTextColumn Header="参数名称" MinWidth="140" IsReadOnly="True" Binding="{Binding Define.Name}" />
+							<DataGridTextColumn Header="设定值" MinWidth="120" IsReadOnly="False" Binding="{Binding Value, Mode=TwoWay}" />
+							<DataGridTextColumn Header="读取值" MinWidth="120" IsReadOnly="False" Binding="{Binding TempValue1}" />
+							<DataGridTextColumn Header="最小值" MinWidth="80" Binding="{Binding DataContext.MinValue}" />
+							<DataGridTextColumn Header="最大值" MinWidth="80" Binding="{Binding DataContext.MaxValue}" />
+							<DataGridTextColumn Header="默认值" MinWidth="80" Binding="{Binding DataContext.DefaultValue}" />
+							<DataGridTextColumn Header="单位" MinWidth="80" Binding="{Binding DataContext.Unit}" />
+							<DataGridTemplateColumn Header="操作">
+								<DataGridTemplateColumn.CellTemplate>
+									<DataTemplate>
+										<StackPanel Orientation="Horizontal" Spacing="10" Margin="5">
+											<!-- ReSharper disable once Xaml.PossibleNullReferenceException -->
+											<Button Content="读取" Classes="Primary"
+															Command="{Binding DataContext.ReadPointCommand,RelativeSource={RelativeSource AncestorType=DataGrid}}"
+															CommandParameter="{Binding .}" />
+											<Button Content="写入" Classes="Warning"
+															Command="{Binding DataContext.WritePointCommand,RelativeSource={RelativeSource AncestorType=DataGrid}}"
+															CommandParameter="{Binding .}" />
+											<Button Content="保存" Classes="Success"
+															Command="{Binding DataContext.SavePointCommand,RelativeSource={RelativeSource AncestorType=DataGrid}}"
+															CommandParameter="{Binding .}" />
+										</StackPanel>
+									</DataTemplate>
+								</DataGridTemplateColumn.CellTemplate>
+							</DataGridTemplateColumn>
+							<DataGridTextColumn Header="描述" Width="240" Binding="{Binding DataContext.Description}" />
+						</DataGrid.Columns>
+					</DataGrid>
+				</HeaderedContentControl>
+			</TabItem>
+
+		</TabControl>
+	</Grid>
+</UiView>

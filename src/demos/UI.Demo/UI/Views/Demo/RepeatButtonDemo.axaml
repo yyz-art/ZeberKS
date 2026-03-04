@@ -1,0 +1,80 @@
+<UserControl
+	x:Class="OinetApp.UI.Views.Demo.RepeatButtonDemo"
+	xmlns="https://github.com/avaloniaui"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	d:DesignHeight="450"
+	d:DesignWidth="800"
+	mc:Ignorable="d">
+	<StackPanel HorizontalAlignment="Left" Spacing="20">
+		<TextBlock>Light (Default)</TextBlock>
+		<StackPanel Orientation="Horizontal" Spacing="20">
+			<RepeatButton Classes="Primary">Primary</RepeatButton>
+			<RepeatButton Classes="Secondary">Secondary</RepeatButton>
+			<RepeatButton Classes="Tertiary">Tertiary</RepeatButton>
+			<RepeatButton Classes="Success">Success</RepeatButton>
+			<RepeatButton Classes="Warning">Warning</RepeatButton>
+			<RepeatButton Classes="Danger">Danger</RepeatButton>
+			<RepeatButton Classes="Danger" IsEnabled="False">Disabled</RepeatButton>
+		</StackPanel>
+		<TextBlock>Solid</TextBlock>
+		<StackPanel Orientation="Horizontal" Spacing="20">
+			<RepeatButton Classes="Primary" Theme="{DynamicResource RepeatButton-Solid}">Primary</RepeatButton>
+			<RepeatButton Classes="Secondary" Theme="{DynamicResource RepeatButton-Solid}">Secondary</RepeatButton>
+			<RepeatButton Classes="Tertiary" Theme="{DynamicResource RepeatButton-Solid}">Tertiary</RepeatButton>
+			<RepeatButton Classes="Success" Theme="{DynamicResource RepeatButton-Solid}">Success</RepeatButton>
+			<RepeatButton Classes="Warning" Theme="{DynamicResource RepeatButton-Solid}">Warning</RepeatButton>
+			<RepeatButton Classes="Danger" Theme="{DynamicResource RepeatButton-Solid}">Danger</RepeatButton>
+			<RepeatButton
+				Classes="Danger"
+				IsEnabled="False"
+				Theme="{DynamicResource RepeatButton-Solid}">
+				Disabled
+			</RepeatButton>
+		</StackPanel>
+		<TextBlock>Outline</TextBlock>
+		<StackPanel Orientation="Horizontal" Spacing="20">
+			<RepeatButton Classes="Primary" Theme="{DynamicResource RepeatButton-Outline}">Primary</RepeatButton>
+			<RepeatButton Classes="Secondary" Theme="{DynamicResource RepeatButton-Outline}">Secondary</RepeatButton>
+			<RepeatButton Classes="Tertiary" Theme="{DynamicResource RepeatButton-Outline}">Tertiary</RepeatButton>
+			<RepeatButton Classes="Success" Theme="{DynamicResource RepeatButton-Outline}">Success</RepeatButton>
+			<RepeatButton Classes="Warning" Theme="{DynamicResource RepeatButton-Outline}">Warning</RepeatButton>
+			<RepeatButton Classes="Danger" Theme="{DynamicResource RepeatButton-Outline}">Danger</RepeatButton>
+			<RepeatButton
+				Classes="Danger"
+				IsEnabled="False"
+				Theme="{DynamicResource RepeatButton-Outline}">
+				Disabled
+			</RepeatButton>
+		</StackPanel>
+		<TextBlock>Borderless</TextBlock>
+		<StackPanel Orientation="Horizontal" Spacing="20">
+			<RepeatButton Classes="Primary" Theme="{DynamicResource RepeatButton-Borderless}">Primary</RepeatButton>
+			<RepeatButton Classes="Secondary" Theme="{DynamicResource RepeatButton-Borderless}">Secondary</RepeatButton>
+			<RepeatButton Classes="Tertiary" Theme="{DynamicResource RepeatButton-Borderless}">Tertiary</RepeatButton>
+			<RepeatButton Classes="Success" Theme="{DynamicResource RepeatButton-Borderless}">Success</RepeatButton>
+			<RepeatButton Classes="Warning" Theme="{DynamicResource RepeatButton-Borderless}">Warning</RepeatButton>
+			<RepeatButton Classes="Danger" Theme="{DynamicResource RepeatButton-Borderless}">Danger</RepeatButton>
+			<RepeatButton
+				Classes="Danger"
+				IsEnabled="False"
+				Theme="{DynamicResource RepeatButton-Borderless}">
+				Disabled
+			</RepeatButton>
+		</StackPanel>
+		<TextBlock>Disabled</TextBlock>
+		<StackPanel Background="{DynamicResource Color-Background1}" Orientation="Horizontal" Spacing="20">
+			<Button IsEnabled="False">Light</Button>
+			<Button IsEnabled="False" Theme="{DynamicResource Button-Solid}">Solid</Button>
+			<Button IsEnabled="False" Theme="{DynamicResource Button-Outline}">Outline</Button>
+			<Button IsEnabled="False" Theme="{DynamicResource Button-Borderless}">Borderless</Button>
+		</StackPanel>
+		<TextBlock>Size Classes</TextBlock>
+		<StackPanel Orientation="Horizontal" Spacing="20">
+			<RepeatButton Classes="Small">Small</RepeatButton>
+			<RepeatButton>Default</RepeatButton>
+			<RepeatButton Classes="Large">Large</RepeatButton>
+		</StackPanel>
+	</StackPanel>
+</UserControl>

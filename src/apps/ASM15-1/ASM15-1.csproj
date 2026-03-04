@@ -1,0 +1,55 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<RootNamespace>$(ProjectApplicationBaseName)</RootNamespace>
+		<AssemblyName>$(ProjectApplicationBaseName)</AssemblyName>
+		<OutputType>Exe</OutputType>
+		<DefineConstants>DEFINE_MODEL_INCLUDE</DefineConstants>
+		<ApplicationManifest>Assets/app.manifest</ApplicationManifest>
+		<IsUiProject>true</IsUiProject>
+	</PropertyGroup>
+	<Import Project="$(SolutionDir)build/define/DefBase.csproj"/>
+	<Import Project="$(SolutionDir)build/define/DefCore.csproj"/>
+	<Import Project="$(SolutionDir)build/define/DefUiApp.csproj"/>
+	<Import Project="$(SolutionDir)build/define/DefHotAvaloniaApp.csproj"/>
+	<Import Project="$(SolutionDir)build/define/DefWebApp.csproj"/>
+	<ItemGroup>
+		<ProjectReference Include="$(CommonProjectPath)Common.Base/Common.Base.csproj"/>
+		<ProjectReference Include="$(CommonProjectPath)Common.Core/Common.Core.csproj"/>
+	</ItemGroup>
+	<ItemGroup>
+	  <Compile Update="UI\Views\Main\CamerasView.axaml.cs">
+	    <DependentUpon>CamerasView.axaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="UI\Views\Main\NgAreaView.axaml.cs">
+	    <DependentUpon>NgAreaView.axaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="UI\Views\Main\SuctionHeadView.axaml.cs">
+	    <DependentUpon>SuctionHeadView.axaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="UI\Views\Main\AxisTrackView.axaml.cs">
+	    <DependentUpon>TestView.axaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="UI\Views\MainView.axaml.cs">
+	    <DependentUpon>MainView.axaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="UI\Views\Main\FeederView.axaml.cs">
+	    <DependentUpon>FeederView.axaml</DependentUpon>
+	    <SubType>Code</SubType>
+	  </Compile>
+	  <Compile Update="UI\Views\Main\DeviceStatusView.axaml.cs">
+	    <DependentUpon>DeviceStatusView.axaml</DependentUpon>
+	    <SubType>Code</SubType>
+	  </Compile>
+	  <Compile Update="UI\Views\Main\RunLogView.axaml.cs">
+	    <DependentUpon>RunLogView.axaml</DependentUpon>
+	    <SubType>Code</SubType>
+	  </Compile>
+	</ItemGroup>
+	<ItemGroup>
+	  <PackageReference Include="System.IO.Ports" Version="10.0.3" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Folder Include="Ext\Models\" />
+	</ItemGroup>
+
+</Project>

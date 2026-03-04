@@ -1,0 +1,41 @@
+﻿<UiView xmlns="https://github.com/avaloniaui"
+				xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+				xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+				xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+				xmlns:account="clr-namespace:ZitApp.UI.Account"
+				mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+				x:Class="ZitApp.UI.Account.AccountManageView"
+				HorizontalContentAlignment="Center"
+				VerticalContentAlignment="Center">
+	<Design.DataContext>
+		<account:AccountManageVM />
+	</Design.DataContext>
+	<HeaderedContentControl Theme="{DynamicResource HCC-GroupBox}">
+		<HeaderedContentControl.Header>
+			<LinearPanel Orientation="Horizontal" Padding="5 2" Spacing="10">
+				<Label Content="{StaticResource I18N.Common.账户管理}"
+							Theme="{StaticResource Label-Tag}" Classes="Ghost Green" VerticalAlignment="Stretch" />
+				<Control LinearPanel.Weight="1" />
+				<Button Content="{StaticResource I18N.Common.重新加载}"
+								Command="{Binding ReloadAccountsCommand}" />
+				<Button Content="{StaticResource I18N.Common.保存}"
+								Command="{Binding SaveAccountsChangesCommand}" />
+
+			</LinearPanel>
+		</HeaderedContentControl.Header>
+		<DataGrid MinHeight="300"
+							ItemsSource="{Binding Accounts}"
+							CanUserResizeColumns="True" CanUserSortColumns="True" GridLinesVisibility="All"
+							BorderBrush="{DynamicResource Brush-Border}"
+							BorderThickness="1">
+			<DataGrid.Columns>
+				<DataGridTextColumn Header="Id" Binding="{Binding Id}" />
+				<DataGridTextColumn Header="{StaticResource I18N.Common.账号}" MinWidth="100" Binding="{Binding IdentityName}" />
+				<DataGridTextColumn Header="{StaticResource I18N.Common.密码}" MinWidth="160" Binding="{Binding SecurityKey}" />
+				<DataGridTextColumn Header="{StaticResource I18N.Common.权限等级}" MinWidth="100" Binding="{Binding RoleFlags}" />
+				<DataGridTextColumn Header="{StaticResource I18N.Common.备注}" MinWidth="300" Binding="{Binding Comment}" />
+			</DataGrid.Columns>
+		</DataGrid>
+	</HeaderedContentControl>
+
+</UiView>

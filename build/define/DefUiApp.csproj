@@ -1,0 +1,68 @@
+<Project>
+
+	<!--文件结构 -->
+	<ItemGroup>
+		<AvaloniaResource Include="$(SolutionDir)assets/shared/app/ui/**/*.*"
+								Link="UI/Assets/%(RecursiveDir)%(Filename)%(Extension)"/>
+		<AvaloniaResource Include="UI/Assets/**/*.*"/>
+		<None Update="UI/App.vue;UI/index.html;UI/package.json;UI/package-lock.json;UI/tsconfig.json;UI/vite.config.js" DependentUpon="app.js"/>
+		<AvaloniaXaml Update="UI/UiApp.axaml;UI/MainWindow.axaml" DependentUpon="AppVM.cs"/>
+		<Compile Update="UI/UiApp.cs;UI/AppWindowVM.cs;UI/AppWindow.axaml.cs" SubType="Code" DependentUpon="AppVM.cs"/>
+	</ItemGroup>
+
+	<!-- Framework UI Include	-->
+	<ItemGroup Condition="'$(FrameworkUsingMode)'=='project'">
+		<ProjectReference Include="$(FrameworkProjectPath)UI/UI.csproj"/>
+		<ProjectReference Include="$(FrameworkProjectPath)UI.Theme/UI.Theme.csproj"/>
+	</ItemGroup>
+	<ItemGroup Condition="'$(FrameworkUsingMode)'=='single-project'">
+		<ProjectReference Include="$(FrameworkProjectPath)UI/UI.csproj"/>
+		<ProjectReference Include="$(FrameworkProjectPath)UI.Theme/UI.Theme.csproj"/>
+	</ItemGroup>
+	<ItemGroup Condition="'$(FrameworkUsingMode)'=='single-assembly'">
+		<Reference Include="$(FrameworkAssemblyPath)$(FrameworkName).UI.dll"/>
+		<ProjectReference Include="$(FrameworkProjectPath)UI.Theme/UI.Theme.csproj"/>
+	</ItemGroup>
+	<ItemGroup Condition="'$(FrameworkUsingMode)'=='assembly'">
+		<Reference Include="$(FrameworkAssemblyPath)$(FrameworkName).UI.dll"/>
+		<Reference Include="$(FrameworkAssemblyPath)$(FrameworkName).UI.Theme.dll"/>
+	</ItemGroup>
+
+	<!--	Avalonia Config -->
+	<ItemGroup>
+
+		<PackageReference Include="LiveChartsCore.SkiaSharpView.Avalonia" Version="$(LiveChartsVersion)"/>
+		<PackageReference Include="Avalonia" Version="$(AvaloniaVersion)"/>
+		<PackageReference Include="Avalonia.Desktop" Version="$(AvaloniaVersion)"/>
+		<PackageReference Include="Avalonia.Themes.Fluent" Version="$(AvaloniaVersion)"/>
+		<PackageReference Include="Avalonia.Fonts.Inter" Version="$(AvaloniaVersion)"/>
+		<PackageReference Include="Avalonia.Diagnostics" Version="$(AvaloniaVersion)">
+			<IncludeAssets Condition="'$(Configuration)' != 'Debug'">None</IncludeAssets>
+			<PrivateAssets Condition="'$(Configuration)' != 'Debug'">All</PrivateAssets>
+		</PackageReference>
+		<PackageReference Include="Avalonia.Controls.ColorPicker" Version="$(AvaloniaVersion)"/>
+		<PackageReference Include="Avalonia.Controls.DataGrid" Version="$(AvaloniaVersion)"/>
+		<PackageReference Include="Avalonia.Controls.TreeDataGrid" Version="$(AvaloniaTreeDataGridVersion)"/>
+		<PackageReference Include="Avalonia.Markup.Xaml.Loader" Version="$(AvaloniaVersion)"/>
+		<PackageReference Include="ReactiveUI" Version="$(ReactiveUIVersion)"/>
+		<PackageReference Include="ReactiveUI.Avalonia" Version="$(ReactiveUIAvaloniaVersion)"/>
+		<PackageReference Include="IconPacks.Avalonia" Version="1.3.0"/>
+
+		<AssemblyAttribute Include="Avalonia.Metadata.XmlnsDefinition">
+			<_Parameter1>https://github.com/avaloniaui</_Parameter1>
+			<_Parameter2>$(ProjectApplicationBaseName)</_Parameter2>
+		</AssemblyAttribute>
+		<AssemblyAttribute Include="Avalonia.Metadata.XmlnsDefinition">
+			<_Parameter1>https://github.com/avaloniaui</_Parameter1>
+			<_Parameter2>$(ProjectApplicationBaseName).UI</_Parameter2>
+		</AssemblyAttribute>
+		<AssemblyAttribute Include="Avalonia.Metadata.XmlnsDefinition">
+			<_Parameter1>https://github.com/avaloniaui</_Parameter1>
+			<_Parameter2>$(ProjectApplicationBaseName).UI.Views</_Parameter2>
+		</AssemblyAttribute>
+		<AssemblyAttribute Include="Avalonia.Metadata.XmlnsDefinition">
+			<_Parameter1>https://github.com/avaloniaui</_Parameter1>
+			<_Parameter2>$(ProjectApplicationBaseName).UI.Controls</_Parameter2>
+		</AssemblyAttribute>
+	</ItemGroup>
+</Project>

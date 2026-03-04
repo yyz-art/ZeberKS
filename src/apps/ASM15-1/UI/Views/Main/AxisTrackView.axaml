@@ -1,0 +1,28 @@
+﻿<UiView xmlns="https://github.com/avaloniaui"
+				xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+				xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+				xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+				xmlns:main="using:ZitApp.UI.Views.Main"
+				xmlns:main1="clr-namespace:ZitApp.UI.Main"
+				mc:Ignorable="d" d:DesignWidth="500" d:DesignHeight="200"
+				x:Class="ZitApp.UI.Main.AxisTrackView"
+				x:DataType="main1:AxisTrackVM"
+				UiTickInterval="300"
+				UiTickCommand="{Binding UiTickCommand}">
+	<Design.DataContext>
+		<main1:AxisTrackVM />
+	</Design.DataContext>
+	<PercentCanvas>
+		<Rectangle Fill="Aqua" Height="40" PercentCanvas.Anchor="Center" PercentCanvas.HStretch="1"
+							PercentCanvas.XPercent="0.5" PercentCanvas.YPercent="0.25" />
+		
+		<Rectangle Fill="Aqua" Height="40" PercentCanvas.Anchor="Center" PercentCanvas.HStretch="1"
+							PercentCanvas.XPercent="0.5" PercentCanvas.YPercent="0.75" />
+		
+		<Ellipse Fill="Coral" Width="30" Height="30" PercentCanvas.Anchor="Center"
+						PercentCanvas.XPercent="{Binding Axis1Percent, Mode=TwoWay}" PercentCanvas.YPercent="0.25"/>
+		
+		<Ellipse Fill="Coral" Width="30" Height="30" PercentCanvas.Anchor="Center"
+						PercentCanvas.XPercent="{Binding Axis2Percent, Mode=TwoWay}" PercentCanvas.YPercent="0.75"/>
+	</PercentCanvas>
+</UiView>

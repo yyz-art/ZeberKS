@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<RootNamespace>$(ProjectApplicationBaseName)</RootNamespace>
+		<AssemblyName>$(ProjectApplicationBaseName).Core</AssemblyName>
+	</PropertyGroup>
+	<Import Project="$(SolutionDir)build/define/DefBase.csproj"/>
+	<Import Project="$(SolutionDir)build/define/DefCore.csproj"/>
+	<Import Project="$(SolutionDir)build/define/DefUiApp.csproj"/>
+	<Import Project="$(SolutionDir)build/define/DefWebApp.csproj"/>
+	
+	<ItemGroup>
+		<Folder Include="Devices\"/>
+		<Compile Update="UI\Views\Devices\ScrewView.axaml.cs">
+			<DependentUpon>ScrewView.axaml</DependentUpon>
+			<SubType>Code</SubType>
+		</Compile>
+		<Folder Include="UI\Views\Common\" />
+	</ItemGroup>
+	
+	<ItemGroup>
+	  <ProjectReference Include="..\Common.Base\Common.Base.csproj" />
+	</ItemGroup>
+	
+	<ItemGroup>
+	  <PackageReference Include="System.IO.Ports" Version="10.0.3" />
+	</ItemGroup>
+
+</Project>

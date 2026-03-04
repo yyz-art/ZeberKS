@@ -1,0 +1,27 @@
+﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
+							xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<Design.PreviewWith>
+		<ObjectAccessorView Height="100" Padding="10" MinWidth="100" Background="Aquamarine"></ObjectAccessorView>
+	</Design.PreviewWith>
+	<ControlTheme x:Key="{x:Type ObjectAccessorView}" TargetType="ObjectAccessorView">
+		<Setter Property="Background" Value="Transparent" />
+		<Setter Property="Height" Value="{DynamicResource IconElementThemeHeight}" />
+		<Setter Property="Width" Value="{DynamicResource IconElementThemeWidth}" />
+		<!-- <Setter Property="Template"> -->
+		<!-- 	<ControlTemplate TargetType="ObjectAccessorView"> -->
+		<!-- 		<Border Padding="{TemplateBinding Padding}" Height="{TemplateBinding Height}" Width="{TemplateBinding Width}" Background="{TemplateBinding Background}"> -->
+		<!-- 			<LinearPanel Orientation="Vertical"> -->
+		<!-- 				<LinearPanel Orientation="Horizontal"> -->
+		<!-- 					<Label Content="PATH"/> -->
+		<!-- 					<Label Content="/TestConfig/Scanner"/> -->
+		<!-- 				</LinearPanel> -->
+		<!-- 				<ListBox ItemsSource="{TemplateBinding CurrentProperties}"></ListBox> -->
+		<!-- 			</LinearPanel> -->
+		<!-- 		</Border> -->
+		<!-- 	</ControlTemplate> -->
+		<!-- </Setter> -->
+		<Style Selector="^.Active /template/ Path#PART_Path">
+			<Setter Property="Fill" Value="{TemplateBinding BorderBrush}" />
+		</Style>
+	</ControlTheme>
+</ResourceDictionary>

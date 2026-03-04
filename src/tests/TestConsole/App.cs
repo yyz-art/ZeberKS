@@ -1,0 +1,83 @@
+﻿using ZC;
+using ZC.Development;
+using ZC.EnhanceApp;
+using ZC.Web.Server;
+using ZC.Net;
+using ZC.Net.Sockets;
+using SqlSugar;
+using TestConsole;
+using ZitApp.EAP;
+using ZitApp.SIFS;
+using ZitApp.Utils;
+
+DevUtils.DebugMode = DevDebugMode.LocalDebug;
+EnhanceAppCore.InitializeEnvironment();
+ObjectContainerOptions.Default.EnableCyclicDependencyCheck = true;
+var config = new AppConfig
+{
+};
+config = Debugger.IsAttached ? config : AppCore.LoadConfig<AppConfig>();
+var app = new App(config).UseLogger()
+	.AddToIOC(typeof(App).Assembly.GetTypes(), RegistrationMode.Override)
+	.AddToIOC(typeof(CommonAppCore).Assembly.GetTypes(), RegistrationMode.Override)
+	.AddToIOC(typeof(CommonUiAppCore).Assembly.GetTypes(), RegistrationMode.Override);
+
+await app.Initialize().UnwarpAsync(errThrow: true, success: _ => { }, onError: r => { });
+await app.Start().UnwarpAsync(errThrow: true, success: _ => { }, onError: r => { });
+var eapService = app.IOC.AddSingleton<EapServiceBase>().Get<EapServiceBase>(
+	null,
+	arg: InjectArgument.Create(new TcpServerSocket("127.0.0.1", 23456)));
+eapService.RegisterHandlerMethods();
+await eapService.Start();
+while (true)
+{
+	// var client = new SifsClient(new NetworkSocketConfig("127.0.0.1", 502));
+	// client.Test();
+}
+
+var generator = new BinStructSourceGenerator();
+var content = File.ReadAllText("E:\\XKJ-ZEBER\\src\\apps\\ASM15-1\\Ext\\BinStructs\\BinStructs.xml");
+generator.Generate(content);
+Environment.Exit(0);
+
+var filesZipToLocalFs = ZipUtils.CreateFilesZipToLocalFS("/out-z.zip", [
+	"E:\\XKJ-ZEBER\\build\\define\\DefBase.csproj",
+	"E:\\XKJ-ZEBER\\build\\define\\DefCore.csproj",
+]);
+await filesZipToLocalFs.UnwarpAsync();
+Console.WriteLine("Hello World!");
+
+public sealed class App(AppConfig config) : CommonUiAppCore
+{
+	public new AppConfig Config { get; set; } = config;
+
+	protected override async Task<Result> OnInitialize(object? context = null, CancellationToken ctk = default)
+	{
+		// using var dbClient = IOC.Get<ISqlSugarClient>();
+
+		return default;
+	}
+
+	protected override async Task<Result> OnStart(object? context = null, CancellationToken ctk = default)
+	{
+		await StartTaskServices();
+		// var tcpServerSocket = new TcpStreamServerSocket("0.0.0.0", 80);
+		// var httpServer = IOC.Get<HttpServer>();
+		// tcpServerSocket.Acceptor = httpServer;
+		// await tcpServerSocket.StartAsync().UnwarpAsync();
+		return default;
+	}
+}
+
+public static partial class Program
+{
+	// public static AppBuilder BuildAvaloniaApp() => UiApp.Build();
+}
+
+public static class AppLoader
+{
+#if RELEASE
+	[ModuleInitializer]
+#endif
+	public static void Initialize() => CommonLibLoader.Initialize();
+}

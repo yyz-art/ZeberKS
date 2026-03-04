@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json.schemastore.org/launchsettings.json",
+  "profiles": {
+    "App": {
+      "commandName": "Project",
+      "targetProject": "./UI.Demo.csproj"
+    },
+    "App:Roslyn": {
+      "commandName": "DebugRoslynComponent",
+      "targetProject": "./UI.Demo.csproj"
+    },
+    "UiTheme:Roslyn": {
+      "commandName": "DebugRoslynComponent",
+      "targetProject": "../src/framework/UI.Theme/UI.Theme.csproj"
+    }
+  }
+}

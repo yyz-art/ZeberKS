@@ -1,0 +1,34 @@
+<Application
+	xmlns="https://github.com/avaloniaui"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:system="using:System"
+	xmlns:role="using:Oinet.UI.Role"
+	x:Class="OinetApp.UI.UiApp"
+	RequestedThemeVariant="Dark">
+	<Application.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceInclude Source="/UI/Ext/Themes/_index.axaml" />
+				<ResourceInclude Source="/UI/Assets/Icons.axaml" />
+				<ResourceInclude Source="avares://Oinet.UI.Theme/_index.axaml" />
+			</ResourceDictionary.MergedDictionaries>
+			<role:UiRoleChecker x:Key="RoleChecker" />
+			<EnumEqualsConverter x:Key="EnumEqualsConverter" />
+		</ResourceDictionary>
+	</Application.Resources>
+	<Application.Styles>
+		<StyleInclude Source="avares://IconPacks.Avalonia/Icons.axaml" />
+		<StyleInclude Source="avares://Oinet.UI.Theme/Styles/_index.axaml" />
+		<UiTheme Locale="zh-CN" />
+		<Style Selector="Label.Label">
+			<Setter Property="VerticalAlignment" Value="Center" />
+		</Style>
+		<Style Selector="Label.Value">
+			<Setter Property="VerticalAlignment" Value="Center" />
+			<Setter Property="BorderBrush" Value="Black" />
+			<Setter Property="MinHeight" Value="20"></Setter>
+			<Setter Property="HorizontalAlignment" Value="Stretch"></Setter>
+			<Setter Property="BorderThickness" Value="1" />
+		</Style>
+	</Application.Styles>
+</Application>

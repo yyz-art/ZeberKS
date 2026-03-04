@@ -1,0 +1,96 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>$(DotnetTargetFrameworkVersion)</TargetFramework>
+		<LangVersion>$(DotnetLangVersion)</LangVersion>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<RootNamespace>$(FrameworkName).UI</RootNamespace>
+		<AssemblyName>$(FrameworkName).UI.Theme</AssemblyName>
+		<ResourceGroupName>CORE</ResourceGroupName>
+		<CoreLibPath>../../-/libs/Core</CoreLibPath>
+		<CoreLibProjectPath>../</CoreLibProjectPath>
+		<IsFrameworkProject>true</IsFrameworkProject>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<AdditionalFiles Include=".\**\*.axaml"/>
+
+	</ItemGroup>
+
+
+	<ItemGroup>
+		<PackageReference Include="Avalonia" Version="$(AvaloniaVersion)"/>
+		<PackageReference Include="Avalonia.Controls.ColorPicker" Version="$(AvaloniaVersion)"/>
+		<PackageReference Include="Avalonia.Controls.DataGrid" Version="$(AvaloniaVersion)"/>
+		<PackageReference Include="Avalonia.Controls.TreeDataGrid" Version="11.1.1"/>
+		<PackageReference Include="ReactiveUI.Avalonia" Version="$(ReactiveUIAvaloniaVersion)"/>
+	</ItemGroup>
+
+	<!-- 文件折叠 -->
+	<ItemGroup>
+		<Compile Update="Themes\LightTheme.axaml.cs" DependentUpon="LightTheme.axaml" SubType="Code"/>
+		<Compile Update="Themes\DarkTheme.axaml.cs" DependentUpon="DarkTheme.axaml" SubType="Code"/>
+		<Compile Update="Themes\AquaticTheme.axaml.cs" DependentUpon="AquaticTheme.axaml" SubType="Code"/>
+		<Compile Update="Themes\DesertTheme.axaml.cs" DependentUpon="DesertTheme.axaml" SubType="Code"/>
+		<Compile Update="Themes\DuskTheme.axaml.cs" DependentUpon="DuskTheme.axaml" SubType="Code"/>
+		<Compile Update="Themes\NightSkyTheme.axaml.cs" DependentUpon="NightSkyTheme.axaml" SubType="Code"/>
+		<Compile Update="RES\Values\_index.axam.cs" DependentUpon="_index.axaml"/>
+		<Compile Update="Controls\ColorPicker\ColorPickerTheme.axaml.cs" DependentUpon="ColorPickerSemiTheme.axaml" SubType="Code"/>
+		<Compile Update="Controls\TreeDataGrid\TreeDataGridTheme.axaml.cs" DependentUpon="TreeDataGridSemiTheme.axaml" SubType="Code"/>
+		<Compile Update="Controls\WebView\WebViewTheme.axaml.cs" DependentUpon="DataGridTheme.axaml" SubType="Code"/>
+		<Compile Update="UiThemeResource.cs" DependentUpon="UiThemeResource.axaml" SubType="Code"/>
+		<Compile Update="Controls\LayoutDockPanel.axaml.cs">
+			<DependentUpon>LayoutDockPanel.axaml</DependentUpon>
+		</Compile>
+	</ItemGroup>
+
+
+	<!-- Attributes -->
+	<ItemGroup>
+		<AssemblyAttribute Include="Avalonia.Metadata.XmlnsDefinition">
+			<_Parameter1>https://github.com/avaloniaui</_Parameter1>
+			<_Parameter2>ZC.UI</_Parameter2>
+		</AssemblyAttribute>
+		<AssemblyAttribute Include="Avalonia.Metadata.XmlnsDefinition">
+			<_Parameter1>https://github.com/avaloniaui</_Parameter1>
+			<_Parameter2>ZC.UI.Controls</_Parameter2>
+		</AssemblyAttribute>
+		<AssemblyAttribute Include="Avalonia.Metadata.XmlnsDefinition">
+			<_Parameter1>https://github.com/avaloniaui</_Parameter1>
+			<_Parameter2>ZC.UI.Shapes</_Parameter2>
+		</AssemblyAttribute>
+		<AssemblyAttribute Include="Avalonia.Metadata.XmlnsDefinition">
+			<_Parameter1>https://github.com/avaloniaui</_Parameter1>
+			<_Parameter2>ZC.UI.Utils</_Parameter2>
+		</AssemblyAttribute>
+	</ItemGroup>
+
+
+	<!-- Framework Using By Project	-->
+	<ItemGroup Condition="'$(FrameworkUsingMode)'=='project'">
+		<ProjectReference Include="$(FrameworkProjectPath)RoslynGen/RoslynGen.csproj" OutputItemType="Analyzer"/>
+		<ProjectReference Include="$(FrameworkProjectPath)RES/RES.csproj"/>
+		<ProjectReference Include="$(FrameworkProjectPath)UI/UI.csproj"/>
+	</ItemGroup>
+
+	<ItemGroup Condition="'$(FrameworkUsingMode)'=='single-project'">
+		<ProjectReference Include="$(FrameworkProjectPath)RoslynGen/RoslynGen.csproj" OutputItemType="Analyzer"/>
+		<ProjectReference Include="$(FrameworkProjectPath)Framework/Framework.csproj"/>
+		<ProjectReference Include="$(FrameworkProjectPath)UI/UI.csproj"/>
+	</ItemGroup>
+	<ItemGroup Condition="'$(FrameworkUsingMode)'=='single-assembly'">
+		<Analyzer Include="$(FrameworkAssemblyPath)$(FrameworkName).RoslynGen.dll"/>
+		<Reference Include="$(FrameworkAssemblyPath)$(FrameworkName).Framework.dll"/>
+		<Reference Include="$(FrameworkAssemblyPath)$(FrameworkName).UI.dll"/>
+	</ItemGroup>
+	<!-- Framework Using By Assembly	-->
+	<ItemGroup Condition="'$(FrameworkUsingMode)'=='assembly'">
+		<Analyzer Include="$(FrameworkAssemblyPath)$(FrameworkName).RoslynGen.dll"/>
+		<Reference Include="$(FrameworkAssemblyPath)$(FrameworkName).Base.dll"/>
+		<Reference Include="$(FrameworkAssemblyPath)$(FrameworkName).RES.dll"/>
+		<Reference Include="$(FrameworkAssemblyPath)$(FrameworkName).UI.dll"/>
+	</ItemGroup>
+
+
+</Project>

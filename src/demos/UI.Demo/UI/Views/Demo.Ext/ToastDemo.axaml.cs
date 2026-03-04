@@ -1,0 +1,26 @@
+﻿namespace OinetApp.UI.Views.Demo.Ext;
+
+public partial class ToastDemo : UserControl
+{
+	private ToastDemoViewModel _viewModel;
+
+	public ToastDemo()
+	{
+		InitializeComponent();
+		_viewModel = new ToastDemoViewModel();
+		DataContext = _viewModel;
+	}
+
+	protected override void OnAttachedToVisualTree(VisualTreeAttachmentEventArgs e)
+	{
+		base.OnAttachedToVisualTree(e);
+		var topLevel = TopLevel.GetTopLevel(this);
+		_viewModel.ToastManager = new UiToastManager(topLevel) { MaxItems = 3 };
+	}
+
+	protected override void OnDetachedFromVisualTree(VisualTreeAttachmentEventArgs e)
+	{
+		base.OnDetachedFromVisualTree(e);
+		_viewModel.ToastManager?.Uninstall();
+	}
+}

@@ -1,0 +1,61 @@
+<Solution>
+  <Folder Name="/apps/">
+    <Project Path="src/apps/ASM15-1/ASM15-1.csproj" />
+  </Folder>
+  <Folder Name="/common/">
+    <Project Path="src/common/Common.Base/Common.Base.csproj" />
+    <Project Path="src/common/Common.Core/Common.Core.csproj" />
+    <Project Path="src/common/Common.Shared/Common.Shared.csproj" />
+  </Folder>
+  <Folder Name="/demos/" />
+  <Folder Name="/demos/ui/">
+    <Project Path="src/demos/UI.Demo/UI.Demo.csproj" />
+  </Folder>
+  <Folder Name="/framework/" />
+<!--  <Folder Name="/framework/">-->
+<!--    <Project Path="src/framework/Framework/Framework.csproj" />-->
+<!--  </Folder>-->
+<!--  <Folder Name="/framework/core/">-->
+<!--    <Project Path="src/framework/Application/Application.csproj" />-->
+<!--    <Project Path="src/framework/Base/Base.csproj" />-->
+<!--    <Project Path="src/framework/Enhance/Enhance.csproj" />-->
+<!--    <Project Path="src/framework/FS/FS.csproj" />-->
+<!--    <Project Path="src/framework/IOC/IOC.csproj" />-->
+<!--    <Project Path="src/framework/RoslynGen/RoslynGen.csproj" />-->
+<!--    <Project Path="src/framework/Tasks/Tasks.csproj" />-->
+<!--    <Project Path="src/framework/Text/Text.csproj" />-->
+<!--    <Project Path="src/framework/Vision/Vision.csproj" />-->
+<!--  </Folder>-->
+<!--  <Folder Name="/framework/ext/">-->
+<!--    <Project Path="src/framework/AccessControl/AccessControl.csproj" />-->
+<!--    <Project Path="src/framework/BinStructs/BinStructs.csproj" />-->
+<!--    <Project Path="src/framework/CFG/CFG.csproj" />-->
+<!--    <Project Path="src/framework/DB/DB.csproj" />-->
+<!--    <Project Path="src/framework/EasyIO.SerialPorts/EasyIO.SerialPorts.csproj" />-->
+<!--    <Project Path="src/framework/EasyIO/EasyIO.csproj" />-->
+<!--    <Project Path="src/framework/EventBus/EventBus.csproj" />-->
+<!--    <Project Path="src/framework/FlowNode/FlowNode.csproj" />-->
+<!--    <Project Path="src/framework/Identity/Identity.csproj" />-->
+<!--    <Project Path="src/framework/KvStorage/KvStorage.csproj" />-->
+<!--    <Project Path="src/framework/MES/MES.csproj" />-->
+<!--    <Project Path="src/framework/ModelClassToolkit/ModelClassToolkit.csproj" />-->
+<!--    <Project Path="src/framework/Mvvm/Mvvm.csproj" />-->
+<!--    <Project Path="src/framework/Plugin/Plugin.csproj" />-->
+<!--    <Project Path="src/framework/RES/RES.csproj" />-->
+<!--  </Folder>-->
+<!--  <Folder Name="/framework/tp/">-->
+<!--    <Project Path="src/framework/MQ/MQ.csproj" />-->
+<!--    <Project Path="src/framework/MQTT/MQTT.csproj" />-->
+<!--    <Project Path="src/framework/RPC/RPC.csproj" />-->
+<!--    <Project Path="src/framework/Web.Server/Web.Server.csproj" />-->
+<!--  </Folder>-->
+  <Folder Name="/framework/ui/">
+<!--    <Project Path="src/framework/UI.Enhance/UI.Enhance.csproj" />-->
+    <Project Path="src/framework/UI.Theme/UI.Theme.csproj" />
+<!--    <Project Path="src/framework/UI/UI.csproj" />-->
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="src/tests/TestConsole/TestConsole.csproj" />
+  </Folder>
+  <Project Path=".sln/Solution.csproj" />
+</Solution>

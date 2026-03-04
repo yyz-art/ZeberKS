@@ -1,0 +1,629 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>$(DotnetTargetFrameworkVersion)</TargetFramework>
+		<LangVersion>$(DotnetLangVersion)</LangVersion>		<RootNamespace>$(FrameworkName)App</RootNamespace>
+		<AssemblyName>$(FrameworkName)App</AssemblyName>
+		<OutputType>Exe</OutputType>
+		<DefineConstants>DEFINE_MODEL_INCLUDE</DefineConstants>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>true</ImplicitUsings>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+		<ApplicationManifest>Assets/app.manifest</ApplicationManifest>
+		<NoWarn>CA1822</NoWarn>
+		
+		<EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
+		<CompilerGeneratedFilesOutputPath>Assets/.generated</CompilerGeneratedFilesOutputPath>
+		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+		<AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+
+
+		<!--发布打包-->
+		<PublishSingleFile>false</PublishSingleFile>
+		<SatelliteResourceLanguages>zh-CN</SatelliteResourceLanguages>
+		<UsingSlnTasks>true</UsingSlnTasks>
+	</PropertyGroup>
+
+	<PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+		<Optimize>true</Optimize>
+	</PropertyGroup>
+
+	<PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+		<Optimize>false</Optimize>
+	</PropertyGroup>
+
+	<!--文件结构 -->
+	<ItemGroup>
+		<None Include="bin/Debug/**/*.*" Link="Assets/.bin-debug/%(RecursiveDir)%(Filename)%(Extension)" />
+		<None Include="bin/Release/**/*.*" Link="Assets/.bin-release/%(RecursiveDir)%(Filename)%(Extension)" />
+		<EmbeddedResource Remove="dist/**"/>
+		<EmbeddedResource Remove="UI/dist/**"/>
+		<None Remove="DDD.UbiquitousLanguageRegistry.txt"/>
+		<AvaloniaResource Include="UI/Assets/**/*.*"/>
+		<Folder Include="Assets\.bin-release\" />
+		<Folder Include="Assets\@data\Images\" />
+		<Folder Include="Services/Models/"/>
+		<None Include="Assets/.generated/**/*"/>
+		<None Remove="UI/dist/**"/>
+		<None Remove="App.csproj.DotSettings"/>
+		<None Update="UI/App.vue;UI/index.html;UI/package.json;UI/package-lock.json;UI/tsconfig.json;UI/vite.config.js" DependentUpon="app.js"/>
+		<AvaloniaXaml Update="UI/UiApp.axaml;UI/MainWindow.axaml" DependentUpon="AppVM.cs"/>
+		<Compile Update="UI/UiApp.cs;UI/AppWindowVM.cs;UI/AppWindow.axaml.cs" SubType="Code" DependentUpon="AppVM.cs"/>
+		<Compile Update="UI/Views.Internal/AboutUsView.axaml.cs">
+			<DependentUpon>AboutUsPage.axaml</DependentUpon>
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI/Views.Internal/AppStartUpPage.axaml.cs">
+			<DependentUpon>AppStartUpPage.axaml</DependentUpon>
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI\Views\AboutUs.axaml.cs">
+		  <DependentUpon>AboutUs.axaml</DependentUpon>
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI\Views\Demo\AutoCompleteBoxDemo.axaml.cs">
+		  <DependentUpon>AutoCompleteBoxDemo.axaml</DependentUpon>
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI\Views\Demo\BorderDemo.axaml.cs">
+		  <DependentUpon>BorderDemo.axaml</DependentUpon>
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI\Views\Demo\ButtonDemo.axaml.cs">
+		  <DependentUpon>ButtonDemo.axaml</DependentUpon>
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI\Views\Demo\ButtonSpinnerDemo.axaml.cs">
+		  <DependentUpon>ButtonSpinnerDemo.axaml</DependentUpon>
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI\Views\Demo\CalendarDatePickerDemo.axaml.cs">
+		  <DependentUpon>CalendarDatePickerDemo.axaml</DependentUpon>
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI\Views\Demo\CalendarDemo.axaml.cs">
+		  <DependentUpon>CalendarDemo.axaml</DependentUpon>
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI\Views\Demo\CarouselDemo.axaml.cs">
+		  <DependentUpon>CarouselDemo.axaml</DependentUpon>
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI\Views\Demo\CheckBoxDemo.axaml.cs">
+		  <DependentUpon>CheckBoxDemo.axaml</DependentUpon>
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI\Views\Demo\ColorPickerDemo.axaml.cs">
+		  <DependentUpon>ColorPickerDemo.axaml</DependentUpon>
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI\Views\Demo\ComboBoxDemo.axaml.cs">
+		  <DependentUpon>ComboBoxDemo.axaml</DependentUpon>
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI\Views\Demo\DataGridDemo.axaml.cs">
+		  <DependentUpon>DataGridDemo.axaml</DependentUpon>
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI\Views\Demo\DataValidationErrorsDemo.axaml.cs">
+		  <DependentUpon>DataValidationErrorsDemo.axaml</DependentUpon>
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI\Views\Demo\DatePickerDemo.axaml.cs">
+		  <DependentUpon>DatePickerDemo.axaml</DependentUpon>
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI\Views\Demo\ExpanderDemo.axaml.cs">
+		  <DependentUpon>ExpanderDemo.axaml</DependentUpon>
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI\Views\Demo\FlyoutDemo.axaml.cs">
+		  <DependentUpon>FlyoutDemo.axaml</DependentUpon>
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI\Views\Demo\GridSplitterDemo.axaml.cs">
+		  <DependentUpon>GridSplitterDemo.axaml</DependentUpon>
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI\Views\Demo\HeaderedContentControlDemo.axaml.cs">
+		  <DependentUpon>HeaderedContentControlDemo.axaml</DependentUpon>
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI\Views\Demo\HighContrastDemo.axaml.cs">
+		  <DependentUpon>HighContrastDemo.axaml</DependentUpon>
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI\Views\Demo\HyperlinkButtonDemo.axaml.cs">
+		  <DependentUpon>HyperlinkButtonDemo.axaml</DependentUpon>
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI\Views\Demo\IconDemo.axaml.cs">
+		  <DependentUpon>IconDemo.axaml</DependentUpon>
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI\Views\Demo\LabelDemo.axaml.cs">
+		  <DependentUpon>LabelDemo.axaml</DependentUpon>
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI\Views\Demo\ListBoxDemo.axaml.cs">
+		  <DependentUpon>ListBoxDemo.axaml</DependentUpon>
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI\Views\Demo\ManagedFileChooserDemo.axaml.cs">
+		  <DependentUpon>ManagedFileChooserDemo.axaml</DependentUpon>
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI\Views\Demo\MenuDemo.axaml.cs">
+		  <DependentUpon>MenuDemo.axaml</DependentUpon>
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI\Views\Demo\NotificationDemo.axaml.cs">
+		  <DependentUpon>NotificationDemo.axaml</DependentUpon>
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI\Views\Demo\NumericUpDownDemo.axaml.cs">
+		  <DependentUpon>NumericUpDownDemo.axaml</DependentUpon>
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI\Views\Demo\Overview.axaml.cs">
+		  <DependentUpon>Overview.axaml</DependentUpon>
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI\Views\Demo\PaletteDemo.axaml.cs">
+		  <DependentUpon>PaletteDemo.axaml</DependentUpon>
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI\Views\Demo\PathIconDemo.axaml.cs">
+		  <DependentUpon>PathIconDemo.axaml</DependentUpon>
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI\Views\Demo\ProgressBarDemo.axaml.cs">
+		  <DependentUpon>ProgressBarDemo.axaml</DependentUpon>
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI\Views\Demo\RadioButtonDemo.axaml.cs">
+		  <DependentUpon>RadioButtonDemo.axaml</DependentUpon>
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI\Views\Demo\RefreshContainerDemo.axaml.cs">
+		  <DependentUpon>RefreshContainerDemo.axaml</DependentUpon>
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI\Views\Demo\RepeatButtonDemo.axaml.cs">
+		  <DependentUpon>RepeatButtonDemo.axaml</DependentUpon>
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI\Views\Demo\ScrollViewerDemo.axaml.cs">
+		  <DependentUpon>ScrollViewerDemo.axaml</DependentUpon>
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI\Views\Demo\SelectableTextBlock.axaml.cs">
+		  <DependentUpon>SelectableTextBlock.axaml</DependentUpon>
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI\Views\Demo\SliderDemo.axaml.cs">
+		  <DependentUpon>SliderDemo.axaml</DependentUpon>
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI\Views\Demo\SplitViewDemo.axaml.cs">
+		  <DependentUpon>SplitViewDemo.axaml</DependentUpon>
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI\Views\Demo\TabControlDemo.axaml.cs">
+		  <DependentUpon>TabControlDemo.axaml</DependentUpon>
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI\Views\Demo\TabStripDemo.axaml.cs">
+		  <DependentUpon>TabStripDemo.axaml</DependentUpon>
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI\Views\Demo\TextBlockDemo.axaml.cs">
+		  <DependentUpon>TextBlockDemo.axaml</DependentUpon>
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI\Views\Demo\TextBoxDemo.axaml.cs">
+		  <DependentUpon>TextBoxDemo.axaml</DependentUpon>
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI\Views\Demo\ThemeVariantDemo.axaml.cs">
+		  <DependentUpon>ThemeVariantDemo.axaml</DependentUpon>
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI\Views\Demo\TimePickerDemo.axaml.cs">
+		  <DependentUpon>TimePickerDemo.axaml</DependentUpon>
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI\Views\Demo\ToggleButtonDemo.axaml.cs">
+		  <DependentUpon>ToggleButtonDemo.axaml</DependentUpon>
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI\Views\Demo\ToggleSwitchDemo.axaml.cs">
+		  <DependentUpon>ToggleSwitchDemo.axaml</DependentUpon>
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI\Views\Demo\ToolTipDemo.axaml.cs">
+		  <DependentUpon>ToolTipDemo.axaml</DependentUpon>
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI\Views\Demo\TreeDataGridDemo.axaml.cs">
+		  <DependentUpon>TreeDataGridDemo.axaml</DependentUpon>
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI\Views\Demo\VariablesDemo.axaml.cs">
+		  <DependentUpon>VariablesDemo.axaml</DependentUpon>
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI\Views\Demo.Ext\AspectRatioLayoutDemo.axaml.cs">
+		  <DependentUpon>AspectRatioLayoutDemo.axaml</DependentUpon>
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI\Views\Demo.Ext\AutoCompleteBoxDemo.axaml.cs">
+		  <DependentUpon>AutoCompleteBoxDemo.axaml</DependentUpon>
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI\Views\Demo.Ext\AvatarDemo.axaml.cs">
+		  <DependentUpon>AvatarDemo.axaml</DependentUpon>
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI\Views\Demo.Ext\BadgeDemo.axaml.cs">
+		  <DependentUpon>BadgeDemo.axaml</DependentUpon>
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI\Views\Demo.Ext\BannerDemo.axaml.cs">
+		  <DependentUpon>BannerDemo.axaml</DependentUpon>
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI\Views\Demo.Ext\BreadcrumbDemo.axaml.cs">
+		  <DependentUpon>BreadcrumbDemo.axaml</DependentUpon>
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI\Views\Demo.Ext\ButtonGroupDemo.axaml.cs">
+		  <DependentUpon>ButtonGroupDemo.axaml</DependentUpon>
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI\Views\Demo.Ext\ClassInputDemo.axaml.cs">
+		  <DependentUpon>ClassInputDemo.axaml</DependentUpon>
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI\Views\Demo.Ext\ClockDemo.axaml.cs">
+		  <DependentUpon>ClockDemo.axaml</DependentUpon>
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI\Views\Demo.Ext\DatePickerDemo.axaml.cs">
+		  <DependentUpon>DatePickerDemo.axaml</DependentUpon>
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI\Views\Demo.Ext\DateRangePickerDemo.axaml.cs">
+		  <DependentUpon>DateRangePickerDemo.axaml</DependentUpon>
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI\Views\Demo.Ext\DateTimePickerDemo.axaml.cs">
+		  <DependentUpon>DateTimePickerDemo.axaml</DependentUpon>
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI\Views\Demo.Ext\DialogDemo.axaml.cs">
+		  <DependentUpon>DialogDemo.axaml</DependentUpon>
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI\Views\Demo.Ext\DisableContainerDemo.axaml.cs">
+		  <DependentUpon>DisableContainerDemo.axaml</DependentUpon>
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI\Views\Demo.Ext\DividerDemo.axaml.cs">
+		  <DependentUpon>DividerDemo.axaml</DependentUpon>
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI\Views\Demo.Ext\DrawerDemo.axaml.cs">
+		  <DependentUpon>DrawerDemo.axaml</DependentUpon>
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI\Views\Demo.Ext\DualBadgeDemo.axaml.cs">
+		  <DependentUpon>DualBadgeDemo.axaml</DependentUpon>
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI\Views\Demo.Ext\ElasticWrapPanelDemo.axaml.cs">
+		  <DependentUpon>ElasticWrapPanelDemo.axaml</DependentUpon>
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI\Views\Demo.Ext\EnumSelectorDemo.axaml.cs">
+		  <DependentUpon>EnumSelectorDemo.axaml</DependentUpon>
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI\Views\Demo.Ext\FormDemo.axaml.cs">
+		  <DependentUpon>FormDemo.axaml</DependentUpon>
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI\Views\Demo.Ext\IconButtonDemo.axaml.cs">
+		  <DependentUpon>IconButtonDemo.axaml</DependentUpon>
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI\Views\Demo.Ext\ImageViewerDemo.axaml.cs">
+		  <DependentUpon>ImageViewerDemo.axaml</DependentUpon>
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI\Views\Demo.Ext\IntroductionDemo.axaml.cs">
+		  <DependentUpon>IntroductionDemo.axaml</DependentUpon>
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI\Views\Demo.Ext\IPv4BoxDemo.axaml.cs">
+		  <DependentUpon>IPv4BoxDemo.axaml</DependentUpon>
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI\Views\Demo.Ext\KeyGestureInputDemo.axaml.cs">
+		  <DependentUpon>KeyGestureInputDemo.axaml</DependentUpon>
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI\Views\Demo.Ext\LoadingDemo.axaml.cs">
+		  <DependentUpon>LoadingDemo.axaml</DependentUpon>
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI\Views\Demo.Ext\MarqueeDemo.axaml.cs">
+		  <DependentUpon>MarqueeDemo.axaml</DependentUpon>
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI\Views\Demo.Ext\MessageBoxDemo.axaml.cs">
+		  <DependentUpon>MessageBoxDemo.axaml</DependentUpon>
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI\Views\Demo.Ext\MultiComboBoxDemo.axaml.cs">
+		  <DependentUpon>MultiComboBoxDemo.axaml</DependentUpon>
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI\Views\Demo.Ext\NavMenuDemo.axaml.cs">
+		  <DependentUpon>NavMenuDemo.axaml</DependentUpon>
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI\Views\Demo.Ext\NotificationDemo.axaml.cs">
+		  <DependentUpon>NotificationDemo.axaml</DependentUpon>
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI\Views\Demo.Ext\NumberDisplayerDemo.axaml.cs">
+		  <DependentUpon>NumberDisplayerDemo.axaml</DependentUpon>
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI\Views\Demo.Ext\NumericUpDownDemo.axaml.cs">
+		  <DependentUpon>NumericUpDownDemo.axaml</DependentUpon>
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI\Views\Demo.Ext\NumPadDemo.axaml.cs">
+		  <DependentUpon>NumPadDemo.axaml</DependentUpon>
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI\Views\Demo.Ext\PaginationDemo.axaml.cs">
+		  <DependentUpon>PaginationDemo.axaml</DependentUpon>
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI\Views\Demo.Ext\PathPickerDemo.axaml.cs">
+		  <DependentUpon>PathPickerDemo.axaml</DependentUpon>
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI\Views\Demo.Ext\PinCodeDemo.axaml.cs">
+		  <DependentUpon>PinCodeDemo.axaml</DependentUpon>
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI\Views\Demo.Ext\PopConfirmDemo.axaml.cs">
+		  <DependentUpon>PopConfirmDemo.axaml</DependentUpon>
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI\Views\Demo.Ext\RangeSliderDemo.axaml.cs">
+		  <DependentUpon>RangeSliderDemo.axaml</DependentUpon>
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI\Views\Demo.Ext\RatingDemo.axaml.cs">
+		  <DependentUpon>RatingDemo.axaml</DependentUpon>
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI\Views\Demo.Ext\ScrollToButtonDemo.axaml.cs">
+		  <DependentUpon>ScrollToButtonDemo.axaml</DependentUpon>
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI\Views\Demo.Ext\SelectionListDemo.axaml.cs">
+		  <DependentUpon>SelectionListDemo.axaml</DependentUpon>
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI\Views\Demo.Ext\SkeletonDemo.axaml.cs">
+		  <DependentUpon>SkeletonDemo.axaml</DependentUpon>
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI\Views\Demo.Ext\TagInputDemo.axaml.cs">
+		  <DependentUpon>TagInputDemo.axaml</DependentUpon>
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI\Views\Demo.Ext\ThemeTogglerDemo.axaml.cs">
+		  <DependentUpon>ThemeTogglerDemo.axaml</DependentUpon>
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI\Views\Demo.Ext\TimeBoxDemo.axaml.cs">
+		  <DependentUpon>TimeBoxDemo.axaml</DependentUpon>
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI\Views\Demo.Ext\TimelineDemo.axaml.cs">
+		  <DependentUpon>TimelineDemo.axaml</DependentUpon>
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI\Views\Demo.Ext\TimePickerDemo.axaml.cs">
+		  <DependentUpon>TimePickerDemo.axaml</DependentUpon>
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI\Views\Demo.Ext\TimeRangePickerDemo.axaml.cs">
+		  <DependentUpon>TimeRangePickerDemo.axaml</DependentUpon>
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI\Views\Demo.Ext\ToastDemo.axaml.cs">
+		  <DependentUpon>ToastDemo.axaml</DependentUpon>
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI\Views\Demo.Ext\ToolBarDemo.axaml.cs">
+		  <DependentUpon>ToolBarDemo.axaml</DependentUpon>
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI\Views\Demo.Ext\TreeComboBoxDemo.axaml.cs">
+		  <DependentUpon>TreeComboBoxDemo.axaml</DependentUpon>
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI\Views\Demo.Ext\TwoTonePathIconDemo.axaml.cs">
+		  <DependentUpon>TwoTonePathIconDemo.axaml</DependentUpon>
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI\Views\ControlLibsMainView.axaml.cs">
+		  <DependentUpon>ControlLibsMainView.axaml</DependentUpon>
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI\Views\ControlsMainView.axaml.cs">
+		  <DependentUpon>ControlsMainView.axaml</DependentUpon>
+		  <SubType>Code</SubType>
+		</Compile>
+	</ItemGroup>
+	<!-- Nuget引用	-->
+	<ItemGroup>
+		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
+		<PackageReference Include="HslCommunication" Version="7.0.1"/>
+		<PackageReference Include="NLog" Version="$(NLogVersion)"/>
+		<PackageReference Include="NLog.Database" Version="$(NLogVersion)"/>
+		<PackageReference Include="SqlSugarCoreNoDrive" Version="$(SqlSugarVersion)"/>
+		<PackageReference Include="Microsoft.Data.Sqlite" Version="$(SqliteVersion)"/>
+		<PackageReference Include="Newtonsoft.Json" Version="$(NewtonsoftJsonVersion)"/>
+	</ItemGroup>
+
+	<!--	Avalonia Config -->
+	<ItemGroup>
+		<PackageReference Include="Avalonia" Version="$(AvaloniaVersion)"/>
+		<PackageReference Include="Avalonia.Desktop" Version="$(AvaloniaVersion)"/>
+		<PackageReference Include="Avalonia.Themes.Fluent" Version="$(AvaloniaVersion)"/>
+		<PackageReference Include="Avalonia.Fonts.Inter" Version="$(AvaloniaVersion)"/>
+		<PackageReference Include="Avalonia.Diagnostics" Version="$(AvaloniaVersion)">
+			<IncludeAssets Condition="'$(Configuration)' != 'Debug'">None</IncludeAssets>
+			<PrivateAssets Condition="'$(Configuration)' != 'Debug'">All</PrivateAssets>
+		</PackageReference>
+		<PackageReference Include="Avalonia.Controls.ColorPicker" Version="$(AvaloniaVersion)"/>
+		<PackageReference Include="Avalonia.Controls.DataGrid" Version="$(AvaloniaVersion)"/>
+		<PackageReference Include="Avalonia.Controls.TreeDataGrid" Version="$(AvaloniaTreeDataGridVersion)"/>
+		<PackageReference Include="Avalonia.Markup.Xaml.Loader" Version="$(AvaloniaVersion)"/>
+		<PackageReference Include="ReactiveUI" Version="$(ReactiveUIVersion)"/>
+		<PackageReference Include="ReactiveUI.Avalonia" Version="$(ReactiveUIAvaloniaVersion)"/>
+		<PackageReference Include="IconPacks.Avalonia" Version="1.3.0"/>
+
+		<AssemblyAttribute Include="Avalonia.Metadata.XmlnsDefinition">
+			<_Parameter1>https://github.com/avaloniaui</_Parameter1>
+			<_Parameter2>$(ProjectApplicationBaseName)</_Parameter2>
+		</AssemblyAttribute>
+		<AssemblyAttribute Include="Avalonia.Metadata.XmlnsDefinition">
+			<_Parameter1>https://github.com/avaloniaui</_Parameter1>
+			<_Parameter2>$(ProjectApplicationBaseName).UI</_Parameter2>
+		</AssemblyAttribute>
+		<AssemblyAttribute Include="Avalonia.Metadata.XmlnsDefinition">
+			<_Parameter1>https://github.com/avaloniaui</_Parameter1>
+			<_Parameter2>$(ProjectApplicationBaseName).UI.Views</_Parameter2>
+		</AssemblyAttribute>
+		<AssemblyAttribute Include="Avalonia.Metadata.XmlnsDefinition">
+			<_Parameter1>https://github.com/avaloniaui</_Parameter1>
+			<_Parameter2>$(ProjectApplicationBaseName).UI.Controls</_Parameter2>
+		</AssemblyAttribute>
+	</ItemGroup>
+	<ItemGroup>
+	  <AdditionalFiles Include="UI\Ext\Internal\AboutUsView.axaml" />
+	  <AdditionalFiles Include="UI\Ext\Internal\AppStartUpPage.axaml" />
+	  <AdditionalFiles Include="UI\Ext\Internal\ErrorView.axaml" />
+	  <AdditionalFiles Include="UI\Ext\Internal\PopWindow.axaml" />
+	  <AdditionalFiles Include="UI\Ext\Themes\ColorDetailControl.axaml" />
+	  <AdditionalFiles Include="UI\Ext\Themes\ColorItemControl.axaml" />
+	  <AdditionalFiles Include="UI\Ext\Themes\FunctionalColorGroupControl.axaml" />
+	  <AdditionalFiles Include="UI\Ext\Themes\ShadowGroupControl.axaml" />
+	  <AdditionalFiles Include="UI\Ext\Themes\ToggleSwitch.axaml" />
+	  <AdditionalFiles Include="UI\Ext\Themes\_index.axaml" />
+	</ItemGroup>
+	<!-- Framework Using By Project	-->
+	<ItemGroup Condition="'$(FrameworkUsingMode)'=='project'">
+		<ProjectReference Include="$(FrameworkProjectPath)RoslynGen/RoslynGen.csproj" OutputItemType="Analyzer"/>
+		<ProjectReference Include="$(FrameworkProjectPath)Application/Application.csproj"/>
+		<ProjectReference Include="$(FrameworkProjectPath)Base/Base.csproj"/>
+		<ProjectReference Include="$(FrameworkProjectPath)Tasks/Tasks.csproj"/>
+		<ProjectReference Include="$(FrameworkProjectPath)IOC/IOC.csproj"/>
+		<ProjectReference Include="$(FrameworkProjectPath)Mvvm/Mvvm.csproj"/>
+		<ProjectReference Include="$(FrameworkProjectPath)DB/DB.csproj"/>
+		<ProjectReference Include="$(FrameworkProjectPath)CFG/CFG.csproj"/>
+		<ProjectReference Include="$(FrameworkProjectPath)RES/RES.csproj"/>
+		<ProjectReference Include="$(FrameworkProjectPath)UI/UI.csproj"/>
+		<ProjectReference Include="$(FrameworkProjectPath)UI.Theme/UI.Theme.csproj"/>
+		<ProjectReference Include="$(FrameworkProjectPath)Web.Server/Web.Server.csproj"/>
+		<ProjectReference Include="$(FrameworkProjectPath)BinStructs/BinStructs.csproj"/>
+		<ProjectReference Include="$(FrameworkProjectPath)Enhance/Enhance.csproj"/>
+	</ItemGroup>
+
+	<ItemGroup Condition="'$(FrameworkUsingMode)'=='single-project'">
+		<ProjectReference Include="$(FrameworkProjectPath)RoslynGen/RoslynGen.csproj" OutputItemType="Analyzer"/>
+		<ProjectReference Include="$(FrameworkProjectPath)Framework/Framework.csproj"/>
+		<ProjectReference Include="$(FrameworkProjectPath)UI.Theme/UI.Theme.csproj"/>
+	</ItemGroup>
+	<ItemGroup Condition="'$(FrameworkUsingMode)'=='single-assembly'">
+		<Analyzer Include="$(FrameworkAssemblyPath)$(FrameworkName).RoslynGen.dll"/>
+		<Reference Include="$(FrameworkAssemblyPath)$(FrameworkName).Framework.dll"/>
+		<ProjectReference Include="$(FrameworkProjectPath)UI.Theme/UI.Theme.csproj"/>
+<!--		<Reference Include="$(FrameworkAssemblyPath)$(FrameworkName).UI.Theme.dll"/>-->
+	</ItemGroup>
+	<!-- Framework Using By Assembly	-->
+	<ItemGroup Condition="'$(FrameworkUsingMode)'=='assembly'">
+		<Analyzer Include="$(FrameworkAssemblyPath)$(FrameworkName).RoslynGen.dll"/>
+		<Reference Include="$(FrameworkAssemblyPath)$(FrameworkName).Application.dll"/>
+		<Reference Include="$(FrameworkAssemblyPath)$(FrameworkName).Base.dll"/>
+		<Reference Include="$(FrameworkAssemblyPath)$(FrameworkName).Tasks.dll"/>
+		<Reference Include="$(FrameworkAssemblyPath)$(FrameworkName).IOC.dll"/>
+		<Reference Include="$(FrameworkAssemblyPath)$(FrameworkName).Mvvm.dll"/>
+		<Reference Include="$(FrameworkAssemblyPath)$(FrameworkName).DB.dll"/>
+		<Reference Include="$(FrameworkAssemblyPath)$(FrameworkName).CFG.dll"/>
+		<Reference Include="$(FrameworkAssemblyPath)$(FrameworkName).RES.dll"/>
+		<Reference Include="$(FrameworkAssemblyPath)$(FrameworkName).UI.dll"/>
+		<Reference Include="$(FrameworkAssemblyPath)$(FrameworkName).UI.Theme.dll"/>
+		<Reference Include="$(FrameworkAssemblyPath)$(FrameworkName).Web.Server.dll"/>
+		<Reference Include="$(FrameworkAssemblyPath)$(FrameworkName).BinStructs.dll"/>
+		<Reference Include="$(FrameworkAssemblyPath)$(FrameworkName).Enhance.dll"/>
+	</ItemGroup>
+	
+
+	<Target Name="资源文件拷贝任务" AfterTargets="Build">
+		<ItemGroup>
+			<AssetsFiles
+				Include="Assets/**/*.*"
+				Exclude="Assets/@bin/**/*.*;Assets/@data/**/*.*;Assets/@Libs/**/*.*;
+               Assets/**/*.cs;Assets/**/*.private.*;Assets/Styles/**/*.*;Assets/UI/**/*.*;" />
+			<ToBinFiles Include="Assets/@bin/**/*.*" />
+			<ToDataFiles Include="Assets/@data/**/*.*" />
+			<ToLibsFiles Include="Assets/@Libs/**/*.*" />
+			<WebFiles Include="UI/dist/**/*.*" />
+		</ItemGroup>
+
+		<FileCopyTask SourceFiles="@(AssetsFiles)" DestRoot="$(OutDir)assets" Mode="incremental" />
+		<FileCopyTask SourceFiles="@(ToBinFiles)" DestRoot="$(OutDir)" Mode="incremental" />
+		<FileCopyTask SourceFiles="@(ToDataFiles)" DestRoot="$(OutDir)data" Mode="incremental" />
+		<FileCopyTask SourceFiles="@(ToLibsFiles)" DestRoot="$(OutDir)libs" Mode="incremental" />
+		<FileCopyTask SourceFiles="@(WebFiles)" DestRoot="$(OutDir)assets/www" Mode="incremental" />
+	</Target>
+
+
+
+
+	<!--	文件清理任务-->
+	<Target Name="文件清理任务" AfterTargets="Clean">
+		<RemoveDir Directories="dist"/>
+		<!--		<RemoveDir Directories="$(OutDir)"/>-->
+		<Message Text="已删除 Web 'dist' 目录。" Importance="High"/>
+	</Target>
+	<Target Name="MoveDllsToLibsDir" AfterTargets="Build" Condition="'$(Configuration)' == 'Release'">
+		<ItemGroup>
+			<DllsToMove Include="$(OutDir)*.dll;$(OutDir)*.pdb"
+							Exclude="
+							$(OutDir)$(AssemblyName).dll;
+							$(OutDir)$(AssemblyName).pdb;
+							$(OutDir)$(ProjectApplicationBaseName).*.*;"/>
+		</ItemGroup>
+		<RemoveDir Directories="$(OutDir)libs"/>
+		<Copy SourceFiles="@(DllsToMove)"
+				DestinationFolder="$(OutDir)libs/"
+				SkipUnchangedFiles="true"
+				OverwriteReadOnlyFiles="true"/>
+		<Delete Files="@(DllsToMove)"/>
+	</Target>
+	<Target Name="BeforeBuild" BeforeTargets="Build">
+		<RemoveDir Directories="obj\$(Configuration)" />
+	</Target>
+</Project>

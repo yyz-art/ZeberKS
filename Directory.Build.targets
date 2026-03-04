@@ -1,0 +1,22 @@
+<Project>
+	<Target Name="FrameworkAssemblyCopyTask" AfterTargets="Build"
+			  Condition=" '$(IsFrameworkProject)' == 'true' ">
+		<MakeDir Directories="$(SolutionDir)libs/framework"/>
+		<MakeDir Directories="$(SolutionDir)libs/framework/ref"/>
+		<ItemGroup>
+			<FrameworkFiles Include="$(TargetPath)"/>
+			<FrameworkFiles Include="$(TargetDir)$(TargetName).pdb"
+								 Condition="Exists('$(TargetDir)$(TargetName).pdb')"/>
+			<FrameworkRefFiles Include="$(TargetDir)/ref/$(TargetName).dll"/>
+		</ItemGroup>
+		<Copy SourceFiles="@(FrameworkFiles)"
+				DestinationFolder="$(SolutionDir)libs/framework"
+				SkipUnchangedFiles="true"
+				OverwriteReadOnlyFiles="true"/>
+<!--		<Copy SourceFiles="@(FrameworkRefFiles)"-->
+<!--				DestinationFolder="$(SolutionDir)libs/framework/ref"-->
+<!--				SkipUnchangedFiles="true"-->
+<!--				OverwriteReadOnlyFiles="true"/>-->
+	</Target>
+	<UsingTask Condition="'$(UsingSlnTasks)' == 'true'" TaskName="ZC.Sln.Tasks.FileCopyTask" AssemblyFile="$(SolutionDir)$(FrameworkName).Sln.dll" />
+</Project>

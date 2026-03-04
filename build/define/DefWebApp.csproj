@@ -1,0 +1,6 @@
+<Project>
+	<!--文件结构 -->
+	<ItemGroup>
+		<None Update="UI/App.vue;UI/index.html;UI/package.json;UI/package-lock.json;UI/tsconfig.json;UI/vite.config.js" DependentUpon="app.js"/>
+	</ItemGroup>
+</Project>

@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<RootNamespace>TestConsole</RootNamespace>
+		<AssemblyName>TestConsole</AssemblyName>
+		<OutputType>Exe</OutputType>
+		<DefineConstants>DEFINE_MODEL_INCLUDE</DefineConstants>
+		<ApplicationManifest>Assets/app.manifest</ApplicationManifest>
+	</PropertyGroup>
+	<Import Project="$(SolutionDir)build/define/DefBase.csproj"/>
+	<Import Project="$(SolutionDir)build/define/DefCore.csproj"/>
+<!--	<Import Project="$(SolutionDir)build/define/DefUiApp.csproj"/>-->
+<!--	<Import Project="$(SolutionDir)build/define/DefWebApp.csproj"/>-->
+	<ItemGroup>
+		<ProjectReference Include="$(CommonProjectPath)Common.Base/Common.Base.csproj" />
+		<ProjectReference Include="$(CommonProjectPath)Common.Core/Common.Core.csproj" />
+	</ItemGroup>
+
+</Project>

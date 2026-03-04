@@ -1,0 +1,34 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+				xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+				xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+				xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+				xmlns:internal="clr-namespace:OinetApp.UI"
+				xmlns:internal1="clr-namespace:OinetApp.UI.Internal"
+				mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+				x:Class="OinetApp.UI.Internal.AppStartUpPage"
+				Width="600"
+				Height="400"
+				x:DataType="internal1:AppStartUpVM">
+	<Design.DataContext>
+		<internal1:AppStartUpVM />
+	</Design.DataContext>
+	<Grid
+		HorizontalAlignment="Center"
+		VerticalAlignment="Center"
+		ColumnDefinitions="Auto, Auto"
+		RowDefinitions="Auto, Auto, Auto">
+		<Image Grid.Row="0" Grid.Column="0" Width="64" Margin="0,0,16,0"  />
+		<StackPanel Grid.Row="0" Grid.Column="1">
+			<TextBlock Classes="H2" Text="OINET.SPACE" Theme="{DynamicResource TextBlock-Title}" />
+			<TextBlock FontWeight="Bold" Text="OINET.SPACE Technology" />
+		</StackPanel>
+		<ProgressBar Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,16,0,0"
+						Value="{Binding Progress}" />
+		<StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2">
+			<TextBlock Margin="0,12,0,0" HorizontalAlignment="Center" FontSize="14"
+							Text="帮 客 户 创 造 价 值" />
+			<TextBlock HorizontalAlignment="Center" FontSize="14"
+							Text="Facilitate meaningful value generation for customers" />
+		</StackPanel>
+	</Grid>
+</UserControl>

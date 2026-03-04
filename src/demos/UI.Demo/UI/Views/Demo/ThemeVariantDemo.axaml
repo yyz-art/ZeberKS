@@ -1,0 +1,40 @@
+<UserControl
+	x:Class="OinetApp.UI.Views.Demo.ThemeVariantDemo"
+	xmlns="https://github.com/avaloniaui"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:vm="clr-namespace:OinetApp.UI.Controls"
+	xmlns:demo="clr-namespace:OinetApp.UI.Views.Demo"
+	x:DataType="demo:ThemeVariantDemoViewModel"
+	d:DesignHeight="450"
+	d:DesignWidth="800"
+	mc:Ignorable="d">
+	<Design.DataContext>
+		<demo:ThemeVariantDemoViewModel />
+	</Design.DataContext>
+	<StackPanel>
+		<Border Theme="{StaticResource CardBorder}">
+			<StackPanel>
+				<ListBox
+					Theme="{StaticResource CardRadioGroupListBox}"
+					ItemsSource="{Binding ThemeVariants}"
+					SelectedItem="{Binding SelectedThemeVariant}" />
+				<DatePicker />
+				<CalendarDatePicker />
+			</StackPanel>
+		</Border>
+		<ThemeVariantScope RequestedThemeVariant="{Binding SelectedThemeVariant}">
+			<Border Theme="{StaticResource CardBorder}">
+				<StackPanel>
+					<ListBox
+						Theme="{StaticResource CardRadioGroupListBox}"
+						ItemsSource="{Binding ThemeVariants}"
+						SelectedItem="{Binding SelectedThemeVariant}" />
+					<DatePicker />
+					<CalendarDatePicker />
+				</StackPanel>
+			</Border>
+		</ThemeVariantScope>
+	</StackPanel>
+</UserControl>

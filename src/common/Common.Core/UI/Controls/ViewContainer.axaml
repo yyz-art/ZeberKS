@@ -1,0 +1,41 @@
+<ResourceDictionary
+	xmlns="https://github.com/avaloniaui"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	x:CompileBindings="True">
+	<Design.PreviewWith>
+		<ViewContainer Header="123" Background="#2d2d30">
+			<Rectangle Fill="Aquamarine" Width="200" Height="100" Margin="10"></Rectangle>
+		</ViewContainer>
+	</Design.PreviewWith>
+	<ControlTheme x:Key="{x:Type ViewContainer}" TargetType="ViewContainer">
+
+
+		<Setter Property="Template">
+			<ControlTemplate TargetType="ViewContainer">
+				<LinearPanel Orientation="Vertical" Background="{TemplateBinding Background}"
+										VerticalAlignment="{TemplateBinding VerticalAlignment}"
+										HorizontalAlignment="{TemplateBinding HorizontalAlignment}">
+					<LinearPanel Orientation="Horizontal" Background="#2d2d30">
+						<ContentPresenter Content="{TemplateBinding Header}" />
+					</LinearPanel>
+				<ContentPresenter LinearPanel.Weight="1"
+						Name="PART_ContentPresenter"
+						Padding="{TemplateBinding Padding}"
+						HorizontalAlignment="Stretch"
+						VerticalAlignment="Stretch"
+						HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+						VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+						BackgroundSizing="{TemplateBinding BackgroundSizing}"
+						BorderThickness="{TemplateBinding BorderThickness}"
+						CornerRadius="{TemplateBinding CornerRadius}"
+						Content="{TemplateBinding Content}"
+						ContentTemplate="{TemplateBinding ContentTemplate}"
+						RecognizesAccessKey="True"
+						TextElement.FontSize="{TemplateBinding FontSize}"
+						TextElement.FontWeight="{TemplateBinding FontWeight}"
+						UseLayoutRounding="False" />
+				</LinearPanel>
+			</ControlTemplate>
+		</Setter>
+	</ControlTheme>
+</ResourceDictionary>

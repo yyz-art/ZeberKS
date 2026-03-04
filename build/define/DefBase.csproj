@@ -1,0 +1,25 @@
+<Project>
+	<PropertyGroup>
+		<TargetFramework>$(DotnetTargetFrameworkVersion)</TargetFramework>
+		<LangVersion>$(DotnetLangVersion)</LangVersion>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>true</ImplicitUsings>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+		<NoWarn>CA1822</NoWarn>
+		<CETCompat>false</CETCompat>
+		<RuntimeIdentifier>win-x64</RuntimeIdentifier>
+		<EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
+		<CompilerGeneratedFilesOutputPath>Assets/.generated</CompilerGeneratedFilesOutputPath>
+		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+		<AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+	</PropertyGroup>
+
+	<!--发布打包-->
+	<PropertyGroup>
+		<PublishSingleFile>false</PublishSingleFile>
+		<SatelliteResourceLanguages>zh-CN</SatelliteResourceLanguages>
+		<UsingSlnTasks>true</UsingSlnTasks>
+		<ApplicationIcon>$(SolutionDir)assets\shared\app\ui\Images\logo.ico</ApplicationIcon>
+	</PropertyGroup>
+	
+</Project>

@@ -1,0 +1,101 @@
+<UserControl
+	x:Class="OinetApp.UI.Views.Demo.ToggleSwitchDemo"
+	xmlns="https://github.com/avaloniaui"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	d:DesignHeight="450"
+	d:DesignWidth="800"
+	mc:Ignorable="d">
+	<StackPanel Spacing="8" Margin="20">
+		<StackPanel Orientation="Horizontal">
+			<StackPanel>
+				<ToggleSwitch />
+				<ToggleSwitch IsChecked="True" />
+			</StackPanel>
+			<StackPanel>
+				<ToggleSwitch IsEnabled="False" />
+				<ToggleSwitch IsChecked="True" IsEnabled="False" />
+			</StackPanel>
+		</StackPanel>
+		<StackPanel Orientation="Horizontal">
+			<ToggleSwitch Content="Switch" OnContent="Yes" OffContent="No" />
+			<ToggleSwitch Content="Switch" OnContent="Yes" OffContent="No" IsChecked="True" />
+			<ToggleSwitch Content="Switch" OnContent="Yes" OffContent="No" IsEnabled="False" />
+			<ToggleSwitch Content="Switch" OnContent="Yes" OffContent="No" IsEnabled="False" IsChecked="True" />
+		</StackPanel>
+
+		<StackPanel Orientation="Horizontal">
+			<ToggleSwitch Theme="{StaticResource ToggleSwitch-Simple}" Classes="Small" />
+			<ToggleSwitch Theme="{StaticResource ToggleSwitch-Simple}" Classes="Small" IsChecked="True" />
+			<ToggleSwitch Theme="{StaticResource ToggleSwitch-Simple}" Classes="Small Loading" />
+			<ToggleSwitch Theme="{StaticResource ToggleSwitch-Simple}" Classes="Small Loading" IsChecked="True" />
+		</StackPanel>
+		<StackPanel Orientation="Horizontal">
+			<ToggleSwitch Theme="{StaticResource ToggleSwitch-Simple}" />
+			<ToggleSwitch Theme="{StaticResource ToggleSwitch-Simple}" IsChecked="True" />
+			<ToggleSwitch Theme="{StaticResource ToggleSwitch-Simple}" Classes="Loading" />
+			<ToggleSwitch Theme="{StaticResource ToggleSwitch-Simple}" Classes="Loading" IsChecked="True" />
+		</StackPanel>
+		<StackPanel Orientation="Horizontal">
+			<ToggleSwitch Theme="{StaticResource ToggleSwitch-Simple}" Classes="Large" />
+			<ToggleSwitch Theme="{StaticResource ToggleSwitch-Simple}" Classes="Large" IsChecked="True" />
+			<ToggleSwitch Theme="{StaticResource ToggleSwitch-Simple}" Classes="Large Loading" />
+			<ToggleSwitch Theme="{StaticResource ToggleSwitch-Simple}" Classes="Large Loading" IsChecked="True" />
+		</StackPanel>
+
+		<StackPanel Orientation="Horizontal">
+			<ToggleSwitch Theme="{StaticResource ToggleSwitch-Simple}" OffContent="关" OnContent="开" />
+			<ToggleSwitch Theme="{StaticResource ToggleSwitch-Simple}" OffContent="〇" OnContent="｜" />
+		</StackPanel>
+		<StackPanel Orientation="Horizontal">
+			<ToggleSwitch Theme="{StaticResource ToggleSwitch-Simple}" OffContent="关" OnContent="开" IsChecked="True" />
+			<ToggleSwitch Theme="{StaticResource ToggleSwitch-Simple}" OffContent="〇" OnContent="｜" IsChecked="True" />
+		</StackPanel>
+		<StackPanel Orientation="Horizontal">
+			<ToggleSwitch Theme="{StaticResource ToggleSwitch-Simple}" OffContent="关" OnContent="开" Classes="Large" />
+			<ToggleSwitch Theme="{StaticResource ToggleSwitch-Simple}" OffContent="〇" OnContent="｜" Classes="Large" />
+		</StackPanel>
+		<StackPanel Orientation="Horizontal">
+			<ToggleSwitch Theme="{StaticResource ToggleSwitch-Simple}" OffContent="关" OnContent="开" Classes="Large"
+								IsChecked="True" />
+			<ToggleSwitch Theme="{StaticResource ToggleSwitch-Simple}" OffContent="〇" OnContent="｜" Classes="Large"
+								IsChecked="True" />
+		</StackPanel>
+
+		<StackPanel Orientation="Horizontal">
+			<ToggleSwitch
+				HorizontalAlignment="Left"
+				Padding="{StaticResource Thickness-Tight}"
+				Width="{StaticResource Spacing-ExtraLoose}"
+				Height="{StaticResource Spacing-ExtraLoose}"
+				Theme="{DynamicResource ToggleSwitch-Button}"
+				Foreground="{DynamicResource ButtonDefaultTertiaryForeground}">
+				<ToggleSwitch.Content>
+					<PathIcon
+						Theme="{DynamicResource PathIcon-Inner}"
+						Data="{StaticResource Icon-Sidebar}" />
+				</ToggleSwitch.Content>
+			</ToggleSwitch>
+			<ToggleSwitch
+				HorizontalAlignment="Left"
+				Padding="{StaticResource Thickness-Tight}"
+				Width="{StaticResource Spacing-ExtraLoose}"
+				Height="{StaticResource Spacing-ExtraLoose}"
+				Theme="{DynamicResource ToggleSwitch-Button}"
+				Foreground="{DynamicResource ButtonDefaultTertiaryForeground}">
+				<ToggleSwitch.OnContent>
+					<PathIcon
+						Theme="{DynamicResource PathIcon-Inner}"
+						Data="{StaticResource Icon-Sun}" />
+				</ToggleSwitch.OnContent>
+				<ToggleSwitch.OffContent>
+					<PathIcon
+						Theme="{DynamicResource PathIcon-Inner}"
+						Data="{StaticResource Icon-Moon}" />
+				</ToggleSwitch.OffContent>
+			</ToggleSwitch>
+		</StackPanel>
+
+	</StackPanel>
+</UserControl>

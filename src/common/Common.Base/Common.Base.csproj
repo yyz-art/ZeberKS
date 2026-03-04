@@ -1,0 +1,8 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<RootNamespace>$(ProjectApplicationBaseName)</RootNamespace>
+		<AssemblyName>$(ProjectApplicationBaseName).Base</AssemblyName>
+	</PropertyGroup>
+	<Import Project="$(SolutionDir)build/define/DefBase.csproj"/>
+</Project>

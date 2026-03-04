@@ -1,0 +1,94 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+				xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+				xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+				xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+				xmlns:vm="clr-namespace:OinetApp.UI.Controls"
+				xmlns:demo="clr-namespace:OinetApp.UI.Views.Demo"
+				mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+				x:Class="OinetApp.UI.Views.Demo.VariablesDemo"
+				x:DataType="demo:VariablesDemoViewModel"
+				x:CompileBindings="True">
+	<Design.DataContext>
+		<demo:VariablesDemoViewModel />
+	</Design.DataContext>
+	<DataGrid
+		Margin="8"
+		CanUserReorderColumns="True"
+		CanUserResizeColumns="True"
+		CanUserSortColumns="True"
+		HeadersVisibility="All"
+		IsReadOnly="True"
+		ItemsSource="{Binding GridData}">
+		<DataGrid.Columns>
+			<DataGridTemplateColumn
+				Width="300"
+				x:DataType="demo:VariableItem"
+				Header="ResourceKey">
+				<DataGridTemplateColumn.CellTemplate>
+					<DataTemplate DataType="demo:VariableItem">
+						<SelectableTextBlock
+							Margin="12,0"
+							VerticalAlignment="Center"
+							Text="{Binding ResourceKey}" />
+					</DataTemplate>
+				</DataGridTemplateColumn.CellTemplate>
+			</DataGridTemplateColumn>
+			<DataGridTemplateColumn
+				Width="200"
+				x:DataType="demo:VariableItem"
+				Header="Type">
+				<DataGridTemplateColumn.CellTemplate>
+					<DataTemplate DataType="demo:VariableItem">
+						<SelectableTextBlock
+							Margin="12,0"
+							VerticalAlignment="Center"
+							Text="{Binding Type.Name}" />
+					</DataTemplate>
+				</DataGridTemplateColumn.CellTemplate>
+			</DataGridTemplateColumn>
+			<DataGridTemplateColumn
+				Width="200"
+				x:DataType="demo:VariableItem"
+				Header="Value">
+				<DataGridTemplateColumn.CellTemplate>
+					<DataTemplate DataType="demo:VariableItem">
+						<SelectableTextBlock
+							Margin="12,0"
+							VerticalAlignment="Center"
+							Text="{Binding Value}"
+							TextWrapping="Wrap" />
+					</DataTemplate>
+				</DataGridTemplateColumn.CellTemplate>
+			</DataGridTemplateColumn>
+			<DataGridTemplateColumn
+				Width="*"
+				x:DataType="demo:VariableItem"
+				Header="Description">
+				<DataGridTemplateColumn.CellTemplate>
+					<DataTemplate DataType="demo:VariableItem">
+						<SelectableTextBlock
+							Margin="12,0"
+							VerticalAlignment="Center"
+							Text="{Binding Description}"
+							TextWrapping="Wrap" />
+					</DataTemplate>
+				</DataGridTemplateColumn.CellTemplate>
+			</DataGridTemplateColumn>
+			<DataGridTemplateColumn
+				Width="100"
+				x:DataType="demo:VariableItem"
+				Header="CopyText"
+				SortMemberPath="Duration">
+				<DataGridTemplateColumn.CellTemplate>
+					<DataTemplate DataType="demo:VariableItem">
+						<Button
+							Command="{Binding $parent[demo:VariablesDemo].Copy}"
+							CommandParameter="{Binding CopyText}"
+							Theme="{DynamicResource  IconBorderlessButton}"
+							Content="{StaticResource Icon-Copy}" />
+					</DataTemplate>
+				</DataGridTemplateColumn.CellTemplate>
+			</DataGridTemplateColumn>
+		</DataGrid.Columns>
+	</DataGrid>
+</UserControl>

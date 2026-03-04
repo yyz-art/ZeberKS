@@ -1,0 +1,47 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>$(DotnetTargetFrameworkVersion)</TargetFramework>
+		<LangVersion>$(DotnetLangVersion)</LangVersion>		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<RootNamespace>$(FrameworkName).Sln</RootNamespace>
+		<AssemblyName>$(FrameworkName).Sln</AssemblyName>
+		<OutputType>Exe</OutputType>
+	</PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="Microsoft.Build.Utilities.Core" Version="18.3.3"/>
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Link="%(RecursiveDir)%(Filename)%(Extension)"
+				Include="$(SolutionDir)**/*.*"
+				Exclude="
+				$(SolutionDir).git/**/*.*;
+				$(SolutionDir).idea/**/*.*;
+				$(SolutionDir).vs/**/*.*;
+				$(SolutionDir).sln/**/*.*;
+				$(SolutionDir)src/**/*.*;"/>
+		<Compile Link="scripts/%(RecursiveDir)%(Filename)%(Extension)" Include="$(SolutionDir)scripts/**/*.cs" Exclude="$(SolutionDir)scripts/private/**/*.cs"/>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="..\assets\shared\app\ui\">
+	    <Link>assets\shared\app\ui</Link>
+	  </Folder>
+	  <Folder Include="..\scripts\private\">
+	    <Link>scripts\private</Link>
+	  </Folder>
+	</ItemGroup>
+
+
+	<Target Name="AssemblyCopyTask" AfterTargets="Build" Condition="'$(ProjectApplicationBaseName)' == 'ZCApp'">
+		<ItemGroup>
+			<FrameworkFiles Include="$(TargetPath)"/>
+			<FrameworkFiles Include="$(TargetDir)$(TargetName).pdb"
+								 Condition="Exists('$(TargetDir)$(TargetName).pdb')"/>
+		</ItemGroup>
+		<Copy SourceFiles="@(FrameworkFiles)"
+				DestinationFolder="$(SolutionDir)"
+				SkipUnchangedFiles="true"
+				OverwriteReadOnlyFiles="true"/>
+	</Target>
+</Project>

@@ -1,0 +1,128 @@
+﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
+							xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+							xmlns:u="https://zc.com/ui">
+	<ControlTheme x:Key="{x:Type OptionDialog}" TargetType="OptionDialog">
+		<Setter Property="MinWidth" Value="{DynamicResource DialogMinWidth}" />
+		<Setter Property="MinHeight" Value="{DynamicResource DialogMinHeight}" />
+		<Setter Property="CornerRadius" Value="{DynamicResource DialogCornerRadius}" />
+		<Setter Property="Transitions">
+			<Transitions>
+				<TransformOperationsTransition Property="RenderTransform" Duration="0.2" />
+			</Transitions>
+		</Setter>
+		<Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto" />
+		<Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
+		<Setter Property="RenderTransform" Value="scale(1.0)" />
+		<Setter Property="Template">
+			<ControlTemplate TargetType="OptionDialog">
+				<Panel>
+					<Border
+						Name="PART_Border"
+						Padding="0"
+						HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
+						VerticalAlignment="{TemplateBinding VerticalAlignment}"
+						Background="{DynamicResource Brush-Background2}"
+						Classes="Shadow"
+						ClipToBounds="False"
+						CornerRadius="{TemplateBinding CornerRadius}"
+						Focusable="True"
+						IsHitTestVisible="True"
+						Theme="{DynamicResource Border-Card}">
+						<Border ClipToBounds="True" CornerRadius="{TemplateBinding CornerRadius}">
+							<Grid RowDefinitions="Auto, *,Auto">
+								<ScrollViewer
+									Grid.Row="0"
+									Grid.RowSpan="2"
+									HorizontalScrollBarVisibility="{Binding (ScrollViewer.HorizontalScrollBarVisibility), RelativeSource={RelativeSource TemplatedParent}}"
+									VerticalScrollBarVisibility="{Binding (ScrollViewer.VerticalScrollBarVisibility), RelativeSource={RelativeSource TemplatedParent}}">
+									<ContentPresenter Name="PART_ContentPresenter" Content="{TemplateBinding Content}" />
+								</ScrollViewer>
+								<Grid Grid.Row="0" ColumnDefinitions="*, Auto">
+									<Panel
+										Name="{x:Static DialogBase.PART_TitleArea}"
+										Grid.Column="0"
+										Grid.ColumnSpan="2"
+										Background="Transparent" />
+									<Button
+										Name="{x:Static u:MessageBoxWindow.PART_CloseButton}"
+										Grid.Column="1"
+										Margin="0,24,24,0"
+										DockPanel.Dock="Right"
+										Theme="{DynamicResource OverlayCloseButton}" />
+								</Grid>
+								<ContentPresenter Grid.Row="2" Name="PART_BottomContentPresenter" Content="{TemplateBinding BottomContent}" />
+							</Grid>
+						</Border>
+					</Border>
+					<u:DialogResizer Margin="{Binding #PART_Border.Margin}" IsVisible="{TemplateBinding CanResize}" />
+				</Panel>
+			</ControlTemplate>
+		</Setter>
+		<Style Selector="^:full-screen">
+			<Setter Property="CornerRadius" Value="0" />
+			<Style Selector="^ /template/ Border#PART_Border">
+				<Setter Property="HorizontalAlignment" Value="Stretch" />
+				<Setter Property="VerticalAlignment" Value="Stretch" />
+				<Setter Property="Theme" Value="{x:Null}" />
+				<Setter Property="Margin" Value="0" />
+				<Setter Property="Background" Value="{DynamicResource Border.CardBackground}" />
+			</Style>
+		</Style>
+		<Style Selector="^ /template/ Panel#PART_TitleArea">
+			<Setter Property="ContextFlyout">
+				<MenuFlyout>
+					<MenuItem Command="{Binding $parent[DialogBase].Close}"
+								Header="{DynamicResource STRING_MENU_DIALOG_CLOSE}">
+						<MenuItem.Icon>
+							<PathIcon Data="{DynamicResource Icon-Close}" Theme="{StaticResource PathIcon-Inner}" />
+						</MenuItem.Icon>
+					</MenuItem>
+				</MenuFlyout>
+			</Setter>
+		</Style>
+		<Style Selector="^:not(:modal) /template/ Panel#PART_TitleArea">
+			<Setter Property="ContextFlyout">
+				<MenuFlyout>
+					<MenuItem
+						Command="{Binding $parent[DialogBase].UpdateLayer}"
+						CommandParameter="{x:Static DialogLayerChangeType.BringForward}"
+						Header="{DynamicResource STRING_MENU_BRING_FORWARD}">
+						<MenuItem.Icon>
+							<PathIcon Data="{DynamicResource DialogArrangeBringForwardGlyph}" Theme="{StaticResource PathIcon-Inner}" />
+						</MenuItem.Icon>
+					</MenuItem>
+					<MenuItem
+						Command="{Binding $parent[DialogBase].UpdateLayer}"
+						CommandParameter="{x:Static DialogLayerChangeType.BringToFront}"
+						Header="{DynamicResource STRING_MENU_BRING_TO_FRONT}">
+						<MenuItem.Icon>
+							<PathIcon Data="{DynamicResource DialogArrangeBringToFrontGlyph}" Theme="{StaticResource PathIcon-Inner}" />
+						</MenuItem.Icon>
+					</MenuItem>
+					<MenuItem
+						Command="{Binding $parent[DialogBase].UpdateLayer}"
+						CommandParameter="{x:Static DialogLayerChangeType.SendBackward}"
+						Header="{DynamicResource STRING_MENU_SEND_BACKWARD}">
+						<MenuItem.Icon>
+							<PathIcon Data="{DynamicResource DialogArrangeSendBackwardGlyph}" Theme="{StaticResource PathIcon-Inner}" />
+						</MenuItem.Icon>
+					</MenuItem>
+					<MenuItem
+						Command="{Binding $parent[DialogBase].UpdateLayer}"
+						CommandParameter="{x:Static DialogLayerChangeType.SendToBack}"
+						Header="{DynamicResource STRING_MENU_SEND_TO_BACK}">
+						<MenuItem.Icon>
+							<PathIcon Data="{DynamicResource DialogArrangeSendToBackGlyph}" Theme="{StaticResource PathIcon-Inner}" />
+						</MenuItem.Icon>
+					</MenuItem>
+					<MenuItem Command="{Binding $parent[DialogBase].Close}"
+								Header="{DynamicResource STRING_MENU_DIALOG_CLOSE}">
+						<MenuItem.Icon>
+							<PathIcon Data="{DynamicResource Icon-Close}" Theme="{StaticResource PathIcon-Inner}" />
+						</MenuItem.Icon>
+					</MenuItem>
+				</MenuFlyout>
+			</Setter>
+		</Style>
+	</ControlTheme>
+</ResourceDictionary>
