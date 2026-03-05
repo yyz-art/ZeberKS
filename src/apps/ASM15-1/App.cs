@@ -36,8 +36,10 @@ var config = new AppConfig
 };
 // config = Debugger.IsAttached ? config : AppCore.LoadConfig<AppConfig>();
 config = AppCore.LoadConfig<AppConfig>();
-if (DevUtils.IsLocalDebugMode)
+if (DevUtils.IsLocalDebugMode && Debugger.IsAttached)
+{
 	config.Plc.IpAddress = "127.0.0.1";
+}
 Console.WriteLine($"Use Config: {JsonSerializer.Serialize(config, GlobalShared.Json.DefaultIndentOptions)}");
 var app = new App(config).UseLogger().UseUi(UiApp.StartAsync)
 	.AddToIOC(typeof(App).Assembly.GetTypes(), RegistrationMode.Override)
@@ -51,6 +53,7 @@ while (true) await Task.Delay(1000);
 
 public sealed class App(AppConfig config) : CommonUiAppCore
 {
+	public static string ApplicationName => "ASM15-1";
 	public new static App DesignTimeApp = new App(new AppConfig());
 	public new static App Current => Design.IsDesignMode ? DesignTimeApp : (App)AppCore.Current;
 	public new AppConfig Config { get; set; } = config;

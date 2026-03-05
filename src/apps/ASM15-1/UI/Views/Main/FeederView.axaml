@@ -21,8 +21,8 @@
 		</Style>
 	</UiView.Styles>
 	<LinearPanel Orientation="Vertical">
-		<ViewContainer Header="Feeder1" VerticalAlignment="Stretch" Padding="5" Background="#423e3e">
-			<Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto,Auto,Auto" RowSpacing="5" ColumnSpacing="5" Margin="5">
+		<ViewContainer Header="Feeder1" VerticalAlignment="Stretch" Padding="2" Background="#423e3e">
+			<Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto,Auto,Auto" RowSpacing="3" ColumnSpacing="5" Margin="3">
 				<TextBlock Grid.Row="0" Grid.Column="0" Classes="Label" Text="{StaticResource I18N.Common.料号_}" />
 				<Label Grid.Row="0" Grid.Column="1" Classes="Value" Content="{Binding PlcRead.Feeder1料号}" />
 				<TextBlock Grid.Row="1" Grid.Column="0" Classes="Label" Text="{StaticResource I18N.Common.物料剩余数量_}" />
@@ -41,8 +41,8 @@
 
 	
 		
-		<ViewContainer Header="Feeder2" VerticalAlignment="Stretch" Padding="5" Background="#423e3e">
-			<Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto,Auto,Auto" RowSpacing="5" ColumnSpacing="5" Margin="5">
+		<ViewContainer Header="Feeder2" VerticalAlignment="Stretch" Padding="2" Background="#423e3e">
+			<Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto,Auto,Auto" RowSpacing="3" ColumnSpacing="5" Margin="3">
 				<TextBlock Grid.Row="0" Grid.Column="0" Classes="Label" Text="{StaticResource I18N.Common.料号_}" />
 				<Label Grid.Row="0" Grid.Column="1" Classes="Value" Content="{Binding PlcRead.Feeder2料号}" />
 				<TextBlock Grid.Row="1" Grid.Column="0" Classes="Label" Text="{StaticResource I18N.Common.物料剩余数量_}" />
@@ -59,8 +59,8 @@
 			</Grid>
 		</ViewContainer>
 		
-		<ViewContainer Header="Feeder3" VerticalAlignment="Stretch" Padding="5" Background="#423e3e">
-			<Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto,Auto,Auto" RowSpacing="5" ColumnSpacing="5" Margin="5">
+		<ViewContainer Header="Feeder3" VerticalAlignment="Stretch" Padding="2" Background="#423e3e">
+			<Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto,Auto,Auto" RowSpacing="3" ColumnSpacing="5" Margin="3">
 				<TextBlock Grid.Row="0" Grid.Column="0" Classes="Label" Text="{StaticResource I18N.Common.料号_}" />
 				<Label Grid.Row="0" Grid.Column="1" Classes="Value" Content="{Binding PlcRead.Feeder3料号}" />
 				<TextBlock Grid.Row="1" Grid.Column="0" Classes="Label" Text="{StaticResource I18N.Common.物料剩余数量_}" />
@@ -77,8 +77,8 @@
 			</Grid>
 		</ViewContainer>
 		
-		<ViewContainer Header="Feeder4" VerticalAlignment="Stretch" Padding="5" Background="#423e3e">
-			<Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto,Auto,Auto" RowSpacing="5" ColumnSpacing="5" Margin="5">
+		<ViewContainer Header="Feeder4" VerticalAlignment="Stretch" Padding="2" Background="#423e3e">
+			<Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto,Auto,Auto" RowSpacing="3" ColumnSpacing="5" Margin="3">
 				<TextBlock Grid.Row="0" Grid.Column="0" Classes="Label" Text="{StaticResource I18N.Common.料号_}" />
 				<Label Grid.Row="0" Grid.Column="1" Classes="Value" Content="{Binding PlcRead.Feeder4料号}" />
 				<TextBlock Grid.Row="1" Grid.Column="0" Classes="Label" Text="{StaticResource I18N.Common.物料剩余数量_}" />

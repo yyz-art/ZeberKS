@@ -6,7 +6,7 @@
 								Link="UI/Assets/%(RecursiveDir)%(Filename)%(Extension)"/>
 		<AvaloniaResource Include="UI/Assets/**/*.*"/>
 		<None Update="UI/App.vue;UI/index.html;UI/package.json;UI/package-lock.json;UI/tsconfig.json;UI/vite.config.js" DependentUpon="app.js"/>
-		<AvaloniaXaml Update="UI/UiApp.axaml;UI/MainWindow.axaml" DependentUpon="AppVM.cs"/>
+<!--		<AvaloniaXaml Update="UI/UiApp.axaml;UI/MainWindow.axaml" DependentUpon="AppVM.cs"/>-->
 		<Compile Update="UI/UiApp.cs;UI/AppWindowVM.cs;UI/AppWindow.axaml.cs" SubType="Code" DependentUpon="AppVM.cs"/>
 	</ItemGroup>
 

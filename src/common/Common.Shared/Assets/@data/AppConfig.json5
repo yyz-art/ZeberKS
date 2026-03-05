@@ -32,10 +32,10 @@
   },
   "Scanner1": {
     "Port": "COM5",
-    "BaudRate": 1152200,
+    "BaudRate": 115200,
   },
   "Scanner2": {
     "Port": "COM6",
-    "BaudRate": 1152200,
+    "BaudRate": 115200,
   }
 }

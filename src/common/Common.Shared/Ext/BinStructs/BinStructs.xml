@@ -174,7 +174,7 @@
 		Name="PlcAlarmStruct"
 		Length="20" LengthUnit="2" ByteFormat="ByteFormat.CDAB"
 		OutputFile="E:\XKJ-ZEBER\src\apps\ASM15-1\Ext\BinStructs\PlcAlarmStruct.gen.cs">
-		<BinaryPointGroup Name="Part1" Start="46100" End="46199" Tags="WordBool"/>
+		<BinaryPointGroup Name="Part1" Start="22500" End="22700" Tags="WordBool"/>
 		<CsvIncludePoints
 			Name="报警"
 			CsvHeaders="Id,Offset,Name,Comment,TipMessage,NameByCN,NameByEN,NameByVI">

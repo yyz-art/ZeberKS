@@ -53,7 +53,7 @@ namespace {@namespace};
 [BinaryStruct(Length = {structXml.GetAttribute("Length").Value}, LengthUnit = {structLengthUnit}, ByteFormat = {structByteFormat})]");
 		foreach (var pointGroupXml in structXml.Elements("BinaryPointGroup"))
 		{
-			var name = pointGroupXml.GetAttribute("Name").Value;
+			var name = pointGroupXml.GetAttribute("Name").Value.Replace('-', '_');
 			var start = pointGroupXml.GetAttribute("Start").Value;
 			var source = pointGroupXml.GetAttributeOrDefault("Source")?.Value ?? start;
 			var tags = pointGroupXml.GetAttributeOrDefault("Tags")?.Value ?? "";
@@ -94,6 +94,7 @@ public partial class {structName}
 				properties[name] = valueAttr.Value.AsMemory();
 			else
 				properties[name] = setter.Value.AsMemory();
+			
 		}
 
 		var csvHeaders = xml.GetAttribute("CsvHeaders").Value.Split(',');
@@ -113,6 +114,11 @@ public partial class {structName}
 			var csvValueI = 0;
 			while (valuesEnumerator.ReadNext(out var value) && csvValueI < csvHeaders.Length)
 			{
+				value = value.Trim('\"');
+				if (value.Span.StartsWith('"'))
+				{
+					
+				}
 				properties[csvHeaders[csvValueI]] = value;
 				csvValueI++;
 			}
@@ -120,7 +126,7 @@ public partial class {structName}
 			var offset = properties["Offset"];
 
 			var dataType = properties["DataType"];
-			var pointName = properties["Name"];
+			var pointName = properties["Name"].ToString().Replace('-','_');
 
 			var beforeToken = properties.GetValueOrDefault("BeforeToken");
 			if (beforeToken.IsEmpty) beforeToken = "public".AsMemory();

@@ -6,7 +6,7 @@
 		Namespace="ZitApp.BinStructs"
 		Name="PlcStruct"
 		Length="20" LengthUnit="2" ByteFormat="ByteFormat.CDAB"
-		OutputFile="E:\XKJ-ZEBER\src\apps\ASM15-1\Ext\BinStructs\PlcStruct.gen.cs">
+		OutputFile="E:\XKJ-ZEBER\src\apps\MFG-15\Ext\BinStructs\PlcStruct.gen.cs">
 		<BinaryPointGroup Name="交互toPC_Part1" Start="22000" End="22099"/>
 		<BinaryPointGroup Name="交互toPC_Part2" Start="22100" End="22199"/>
 		<BinaryPointGroup Name="交互toPC_Part3" Start="22200" End="22299"/>
@@ -27,6 +27,7 @@
 			<Setter Property="Category">PLC/PLC->PC</Setter>
 			<Setter Property="ReaderData">PLC</Setter>
 			<Setter Property="WriterData">PLC</Setter>
+			<Setter Property="AttachDataNames">NameByCN,NameByEN,NameByVI</Setter>
 			<![CDATA[
 			PLC心跳,PLC->PC,22000,short,
 			PLC状态,PLC->PC,22001,short,"1=启动,2=停止,3=初始化中,4=报警中"
@@ -116,6 +117,7 @@
 			<Setter Property="Category">PLC/PC->PLC</Setter>
 			<Setter Property="ReaderData">PLC</Setter>
 			<Setter Property="WriterData">PLC</Setter>
+			<Setter Property="AttachDataNames">NameByCN,NameByEN,NameByVI</Setter>
 			<![CDATA[
 			上位机心跳,PC->PLC,21000,short,0-1跳变 1S间隔
 			上位机状态,PC->PLC,21001,short,1=就绪，2=故障
@@ -173,11 +175,11 @@
 		Namespace="ZitApp.BinStructs"
 		Name="PlcAlarmStruct"
 		Length="20" LengthUnit="2" ByteFormat="ByteFormat.CDAB"
-		OutputFile="E:\XKJ-ZEBER\src\apps\ASM15-1\Ext\BinStructs\PlcAlarmStruct.gen.cs">
-		<BinaryPointGroup Name="Part1" Start="46100" End="46199" Tags="WordBool"/>
+		OutputFile="E:\XKJ-ZEBER\src\apps\MFG-15\Ext\BinStructs\PlcAlarmStruct.gen.cs">
+		<BinaryPointGroup Name="Part1" Start="22500" End="22700" Tags="WordBool"/>
 		<CsvIncludePoints
 			Name="报警"
-			CsvHeaders="Id,Offset,Name,Comment,TipMessage,NameByCN,NameByEN,NameByVI">
+			CsvHeaders="Id,Offset,Name,TipMessage,Comment,NameByCN,NameByEN,NameByVI">
 			<Setter Property="DataType" Value="WordBool"/>
 			<Setter Property="InitExpress" Value="new WordBool();"/>
 			<Setter Property="BeforeToken" Value="public partial"/>
@@ -187,86 +189,135 @@
 			<Setter Property="WriterData">PLC</Setter>
 			<Setter Property="AttachDataNames">Id,NameByCN,NameByEN,NameByVI,TipMessage</Setter>
 			<![CDATA[
-1,46100,Z1轴M1指令报错,,,Z1轴M1指令报错,Z1 axis M1 command error,Z1 tr?c M1 l?nh báo l?i
-2,46101,Z2轴M2指令报错,,,Z2轴M2指令报错,Z2 axis M2 command error,Z2 tr?c M2 l?nh báo l?i
-3,46102,X1轴M3指令报错,,,X1轴M3指令报错,X1 axis M3 command error,X1 tr?c M3 l?nh báo l?i
-4,46103,X2轴M4指令报错,,,X2轴M4指令报错,X2 axis M4 command error,X2 tr?c M4 l?nh báo l?i
-5,46104,Y1轴M5指令报错,,,Y1轴M5指令报错,Y1 axis M5 command error,Y1 tr?c M5 l?nh báo l?i
-6,46105,Y2轴M6指令报错,,,Y2轴M6指令报错,Y2 axis M6 command error,Y2 tr?c M6 l?nh báo l?i
-7,46106,步进Z1轴M7指令报错,,,步进Z1轴M7指令报错,Step Z1 axis M7 command error,B??c Z1 tr?c M7 l?nh báo l?i
-8,46107,步进Z2轴M8指令报错,,,步进Z2轴M8指令报错,Step Z2 axis M8 command error,B??c Z2 tr?c M8 l?nh báo l?i
-9,46108,固高Y1轴M9指令报错,,,固高Y1轴M9指令报错,GuGao Y1 axis M9 command error,?? cao c? ??nh Y1 tr?c M9 l?nh báo l?i
-10,46109,固高Y2轴M10指令报错,,,固高Y2轴M10指令报错,Gu Gao Y2 axis M10 command error,?? cao c? ??nh Tr?c Y2 M10 L?i l?nh
-11,46110,升降Z1轴未使能,,,升降Z1轴未使能,Lifting Z1 axis not enabled,Thang máy tr?c Z1 kh?ng cho phép
-12,46111,Z1轴Jog安全报警,,,Z1轴Jog安全报警,Z1 axis Jog safety alarm,Báo ??ng an ninh tr?c Z1 Jog
-13,46112,Z1轴PTP安全报警,,,Z1轴PTP安全报警,Z1 axis PTP safety alarm,Báo ??ng an ninh PTP tr?c Z1
-14,46113,Z1轴手自动不一致报警,,,Z1轴手自动不一致报警,Z1 axis automatic inconsistency alarm,Z1 tay tr?c t? ??ng báo ??ng kh?ng nh?t quán
-15,46114,Z2轴Jog安全报警,,,Z2轴Jog安全报警,Z2 axis Jog safety alarm,Báo ??ng an ninh Jog tr?c Z2
-16,46115,Z2轴PTP安全报警,,,Z2轴PTP安全报警,Z2 axis PTP safety alarm,Báo ??ng an ninh PTP tr?c Z2
-17,46116,Z2轴手自动不一致报警,,,Z2轴手自动不一致报警,Z2 axis manual automatic inconsistency alarm,Z2 tay tr?c t? ??ng báo ??ng kh?ng nh?t quán
-18,46117,升降Z2轴未使能,,,升降Z2轴未使能,Lifting Z2 axis not enabled,Nang tr?c Z2 kh?ng cho phép
-19,46118,X1轴Jog安全报警,,,X1轴Jog安全报警,X1 axis Jog safety alarm,Báo ??ng an ninh Jog tr?c X1
-20,46119,X1轴PTP安全报警,,,X1轴PTP安全报警,X1 axis PTP safety alarm,Báo ??ng an ninh PTP tr?c X1
-21,46120,X1轴手自动不一致报警,,,X1轴手自动不一致报警,X1 axis manual automatic inconsistency alarm,X1 tay tr?c t? ??ng báo ??ng kh?ng nh?t quán
-22,46121,X1轴未使能,,,X1轴未使能,X1 axis not enabled,Tr?c X1 kh?ng ???c kích ho?t
-23,46122,X2轴Jog安全报警,,,X2轴Jog安全报警,X2 axis Jog safety alarm,Báo ??ng an ninh Jog tr?c X2
-24,46123,X2轴PTP安全报警,,,X2轴PTP安全报警,X2 axis PTP safety alarm,Báo ??ng an ninh PTP tr?c X2
-25,46124,X2轴手自动不一致报警,,,X2轴手自动不一致报警,X2 axis automatic inconsistency alarm,X2 tay tr?c t? ??ng báo ??ng kh?ng nh?t quán
-26,46125,X2轴未使能,,,X2轴未使能,X2 axis not enabled,Tr?c X2 kh?ng ???c kích ho?t
-27,46126,Y1轴Jog安全报警,,,Y1轴Jog安全报警,Y1 axis Jog safety alarm,Báo ??ng an ninh tr?c Y1 Jog
-28,46127,Y1轴PTP安全报警,,,Y1轴PTP安全报警,Y1 axis PTP safety alarm,Báo ??ng an ninh PTP tr?c Y1 c? ??nh
-29,46128,Y1轴手自动不一致报警,,,Y1轴手自动不一致报警,Y1 axis manual automatic inconsistency alarm,Y1 tay tr?c t? ??ng báo ??ng kh?ng nh?t quán
-30,46129,Y1轴未使能,,,Y1轴未使能,Y1 axis not enabled,Tr?c Y1 kh?ng ???c kích ho?t
-31,46130,Y2轴Jog安全报警,,,Y2轴Jog安全报警,Y2 axis Jog safety alarm,Báo ??ng an ninh tr?c Y2 Jog
-32,46131,Y2轴PTP安全报警,,,Y2轴PTP安全报警,Y2 axis PTP safety alarm,Báo ??ng an ninh PTP tr?c Y2 c? ??nh
-33,46132,Y2轴手自动不一致报警,,,Y2轴手自动不一致报警,Y2 axis manual automatic inconsistency alarm,Y2 tay tr?c t? ??ng báo ??ng kh?ng nh?t quán
-34,46133,Y2轴未使能,,,Y2轴未使能,Y2 axis not enabled,Tr?c Y2 kh?ng ???c kích ho?t
-35,46134,步进Z1轴Jog安全报警,,,步进Z1轴Jog安全报警,Step Z1 axis Jog safety alarm,B??c Z1 tr?c Jog báo ??ng an ninh
-36,46135,步进Z1轴PTP安全报警,,,步进Z1轴PTP安全报警,Step Z1 axis PTP safety alarm,B??c báo ??ng an ninh PTP tr?c Z1
-37,46136,步进Z1轴手自动不一致报警,,,步进Z1轴手自动不一致报警,Step Z1 axis automatic inconsistency alarm,B??c Z1 tay tr?c t? ??ng báo ??ng kh?ng nh?t quán
-38,46137,步进Z1轴未使能,,,步进Z1轴未使能,Step Z1 axis not enabled,B??c Z1 tr?c kh?ng cho phép
-39,46138,步进Z2轴Jog安全报警,,,步进Z2轴Jog安全报警,Step Z2 axis Jog safety alarm,B??c Z2 tr?c Jog báo ??ng an ninh
-40,46139,步进Z2轴PTP安全报警,,,步进Z2轴PTP安全报警,Step Z2 axis PTP safety alarm,B??c báo ??ng an ninh PTP tr?c Z2
-41,46140,步进Z2轴手自动不一致报警,,,步进Z2轴手自动不一致报警,Step Z2 axis automatic inconsistency alarm,B??c Z2 tay tr?c t? ??ng báo ??ng kh?ng nh?t quán
-42,46141,步进Z2轴未使能,,,步进Z2轴未使能,Step Z2 axis not enabled,B??c Z2 tr?c kh?ng cho phép
-43,46142,固高Y1轴Jog安全报警,,,固高Y1轴Jog安全报警,Gogao Y1 axis Jog safety alarm,Chi?u cao c? ??nh Y1 tr?c Jog báo ??ng an ninh
-44,46143,固高Y1轴PTP安全报警,,,固高Y1轴PTP安全报警,GuGao Y1 axis PTP safety alarm,Báo ??ng an ninh PTP tr?c Y1 c? ??nh
-45,46144,固高Y1轴手自动不一致报警,,,固高Y1轴手自动不一致报警,Gu Gao Y1 axis manual automatic inconsistency alarm,?? cao c? ??nh Y1 tay tr?c t? ??ng báo ??ng kh?ng nh?t quán
-46,46145,固高Y1轴未使能,,,固高Y1轴未使能,Fixed height Y1 axis not enabled,Chi?u cao c? ??nh tr?c Y1 kh?ng ???c kích ho?t
-47,46146,固高Y2轴Jog安全报警,,,固高Y2轴Jog安全报警,Gogao Y2 axis Jog safety alarm,Chi?u cao c? ??nh Y2 tr?c Jog báo ??ng an ninh
-48,46147,固高Y2轴PTP安全报警,,,固高Y2轴PTP安全报警,GuGao Y2 axis PTP safety alarm,Báo ??ng an ninh PTP tr?c Y2 c? ??nh
-49,46148,固高Y2轴手自动不一致报警,,,固高Y2轴手自动不一致报警,Gu Gao Y2 axis manual automatic inconsistency alarm,?? cao c? ??nh Y2 tay tr?c t? ??ng báo ??ng kh?ng nh?t quán
-50,46149,固高Y2轴未使能,,,固高Y2轴未使能,Fixed height Y2 axis not enabled,Chi?u cao c? ??nh tr?c Y2 kh?ng ???c kích ho?t
-51,46150,上料轴1_定位气缸1原位报警,,,上料轴1_定位气缸1原位报警,Loading axis 1_positioning cylinder 1 in situ alarm,Tr?c cho ?n 1 ??nh v? xi lanh 1 Báo ??ng t?i ch?
-52,46151,上料轴1_定位气缸1工作位报警,,,上料轴1_定位气缸1工作位报警,Loading axis 1_positioning cylinder 1 working position alarm,Cho ?n tr?c 1 ??nh v? xi lanh 1 báo ??ng v? trí làm vi?c
-53,46152,上料轴1_定位气缸2原位报警,,,上料轴1_定位气缸2原位报警,Loading axis 1_positioning cylinder 2 in situ alarm,Tr?c cho ?n 1 ??nh v? xi lanh 2 Báo ??ng t?i ch?
-54,46153,上料轴1_定位气缸2工作位报警,,,上料轴1_定位气缸2工作位报警,Loading axis 1_positioning cylinder 2 working position alarm,Cho ?n tr?c 1 ??nh v? xi lanh 2 báo ??ng v? trí làm vi?c
-55,46154,上料轴1_定位气缸3原位报警,,,上料轴1_定位气缸3原位报警,Loading axis 1_positioning cylinder 3 in situ alarm,Tr?c cho ?n 1 ??nh v? xi lanh 3 Báo ??ng t?i ch?
-56,46155,上料轴1_定位气缸3工作位报警,,,上料轴1_定位气缸3工作位报警,Loading axis 1_positioning cylinder 3 working position alarm,Cho ?n tr?c 1 ??nh v? xi lanh 3 báo ??ng v? trí làm vi?c
-57,46156,上料轴1_定位气缸4原位报警,,,上料轴1_定位气缸4原位报警,Loading axis 1_positioning cylinder 4 in situ alarm,Tr?c cho ?n 1 ??nh v? xi lanh 4 Báo ??ng t?i ch?
-58,46157,上料轴1_定位气缸4工作位报警,,,上料轴1_定位气缸4工作位报警,Loading axis 1_positioning cylinder 4 working position alarm,Cho ?n tr?c 1 ??nh v? xi lanh 4 báo ??ng v? trí làm vi?c
-59,46158,上料轴2_定位气缸1原位报警,,,上料轴2_定位气缸1原位报警,Loading axis 2_positioning cylinder 1 in situ alarm,Tr?c cho ?n 2 ??nh v? xi lanh 1 Báo ??ng t?i ch?
-60,46159,上料轴2_定位气缸1工作位报警,,,上料轴2_定位气缸1工作位报警,Loading axis 2_positioning cylinder 1 working position alarm,Cho ?n tr?c 2 ??nh v? xi lanh 1 báo ??ng v? trí làm vi?c
-61,46160,上料轴2_定位气缸2原位报警,,,上料轴2_定位气缸2原位报警,Loading axis 2_positioning cylinder 2 in situ alarm,Tr?c cho ?n 2 ??nh v? xi lanh 2 Báo ??ng t?i ch?
-62,46161,上料轴2_定位气缸2工作位报警,,,上料轴2_定位气缸2工作位报警,Loading axis 2_positioning cylinder 2 working position alarm,Cho ?n tr?c 2 ??nh v? xi lanh 2 báo ??ng v? trí làm vi?c
-63,46162,上料轴2_定位气缸3原位报警,,,上料轴2_定位气缸3原位报警,Loading axis 2_positioning cylinder 3 in situ alarm,Tr?c cho ?n 2 ??nh v? xi lanh 3 Báo ??ng t?i ch?
-64,46163,上料轴2_定位气缸3工作位报警,,,上料轴2_定位气缸3工作位报警,Loading axis 2_positioning cylinder 3 working position alarm,Cho ?n tr?c 2 ??nh v? xi lanh 3 báo ??ng v? trí làm vi?c
-65,46164,上料轴2_定位气缸4原位报警,,,上料轴2_定位气缸4原位报警,Loading axis 2_positioning cylinder 4 in situ alarm,Tr?c cho ?n 2 ??nh v? xi lanh 4 Báo ??ng t?i ch?
-66,46165,上料轴2_定位气缸4工作位报警,,,上料轴2_定位气缸4工作位报警,Loading axis 2_positioning cylinder 4 working position alarm,Cho ?n tr?c 2 ??nh v? xi lanh 4 báo ??ng v? trí làm vi?c
-67,46166,电批升降气缸1原位报警,,,电批升降气缸1原位报警,Electric lift cylinder 1 in situ alarm,Xi lanh nang hàng lo?t ?i?n 1 Báo ??ng t?i ch?
-68,46167,电批升降气缸1工作位报警,,,电批升降气缸1工作位报警,Electric lift cylinder 1 working position alarm,Xi lanh nang hàng lo?t ?i?n 1 Báo ??ng v? trí làm vi?c
-69,46168,电批升降气缸2原位报警,,,电批升降气缸2原位报警,Electric lift cylinder 2 in situ alarm,Xi lanh nang hàng lo?t ?i?n 2 Báo ??ng t?i ch?
-70,46169,电批升降气缸2工作位报警,,,电批升降气缸2工作位报警,Electric lift cylinder 2 working position alarm,Xi lanh nang hàng lo?t ?i?n 2 Báo ??ng v? trí làm vi?c
-71,46170,螺丝机1_料盘定位气缸1原位报警,,,螺丝机1_料盘定位气缸1原位报警,Screw machine 1_material tray positioning cylinder 1 in situ alarm,Máy vít 1 Xi lanh ??nh v? ??a v?t li?u 1 Báo ??ng t?i ch?
-72,46171,螺丝机1_料盘定位气缸1工作位报警,,,螺丝机1_料盘定位气缸1工作位报警,Screw machine 1_material tray positioning cylinder 1 working position alarm,Máy vít 1 Xi lanh ??nh v? ??a v?t li?u 1 Báo ??ng v? trí làm vi?c
-73,46172,螺丝机1_料盘定位气缸2原位报警,,,螺丝机1_料盘定位气缸2原位报警,Screw machine 1_material tray positioning cylinder 2 in situ alarm,Máy vít 1 Xi lanh ??nh v? ??a v?t li?u 2 Báo ??ng t?i ch?
-74,46173,螺丝机1_料盘定位气缸2工作位报警,,,螺丝机1_料盘定位气缸2工作位报警,Screw machine 1_material tray positioning cylinder 2 working position alarm,Máy vít 1 Xi lanh ??nh v? ??a v?t li?u 2 Báo ??ng v? trí làm vi?c
-75,46174,上料轴1_产品下压气缸原位报警,,,上料轴1_产品下压气缸原位报警,Loading shaft 1_Product pressure cylinder in-situ alarm,Tr?c cho ?n 1 Báo ??ng t?i ch? cho xi lanh áp su?t th?p c?a s?n ph?m
-76,46175,上料轴1_产品下压气缸工作位报警,,,上料轴1_产品下压气缸工作位报警,Loading shaft 1_Product pressure cylinder working position alarm,Tr?c cho ?n 1 S?n ph?m báo ??ng v? trí làm vi?c xi lanh áp su?t th?p
-77,46176,上料轴2_产品下压气缸原位报警,,,上料轴2_产品下压气缸原位报警,Loading shaft 2_Product pressure cylinder in-situ alarm,Tr?c cho ?n 2 Báo ??ng t?i ch? cho xi lanh áp su?t th?p c?a s?n ph?m
-78,46177,上料轴2_产品下压气缸工作位报警,,,上料轴2_产品下压气缸工作位报警,Loading shaft 2_Product pressure cylinder working position alarm,Tr?c cho ?n 2 S?n ph?m báo ??ng v? trí làm vi?c xi lanh áp su?t th?p
-79,46178,工位1吸真空报警,,,工位1吸真空报警,Workstation 1 vacuum suction alarm,Tr?m 1 báo ??ng hút chan kh?ng
-80,46179,工位2吸真空报警,,,工位2吸真空报警,Workstation 2 vacuum suction alarm,Tr?m 2 báo ??ng hút chan kh?ng
+1,22500,X轴_未使能提示,,,X轴_未使能提示,X-axis not enabled prompt,Trục X Không cho phép nhắc
+2,22501,X轴_指令报错,,,X轴_指令报错,X-axis command error,Trục X - Lỗi lệnh
+3,22502,X轴_正极限,,,X轴_正极限,X-axis_positive limit,Trục X Giới hạn tích cực
+4,22503,X轴_负极限,,,X轴_负极限,X-axis_negative limit,Trục X Giới hạn âm
+5,22504,X轴_JOG安全条件报警,,,X轴_JOG安全条件报警,X-axis JOG safety condition alarm,Trục X_JOG Báo động điều kiện an toàn
+6,22505,X轴_PTP安全条件报警,,,X轴_PTP安全条件报警,X-axis PTP safety condition alarm,Trục X_PTP báo động điều kiện an ninh
+7,22506,X轴_手自动不一致,,,X轴_手自动不一致,X-axis_hand automatic inconsistency,Trục X Tay tự động không phù hợp
+8,22507,Y轴_未使能提示,,,Y轴_未使能提示,Y-axis not enabled prompt,Trục Y Không cho phép nhắc nhở
+9,22508,Y轴_指令报错,,,Y轴_指令报错,Y-axis command error,Trục Y Lỗi lệnh
+10,22509,Y轴_正极限,,,Y轴_正极限,Y-axis positive limit,Trục Y Giới hạn tích cực
+11,22510,Y轴_负极限,,,Y轴_负极限,Y-axis - Negative Limit,Trục Y Giới hạn âm
+12,22511,Y轴_JOG安全条件报警,,,Y轴_JOG安全条件报警,Y-axis JOG safety condition alarm,Trục Y_JOG Báo động điều kiện an toàn
+13,22512,Y轴_PTP安全条件报警,,,Y轴_PTP安全条件报警,Y-axis PTP safety condition alarm,Y-axis_PTP báo động điều kiện an ninh
+14,22513,Y轴_手自动不一致,,,Y轴_手自动不一致,Y-axis automatic inconsistency,Trục Y Tay tự động không phù hợp
+15,22514,Z轴_未使能提示,,,Z轴_未使能提示,Z-axis not enabled prompt,Trục Z Không cho phép nhắc nhở
+16,22515,Z轴_指令报错,,,Z轴_指令报错,Z-axis command error,Trục Z - Lỗi lệnh
+17,22516,Z轴_正极限,,,Z轴_正极限,Z-axis positive limit,Trục Z Giới hạn tích cực
+18,22517,Z轴_负极限,,,Z轴_负极限,Z-axis_negative limit,Trục Z Giới hạn âm
+19,22518,Z轴_JOG安全条件报警,,,Z轴_JOG安全条件报警,Z-axis JOG safety condition alarm,Z-axis_JOG báo động điều kiện an ninh
+20,22519,Z轴_PTP安全条件报警,,,Z轴_PTP安全条件报警,Z-axis PTP safety condition alarm,Z-axis_PTP báo động điều kiện an ninh
+21,22520,Z轴_手自动不一致,,,Z轴_手自动不一致,Z-axis automatic inconsistency,Trục Z Tay tự động không phù hợp
+22,22521,R轴_未使能提示,,,R轴_未使能提示,R-axis_not enabled prompt,Trục R Không cho phép nhắc nhở
+23,22522,R轴_指令报错,,,R轴_指令报错,R-axis_instruction error,Trục R Lỗi lệnh
+24,22523,R轴_正极限,,,R轴_正极限,R-axis_positive limit,Trục R Giới hạn tích cực
+25,22524,R轴_负极限,,,R轴_负极限,R-axis_negative limit,Trục R Giới hạn âm
+26,22525,R轴_JOG安全条件报警,,,R轴_JOG安全条件报警,R-axis_JOG safety condition alarm,R Axis_JOG Báo động điều kiện an ninh
+27,22526,R轴_PTP安全条件报警,,,R轴_PTP安全条件报警,R-axis_PTP safety condition alarm,R-axis_PTP báo động điều kiện an ninh
+28,22527,R轴_手自动不一致,,,R轴_手自动不一致,R-axis_hand automatic inconsistency,Trục R Tay tự động không phù hợp
+29,22528,上料轴1_未使能提示,,,上料轴1_未使能提示,Loading axis 1_ not enabled prompt,Trục cho ăn 1 Không cho phép nhắc
+30,22529,上料轴1_指令报错,,,上料轴1_指令报错,Loading axis 1_instruction error,Hướng dẫn sửa lỗi #1
+31,22530,上料轴1_正极限,,,上料轴1_正极限,Loading axis 1_positive limit,Trục nạp 1 Giới hạn tích cực
+32,22531,上料轴1_负极限,,,上料轴1_负极限,Loading axis 1_negative limit,Trục cho ăn 1 Giới hạn âm
+33,22532,上料轴1_JOG安全条件报警,,,上料轴1_JOG安全条件报警,Loading shaft 1_JOG safety condition alarm,Cho ăn trục 1_JOG báo động điều kiện an toàn
+34,22533,上料轴1_PTP安全条件报警,,,上料轴1_PTP安全条件报警,Loading axis 1_PTP safety condition alarm,Cho ăn trục 1_PTP báo động điều kiện an ninh
+35,22534,上料轴1_手自动不一致,,,上料轴1_手自动不一致,The feeding axis 1_manual and automatic are inconsistent,Trục nạp 1 Tay tự động không phù hợp
+36,22535,上料轴2_未使能提示,,,上料轴2_未使能提示,Loading axis 2h not enabled prompt,Trục cho ăn 2 Không cho phép nhắc
+37,22536,上料轴2_指令报错,,,上料轴2_指令报错,Loading axis 2 instruction error,Hướng dẫn sửa lỗi #2
+38,22537,上料轴2_正极限,,,上料轴2_正极限,Loading axis 2-positive limit,Trục nạp 2 Giới hạn tích cực
+39,22538,上料轴2_负极限,,,上料轴2_负极限,Loading axis 2-negative limit,Trục cho ăn 2 Giới hạn âm
+40,22539,上料轴2_JOG安全条件报警,,,上料轴2_JOG安全条件报警,Feeding shaft 2-JOG safety condition alarm,Cho ăn trục 2_JOG báo động điều kiện an toàn
+41,22540,上料轴2_PTP安全条件报警,,,上料轴2_PTP安全条件报警,Feeding axis 2-PTP safety condition alarm,Cho ăn trục 2_PTP báo động điều kiện an ninh
+42,22541,上料轴2_手自动不一致,,,上料轴2_手自动不一致,The feeding axis is not consistent between manual and automatic modes,Trục cho ăn 2 Tay tự động không phù hợp
+43,22542,相机调节步进轴_未使能提示,,,相机调节步进轴_未使能提示,Camera adjustment step axis not enabled prompt,Trục bước điều chỉnh máy ảnh Không cho phép nhắc nhở
+44,22543,相机调节步进轴_指令报错,,,相机调节步进轴_指令报错,Camera adjustment step axial-command error,Điều chỉnh trục bước của máy ảnh Lỗi hướng dẫn
+45,22544,相机调节步进轴_正极限,,,相机调节步进轴_正极限,Camera adjustment step axial-positive limit,Trục bước điều chỉnh máy ảnh Giới hạn tích cực
+46,22545,相机调节步进轴_负极限,,,相机调节步进轴_负极限,Camera adjustment step axial-negative limit,Trục bước điều chỉnh máy ảnh Negative Limit
+47,22546,相机调节步进轴_JOG安全条件报警,,,相机调节步进轴_JOG安全条件报警,Camera adjustment stepper shaft_JOG safety condition alarm,Máy ảnh điều chỉnh bước trục _JOGđiều kiện an ninh báo động
+48,22547,相机调节步进轴_PTP安全条件报警,,,相机调节步进轴_PTP安全条件报警,Camera adjustment step axis PTP safety condition alarm,Điều chỉnh máy ảnh Step Shaft_PTP Báo động điều kiện an ninh
+49,22548,相机调节步进轴_手自动不一致,,,相机调节步进轴_手自动不一致,Camera adjustment step axis inconsistent between manual and automatic modes,Trục bước điều chỉnh máy ảnh Tay tự động không phù hợp
+50,22549,轴1_定位气缸1-原位报警,,,轴1_定位气缸1-原位报警,Axis 1_Positioning Cylinder 1-In situ Alarm,Trục 1 Định vị xi lanh 1 - Báo động tại chỗ
+51,22550,轴1_定位气缸1-工作位报警,,,轴1_定位气缸1-工作位报警,Axis 1_Positioning Cylinder 1-Working Position Alarm,Trục 1 Định vị xi lanh 1 - Báo động vị trí làm việc
+52,22551,轴1_定位气缸1-原点安全条件触发异常,,,轴1_定位气缸1-原点安全条件触发异常,Axis 1_Positioning Cylinder 1-Origin Safety Condition Triggered Abnormal,Trục 1 Định vị xi lanh 1 - Điều kiện an toàn gốc Kích hoạt ngoại lệ
+53,22552,轴1_定位气缸1-工作位安全条件触发异常,,,轴1_定位气缸1-工作位安全条件触发异常,Axis 1_Positioning Cylinder 1-Working Position Safety Condition Triggered Abnormal,Trục 1 Định vị xi lanh 1 - Điều kiện an toàn vị trí làm việc Kích hoạt ngoại lệ
+54,22553,轴1_定位气缸1-手自动联锁中,,,轴1_定位气缸1-手自动联锁中,Axis 1_Positioning Cylinder 1-Manual Automatic Interlocking,Trục 1 Định vị xi lanh 1 - Tay tự động khóa vào nhau
+55,22554,轴1_定位气缸2-原位报警,,,轴1_定位气缸2-原位报警,Axis 1_Positioning Cylinder 2-In situ Alarm,Trục 1 Định vị xi lanh 2 - Báo động tại chỗ
+56,22555,轴1_定位气缸2-工作位报警,,,轴1_定位气缸2-工作位报警,Axis 1_Positioning Cylinder 2-Working Position Alarm,Trục 1 Định vị xi lanh 2 - Báo động vị trí làm việc
+57,22556,轴1_定位气缸2-原点安全条件触发异常,,,轴1_定位气缸2-原点安全条件触发异常,Axis 1_Positioning Cylinder 2-Origin Safety Condition Trigger Exception,Trục 1 Định vị xi lanh 2 - Điều kiện an toàn gốc Kích hoạt ngoại lệ
+58,22557,轴1_定位气缸2-工作位安全条件触发异常,,,轴1_定位气缸2-工作位安全条件触发异常,Axis 1_Positioning Cylinder 2-Abnormal Safety Condition Triggered in Working Position,Trục 1 Định vị xi lanh 2 - Điều kiện an toàn vị trí làm việc Kích hoạt bất thường
+59,22558,轴1_定位气缸2-手自动联锁中,,,轴1_定位气缸2-手自动联锁中,Axis 1_Positioning Cylinder 2-Manual Automatic Interlocking,Trục 1 Định vị xi lanh 2 - Tay tự động khóa vào nhau
+60,22559,轴1_定位气缸3-原位报警,,,轴1_定位气缸3-原位报警,Axis 1_Positioning Cylinder 3-In situ Alarm,Trục 1 Định vị xi lanh 3 - Báo động tại chỗ
+61,22560,轴1_定位气缸3-工作位报警,,,轴1_定位气缸3-工作位报警,Axis 1_Positioning Cylinder 3-Working Position Alarm,Trục 1 Định vị xi lanh 3 - Báo động vị trí làm việc
+62,22561,轴1_定位气缸3-原点安全条件触发异常,,,轴1_定位气缸3-原点安全条件触发异常,Axis 1_Positioning Cylinder 3-Origin Safety Condition Trigger Exception,Trục 1 Định vị xi lanh 3 - Điều kiện an toàn gốc Kích hoạt ngoại lệ
+63,22562,轴1_定位气缸3-工作位安全条件触发异常,,,轴1_定位气缸3-工作位安全条件触发异常,Axis 1_Positioning Cylinder 3-Working Position Safety Condition Triggered Abnormal,Trục 1 Định vị xi lanh 3 - Điều kiện an toàn vị trí làm việc Kích hoạt bất thường
+64,22563,轴1_定位气缸3-手自动联锁中,,,轴1_定位气缸3-手自动联锁中,Axis 1_Positioning Cylinder 3-Hand Automatic Interlocking,Trục 1 Định vị xi lanh 3 - Tay tự động khóa vào nhau
+65,22564,轴2_定位气缸1-原位报警,,,轴2_定位气缸1-原位报警,Axis 2-Positioning Cylinder 1-In situ Alarm,Trục 2 Định vị xi lanh 1 - Báo động tại chỗ
+66,22565,轴2_定位气缸1-工作位报警,,,轴2_定位气缸1-工作位报警,Axis 2-Positioning Cylinder 1-Working Position Alarm,Trục 2 Định vị xi lanh 1 - Báo động vị trí làm việc
+67,22566,轴2_定位气缸1-原点安全条件触发异常,,,轴2_定位气缸1-原点安全条件触发异常,Axis 2-Positioning Cylinder 1-Origin Safety Condition Triggered Abnormal,Trục 2 Định vị xi lanh 1 - Điều kiện an toàn gốc Kích hoạt ngoại lệ
+68,22567,轴2_定位气缸1-工作位安全条件触发异常,,,轴2_定位气缸1-工作位安全条件触发异常,Axis 2-Positioning Cylinder 1-Working Position Safety Condition Triggered Abnormal,Trục 2 Định vị xi lanh 1 - Điều kiện an toàn vị trí làm việc Kích hoạt ngoại lệ
+69,22568,轴2_定位气缸1-手自动联锁中,,,轴2_定位气缸1-手自动联锁中,Axis 2-Positioning Cylinder 1-Hand Automatic Interlocking,Trục 2 Định vị xi lanh 1 - Tay tự động khóa vào nhau
+70,22569,轴2_定位气缸2-原位报警,,,轴2_定位气缸2-原位报警,Axis 2-Positioning Cylinder 2-In situ Alarm,Trục 2 Định vị xi lanh 2 - Báo động tại chỗ
+71,22570,轴2_定位气缸2-工作位报警,,,轴2_定位气缸2-工作位报警,Axis 2-Positioning Cylinder 2-Working Position Alarm,Trục 2 Định vị xi lanh 2 - Báo động vị trí làm việc
+72,22571,轴2_定位气缸2-原点安全条件触发异常,,,轴2_定位气缸2-原点安全条件触发异常,Axis 2-Positioning Cylinder 2-Origin Safety Condition Trigger Exception,Trục 2 Định vị xi lanh 2 - Điều kiện an toàn gốc Kích hoạt ngoại lệ
+73,22572,轴2_定位气缸2-工作位安全条件触发异常,,,轴2_定位气缸2-工作位安全条件触发异常,Axis 2-Positioning Cylinder 2-Working Position Safety Condition Triggered Abnormal,Trục 2 Định vị xi lanh 2 - Điều kiện an toàn vị trí làm việc Kích hoạt bất thường
+74,22573,轴2_定位气缸2-手自动联锁中,,,轴2_定位气缸2-手自动联锁中,Axis 2-Positioning Cylinder 2-Manual Automatic Interlocking,Trục 2 Định vị xi lanh 2 - Tay tự động khóa vào nhau
+75,22574,轴2_定位气缸3-原位报警,,,轴2_定位气缸3-原位报警,Axis 2-Positioning Cylinder 3-In situ Alarm,Trục 2 Định vị xi lanh 3 - Báo động tại chỗ
+76,22575,轴2_定位气缸3-工作位报警,,,轴2_定位气缸3-工作位报警,Axis 2-Positioning Cylinder 3-Working Position Alarm,Trục 2 Định vị xi lanh 3 - Báo động vị trí làm việc
+77,22576,轴2_定位气缸3-原点安全条件触发异常,,,轴2_定位气缸3-原点安全条件触发异常,Axis 2-Positioning Cylinder 3-Origin Safety Condition Trigger Exception,Trục 2 Định vị xi lanh 3 - Điều kiện an toàn gốc Kích hoạt ngoại lệ
+78,22577,轴2_定位气缸3-工作位安全条件触发异常,,,轴2_定位气缸3-工作位安全条件触发异常,Axis 2-Positioning Cylinder 3-Working Position Safety Condition Triggered Abnormal,Trục 2 Định vị xi lanh 3 - Điều kiện an toàn vị trí làm việc Kích hoạt bất thường
+79,22578,轴2_定位气缸3-手自动联锁中,,,轴2_定位气缸3-手自动联锁中,Axis 2-Positioning Cylinder 3-Hand Automatic Interlocking,Trục 2 Định vị xi lanh 3 - Tay tự động khóa vào nhau
+80,22579,取标签伸出气缸-原位报警,,,取标签伸出气缸-原位报警,Label extension cylinder - in-situ alarm,Lấy nhãn xi lanh mở rộng - báo động tại chỗ
+81,22580,取标签伸出气缸-工作位报警,,,取标签伸出气缸-工作位报警,Label extension cylinder - working position alarm,Lấy nhãn xi lanh mở rộng - báo động vị trí làm việc
+82,22581,取标签伸出气缸-原点安全条件触发异常,,,取标签伸出气缸-原点安全条件触发异常,Tag extension cylinder - Origin safety condition triggered exception,Take-label Extension Cylinder - Origin Security Condition Kích hoạt ngoại lệ
+83,22582,取标签伸出气缸-工作位安全条件触发异常,,,取标签伸出气缸-工作位安全条件触发异常,Tag extension cylinder - Work position safety condition triggers abnormality,Lấy nhãn xi lanh mở rộng - Điều kiện an toàn nơi làm việc Kích hoạt bất thường
+84,22583,取标签伸出气缸-手自动联锁中,,,取标签伸出气缸-手自动联锁中,Label extension cylinder - manual automatic interlock,Lấy nhãn xi lanh mở rộng - tay tự động khóa liên động
+85,22584,取标签升降气缸-原位报警,,,取标签升降气缸-原位报警,Label lifting cylinder - in-situ alarm,Lấy nhãn nâng xi lanh - báo động tại chỗ
+86,22585,取标签升降气缸-工作位报警,,,取标签升降气缸-工作位报警,Label lifting cylinder - working position alarm,Lấy nhãn nâng xi lanh - báo động vị trí làm việc
+87,22586,取标签升降气缸-原点安全条件触发异常,,,取标签升降气缸-原点安全条件触发异常,Tag lifting cylinder - Origin safety condition triggered exception,Lấy nhãn Lift Cylinder - Điều kiện an toàn gốc Kích hoạt bất thường
+88,22587,取标签升降气缸-工作位安全条件触发异常,,,取标签升降气缸-工作位安全条件触发异常,Tag lifting cylinder - Work position safety condition triggered exception,Lấy nhãn nâng xi lanh - vị trí làm việc an toàn điều kiện kích hoạt bất thường
+89,22588,取标签升降气缸-手自动联锁中,,,取标签升降气缸-手自动联锁中,Label lifting cylinder - manual automatic interlock,Lấy nhãn nâng xi lanh - tay tự động khóa liên động
+90,22589,贴膜定位气缸-原位报警,,,贴膜定位气缸-原位报警,Film positioning cylinder - in-situ alarm,Xi lanh định vị phim - Báo động tại chỗ
+91,22590,贴膜定位气缸-工作位报警,,,贴膜定位气缸-工作位报警,Film positioning cylinder - working position alarm,Xi lanh định vị màng - Báo động vị trí làm việc
+92,22591,贴膜定位气缸-原点安全条件触发异常,,,贴膜定位气缸-原点安全条件触发异常,Film positioning cylinder - origin safety condition triggers abnormality,Xi lanh định vị màng - Điều kiện an toàn gốc Kích hoạt ngoại lệ
+93,22592,贴膜定位气缸-工作位安全条件触发异常,,,贴膜定位气缸-工作位安全条件触发异常,Film positioning cylinder - abnormal triggering of safety conditions at the working position,Xi lanh định vị màng - Điều kiện an toàn vị trí làm việc Kích hoạt bất thường
+94,22593,贴膜定位气缸-手自动联锁中,,,贴膜定位气缸-手自动联锁中,Film positioning cylinder - manual automatic interlocking,Màng định vị xi lanh - Tay tự động khóa liên động
+95,22594,辊压膜气缸-原位报警,,,辊压膜气缸-原位报警,Roll pressure film cylinder - in-situ alarm,Xi lanh màng cuộn - Báo động tại chỗ
+96,22595,辊压膜气缸-工作位报警,,,辊压膜气缸-工作位报警,Roll pressure film cylinder - working position alarm,Xi lanh màng cuộn - Báo động vị trí làm việc
+97,22596,辊压膜气缸-原点安全条件触发异常,,,辊压膜气缸-原点安全条件触发异常,Roller pressure film cylinder - origin safety condition triggered abnormal,Xi lanh màng cuộn - Điều kiện an toàn gốc Kích hoạt bất thường
+98,22597,辊压膜气缸-工作位安全条件触发异常,,,辊压膜气缸-工作位安全条件触发异常,Roller pressure film cylinder - abnormal triggering of working position safety conditions,Xi lanh màng cuộn - Điều kiện an toàn vị trí làm việc Kích hoạt bất thường
+99,22598,辊压膜气缸-手自动联锁中,,,辊压膜气缸-手自动联锁中,Roller pressing film cylinder - manual automatic interlocking,Xi lanh màng cuộn - Tay tự động khóa liên động
+100,22599,打印机固定气缸-原位报警,,,打印机固定气缸-原位报警,Printer fixed cylinder - in-situ alarm,Xi lanh cố định máy in - Báo động tại chỗ
+101,22600,打印机固定气缸-工作位报警,,,打印机固定气缸-工作位报警,Printer fixed cylinder - working position alarm,Máy in cố định xi lanh - báo động vị trí làm việc
+102,22601,打印机固定气缸-原点安全条件触发异常,,,打印机固定气缸-原点安全条件触发异常,Printer fixed cylinder - origin safety condition triggered exception,Xi lanh cố định máy in - Điều kiện an toàn gốc Kích hoạt ngoại lệ
+103,22602,打印机固定气缸-工作位安全条件触发异常,,,打印机固定气缸-工作位安全条件触发异常,Printer fixed cylinder - Work position safety condition triggered exception,Xi lanh cố định máy in - Điều kiện an toàn nơi làm việc Kích hoạt ngoại lệ
+104,22603,打印机固定气缸-手自动联锁中,,,打印机固定气缸-手自动联锁中,Printer fixed cylinder - manual automatic interlock,Máy in cố định xi lanh - tay tự động khóa liên động
+105,22604,物料检测1_真空-负压报警,,,物料检测1_真空-负压报警,Material detection 1_Vacuum negative pressure alarm,Phát hiện vật liệu 1 Báo động áp suất âm chân không
+106,22605,"物料检测1_真空-禁止破真空报警-提示",,,"物料检测1_真空-禁止破真空报警-提示","Material detection 1_Vacuum - No vacuum breaking alarm, prompt","Phát hiện vật liệu 1 Chân không - Không phá vỡ báo động chân không, Mẹo"
+107,22606,物料检测1_真空-手自动联锁中,,,物料检测1_真空-手自动联锁中,Material Testing 1_Vacuum Manual Automatic Interlocking,Phát hiện vật liệu 1 Chân không - Tay tự động lồng vào nhau
+108,22607,物料检测2_真空-负压报警,,,物料检测2_真空-负压报警,Material detection 2-Vacuum negative pressure alarm,Phát hiện vật liệu 2 Báo động áp suất âm chân không
+109,22608,"物料检测2_真空-禁止破真空报警-提示",,,"物料检测2_真空-禁止破真空报警-提示","Material detection 2-Vacuum - No vacuum breaking alarm, prompt","Phát hiện vật liệu 2 Chân không - Không phá vỡ báo động chân không, Mẹo"
+110,22609,物料检测2_真空-手自动联锁中,,,物料检测2_真空-手自动联锁中,Material Testing 2-Vacuum Hand Automatic Interlocking,Phát hiện vật liệu 2 Chân không - Tay tự động lồng vào nhau
+111,22610,取料头_真空-负压报警,,,取料头_真空-负压报警,Material pick-up head_ vacuum negative pressure alarm,Đầu lấy Chân không - Báo động áp suất âm
+112,22611,"取料头_真空-禁止破真空报警-提示",,,"取料头_真空-禁止破真空报警-提示","Material pick-up head - Vacuum - No breaking vacuum alarm, prompt","Đầu lấy Chân không - Không phá vỡ báo động chân không, Mẹo"
+113,22612,取料头_真空-手自动联锁中,,,取料头_真空-手自动联锁中,Material pick-up head in vacuum manual automatic interlocking system,Đầu nạp Chân không - Tay tự động lồng vào nhau
+114,22613,接料台_真空-负压报警,,,接料台_真空-负压报警,Material receiving table _ Vacuum negative pressure alarm,Bàn tiếp liệu Chân không - Báo động áp suất âm
+115,22614,"接料台_真空-禁止破真空报警-提示",,,"接料台_真空-禁止破真空报警-提示","Material receiving table - Vacuum - No breaking vacuum alarm, prompt","Bàn tiếp liệu Chân không - Không phá vỡ báo động chân không, Mẹo"
+116,22615,接料台_真空-手自动联锁中,,,接料台_真空-手自动联锁中,Material receiving table in vacuum manual automatic interlocking system,Bàn tiếp liệu Chân không - Tay tự động lồng vào nhau
+117,22616,急停中,,,急停中,Emergency stop in progress,Dừng khẩn cấp
+118,22617,打印机防撞报警,,,打印机防撞报警,Printer collision alarm,Báo động chống va chạm máy in
+119,22618,流线与放料工位防撞报警,,,流线与放料工位防撞报警,Flow line and discharge station collision alarm,Báo động chống va chạm cho dòng chảy và trạm xả
+120,22619,工位1-下视觉拍标签1-NG异常,,,工位1-下视觉拍标签1-NG异常,Workstation 1- Visual label 1- NG abnormality,Trạm 1 - Nhãn chụp trực quan dưới 1 - NG Bất thường
+121,22620,工位1-上视觉拍飞达-NG异常,,,工位1-上视觉拍飞达-NG异常,Workstation 1- Upper visual camera Feida NG abnormal,Trạm 1 - Chụp ảnh trực quan lên - NG bất thường
+122,22621,工位1-上视觉拍产品1-NG异常,,,工位1-上视觉拍产品1-NG异常,Workstation 1- Upper visual camera product 1-NG abnormality,Trạm 1 - Sản phẩm chụp ảnh trực quan 1-NG Bất thường
+123,22622,工位1-下视觉拍膜NG异常,,,工位1-下视觉拍膜NG异常,Workstation 1- Abnormal visual film shooting NG,Trạm 1 - Phim chụp tầm nhìn thấp NG bất thường
+124,22623,工位1-上视觉拍产品NG异常,,,工位1-上视觉拍产品NG异常,Workstation 1- Abnormal NG of the product captured by the upper visual camera,Trạm 1 - Sản phẩm chụp trực quan NG bất thường
+125,22624,工位2-下视觉拍标签-NG异常,,,工位2-下视觉拍标签-NG异常,Workstation 2- Visual label shooting - NG abnormality,Trạm 2 - Ghi nhãn trực quan dưới - NG bất thường
+126,22625,工位2-上视觉拍飞达-NG异常,,,工位2-上视觉拍飞达-NG异常,Workstation 2- Upper visual camera Feida NG abnormal,Trạm 2 - Chụp ảnh trực quan lên - NG bất thường
+127,22626,工位2-上视觉拍产品1-NG异常,,,工位2-上视觉拍产品1-NG异常,Workstation 2- Upper Visual Photography Product 1-NG Abnormal,Trạm 2 - Sản phẩm chụp ảnh trực quan 1-NG Bất thường
+128,22627,工位2-下视觉拍膜NG异常,,,工位2-下视觉拍膜NG异常,Workstation 2- Abnormal visual film shooting NG,Trạm 2 - Phim chụp tầm nhìn thấp NG bất thường
+129,22628,工位2-上视觉拍产品2NG异常,,,工位2-上视觉拍产品2NG异常,Workstation 2-2NG abnormality in visual product shooting,Trạm 2 - Sản phẩm chụp ảnh trực quan 2NG bất thường
 		]]>
 		</CsvIncludePoints>
 	</Struct>
@@ -276,759 +327,326 @@
 		Namespace="ZitApp.BinStructs"
 		Name="ProductRecipe"
 		Length="20" LengthUnit="2" ByteFormat="ByteFormat.CDAB"
-		OutputFile="E:\XKJ-ZEBER\src\apps\ASM15-1\Ext\BinStructs\RecipeStruct.gen.cs">
-		<BinaryPointGroup Name="信捷Z1轴" Start="3000" End="3199"/>
-		<BinaryPointGroup Name="信捷Z2轴" Start="3200" End="3399"/>
-		<BinaryPointGroup Name="信捷X1轴" Start="3400" End="3599"/>
-		<BinaryPointGroup Name="信捷X2轴" Start="3600" End="3799"/>
-		<BinaryPointGroup Name="信捷Y1轴" Start="3800" End="3999"/>
-		<BinaryPointGroup Name="信捷Y2轴" Start="4000" End="4199"/>
-		<BinaryPointGroup Name="雷赛步进Z1轴" Start="4200" End="4399"/>
-		<BinaryPointGroup Name="雷赛步进Z2轴" Start="4400" End="4599"/>
-		<BinaryPointGroup Name="固高直线Y1轴" Start="4600" End="4799"/>
-		<BinaryPointGroup Name="固高直线Y2轴" Start="4800" End="4999"/>
-		<!-- 模板 -->
-		<CsvIncludePoints
-			Name="模板"
-			CsvHeaders="Name,Offset,Desc">
-			<Setter Property="DataType" Value="float"/>
-			<Setter Property="BeforeToken" Value="public"/>
-			<Setter Property="Tags">轴位置</Setter>
-			<Setter Property="Category">SCREW-L/TASK1</Setter>
-			<Setter Property="ReaderData">PLC</Setter>
-			<Setter Property="WriterData">PLC</Setter>
-			<![CDATA[
-			]]>
-		</CsvIncludePoints>
-		<!-- SCREW-L -->
-		<CsvIncludePoints
-			Name="SCREW-L"
-			CsvHeaders="Name,DataType,Offset,Unit,MinValue,MaxValue,Description">
-			<Setter Property="DataType" Value="float"/>
-			<Setter Property="BeforeToken" Value="public"/>
-			<Setter Property="Tags">SCREW</Setter>
-			<Setter Property="Category">SCREW-L/TASK1</Setter>
-			<Setter Property="ReaderData">SCREW-L</Setter>
-			<Setter Property="WriterData">SCREW-L</Setter>
-			<![CDATA[
-			LeftScrew_拧紧的模式,ushort,4000,,0,9,0--精度优先，2--速度优先(自攻牙螺丝)
-			LeftScrew_拧紧旋转方向,ushort,4001,,0,1,0--CW，1--CCW
-			LeftScrew_目标扭力,ushort,4002,N.m,0.001,32.764,
-			LeftScrew_扭力保持时间,ushort,4008,ms,0,4000,
-			LeftScrew_扭力补偿值,ushort,4014,0.01A,-1000,1000,
-			LeftScrew_开启浮高滑牙检测,ushort,4016,,0,1,0--不开启，1--开启
-			LeftScrew_待机调整时间,ushort,4022,ms,0,4000,
-			LeftScrew_Step0_拧紧圈数,ushort,4060,r,0,4000,
-			LeftScrew_Step0_拧紧速度,ushort,4061,rpm,0,4000,
-			LeftScrew_Step0_扭力,ushort,4062,N.m,0,4000,
-			LeftScrew_Step1_拧紧圈数,ushort,4065,r,0,4000,
-			LeftScrew_Step1_拧紧速度,ushort,4066,rpm,0,4000,
-			LeftScrew_Step1_扭力,ushort,4067,N.m,0,4000,
-			LeftScrew_Step2_拧紧圈数,ushort,4070,r,0,4000,
-			LeftScrew_Step2_拧紧速度,ushort,4071,rpm,0,4000,
-			LeftScrew_Step2_扭力,ushort,4072,N.m,0,4000,
-			LeftScrew_Step3_拧紧圈数,ushort,4075,r,0,4000,
-			LeftScrew_Step3_拧紧速度,ushort,4076,rpm,0,4000,
-			LeftScrew_Step3_扭力,ushort,4077,N.m,0,4000,
-			LeftScrew_Step4_拧紧圈数,ushort,4080,r,0,4000,
-			LeftScrew_Step4_拧紧速度,ushort,4081,rpm,0,4000,
-			LeftScrew_Step4_扭力,ushort,4082,N.m,0,4000,
-			LeftScrew_Step5_拧紧圈数,ushort,4085,r,0,4000,
-			LeftScrew_Step5_拧紧速度,ushort,4086,rpm,0,4000,
-			LeftScrew_Step5_扭力,ushort,4087,N.m,0,4000,
-			LeftScrew_Step6_拧紧圈数,ushort,4090,r,0,4000,
-			LeftScrew_Step6_拧紧速度,ushort,4091,rpm,0,4000,
-			LeftScrew_Step6_扭力,ushort,4092,N.m,0,4000,
-			LeftScrew_Step7_拧紧圈数,ushort,4095,r,0,4000,
-			LeftScrew_Step7_拧紧速度,ushort,4096,rpm,0,4000,
-			LeftScrew_Step7_扭力,ushort,4097,N.m,0,4000,
-			]]>
-		</CsvIncludePoints>
-		<!-- SCREW-R -->
-		<CsvIncludePoints
-			Name="SCREW-R"
-			CsvHeaders="Name,DataType,Offset,Unit,MinValue,MaxValue,Description">
-			<Setter Property="DataType" Value="float"/>
-			<Setter Property="BeforeToken" Value="public"/>
-			<Setter Property="Tags">SCREW</Setter>
-			<Setter Property="Category">SCREW-R/TASK1</Setter>
-			<Setter Property="ReaderData">SCREW-R</Setter>
-			<Setter Property="WriterData">SCREW-R</Setter>
-			<![CDATA[
-			RightScrew_拧紧的模式,ushort,4000,,0,9,0--精度优先，2--速度优先(自攻牙螺丝)
-			RightScrew_拧紧旋转方向,ushort,4001,,0,1,0--CW，1--CCW
-			RightScrew_目标扭力,ushort,4002,N.m,0.001,32.764,
-			RightScrew_扭力保持时间,ushort,4008,ms,0,4000,
-			RightScrew_扭力补偿值,ushort,4014,0.01A,-1000,1000,
-			RightScrew_开启浮高滑牙检测,ushort,4016,,0,1,0--不开启，1--开启
-			RightScrew_待机调整时间,ushort,4022,ms,0,4000,
-			RightScrew_Step0_拧紧圈数,ushort,4060,r,0,4000,
-			RightScrew_Step0_拧紧速度,ushort,4061,rpm,0,4000,
-			RightScrew_Step0_扭力,ushort,4062,N.m,0,4000,
-			RightScrew_Step1_拧紧圈数,ushort,4065,r,0,4000,
-			RightScrew_Step1_拧紧速度,ushort,4066,rpm,0,4000,
-			RightScrew_Step1_扭力,ushort,4067,N.m,0,4000,
-			RightScrew_Step2_拧紧圈数,ushort,4070,r,0,4000,
-			RightScrew_Step2_拧紧速度,ushort,4071,rpm,0,4000,
-			RightScrew_Step2_扭力,ushort,4072,N.m,0,4000,
-			RightScrew_Step3_拧紧圈数,ushort,4075,r,0,4000,
-			RightScrew_Step3_拧紧速度,ushort,4076,rpm,0,4000,
-			RightScrew_Step3_扭力,ushort,4077,N.m,0,4000,
-			RightScrew_Step4_拧紧圈数,ushort,4080,r,0,4000,
-			RightScrew_Step4_拧紧速度,ushort,4081,rpm,0,4000,
-			RightScrew_Step4_扭力,ushort,4082,N.m,0,4000,
-			RightScrew_Step5_拧紧圈数,ushort,4085,r,0,4000,
-			RightScrew_Step5_拧紧速度,ushort,4086,rpm,0,4000,
-			RightScrew_Step5_扭力,ushort,4087,N.m,0,4000,
-			RightScrew_Step6_拧紧圈数,ushort,4090,r,0,4000,
-			RightScrew_Step6_拧紧速度,ushort,4091,rpm,0,4000,
-			RightScrew_Step6_扭力,ushort,4092,N.m,0,4000,
-			RightScrew_Step7_拧紧圈数,ushort,4095,r,0,4000,
-			RightScrew_Step7_拧紧速度,ushort,4096,rpm,0,4000,
-			RightScrew_Step7_扭力,ushort,4097,N.m,0,4000,
-			]]>
-		</CsvIncludePoints>
+		OutputFile="E:\XKJ-ZEBER\src\apps\MFG-15\Ext\BinStructs\RecipeStruct.gen.cs">
 
-		<!-- 信捷Z1轴 -->
+		<!-- PLC -->
 		<CsvIncludePoints
-			Name="信捷Z1轴"
-			CsvHeaders="Name,Offset,Desc">
+			Name="PLC"
+			CsvHeaders="Category,Name,Offset,NameByCN,NameByEN,NameByVI">
 			<Setter Property="DataType" Value="float"/>
 			<Setter Property="BeforeToken" Value="public"/>
 			<Setter Property="Tags">轴位置</Setter>
 			<Setter Property="ReaderData">PLC</Setter>
 			<Setter Property="WriterData">PLC</Setter>
-			<Setter Property="MinValue">0</Setter>
-			<Setter Property="MaxValue">4096</Setter>
-			<Setter Property="Category">PLC/信捷Z1轴</Setter>
+			<Setter Property="AttachDataNames">NameByCN,NameByEN,NameByVI</Setter>
 			<![CDATA[
-			信捷Z1轴_位置0,3000
-			信捷Z1轴_位置1,3002
-			信捷Z1轴_位置2,3004
-			信捷Z1轴_位置3,3006
-			信捷Z1轴_位置4,3008
-			信捷Z1轴_位置5,3010
-			信捷Z1轴_位置6,3012
-			信捷Z1轴_位置7,3014
-			信捷Z1轴_位置8,3016
-			信捷Z1轴_位置9,3018
-			信捷Z1轴_位置10,3020
-			信捷Z1轴_位置11,3022
-			信捷Z1轴_位置12,3024
-			信捷Z1轴_位置13,3026
-			信捷Z1轴_位置14,3028
-			信捷Z1轴_位置15,3030
-			信捷Z1轴_位置16,3032
-			信捷Z1轴_位置17,3034
-			信捷Z1轴_位置18,3036
-			信捷Z1轴_位置19,3038
-			信捷Z1轴_位置20,3040
-			信捷Z1轴_位置21,3042
-			信捷Z1轴_位置22,3044
-			信捷Z1轴_位置23,3046
-			信捷Z1轴_位置24,3048
-			信捷Z1轴_位置25,3050
-			信捷Z1轴_位置26,3052
-			信捷Z1轴_位置27,3054
-			信捷Z1轴_位置28,3056
-			信捷Z1轴_位置29,3058
-			信捷Z1轴_位置30,3060
-			信捷Z1轴_位置31,3062
-			信捷Z1轴_位置32,3064
-			信捷Z1轴_位置33,3066
-			信捷Z1轴_位置34,3068
-			信捷Z1轴_位置35,3070
-			信捷Z1轴_位置36,3072
-			信捷Z1轴_位置37,3074
-			信捷Z1轴_位置38,3076
-			信捷Z1轴_位置39,3078
-			信捷Z1轴_位置40,3080
-			信捷Z1轴_位置41,3082
-			信捷Z1轴_位置42,3084
-			信捷Z1轴_位置43,3086
-			信捷Z1轴_位置44,3088
-			信捷Z1轴_位置45,3090
-			信捷Z1轴_位置46,3092
-			信捷Z1轴_位置47,3094
-			信捷Z1轴_位置48,3096
-			信捷Z1轴_位置49,3098
-			信捷Z1轴_位置50,3100			
-			]]>
-		</CsvIncludePoints>
-		<!-- 信捷Z2轴 -->
-		<CsvIncludePoints
-			Name="信捷Z2轴"
-			CsvHeaders="Name,Offset,Desc">
-			<Setter Property="DataType" Value="float"/>
-			<Setter Property="BeforeToken" Value="public"/>
-			<Setter Property="Tags">轴位置</Setter>
-			<Setter Property="ReaderData">PLC</Setter>
-			<Setter Property="WriterData">PLC</Setter>
-			<Setter Property="Category">PLC/信捷Z2轴</Setter>
-			<![CDATA[
-			信捷Z2轴_位置0,3200
-			信捷Z2轴_位置1,3202
-			信捷Z2轴_位置2,3204
-			信捷Z2轴_位置3,3206
-			信捷Z2轴_位置4,3208
-			信捷Z2轴_位置5,3210
-			信捷Z2轴_位置6,3212
-			信捷Z2轴_位置7,3214
-			信捷Z2轴_位置8,3216
-			信捷Z2轴_位置9,3218
-			信捷Z2轴_位置10,3220
-			信捷Z2轴_位置11,3222
-			信捷Z2轴_位置12,3224
-			信捷Z2轴_位置13,3226
-			信捷Z2轴_位置14,3228
-			信捷Z2轴_位置15,3230
-			信捷Z2轴_位置16,3232
-			信捷Z2轴_位置17,3234
-			信捷Z2轴_位置18,3236
-			信捷Z2轴_位置19,3238
-			信捷Z2轴_位置20,3240
-			信捷Z2轴_位置21,3242
-			信捷Z2轴_位置22,3244
-			信捷Z2轴_位置23,3246
-			信捷Z2轴_位置24,3248
-			信捷Z2轴_位置25,3250
-			信捷Z2轴_位置26,3252
-			信捷Z2轴_位置27,3254
-			信捷Z2轴_位置28,3256
-			信捷Z2轴_位置29,3258
-			信捷Z2轴_位置30,3260
-			信捷Z2轴_位置31,3262
-			信捷Z2轴_位置32,3264
-			信捷Z2轴_位置33,3266
-			信捷Z2轴_位置34,3268
-			信捷Z2轴_位置35,3270
-			信捷Z2轴_位置36,3272
-			信捷Z2轴_位置37,3274
-			信捷Z2轴_位置38,3276
-			信捷Z2轴_位置39,3278
-			信捷Z2轴_位置40,3280
-			信捷Z2轴_位置41,3282
-			信捷Z2轴_位置42,3284
-			信捷Z2轴_位置43,3286
-			信捷Z2轴_位置44,3288
-			信捷Z2轴_位置45,3290
-			信捷Z2轴_位置46,3292
-			信捷Z2轴_位置47,3294
-			信捷Z2轴_位置48,3296
-			信捷Z2轴_位置49,3298
-			信捷Z2轴_位置50,3300
-			]]>
-		</CsvIncludePoints>
-		<!-- 信捷X1轴 -->
-		<CsvIncludePoints
-			Name="信捷X1轴"
-			CsvHeaders="Name,Offset,Desc">
-			<Setter Property="DataType" Value="float"/>
-			<Setter Property="BeforeToken" Value="public"/>
-			<Setter Property="Tags">轴位置</Setter>
-			<Setter Property="ReaderData">PLC</Setter>
-			<Setter Property="WriterData">PLC</Setter>
-			<Setter Property="Category">PLC/信捷X1轴</Setter>
-			<![CDATA[
-			信捷X1轴_位置0,3400
-			信捷X1轴_位置1,3402
-			信捷X1轴_位置2,3404
-			信捷X1轴_位置3,3406
-			信捷X1轴_位置4,3408
-			信捷X1轴_位置5,3410
-			信捷X1轴_位置6,3412
-			信捷X1轴_位置7,3414
-			信捷X1轴_位置8,3416
-			信捷X1轴_位置9,3418
-			信捷X1轴_位置10,3420
-			信捷X1轴_位置11,3422
-			信捷X1轴_位置12,3424
-			信捷X1轴_位置13,3426
-			信捷X1轴_位置14,3428
-			信捷X1轴_位置15,3430
-			信捷X1轴_位置16,3432
-			信捷X1轴_位置17,3434
-			信捷X1轴_位置18,3436
-			信捷X1轴_位置19,3438
-			信捷X1轴_位置20,3440
-			信捷X1轴_位置21,3442
-			信捷X1轴_位置22,3444
-			信捷X1轴_位置23,3446
-			信捷X1轴_位置24,3448
-			信捷X1轴_位置25,3450
-			信捷X1轴_位置26,3452
-			信捷X1轴_位置27,3454
-			信捷X1轴_位置28,3456
-			信捷X1轴_位置29,3458
-			信捷X1轴_位置30,3460
-			信捷X1轴_位置31,3462
-			信捷X1轴_位置32,3464
-			信捷X1轴_位置33,3466
-			信捷X1轴_位置34,3468
-			信捷X1轴_位置35,3470
-			信捷X1轴_位置36,3472
-			信捷X1轴_位置37,3474
-			信捷X1轴_位置38,3476
-			信捷X1轴_位置39,3478
-			信捷X1轴_位置40,3480
-			信捷X1轴_位置41,3482
-			信捷X1轴_位置42,3484
-			信捷X1轴_位置43,3486
-			信捷X1轴_位置44,3488
-			信捷X1轴_位置45,3490
-			信捷X1轴_位置46,3492
-			信捷X1轴_位置47,3494
-			信捷X1轴_位置48,3496
-			信捷X1轴_位置49,3498
-			信捷X1轴_位置50,3500
-			]]>
-		</CsvIncludePoints>
-		<!-- 信捷X2轴 -->
-		<CsvIncludePoints
-			Name="信捷X2轴"
-			CsvHeaders="Name,Offset,Desc">
-			<Setter Property="DataType" Value="float"/>
-			<Setter Property="BeforeToken" Value="public"/>
-			<Setter Property="Tags">轴位置</Setter>
-			<Setter Property="ReaderData">PLC</Setter>
-			<Setter Property="WriterData">PLC</Setter>
-			<Setter Property="Category">PLC/信捷X2轴</Setter>
-			<![CDATA[
-			信捷X2轴_位置0,3600
-			信捷X2轴_位置1,3602
-			信捷X2轴_位置2,3604
-			信捷X2轴_位置3,3606
-			信捷X2轴_位置4,3608
-			信捷X2轴_位置5,3610
-			信捷X2轴_位置6,3612
-			信捷X2轴_位置7,3614
-			信捷X2轴_位置8,3616
-			信捷X2轴_位置9,3618
-			信捷X2轴_位置10,3620
-			信捷X2轴_位置11,3622
-			信捷X2轴_位置12,3624
-			信捷X2轴_位置13,3626
-			信捷X2轴_位置14,3628
-			信捷X2轴_位置15,3630
-			信捷X2轴_位置16,3632
-			信捷X2轴_位置17,3634
-			信捷X2轴_位置18,3636
-			信捷X2轴_位置19,3638
-			信捷X2轴_位置20,3640
-			信捷X2轴_位置21,3642
-			信捷X2轴_位置22,3644
-			信捷X2轴_位置23,3646
-			信捷X2轴_位置24,3648
-			信捷X2轴_位置25,3650
-			信捷X2轴_位置26,3652
-			信捷X2轴_位置27,3654
-			信捷X2轴_位置28,3656
-			信捷X2轴_位置29,3658
-			信捷X2轴_位置30,3660
-			信捷X2轴_位置31,3662
-			信捷X2轴_位置32,3664
-			信捷X2轴_位置33,3666
-			信捷X2轴_位置34,3668
-			信捷X2轴_位置35,3670
-			信捷X2轴_位置36,3672
-			信捷X2轴_位置37,3674
-			信捷X2轴_位置38,3676
-			信捷X2轴_位置39,3678
-			信捷X2轴_位置40,3680
-			信捷X2轴_位置41,3682
-			信捷X2轴_位置42,3684
-			信捷X2轴_位置43,3686
-			信捷X2轴_位置44,3688
-			信捷X2轴_位置45,3690
-			信捷X2轴_位置46,3692
-			信捷X2轴_位置47,3694
-			信捷X2轴_位置48,3696
-			信捷X2轴_位置49,3698
-			信捷X2轴_位置50,3700
-			]]>
-		</CsvIncludePoints>
-		<!-- 信捷Y1轴 -->
-		<CsvIncludePoints
-			Name="信捷Y1轴"
-			CsvHeaders="Name,Offset,Desc">
-			<Setter Property="DataType" Value="float"/>
-			<Setter Property="BeforeToken" Value="public"/>
-			<Setter Property="Tags">轴位置</Setter>
-			<Setter Property="ReaderData">PLC</Setter>
-			<Setter Property="WriterData">PLC</Setter>
-			<Setter Property="Category">PLC/信捷Y1轴</Setter>
-			<![CDATA[
-			信捷Y1轴_位置0,3800
-			信捷Y1轴_位置1,3802
-			信捷Y1轴_位置2,3804
-			信捷Y1轴_位置3,3806
-			信捷Y1轴_位置4,3808
-			信捷Y1轴_位置5,3810
-			信捷Y1轴_位置6,3812
-			信捷Y1轴_位置7,3814
-			信捷Y1轴_位置8,3816
-			信捷Y1轴_位置9,3818
-			信捷Y1轴_位置10,3820
-			信捷Y1轴_位置11,3822
-			信捷Y1轴_位置12,3824
-			信捷Y1轴_位置13,3826
-			信捷Y1轴_位置14,3828
-			信捷Y1轴_位置15,3830
-			信捷Y1轴_位置16,3832
-			信捷Y1轴_位置17,3834
-			信捷Y1轴_位置18,3836
-			信捷Y1轴_位置19,3838
-			信捷Y1轴_位置20,3840
-			信捷Y1轴_位置21,3842
-			信捷Y1轴_位置22,3844
-			信捷Y1轴_位置23,3846
-			信捷Y1轴_位置24,3848
-			信捷Y1轴_位置25,3850
-			信捷Y1轴_位置26,3852
-			信捷Y1轴_位置27,3854
-			信捷Y1轴_位置28,3856
-			信捷Y1轴_位置29,3858
-			信捷Y1轴_位置30,3860
-			信捷Y1轴_位置31,3862
-			信捷Y1轴_位置32,3864
-			信捷Y1轴_位置33,3866
-			信捷Y1轴_位置34,3868
-			信捷Y1轴_位置35,3870
-			信捷Y1轴_位置36,3872
-			信捷Y1轴_位置37,3874
-			信捷Y1轴_位置38,3876
-			信捷Y1轴_位置39,3878
-			信捷Y1轴_位置40,3880
-			信捷Y1轴_位置41,3882
-			信捷Y1轴_位置42,3884
-			信捷Y1轴_位置43,3886
-			信捷Y1轴_位置44,3888
-			信捷Y1轴_位置45,3890
-			信捷Y1轴_位置46,3892
-			信捷Y1轴_位置47,3894
-			信捷Y1轴_位置48,3896
-			信捷Y1轴_位置49,3898
-			信捷Y1轴_位置50,3900
-			]]>
-		</CsvIncludePoints>
-		<!-- 信捷Y2轴 -->
-		<CsvIncludePoints
-			Name="信捷Y2轴"
-			CsvHeaders="Name,Offset,Desc">
-			<Setter Property="DataType" Value="float"/>
-			<Setter Property="BeforeToken" Value="public"/>
-			<Setter Property="Tags">轴位置</Setter>
-			<Setter Property="ReaderData">PLC</Setter>
-			<Setter Property="WriterData">PLC</Setter>
-			<Setter Property="Category">PLC/信捷Y2轴</Setter>
-			<![CDATA[
-			信捷Y2轴_位置0,4000
-			信捷Y2轴_位置1,4002
-			信捷Y2轴_位置2,4004
-			信捷Y2轴_位置3,4006
-			信捷Y2轴_位置4,4008
-			信捷Y2轴_位置5,4010
-			信捷Y2轴_位置6,4012
-			信捷Y2轴_位置7,4014
-			信捷Y2轴_位置8,4016
-			信捷Y2轴_位置9,4018
-			信捷Y2轴_位置10,4020
-			信捷Y2轴_位置11,4022
-			信捷Y2轴_位置12,4024
-			信捷Y2轴_位置13,4026
-			信捷Y2轴_位置14,4028
-			信捷Y2轴_位置15,4030
-			信捷Y2轴_位置16,4032
-			信捷Y2轴_位置17,4034
-			信捷Y2轴_位置18,4036
-			信捷Y2轴_位置19,4038
-			信捷Y2轴_位置20,4040
-			信捷Y2轴_位置21,4042
-			信捷Y2轴_位置22,4044
-			信捷Y2轴_位置23,4046
-			信捷Y2轴_位置24,4048
-			信捷Y2轴_位置25,4050
-			信捷Y2轴_位置26,4052
-			信捷Y2轴_位置27,4054
-			信捷Y2轴_位置28,4056
-			信捷Y2轴_位置29,4058
-			信捷Y2轴_位置30,4060
-			信捷Y2轴_位置31,4062
-			信捷Y2轴_位置32,4064
-			信捷Y2轴_位置33,4066
-			信捷Y2轴_位置34,4068
-			信捷Y2轴_位置35,4070
-			信捷Y2轴_位置36,4072
-			信捷Y2轴_位置37,4074
-			信捷Y2轴_位置38,4076
-			信捷Y2轴_位置39,4078
-			信捷Y2轴_位置40,4080
-			信捷Y2轴_位置41,4082
-			信捷Y2轴_位置42,4084
-			信捷Y2轴_位置43,4086
-			信捷Y2轴_位置44,4088
-			信捷Y2轴_位置45,4090
-			信捷Y2轴_位置46,4092
-			信捷Y2轴_位置47,4094
-			信捷Y2轴_位置48,4096
-			信捷Y2轴_位置49,4098
-			信捷Y2轴_位置50,4100
-			]]>
-		</CsvIncludePoints>
-		<!-- 雷赛步进Z1轴 -->
-		<CsvIncludePoints
-			Name="雷赛步进Z1轴"
-			CsvHeaders="Name,Offset,Desc">
-			<Setter Property="DataType" Value="float"/>
-			<Setter Property="BeforeToken" Value="public"/>
-			<Setter Property="Tags">轴位置</Setter>
-			<Setter Property="ReaderData">PLC</Setter>
-			<Setter Property="WriterData">PLC</Setter>
-			<Setter Property="Category">PLC/雷赛步进Z1轴</Setter>
-			<![CDATA[
-			雷赛步进Z1轴_位置0,4200
-			雷赛步进Z1轴_位置1,4202
-			雷赛步进Z1轴_位置2,4204
-			雷赛步进Z1轴_位置3,4206
-			雷赛步进Z1轴_位置4,4208
-			雷赛步进Z1轴_位置5,4210
-			雷赛步进Z1轴_位置6,4212
-			雷赛步进Z1轴_位置7,4214
-			雷赛步进Z1轴_位置8,4216
-			雷赛步进Z1轴_位置9,4218
-			雷赛步进Z1轴_位置10,4220
-			雷赛步进Z1轴_位置11,4222
-			雷赛步进Z1轴_位置12,4224
-			雷赛步进Z1轴_位置13,4226
-			雷赛步进Z1轴_位置14,4228
-			雷赛步进Z1轴_位置15,4230
-			雷赛步进Z1轴_位置16,4232
-			雷赛步进Z1轴_位置17,4234
-			雷赛步进Z1轴_位置18,4236
-			雷赛步进Z1轴_位置19,4238
-			雷赛步进Z1轴_位置20,4240
-			雷赛步进Z1轴_位置21,4242
-			雷赛步进Z1轴_位置22,4244
-			雷赛步进Z1轴_位置23,4246
-			雷赛步进Z1轴_位置24,4248
-			雷赛步进Z1轴_位置25,4250
-			雷赛步进Z1轴_位置26,4252
-			雷赛步进Z1轴_位置27,4254
-			雷赛步进Z1轴_位置28,4256
-			雷赛步进Z1轴_位置29,4258
-			雷赛步进Z1轴_位置30,4260
-			雷赛步进Z1轴_位置31,4262
-			雷赛步进Z1轴_位置32,4264
-			雷赛步进Z1轴_位置33,4266
-			雷赛步进Z1轴_位置34,4268
-			雷赛步进Z1轴_位置35,4270
-			雷赛步进Z1轴_位置36,4272
-			雷赛步进Z1轴_位置37,4274
-			雷赛步进Z1轴_位置38,4276
-			雷赛步进Z1轴_位置39,4278
-			雷赛步进Z1轴_位置40,4280
-			雷赛步进Z1轴_位置41,4282
-			雷赛步进Z1轴_位置42,4284
-			雷赛步进Z1轴_位置43,4286
-			雷赛步进Z1轴_位置44,4288
-			雷赛步进Z1轴_位置45,4290
-			雷赛步进Z1轴_位置46,4292
-			雷赛步进Z1轴_位置47,4294
-			雷赛步进Z1轴_位置48,4296
-			雷赛步进Z1轴_位置49,4298
-			雷赛步进Z1轴_位置50,4300
-			]]>
-		</CsvIncludePoints>
-		<!-- 雷赛步进Z2轴 -->
-		<CsvIncludePoints
-			Name="雷赛步进Z2轴"
-			CsvHeaders="Name,Offset,Desc">
-			<Setter Property="DataType" Value="float"/>
-			<Setter Property="BeforeToken" Value="public"/>
-			<Setter Property="Tags">轴位置</Setter>
-			<Setter Property="ReaderData">PLC</Setter>
-			<Setter Property="WriterData">PLC</Setter>
-			<Setter Property="Category">PLC/雷赛步进Z2轴</Setter>
-			<![CDATA[
-			雷赛步进Z2轴_位置0,4400
-			雷赛步进Z2轴_位置1,4402
-			雷赛步进Z2轴_位置2,4404
-			雷赛步进Z2轴_位置3,4406
-			雷赛步进Z2轴_位置4,4408
-			雷赛步进Z2轴_位置5,4410
-			雷赛步进Z2轴_位置6,4412
-			雷赛步进Z2轴_位置7,4414
-			雷赛步进Z2轴_位置8,4416
-			雷赛步进Z2轴_位置9,4418
-			雷赛步进Z2轴_位置10,4420
-			雷赛步进Z2轴_位置11,4422
-			雷赛步进Z2轴_位置12,4424
-			雷赛步进Z2轴_位置13,4426
-			雷赛步进Z2轴_位置14,4428
-			雷赛步进Z2轴_位置15,4430
-			雷赛步进Z2轴_位置16,4432
-			雷赛步进Z2轴_位置17,4434
-			雷赛步进Z2轴_位置18,4436
-			雷赛步进Z2轴_位置19,4438
-			雷赛步进Z2轴_位置20,4440
-			雷赛步进Z2轴_位置21,4442
-			雷赛步进Z2轴_位置22,4444
-			雷赛步进Z2轴_位置23,4446
-			雷赛步进Z2轴_位置24,4448
-			雷赛步进Z2轴_位置25,4450
-			雷赛步进Z2轴_位置26,4452
-			雷赛步进Z2轴_位置27,4454
-			雷赛步进Z2轴_位置28,4456
-			雷赛步进Z2轴_位置29,4458
-			雷赛步进Z2轴_位置30,4460
-			雷赛步进Z2轴_位置31,4462
-			雷赛步进Z2轴_位置32,4464
-			雷赛步进Z2轴_位置33,4466
-			雷赛步进Z2轴_位置34,4468
-			雷赛步进Z2轴_位置35,4470
-			雷赛步进Z2轴_位置36,4472
-			雷赛步进Z2轴_位置37,4474
-			雷赛步进Z2轴_位置38,4476
-			雷赛步进Z2轴_位置39,4478
-			雷赛步进Z2轴_位置40,4480
-			雷赛步进Z2轴_位置41,4482
-			雷赛步进Z2轴_位置42,4484
-			雷赛步进Z2轴_位置43,4486
-			雷赛步进Z2轴_位置44,4488
-			雷赛步进Z2轴_位置45,4490
-			雷赛步进Z2轴_位置46,4492
-			雷赛步进Z2轴_位置47,4494
-			雷赛步进Z2轴_位置48,4496
-			雷赛步进Z2轴_位置49,4498
-			雷赛步进Z2轴_位置50,4500
-			]]>
-		</CsvIncludePoints>
-		<!-- 固高直线Y1轴 -->
-		<CsvIncludePoints
-			Name="固高直线Y1轴"
-			CsvHeaders="Name,Offset,Desc">
-			<Setter Property="DataType" Value="float"/>
-			<Setter Property="BeforeToken" Value="public"/>
-			<Setter Property="Tags">轴位置</Setter>
-			<Setter Property="ReaderData">PLC</Setter>
-			<Setter Property="WriterData">PLC</Setter>
-			<Setter Property="Category">PLC/固高直线Y1轴</Setter>
-			<![CDATA[
-			固高直线Y1轴_位置0,4600
-			固高直线Y1轴_位置1,4602
-			固高直线Y1轴_位置2,4604
-			固高直线Y1轴_位置3,4606
-			固高直线Y1轴_位置4,4608
-			固高直线Y1轴_位置5,4610
-			固高直线Y1轴_位置6,4612
-			固高直线Y1轴_位置7,4614
-			固高直线Y1轴_位置8,4616
-			固高直线Y1轴_位置9,4618
-			固高直线Y1轴_位置10,4620
-			固高直线Y1轴_位置11,4622
-			固高直线Y1轴_位置12,4624
-			固高直线Y1轴_位置13,4626
-			固高直线Y1轴_位置14,4628
-			固高直线Y1轴_位置15,4630
-			固高直线Y1轴_位置16,4632
-			固高直线Y1轴_位置17,4634
-			固高直线Y1轴_位置18,4636
-			固高直线Y1轴_位置19,4638
-			固高直线Y1轴_位置20,4640
-			固高直线Y1轴_位置21,4642
-			固高直线Y1轴_位置22,4644
-			固高直线Y1轴_位置23,4646
-			固高直线Y1轴_位置24,4648
-			固高直线Y1轴_位置25,4650
-			固高直线Y1轴_位置26,4652
-			固高直线Y1轴_位置27,4654
-			固高直线Y1轴_位置28,4656
-			固高直线Y1轴_位置29,4658
-			固高直线Y1轴_位置30,4660
-			固高直线Y1轴_位置31,4662
-			固高直线Y1轴_位置32,4664
-			固高直线Y1轴_位置33,4666
-			固高直线Y1轴_位置34,4668
-			固高直线Y1轴_位置35,4670
-			固高直线Y1轴_位置36,4672
-			固高直线Y1轴_位置37,4674
-			固高直线Y1轴_位置38,4676
-			固高直线Y1轴_位置39,4678
-			固高直线Y1轴_位置40,4680
-			固高直线Y1轴_位置41,4682
-			固高直线Y1轴_位置42,4684
-			固高直线Y1轴_位置43,4686
-			固高直线Y1轴_位置44,4688
-			固高直线Y1轴_位置45,4690
-			固高直线Y1轴_位置46,4692
-			固高直线Y1轴_位置47,4694
-			固高直线Y1轴_位置48,4696
-			固高直线Y1轴_位置49,4698
-			固高直线Y1轴_位置50,4700
-			]]>
-		</CsvIncludePoints>
-		<!-- 固高直线Y2轴 -->
-		<CsvIncludePoints
-			Name="固高直线Y2轴"
-			CsvHeaders="Name,Offset,Desc">
-			<Setter Property="DataType" Value="float"/>
-			<Setter Property="BeforeToken" Value="public"/>
-			<Setter Property="Tags">轴位置</Setter>
-			<Setter Property="ReaderData">PLC</Setter>
-			<Setter Property="WriterData">PLC</Setter>
-			<Setter Property="Category">PLC/固高直线Y2轴</Setter>
-			<![CDATA[
-			固高直线Y2轴_位置0,4800
-			固高直线Y2轴_位置1,4802
-			固高直线Y2轴_位置2,4804
-			固高直线Y2轴_位置3,4806
-			固高直线Y2轴_位置4,4808
-			固高直线Y2轴_位置5,4810
-			固高直线Y2轴_位置6,4812
-			固高直线Y2轴_位置7,4814
-			固高直线Y2轴_位置8,4816
-			固高直线Y2轴_位置9,4818
-			固高直线Y2轴_位置10,4820
-			固高直线Y2轴_位置11,4822
-			固高直线Y2轴_位置12,4824
-			固高直线Y2轴_位置13,4826
-			固高直线Y2轴_位置14,4828
-			固高直线Y2轴_位置15,4830
-			固高直线Y2轴_位置16,4832
-			固高直线Y2轴_位置17,4834
-			固高直线Y2轴_位置18,4836
-			固高直线Y2轴_位置19,4838
-			固高直线Y2轴_位置20,4840
-			固高直线Y2轴_位置21,4842
-			固高直线Y2轴_位置22,4844
-			固高直线Y2轴_位置23,4846
-			固高直线Y2轴_位置24,4848
-			固高直线Y2轴_位置25,4850
-			固高直线Y2轴_位置26,4852
-			固高直线Y2轴_位置27,4854
-			固高直线Y2轴_位置28,4856
-			固高直线Y2轴_位置29,4858
-			固高直线Y2轴_位置30,4860
-			固高直线Y2轴_位置31,4862
-			固高直线Y2轴_位置32,4864
-			固高直线Y2轴_位置33,4866
-			固高直线Y2轴_位置34,4868
-			固高直线Y2轴_位置35,4870
-			固高直线Y2轴_位置36,4872
-			固高直线Y2轴_位置37,4874
-			固高直线Y2轴_位置38,4876
-			固高直线Y2轴_位置39,4878
-			固高直线Y2轴_位置40,4880
-			固高直线Y2轴_位置41,4882
-			固高直线Y2轴_位置42,4884
-			固高直线Y2轴_位置43,4886
-			固高直线Y2轴_位置44,4888
-			固高直线Y2轴_位置45,4890
-			固高直线Y2轴_位置46,4892
-			固高直线Y2轴_位置47,4894
-			固高直线Y2轴_位置48,4896
-			固高直线Y2轴_位置49,4898
-			固高直线Y2轴_位置50,4900
+PLC/X_Axis_Pos,X_Axis_Pos_0,24000,X_Axis_Pos_0,X_Axis_Pos_0,X_trục_Địa điểm_0
+PLC/X_Axis_Pos,X_Axis_Pos_1,24002,X_Axis_Pos_1,X_Axis_Pos_1,X_trục_Địa điểm_1
+PLC/X_Axis_Pos,X_Axis_Pos_2,24004,X_Axis_Pos_2,X_Axis_Pos_2,X_trục_Địa điểm_2
+PLC/X_Axis_Pos,X_Axis_Pos_3,24006,X_Axis_Pos_3,X_Axis_Pos_3,X_trục_Địa điểm_3
+PLC/X_Axis_Pos,X_Axis_Pos_4,24008,X_Axis_Pos_4,X_Axis_Pos_4,X_trục_Địa điểm_4
+PLC/X_Axis_Pos,X_Axis_Pos_5,24010,X_Axis_Pos_5,X_Axis_Pos_5,X_trục_Địa điểm_5
+PLC/X_Axis_Pos,X_Axis_Pos_6,24012,X_Axis_Pos_6,X_Axis_Pos_6,X_trục_Địa điểm_6
+PLC/X_Axis_Pos,X_Axis_Pos_7,24014,X_Axis_Pos_7,X_Axis_Pos_7,X_trục_Địa điểm_7
+PLC/X_Axis_Pos,X_Axis_Pos_8,24016,X_Axis_Pos_8,X_Axis_Pos_8,X_trục_Địa điểm_8
+PLC/X_Axis_Pos,X_Axis_Pos_9,24018,X_Axis_Pos_9,X_Axis_Pos_9,X_trục_Địa điểm_9
+PLC/X_Axis_Pos,X_Axis_Pos_10,24020,X_Axis_Pos_10,X_Axis_Pos_10,X_trục_Địa điểm_10
+PLC/X_Axis_Pos,X_Axis_Pos_11,24022,X_Axis_Pos_11,X_Axis_Pos_11,X_trục_Địa điểm_11
+PLC/X_Axis_Pos,X_Axis_Pos_12,24024,X_Axis_Pos_12,X_Axis_Pos_12,X_trục_Địa điểm_12
+PLC/X_Axis_Pos,X_Axis_Pos_13,24026,X_Axis_Pos_13,X_Axis_Pos_13,X_trục_Địa điểm_13
+PLC/X_Axis_Pos,X_Axis_Pos_14,24028,X_Axis_Pos_14,X_Axis_Pos_14,X_trục_Địa điểm_14
+PLC/X_Axis_Pos,X_Axis_Pos_15,24030,X_Axis_Pos_15,X_Axis_Pos_15,X_trục_Địa điểm_15
+PLC/X_Axis_Pos,X_Axis_Pos_16,24032,X_Axis_Pos_16,X_Axis_Pos_16,X_trục_Địa điểm_16
+PLC/X_Axis_Pos,X_Axis_Pos_17,24034,X_Axis_Pos_17,X_Axis_Pos_17,X_trục_Địa điểm_17
+PLC/X_Axis_Pos,X_Axis_Pos_18,24036,X_Axis_Pos_18,X_Axis_Pos_18,X_trục_Địa điểm_18
+PLC/X_Axis_Pos,X_Axis_Pos_19,24038,X_Axis_Pos_19,X_Axis_Pos_19,X_trục_Địa điểm_19
+PLC/X_Axis_Pos,X_Axis_Pos_20,24040,X_Axis_Pos_20,X_Axis_Pos_20,X_trục_Địa điểm_20
+
+PLC/X_Axis_Vel,X_Axis_Vel_0,24050,X_Axis_Vel_0,X_Axis_Vel_0,X_trục_tốc độ_0
+PLC/X_Axis_Vel,X_Axis_Vel_1,24052,X_Axis_Vel_1,X_Axis_Vel_1,X_trục_tốc độ_1
+PLC/X_Axis_Vel,X_Axis_Vel_2,24054,X_Axis_Vel_2,X_Axis_Vel_2,X_trục_tốc độ_2
+PLC/X_Axis_Vel,X_Axis_Vel_3,24056,X_Axis_Vel_3,X_Axis_Vel_3,X_trục_tốc độ_3
+PLC/X_Axis_Vel,X_Axis_Vel_4,24058,X_Axis_Vel_4,X_Axis_Vel_4,X_trục_tốc độ_4
+PLC/X_Axis_Vel,X_Axis_Vel_5,24060,X_Axis_Vel_5,X_Axis_Vel_5,X_trục_tốc độ_5
+PLC/X_Axis_Vel,X_Axis_Vel_6,24062,X_Axis_Vel_6,X_Axis_Vel_6,X_trục_tốc độ_6
+PLC/X_Axis_Vel,X_Axis_Vel_7,24064,X_Axis_Vel_7,X_Axis_Vel_7,X_trục_tốc độ_7
+PLC/X_Axis_Vel,X_Axis_Vel_8,24066,X_Axis_Vel_8,X_Axis_Vel_8,X_trục_tốc độ_8
+PLC/X_Axis_Vel,X_Axis_Vel_9,24068,X_Axis_Vel_9,X_Axis_Vel_9,X_trục_tốc độ_9
+PLC/X_Axis_Vel,X_Axis_Vel_10,24070,X_Axis_Vel_10,X_Axis_Vel_10,X_trục_tốc độ_10
+PLC/X_Axis_Vel,X_Axis_Vel_11,24072,X_Axis_Vel_11,X_Axis_Vel_11,X_trục_tốc độ_11
+PLC/X_Axis_Vel,X_Axis_Vel_12,24074,X_Axis_Vel_12,X_Axis_Vel_12,X_trục_tốc độ_12
+PLC/X_Axis_Vel,X_Axis_Vel_13,24076,X_Axis_Vel_13,X_Axis_Vel_13,X_trục_tốc độ_13
+PLC/X_Axis_Vel,X_Axis_Vel_14,24078,X_Axis_Vel_14,X_Axis_Vel_14,X_trục_tốc độ_14
+PLC/X_Axis_Vel,X_Axis_Vel_15,24080,X_Axis_Vel_15,X_Axis_Vel_15,X_trục_tốc độ_15
+PLC/X_Axis_Vel,X_Axis_Vel_16,24082,X_Axis_Vel_16,X_Axis_Vel_16,X_trục_tốc độ_16
+PLC/X_Axis_Vel,X_Axis_Vel_17,24084,X_Axis_Vel_17,X_Axis_Vel_17,X_trục_tốc độ_17
+PLC/X_Axis_Vel,X_Axis_Vel_18,24086,X_Axis_Vel_18,X_Axis_Vel_18,X_trục_tốc độ_18
+PLC/X_Axis_Vel,X_Axis_Vel_19,24088,X_Axis_Vel_19,X_Axis_Vel_19,X_trục_tốc độ_19
+PLC/X_Axis_Vel,X_Axis_Vel_20,24090,X_Axis_Vel_20,X_Axis_Vel_20,X_trục_tốc độ_20
+
+PLC/Y_Axis_Pos,Y_Axis_Pos_0,24100,Y_Axis_Pos_0,Y_Axis_Pos_0,Y_trục_Địa điểm_0
+PLC/Y_Axis_Pos,Y_Axis_Pos_1,24102,Y_Axis_Pos_1,Y_Axis_Pos_1,Y_trục_Địa điểm_1
+PLC/Y_Axis_Pos,Y_Axis_Pos_2,24104,Y_Axis_Pos_2,Y_Axis_Pos_2,Y_trục_Địa điểm_2
+PLC/Y_Axis_Pos,Y_Axis_Pos_3,24106,Y_Axis_Pos_3,Y_Axis_Pos_3,Y_trục_Địa điểm_3
+PLC/Y_Axis_Pos,Y_Axis_Pos_4,24108,Y_Axis_Pos_4,Y_Axis_Pos_4,Y_trục_Địa điểm_4
+PLC/Y_Axis_Pos,Y_Axis_Pos_5,24110,Y_Axis_Pos_5,Y_Axis_Pos_5,Y_trục_Địa điểm_5
+PLC/Y_Axis_Pos,Y_Axis_Pos_6,24112,Y_Axis_Pos_6,Y_Axis_Pos_6,Y_trục_Địa điểm_6
+PLC/Y_Axis_Pos,Y_Axis_Pos_7,24114,Y_Axis_Pos_7,Y_Axis_Pos_7,Y_trục_Địa điểm_7
+PLC/Y_Axis_Pos,Y_Axis_Pos_8,24116,Y_Axis_Pos_8,Y_Axis_Pos_8,Y_trục_Địa điểm_8
+PLC/Y_Axis_Pos,Y_Axis_Pos_9,24118,Y_Axis_Pos_9,Y_Axis_Pos_9,Y_trục_Địa điểm_9
+PLC/Y_Axis_Pos,Y_Axis_Pos_10,24120,Y_Axis_Pos_10,Y_Axis_Pos_10,Y_trục_Địa điểm_10
+PLC/Y_Axis_Pos,Y_Axis_Pos_11,24122,Y_Axis_Pos_11,Y_Axis_Pos_11,Y_trục_Địa điểm_11
+PLC/Y_Axis_Pos,Y_Axis_Pos_12,24124,Y_Axis_Pos_12,Y_Axis_Pos_12,Y_trục_Địa điểm_12
+PLC/Y_Axis_Pos,Y_Axis_Pos_13,24126,Y_Axis_Pos_13,Y_Axis_Pos_13,Y_trục_Địa điểm_13
+PLC/Y_Axis_Pos,Y_Axis_Pos_14,24128,Y_Axis_Pos_14,Y_Axis_Pos_14,Y_trục_Địa điểm_14
+PLC/Y_Axis_Pos,Y_Axis_Pos_15,24130,Y_Axis_Pos_15,Y_Axis_Pos_15,Y_trục_Địa điểm_15
+PLC/Y_Axis_Pos,Y_Axis_Pos_16,24132,Y_Axis_Pos_16,Y_Axis_Pos_16,Y_trục_Địa điểm_16
+PLC/Y_Axis_Pos,Y_Axis_Pos_17,24134,Y_Axis_Pos_17,Y_Axis_Pos_17,Y_trục_Địa điểm_17
+PLC/Y_Axis_Pos,Y_Axis_Pos_18,24136,Y_Axis_Pos_18,Y_Axis_Pos_18,Y_trục_Địa điểm_18
+PLC/Y_Axis_Pos,Y_Axis_Pos_19,24138,Y_Axis_Pos_19,Y_Axis_Pos_19,Y_trục_Địa điểm_19
+PLC/Y_Axis_Pos,Y_Axis_Pos_20,24140,Y_Axis_Pos_20,Y_Axis_Pos_20,Y_trục_Địa điểm_20
+
+PLC/Y_Axis_Vel,Y_Axis_Vel_0,24150,Y_Axis_Vel_0,Y_Axis_Vel_0,Y_trục_tốc độ_0
+PLC/Y_Axis_Vel,Y_Axis_Vel_1,24152,Y_Axis_Vel_1,Y_Axis_Vel_1,Y_trục_tốc độ_1
+PLC/Y_Axis_Vel,Y_Axis_Vel_2,24154,Y_Axis_Vel_2,Y_Axis_Vel_2,Y_trục_tốc độ_2
+PLC/Y_Axis_Vel,Y_Axis_Vel_3,24156,Y_Axis_Vel_3,Y_Axis_Vel_3,Y_trục_tốc độ_3
+PLC/Y_Axis_Vel,Y_Axis_Vel_4,24158,Y_Axis_Vel_4,Y_Axis_Vel_4,Y_trục_tốc độ_4
+PLC/Y_Axis_Vel,Y_Axis_Vel_5,24160,Y_Axis_Vel_5,Y_Axis_Vel_5,Y_trục_tốc độ_5
+PLC/Y_Axis_Vel,Y_Axis_Vel_6,24162,Y_Axis_Vel_6,Y_Axis_Vel_6,Y_trục_tốc độ_6
+PLC/Y_Axis_Vel,Y_Axis_Vel_7,24164,Y_Axis_Vel_7,Y_Axis_Vel_7,Y_trục_tốc độ_7
+PLC/Y_Axis_Vel,Y_Axis_Vel_8,24166,Y_Axis_Vel_8,Y_Axis_Vel_8,Y_trục_tốc độ_8
+PLC/Y_Axis_Vel,Y_Axis_Vel_9,24168,Y_Axis_Vel_9,Y_Axis_Vel_9,Y_trục_tốc độ_9
+PLC/Y_Axis_Vel,Y_Axis_Vel_10,24170,Y_Axis_Vel_10,Y_Axis_Vel_10,Y_trục_tốc độ_10
+PLC/Y_Axis_Vel,Y_Axis_Vel_11,24172,Y_Axis_Vel_11,Y_Axis_Vel_11,Y_trục_tốc độ_11
+PLC/Y_Axis_Vel,Y_Axis_Vel_12,24174,Y_Axis_Vel_12,Y_Axis_Vel_12,Y_trục_tốc độ_12
+PLC/Y_Axis_Vel,Y_Axis_Vel_13,24176,Y_Axis_Vel_13,Y_Axis_Vel_13,Y_trục_tốc độ_13
+PLC/Y_Axis_Vel,Y_Axis_Vel_14,24178,Y_Axis_Vel_14,Y_Axis_Vel_14,Y_trục_tốc độ_14
+PLC/Y_Axis_Vel,Y_Axis_Vel_15,24180,Y_Axis_Vel_15,Y_Axis_Vel_15,Y_trục_tốc độ_15
+PLC/Y_Axis_Vel,Y_Axis_Vel_16,24182,Y_Axis_Vel_16,Y_Axis_Vel_16,Y_trục_tốc độ_16
+PLC/Y_Axis_Vel,Y_Axis_Vel_17,24184,Y_Axis_Vel_17,Y_Axis_Vel_17,Y_trục_tốc độ_17
+PLC/Y_Axis_Vel,Y_Axis_Vel_18,24186,Y_Axis_Vel_18,Y_Axis_Vel_18,Y_trục_tốc độ_18
+PLC/Y_Axis_Vel,Y_Axis_Vel_19,24188,Y_Axis_Vel_19,Y_Axis_Vel_19,Y_trục_tốc độ_19
+PLC/Y_Axis_Vel,Y_Axis_Vel_20,24190,Y_Axis_Vel_20,Y_Axis_Vel_20,Y_trục_tốc độ_20
+
+PLC/Z_Axis_Pos,Z_Axis_Pos_0,24200,Z_Axis_Pos_0,Z_Axis_Pos_0,Z_trục_Địa điểm_0
+PLC/Z_Axis_Pos,Z_Axis_Pos_1,24202,Z_Axis_Pos_1,Z_Axis_Pos_1,Z_trục_Địa điểm_1
+PLC/Z_Axis_Pos,Z_Axis_Pos_2,24204,Z_Axis_Pos_2,Z_Axis_Pos_2,Z_trục_Địa điểm_2
+PLC/Z_Axis_Pos,Z_Axis_Pos_3,24206,Z_Axis_Pos_3,Z_Axis_Pos_3,Z_trục_Địa điểm_3
+PLC/Z_Axis_Pos,Z_Axis_Pos_4,24208,Z_Axis_Pos_4,Z_Axis_Pos_4,Z_trục_Địa điểm_4
+PLC/Z_Axis_Pos,Z_Axis_Pos_5,24210,Z_Axis_Pos_5,Z_Axis_Pos_5,Z_trục_Địa điểm_5
+PLC/Z_Axis_Pos,Z_Axis_Pos_6,24212,Z_Axis_Pos_6,Z_Axis_Pos_6,Z_trục_Địa điểm_6
+PLC/Z_Axis_Pos,Z_Axis_Pos_7,24214,Z_Axis_Pos_7,Z_Axis_Pos_7,Z_trục_Địa điểm_7
+PLC/Z_Axis_Pos,Z_Axis_Pos_8,24216,Z_Axis_Pos_8,Z_Axis_Pos_8,Z_trục_Địa điểm_8
+PLC/Z_Axis_Pos,Z_Axis_Pos_9,24218,Z_Axis_Pos_9,Z_Axis_Pos_9,Z_trục_Địa điểm_9
+PLC/Z_Axis_Pos,Z_Axis_Pos_10,24220,Z_Axis_Pos_10,Z_Axis_Pos_10,Z_trục_Địa điểm_10
+PLC/Z_Axis_Pos,Z_Axis_Pos_11,24222,Z_Axis_Pos_11,Z_Axis_Pos_11,Z_trục_Địa điểm_11
+PLC/Z_Axis_Pos,Z_Axis_Pos_12,24224,Z_Axis_Pos_12,Z_Axis_Pos_12,Z_trục_Địa điểm_12
+PLC/Z_Axis_Pos,Z_Axis_Pos_13,24226,Z_Axis_Pos_13,Z_Axis_Pos_13,Z_trục_Địa điểm_13
+PLC/Z_Axis_Pos,Z_Axis_Pos_14,24228,Z_Axis_Pos_14,Z_Axis_Pos_14,Z_trục_Địa điểm_14
+PLC/Z_Axis_Pos,Z_Axis_Pos_15,24230,Z_Axis_Pos_15,Z_Axis_Pos_15,Z_trục_Địa điểm_15
+PLC/Z_Axis_Pos,Z_Axis_Pos_16,24232,Z_Axis_Pos_16,Z_Axis_Pos_16,Z_trục_Địa điểm_16
+PLC/Z_Axis_Pos,Z_Axis_Pos_17,24234,Z_Axis_Pos_17,Z_Axis_Pos_17,Z_trục_Địa điểm_17
+PLC/Z_Axis_Pos,Z_Axis_Pos_18,24236,Z_Axis_Pos_18,Z_Axis_Pos_18,Z_trục_Địa điểm_18
+PLC/Z_Axis_Pos,Z_Axis_Pos_19,24238,Z_Axis_Pos_19,Z_Axis_Pos_19,Z_trục_Địa điểm_19
+PLC/Z_Axis_Pos,Z_Axis_Pos_20,24240,Z_Axis_Pos_20,Z_Axis_Pos_20,Z_trục_Địa điểm_20
+
+PLC/Z_Axis_Vel,Z_Axis_Vel_0,24250,Z_Axis_Vel_0,Z_Axis_Vel_0,Z_trục_tốc độ_0
+PLC/Z_Axis_Vel,Z_Axis_Vel_1,24252,Z_Axis_Vel_1,Z_Axis_Vel_1,Z_trục_tốc độ_1
+PLC/Z_Axis_Vel,Z_Axis_Vel_2,24254,Z_Axis_Vel_2,Z_Axis_Vel_2,Z_trục_tốc độ_2
+PLC/Z_Axis_Vel,Z_Axis_Vel_3,24256,Z_Axis_Vel_3,Z_Axis_Vel_3,Z_trục_tốc độ_3
+PLC/Z_Axis_Vel,Z_Axis_Vel_4,24258,Z_Axis_Vel_4,Z_Axis_Vel_4,Z_trục_tốc độ_4
+PLC/Z_Axis_Vel,Z_Axis_Vel_5,24260,Z_Axis_Vel_5,Z_Axis_Vel_5,Z_trục_tốc độ_5
+PLC/Z_Axis_Vel,Z_Axis_Vel_6,24262,Z_Axis_Vel_6,Z_Axis_Vel_6,Z_trục_tốc độ_6
+PLC/Z_Axis_Vel,Z_Axis_Vel_7,24264,Z_Axis_Vel_7,Z_Axis_Vel_7,Z_trục_tốc độ_7
+PLC/Z_Axis_Vel,Z_Axis_Vel_8,24266,Z_Axis_Vel_8,Z_Axis_Vel_8,Z_trục_tốc độ_8
+PLC/Z_Axis_Vel,Z_Axis_Vel_9,24268,Z_Axis_Vel_9,Z_Axis_Vel_9,Z_trục_tốc độ_9
+PLC/Z_Axis_Vel,Z_Axis_Vel_10,24270,Z_Axis_Vel_10,Z_Axis_Vel_10,Z_trục_tốc độ_10
+PLC/Z_Axis_Vel,Z_Axis_Vel_11,24272,Z_Axis_Vel_11,Z_Axis_Vel_11,Z_trục_tốc độ_11
+PLC/Z_Axis_Vel,Z_Axis_Vel_12,24274,Z_Axis_Vel_12,Z_Axis_Vel_12,Z_trục_tốc độ_12
+PLC/Z_Axis_Vel,Z_Axis_Vel_13,24276,Z_Axis_Vel_13,Z_Axis_Vel_13,Z_trục_tốc độ_13
+PLC/Z_Axis_Vel,Z_Axis_Vel_14,24278,Z_Axis_Vel_14,Z_Axis_Vel_14,Z_trục_tốc độ_14
+PLC/Z_Axis_Vel,Z_Axis_Vel_15,24280,Z_Axis_Vel_15,Z_Axis_Vel_15,Z_trục_tốc độ_15
+PLC/Z_Axis_Vel,Z_Axis_Vel_16,24282,Z_Axis_Vel_16,Z_Axis_Vel_16,Z_trục_tốc độ_16
+PLC/Z_Axis_Vel,Z_Axis_Vel_17,24284,Z_Axis_Vel_17,Z_Axis_Vel_17,Z_trục_tốc độ_17
+PLC/Z_Axis_Vel,Z_Axis_Vel_18,24286,Z_Axis_Vel_18,Z_Axis_Vel_18,Z_trục_tốc độ_18
+PLC/Z_Axis_Vel,Z_Axis_Vel_19,24288,Z_Axis_Vel_19,Z_Axis_Vel_19,Z_trục_tốc độ_19
+PLC/Z_Axis_Vel,Z_Axis_Vel_20,24290,Z_Axis_Vel_20,Z_Axis_Vel_20,Z_trục_tốc độ_20
+
+PLC/R_Axis_Pos,R_Axis_Pos_0,24300,R_Axis_Pos_0,R_Axis_Pos_0,R_trục_Địa điểm_0
+PLC/R_Axis_Pos,R_Axis_Pos_1,24302,R_Axis_Pos_1,R_Axis_Pos_1,R_trục_Địa điểm_1
+PLC/R_Axis_Pos,R_Axis_Pos_2,24304,R_Axis_Pos_2,R_Axis_Pos_2,R_trục_Địa điểm_2
+PLC/R_Axis_Pos,R_Axis_Pos_3,24306,R_Axis_Pos_3,R_Axis_Pos_3,R_trục_Địa điểm_3
+PLC/R_Axis_Pos,R_Axis_Pos_4,24308,R_Axis_Pos_4,R_Axis_Pos_4,R_trục_Địa điểm_4
+PLC/R_Axis_Pos,R_Axis_Pos_5,24310,R_Axis_Pos_5,R_Axis_Pos_5,R_trục_Địa điểm_5
+PLC/R_Axis_Pos,R_Axis_Pos_6,24312,R_Axis_Pos_6,R_Axis_Pos_6,R_trục_Địa điểm_6
+PLC/R_Axis_Pos,R_Axis_Pos_7,24314,R_Axis_Pos_7,R_Axis_Pos_7,R_trục_Địa điểm_7
+PLC/R_Axis_Pos,R_Axis_Pos_8,24316,R_Axis_Pos_8,R_Axis_Pos_8,R_trục_Địa điểm_8
+PLC/R_Axis_Pos,R_Axis_Pos_9,24318,R_Axis_Pos_9,R_Axis_Pos_9,R_trục_Địa điểm_9
+PLC/R_Axis_Pos,R_Axis_Pos_10,24320,R_Axis_Pos_10,R_Axis_Pos_10,R_trục_Địa điểm_10
+PLC/R_Axis_Pos,R_Axis_Pos_11,24322,R_Axis_Pos_11,R_Axis_Pos_11,R_trục_Địa điểm_11
+PLC/R_Axis_Pos,R_Axis_Pos_12,24324,R_Axis_Pos_12,R_Axis_Pos_12,R_trục_Địa điểm_12
+PLC/R_Axis_Pos,R_Axis_Pos_13,24326,R_Axis_Pos_13,R_Axis_Pos_13,R_trục_Địa điểm_13
+PLC/R_Axis_Pos,R_Axis_Pos_14,24328,R_Axis_Pos_14,R_Axis_Pos_14,R_trục_Địa điểm_14
+PLC/R_Axis_Pos,R_Axis_Pos_15,24330,R_Axis_Pos_15,R_Axis_Pos_15,R_trục_Địa điểm_15
+PLC/R_Axis_Pos,R_Axis_Pos_16,24332,R_Axis_Pos_16,R_Axis_Pos_16,R_trục_Địa điểm_16
+PLC/R_Axis_Pos,R_Axis_Pos_17,24334,R_Axis_Pos_17,R_Axis_Pos_17,R_trục_Địa điểm_17
+PLC/R_Axis_Pos,R_Axis_Pos_18,24336,R_Axis_Pos_18,R_Axis_Pos_18,R_trục_Địa điểm_18
+PLC/R_Axis_Pos,R_Axis_Pos_19,24338,R_Axis_Pos_19,R_Axis_Pos_19,R_trục_Địa điểm_19
+PLC/R_Axis_Pos,R_Axis_Pos_20,24340,R_Axis_Pos_20,R_Axis_Pos_20,R_trục_Địa điểm_20
+
+PLC/R_Axis_Vel,R_Axis_Vel_0,24350,R_Axis_Vel_0,R_Axis_Vel_0,R_trục_tốc độ_0
+PLC/R_Axis_Vel,R_Axis_Vel_1,24352,R_Axis_Vel_1,R_Axis_Vel_1,R_trục_tốc độ_1
+PLC/R_Axis_Vel,R_Axis_Vel_2,24354,R_Axis_Vel_2,R_Axis_Vel_2,R_trục_tốc độ_2
+PLC/R_Axis_Vel,R_Axis_Vel_3,24356,R_Axis_Vel_3,R_Axis_Vel_3,R_trục_tốc độ_3
+PLC/R_Axis_Vel,R_Axis_Vel_4,24358,R_Axis_Vel_4,R_Axis_Vel_4,R_trục_tốc độ_4
+PLC/R_Axis_Vel,R_Axis_Vel_5,24360,R_Axis_Vel_5,R_Axis_Vel_5,R_trục_tốc độ_5
+PLC/R_Axis_Vel,R_Axis_Vel_6,24362,R_Axis_Vel_6,R_Axis_Vel_6,R_trục_tốc độ_6
+PLC/R_Axis_Vel,R_Axis_Vel_7,24364,R_Axis_Vel_7,R_Axis_Vel_7,R_trục_tốc độ_7
+PLC/R_Axis_Vel,R_Axis_Vel_8,24366,R_Axis_Vel_8,R_Axis_Vel_8,R_trục_tốc độ_8
+PLC/R_Axis_Vel,R_Axis_Vel_9,24368,R_Axis_Vel_9,R_Axis_Vel_9,R_trục_tốc độ_9
+PLC/R_Axis_Vel,R_Axis_Vel_10,24370,R_Axis_Vel_10,R_Axis_Vel_10,R_trục_tốc độ_10
+PLC/R_Axis_Vel,R_Axis_Vel_11,24372,R_Axis_Vel_11,R_Axis_Vel_11,R_trục_tốc độ_11
+PLC/R_Axis_Vel,R_Axis_Vel_12,24374,R_Axis_Vel_12,R_Axis_Vel_12,R_trục_tốc độ_12
+PLC/R_Axis_Vel,R_Axis_Vel_13,24376,R_Axis_Vel_13,R_Axis_Vel_13,R_trục_tốc độ_13
+PLC/R_Axis_Vel,R_Axis_Vel_14,24378,R_Axis_Vel_14,R_Axis_Vel_14,R_trục_tốc độ_14
+PLC/R_Axis_Vel,R_Axis_Vel_15,24380,R_Axis_Vel_15,R_Axis_Vel_15,R_trục_tốc độ_15
+PLC/R_Axis_Vel,R_Axis_Vel_16,24382,R_Axis_Vel_16,R_Axis_Vel_16,R_trục_tốc độ_16
+PLC/R_Axis_Vel,R_Axis_Vel_17,24384,R_Axis_Vel_17,R_Axis_Vel_17,R_trục_tốc độ_17
+PLC/R_Axis_Vel,R_Axis_Vel_18,24386,R_Axis_Vel_18,R_Axis_Vel_18,R_trục_tốc độ_18
+PLC/R_Axis_Vel,R_Axis_Vel_19,24388,R_Axis_Vel_19,R_Axis_Vel_19,R_trục_tốc độ_19
+PLC/R_Axis_Vel,R_Axis_Vel_20,24390,R_Axis_Vel_20,R_Axis_Vel_20,R_trục_tốc độ_20
+
+PLC/上料轴1__Axis,上料轴1__Axis_Pos_0,24400,上料轴1__Axis_Pos_0,Loading shaft 1_Axis_Pos_0,Trục cho ăn 1_trục_Địa điểm_0
+PLC/上料轴1__Axis,上料轴1__Axis_Pos_1,24402,上料轴1__Axis_Pos_1,Loading shaft 1_Axis_Pos_1,Trục cho ăn 1_trục_Địa điểm_1
+PLC/上料轴1__Axis,上料轴1__Axis_Pos_2,24404,上料轴1__Axis_Pos_2,Loading shaft 1_Axis_Pos_2,Trục cho ăn 1_trục_Địa điểm_2
+PLC/上料轴1__Axis,上料轴1__Axis_Pos_3,24406,上料轴1__Axis_Pos_3,Loading shaft 1_Axis_Pos_3,Trục cho ăn 1_trục_Địa điểm_3
+PLC/上料轴1__Axis,上料轴1__Axis_Pos_4,24408,上料轴1__Axis_Pos_4,Loading shaft 1_Axis_Pos_4,Trục cho ăn 1_trục_Địa điểm_4
+PLC/上料轴1__Axis,上料轴1__Axis_Pos_5,24410,上料轴1__Axis_Pos_5,Loading shaft 1_Axis_Pos_5,Trục cho ăn 1_trục_Địa điểm_5
+PLC/上料轴1__Axis,上料轴1__Axis_Pos_6,24412,上料轴1__Axis_Pos_6,Loading shaft 1_Axis_Pos_6,Trục cho ăn 1_trục_Địa điểm_6
+PLC/上料轴1__Axis,上料轴1__Axis_Pos_7,24414,上料轴1__Axis_Pos_7,Loading shaft 1_Axis_Pos_7,Trục cho ăn 1_trục_Địa điểm_7
+PLC/上料轴1__Axis,上料轴1__Axis_Pos_8,24416,上料轴1__Axis_Pos_8,Loading shaft 1_Axis_Pos_8,Trục cho ăn 1_trục_Địa điểm_8
+PLC/上料轴1__Axis,上料轴1__Axis_Pos_9,24418,上料轴1__Axis_Pos_9,Loading shaft 1_Axis_Pos_9,Trục cho ăn 1_trục_Địa điểm_9
+PLC/上料轴1__Axis,上料轴1__Axis_Pos_10,24420,上料轴1__Axis_Pos_10,Loading shaft 1_Axis_Pos_10,Trục cho ăn 1_trục_Địa điểm_10
+PLC/上料轴1__Axis,上料轴1__Axis_Pos_11,24422,上料轴1__Axis_Pos_11,Loading shaft 1_Axis_Pos_11,Trục cho ăn 1_trục_Địa điểm_11
+PLC/上料轴1__Axis,上料轴1__Axis_Pos_12,24424,上料轴1__Axis_Pos_12,Loading shaft 1_Axis_Pos_12,Trục cho ăn 1_trục_Địa điểm_12
+PLC/上料轴1__Axis,上料轴1__Axis_Pos_13,24426,上料轴1__Axis_Pos_13,Loading shaft 1_Axis_Pos_13,Trục cho ăn 1_trục_Địa điểm_13
+PLC/上料轴1__Axis,上料轴1__Axis_Pos_14,24428,上料轴1__Axis_Pos_14,Loading shaft 1_Axis_Pos_14,Trục cho ăn 1_trục_Địa điểm_14
+PLC/上料轴1__Axis,上料轴1__Axis_Pos_15,24430,上料轴1__Axis_Pos_15,Loading shaft 1_Axis_Pos_15,Trục cho ăn 1_trục_Địa điểm_15
+PLC/上料轴1__Axis,上料轴1__Axis_Pos_16,24432,上料轴1__Axis_Pos_16,Loading shaft 1_Axis_Pos_16,Trục cho ăn 1_trục_Địa điểm_16
+PLC/上料轴1__Axis,上料轴1__Axis_Pos_17,24434,上料轴1__Axis_Pos_17,Loading shaft 1_Axis_Pos_17,Trục cho ăn 1_trục_Địa điểm_17
+PLC/上料轴1__Axis,上料轴1__Axis_Pos_18,24436,上料轴1__Axis_Pos_18,Loading shaft 1_Axis_Pos_18,Trục cho ăn 1_trục_Địa điểm_18
+PLC/上料轴1__Axis,上料轴1__Axis_Pos_19,24438,上料轴1__Axis_Pos_19,Loading shaft 1_Axis_Pos_19,Trục cho ăn 1_trục_Địa điểm_19
+PLC/上料轴1__Axis,上料轴1__Axis_Pos_20,24440,上料轴1__Axis_Pos_20,Loading shaft 1_Axis_Pos_20,Trục cho ăn 1_trục_Địa điểm_20
+
+PLC/上料轴1_Axis_Vel,上料轴1_Axis_Vel_0,24450,上料轴1_Axis_Vel_0,Loading shaft 1_Axis_Vel_0,Trục cho ăn 1_trục_tốc độ_0
+PLC/上料轴1_Axis_Vel,上料轴1_Axis_Vel_1,24452,上料轴1_Axis_Vel_1,Loading shaft 1_Axis_Vel_1,Trục cho ăn 1_trục_tốc độ_1
+PLC/上料轴1_Axis_Vel,上料轴1_Axis_Vel_2,24454,上料轴1_Axis_Vel_2,Loading shaft 1_Axis_Vel_2,Trục cho ăn 1_trục_tốc độ_2
+PLC/上料轴1_Axis_Vel,上料轴1_Axis_Vel_3,24456,上料轴1_Axis_Vel_3,Loading shaft 1_Axis_Vel_3,Trục cho ăn 1_trục_tốc độ_3
+PLC/上料轴1_Axis_Vel,上料轴1_Axis_Vel_4,24458,上料轴1_Axis_Vel_4,Loading shaft 1_Axis_Vel_4,Trục cho ăn 1_trục_tốc độ_4
+PLC/上料轴1_Axis_Vel,上料轴1_Axis_Vel_5,24460,上料轴1_Axis_Vel_5,Loading shaft 1_Axis_Vel_5,Trục cho ăn 1_trục_tốc độ_5
+PLC/上料轴1_Axis_Vel,上料轴1_Axis_Vel_6,24462,上料轴1_Axis_Vel_6,Loading shaft 1_Axis_Vel_6,Trục cho ăn 1_trục_tốc độ_6
+PLC/上料轴1_Axis_Vel,上料轴1_Axis_Vel_7,24464,上料轴1_Axis_Vel_7,Loading shaft 1_Axis_Vel_7,Trục cho ăn 1_trục_tốc độ_7
+PLC/上料轴1_Axis_Vel,上料轴1_Axis_Vel_8,24466,上料轴1_Axis_Vel_8,Loading shaft 1_Axis_Vel_8,Trục cho ăn 1_trục_tốc độ_8
+PLC/上料轴1_Axis_Vel,上料轴1_Axis_Vel_9,24468,上料轴1_Axis_Vel_9,Loading shaft 1_Axis_Vel_9,Trục cho ăn 1_trục_tốc độ_9
+PLC/上料轴1_Axis_Vel,上料轴1_Axis_Vel_10,24470,上料轴1_Axis_Vel_10,Loading shaft 1_Axis_Vel_10,Trục cho ăn 1_trục_tốc độ_10
+PLC/上料轴1_Axis_Vel,上料轴1_Axis_Vel_11,24472,上料轴1_Axis_Vel_11,Loading shaft 1_Axis_Vel_11,Trục cho ăn 1_trục_tốc độ_11
+PLC/上料轴1_Axis_Vel,上料轴1_Axis_Vel_12,24474,上料轴1_Axis_Vel_12,Loading shaft 1_Axis_Vel_12,Trục cho ăn 1_trục_tốc độ_12
+PLC/上料轴1_Axis_Vel,上料轴1_Axis_Vel_13,24476,上料轴1_Axis_Vel_13,Loading shaft 1_Axis_Vel_13,Trục cho ăn 1_trục_tốc độ_13
+PLC/上料轴1_Axis_Vel,上料轴1_Axis_Vel_14,24478,上料轴1_Axis_Vel_14,Loading shaft 1_Axis_Vel_14,Trục cho ăn 1_trục_tốc độ_14
+PLC/上料轴1_Axis_Vel,上料轴1_Axis_Vel_15,24480,上料轴1_Axis_Vel_15,Loading shaft 1_Axis_Vel_15,Trục cho ăn 1_trục_tốc độ_15
+PLC/上料轴1_Axis_Vel,上料轴1_Axis_Vel_16,24482,上料轴1_Axis_Vel_16,Loading shaft 1_Axis_Vel_16,Trục cho ăn 1_trục_tốc độ_16
+PLC/上料轴1_Axis_Vel,上料轴1_Axis_Vel_17,24484,上料轴1_Axis_Vel_17,Loading shaft 1_Axis_Vel_17,Trục cho ăn 1_trục_tốc độ_17
+PLC/上料轴1_Axis_Vel,上料轴1_Axis_Vel_18,24486,上料轴1_Axis_Vel_18,Loading shaft 1_Axis_Vel_18,Trục cho ăn 1_trục_tốc độ_18
+PLC/上料轴1_Axis_Vel,上料轴1_Axis_Vel_19,24488,上料轴1_Axis_Vel_19,Loading shaft 1_Axis_Vel_19,Trục cho ăn 1_trục_tốc độ_19
+PLC/上料轴1_Axis_Vel,上料轴1_Axis_Vel_20,24490,上料轴1_Axis_Vel_20,Loading shaft 1_Axis_Vel_20,Trục cho ăn 1_trục_tốc độ_20
+
+PLC/上料轴2__Axis,上料轴2__Axis_Pos_0,24500,上料轴2__Axis_Pos_0,Loading shaft 2_Axis_Pos_0,Trục cho ăn 2_trục_Địa điểm_0
+PLC/上料轴2__Axis,上料轴2__Axis_Pos_1,24502,上料轴2__Axis_Pos_1,Loading shaft 2_Axis_Pos_1,Trục cho ăn 2_trục_Địa điểm_1
+PLC/上料轴2__Axis,上料轴2__Axis_Pos_2,24504,上料轴2__Axis_Pos_2,Loading shaft 2_Axis_Pos_2,Trục cho ăn 2_trục_Địa điểm_2
+PLC/上料轴2__Axis,上料轴2__Axis_Pos_3,24506,上料轴2__Axis_Pos_3,Loading shaft 2_Axis_Pos_3,Trục cho ăn 2_trục_Địa điểm_3
+PLC/上料轴2__Axis,上料轴2__Axis_Pos_4,24508,上料轴2__Axis_Pos_4,Loading shaft 2_Axis_Pos_4,Trục cho ăn 2_trục_Địa điểm_4
+PLC/上料轴2__Axis,上料轴2__Axis_Pos_5,24510,上料轴2__Axis_Pos_5,Loading shaft 2_Axis_Pos_5,Trục cho ăn 2_trục_Địa điểm_5
+PLC/上料轴2__Axis,上料轴2__Axis_Pos_6,24512,上料轴2__Axis_Pos_6,Loading shaft 2_Axis_Pos_6,Trục cho ăn 2_trục_Địa điểm_6
+PLC/上料轴2__Axis,上料轴2__Axis_Pos_7,24514,上料轴2__Axis_Pos_7,Loading shaft 2_Axis_Pos_7,Trục cho ăn 2_trục_Địa điểm_7
+PLC/上料轴2__Axis,上料轴2__Axis_Pos_8,24516,上料轴2__Axis_Pos_8,Loading shaft 2_Axis_Pos_8,Trục cho ăn 2_trục_Địa điểm_8
+PLC/上料轴2__Axis,上料轴2__Axis_Pos_9,24518,上料轴2__Axis_Pos_9,Loading shaft 2_Axis_Pos_9,Trục cho ăn 2_trục_Địa điểm_9
+PLC/上料轴2__Axis,上料轴2__Axis_Pos_10,24520,上料轴2__Axis_Pos_10,Loading shaft 2_Axis_Pos_10,Trục cho ăn 2_trục_Địa điểm_10
+PLC/上料轴2__Axis,上料轴2__Axis_Pos_11,24522,上料轴2__Axis_Pos_11,Loading shaft 2_Axis_Pos_11,Trục cho ăn 2_trục_Địa điểm_11
+PLC/上料轴2__Axis,上料轴2__Axis_Pos_12,24524,上料轴2__Axis_Pos_12,Loading shaft 2_Axis_Pos_12,Trục cho ăn 2_trục_Địa điểm_12
+PLC/上料轴2__Axis,上料轴2__Axis_Pos_13,24526,上料轴2__Axis_Pos_13,Loading shaft 2_Axis_Pos_13,Trục cho ăn 2_trục_Địa điểm_13
+PLC/上料轴2__Axis,上料轴2__Axis_Pos_14,24528,上料轴2__Axis_Pos_14,Loading shaft 2_Axis_Pos_14,Trục cho ăn 2_trục_Địa điểm_14
+PLC/上料轴2__Axis,上料轴2__Axis_Pos_15,24530,上料轴2__Axis_Pos_15,Loading shaft 2_Axis_Pos_15,Trục cho ăn 2_trục_Địa điểm_15
+PLC/上料轴2__Axis,上料轴2__Axis_Pos_16,24532,上料轴2__Axis_Pos_16,Loading shaft 2_Axis_Pos_16,Trục cho ăn 2_trục_Địa điểm_16
+PLC/上料轴2__Axis,上料轴2__Axis_Pos_17,24534,上料轴2__Axis_Pos_17,Loading shaft 2_Axis_Pos_17,Trục cho ăn 2_trục_Địa điểm_17
+PLC/上料轴2__Axis,上料轴2__Axis_Pos_18,24536,上料轴2__Axis_Pos_18,Loading shaft 2_Axis_Pos_18,Trục cho ăn 2_trục_Địa điểm_18
+PLC/上料轴2__Axis,上料轴2__Axis_Pos_19,24538,上料轴2__Axis_Pos_19,Loading shaft 2_Axis_Pos_19,Trục cho ăn 2_trục_Địa điểm_19
+PLC/上料轴2__Axis,上料轴2__Axis_Pos_20,24540,上料轴2__Axis_Pos_20,Loading shaft 2_Axis_Pos_20,Trục cho ăn 2_trục_Địa điểm_20
+
+PLC/上料轴2_Axis_Vel,上料轴2_Axis_Vel_0,24550,上料轴2_Axis_Vel_0,Loading shaft 2_Axis_Vel_0,Trục cho ăn 2_trục_tốc độ_0
+PLC/上料轴2_Axis_Vel,上料轴2_Axis_Vel_1,24552,上料轴2_Axis_Vel_1,Loading shaft 2_Axis_Vel_1,Trục cho ăn 2_trục_tốc độ_1
+PLC/上料轴2_Axis_Vel,上料轴2_Axis_Vel_2,24554,上料轴2_Axis_Vel_2,Loading shaft 2_Axis_Vel_2,Trục cho ăn 2_trục_tốc độ_2
+PLC/上料轴2_Axis_Vel,上料轴2_Axis_Vel_3,24556,上料轴2_Axis_Vel_3,Loading shaft 2_Axis_Vel_3,Trục cho ăn 2_trục_tốc độ_3
+PLC/上料轴2_Axis_Vel,上料轴2_Axis_Vel_4,24558,上料轴2_Axis_Vel_4,Loading shaft 2_Axis_Vel_4,Trục cho ăn 2_trục_tốc độ_4
+PLC/上料轴2_Axis_Vel,上料轴2_Axis_Vel_5,24560,上料轴2_Axis_Vel_5,Loading shaft 2_Axis_Vel_5,Trục cho ăn 2_trục_tốc độ_5
+PLC/上料轴2_Axis_Vel,上料轴2_Axis_Vel_6,24562,上料轴2_Axis_Vel_6,Loading shaft 2_Axis_Vel_6,Trục cho ăn 2_trục_tốc độ_6
+PLC/上料轴2_Axis_Vel,上料轴2_Axis_Vel_7,24564,上料轴2_Axis_Vel_7,Loading shaft 2_Axis_Vel_7,Trục cho ăn 2_trục_tốc độ_7
+PLC/上料轴2_Axis_Vel,上料轴2_Axis_Vel_8,24566,上料轴2_Axis_Vel_8,Loading shaft 2_Axis_Vel_8,Trục cho ăn 2_trục_tốc độ_8
+PLC/上料轴2_Axis_Vel,上料轴2_Axis_Vel_9,24568,上料轴2_Axis_Vel_9,Loading shaft 2_Axis_Vel_9,Trục cho ăn 2_trục_tốc độ_9
+PLC/上料轴2_Axis_Vel,上料轴2_Axis_Vel_10,24570,上料轴2_Axis_Vel_10,Loading shaft 2_Axis_Vel_10,Trục cho ăn 2_trục_tốc độ_10
+PLC/上料轴2_Axis_Vel,上料轴2_Axis_Vel_11,24572,上料轴2_Axis_Vel_11,Loading shaft 2_Axis_Vel_11,Trục cho ăn 2_trục_tốc độ_11
+PLC/上料轴2_Axis_Vel,上料轴2_Axis_Vel_12,24574,上料轴2_Axis_Vel_12,Loading shaft 2_Axis_Vel_12,Trục cho ăn 2_trục_tốc độ_12
+PLC/上料轴2_Axis_Vel,上料轴2_Axis_Vel_13,24576,上料轴2_Axis_Vel_13,Loading shaft 2_Axis_Vel_13,Trục cho ăn 2_trục_tốc độ_13
+PLC/上料轴2_Axis_Vel,上料轴2_Axis_Vel_14,24578,上料轴2_Axis_Vel_14,Loading shaft 2_Axis_Vel_14,Trục cho ăn 2_trục_tốc độ_14
+PLC/上料轴2_Axis_Vel,上料轴2_Axis_Vel_15,24580,上料轴2_Axis_Vel_15,Loading shaft 2_Axis_Vel_15,Trục cho ăn 2_trục_tốc độ_15
+PLC/上料轴2_Axis_Vel,上料轴2_Axis_Vel_16,24582,上料轴2_Axis_Vel_16,Loading shaft 2_Axis_Vel_16,Trục cho ăn 2_trục_tốc độ_16
+PLC/上料轴2_Axis_Vel,上料轴2_Axis_Vel_17,24584,上料轴2_Axis_Vel_17,Loading shaft 2_Axis_Vel_17,Trục cho ăn 2_trục_tốc độ_17
+PLC/上料轴2_Axis_Vel,上料轴2_Axis_Vel_18,24586,上料轴2_Axis_Vel_18,Loading shaft 2_Axis_Vel_18,Trục cho ăn 2_trục_tốc độ_18
+PLC/上料轴2_Axis_Vel,上料轴2_Axis_Vel_19,24588,上料轴2_Axis_Vel_19,Loading shaft 2_Axis_Vel_19,Trục cho ăn 2_trục_tốc độ_19
+PLC/上料轴2_Axis_Vel,上料轴2_Axis_Vel_20,24590,上料轴2_Axis_Vel_20,Loading shaft 2_Axis_Vel_20,Trục cho ăn 2_trục_tốc độ_20
+
+PLC/步进电机__Axis,步进电机__Axis_Pos_0,24600,步进电机__Axis_Pos_0,stepper motor_Axis_Pos_0,Động cơ bước_trục_Địa điểm_0
+PLC/步进电机__Axis,步进电机__Axis_Pos_1,24602,步进电机__Axis_Pos_1,stepper motor_Axis_Pos_1,Động cơ bước_trục_Địa điểm_1
+PLC/步进电机__Axis,步进电机__Axis_Pos_2,24604,步进电机__Axis_Pos_2,stepper motor_Axis_Pos_2,Động cơ bước_trục_Địa điểm_2
+PLC/步进电机__Axis,步进电机__Axis_Pos_3,24606,步进电机__Axis_Pos_3,stepper motor_Axis_Pos_3,Động cơ bước_trục_Địa điểm_3
+PLC/步进电机__Axis,步进电机__Axis_Pos_4,24608,步进电机__Axis_Pos_4,stepper motor_Axis_Pos_4,Động cơ bước_trục_Địa điểm_4
+PLC/步进电机__Axis,步进电机__Axis_Pos_5,24610,步进电机__Axis_Pos_5,stepper motor_Axis_Pos_5,Động cơ bước_trục_Địa điểm_5
+PLC/步进电机__Axis,步进电机__Axis_Pos_6,24612,步进电机__Axis_Pos_6,stepper motor_Axis_Pos_6,Động cơ bước_trục_Địa điểm_6
+PLC/步进电机__Axis,步进电机__Axis_Pos_7,24614,步进电机__Axis_Pos_7,stepper motor_Axis_Pos_7,Động cơ bước_trục_Địa điểm_7
+PLC/步进电机__Axis,步进电机__Axis_Pos_8,24616,步进电机__Axis_Pos_8,stepper motor_Axis_Pos_8,Động cơ bước_trục_Địa điểm_8
+PLC/步进电机__Axis,步进电机__Axis_Pos_9,24618,步进电机__Axis_Pos_9,stepper motor_Axis_Pos_9,Động cơ bước_trục_Địa điểm_9
+PLC/步进电机__Axis,步进电机__Axis_Pos_10,24620,步进电机__Axis_Pos_10,stepper motor_Axis_Pos_10,Động cơ bước_trục_Địa điểm_10
+PLC/步进电机__Axis,步进电机__Axis_Pos_11,24622,步进电机__Axis_Pos_11,stepper motor_Axis_Pos_11,Động cơ bước_trục_Địa điểm_11
+PLC/步进电机__Axis,步进电机__Axis_Pos_12,24624,步进电机__Axis_Pos_12,stepper motor_Axis_Pos_12,Động cơ bước_trục_Địa điểm_12
+PLC/步进电机__Axis,步进电机__Axis_Pos_13,24626,步进电机__Axis_Pos_13,stepper motor_Axis_Pos_13,Động cơ bước_trục_Địa điểm_13
+PLC/步进电机__Axis,步进电机__Axis_Pos_14,24628,步进电机__Axis_Pos_14,stepper motor_Axis_Pos_14,Động cơ bước_trục_Địa điểm_14
+PLC/步进电机__Axis,步进电机__Axis_Pos_15,24630,步进电机__Axis_Pos_15,stepper motor_Axis_Pos_15,Động cơ bước_trục_Địa điểm_15
+PLC/步进电机__Axis,步进电机__Axis_Pos_16,24632,步进电机__Axis_Pos_16,stepper motor_Axis_Pos_16,Động cơ bước_trục_Địa điểm_16
+PLC/步进电机__Axis,步进电机__Axis_Pos_17,24634,步进电机__Axis_Pos_17,stepper motor_Axis_Pos_17,Động cơ bước_trục_Địa điểm_17
+PLC/步进电机__Axis,步进电机__Axis_Pos_18,24636,步进电机__Axis_Pos_18,stepper motor_Axis_Pos_18,Động cơ bước_trục_Địa điểm_18
+PLC/步进电机__Axis,步进电机__Axis_Pos_19,24638,步进电机__Axis_Pos_19,stepper motor_Axis_Pos_19,Động cơ bước_trục_Địa điểm_19
+PLC/步进电机__Axis,步进电机__Axis_Pos_20,24640,步进电机__Axis_Pos_20,stepper motor_Axis_Pos_20,Động cơ bước_trục_Địa điểm_20
+
+PLC/步进电机_Axis_Vel,步进电机_Axis_Vel_0,24650,步进电机_Axis_Vel_0,stepper motor_Axis_Vel_0,Động cơ bước_trục_tốc độ_0
+PLC/步进电机_Axis_Vel,步进电机_Axis_Vel_1,24652,步进电机_Axis_Vel_1,stepper motor_Axis_Vel_1,Động cơ bước_trục_tốc độ_1
+PLC/步进电机_Axis_Vel,步进电机_Axis_Vel_2,24654,步进电机_Axis_Vel_2,stepper motor_Axis_Vel_2,Động cơ bước_trục_tốc độ_2
+PLC/步进电机_Axis_Vel,步进电机_Axis_Vel_3,24656,步进电机_Axis_Vel_3,stepper motor_Axis_Vel_3,Động cơ bước_trục_tốc độ_3
+PLC/步进电机_Axis_Vel,步进电机_Axis_Vel_4,24658,步进电机_Axis_Vel_4,stepper motor_Axis_Vel_4,Động cơ bước_trục_tốc độ_4
+PLC/步进电机_Axis_Vel,步进电机_Axis_Vel_5,24660,步进电机_Axis_Vel_5,stepper motor_Axis_Vel_5,Động cơ bước_trục_tốc độ_5
+PLC/步进电机_Axis_Vel,步进电机_Axis_Vel_6,24662,步进电机_Axis_Vel_6,stepper motor_Axis_Vel_6,Động cơ bước_trục_tốc độ_6
+PLC/步进电机_Axis_Vel,步进电机_Axis_Vel_7,24664,步进电机_Axis_Vel_7,stepper motor_Axis_Vel_7,Động cơ bước_trục_tốc độ_7
+PLC/步进电机_Axis_Vel,步进电机_Axis_Vel_8,24666,步进电机_Axis_Vel_8,stepper motor_Axis_Vel_8,Động cơ bước_trục_tốc độ_8
+PLC/步进电机_Axis_Vel,步进电机_Axis_Vel_9,24668,步进电机_Axis_Vel_9,stepper motor_Axis_Vel_9,Động cơ bước_trục_tốc độ_9
+PLC/步进电机_Axis_Vel,步进电机_Axis_Vel_10,24670,步进电机_Axis_Vel_10,stepper motor_Axis_Vel_10,Động cơ bước_trục_tốc độ_10
+PLC/步进电机_Axis_Vel,步进电机_Axis_Vel_11,24672,步进电机_Axis_Vel_11,stepper motor_Axis_Vel_11,Động cơ bước_trục_tốc độ_11
+PLC/步进电机_Axis_Vel,步进电机_Axis_Vel_12,24674,步进电机_Axis_Vel_12,stepper motor_Axis_Vel_12,Động cơ bước_trục_tốc độ_12
+PLC/步进电机_Axis_Vel,步进电机_Axis_Vel_13,24676,步进电机_Axis_Vel_13,stepper motor_Axis_Vel_13,Động cơ bước_trục_tốc độ_13
+PLC/步进电机_Axis_Vel,步进电机_Axis_Vel_14,24678,步进电机_Axis_Vel_14,stepper motor_Axis_Vel_14,Động cơ bước_trục_tốc độ_14
+PLC/步进电机_Axis_Vel,步进电机_Axis_Vel_15,24680,步进电机_Axis_Vel_15,stepper motor_Axis_Vel_15,Động cơ bước_trục_tốc độ_15
+PLC/步进电机_Axis_Vel,步进电机_Axis_Vel_16,24682,步进电机_Axis_Vel_16,stepper motor_Axis_Vel_16,Động cơ bước_trục_tốc độ_16
+PLC/步进电机_Axis_Vel,步进电机_Axis_Vel_17,24684,步进电机_Axis_Vel_17,stepper motor_Axis_Vel_17,Động cơ bước_trục_tốc độ_17
+PLC/步进电机_Axis_Vel,步进电机_Axis_Vel_18,24686,步进电机_Axis_Vel_18,stepper motor_Axis_Vel_18,Động cơ bước_trục_tốc độ_18
+PLC/步进电机_Axis_Vel,步进电机_Axis_Vel_19,24688,步进电机_Axis_Vel_19,stepper motor_Axis_Vel_19,Động cơ bước_trục_tốc độ_19
+PLC/步进电机_Axis_Vel,步进电机_Axis_Vel_20,24690,步进电机_Axis_Vel_20,stepper motor_Axis_Vel_20,Động cơ bước_trục_tốc độ_20
 			]]>
 		</CsvIncludePoints>
 	</Struct>

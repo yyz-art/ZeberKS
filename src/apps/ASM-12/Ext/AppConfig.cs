@@ -33,19 +33,7 @@ public partial class AppConfig : ConfigBase
 	public const string NameByEN = "NameByEN";
 	public List<DatabaseConnectionConfig> Databases { get; set; } = null!;
 	public TaskServiceHostOptions TaskServiceHostOptions { get; set; } = null!;
-
-	public ScrewMachineConfig Screw1
-	{
-		get => field ??= new ScrewMachineConfig();
-		set => SetField(ref field, value);
-	}
-
-	public ScrewMachineConfig Screw2
-	{
-		get => field ??= new ScrewMachineConfig() { };
-		set => SetField(ref field, value);
-	}
-
+	
 	public SerialPortSocketConfig Scanner1
 	{
 		get => field ??= new SerialPortSocketConfig { Port = Scanner1ComPort, BaudRate = Scanner1BaudRate };
@@ -71,8 +59,8 @@ public partial class AppConfig : ConfigBase
 		DataDefine.KeyValue, NameByCN, "Plc IP",
 		DataDefine.KeyValue, NameByEN, "Plc IP",
 		DataDefine.KeyValue, NameByVI, "Plc IP",
-	], DefaultValue = "192.168.1.66", Description = "Plc IPAddress")]
-	public string PlcIpAddress { get; set; } = "192.168.1.60";
+	], DefaultValue = "192.168.1.20", Description = "Plc IPAddress")]
+	public string PlcIpAddress { get; set; } = "192.168.1.20";
 
 	[ValueInfo(Category = "连接配置", Link = nameof(Plc), InitAttachData =
 	[
@@ -81,39 +69,7 @@ public partial class AppConfig : ConfigBase
 		DataDefine.KeyValue, NameByVI, "Plc Port",
 	], DefaultValue = 502, Description = "Plc Port")]
 	public int PlcPort { get; set; } = 502;
-
-	[ValueInfo(Category = "连接配置", Link = nameof(Screw1), InitAttachData =
-	[
-		DataDefine.KeyValue, NameByCN, "螺丝枪1 IP",
-		DataDefine.KeyValue, NameByEN, "Screw1 IP",
-		DataDefine.KeyValue, NameByVI, "Screw1 Port",
-	], DefaultValue = "192.168.1.66", Description = "SCREW 1 IPAddress")]
-	public string Screw1IpAddress { get; set; } = "192.168.1.65";
-
-	[ValueInfo(Category = "连接配置", Link = nameof(Screw1), InitAttachData =
-	[
-		DataDefine.KeyValue, NameByCN, "螺丝枪1 Port",
-		DataDefine.KeyValue, NameByEN, "Screw1 Port",
-		DataDefine.KeyValue, NameByVI, "Screw1 Port",
-	], DefaultValue = 502, Description = "SCREW 1 Port")]
-	public int Screw1Port { get; set; } = 502;
-
-
-	[ValueInfo(Category = "连接配置", Link = nameof(Screw2), InitAttachData =
-	[
-		DataDefine.KeyValue, NameByCN, "螺丝枪2 IP",
-		DataDefine.KeyValue, NameByEN, "Screw2 IP",
-		DataDefine.KeyValue, NameByVI, "Screw2 Port",
-	], DefaultValue = "192.168.1.66", Description = "SCREW 2 IPAddress")]
-	public string Screw2IpAddress { get; set; } = "192.168.1.65";
-
-	[ValueInfo(Category = "连接配置", Link = nameof(Screw2), InitAttachData =
-	[
-		DataDefine.KeyValue, NameByCN, "螺丝枪2 Port",
-		DataDefine.KeyValue, NameByEN, "Screw2 Port",
-		DataDefine.KeyValue, NameByVI, "Screw2 Port",
-	], DefaultValue = 502, Description = "SCREW 2 Port")]
-	public int Screw2Port { get; set; } = 502;
+	
 
 
 	[ValueInfo(Category = "连接配置", Link = nameof(Scanner2), InitAttachData =

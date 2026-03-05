@@ -27,7 +27,7 @@
 			<Grid ColumnDefinitions="0,*,200" RowDefinitions="*,4,320" ColumnSpacing="4">
 				<main:CamerasView Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" />
 				<GridSplitter Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" />
-				<ViewContainer Grid.Row="2" Grid.Column="1" Header="{StaticResource I18N.Common.测试}">
+				<ViewContainer Grid.Row="2" Grid.Column="1" Header="{StaticResource I18N.Common.双轴轨道位置}">
 					<main:AxisTrackView DataContext="{Binding AxisTrackVM}" />
 				</ViewContainer>
 				<ViewContainer Grid.Row="2" Grid.Column="2" Header="{StaticResource I18N.Common.NG区域}" VerticalAlignment="Stretch">
@@ -45,12 +45,12 @@
 		</LayoutDockPanel.RightTopContent>
 		<LayoutDockPanel.LeftTopContent>
 			<ViewContainer Header="{StaticResource I18N.Common.生产信息}" Padding="5">
-				<Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto" ColumnSpacing="5" RowSpacing="10">
+				<Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto" ColumnSpacing="5" RowSpacing="5">
 					<Grid.Styles>
 						<Style Selector="Label.Value">
 							<Setter Property="CornerRadius" Value="3" />
 							<Setter Property="MinHeight" Value="30" />
-							<Setter Property="Padding" Value=" 5 0 0 0" />
+							<Setter Property="Padding" Value=" 3 0 0 0" />
 							<Setter Property="VerticalContentAlignment" Value="Center"></Setter>
 							<Setter Property="Background" Value="{DynamicResource Brush-Fill0}" />
 						</Style>

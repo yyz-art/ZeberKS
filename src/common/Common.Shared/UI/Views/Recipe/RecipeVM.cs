@@ -51,12 +51,14 @@ public partial class RecipeVM : UiVM<RecipeView>
 
 	public async Task @MoveSelectedPoints()
 	{
+		ShowToast("start move selected points...");
 		foreach (var propertyInstance in FilteredPropertyInstances)
 		{
 			if (propertyInstance.Flag is false)
 				continue;
 			propertyInstance.Value = propertyInstance.TempValue1;
 		}
+		ShowToast("move selected points completed!", UiMessageType.Success);
 	}
 
 	public async Task @RequestDevicePrepareRecipe()
@@ -331,7 +333,7 @@ public partial class RecipeVM : UiVM<RecipeView>
 				continue;
 
 			await WritePoint(propertyInstance);
-			if (ReadPointCommand.CustomData != null)
+			if (WritePointCommand.CustomData != null)
 				break;
 		}
 
@@ -371,9 +373,9 @@ public partial class RecipeVM : UiVM<RecipeView>
 		var readPointResult = await TempRecipe.ReadPointAsync(pointInfo, reader);
 		if (readPointResult.IsError())
 		{
-			var errorMeessage = "Read Point Failed! Connection is not found!";
-			ShowNotification(errorMeessage, UiMessageType.Error);
-			ReadPointCommand.CustomData = errorMeessage;
+			var errorMessage = $"Read Point Failed! src:'{pointInfo.Source}' {readPointResult}";
+			ShowNotification(errorMessage, UiMessageType.Error);
+			ReadPointCommand.CustomData = errorMessage;
 			return;
 		}
 
@@ -414,10 +416,10 @@ public partial class RecipeVM : UiVM<RecipeView>
 			return;
 		}
 
-		var writePointResult = await binaryStruct.WritePointAsync(pointInfo, writer);
+		var writePointResult = await Task.Run(() => binaryStruct.WritePointAsync(pointInfo, writer));
 		if (writePointResult.IsError())
 		{
-			var errorMessage = "Write Point Failed! Connection is not found!";
+			var errorMessage = $"Write Point Failed! {writePointResult}";
 			WritePointCommand.CustomData = errorMessage;
 			ShowNotification(errorMessage, UiMessageType.Error);
 			return;

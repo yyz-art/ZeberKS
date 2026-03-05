@@ -2,9 +2,11 @@
 using HslCommunication.ModBus;
 using ZC;
 using ZC.BinStructs;
+using ZC.DP.Memory;
 using ZC.IFS;
 using ZC.IO;
 using ZC.Net.Sockets;
+using ZitApp.Devices.Plc;
 
 namespace ZitApp.Devices.Screw;
 
@@ -46,12 +48,52 @@ public class ScrewMachineConnection : ModbusRtuOverTcp, IBinaryReadWriteConnecti
 	Result IBinaryReader.Read(object address, Span<byte> buffer, IIOContext? context)
 	{
 		string? addr = null;
+		var isReadBool = false;
 		if (address is string str)
 			addr = str;
 		else if (address is IBinaryPointInfo pointInfo)
+		{
 			addr = pointInfo.Source?.ToString();
+			if (pointInfo.Type == typeof(WordBool) || pointInfo.Type == typeof(WordBool[]))
+				isReadBool = true;
+		}
+		else if (address is IBinaryPointGroupInfo pointGroupInfo)
+		{
+			if (pointGroupInfo.Tags?.Contains("WordBool") ?? false)
+				isReadBool = true;
+			addr = pointGroupInfo.Source?.ToString();
+		}
+
 		if (addr == null)
 			return Result.Err("address is null");
+		if (isReadBool)
+		{
+			var count = buffer.Length / 2;
+			if (count == 1)
+			{
+				var readBoolResult = ReadBool(addr);
+				if (readBoolResult.IsSuccess == false)
+					return Result.Err(readBoolResult.Message);
+				if (readBoolResult.Content)
+					WordBoolExtensions.TrueBytes.CopyTo(buffer);
+				else
+					WordBoolExtensions.FalseBytes.CopyTo(buffer);
+			}
+			else
+			{
+				var readBoolResult = ReadBool(addr, (ushort)count);
+				if (readBoolResult.IsSuccess == false)
+					return Result.Err(readBoolResult.Message);
+				var builder = new SpanBuffer<byte>(buffer);
+				foreach (var b in readBoolResult.Content)
+				{
+					builder.Append(b ? WordBoolExtensions.TrueBytes : WordBoolExtensions.FalseBytes);
+				}
+			}
+
+			return Result.OK;
+		}
+
 		var result = Read(addr, (ushort)(buffer.Length / 2));
 		if (result.IsSuccess == false)
 			return Result.Err(result.Message);
@@ -59,17 +101,61 @@ public class ScrewMachineConnection : ModbusRtuOverTcp, IBinaryReadWriteConnecti
 		return Result.OK;
 	}
 
-	public ValueTask<Result> ReadAsync(object address, Memory<byte> buffer, IIOContext? context = null,
+	public async ValueTask<Result> ReadAsync(object address, Memory<byte> buffer, IIOContext? context = null,
 		CancellationToken ctk = default)
 	{
 		string? addr = null;
+		var isReadBool = false;
 		if (address is string str)
 			addr = str;
 		else if (address is IBinaryPointInfo pointInfo)
+		{
 			addr = pointInfo.Source?.ToString();
+			if (pointInfo.Type == typeof(WordBool) || pointInfo.Type == typeof(WordBool[]))
+				isReadBool = true;
+		}
+		else if (address is IBinaryPointGroupInfo pointGroupInfo)
+		{
+			if (pointGroupInfo.Tags?.Contains("WordBool") ?? false)
+				isReadBool = true;
+			addr = pointGroupInfo.Source?.ToString();
+		}
+
 		if (addr == null)
-			return ValueTask.FromResult(Result.Err("address is null"));
-		return ReadAsyncCore(addr!, buffer, context, ctk);
+			return Result.Err("address is null");
+		if (isReadBool)
+		{
+			var count = buffer.Length / 2;
+			if (count == 1)
+			{
+				var readBoolResult = await ReadBoolAsync(addr);
+				if (readBoolResult.IsSuccess == false)
+					return Result.Err(readBoolResult.Message);
+				if (readBoolResult.Content)
+					WordBoolExtensions.TrueBytes.CopyTo(buffer);
+				else
+					WordBoolExtensions.FalseBytes.CopyTo(buffer);
+			}
+			else
+			{
+				var readBoolResult = await ReadBoolAsync(addr, (ushort)count);
+				if (readBoolResult.IsSuccess == false)
+					return Result.Err(readBoolResult.Message);
+				var builder = new SpanBuffer<byte>(buffer.Span);
+				foreach (var b in readBoolResult.Content)
+				{
+					builder.Append(b ? WordBoolExtensions.TrueBytes : WordBoolExtensions.FalseBytes);
+				}
+			}
+
+			return Result.OK;
+		}
+
+		var result = await ReadAsync(addr, (ushort)(buffer.Length / 2));
+		if (result.IsSuccess == false)
+			return Result.Err(result.Message);
+		result.Content.CopyTo(buffer);
+		return Result.OK;
 	}
 
 	private async ValueTask<Result> ReadAsyncCore(string address, Memory<byte> buffer,
@@ -117,8 +203,7 @@ public class ScrewMachineConnection : ModbusRtuOverTcp, IBinaryReadWriteConnecti
 		if (ReferenceEquals(tempArray, null))
 			tempArray = new byte[data.Length];
 		data.CopyTo(tempArray);
-		var addrStr = address as string;
-		return WriteAsyncCore(addrStr!, tempArray, context, ctk);
+		return WriteAsyncCore(addr!, tempArray, context, ctk);
 	}
 
 	async ValueTask<Result> WriteAsyncCore(string address, byte[] data, IIOContext? context = null,

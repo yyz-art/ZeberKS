@@ -2,9 +2,10 @@
 	xmlns="https://github.com/avaloniaui"
 	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 	xmlns:ui="using:ZitApp.UI"
+	xmlns:global="clr-namespace:"
 	x:Class="ZitApp.UI.MainWindow"
 	Name="TopLevelWindow"
-	Title="ASM15-1"
+	Title="{x:Static global:App.ApplicationName}"
 	WindowStartupLocation="CenterScreen"
 	WindowState="Maximized"
 	Icon="/UI/Assets/Images/logo.ico"
@@ -19,9 +20,6 @@
 	UiTickCommand="{Binding UiTickCommand}"
 	UiTickInterval="{Binding UiTickInterval}"
 	ShowContentMode="ForegroundContent">
-	<UiTopLevelWindow.Styles>
-	
-	</UiTopLevelWindow.Styles>
 	<UiTopLevelWindow.DialogsContent>
 		<TabControl>
 			<TabItem Header="Login">
@@ -68,7 +66,7 @@
 	<Grid Name="MainContentGrid" RowDefinitions="Auto,*">
 		<LinearPanel Name="WindowTitleBarPanel" Grid.Row="0" Background="#191a1c" Orientation="Horizontal">
 			<Image Source="/UI/Assets/Images/logo-hori.jpg" Width="70" Margin="5 0 0 0" Height="30" />
-			<Label Content="ASM15-1" Classes="" Theme="{DynamicResource Label-Tag}" Margin="4" VerticalAlignment="Stretch" />
+			<Label Content="{x:Static global:App.ApplicationName}" Classes="" Theme="{DynamicResource Label-Tag}" Margin="4" VerticalAlignment="Stretch" />
 			<Menu Name="AppBarMenu" x:DataType="AppVM">
 				<Menu.Styles>
 					<Style Selector="Menu > MenuItem">
@@ -94,7 +92,7 @@
 
 				</MenuItem>
 				<MenuItem Header="{StaticResource I18N.Common.视图}">
-					<MenuItem Header="{StaticResource I18N.Common.测试}" Tag="/测试" Classes="NavInstance" />
+					<MenuItem Header="{StaticResource I18N.Common.双轴轨道位置}" Tag="/测试" Classes="NavInstance" />
 					<MenuItem Header="{StaticResource I18N.Common.全部}" ItemsSource="{Binding Ui.MainView.NavManager.Root.Children}">
 						<MenuItem.ItemTemplate>
 							<DataTemplate>

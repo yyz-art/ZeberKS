@@ -18,7 +18,7 @@
 			<DataGridTemplateColumn Header="{StaticResource I18N.Common.状态}">
 				<DataGridTemplateColumn.CellTemplate>
 					<DataTemplate>
-						<MatchShow MatchValue="{x:Static plc:WordBool.True}">
+						<MatchShow MatchValue="{Binding Value}">
 							<Ellipse MatchShow.Option="{x:Static plc:WordBool.True}" Fill="Red" Width="20" Height="20"/>
 							<Ellipse MatchShow.Option="{x:Static plc:WordBool.False}" Fill="Green" Width="20" Height="20"/>
 							<Ellipse MatchShow.Option="default" Fill="Orange" Width="20" Height="20"/>

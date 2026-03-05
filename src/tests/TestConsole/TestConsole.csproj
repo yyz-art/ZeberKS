@@ -3,7 +3,7 @@
 		<RootNamespace>TestConsole</RootNamespace>
 		<AssemblyName>TestConsole</AssemblyName>
 		<OutputType>Exe</OutputType>
-		<DefineConstants>DEFINE_MODEL_INCLUDE</DefineConstants>
+		<DefineConstants>$(DefineConstants);DEFINE_MODEL_INCLUDE</DefineConstants>
 		<ApplicationManifest>Assets/app.manifest</ApplicationManifest>
 	</PropertyGroup>
 	<Import Project="$(SolutionDir)build/define/DefBase.csproj"/>

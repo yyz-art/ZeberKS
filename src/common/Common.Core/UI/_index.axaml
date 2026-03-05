@@ -10,5 +10,6 @@
 		Trace="{StaticResource Brush-Grey5}" />
 	<ResourceDictionary.MergedDictionaries>
 		<ResourceInclude Source="Controls/ViewContainer.axaml" />
+		<ResourceInclude Source="/UI/Assets/I18N/I18N.axaml" />
 	</ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

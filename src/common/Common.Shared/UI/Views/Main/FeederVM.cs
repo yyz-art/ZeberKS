@@ -8,8 +8,10 @@ public partial class FeederVM : CommonUiVM<FeederView>
 {
 	public partial PlcStruct PlcRead { get; private set; } = new PlcStruct();
 	public required PlcService Plc { get; init; }
+
 	public override Task Initialize(object? ctx, object? args)
 	{
+		if (Design.IsDesignMode) return Task.CompletedTask;
 		PlcRead = Plc.Read;
 		return base.Initialize(ctx, args);
 	}
@@ -18,7 +20,7 @@ public partial class FeederVM : CommonUiVM<FeederView>
 	{
 		return Task.CompletedTask;
 	}
-	
+
 	public Task @Lock()
 	{
 		return Task.CompletedTask;

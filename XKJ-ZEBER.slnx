@@ -5,6 +5,7 @@
     <Project Path="src/apps/ASM15-1/ASM15-1.csproj" />
     <Project Path="src/apps/ASM15-2/ASM15-2.csproj" />
     <Project Path="src/apps/MFG-15/MFG-15.csproj" />
+    <Project Path="src/apps/SUB1/SUB1.csproj" />
   </Folder>
   <Folder Name="/common/">
     <Project Path="src/common/Common.Base/Common.Base.csproj" />

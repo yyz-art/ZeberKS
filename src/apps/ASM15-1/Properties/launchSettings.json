@@ -8,10 +8,6 @@
     "App:Roslyn": {
       "commandName": "DebugRoslynComponent",
       "targetProject": "SCREW.csproj"
-    },
-    "UiTheme:Roslyn": {
-      "commandName": "DebugRoslynComponent",
-      "targetProject": "../src/framework/UI.Theme/UI.Theme.csproj"
     }
   }
 }

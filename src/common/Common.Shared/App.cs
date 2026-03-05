@@ -36,7 +36,7 @@ var config = new AppConfig
 };
 // config = Debugger.IsAttached ? config : AppCore.LoadConfig<AppConfig>();
 config = AppCore.LoadConfig<AppConfig>();
-if (DevUtils.IsLocalDebugMode)
+if (DevUtils.IsLocalDebugMode && Debugger.IsAttached)
 	config.Plc.IpAddress = "127.0.0.1";
 Console.WriteLine($"Use Config: {JsonSerializer.Serialize(config, GlobalShared.Json.DefaultIndentOptions)}");
 var app = new App(config).UseLogger().UseUi(UiApp.StartAsync)
@@ -54,6 +54,7 @@ public sealed class App(AppConfig config) : CommonUiAppCore
 	public new static App DesignTimeApp = new App(new AppConfig());
 	public new static App Current => Design.IsDesignMode ? DesignTimeApp : (App)AppCore.Current;
 	public new AppConfig Config { get; set; } = config;
+	public static string ApplicationName => "CommonApp";
 
 	protected override async Task<Result> OnInitialize(object? context = null, CancellationToken ctk = default)
 	{
@@ -78,15 +79,8 @@ public sealed class App(AppConfig config) : CommonUiAppCore
 		await StartTaskServices();
 		var recipeService = IOC.Get<RecipeService>();
 		recipeService.LoadRecipes().Unwarp("Recipes load failed!");
-		var lScrewService = IOC.Get<ScrewService>(InjectArgument.Create(IOC.Get<ScrewMachine>(specialName: "L")));
-		var rScrewService = IOC.Get<ScrewService>(InjectArgument.Create(IOC.Get<ScrewMachine>(specialName: "R")));
-		TaskServiceManager.AddService(lScrewService);
-		// TaskServiceManager.AddService(rScrewService);
 		var connectionManageService = IOC.Get<ConnectionManageService>();
 		connectionManageService.RegisterConnection("PLC", IOC.Get<XinJEPlcClient>());
-		connectionManageService.RegisterConnection("SCREW-L", IOC.Get<ScrewMachine>(specialName: "L").Connection);
-		connectionManageService.RegisterConnection("SCREW-R", IOC.Get<ScrewMachine>(specialName: "R").Connection);
-		var rp = new ProductRecipe();
 		return await base.OnStart(context, ctk);
 	}
 }

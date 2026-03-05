@@ -39,8 +39,14 @@ await app.Start().UnwarpAsync(errThrow: true, success: _ => { }, onError: r => {
 }
 
 var generator = new BinStructSourceGenerator();
-var content = File.ReadAllText("E:\\XKJ-ZEBER\\src\\apps\\ASM15-1\\Ext\\BinStructs\\BinStructs.xml");
-generator.Generate(content);
+var projectNames = new String[] { "ASM-15"};
+var templatePath = "E:\\XKJ-ZEBER\\src\\apps\\{0}\\Ext\\BinStructs\\BinStructs.xml";
+generator.Generate( File.ReadAllText(string.Format(templatePath,"ASM15-1")));
+generator.Generate( File.ReadAllText(string.Format(templatePath,"ASM15-2")));
+generator.Generate( File.ReadAllText(string.Format(templatePath,"MFG-15")));
+generator.Generate( File.ReadAllText(string.Format(templatePath,"ASM-4")));
+generator.Generate( File.ReadAllText(string.Format(templatePath,"ASM-12")));
+generator.Generate( File.ReadAllText(string.Format(templatePath,"SUB1")));
 Environment.Exit(0);
 
 var filesZipToLocalFs = ZipUtils.CreateFilesZipToLocalFS("/out-z.zip", [

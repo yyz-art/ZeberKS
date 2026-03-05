@@ -3,10 +3,12 @@
 		<RootNamespace>$(ProjectApplicationBaseName)</RootNamespace>
 		<AssemblyName>$(ProjectApplicationBaseName)</AssemblyName>
 		<OutputType>Exe</OutputType>
-		<DefineConstants>DEFINE_MODEL_INCLUDE</DefineConstants>
+		<DefineConstants>$(DefineConstants);ASM_4;DEFINE_MODEL_INCLUDE</DefineConstants>
 		<ApplicationManifest>Assets/app.manifest</ApplicationManifest>
 		<IsUiProject>true</IsUiProject>
 	</PropertyGroup>
+
+	<Import Project="$(SolutionDir)build/define/DefApp.csproj"/>
 	<Import Project="$(SolutionDir)build/define/DefBase.csproj"/>
 	<Import Project="$(SolutionDir)build/define/DefCore.csproj"/>
 	<Import Project="$(SolutionDir)build/define/DefUiApp.csproj"/>
@@ -17,55 +19,41 @@
 		<ProjectReference Include="$(CommonProjectPath)Common.Core/Common.Core.csproj"/>
 	</ItemGroup>
 	<ItemGroup>
-	  <Compile Update="UI\Views\Main\CamerasView.axaml.cs">
-	    <DependentUpon>CamerasView.axaml</DependentUpon>
-	  </Compile>
-	  <Compile Update="UI\Views\Main\NgAreaView.axaml.cs">
-	    <DependentUpon>NgAreaView.axaml</DependentUpon>
-	  </Compile>
-	  <Compile Update="UI\Views\Main\SuctionHeadView.axaml.cs">
-	    <DependentUpon>SuctionHeadView.axaml</DependentUpon>
-	  </Compile>
-	  <Compile Update="UI\Views\Main\AxisTrackView.axaml.cs">
-	    <DependentUpon>TestView.axaml</DependentUpon>
-	  </Compile>
-	  <Compile Update="UI\Views\MainView.axaml.cs">
-	    <DependentUpon>MainView.axaml</DependentUpon>
-	  </Compile>
-	  <Compile Update="UI\Views\Main\FeederView.axaml.cs">
-	    <DependentUpon>FeederView.axaml</DependentUpon>
-	    <SubType>Code</SubType>
-	  </Compile>
-	  <Compile Update="UI\Views\Main\DeviceStatusView.axaml.cs">
-	    <DependentUpon>DeviceStatusView.axaml</DependentUpon>
-	    <SubType>Code</SubType>
-	  </Compile>
-	  <Compile Update="UI\Views\Main\RunLogView.axaml.cs">
-	    <DependentUpon>RunLogView.axaml</DependentUpon>
-	    <SubType>Code</SubType>
-	  </Compile>
-
-		<Compile Link="$(ProjectDir)/Services/%(RecursiveDir)%(Filename)%(Extension)"
-					Include="$(SolutionDir)/src/common/Common.Shared/Services/**/*.cs"
-					Exclude=""/>
-
-		<Compile Link="$(ProjectDir)/UI/%(RecursiveDir)%(Filename)%(Extension)"
-						 Include="$(SolutionDir)/src/common/Common.Shared/UI/**/*.cs"
-						 Exclude="$(SolutionDir)/src/common/Common.Shared/UI/**/*.axaml.cs"/>
-
-		<Compile Link="$(ProjectDir)/Ext/%(RecursiveDir)%(Filename)%(Extension)"
-						 Include="$(SolutionDir)/src/common/Common.Shared/Ext/**/*.cs"
-						 Exclude="
-						 	$(SolutionDir)/src/common/Common.Shared/Ext/BinStructs/**/*.*;
-							$(SolutionDir)/src/common/Common.Shared/Ext/AppConfig.cs;"/>
+		<Compile Update="UI\Views\Main\CamerasView.axaml.cs">
+			<DependentUpon>CamerasView.axaml</DependentUpon>
+		</Compile>
+		<Compile Update="UI\Views\Main\NgAreaView.axaml.cs">
+			<DependentUpon>NgAreaView.axaml</DependentUpon>
+		</Compile>
+		<Compile Update="UI\Views\Main\SuctionHeadView.axaml.cs">
+			<DependentUpon>SuctionHeadView.axaml</DependentUpon>
+		</Compile>
+		<Compile Update="UI\Views\Main\AxisTrackView.axaml.cs">
+			<DependentUpon>TestView.axaml</DependentUpon>
+		</Compile>
+		<Compile Update="UI\Views\MainView.axaml.cs">
+			<DependentUpon>MainView.axaml</DependentUpon>
+		</Compile>
+		<Compile Update="UI\Views\Main\FeederView.axaml.cs">
+			<DependentUpon>FeederView.axaml</DependentUpon>
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI\Views\Main\DeviceStatusView.axaml.cs">
+			<DependentUpon>DeviceStatusView.axaml</DependentUpon>
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI\Views\Main\RunLogView.axaml.cs">
+			<DependentUpon>RunLogView.axaml</DependentUpon>
+			<SubType>Code</SubType>
+		</Compile>
 	</ItemGroup>
 	<ItemGroup>
-	  <PackageReference Include="System.IO.Ports" Version="10.0.3" />
+		<PackageReference Include="System.IO.Ports" Version="10.0.3"/>
 	</ItemGroup>
 	<ItemGroup>
-	  <Folder Include="Assets\.generated\" />
-	  <Folder Include="Services\" />
-	  <Folder Include="UI\Ext\" />
+		<Folder Include="Assets\.generated\"/>
+		<Folder Include="Services\"/>
+		<Folder Include="UI\Ext\"/>
 	</ItemGroup>
 
 </Project>

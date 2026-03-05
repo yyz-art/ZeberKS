@@ -3,10 +3,11 @@
 		<RootNamespace>$(ProjectApplicationBaseName)</RootNamespace>
 		<AssemblyName>$(ProjectApplicationBaseName)</AssemblyName>
 		<OutputType>Exe</OutputType>
-		<DefineConstants>DEFINE_MODEL_INCLUDE</DefineConstants>
+		<DefineConstants>$(DefineConstants);ASM_12;DEFINE_MODEL_INCLUDE</DefineConstants>
 		<ApplicationManifest>Assets/app.manifest</ApplicationManifest>
 		<IsUiProject>true</IsUiProject>
 	</PropertyGroup>
+<Import Project="$(SolutionDir)build/define/DefApp.csproj"/>
 	<Import Project="$(SolutionDir)build/define/DefBase.csproj"/>
 	<Import Project="$(SolutionDir)build/define/DefCore.csproj"/>
 	<Import Project="$(SolutionDir)build/define/DefUiApp.csproj"/>
@@ -45,19 +46,7 @@
 	    <SubType>Code</SubType>
 	  </Compile>
 
-		<Compile Link="$(ProjectDir)/Services/%(RecursiveDir)%(Filename)%(Extension)"
-					Include="$(SolutionDir)/src/common/Common.Shared/Services/**/*.cs"
-					Exclude=""/>
-
-		<Compile Link="$(ProjectDir)/UI/%(RecursiveDir)%(Filename)%(Extension)"
-						 Include="$(SolutionDir)/src/common/Common.Shared/UI/**/*.cs"
-						 Exclude="$(SolutionDir)/src/common/Common.Shared/UI/**/*.axaml.cs"/>
-
-		<Compile Link="$(ProjectDir)/Ext/%(RecursiveDir)%(Filename)%(Extension)"
-						 Include="$(SolutionDir)/src/common/Common.Shared/Ext/**/*.cs"
-						 Exclude="
-						 	$(SolutionDir)/src/common/Common.Shared/Ext/BinStructs/**/*.*;
-							$(SolutionDir)/src/common/Common.Shared/Ext/AppConfig.cs;"/>
+		
 	</ItemGroup>
 	<ItemGroup>
 	  <PackageReference Include="System.IO.Ports" Version="10.0.3" />
