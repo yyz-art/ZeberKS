@@ -10,7 +10,10 @@ namespace ZitApp.Services;
 [RegisterToIOC(LifetimeType.Singleton), ObservableObject]
 public partial class AccountService : INamedObject
 {
-	public static ZitAccount DefaultAccount { get; set; } = new() { IdentityName = "未登录", DisplayName = "未登录" };
+	public static ZitAccount DefaultAccount { get; set; } =
+		Debugger.IsAttached
+			? new ZitAccount { IdentityName = "调试中", DisplayName = "调试中", RoleFlags = 5 }
+			: new ZitAccount { IdentityName = "未登录", DisplayName = "未登录" };
 
 	public partial ZitAccount? Account { get; private set; } = DefaultAccount;
 	public required ISqlDbClient DbClient { get; init; }

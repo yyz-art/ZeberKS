@@ -1,0 +1,32 @@
+﻿<UiView xmlns="https://github.com/avaloniaui"
+				xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+				xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+				xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+				mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+				x:Class="ZitApp.UI.Main.CamerasView"
+				Background="#252526"
+				Foreground="{StaticResource Brush-White}"
+				BorderBrush="{DynamicResource Brush-Border}" BorderThickness="1">
+	<Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto,*" ColumnSpacing="10" RowSpacing="10" Margin="10">
+		<LinearPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" Spacing="10">
+			<!-- <Button Content="流程控制" Theme="{DynamicResource Button-Solid}" /> -->
+			<!-- <Button Content="台车解锁" Theme="{DynamicResource Button-Solid}" /> -->
+		</LinearPanel>
+		<LinearPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" Spacing="10">
+			<!-- <Label Content="机器人速度:" VerticalAlignment="Center" /> -->
+			<!-- <RadioButton Content="25%" GroupName="RobotSpeed" VerticalAlignment="Center" /> -->
+			<!-- <RadioButton Content="50%" GroupName="RobotSpeed" VerticalAlignment="Center" /> -->
+			<!-- <RadioButton Content="75%" GroupName="RobotSpeed" VerticalAlignment="Center" /> -->
+			<!-- <RadioButton Content="100%" GroupName="RobotSpeed" VerticalAlignment="Center" /> -->
+
+			<!-- <Button Content="日光灯" Background="#b7a645" Theme="{DynamicResource Button-Solid}" /> -->
+			<!-- <Button Content="扫码拍照" Background="#8d3131" Theme="{DynamicResource Button-Solid}" /> -->
+		</LinearPanel>
+		<Border Grid.Row="2" Grid.Column="0" Background="Bisque">
+
+		</Border>
+		<Border Grid.Row="2" Grid.Column="1" Background="Bisque">
+
+		</Border>
+	</Grid>
+</UiView>

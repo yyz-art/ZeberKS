@@ -1,4 +1,5 @@
-﻿using ZC;
+﻿using System.Runtime.CompilerServices;
+using HslCommunication.ModBus;using ZC;
 using ZC.Development;
 using ZC.EnhanceApp;
 using ZC.Web.Server;
@@ -10,6 +11,8 @@ using ZitApp.EAP;
 using ZitApp.SIFS;
 using ZitApp.Utils;
 
+var modbusTcpNet = new ModbusTcpNet("127.0.0.1",502);
+var operateResult = modbusTcpNet.Read("100",1);
 DevUtils.DebugMode = DevDebugMode.LocalDebug;
 EnhanceAppCore.InitializeEnvironment();
 ObjectContainerOptions.Default.EnableCyclicDependencyCheck = true;
@@ -24,12 +27,12 @@ var app = new App(config).UseLogger()
 
 await app.Initialize().UnwarpAsync(errThrow: true, success: _ => { }, onError: r => { });
 await app.Start().UnwarpAsync(errThrow: true, success: _ => { }, onError: r => { });
-var eapService = app.IOC.AddSingleton<EapServiceBase>().Get<EapServiceBase>(
-	null,
-	arg: InjectArgument.Create(new TcpServerSocket("127.0.0.1", 23456)));
-eapService.RegisterHandlerMethods();
-await eapService.Start();
-while (true)
+// var eapService = app.IOC.AddSingleton<EapServiceBase>().Get<EapServiceBase>(
+// 	null,
+// 	arg: InjectArgument.Create(new TcpServerSocket("127.0.0.1", 23456)));
+// eapService.RegisterHandlerMethods();
+// await eapService.Start();
+// while (true)
 {
 	// var client = new SifsClient(new NetworkSocketConfig("127.0.0.1", 502));
 	// client.Test();

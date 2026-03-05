@@ -418,7 +418,7 @@
 	<SolidColorBrush x:Key="Brush-Fill2" Opacity="0.20" Color="{StaticResource Color-White}" />
 
 	<!--  Border  -->
-	<SolidColorBrush x:Key="Brush-Border" Opacity="0.08" Color="{StaticResource Color-White}" />
+	<SolidColorBrush x:Key="Brush-Border" Opacity="0.2" Color="{StaticResource Color-White}" />
 	<SolidColorBrush x:Key="Brush-FocusBorder" Color="{StaticResource Color-Blue5}" />
 
 	<!--  Disabled  -->

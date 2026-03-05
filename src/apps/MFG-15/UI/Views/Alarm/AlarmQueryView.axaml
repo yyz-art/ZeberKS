@@ -1,0 +1,28 @@
+﻿<UiView xmlns="https://github.com/avaloniaui"
+				xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+				xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+				xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+				xmlns:alarm="clr-namespace:ZitApp.UI.Alarm"
+				mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+				x:Class="ZitApp.UI.Alarm.AlarmQueryView">
+	<Design.DataContext>
+		<alarm:AlarmQueryVM />
+	</Design.DataContext>
+
+	<Grid RowDefinitions="Auto,*">
+		<LinearPanel Grid.Row="0">
+			<Button Content="{StaticResource I18N.Common.加载}" Command="{Binding ReloadRecordsCommand}" />
+		</LinearPanel>
+		<DataGrid Grid.Row="1" ItemsSource="{Binding Records}">
+			<DataGrid.Columns>
+				<DataGridTextColumn Header="Id" Binding="{Binding Id}" />
+				<DataGridTextColumn Header="{StaticResource I18N.Common.报警Id}" Binding="{Binding AlarmId}" />
+				<DataGridTextColumn Header="{StaticResource I18N.Common.报警名称}" Binding="{Binding Name}" />
+				<DataGridTextColumn Header="{StaticResource I18N.Common.状态}" Binding="{Binding Status}" />
+				<DataGridTextColumn Header="{StaticResource I18N.Common.开始时间}" Binding="{Binding StartTime}" />
+				<DataGridTextColumn Header="{StaticResource I18N.Common.结束时间}" Binding="{Binding EndTime}" />
+
+			</DataGrid.Columns>
+		</DataGrid>
+	</Grid>
+</UiView>

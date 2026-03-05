@@ -1,6 +1,10 @@
 <Solution>
   <Folder Name="/apps/">
+    <Project Path="src/apps/ASM-12/ASM-12.csproj" />
+    <Project Path="src/apps/ASM-4/ASM-4.csproj" />
     <Project Path="src/apps/ASM15-1/ASM15-1.csproj" />
+    <Project Path="src/apps/ASM15-2/ASM15-2.csproj" />
+    <Project Path="src/apps/MFG-15/MFG-15.csproj" />
   </Folder>
   <Folder Name="/common/">
     <Project Path="src/common/Common.Base/Common.Base.csproj" />
@@ -8,9 +12,6 @@
     <Project Path="src/common/Common.Shared/Common.Shared.csproj" />
   </Folder>
   <Folder Name="/demos/" />
-  <Folder Name="/demos/ui/">
-    <Project Path="src/demos/UI.Demo/UI.Demo.csproj" />
-  </Folder>
   <Folder Name="/framework/" />
 <!--  <Folder Name="/framework/">-->
 <!--    <Project Path="src/framework/Framework/Framework.csproj" />-->

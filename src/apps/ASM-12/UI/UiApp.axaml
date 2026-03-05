@@ -1,0 +1,24 @@
+<Application
+	xmlns="https://github.com/avaloniaui"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:system="using:System"
+	xmlns:role="using:ZC.UI.Role"
+	x:Class="ZitApp.UI.UiApp"
+	RequestedThemeVariant="Dark">
+	<Application.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceInclude Source="/UI/Assets/I18N.axaml"/>
+				<ResourceInclude Source="avares://ZC.UI.Theme/_index.axaml" />
+				<ResourceInclude Source="avares://ZitApp.Core/UI/_index.axaml" />
+			</ResourceDictionary.MergedDictionaries>
+			<role:UiRoleChecker x:Key="RoleChecker" />
+			<EnumEqualsConverter x:Key="EnumEqualsConverter" />
+		</ResourceDictionary>
+	</Application.Resources>
+	<Application.Styles>
+		<StyleInclude Source="avares://IconPacks.Avalonia/Icons.axaml" />
+		<StyleInclude Source="avares://ZC.UI.Theme/Styles/_index.axaml" />
+		<UiTheme Locale="zh-CN" />
+	</Application.Styles>
+</Application>

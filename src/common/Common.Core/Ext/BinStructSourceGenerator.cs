@@ -47,6 +47,7 @@ public class BinStructSourceGenerator
 // GENERATE AT {DateTime.Now}
 using ZC.Annotations;
 using ZC.DP.Memory;
+using ZC.DP;
 {string.Concat(usings)}
 namespace {@namespace};
 [BinaryStruct(Length = {structXml.GetAttribute("Length").Value}, LengthUnit = {structLengthUnit}, ByteFormat = {structByteFormat})]");
@@ -55,9 +56,10 @@ namespace {@namespace};
 			var name = pointGroupXml.GetAttribute("Name").Value;
 			var start = pointGroupXml.GetAttribute("Start").Value;
 			var source = pointGroupXml.GetAttributeOrDefault("Source")?.Value ?? start;
+			var tags = pointGroupXml.GetAttributeOrDefault("Tags")?.Value ?? "";
 			var end = pointGroupXml.GetAttribute("End").Value;
 			code.BeginCode.Append($@"
-[BinaryPointGroup(Name = ""{name}"", Source = ""{source}"", Start = {start}, End = {end}, Points = [""*""])]");
+[BinaryPointGroup(Name = ""{name}"", Source = ""{source}"", Tags = ""{tags}"", Start = {start}, End = {end}, Points = [""*""])]");
 		}
 
 		code.Append($@"
@@ -97,8 +99,9 @@ public partial class {structName}
 		var csvHeaders = xml.GetAttribute("CsvHeaders").Value.Split(',');
 		var csvContent = string.Concat(xml.Nodes().Where(n => n is XText || n is XCData).Select(n =>
 			n switch { XCData cdata => cdata.Value.Trim(), XText text => text.Value.Trim(), _ => string.Empty }));
-		
+		var attachDataNames = properties.GetValueOrDefault("AttachDataNames").ToString().Split(',');
 		var lineEnumerator = new MemorySplitEnumerator<char>(csvContent.AsMemory(), "\n".AsMemory());
+		var attachData = new MutString();
 		while (lineEnumerator.MoveNext())
 		{
 			for (var i = 0; i < csvHeaders.Length; i++)
@@ -128,10 +131,31 @@ public partial class {structName}
 			var writerData = properties.GetValueOrDefault("WriterData");
 			var customData = properties.GetValueOrDefault("CustomData", "null".AsMemory());
 			var source = properties.GetValueOrDefault("Source", offset);
+			var unit = properties.GetValueOrDefault("Unit");
+			var minValue = properties.GetValueOrDefault("MinValue", "0".AsMemory());
+			var maxValue = properties.GetValueOrDefault("MaxValue", "4096".AsMemory());
+			var initExpress = properties.GetValueOrDefault("InitExpress", "".AsMemory());
+			attachData.Clear();
+			attachData.Append(" [");
+			for (var i = 0; i < attachDataNames.Length; i++)
+			{
+				var name = attachDataNames[i];
+				if (string.IsNullOrEmpty(name)) continue;
+				var value = properties.GetValueOrDefault(name);
+				attachData.Append($@"
+		DataDefine.KeyValue,""{name}"", ""{value}"",");
+			}
+
+			if (attachData.Length != 2)
+				attachData.Append(" ]");
+			else attachData.Value = "null";
+
+
 			code.Append($@"
 	[BinaryPoint(Offset = {offset}, Source = ""{source}"", Tags = ""{tags}"", ReaderData = ""{readerData}"", WriterData = ""{writerData}"", CustomData = {customData})]
-	[ValueInfo(Source = ""{readerData}:{source}"", Category = ""{category}"", Unit = ""{properties.GetValueOrDefault("Unit")}"",MinValue = {properties.GetValueOrDefault("MinValue", "0".AsMemory())}, MaxValue = {properties.GetValueOrDefault("MaxValue", "4096".AsMemory())}, Description = ""{description}"")]
-	{beforeToken} {dataType} {pointName} {{ get; set; }}");
+	[ValueInfo(Source = ""{readerData}:{source}"", Category = ""{category}"", Unit = ""{unit}"",MinValue = {minValue}, MaxValue = {maxValue}, Description = ""{description}"", InitAttachData = {attachData})]
+	{beforeToken} {dataType} {pointName} {{ get; set; }}{(initExpress.IsEmpty ? "" : "= ")}{initExpress}
+");
 		}
 
 		code.Append($@"
