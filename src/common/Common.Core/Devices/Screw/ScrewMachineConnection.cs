@@ -10,7 +10,7 @@ using ZitApp.Devices.Plc;
 
 namespace ZitApp.Devices.Screw;
 
-public class ScrewMachineConnection : ModbusRtuOverTcp, IBinaryReadWriteConnection
+public class ScrewMachineConnection : ModbusRtuOverTcp, IBinaryConnection
 {
 	public ScrewMachineConnection(string ipAddress, int port) : base(ipAddress, port)
 	{

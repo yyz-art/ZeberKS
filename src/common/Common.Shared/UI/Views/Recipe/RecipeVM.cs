@@ -191,7 +191,7 @@ public partial class RecipeVM : UiVM<RecipeView>
 		try
 		{
 			await using var fs = File.OpenWrite(file.Path.LocalPath);
-			await JsonSerializer.SerializeAsync(fs, EditRecipe, GlobalShared.Json.DefaultIndentOptions);
+			await JsonSerializer.SerializeAsync(fs, EditRecipe, Global.Json.DefaultIndentOptions);
 			ShowToast("Saved successfully!", UiMessageType.Success);
 		}
 		catch (Exception ex)

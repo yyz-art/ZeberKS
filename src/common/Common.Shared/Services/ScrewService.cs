@@ -52,7 +52,7 @@ public partial class ScrewService : MainTaskService
 	partial void OnControlCommandChanged(ScrewMachineControlCommand value)
 	{
 		Logger.Debug($"命令状态改变: {value}");
-		// var data = JsonSerializer.Serialize(ScrewMachine.Data.AsIScrewRealPartData(),GlobalShared.Json.DefaultIndentOptions);
+		// var data = JsonSerializer.Serialize(ScrewMachine.Data.AsIScrewRealPartData(),Global.Json.DefaultIndentOptions);
 		// Logger.Debug(data);
 	}
 
@@ -71,7 +71,7 @@ public partial class ScrewService : MainTaskService
 				goto TpsError;
 			}
 
-			// var data = JsonSerializer.Serialize(ScrewMachine.Data.AsIScrewRealPartData(),GlobalShared.Json.DefaultIndentOptions);
+			// var data = JsonSerializer.Serialize(ScrewMachine.Data.AsIScrewRealPartData(),Global.Json.DefaultIndentOptions);
 			// Logger.Debug(data);
 			var read1Result = Data.ReadPoint(nameof(ScrewMachineData.电批动作控制));
 			if (read1Result.IsOk())

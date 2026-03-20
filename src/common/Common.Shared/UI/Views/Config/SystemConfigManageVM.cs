@@ -45,11 +45,11 @@ public partial class SystemConfigManageVM : UiVM<SystemConfigManageView>, INamed
 	public partial string SelectedConfigGroup { get; set; } = "";
 	public ObservableList<IPropertyInstance> FilteredPropertyInstances { get; }
 
-	protected override Task OnInitialize(object? ctx, object? args)
+	protected override async Task OnInitialize(object? ctx, object? args)
 	{
 		TypeMetaInfo<AppConfig>.Cache.PropertyValuesCopy(
 			CurrentConfig, TypeMetaInfo<AppConfig>.Cache, EditConfig, false);
-		return base.OnInitialize(ctx, args);
+		await base.OnInitialize(ctx, args);
 	}
 
 	protected override Task OnViewAttachedToVisualTree(object sender, object? args)
@@ -73,8 +73,8 @@ public partial class SystemConfigManageVM : UiVM<SystemConfigManageView>, INamed
 			return;
 		}
 
-		var currentConfigText = JsonSerializer.Serialize(CurrentConfig, GlobalShared.Json.DefaultIndentOptions);
-		var editConfigText = JsonSerializer.Serialize(EditConfig, GlobalShared.Json.DefaultIndentOptions);
+		var currentConfigText = JsonSerializer.Serialize(CurrentConfig, Global.Json.DefaultIndentOptions);
+		var editConfigText = JsonSerializer.Serialize(EditConfig, Global.Json.DefaultIndentOptions);
 		if (currentConfigText == editConfigText)
 		{
 			ShowToast("save success!", UiMessageType.Success);
@@ -118,7 +118,7 @@ public partial class SystemConfigManageVM : UiVM<SystemConfigManageView>, INamed
 		try
 		{
 			await using var fs = File.OpenWrite(file.Path.LocalPath);
-			await JsonSerializer.SerializeAsync(fs, EditConfig, GlobalShared.Json.DefaultIndentOptions);
+			await JsonSerializer.SerializeAsync(fs, EditConfig, Global.Json.DefaultIndentOptions);
 			ShowToast("Saved successfully!", UiMessageType.Success);
 		}
 		catch (Exception ex)

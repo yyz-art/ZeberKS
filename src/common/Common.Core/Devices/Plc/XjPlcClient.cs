@@ -8,7 +8,7 @@ using ZC.Net.Sockets;
 
 namespace ZitApp.Devices.Plc;
 
-public interface IPlcClient : IBinaryReadWriteConnection
+public interface IPlcClient : IBinaryConnection
 {
 }
 

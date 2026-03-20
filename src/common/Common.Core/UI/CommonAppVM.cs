@@ -26,9 +26,9 @@ public abstract partial class CommonAppVM : ApplicationViewModel, INamedObject
 	public required AccountService AccountService { get; init; }
 	public abstract IEnumerable<INavigationInfo> CreateNavigations();
 
-	protected override Task OnInitialize(object? ctx, object? args)
+	protected override async Task OnInitialize(object? ctx, object? args)
 	{
-		if (Design.IsDesignMode) return Task.CompletedTask;
+		if (Design.IsDesignMode) return ;
 		var navManager = Ui.MainView.NavManager!;
 		Ui.MainView.Toast?.Position = UiMessagePosition.BottomCenter;
 		Ui.MainView.Notification?.Position = UiMessagePosition.BottomRight;
@@ -36,7 +36,7 @@ public abstract partial class CommonAppVM : ApplicationViewModel, INamedObject
 		navManager.AddNavigationInfos(navigationInfos);
 		navManager.Enabled = true;
 		navManager.Navigate(navigationInfos.First());
-		return base.OnInitialize(ctx, args);
+		await base.OnInitialize(ctx, args);
 	}
 
 	public partial object? SelectedNavData { get; set; }

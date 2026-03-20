@@ -25,8 +25,8 @@ var app = new App(config).UseLogger()
 	.AddToIOC(typeof(CommonAppCore).Assembly.GetTypes(), RegistrationMode.Override)
 	.AddToIOC(typeof(CommonUiAppCore).Assembly.GetTypes(), RegistrationMode.Override);
 
-await app.Initialize().UnwarpAsync(errThrow: true, success: _ => { }, onError: r => { });
-await app.Start().UnwarpAsync(errThrow: true, success: _ => { }, onError: r => { });
+await app.Initialize();
+await app.Start();
  var eapService = app.IOC.AddSingleton<EapServiceBase>().Get<EapServiceBase>(
  	null,
  	arg: InjectArgument.Create(new TcpServerSocket("127.0.0.1", 23456)));
@@ -59,22 +59,16 @@ Console.WriteLine("Hello World!");
 public sealed class App(AppConfig config) : CommonUiAppCore
 {
 	public new AppConfig Config { get; set; } = config;
-
-	protected override async Task<Result> OnInitialize(object? context = null, CancellationToken ctk = default)
+	protected override async Task OnInitialize(object? ctx, object? args)
 	{
-		// using var dbClient = IOC.Get<ISqlSugarClient>();
-
-		return default;
+		await base.OnInitialize(ctx, args);
 	}
- 
-	protected override async Task<Result> OnStart(object? context = null, CancellationToken ctk = default)
+
+
+
+	protected override async Task OnStart(object? ctx, object? args)
 	{
 		await StartTaskServices();
-		// var tcpServerSocket = new TcpStreamServerSocket("0.0.0.0", 80);
-		// var httpServer = IOC.Get<HttpServer>();
-		// tcpServerSocket.Acceptor = httpServer;
-		// await tcpServerSocket.StartAsync().UnwarpAsync();
-		return default;
 	}
 }
 

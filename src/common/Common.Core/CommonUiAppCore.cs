@@ -19,17 +19,14 @@ public abstract class CommonUiAppCore : CommonAppCore
 		CurrentGetter = () => this;
 	}
 
-	protected override async Task<Result> OnInitialize(object? context = null, CancellationToken ctk = default)
+	protected override Task OnInitialize(object? ctx, object? args)
 	{
 		using var dbClient = IOC.Get<ISqlSugarClient>();
 		dbClient.CodeFirst.InitTables<ZitAccount>();
 		var accountService = IOC.GetOrNull<AccountService>();
 		accountService?.Initialize();
-		return default;
+		return Task.CompletedTask;
 	}
 
-	protected override async Task<Result> OnStart(object? context = null, CancellationToken ctk = default)
-	{
-		return default;
-	}
+
 }

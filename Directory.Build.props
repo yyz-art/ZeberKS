@@ -53,7 +53,7 @@
 		<HotAvaloniaVersion>3.*</HotAvaloniaVersion>
 		<LiveChartsVersion>2.0.0-rc6.1</LiveChartsVersion>
 		<AppFrameworkVersion>1.0.0</AppFrameworkVersion>
-		<AvaloniaVersion>11.3.11</AvaloniaVersion>
+		<AvaloniaVersion>11.3.12</AvaloniaVersion>
 		<AvaloniaTreeDataGridVersion>11.1.1</AvaloniaTreeDataGridVersion>
 
 		<ReactiveUIVersion>22.2.1</ReactiveUIVersion>

@@ -24,7 +24,7 @@ public partial class ScrewMachineData
 		}
 	}
 
-	public IBinaryReadWriteConnection? Connection { get; set; }
+	public IBinaryConnection? Connection { get; set; }
 
 	#region 关键操作
 
