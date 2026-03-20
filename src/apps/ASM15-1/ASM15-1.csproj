@@ -3,7 +3,7 @@
 		<RootNamespace>$(ProjectApplicationBaseName)</RootNamespace>
 		<AssemblyName>$(ProjectApplicationBaseName)</AssemblyName>
 		<OutputType>Exe</OutputType>
-		<DefineConstants>$(DefineConstants);ASM_1;DEFINE_MODEL_INCLUDE</DefineConstants>
+		<DefineConstants>$(DefineConstants);ASM15_1;DEFINE_MODEL_INCLUDE</DefineConstants>
 		<ApplicationManifest>Assets/app.manifest</ApplicationManifest>
 		<IsUiProject>true</IsUiProject>
 	</PropertyGroup>

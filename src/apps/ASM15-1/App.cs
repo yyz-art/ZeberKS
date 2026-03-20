@@ -21,9 +21,7 @@ using ZitApp.Models;
 using ZitApp.Services;
 using ZitApp.SIFS;
 
-// var xinJePlcClient = new XinJEPlcClient("127.0.0.1",502);
-// var plcAlarmStruct = new PlcAlarmStruct();
-// var readResult = plcAlarmStruct.ReadPoint(PlcAlarmStructInfo.Z1轴M1指令报错, xinJePlcClient);
+
 
 Result.EnableCollectErrorStackTrace = Debugger.IsAttached;
 DevUtils.DebugMode = DevDebugMode.LocalDebug;
@@ -63,11 +61,8 @@ public sealed class App(AppConfig config) : CommonUiAppCore
 		// IOC.GetOrNull<IAppStartUpVM>()?.SetProgress(40, 500);
 		using var dbClient = IOC.Get<ISqlSugarClient>();
 		dbClient.CodeFirst.InitTables<DbKeyValueItem,AlarmRecord>();
-		IOC.AddTransient<ScrewMachine>();
-		IOC.AddSingleton<ScrewMachine>(specialName: "L", creator: oc => oc.Get<ScrewMachine>(
-			InjectArgument.Create(new ScrewMachineConnection(Config.Screw1))));
-		IOC.AddSingleton<ScrewMachine>(specialName: "R", creator: oc => oc.Get<ScrewMachine>(
-			InjectArgument.Create(new ScrewMachineConnection(Config.Screw2))));
+		IOC.AddSingleton(specialName: "L",instance: new ScrewMachineConnection(Config.Screw1));
+		IOC.AddSingleton(specialName: "R",instance: new ScrewMachineConnection(Config.Screw2));
 		IOC.AddSingleton<IDataSocket>(specialName: "Scanner-L", creator: _ => new SerialPortSocket(Config.Scanner1));
 		IOC.AddSingleton<IDataSocket>(specialName: "Scanner-R", creator: _ => new SerialPortSocket(Config.Scanner2));
 		IOC.AddSingleton<XinJEPlcClient>(creator: oc => oc.Get<XinJEPlcClient>(
@@ -81,14 +76,14 @@ public sealed class App(AppConfig config) : CommonUiAppCore
 		await StartTaskServices();
 		var recipeService = IOC.Get<RecipeService>();
 		recipeService.LoadRecipes().Unwarp("Recipes load failed!");
-		var lScrewService = IOC.Get<ScrewService>(InjectArgument.Create(IOC.Get<ScrewMachine>(specialName: "L")));
-		var rScrewService = IOC.Get<ScrewService>(InjectArgument.Create(IOC.Get<ScrewMachine>(specialName: "R")));
+		var lScrewService = IOC.Get<ScrewService>(InjectArgument.Create(IOC.Get<ScrewMachineConnection>(specialName: "L")));
+		var rScrewService = IOC.Get<ScrewService>(InjectArgument.Create(IOC.Get<ScrewMachineConnection>(specialName: "R")));
 		TaskServiceManager.AddService(lScrewService);
 		// TaskServiceManager.AddService(rScrewService);
 		var connectionManageService = IOC.Get<ConnectionManageService>();
 		connectionManageService.RegisterConnection("PLC", IOC.Get<XinJEPlcClient>());
-		connectionManageService.RegisterConnection("SCREW-L", IOC.Get<ScrewMachine>(specialName: "L").Connection);
-		connectionManageService.RegisterConnection("SCREW-R", IOC.Get<ScrewMachine>(specialName: "R").Connection);
+		connectionManageService.RegisterConnection("SCREW-L", IOC.Get<ScrewMachineConnection>(specialName: "L"));
+		connectionManageService.RegisterConnection("SCREW-R", IOC.Get<ScrewMachineConnection>(specialName: "R"));
 		var rp = new ProductRecipe();
 		return await base.OnStart(context, ctk);
 	}

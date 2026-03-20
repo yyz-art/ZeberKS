@@ -27,12 +27,12 @@ var app = new App(config).UseLogger()
 
 await app.Initialize().UnwarpAsync(errThrow: true, success: _ => { }, onError: r => { });
 await app.Start().UnwarpAsync(errThrow: true, success: _ => { }, onError: r => { });
-// var eapService = app.IOC.AddSingleton<EapServiceBase>().Get<EapServiceBase>(
-// 	null,
-// 	arg: InjectArgument.Create(new TcpServerSocket("127.0.0.1", 23456)));
-// eapService.RegisterHandlerMethods();
-// await eapService.Start();
-// while (true)
+ var eapService = app.IOC.AddSingleton<EapServiceBase>().Get<EapServiceBase>(
+ 	null,
+ 	arg: InjectArgument.Create(new TcpServerSocket("127.0.0.1", 23456)));
+ eapService.RegisterHandlerMethods();
+ await eapService.Start();
+ while (true)
 {
 	// var client = new SifsClient(new NetworkSocketConfig("127.0.0.1", 502));
 	// client.Test();
@@ -66,7 +66,7 @@ public sealed class App(AppConfig config) : CommonUiAppCore
 
 		return default;
 	}
-
+ 
 	protected override async Task<Result> OnStart(object? context = null, CancellationToken ctk = default)
 	{
 		await StartTaskServices();

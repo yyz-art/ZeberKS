@@ -17,6 +17,7 @@ public partial class PlcAlarmStruct
 	[BinaryPoint(Offset = 22500, Source = "22500", Tags = "WordBool", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:22500", Category = "Alarm", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
 		DataDefine.KeyValue,"Id", "1",
+		DataDefine.Variable, $@"TestUser1:User={{ ""Id"" = 1 }}",
 		DataDefine.KeyValue,"NameByCN", "上料轴1_未使能提示",
 		DataDefine.KeyValue,"NameByEN", "Load_Axis1_Not_Enabled",
 		DataDefine.KeyValue,"NameByVI", "Loading Axis 1_Chưa cho phép hoạt động",

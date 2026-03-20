@@ -24,14 +24,19 @@
 									LeftTopContentHeight="*" LeftBottomContentHeight="Auto" RightContentWidth="300"
 									RightTopContentHeight="Auto" RightBottomContentHeight="Auto" BottomContentHeight="200">
 		<LayoutDockPanel.CenterContent>
-			<Grid ColumnDefinitions="0,*,200" RowDefinitions="*,4,320" ColumnSpacing="4">
-				<main:CamerasView Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" />
+			<Grid ColumnDefinitions="0,200,*,200" RowDefinitions="*,4,320" ColumnSpacing="4">
+				<main:CamerasView Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" />
 				<GridSplitter Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" />
-				<ViewContainer Grid.Row="2" Grid.Column="1" Header="{StaticResource I18N.Common.双轴轨道位置}">
+				<ViewContainer Grid.Row="2" Grid.Column="2" Header="{StaticResource I18N.Common.双轴轨道位置}">
 					<main:AxisTrackView DataContext="{Binding AxisTrackVM}" />
 				</ViewContainer>
-				<ViewContainer Grid.Row="2" Grid.Column="2" Header="{StaticResource I18N.Common.NG区域}" VerticalAlignment="Stretch">
+				<ViewContainer Grid.Row="2" Grid.Column="3" Header="{StaticResource I18N.Common.NG区域}" VerticalAlignment="Stretch">
 					<main:NgAreaView VerticalAlignment="Stretch" />
+				</ViewContainer>
+				<ViewContainer Grid.Row="2" Grid.Column="1" Header="{StaticResource I18N.Common.螺丝枪数据}" VerticalAlignment="Stretch">
+					<Grid RowDefinitions="Auto,Auto,Auto" ColumnDefinitions="Auto,*">
+						<TextBlock Text="{Binding ScrewService.Data}"/>
+					</Grid>
 				</ViewContainer>
 			</Grid>
 		</LayoutDockPanel.CenterContent>

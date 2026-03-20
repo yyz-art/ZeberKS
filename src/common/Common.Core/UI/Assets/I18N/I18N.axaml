@@ -23,6 +23,7 @@
 	<sys:String x:Key="I18N.Common.数据栏">数据栏</sys:String>
 	<sys:String x:Key="I18N.Common.设备状态">设备状态</sys:String>
 	<sys:String x:Key="I18N.Common.NG区域">NG区域</sys:String>
+	<sys:String x:Key="I18N.Common.螺丝枪数据">螺丝枪数据</sys:String>
 	<sys:String x:Key="I18N.Common.双轴轨道位置">双轴轨道位置</sys:String>
 	<sys:String x:Key="I18N.Common.机器人吸头">机器人吸头</sys:String>
 	<sys:String x:Key="I18N.Common.主页">主页</sys:String>

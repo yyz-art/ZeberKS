@@ -14,19 +14,40 @@ namespace ZitApp.Services;
 [ObservableObject]
 public partial class ScrewService : MainTaskService
 {
-	public override string ServiceName => field ??= $"SCREW-{ScrewMachine.Connection.Name}-SERVICE";
-	public required ScrewMachine ScrewMachine { get; init; }
-	public required ILogger Logger { get; init; }
-	
+	public override string ServiceName => field ??= $"{Connection.Name}-SERVICE";
+	public ScrewMachineData Data { get; private set; } = new();
+
+
 	public bool EnableWaveCollect { get; set; } = true;
 	public List<double> WaveChannel1RealData { get; } = [];
 	public List<double> WaveChannel2RealData { get; } = [];
-
+	public partial ScrewMachineControlCommand ControlCommand { get; set; }
+	public required ScrewMachineConnection Connection
+	{
+		get;
+		init
+		{
+			field = value;
+			Data.Connection = value;
+		}
+	}
+	public required ILogger Logger { get; init; }
 	public const int ChartDataBaseAddress = 10000; // 波形数据基准地址
 	public const int WaveChannelPointCount = 2; // 通道数
 	public const int WavePointTotalCount = 600; // 总点数
 	public const int MaxReadBlock = 100; // 每次读取点数（避免超过 Modbus 限制）
-	public partial ScrewMachineControlCommand ControlCommand { get; set; }
+
+	public Result SetControlCommand(ScrewMachineControlCommand cmd)
+	{
+		Data.电批动作控制 = cmd;
+		var result = Data.WritePoint(nameof(ScrewMachineData.电批动作控制));
+		return result;
+	}
+
+	public static int GetTaskOptionsChannelOffset(int channel)
+	{
+		return 4000 + channel * 150;
+	}
 
 	partial void OnControlCommandChanged(ScrewMachineControlCommand value)
 	{
@@ -41,7 +62,8 @@ public partial class ScrewService : MainTaskService
 	{
 		while (ctk.IsCancellationRequested == false)
 		{
-			var readRealPartDataResult = ScrewMachine.ReadRealPartData();
+
+			var readRealPartDataResult = Data.ReadPointGroup(ScrewMachineDataStructInfo.ScrewRealPartData, Connection);;
 			if (readRealPartDataResult.IsError())
 			{
 				Logger.Error(readRealPartDataResult.Exception, "读取实时数据失败! {msg}",
@@ -51,25 +73,25 @@ public partial class ScrewService : MainTaskService
 
 			// var data = JsonSerializer.Serialize(ScrewMachine.Data.AsIScrewRealPartData(),GlobalShared.Json.DefaultIndentOptions);
 			// Logger.Debug(data);
-			var read1Result =  ScrewMachine.Data.ReadPoint(nameof(ScrewMachineData.电批动作控制));
+			var read1Result = Data.ReadPoint(nameof(ScrewMachineData.电批动作控制));
 			if (read1Result.IsOk())
 			{
-				ControlCommand = ScrewMachine.Data.电批动作控制;
+				ControlCommand = Data.电批动作控制;
 			}
 
-		
-			var isBusy = BitUtils.GetBit(ScrewMachine.Data.输出状态, 16);
+
+			var isBusy = BitUtils.GetBit(Data.输出状态, 16);
 			if (EnableWaveCollect && isBusy)
 			{
-				var sampledPoints = ScrewMachine.Data.此次波形采集数量;
+				var sampledPoints = Data.此次波形采集数量;
 				var channelMaxTmpBufLen = WavePointTotalCount / WaveChannelPointCount;
 				var ch1Base = ChartDataBaseAddress;
 				var ch2Base = ch1Base + channelMaxTmpBufLen;
 				WaveChannel1RealData.Clear();
 				WaveChannel2RealData.Clear();
-				ReadWaveChannel(ScrewMachine.Connection, ch1Base, channelMaxTmpBufLen,
+				ReadWaveChannel(Connection, ch1Base, channelMaxTmpBufLen,
 					sampledPoints, WaveChannel1RealData);
-				ReadWaveChannel(ScrewMachine.Connection, ch2Base, channelMaxTmpBufLen,
+				ReadWaveChannel(Connection, ch2Base, channelMaxTmpBufLen,
 					sampledPoints, WaveChannel2RealData);
 			}
 			else

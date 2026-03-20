@@ -21,10 +21,6 @@ using ZitApp.Models;
 using ZitApp.Services;
 using ZitApp.SIFS;
 
-// var xinJePlcClient = new XinJEPlcClient("127.0.0.1",502);
-// var plcAlarmStruct = new PlcAlarmStruct();
-// var readResult = plcAlarmStruct.ReadPoint(PlcAlarmStructInfo.Z1轴M1指令报错, xinJePlcClient);
-
 Result.EnableCollectErrorStackTrace = Debugger.IsAttached;
 DevUtils.DebugMode = DevDebugMode.LocalDebug;
 EnhanceAppCore.InitializeEnvironment();
@@ -60,7 +56,7 @@ public sealed class App(AppConfig config) : CommonUiAppCore
 	{
 		// IOC.GetOrNull<IAppStartUpVM>()?.SetProgress(40, 500);
 		using var dbClient = IOC.Get<ISqlSugarClient>();
-		dbClient.CodeFirst.InitTables<DbKeyValueItem,AlarmRecord>();
+		dbClient.CodeFirst.InitTables<DbKeyValueItem, AlarmRecord>();
 		IOC.AddSingleton<IDataSocket>(specialName: "Scanner-L", creator: _ => new SerialPortSocket(Config.Scanner1));
 		IOC.AddSingleton<IDataSocket>(specialName: "Scanner-R", creator: _ => new SerialPortSocket(Config.Scanner2));
 		IOC.AddSingleton<XinJEPlcClient>(creator: oc => oc.Get<XinJEPlcClient>(

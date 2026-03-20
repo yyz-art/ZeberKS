@@ -11,11 +11,8 @@
 	
 	<ItemGroup>
 		<Folder Include="Devices\"/>
-		<Compile Update="UI\Views\Devices\ScrewView.axaml.cs">
-			<DependentUpon>ScrewView.axaml</DependentUpon>
-			<SubType>Code</SubType>
-		</Compile>
 		<Folder Include="UI\Views\Common\" />
+		<Folder Include="UI\Views\Devices\" />
 	</ItemGroup>
 	
 	<ItemGroup>

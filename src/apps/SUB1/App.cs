@@ -17,13 +17,12 @@ using ZC.BinStructs.Ext;
 using ZitApp.BinStructs;
 using ZitApp.Devices.Plc;
 using ZitApp.Devices.Screw;
+using ZitApp.EAP;
 using ZitApp.Models;
 using ZitApp.Services;
 using ZitApp.SIFS;
 
-// var xinJePlcClient = new XinJEPlcClient("127.0.0.1",502);
-// var plcAlarmStruct = new PlcAlarmStruct();
-// var readResult = plcAlarmStruct.ReadPoint(PlcAlarmStructInfo.Z1轴M1指令报错, xinJePlcClient);
+
 
 Result.EnableCollectErrorStackTrace = Debugger.IsAttached;
 DevUtils.DebugMode = DevDebugMode.LocalDebug;
@@ -65,6 +64,11 @@ public sealed class App(AppConfig config) : CommonUiAppCore
 		IOC.AddSingleton<IDataSocket>(specialName: "Scanner-R", creator: _ => new SerialPortSocket(Config.Scanner2));
 		IOC.AddSingleton<XinJEPlcClient>(creator: oc => oc.Get<XinJEPlcClient>(
 			InjectArgument.Create<INetworkSocketConfig>(Config.Plc)));
+		var eapService = IOC.AddSingleton<EapService>().Get<EapService>(
+			null,
+			arg: InjectArgument.Create(new TcpServerSocket("127.0.0.1", 23456)));
+		eapService.RegisterHandlerMethods();
+		await eapService.Start();
 		await StartUi();
 		return await base.OnInitialize(context, ctk);
 	}

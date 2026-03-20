@@ -5,7 +5,7 @@ using ZitApp.UI.Account;
 using ZitApp.UI.Alarm;
 using ZitApp.UI.Config;
 using ZitApp.UI.Main;
-using ZitApp.UI.Views.Devices;
+
 using ZitApp.UI.Views.Main;
 using RecipeVM = ZitApp.UI.Recipe.RecipeVM;
 
@@ -34,7 +34,6 @@ public partial class AppVM : CommonAppVM
 	public override IEnumerable<INavigationInfo> CreateNavigations() => new NavigationInfo[]
 	{
 		new("/主页") { ViewModel = typeof(MainVM), AllowClose = false, CustomData = 0 },
-		new("/螺丝枪") { ViewModel = typeof(ScrewVM), AllowClose = false, CustomData = 3 },
 		new("/账户管理") { ViewModel = typeof(AccountManageVM), AllowClose = false, CustomData = 5 },
 		new("/报警") { ViewModel = typeof(AlarmManageVM), AllowClose = false, CustomData = 3 },
 		new("/设置") { ViewModel = typeof(SystemConfigManageVM), AllowClose = false, CustomData = 5 },
