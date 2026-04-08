@@ -1,5 +1,5 @@
 
-// GENERATE AT 2026/3/4 17:17:07
+// GENERATE AT 2026/4/8 9:56:05
 using ZC.Annotations;
 using ZC.DP.Memory;
 using ZC.DP;
@@ -52,12 +52,16 @@ public partial class PlcStruct
 	public short PLC当前配方ID { get; set; }
 
 	[BinaryPoint(Offset = 22011, Source = "22011", Tags = "交互信号PLC->PC", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
-	[ValueInfo(Source = "PLC:22011", Category = "PLC/PLC->PC", Unit = "",MinValue = 0, MaxValue = 4096, Description = "1=已完成,0=无请求 ", InitAttachData = null)]
+	[ValueInfo(Source = "PLC:22011", Category = "PLC/PLC->PC", Unit = "",MinValue = 0, MaxValue = 4096, Description = "1=已完成,0=无请求", InitAttachData = null)]
 	public short PLC配方写入PC地址响应 { get; set; }
 
 	[BinaryPoint(Offset = 22015, Source = "22015", Tags = "交互信号PLC->PC", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
-	[ValueInfo(Source = "PLC:22015", Category = "PLC/PLC->PC", Unit = "",MinValue = 0, MaxValue = 4096, Description = "1=触发，收到响应后复位", InitAttachData = null)]
-	public short 数据上报请求 { get; set; }
+	[ValueInfo(Source = "PLC:22015", Category = "PLC/PLC->PC", Unit = "",MinValue = 0, MaxValue = 4096, Description = "0=未上报,1=OK,2=NG,收到响应后复位", InitAttachData = null)]
+	public short 工位1数据上报请求 { get; set; }
+
+	[BinaryPoint(Offset = 22016, Source = "22016", Tags = "交互信号PLC->PC", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:22016", Category = "PLC/PLC->PC", Unit = "",MinValue = 0, MaxValue = 4096, Description = "0=未上报,1=OK,2=NG,收到响应后复位", InitAttachData = null)]
+	public short 工位2数据上报请求 { get; set; }
 
 	[BinaryPoint(Offset = 22020, Source = "22020", Tags = "交互信号PLC->PC", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:22020", Category = "PLC/PLC->PC", Unit = "",MinValue = 0, MaxValue = 4096, Description = "1=触发，收到响应后复位", InitAttachData = null)]
@@ -347,6 +351,14 @@ public partial class PlcStruct
 	[ValueInfo(Source = "PLC:21002", Category = "PLC/PC->PLC", Unit = "",MinValue = 0, MaxValue = 4096, Description = "1=扫码枪未连接,2=MES未连接 ,3=IOT未连接,4=EAP未连接,5=打印机未连接", InitAttachData = null)]
 	public long 上位机错误码 { get; set; }
 
+	[BinaryPoint(Offset = 21005, Source = "21005", Tags = "交互信号PC->PLC", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:21005", Category = "PLC/PC->PLC", Unit = "",MinValue = 0, MaxValue = 4096, Description = "1=允许生产,2=扫码未通过,3=配方未响应,4=物料需更换", InitAttachData = null)]
+	public short 工位1允许生产 { get; set; }
+
+	[BinaryPoint(Offset = 21006, Source = "21006", Tags = "交互信号PC->PLC", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:21006", Category = "PLC/PC->PLC", Unit = "",MinValue = 0, MaxValue = 4096, Description = "1=允许生产,2=扫码未通过,3=配方未响应,4=物料需更换", InitAttachData = null)]
+	public short 工位2允许生产 { get; set; }
+
 	[BinaryPoint(Offset = 21010, Source = "21010", Tags = "交互信号PC->PLC", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:21010", Category = "PLC/PC->PLC", Unit = "",MinValue = 0, MaxValue = 4096, Description = "上位机下发到PLC的配方ID", InitAttachData = null)]
 	public short 上位机当前配方ID { get; set; }
@@ -357,7 +369,11 @@ public partial class PlcStruct
 
 	[BinaryPoint(Offset = 21015, Source = "21015", Tags = "交互信号PC->PLC", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:21015", Category = "PLC/PC->PLC", Unit = "",MinValue = 0, MaxValue = 4096, Description = "1=OK,2=NG", InitAttachData = null)]
-	public short 数据上报响应 { get; set; }
+	public short 工位1数据上报响应 { get; set; }
+
+	[BinaryPoint(Offset = 21016, Source = "21016", Tags = "交互信号PC->PLC", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:21016", Category = "PLC/PC->PLC", Unit = "",MinValue = 0, MaxValue = 4096, Description = "1=OK,2=NG", InitAttachData = null)]
+	public short 工位2数据上报响应 { get; set; }
 
 	[BinaryPoint(Offset = 21020, Source = "21020", Tags = "交互信号PC->PLC", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:21020", Category = "PLC/PC->PLC", Unit = "",MinValue = 0, MaxValue = 4096, Description = "1=OK,2=扫码枪连接错误,3=MES返回错误", InitAttachData = null)]

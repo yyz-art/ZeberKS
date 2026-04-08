@@ -11,7 +11,7 @@ public class RecipeService<T> where T : ProductRecipeBase
 	private List<T> Recipes { get; } = [];
 	public required IKeyValueStorage KvStorage { get; init; }
 	[Inject(Name = "RECIPE-SERVICE")] public required ILogger Logger { get; init; }
-
+	public IEnumerable<T> GetRecipes() => Recipes;
 
 	public Result LoadRecipes()
 	{

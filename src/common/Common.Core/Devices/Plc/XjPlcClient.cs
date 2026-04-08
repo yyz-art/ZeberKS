@@ -35,9 +35,9 @@ public class XinJEPlcClient : ModbusTcpNet, IPlcClient
 	public object? ConnectionConfig { get; private set; }
 	public byte[][] WriteTempArrays = new byte[4096][];
 	public IOContext DefaultContext => field ??= new IOContext();
-
 	public IIOContext? GetDefaultContext()
 	{
+		
 		return DefaultContext;
 	}
 

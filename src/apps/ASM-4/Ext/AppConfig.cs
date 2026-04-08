@@ -1,4 +1,5 @@
 ﻿using System.Net.Sockets;
+using System.Text.Json.Serialization;
 using ZC.CFG;
 using ZC.DB;
 using ZC.DP;
@@ -26,27 +27,25 @@ public partial class PlcConfig : ObservableObject, INetworkSocketConfig
 }
 
 [ObservableObject(RequiredGenerate = true)]
-public partial class AppConfig : ConfigBase
+public partial class AppConfig : CommonAppConfig
 {
-	public const string NameByCN = "NameByCN";
-	public const string NameByVI = "NameByVI";
-	public const string NameByEN = "NameByEN";
+
 	public List<DatabaseConnectionConfig> Databases { get; set; } = null!;
 	public TaskServiceHostOptions TaskServiceHostOptions { get; set; } = null!;
 
-	
+	[JsonIgnore]
 	public SerialPortSocketConfig Scanner1
 	{
 		get => field ??= new SerialPortSocketConfig { Port = Scanner1ComPort, BaudRate = Scanner1BaudRate };
 		set => SetField(ref field, value);
 	}
-
+	[JsonIgnore]
 	public SerialPortSocketConfig Scanner2
 	{
 		get => field ??= new SerialPortSocketConfig { Port = Scanner2ComPort, BaudRate = Scanner2BaudRate };
 		set => SetField(ref field, value);
 	}
-
+	[JsonIgnore]
 	public PlcConfig Plc
 	{
 		get => field ??= new PlcConfig();
@@ -106,4 +105,6 @@ public partial class AppConfig : ConfigBase
 	public int Scanner2BaudRate { get; set; } = 9600;
 
 	#endregion
+
+
 }

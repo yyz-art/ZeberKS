@@ -6,7 +6,7 @@
 		Namespace="ZitApp.BinStructs"
 		Name="PlcStruct"
 		Length="20" LengthUnit="2" ByteFormat="ByteFormat.CDAB"
-		OutputFile="E:\XKJ-ZEBER\src\apps\ASM15-1\Ext\BinStructs\PlcStruct.gen.cs">
+		OutputFile="E:\XKJ-ZEBER\src\common\Common.Shared\Ext\BinStructs\PlcStruct.gen.cs">
 		<BinaryPointGroup Name="交互toPC_Part1" Start="22000" End="22099"/>
 		<BinaryPointGroup Name="交互toPC_Part2" Start="22100" End="22199"/>
 		<BinaryPointGroup Name="交互toPC_Part3" Start="22200" End="22299"/>
@@ -36,7 +36,8 @@
 			设备3状态,PLC->PC,22205,short,"1=启动,2=停止,3=初始化中,4=报警中"
 			PLC当前配方ID,PLC->PC,22010,short,PLC初始化使用的配方ID
 			PLC配方写入PC地址响应,PLC->PC,22011,short,"1=已完成,0=无请求 "
-			数据上报请求,PLC->PC,22015,short,1=触发，收到响应后复位 
+			工位1数据上报请求,PLC->PC,22015,short,"0=未上报,1=OK,2=NG,收到响应后复位"
+			工位2数据上报请求,PLC->PC,22016,short,"0=未上报,1=OK,2=NG,收到响应后复位"
 			扫码枪1触发,PLC->PC,22020,short,1=触发，收到响应后复位
 			扫码枪2触发,PLC->PC,22021,short,1=触发，收到响应后复位
 			打印机1触发,PLC->PC,22025,short,1=触发，收到响应后复位
@@ -120,9 +121,12 @@
 			上位机心跳,PC->PLC,21000,short,0-1跳变 1S间隔
 			上位机状态,PC->PLC,21001,short,1=就绪，2=故障
 			上位机错误码,PC->PLC,21002,long,"1=扫码枪未连接,2=MES未连接 ,3=IOT未连接,4=EAP未连接,5=打印机未连接"
+			工位1允许生产,PC->PLC,21005,short,"1=允许生产,2=扫码未通过,3=配方未响应,4=物料需更换"
+			工位2允许生产,PC->PLC,21006,short,"1=允许生产,2=扫码未通过,3=配方未响应,4=物料需更换"
 			上位机当前配方ID,PC->PLC,21010,short,上位机下发到PLC的配方ID
 			PLC配方写入PC地址请求,PC->PLC,21011,short,"1=请求,0=无请求"
-			数据上报响应,PC->PLC,21015,short,"1=OK,2=NG"
+			工位1数据上报响应,PC->PLC,21015,short,"1=OK,2=NG"
+			工位2数据上报响应,PC->PLC,21016,short,"1=OK,2=NG"
 			扫码枪1触发结果,PC->PLC,21020,short,"1=OK,2=扫码枪连接错误,3=MES返回错误"
 			扫码枪2触发结果,PC->PLC,21021,short,"1=OK,2=扫码枪连接错误,3=MES返回错误"
 			打印机1触发结果,PC->PLC,21025,short,"1=OK,2=扫码枪连接错误,3=MES返回错误"

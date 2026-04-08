@@ -10,7 +10,7 @@
   <Folder Name="/common/">
     <Project Path="src/common/Common.Base/Common.Base.csproj" />
     <Project Path="src/common/Common.Core/Common.Core.csproj" />
-    <Project Path="src/common/Common.Shared/Common.Shared.csproj" />
+<!--    <Project Path="src/common/Common.Shared/Common.Shared.csproj" />-->
   </Folder>
   <Folder Name="/demos/" />
   <Folder Name="/framework/" />

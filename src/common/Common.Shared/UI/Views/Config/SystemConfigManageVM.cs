@@ -1,4 +1,6 @@
-﻿using System.Text.Json;
+﻿using System.Reflection;
+using System.Text.Json;
+using Avalonia.Collections;
 using Avalonia.Platform.Storage;
 using ZC;
 using ZC.CFG;
@@ -30,6 +32,8 @@ public partial class SystemConfigManageVM : UiVM<SystemConfigManageView>, INamed
 		FilteredPropertyInstances = new ObservableList<IPropertyInstance>(PropertyInstances);
 		EditConfig = new AppConfig();
 		ConfigGroupNames = PropertyInstances.Select(t => t.ValueInfo?.Category).Distinct().ToArray()!;
+		GroupedPropertyInstances = new DataGridCollectionView(PropertyInstances);
+		GroupedPropertyInstances.GroupDescriptions.Add(new DataGridPathGroupDescription("ValueInfo.Category"));
 	}
 
 	public List<IPropertyInstance> PropertyInstances { get; } =
@@ -44,22 +48,30 @@ public partial class SystemConfigManageVM : UiVM<SystemConfigManageView>, INamed
 	public string[] ConfigGroupNames { get; set; } = ["连接配置", "提示信息配置"];
 	public partial string SelectedConfigGroup { get; set; } = "";
 	public ObservableList<IPropertyInstance> FilteredPropertyInstances { get; }
+	public DataGridCollectionView GroupedPropertyInstances { get; set; } 
+
 
 	protected override async Task OnInitialize(object? ctx, object? args)
 	{
-		TypeMetaInfo<AppConfig>.Cache.PropertyValuesCopy(
-			CurrentConfig, TypeMetaInfo<AppConfig>.Cache, EditConfig, false);
+		using var memoryStream = new MemoryStream();
+		JsonSerializer.Serialize(memoryStream,CurrentConfig, Global.Json.DefaultIndentOptions);
+		memoryStream.Position = 0;
+		EditConfig = JsonSerializer.Deserialize<AppConfig>(memoryStream, Global.Json.DefaultIndentOptions)!;
 		await base.OnInitialize(ctx, args);
 	}
 
-	protected override Task OnViewAttachedToVisualTree(object sender, object? args)
+	private void SetCurrentValueDisplay()
 	{
 		foreach (var propertyInstance in PropertyInstances)
 		{
 			if (propertyInstance.Define.CanRead && propertyInstance.Define.CanWrite)
 				propertyInstance.TempValue1 = propertyInstance.Define.Getter!.Invoke(CurrentConfig);
 		}
+	}
+	protected override Task OnViewAttachedToVisualTree(object sender, object? args)
+	{
 
+		SetCurrentValueDisplay();
 		return base.OnViewAttachedToVisualTree(sender, args);
 	}
 
@@ -156,6 +168,11 @@ public partial class SystemConfigManageVM : UiVM<SystemConfigManageView>, INamed
 
 	public Task @Apply()
 	{
+		ShowToast("start apply ...");
+		var typeMetaInfo = TypeMetaInfo<AppConfig>.Cache;
+		typeMetaInfo.PropertyValuesCopy(EditConfig, typeMetaInfo, CurrentConfig, true);
+		SetCurrentValueDisplay();
+		ShowToast("apply success!", UiMessageType.Success);
 		return Task.CompletedTask;
 	}
 

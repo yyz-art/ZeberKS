@@ -1,27 +1,16 @@
-﻿using System.Runtime.CompilerServices;
-using System.Text.Json;
+﻿using System.Text.Json;
 using ZC;
 using ZC.DB;
 using ZC.Development;
-using ZC.DP.Number;
 using ZC.EnhanceApp;
 using ZC.IO;
 using ZC.KvStorage.DB;
-using ZC.Web.Server;
-using ZC.Net;
 using ZC.Net.Sockets;
 using ZC.Shared.DefaultJson;
-using ZC.Text;
 using SqlSugar;
-using ZC.BinStructs.Ext;
-using ZitApp.BinStructs;
 using ZitApp.Devices.Plc;
-using ZitApp.Devices.Screw;
 using ZitApp.Models;
 using ZitApp.Services;
-using ZitApp.SIFS;
-
-
 
 Result.EnableCollectErrorStackTrace = Debugger.IsAttached;
 DevUtils.DebugMode = DevDebugMode.LocalDebug;
@@ -32,7 +21,6 @@ var config = new AppConfig
 	TaskServiceHostOptions = TaskServiceHostOptions.CreateDefault(),
 	Databases = [new DatabaseConnectionConfig(null, DatabaseType.Sqlite, @"Data Source=data/app.db")],
 };
-// config = Debugger.IsAttached ? config : AppCore.LoadConfig<AppConfig>();
 config = AppCore.LoadConfig<AppConfig>();
 if (DevUtils.IsLocalDebugMode && Debugger.IsAttached)
 	config.Plc.IpAddress = "127.0.0.1";
@@ -42,12 +30,11 @@ var app = new App(config).UseLogger().UseUi(UiApp.StartAsync)
 	.AddToIOC(typeof(CommonAppCore).Assembly.GetTypes(), RegistrationMode.Override)
 	.AddToIOC(typeof(CommonUiAppCore).Assembly.GetTypes(), RegistrationMode.Override)
 	.UseDatabase(config.Databases).UseDbKeyValueStorage().UseWebServer();
-app.IOC.AddSingleton(app.Config);
 await app.Initialize();
 await app.Start();
 while (true) await Task.Delay(1000);
 
-public sealed class App(AppConfig config) : CommonUiAppCore
+public sealed class App(AppConfig config) : CommonUiAppCore(config)
 {
 	public static string ApplicationName => "ASM15-2";
 	public new static App DesignTimeApp = new App(new AppConfig());

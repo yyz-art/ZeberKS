@@ -1,0 +1,53 @@
+﻿<UiView xmlns="https://github.com/avaloniaui"
+				xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+				xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+				xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+				xmlns:alarm="clr-namespace:ZitApp.UI.Alarm"
+				xmlns:plc="clr-namespace:ZitApp.Devices.Plc;assembly=ZitApp.Core"
+				mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+				x:Class="ZitApp.UI.Alarm.AlarmManageView">
+	<Design.DataContext>
+		<alarm:AlarmManageVM />
+	</Design.DataContext>
+	<TabControl>
+		<TabItem Header="{StaticResource I18N.Common.报警监控}">
+			<DataGrid ItemsSource="{Binding PropertyInstances}" CanUserResizeColumns="True" CanUserSortColumns="True">
+				<DataGrid.Columns>
+					<DataGridTextColumn Header="Id" Binding="{Binding TempData1}" />
+					<DataGridTextColumn Header="{StaticResource I18N.Common.报警名称}" Binding="{Binding ValueInfo.DisplayName}" Width="300" />
+					<DataGridTextColumn Header="{StaticResource I18N.Common.地址}" Binding="{Binding ValueInfo.Source}" MinWidth="100" />
+					<DataGridTemplateColumn Header="{StaticResource I18N.Common.状态}">
+						<DataGridTemplateColumn.CellTemplate>
+							<DataTemplate>
+								<MatchShow MatchValue="{Binding Value}">
+									<Ellipse MatchShow.Option="{x:Static plc:WordBool.True}" Fill="Red" Width="20" Height="20"/>
+									<Ellipse MatchShow.Option="{x:Static plc:WordBool.False}" Fill="Green" Width="20" Height="20"/>
+									<Ellipse MatchShow.Option="default" Fill="Orange" Width="20" Height="20"/>
+								</MatchShow>
+							</DataTemplate>
+						</DataGridTemplateColumn.CellTemplate>
+					</DataGridTemplateColumn>
+					<DataGridTextColumn Header="{StaticResource I18N.Common.描述}" Binding="{Binding ValueInfo.Description}" Width="500" />
+				</DataGrid.Columns>
+			</DataGrid>
+		</TabItem>
+		<TabItem Header="{StaticResource I18N.Common.报警历史查询}">
+			<Grid RowDefinitions="Auto,*">
+				<LinearPanel Grid.Row="0">
+					<Button Content="{StaticResource I18N.Common.加载}" Command="{Binding ReloadRecordsCommand}" />
+				</LinearPanel>
+				<DataGrid Grid.Row="1" ItemsSource="{Binding Records}">
+					<DataGrid.Columns>
+						<DataGridTextColumn Header="Id" Binding="{Binding Id}" />
+						<DataGridTextColumn Header="{StaticResource I18N.Common.报警Id}" Binding="{Binding AlarmId}" />
+						<DataGridTextColumn Header="{StaticResource I18N.Common.报警名称}" Binding="{Binding Name}" />
+						<DataGridTextColumn Header="{StaticResource I18N.Common.状态}" Binding="{Binding Status}" />
+						<DataGridTextColumn Header="{StaticResource I18N.Common.开始时间}" Binding="{Binding StartTime}" />
+						<DataGridTextColumn Header="{StaticResource I18N.Common.结束时间}" Binding="{Binding EndTime}" />
+
+					</DataGrid.Columns>
+				</DataGrid>
+			</Grid>
+		</TabItem>
+	</TabControl>
+</UiView>

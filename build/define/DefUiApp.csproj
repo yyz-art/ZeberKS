@@ -65,4 +65,10 @@
 			<_Parameter2>$(ProjectApplicationBaseName).UI.Controls</_Parameter2>
 		</AssemblyAttribute>
 	</ItemGroup>
+	<Target Name="CopyI18N" AfterTargets="Build">
+		<ItemGroup>
+			<I18NFiles Include="$(SolutionDir)src/common/Common.Core/UI/Assets/I18N/**/*.*"/>
+		</ItemGroup>
+		<FileCopyTask SourceFiles="@(I18NFiles)" DestRoot="$(OutDir)assets" Mode="incremental"/>
+	</Target>
 </Project>

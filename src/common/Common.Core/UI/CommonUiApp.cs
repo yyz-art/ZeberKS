@@ -31,6 +31,12 @@ public class CommonUiApp : AvaloniaApplication
 		if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
 		{
 			var app = AppCore.Current;
+			var appConfig = app.Config as CommonAppConfig;
+			var i18nAssetsPath = $"assets/I18N.{appConfig?.Language ?? "cn"}.axaml";
+			using var i18nFs = File.OpenRead(i18nAssetsPath);
+			var dict = AvaloniaRuntimeXamlLoader.Load(i18nFs);
+			var resourceDictionary = Resources as ResourceDictionary;
+			resourceDictionary!.SetItems((dict as ResourceDictionary)!);
 			appVM = app.IOC.Get<CommonAppVM>();
 			var mainWindow = app.IOC.Get<CommonMainWindow>();
 			mainView = mainWindow;
@@ -44,6 +50,4 @@ public class CommonUiApp : AvaloniaApplication
 			desktop.MainWindow = mainWindow;
 		}
 	}
-
-	
 }

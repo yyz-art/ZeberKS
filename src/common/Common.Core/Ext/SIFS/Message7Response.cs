@@ -9,6 +9,7 @@ public struct Message7Response
 	public string? ErrorMessage { get; set; }
 	public string RequestVariablePayload { get; set; }
 	public string ResponseVariablePayload { get; set; }
+	public string? RawContent { get; set; }
 
 	// public
 	public static Result<Message7Response> Parse(string requestPayload, MutString response)

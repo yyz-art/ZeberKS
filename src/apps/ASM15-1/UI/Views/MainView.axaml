@@ -2,10 +2,12 @@
 				xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 				xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
 				xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-				xmlns:main="clr-namespace:ZitApp.UI.Main"
+				xmlns:models="clr-namespace:ZitApp.Models;assembly=ZitApp.Core"
 				mc:Ignorable="d" d:DesignWidth="1920" d:DesignHeight="1080"
 				x:Class="ZitApp.UI.MainView"
 				x:DataType="MainVM"
+				UiTickInterval="300"
+				UiTickCommand="{Binding UiTickCommand}"
 				Background="#262626">
 	<UiView.Styles>
 		<Style Selector="Label.Value">
@@ -24,33 +26,116 @@
 									LeftTopContentHeight="*" LeftBottomContentHeight="Auto" RightContentWidth="300"
 									RightTopContentHeight="Auto" RightBottomContentHeight="Auto" BottomContentHeight="200">
 		<LayoutDockPanel.CenterContent>
-			<Grid ColumnDefinitions="0,200,*,200" RowDefinitions="*,4,320" ColumnSpacing="4">
-				<main:CamerasView Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" />
-				<GridSplitter Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" />
-				<ViewContainer Grid.Row="2" Grid.Column="2" Header="{StaticResource I18N.Common.双轴轨道位置}">
-					<main:AxisTrackView DataContext="{Binding AxisTrackVM}" />
-				</ViewContainer>
-				<ViewContainer Grid.Row="2" Grid.Column="3" Header="{StaticResource I18N.Common.NG区域}" VerticalAlignment="Stretch">
-					<main:NgAreaView VerticalAlignment="Stretch" />
-				</ViewContainer>
-				<ViewContainer Grid.Row="2" Grid.Column="1" Header="{StaticResource I18N.Common.螺丝枪数据}" VerticalAlignment="Stretch">
-					<Grid RowDefinitions="Auto,Auto,Auto" ColumnDefinitions="Auto,*">
-						<TextBlock Text="{Binding ScrewService.Data}"/>
+			<Grid ColumnDefinitions="0,*,200" RowDefinitions="*,4,320" ColumnSpacing="4">
+				<!-- 左右工位视图 -->
+				<Border Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3">
+					<Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto,*" ColumnSpacing="10" RowSpacing="10" Margin="10">
+						<LinearPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" Spacing="10">
+							<Label Content="BARCODE:" VerticalAlignment="Center" />
+							<Label Content="{Binding LeftBarcode}"
+										BorderThickness="1" BorderBrush="{StaticResource Brush-Gray300}" Padding="2" VerticalAlignment="Center" />
+							<Control LinearPanel.Weight="1" />
+							<ComboBox ItemsSource="{Binding LeftImageNames}" SelectedIndex="0" VerticalAlignment="Center" />
+							<MatchShow MatchValue="{Binding LeftPassState}">
+								<Label MatchShow.Option="{x:Static models:PassState.OK}"
+											Content="OK" Background="Green" VerticalAlignment="Center" Padding="20 2" FontSize="20" />
+							</MatchShow>
+
+						</LinearPanel>
+						<Border Grid.Row="2" Grid.Column="0" Background="Bisque">
+
+						</Border>
+						<Border Grid.Row="2" Grid.Column="1" Background="Bisque">
+
+						</Border>
 					</Grid>
+				</Border>
+				<GridSplitter Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" />
+
+				<ViewContainer Grid.Row="2" Grid.Column="1" Header="{StaticResource I18N.Common.双轴轨道位置}">
+					<PercentCanvas>
+						<Rectangle Fill="Aqua" Height="40" PercentCanvas.Anchor="Center" PercentCanvas.HStretch="1"
+											PercentCanvas.XPercent="0.5" PercentCanvas.YPercent="0.25" />
+
+						<Rectangle Fill="Aqua" Height="40" PercentCanvas.Anchor="Center" PercentCanvas.HStretch="1"
+											PercentCanvas.XPercent="0.5" PercentCanvas.YPercent="0.75" />
+
+						<Ellipse Fill="Coral" Width="30" Height="30" PercentCanvas.Anchor="Center"
+										PercentCanvas.XPercent="{Binding Axis1Percent, Mode=TwoWay}" PercentCanvas.YPercent="0.25" />
+
+						<Ellipse Fill="Coral" Width="30" Height="30" PercentCanvas.Anchor="Center"
+										PercentCanvas.XPercent="{Binding Axis2Percent, Mode=TwoWay}" PercentCanvas.YPercent="0.75" />
+					</PercentCanvas>
+				</ViewContainer>
+				<ViewContainer Grid.Row="2" Grid.Column="2" Header="{StaticResource I18N.Common.NG区域}" VerticalAlignment="Stretch">
+					<StackPanel Orientation="Vertical" Spacing="10" VerticalAlignment="Stretch">
+						<StackPanel Orientation="Vertical" Spacing="5">
+							<TextBlock Text="NG1区 补盘1区" FontWeight="Bold" HorizontalAlignment="Stretch" Background="#40c4ca" />
+							<Button Content="初始" />
+						</StackPanel>
+						<StackPanel Orientation="Vertical">
+							<TextBlock Text="NG1区 补盘2区" FontWeight="Bold" HorizontalAlignment="Stretch" Background="#40c4ca" />
+							<Button Content="初始" />
+						</StackPanel>
+					</StackPanel>
 				</ViewContainer>
 			</Grid>
 		</LayoutDockPanel.CenterContent>
 		<LayoutDockPanel.RightTopContent>
 			<ViewContainer Grid.Row="2" Grid.Column="0" Header="{StaticResource I18N.Common.机器人吸头}">
 				<StackPanel Orientation="Vertical" Spacing="5">
-					<main:SuctionHeadView DataContext="{Binding SuctionHeadVM}" />
+					<StackPanel Orientation="Vertical">
+
+						<Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto,Auto,Auto" ColumnSpacing="5" RowSpacing="5">
+							<Label FontWeight="Bold" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
+										Content="{StaticResource I18N.Common.一号吸头}" Background="#277679"
+										HorizontalAlignment="Stretch" />
+							<Label Classes="Label" Grid.Row="1" Grid.Column="0" Content="{StaticResource I18N.Common.料号_}" />
+							<TextBox Grid.Row="1" Grid.Column="1" Text="{Binding PlcRead.吸头1料号}" />
+							<Label Classes="Label" Grid.Row="2" Grid.Column="0" Content="{StaticResource I18N.Common.生产良率_}" />
+							<TextBox Grid.Row="2" Grid.Column="1" Text="{Binding PlcRead.吸头1良率,StringFormat='{}{0:F2}%'}" />
+						</Grid>
+
+
+						<Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto,Auto,Auto" ColumnSpacing="5" RowSpacing="5">
+							<Label FontWeight="Bold" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
+										Content="{StaticResource I18N.Common.二号吸头}" Background="#277679"
+										HorizontalAlignment="Stretch" />
+							<Label Classes="Label" Grid.Row="1" Grid.Column="0" Content="{StaticResource I18N.Common.料号_}" />
+							<TextBox Grid.Row="1" Grid.Column="1" Text="{Binding PlcRead.吸头2料号}" />
+							<Label Classes="Label" Grid.Row="2" Grid.Column="0" Content="{StaticResource I18N.Common.生产良率_}" />
+							<TextBox Grid.Row="2" Grid.Column="1" Text="{Binding PlcRead.吸头2良率,StringFormat='{}{0:F2}%'}" />
+						</Grid>
+
+						<Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto,Auto,Auto" ColumnSpacing="5" RowSpacing="5">
+							<Label FontWeight="Bold" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
+										Content="{StaticResource I18N.Common.三号吸头}" Background="#277679"
+										HorizontalAlignment="Stretch" />
+							<Label Classes="Label" Grid.Row="1" Grid.Column="0" Content="{StaticResource I18N.Common.料号_}" />
+							<TextBox Grid.Row="1" Grid.Column="1" Text="{Binding PlcRead.吸头3料号}" />
+							<Label Classes="Label" Grid.Row="2" Grid.Column="0" Content="{StaticResource I18N.Common.生产良率_}" />
+							<TextBox Grid.Row="2" Grid.Column="1" Text="{Binding PlcRead.吸头3良率,StringFormat='{}{0:F2}%'}" />
+						</Grid>
+
+						<Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto,Auto,Auto" ColumnSpacing="5" RowSpacing="5">
+							<Label FontWeight="Bold" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
+										Content="{StaticResource I18N.Common.四号吸头}" Background="#277679"
+										HorizontalAlignment="Stretch" />
+							<Label Classes="Label" Grid.Row="1" Grid.Column="0" Content="{StaticResource I18N.Common.料号_}" />
+							<TextBox Grid.Row="1" Grid.Column="1" Text="{Binding PlcRead.吸头4料号}" />
+							<Label Classes="Label" Grid.Row="2" Grid.Column="0" Content="{StaticResource I18N.Common.生产良率_}" />
+							<TextBox Grid.Row="2" Grid.Column="1" Text="{Binding PlcRead.吸头4良率,StringFormat='{}{0:F2}%'}" />
+						</Grid>
+
+					</StackPanel>
 				</StackPanel>
 			</ViewContainer>
 
 		</LayoutDockPanel.RightTopContent>
 		<LayoutDockPanel.LeftTopContent>
 			<ViewContainer Header="{StaticResource I18N.Common.生产信息}" Padding="5">
-				<Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto" ColumnSpacing="5" RowSpacing="5">
+				<Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto" ColumnSpacing="5"
+							RowSpacing="5">
 					<Grid.Styles>
 						<Style Selector="Label.Value">
 							<Setter Property="CornerRadius" Value="3" />
@@ -65,36 +150,182 @@
 						</Style>
 					</Grid.Styles>
 					<Label Classes="Label" Grid.Row="1" Grid.Column="0" Content="{StaticResource I18N.Common.工单号_}" />
-					<Label Classes="Value" Grid.Row="1" Grid.Column="1" Content="{Binding CoreService.WorkNo}" />
+					<Label Classes="Value" Grid.Row="1" Grid.Column="1" Content="{Binding CoreService.工单号}" />
 					<Label Classes="Label" Grid.Row="2" Grid.Column="0" Content="{StaticResource I18N.Common.已生产数量_}" />
 					<Label Classes="Value" Grid.Row="2" Grid.Column="1" Content="{Binding CoreService.ProductCount}" />
 					<Label Classes="Label" Grid.Row="3" Grid.Column="0" Content="{StaticResource I18N.Common.良率_}" />
-					<Label Classes="Value" Grid.Row="3" Grid.Column="1" Content="{Binding CoreService.OkPrecent,StringFormat='{}{0:F2}%'}" />
+					<Label Classes="Value" Grid.Row="3" Grid.Column="1"
+								Content="{Binding CoreService.OkPrecent,StringFormat='{}{0:F2}%'}" />
 					<Label Classes="Label" Grid.Row="4" Grid.Column="0" Content="{StaticResource I18N.Common.CT_}" />
 					<Label Classes="Value" Grid.Row="4" Grid.Column="1" Content="{Binding CoreService.CT}" />
 					<Label Classes="Label" Grid.Row="5" Grid.Column="0" Content="{StaticResource I18N.Common.工号_}" />
-					<Label Classes="Value" Grid.Row="5" Grid.Column="1" Content="{Binding CoreService.WorkerNo}" />
+					<Label Classes="Value" Grid.Row="5" Grid.Column="1" Content="{Binding CoreService.工号}" />
+					<Label Classes="Label" Grid.Row="6" Grid.Column="0" Content="{StaticResource I18N.Common.当前配方_}" />
+					<Label Classes="Value" Grid.Row="6" Grid.Column="1" Content="{Binding CoreService.当前下发配方}" />
 				</Grid>
 			</ViewContainer>
 
 		</LayoutDockPanel.LeftTopContent>
+		<!-- 飞达 -->
 		<LayoutDockPanel.LeftBottomContent>
-			<main:FeederView DataContext="{Binding FeederVM}" />
+			<LinearPanel Orientation="Vertical">
+				<LinearPanel.Styles>
+					<Style Selector="ViewContainer">
+						<Setter Property="Padding" Value="4" />
+						<Setter Property="VerticalAlignment" Value="Stretch" />
+						<Setter Property="Background" Value="#423e3e" />
+					</Style>
+					<Style Selector="TextBlock">
+						<Setter Property="HorizontalAlignment" Value="Right" />
+						<Setter Property="VerticalAlignment" Value="Center"/>
+					</Style>
+					<Style Selector="Label">
+						<Setter Property="HorizontalAlignment" Value="Stretch" />
+						<Setter Property="VerticalAlignment" Value="Stretch"/>
+						<Setter Property="MinHeight" Value="26"/>
+						<Setter Property="Padding" Value="5 2"/>
+					</Style>
+					
+				</LinearPanel.Styles>
+				<ViewContainer Header="Feeder1">
+					<Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto,Auto,Auto" RowSpacing="3" ColumnSpacing="5" Margin="3">
+						<TextBlock Grid.Row="0" Grid.Column="0" Classes="Label" Text="{StaticResource I18N.Common.料号_}" />
+						<Label Grid.Row="0" Grid.Column="1" Classes="Value" Content="{Binding CoreService.飞达1物料码}" />
+						<TextBlock Grid.Row="1" Grid.Column="0" Classes="Label" Text="{StaticResource I18N.Common.物料剩余数量_}" />
+						<Label Grid.Row="1" Grid.Column="1" Classes="Value" Content="{Binding PlcRead.Feeder1物料剩余数量}" />
+						<TextBlock Grid.Row="2" Grid.Column="0" Classes="Label" Text="{StaticResource I18N.Common.抛料率_}" />
+						<Label Grid.Row="2" Grid.Column="1" Classes="Value"
+									Content="{Binding PlcRead.Feeder1抛料率,StringFormat='{}{0:F2}%'}" />
+						<LinearPanel Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" Spacing="10"
+												HorizontalAlignment="Center">
+							<Button Content="{StaticResource I18N.Common.解锁}" Classes="Primary" Theme="{DynamicResource Button-Solid}"
+											Padding="10 2"
+											Command="{Binding FeederUnlockCommand}" CommandParameter="Feeder1" />
+							<Button Content="{StaticResource I18N.Common.换料}" Classes="Success" Theme="{DynamicResource Button-Solid}"
+											Padding="10 2 "
+											Command="{Binding StartReplaceMonoCommand}" CommandParameter="Feeder1" />
+						</LinearPanel>
+					</Grid>
+				</ViewContainer>
+
+
+				<ViewContainer Header="Feeder2">
+					<Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto,Auto,Auto" RowSpacing="3" ColumnSpacing="5" Margin="3">
+						<TextBlock Grid.Row="0" Grid.Column="0" Classes="Label" Text="{StaticResource I18N.Common.料号_}" />
+						<Label Grid.Row="0" Grid.Column="1" Classes="Value" Content="{Binding PlcRead.Feeder2料号}" />
+						<TextBlock Grid.Row="1" Grid.Column="0" Classes="Label" Text="{StaticResource I18N.Common.物料剩余数量_}" />
+						<Label Grid.Row="1" Grid.Column="1" Classes="Value" Content="{Binding PlcRead.Feeder2物料剩余数量}" />
+						<TextBlock Grid.Row="2" Grid.Column="0" Classes="Label" Text="{StaticResource I18N.Common.抛料率_}" />
+						<Label Grid.Row="2" Grid.Column="1" Classes="Value"
+									Content="{Binding PlcRead.Feeder2抛料率,StringFormat='{}{0:F2}%'}" />
+						<LinearPanel Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" Spacing="10"
+												HorizontalAlignment="Center">
+							<Button Content="{StaticResource I18N.Common.解锁}" Classes="Primary" Theme="{DynamicResource Button-Solid}"
+											Padding="10 2"
+											Command="{Binding FeederUnlockCommand}" CommandParameter="Feeder2" />
+							<Button Content="{StaticResource I18N.Common.换料}" Classes="Success" Theme="{DynamicResource Button-Solid}"
+											Padding="10 2 "
+											Command="{Binding StartReplaceMonoCommand}" CommandParameter="Feeder2" />
+						</LinearPanel>
+					</Grid>
+				</ViewContainer>
+
+				<ViewContainer Header="Feeder3">
+					<Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto,Auto,Auto" RowSpacing="3" ColumnSpacing="5" Margin="3">
+						<TextBlock Grid.Row="0" Grid.Column="0" Classes="Label" Text="{StaticResource I18N.Common.料号_}" />
+						<Label Grid.Row="0" Grid.Column="1" Classes="Value" Content="{Binding PlcRead.Feeder3料号}" />
+						<TextBlock Grid.Row="1" Grid.Column="0" Classes="Label" Text="{StaticResource I18N.Common.物料剩余数量_}" />
+						<Label Grid.Row="1" Grid.Column="1" Classes="Value" Content="{Binding PlcRead.Feeder3物料剩余数量}" />
+						<TextBlock Grid.Row="2" Grid.Column="0" Classes="Label" Text="{StaticResource I18N.Common.抛料率_}" />
+						<Label Grid.Row="2" Grid.Column="1" Classes="Value"
+									Content="{Binding PlcRead.Feeder3抛料率,StringFormat='{}{0:F2}%'}" />
+						<LinearPanel Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" Spacing="10"
+												HorizontalAlignment="Center">
+							<Button Content="{StaticResource I18N.Common.解锁}" Classes="Primary" Theme="{DynamicResource Button-Solid}"
+											Padding="10 2"
+											Command="{Binding FeederUnlockCommand}" CommandParameter="Feeder3" />
+							<Button Content="{StaticResource I18N.Common.换料}" Classes="Success" Theme="{DynamicResource Button-Solid}"
+											Padding="10 2 "
+											Command="{Binding StartReplaceMonoCommand}" CommandParameter="Feeder3" />
+						</LinearPanel>
+					</Grid>
+				</ViewContainer>
+
+				<ViewContainer Header="Feeder4">
+					<Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto,Auto,Auto" RowSpacing="3" ColumnSpacing="5" Margin="3">
+						<TextBlock Grid.Row="0" Grid.Column="0" Classes="Label" Text="{StaticResource I18N.Common.料号_}" />
+						<Label Grid.Row="0" Grid.Column="1" Classes="Value" Content="{Binding PlcRead.Feeder4料号}" />
+						<TextBlock Grid.Row="1" Grid.Column="0" Classes="Label" Text="{StaticResource I18N.Common.物料剩余数量_}" />
+						<Label Grid.Row="1" Grid.Column="1" Classes="Value" Content="{Binding PlcRead.Feeder4物料剩余数量}" />
+						<TextBlock Grid.Row="2" Grid.Column="0" Classes="Label" Text="{StaticResource I18N.Common.抛料率_}" />
+						<Label Grid.Row="2" Grid.Column="1" Classes="Value"
+									Content="{Binding PlcRead.Feeder4抛料率,StringFormat='{}{0:F2}%'}" />
+						<LinearPanel Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" Spacing="10"
+												HorizontalAlignment="Center">
+							<Button Content="{StaticResource I18N.Common.解锁}" Classes="Primary" Theme="{DynamicResource Button-Solid}"
+											Padding="10 2"
+											Command="{Binding FeederUnlockCommand}" CommandParameter="Feeder4" />
+							<Button Content="{StaticResource I18N.Common.换料}" Classes="Success" Theme="{DynamicResource Button-Solid}"
+											Padding="10 2 "
+											Command="{Binding StartReplaceMonoCommand}" CommandParameter="Feeder4" />
+						</LinearPanel>
+					</Grid>
+				</ViewContainer>
+
+			</LinearPanel>
 		</LayoutDockPanel.LeftBottomContent>
 
 		<LayoutDockPanel.BottomLeftContent>
 			<TabControl TabStripPlacement="Bottom">
 				<TabItem Header="{StaticResource I18N.Common.日志栏}">
-					<main:RunLogView DataContext="{Binding RunLogVM}" />
+					<DataGrid Name="LogsDataGrid" ItemsSource="{Binding Logs}" GridLinesVisibility="All"
+										BorderBrush="{DynamicResource Brush-Border}" BorderThickness="1"
+										CanUserResizeColumns="True" FrozenColumnCount="3">
+						<DataGrid.Columns>
+							<DataGridTextColumn Header="记录器" Binding="{Binding LoggerName}" MinWidth="50" />
+							<DataGridTextColumn Header="时间" Binding="{Binding TimeStamp}" MinWidth="50" />
+							<DataGridTemplateColumn Header="等级">
+								<DataGridTemplateColumn.CellTemplate>
+									<DataTemplate>
+										<SelectableTextBlock
+											Text="{Binding Level}" VerticalAlignment="Center" Padding="3 0"
+											Foreground="{Binding Level,  Converter={StaticResource LogLevelToConverter}}" />
+									</DataTemplate>
+								</DataGridTemplateColumn.CellTemplate>
+							</DataGridTemplateColumn>
+							<DataGridTemplateColumn Header="信息" Width="800">
+								<DataGridTemplateColumn.CellTemplate>
+									<DataTemplate>
+										<SelectableTextBlock
+											Text="{Binding FormattedMessage}" VerticalAlignment="Center" Padding="3 0"
+											Foreground="{Binding Level,  Converter={StaticResource LogLevelToConverter}}" />
+									</DataTemplate>
+								</DataGridTemplateColumn.CellTemplate>
+							</DataGridTemplateColumn>
+							<DataGridTextColumn Header="异常" Binding="{Binding Exception}" Foreground="OrangeRed" MinWidth="50" />
+						</DataGrid.Columns>
+					</DataGrid>
 				</TabItem>
 				<!-- <TabItem Header="{StaticResource I18N.Common.数据栏}" /> -->
 			</TabControl>
 		</LayoutDockPanel.BottomLeftContent>
 
 		<LayoutDockPanel.BottomRightContent>
-			<ViewContainer Header="{StaticResource I18N.Common.设备状态}">
-				<main:DeviceStatusView />
-			</ViewContainer>
+			<LinearPanel Orientation="Vertical" Spacing="10">
+				<ViewContainer Header="{StaticResource I18N.Common.设备状态}">
+					<StackPanel Orientation="Vertical" Background="#252526">
+						<TextBlock Text="PLC" />
+						<TextBlock Text="Scanner1" />
+						<TextBlock Text="Scanner2" />
+					</StackPanel>
+				</ViewContainer>
+
+				<LinearPanel Orientation="Horizontal" Spacing="10" Margin="2 4">
+					<Label Content="联系方式:" FontWeight="Bold" />
+					<TextBlock Text="{Binding AppConfig.联系方式}"></TextBlock>
+				</LinearPanel>
+			</LinearPanel>
+
 		</LayoutDockPanel.BottomRightContent>
 	</LayoutDockPanel>
 </UiView>

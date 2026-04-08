@@ -14,9 +14,11 @@ public abstract class CommonUiAppCore : CommonAppCore
 	public virtual ZitAccount Account { get; protected set; } = new() { IdentityName = "Test", RoleFlags = 0 };
 	public string Language { get; protected set; } = "CN";
 
-	public CommonUiAppCore()
+	public CommonUiAppCore(object? config)
 	{
 		CurrentGetter = () => this;
+		// ReSharper disable once VirtualMemberCallInConstructor
+		Config = config;
 	}
 
 	protected override Task OnInitialize(object? ctx, object? args)

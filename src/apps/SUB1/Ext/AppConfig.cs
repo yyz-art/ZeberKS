@@ -26,7 +26,7 @@ public partial class PlcConfig : ObservableObject, INetworkSocketConfig
 }
 
 [ObservableObject(RequiredGenerate = true)]
-public partial class AppConfig : ConfigBase
+public partial class AppConfig : CommonAppConfig
 {
 	public const string NameByCN = "NameByCN";
 	public const string NameByVI = "NameByVI";

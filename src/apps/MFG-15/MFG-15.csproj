@@ -7,7 +7,7 @@
 		<ApplicationManifest>Assets/app.manifest</ApplicationManifest>
 		<IsUiProject>true</IsUiProject>
 	</PropertyGroup>
-<Import Project="$(SolutionDir)build/define/DefApp.csproj"/>
+	<Import Project="$(SolutionDir)build/define/DefApp.csproj"/>
 	<Import Project="$(SolutionDir)build/define/DefBase.csproj"/>
 	<Import Project="$(SolutionDir)build/define/DefCore.csproj"/>
 	<Import Project="$(SolutionDir)build/define/DefUiApp.csproj"/>
@@ -18,43 +18,65 @@
 		<ProjectReference Include="$(CommonProjectPath)Common.Core/Common.Core.csproj"/>
 	</ItemGroup>
 	<ItemGroup>
-	  <Compile Update="UI\Views\Main\CamerasView.axaml.cs">
-	    <DependentUpon>CamerasView.axaml</DependentUpon>
-	  </Compile>
-	  <Compile Update="UI\Views\Main\NgAreaView.axaml.cs">
-	    <DependentUpon>NgAreaView.axaml</DependentUpon>
-	  </Compile>
-	  <Compile Update="UI\Views\Main\SuctionHeadView.axaml.cs">
-	    <DependentUpon>SuctionHeadView.axaml</DependentUpon>
-	  </Compile>
-	  <Compile Update="UI\Views\Main\AxisTrackView.axaml.cs">
-	    <DependentUpon>TestView.axaml</DependentUpon>
+		<PackageReference Include="System.IO.Ports" Version="10.0.3"/>
+	</ItemGroup>
+	<ItemGroup>
+		<Folder Include="Assets\.generated\"/>
+	</ItemGroup>
+
+	<ItemGroup>
+		<Reference Include="C:\Program Files\dotnet\shared\Microsoft.WindowsDesktop.App\10.0.0\Accessibility.dll"/>
+		<PackageReference Include="FlaUI.UIA3" Version="5.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="UI\Views\AlarmManageView.axaml.cs">
+	    <SubType>Code</SubType>
+	    <DependentUpon>AlarmManageView.axaml</DependentUpon>
 	  </Compile>
 	  <Compile Update="UI\Views\MainView.axaml.cs">
+	    <SubType>Code</SubType>
 	    <DependentUpon>MainView.axaml</DependentUpon>
 	  </Compile>
-	  <Compile Update="UI\Views\Main\FeederView.axaml.cs">
-	    <DependentUpon>FeederView.axaml</DependentUpon>
+	  <Compile Update="UI\Views\RecipeView.axaml.cs">
+	    <SubType>Code</SubType>
+	    <DependentUpon>RecipeView.axaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="UI\Views\SystemConfigView.axaml.cs">
+	    <SubType>Code</SubType>
+	    <DependentUpon>SystemConfigView.axaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="UI\Views\AlarmManageView.axaml.cs">
+	    <SubType>Code</SubType>
+	    <DependentUpon>AlarmManageView.axaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="UI\Views\MainView.axaml.cs">
+	    <SubType>Code</SubType>
+	    <DependentUpon>MainView.axaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="UI\Views\RecipeView.axaml.cs">
+	    <SubType>Code</SubType>
+	    <DependentUpon>RecipeView.axaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="UI\Views\SystemConfigView.axaml.cs">
+	    <SubType>Code</SubType>
+	    <DependentUpon>SystemConfigView.axaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="UI\UiApp.cs">
+	    <SubType>Code</SubType>
+	    <DependentUpon>AppVM.cs</DependentUpon>
+	  </Compile>
+	  <Compile Update="UI\MainWindow.axaml.cs">
+	    <DependentUpon>MainWindow.axaml</DependentUpon>
 	    <SubType>Code</SubType>
 	  </Compile>
-	  <Compile Update="UI\Views\Main\DeviceStatusView.axaml.cs">
-	    <DependentUpon>DeviceStatusView.axaml</DependentUpon>
-	    <SubType>Code</SubType>
-	  </Compile>
-	  <Compile Update="UI\Views\Main\RunLogView.axaml.cs">
-	    <DependentUpon>RunLogView.axaml</DependentUpon>
-	    <SubType>Code</SubType>
-	  </Compile>
+	</ItemGroup>
 
-		
-	</ItemGroup>
 	<ItemGroup>
-	  <PackageReference Include="System.IO.Ports" Version="10.0.3" />
-	</ItemGroup>
-	<ItemGroup>
-	  <Folder Include="Assets\.generated\" />
-	  <Folder Include="Services\" />
-	  <Folder Include="UI\Ext\" />
+	  <AdditionalFiles Include="UI\Views\AlarmManageView.axaml" />
+	  <AdditionalFiles Include="UI\Views\MainView.axaml" />
+	  <AdditionalFiles Include="UI\Views\RecipeView.axaml" />
+	  <AdditionalFiles Include="UI\Views\SystemConfigView.axaml" />
 	</ItemGroup>
 
 </Project>

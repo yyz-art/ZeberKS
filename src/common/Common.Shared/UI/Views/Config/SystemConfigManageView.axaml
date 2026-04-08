@@ -28,10 +28,10 @@
 		<TabControl Grid.Row="1" TabStripPlacement="Left" Theme="{DynamicResource TabControl-Line}">
 			<TabItem Header="常规配置">
 				<Grid RowDefinitions="Auto,*">
-					<TabStrip Grid.Row="0" ItemsSource="{Binding ConfigGroupNames}"
-										SelectedItem="{Binding SelectedConfigGroup}" />
+					<!-- <TabStrip Grid.Row="0" ItemsSource="{Binding ConfigGroupNames}" -->
+					<!-- 					SelectedItem="{Binding SelectedConfigGroup}" /> -->
 
-					<DataGrid Grid.Row="1" ItemsSource="{Binding FilteredPropertyInstances}">
+					<DataGrid Grid.Row="1" ItemsSource="{Binding GroupedPropertyInstances}">
 						<DataGrid.Columns>
 							<DataGridTextColumn Header="{StaticResource I18N.Common.名称}" Binding="{Binding ValueInfo.DisplayName }"
 																	Width="200" />

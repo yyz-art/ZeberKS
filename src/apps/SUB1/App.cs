@@ -43,12 +43,12 @@ var app = new App(config).UseLogger().UseUi(UiApp.StartAsync)
 	.AddToIOC(typeof(CommonAppCore).Assembly.GetTypes(), RegistrationMode.Override)
 	.AddToIOC(typeof(CommonUiAppCore).Assembly.GetTypes(), RegistrationMode.Override)
 	.UseDatabase(config.Databases).UseDbKeyValueStorage().UseWebServer();
-app.IOC.AddSingleton(app.Config);
+//app.IOC.AddSingleton(app.Config);
 await app.Initialize();
 await app.Start();
 while (true) await Task.Delay(1000);
 
-public sealed class App(AppConfig config) : CommonUiAppCore
+public sealed class App(AppConfig config) : CommonUiAppCore(config)
 {
 	public static string ApplicationName => "SUB1";
 	public new static App DesignTimeApp = new App(new AppConfig());
@@ -68,7 +68,7 @@ public sealed class App(AppConfig config) : CommonUiAppCore
 			null,
 			arg: InjectArgument.Create(new TcpServerSocket("127.0.0.1", 23456)));
 		eapService.RegisterHandlerMethods();
-		await eapService.Start();
+		// await eapService.Start();
 		await StartUi();
 		await base.OnInitialize(ctx, args);
 	}

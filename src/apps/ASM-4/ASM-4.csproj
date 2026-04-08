@@ -19,32 +19,24 @@
 		<ProjectReference Include="$(CommonProjectPath)Common.Core/Common.Core.csproj"/>
 	</ItemGroup>
 	<ItemGroup>
-		<Compile Update="UI\Views\Main\CamerasView.axaml.cs">
-			<DependentUpon>CamerasView.axaml</DependentUpon>
-		</Compile>
-		<Compile Update="UI\Views\Main\NgAreaView.axaml.cs">
-			<DependentUpon>NgAreaView.axaml</DependentUpon>
-		</Compile>
-		<Compile Update="UI\Views\Main\SuctionHeadView.axaml.cs">
-			<DependentUpon>SuctionHeadView.axaml</DependentUpon>
-		</Compile>
-		<Compile Update="UI\Views\Main\AxisTrackView.axaml.cs">
-			<DependentUpon>TestView.axaml</DependentUpon>
-		</Compile>
 		<Compile Update="UI\Views\MainView.axaml.cs">
 			<DependentUpon>MainView.axaml</DependentUpon>
 		</Compile>
-		<Compile Update="UI\Views\Main\FeederView.axaml.cs">
-			<DependentUpon>FeederView.axaml</DependentUpon>
-			<SubType>Code</SubType>
+		<Compile Update="UI\UiApp.cs">
+		  <SubType>Code</SubType>
+		  <DependentUpon>AppVM.cs</DependentUpon>
 		</Compile>
-		<Compile Update="UI\Views\Main\DeviceStatusView.axaml.cs">
-			<DependentUpon>DeviceStatusView.axaml</DependentUpon>
-			<SubType>Code</SubType>
+		<Compile Update="UI\Views\RecipeView.axaml.cs">
+		  <DependentUpon>RecipeView.axaml</DependentUpon>
+		  <SubType>Code</SubType>
 		</Compile>
-		<Compile Update="UI\Views\Main\RunLogView.axaml.cs">
-			<DependentUpon>RunLogView.axaml</DependentUpon>
-			<SubType>Code</SubType>
+		<Compile Update="UI\Views\SystemConfigView.axaml.cs">
+		  <DependentUpon>SystemConfigManageView.axaml</DependentUpon>
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UI\Views\AlarmManageView.axaml.cs">
+		  <DependentUpon>AlarmManageView.axaml</DependentUpon>
+		  <SubType>Code</SubType>
 		</Compile>
 	</ItemGroup>
 	<ItemGroup>
@@ -52,8 +44,6 @@
 	</ItemGroup>
 	<ItemGroup>
 		<Folder Include="Assets\.generated\"/>
-		<Folder Include="Services\"/>
-		<Folder Include="UI\Ext\"/>
 	</ItemGroup>
 
 </Project>

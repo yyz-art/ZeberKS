@@ -20,4 +20,11 @@ public partial class MainVM : UiVM<MainView>
 	public required SuctionHeadVM SuctionHeadVM { get; init; }
 	public required CoreService CoreService { get; init; }
 	public required AxisTrackVM AxisTrackVM { get; init; }
+	
+	public required CamerasVM CamerasVM { get; init; }
+
+	private void @UiTick()
+	{
+		
+	}
 }

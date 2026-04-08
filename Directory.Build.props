@@ -50,7 +50,7 @@
 	</PropertyGroup>
 	<!-- 依赖版本 -->
 	<PropertyGroup>
-		<HotAvaloniaVersion>3.*</HotAvaloniaVersion>
+		<HotAvaloniaVersion>3.1.0</HotAvaloniaVersion>
 		<LiveChartsVersion>2.0.0-rc6.1</LiveChartsVersion>
 		<AppFrameworkVersion>1.0.0</AppFrameworkVersion>
 		<AvaloniaVersion>11.3.12</AvaloniaVersion>

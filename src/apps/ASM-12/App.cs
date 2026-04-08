@@ -42,12 +42,12 @@ var app = new App(config).UseLogger().UseUi(UiApp.StartAsync)
 	.AddToIOC(typeof(CommonAppCore).Assembly.GetTypes(), RegistrationMode.Override)
 	.AddToIOC(typeof(CommonUiAppCore).Assembly.GetTypes(), RegistrationMode.Override)
 	.UseDatabase(config.Databases).UseDbKeyValueStorage().UseWebServer();
-app.IOC.AddSingleton(app.Config);
+//app.IOC.AddSingleton(app.Config);
 await app.Initialize();
 await app.Start();
 while (true) await Task.Delay(1000);
 
-public sealed class App(AppConfig config) : CommonUiAppCore
+public sealed class App(AppConfig config) : CommonUiAppCore(config)
 {
 	public static string ApplicationName => "ASM-12";
 	public new static App DesignTimeApp = new App(new AppConfig());

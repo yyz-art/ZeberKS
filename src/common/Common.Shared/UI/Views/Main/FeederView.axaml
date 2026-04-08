@@ -34,7 +34,7 @@
 					<Button Content="{StaticResource I18N.Common.解锁}" Classes="Primary" Theme="{DynamicResource Button-Solid}" Padding="10 2"
 									Command="{Binding UnlockCommand}" CommandParameter="Feeder1" />
 					<Button Content="{StaticResource I18N.Common.换料}" Classes="Success" Theme="{DynamicResource Button-Solid}" Padding="10 2 "
-									Command="{Binding LockCommand}" CommandParameter="Feeder1" />
+									Command="{Binding StartReplaceMonoCommand}" CommandParameter="Feeder1" />
 				</LinearPanel>
 			</Grid>
 		</ViewContainer>
@@ -54,7 +54,7 @@
 					<Button Content="{StaticResource I18N.Common.解锁}" Classes="Primary" Theme="{DynamicResource Button-Solid}" Padding="10 2"
 									Command="{Binding UnlockCommand}" CommandParameter="Feeder2" />
 					<Button Content="{StaticResource I18N.Common.换料}" Classes="Success" Theme="{DynamicResource Button-Solid}" Padding="10 2 "
-									Command="{Binding LockCommand}" CommandParameter="Feeder2" />
+									Command="{Binding StartReplaceMonoCommand}" CommandParameter="Feeder2" />
 				</LinearPanel>
 			</Grid>
 		</ViewContainer>
@@ -72,7 +72,7 @@
 					<Button Content="{StaticResource I18N.Common.解锁}" Classes="Primary" Theme="{DynamicResource Button-Solid}" Padding="10 2"
 									Command="{Binding UnlockCommand}" CommandParameter="Feeder3" />
 					<Button Content="{StaticResource I18N.Common.换料}" Classes="Success" Theme="{DynamicResource Button-Solid}" Padding="10 2 "
-									Command="{Binding LockCommand}" CommandParameter="Feeder3" />
+									Command="{Binding StartReplaceMonoCommand}" CommandParameter="Feeder3" />
 				</LinearPanel>
 			</Grid>
 		</ViewContainer>
@@ -90,7 +90,7 @@
 					<Button Content="{StaticResource I18N.Common.解锁}" Classes="Primary" Theme="{DynamicResource Button-Solid}" Padding="10 2"
 									Command="{Binding UnlockCommand}" CommandParameter="Feeder4" />
 					<Button Content="{StaticResource I18N.Common.换料}" Classes="Success" Theme="{DynamicResource Button-Solid}" Padding="10 2 "
-									Command="{Binding LockCommand}" CommandParameter="Feeder4" />
+									Command="{Binding StartReplaceMonoCommand}" CommandParameter="Feeder4" />
 				</LinearPanel>
 			</Grid>
 		</ViewContainer>

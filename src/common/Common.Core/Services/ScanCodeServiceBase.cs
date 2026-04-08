@@ -5,7 +5,7 @@ using ZC.LOG;
 namespace ZitApp.Services;
 
 
-public abstract class ScanCodeServiceBase : MainTaskService
+public abstract class WorkServiceBase : MainTaskService
 {
 	public static readonly byte[] StartScanCommandBytes = HexUtils.Parse("04 E4 04 00 FF 14");
 	public static readonly byte[] StartScanResponseBytes = HexUtils.Parse("04 D0 00 00 FF 2C");

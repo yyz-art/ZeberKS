@@ -1,0 +1,66 @@
+﻿<UiView xmlns="https://github.com/avaloniaui"
+				xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+				xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+				xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+				xmlns:config="clr-namespace:ZitApp.UI.Config"
+				xmlns:mvvm="clr-namespace:ZC.Mvvm;assembly=ZC.Framework"
+				mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="600"
+				x:Class="ZitApp.UI.Config.SystemConfigView">
+	<Design.DataContext>
+		<config:SystemConfigVM />
+	</Design.DataContext>
+	<Grid RowDefinitions="Auto,*">
+		<Border Grid.Row="0" BorderBrush="#454548"
+						BorderThickness="0 0 0 1">
+			<LinearPanel Orientation="Horizontal" Spacing="10" Padding="5">
+				<Label Content="系统配置" Theme="{StaticResource Label-Tag}" Classes="Ghost Green" Padding="5" />
+				<Control LinearPanel.Weight="1" />
+				<Button Name="BtnApply" Classes="Primary" Content="{StaticResource I18N.Common.应用}"
+								Theme="{StaticResource Button-Outline}"
+								Command="{Binding ApplyCommand}" />
+				<Button Classes="Warning" Content="{StaticResource I18N.Common.导入}"
+								Command="{Binding ImportCommand}" />
+				<Button Classes="Success" Content="{StaticResource I18N.Common.导出}"
+								Command="{Binding ExportCommand}" />
+				<Button Classes="Primary" Content="{StaticResource I18N.Common.保存}"
+								Command="{Binding SaveCommand}" />
+			</LinearPanel>
+		</Border>
+
+		<TabControl Grid.Row="1" TabStripPlacement="Left" Theme="{DynamicResource TabControl-Line}">
+			<TabItem Header="常规配置">
+				<Grid RowDefinitions="Auto,*">
+					<!-- <TabStrip Grid.Row="0" ItemsSource="{Binding ConfigGroupNames}" -->
+					<!-- 					SelectedItem="{Binding SelectedConfigGroup}" /> -->
+
+					<DataGrid Grid.Row="1" ItemsSource="{Binding GroupedPropertyInstances}">
+						<DataGrid.Columns>
+							<DataGridTextColumn Header="{StaticResource I18N.Common.名称}"
+																	x:DataType="mvvm:IPropertyInstance"
+																	Binding="{Binding ValueInfo.DisplayName }"
+																	Width="200" />
+							<DataGridTextColumn Header="{StaticResource I18N.Common.设定值}"
+																	x:DataType="mvvm:IPropertyInstance"
+																	Binding="{Binding Value}" IsReadOnly="False"
+																	Width="200" />
+							<DataGridTemplateColumn Header="{StaticResource I18N.Common.当前运行值}" Width="200">
+								<DataGridTemplateColumn.CellTemplate>
+									<DataTemplate>
+										<SelectableTextBlock VerticalAlignment="Center"
+																				x:DataType="mvvm:IPropertyInstance"
+																				Text="{Binding TempValue1}" />
+									</DataTemplate>
+								</DataGridTemplateColumn.CellTemplate>
+							</DataGridTemplateColumn>
+							<DataGridTextColumn Header="{StaticResource I18N.Common.描述}"
+																	x:DataType="mvvm:IPropertyInstance"
+																	Binding="{Binding ValueInfo.Description}"
+																	Width="400" />
+						</DataGrid.Columns>
+					</DataGrid>
+				</Grid>
+			</TabItem>
+		</TabControl>
+	</Grid>
+
+</UiView>
