@@ -3,13 +3,16 @@ using ZC;
 using ZC.BinStructs.Ext;
 using ZC.DP.Number;
 using ZC.EasyIO;
+using ZC.IO;
 using ZC.Mvvm;
+using ZC.Net.Sockets;
 using ZitApp.BinStructs;
+
 namespace ZitApp.Services;
 
 [RegisterToIOC(LifetimeType.Singleton)]
 [ObservableObject]
-// [RegisterToTaskService(TaskStartMode.Automatic)]
+[RegisterToTaskService(TaskStartMode.Automatic)]
 public partial class WorkLeftService : WorkServiceBase
 {
 	private readonly byte[] _buffer = new byte[1024];
@@ -17,8 +20,17 @@ public partial class WorkLeftService : WorkServiceBase
 	public required PlcService Plc { get; init; }
 	public required CoreService Core { get; init; }
 	public required MesService Mes { get; init; }
+	public required AppConfig AppConfig { get; init; }
+	public IDataSocket CodeScanner { get; set; } = null!;
 	public partial string 机种型号 { get; set; } = "";
 	public partial string 扫码 { get; set; } = "";
+
+	public override Task Initialize(object? ctx = null, object? args = null)
+	{
+		CodeScanner?.Close();
+		CodeScanner = new SerialPortSocket(AppConfig.Scanner1ComPort, AppConfig.Scanner1BaudRate);
+		return base.Initialize(ctx, args);
+	}
 
 	protected override Task Main(CancellationToken ctk)
 	{
@@ -38,9 +50,9 @@ public partial class WorkLeftService : WorkServiceBase
 			// 入站扫码
 			if (Plc.Read.扫码枪1触发 is 1)
 			{
-				Socket.ReadToDiscard().Unwarp("Clear left scanner cache failed!");
-				Socket.Write(StartScanCommandBytes).Unwarp("Send left scanner scan command failed!");
-				var readLength = Socket.ReadContinuous(_buffer, 2000, 200).Unwarp("Read scan result");
+				CodeScanner.ReadToDiscard().Unwarp("Clear left scanner cache failed!");
+				CodeScanner.Write(StartScanCommandBytes).Unwarp("Send left scanner scan command failed!");
+				var readLength = CodeScanner.ReadContinuous(_buffer, 2000, 200).Unwarp("Read scan result");
 				// OK: start with "04 D0 00 00 FF 2C{code}"
 				if (false == _buffer.StartsWith(StartScanResponseBytes))
 				{

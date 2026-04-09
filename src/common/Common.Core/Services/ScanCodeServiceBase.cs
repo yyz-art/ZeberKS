@@ -12,7 +12,7 @@ public abstract class WorkServiceBase : MainTaskService
 	public static readonly byte[] StopScanCommandBytes = HexUtils.Parse("04 E5 04 00 FF 13");
 	public const int CodeOfOK = 1;
 	public const int CodeOfNG = 2;
-	public required IDataSocket Socket { get; init; }
+
 	public required ILogger Logger { get; init; }
 
 
