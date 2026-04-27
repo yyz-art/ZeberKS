@@ -36,10 +36,13 @@
 			</Grid>
 		</LayoutDockPanel.CenterContent>
 		<LayoutDockPanel.RightTopContent>
-			<ViewContainer Grid.Row="2" Grid.Column="0" Header="{StaticResource I18N.Common.机器人吸头}">
-				<StackPanel Orientation="Vertical" Spacing="5">
-					<main:SuctionHeadView DataContext="{Binding SuctionHeadVM}" />
-				</StackPanel>
+			<ViewContainer Grid.Row="2" Grid.Column="0" Header="扫码结果">
+				<Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto" ColumnSpacing="5" RowSpacing="5" Margin="0,0,0,10">
+					<Label Classes="Label" Grid.Row="0" Grid.Column="0" Content="左工位:" />
+					<TextBox Grid.Row="0" Grid.Column="1" Text="{Binding WorkLeftService.扫码}" IsReadOnly="True" />
+					<Label Classes="Label" Grid.Row="1" Grid.Column="0" Content="右工位:" />
+					<TextBox Grid.Row="1" Grid.Column="1" Text="{Binding WorkRightService.扫码}" IsReadOnly="True" />
+				</Grid>
 			</ViewContainer>
 
 		</LayoutDockPanel.RightTopContent>

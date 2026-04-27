@@ -40,7 +40,6 @@ public class LogService : MainTaskService
 					// {
 					// 	dict[(item.Key as string)!] = item.Value!;
 					// }
-					//
 					// record.Properties = dict;
 				}
 

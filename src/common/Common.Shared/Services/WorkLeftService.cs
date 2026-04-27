@@ -6,9 +6,7 @@
 // using ZC.Mvvm;
 // using ZitApp.BinStructs;
 // using ZitApp.SIFS;
-//
 // namespace ZitApp.Services;
-//
 // [RegisterToIOC(LifetimeType.Singleton)]
 // [ObservableObject]
 // // [RegisterToTaskService(TaskStartMode.Automatic)]
@@ -22,7 +20,6 @@
 // 	public partial string 机种型号 { get; set; } = "";
 // 	public partial string 扫码 { get; set; } = "";
 // 	public override IMainTaskServiceOptions GetServiceOptions() => DefaultThreadMainTaskServiceOptions;
-//
 // 	protected override Task Main(CancellationToken ctk)
 // 	{
 // 		Span<char> charBuffer = stackalloc char[1024];
@@ -37,7 +34,6 @@
 // 					"Clear left scanner result failed!");
 // 				continue;
 // 			}
-//
 // 			// 入站扫码
 // 			if (Plc.Read.扫码枪1触发 is 1)
 // 			{
@@ -51,7 +47,6 @@
 // 					Logger.Error("Start scan command response data is error! {}", responseHex);
 // 					goto SendCodeNG;
 // 				}
-//
 // 				var codeBytes = _buffer.AsSpan(StartScanResponseBytes.Length, readLength - StartScanResponseBytes.Length);
 // 				if (false == Encoding.UTF8.TryGetChars(codeBytes, charBuffer, out var codeLength))
 // 				{
@@ -59,7 +54,6 @@
 // 					Logger.Error("Start scan command response code is error! {}", responseHex);
 // 					goto SendCodeNG;
 // 				}
-//
 // 				扫码 = charBuffer.Slice(0, codeLength).ToString();
 // 				Logger.Info("Scanned code is '{code}'", 扫码);
 // 				// MES 入站请求
@@ -71,7 +65,6 @@
 // 					Plc.Write.工位1允许生产 = 2;
 // 					goto SendCodeNG;
 // 				}
-//
 // 				Logger.Info("request sifi msg 7 with code: '{}'", 扫码);
 // 				// MES 查询工单号和机种型号
 // 				var mesMsg7Result = Mes.SendMessage7(Core.工号, 扫码);
@@ -81,7 +74,6 @@
 // 					Plc.Write.工位1允许生产 = 2;
 // 					goto SendCodeNG;
 // 				}
-//
 // 				var response = mesMsg7Result.Value;
 // 				var variableMemoryEnumerator = response.GetVariableMemoryEnumerator();
 // 				string? 工单号 = null;
@@ -93,14 +85,12 @@
 // 					else if (varName.Span is "MODEL_NAME")
 // 						机种名 = varValue.ToString();
 // 				}
-//
 // 				if (string.IsNullOrEmpty(工单号) || string.IsNullOrEmpty(机种名))
 // 				{
 // 					Logger.Error("request mes msg 7 get 'MO_NUMBER & MODEL_NAME' is null with code: '{}'", 扫码);
 // 					Plc.Write.工位1允许生产 = 2;
 // 					goto SendCodeNG;
 // 				}
-//
 // 				// 验证配方是否是当前工作配方 false 不允许生产
 // 				if (false == Core.CheckRecipe(机种名))
 // 				{
@@ -111,11 +101,9 @@
 // 						Logger.Error(requestStartSwitchRecipeResult.Exception, "recipe start switch failed! {}",
 // 							requestStartSwitchRecipeResult.Message);
 // 					}
-//
 // 					Plc.Write.工位1允许生产 = 3;
 // 					goto SendCodeOK;
 // 				}
-//
 // 				// 验证配方物料是否一致  false 不允许生产
 // 				if (false == Core.CheckRecipeMono(机种名))
 // 				{
@@ -123,9 +111,7 @@
 // 					Plc.Write.工位1允许生产 = 4;
 // 					goto SendCodeOK;
 // 				}
-//
 // 				Plc.Write.工位1允许生产 = 1;
-//
 // 				SendCodeOK:
 // 				Plc.Write.WritePoint(PlcStructInfo.工位1允许生产);
 // 				Plc.Write.扫码枪1触发结果 = CodeOfOK;
@@ -137,7 +123,6 @@
 // 				Plc.Write.WritePoint(PlcStructInfo.扫码枪1触发结果).Unwarp("write left scanner scan result failed!");
 // 				continue;
 // 			}
-//
 // 			// 数据上报请求信号清空
 // 			if (Plc.Read.工位1数据上报请求 is 0 && Plc.Read.工位1数据上报响应 is not 0)
 // 			{
@@ -146,7 +131,6 @@
 // 					"clear work left upload result!");
 // 				continue;
 // 			}
-//
 // 			// 数据上报
 // 			if (Plc.Read.工位1数据上报请求 is 1 or 2)
 // 			{
@@ -155,7 +139,6 @@
 // 					Logger.Error("plc upload result must scan code, current code is null!");
 // 					goto SendNG;
 // 				}
-//
 // 				// 可以添加上传的数据
 // 				// var payloadBuilder = new SifsPayloadBuilder();
 // 				// payloadBuilder.AddVariable("扭力", 1.3f);
@@ -166,7 +149,6 @@
 // 					Logger.Error(respMsg2Result.Exception, "request mes msg 2 error: {}", respMsg2Result.Message);
 // 					goto SendNG;
 // 				}
-//
 // 				SendOK:
 // 				Plc.Write.工位1数据上报响应 = 1;
 // 				Plc.Write.WritePoint(PlcStructInfo.工位1数据上报响应).Unwarp();
@@ -175,7 +157,6 @@
 // 				Plc.Write.工位1数据上报响应 = 2;
 // 				Plc.Write.WritePoint(PlcStructInfo.工位1数据上报响应).Unwarp();
 // 			}
-//
 // 			// 检查允许生产信号，尝试检查
 // 			if (Plc.Read.工位1允许生产 != 1 && false == string.IsNullOrEmpty(机种型号))
 // 			{
@@ -186,7 +167,6 @@
 // 					Plc.Write.WritePoint(PlcStructInfo.工位1允许生产).Unwarp();
 // 					continue;
 // 				}
-//
 // 				var isMatched = Core.CheckRecipeMono(机种型号);
 // 				if (isMatched == false)
 // 				{
@@ -194,13 +174,11 @@
 // 					Plc.Write.WritePoint(PlcStructInfo.工位1允许生产).Unwarp();
 // 					continue;
 // 				}
-//
 // 				Plc.Write.工位1允许生产 = 1;
 // 				Plc.Write.WritePoint(PlcStructInfo.工位1允许生产).Unwarp();
 // 				continue;
 // 			}
 // 		}
-//
 // 		return Task.CompletedTask;
 // 	}
 // }

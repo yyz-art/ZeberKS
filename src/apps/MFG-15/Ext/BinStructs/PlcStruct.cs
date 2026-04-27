@@ -1,4 +1,4 @@
-﻿using ZC;
+using ZC;
 using ZC.BinStructs;
 using ZC.Mvvm;
 

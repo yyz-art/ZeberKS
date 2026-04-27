@@ -48,47 +48,61 @@ public partial class PlcService : PlcServiceBase
 		AlarmService.PushAlarm(this, alarmInfo, sender);
 	}
 
+	public partial String StatusColor { get; set; }= "Red";
+
 	protected override Task Main(CancellationToken ctk)
 	{
 		while (ctk.IsCancellationRequested == false)
 		{
-			if (EnableCollect == false)
+			try
 			{
-				Thread.Sleep(50);
-				continue;
-			}
-
-			var now = DateTime.Now;
-			if (now - HeartbeatTime > TimeSpan.FromSeconds(1))
-			{
-				Write.上位机心跳 = (short)(Write.上位机心跳 == 1 ? 0 : 1);
-				var write心跳Result = Write.WritePoint(nameof(PlcStruct.上位机心跳));
-				if (write心跳Result.IsError())
+				if (EnableCollect == false)
 				{
-					Status = "连接异常";
-					IsConnected = false;
-					Logger.Error(write心跳Result.Exception, "Heartbeat write falied! {}", write心跳Result.Message);
-					// if (Debugger.IsAttached == false)
-					Thread.Sleep(10000);
+					Thread.Sleep(50);
 					continue;
 				}
 
-				HeartbeatTime = DateTime.Now;
+				var now = DateTime.Now;
+				if (now - HeartbeatTime > TimeSpan.FromSeconds(1))
+				{
+					Write.上位机心跳 = (short)(Write.上位机心跳 == 1 ? 0 : 1);
+					var write心跳Result = Write.WritePoint(nameof(PlcStruct.上位机心跳));
+					if (write心跳Result.IsError())
+					{
+						Status = "连接异常";
+						IsConnected = false;
+						StatusColor = "Red";
+						Logger.Error(write心跳Result.Exception, "Heartbeat write falied! {}", write心跳Result.Message);
+						Thread.Sleep(10000);
+						continue;
+					}
+
+					HeartbeatTime = DateTime.Now;
+				}
+
+				Read.ReadPointGroup(PlcStructInfo.交互toPC_Part1).Unwarp("Read to pc part1 failed!");
+				Read.ReadPointGroup(PlcStructInfo.交互toPLC_Part1).Unwarp("Read to plc part1 failed!");
+				ReadAlarm.ReadPointGroup(PlcAlarmStructInfo.Part1, Plc).Unwarp("Read alarm failed!");
+
+				InternalCycleTaskCompletionSource?.TrySetResult();
+				unchecked
+				{
+					StatusColor = "LimeGreen";
+					IsConnected = true;
+					CycleId++;
+					Status = "连接正常";
+				}
+
+				Thread.Sleep(50);
 			}
-
-			Read.ReadPointGroup(PlcStructInfo.交互toPC_Part1).Unwarp("Read to pc part1 failed!");
-			Read.ReadPointGroup(PlcStructInfo.交互toPLC_Part1).Unwarp("Read to plc part1 failed!");
-			ReadAlarm.ReadPointGroup(PlcAlarmStructInfo.Part1, Plc).Unwarp("Read alarm failed!");
-
-			InternalCycleTaskCompletionSource?.TrySetResult();
-			unchecked
+			catch (Exception ex)
 			{
-				IsConnected = true;
-				CycleId++;
-				Status = "连接正常";
+				Status = "连接异常";
+				StatusColor = "Red";
+				IsConnected = false;
+				Logger.Error(ex, "PLC main loop error, will retry.");
+				Thread.Sleep(1000);
 			}
-
-			Thread.Sleep(50);
 		}
 
 		return Task.CompletedTask;

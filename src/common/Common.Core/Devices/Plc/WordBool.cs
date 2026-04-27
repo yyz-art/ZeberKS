@@ -1,7 +1,6 @@
 ﻿using ZC.BinStructs;
 
 namespace ZitApp.Devices.Plc;
-//
 // [BinaryStruct(Length = 1, LengthUnit = 2)]
 // public partial class WordBool
 // {

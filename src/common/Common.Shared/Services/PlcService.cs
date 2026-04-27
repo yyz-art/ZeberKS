@@ -10,9 +10,7 @@
 // using ZitApp.BinStructs;
 // using ZitApp.Devices.Plc;
 // using ZitApp.Models;
-//
 // namespace ZitApp.Services;
-//
 // [RegisterToIOC(LifetimeType.Singleton)]
 // [RegisterToTaskService(TaskStartMode.Automatic)]
 // [ObservableObject]
@@ -22,7 +20,6 @@
 // 	public PlcStruct Read { get; } = new();
 // 	public PlcAlarmStruct ReadAlarm { get; } = new();
 // 	public PlcStruct Write { get; } = new();
-//
 // 	protected override Task OnInitialize(object? ctx, object? args)
 // 	{
 // 		Read.Connection = Plc;
@@ -30,7 +27,6 @@
 // 		ReadAlarm.PropertyChanged += OnPlcAlarmChanged;
 // 		return base.OnInitialize(ctx, args);
 // 	}
-//
 // 	private void OnPlcAlarmChanged(object? sender, PropertyChangedEventArgs e)
 // 	{
 // 		if (e.PropertyName is null || false ==
@@ -47,7 +43,6 @@
 // 		var alarmInfo = new AlarmInfo { Id = id, Name = e.PropertyName, Value = value == WordBool.True ? 1 : 0 };
 // 		AlarmService.PushAlarm(this, alarmInfo, sender);
 // 	}
-//
 // 	protected override Task Main(CancellationToken ctk)
 // 	{
 // 		while (ctk.IsCancellationRequested == false)
@@ -57,7 +52,6 @@
 // 				Thread.Sleep(50);
 // 				continue;
 // 			}
-//
 // 			var now = DateTime.Now;
 // 			if (now - HeartbeatTime > TimeSpan.FromSeconds(1))
 // 			{
@@ -72,14 +66,11 @@
 // 					Thread.Sleep(10000);
 // 					continue;
 // 				}
-//
 // 				HeartbeatTime = DateTime.Now;
 // 			}
-//
 // 			Read.ReadPointGroup(PlcStructInfo.交互toPC_Part1).Unwarp("Read to pc part1 failed!");
 // 			Read.ReadPointGroup(PlcStructInfo.交互toPLC_Part1).Unwarp("Read to plc part1 failed!");
 // 			ReadAlarm.ReadPointGroup(PlcAlarmStructInfo.Part1, Plc).Unwarp("Read alarm failed!");
-//
 // 			InternalCycleTaskCompletionSource?.TrySetResult();
 // 			unchecked
 // 			{
@@ -87,10 +78,8 @@
 // 				CycleId++;
 // 				Status = "连接正常";
 // 			}
-//
 // 			Thread.Sleep(50);
 // 		}
-//
 // 		return Task.CompletedTask;
 // 	}
 // }

@@ -29,20 +29,26 @@
 
 		<TabControl Grid.Row="1" TabStripPlacement="Left" Theme="{DynamicResource TabControl-Line}">
 			<TabItem Header="常规配置">
-				<Grid RowDefinitions="Auto,*">
+				<Grid>
 					<!-- <TabStrip Grid.Row="0" ItemsSource="{Binding ConfigGroupNames}" -->
 					<!-- 					SelectedItem="{Binding SelectedConfigGroup}" /> -->
 
-					<DataGrid Grid.Row="1" ItemsSource="{Binding GroupedPropertyInstances}">
+					<DataGrid ItemsSource="{Binding GroupedPropertyInstances}">
 						<DataGrid.Columns>
 							<DataGridTextColumn Header="{StaticResource I18N.Common.名称}"
 																	x:DataType="mvvm:IPropertyInstance"
 																	Binding="{Binding ValueInfo.DisplayName }"
 																	Width="200" />
-							<DataGridTextColumn Header="{StaticResource I18N.Common.设定值}"
-																	x:DataType="mvvm:IPropertyInstance"
-																	Binding="{Binding Value}" IsReadOnly="False"
-																	Width="200" />
+							<DataGridTemplateColumn Header="{StaticResource I18N.Common.设定值}" Width="200">
+								<DataGridTemplateColumn.CellTemplate>
+									<DataTemplate>
+										<TextBox VerticalContentAlignment="Center"
+															 x:DataType="mvvm:IPropertyInstance"
+															 Text="{Binding Value, Mode=TwoWay}"
+															 KeyDown="SettingValueTextBox_OnKeyDown" />
+									</DataTemplate>
+								</DataGridTemplateColumn.CellTemplate>
+							</DataGridTemplateColumn>
 							<DataGridTemplateColumn Header="{StaticResource I18N.Common.当前运行值}" Width="200">
 								<DataGridTemplateColumn.CellTemplate>
 									<DataTemplate>

@@ -64,11 +64,6 @@ public sealed class App(AppConfig config) : CommonUiAppCore(config)
 		IOC.AddSingleton<IDataSocket>(specialName: "Scanner-R", creator: _ => new SerialPortSocket(Config.Scanner2));
 		IOC.AddSingleton<XinJEPlcClient>(creator: oc => oc.Get<XinJEPlcClient>(
 			InjectArgument.Create<INetworkSocketConfig>(Config.Plc)));
-		var eapService = IOC.AddSingleton<EapService>().Get<EapService>(
-			null,
-			arg: InjectArgument.Create(new TcpServerSocket("127.0.0.1", 23456)));
-		eapService.RegisterHandlerMethods();
-		// await eapService.Start();
 		await StartUi();
 		await base.OnInitialize(ctx, args);
 	}

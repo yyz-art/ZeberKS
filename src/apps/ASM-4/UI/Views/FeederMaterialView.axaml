@@ -1,0 +1,123 @@
+<UiView xmlns="https://github.com/avaloniaui"
+				xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+				xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+				xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+				xmlns:feeder="clr-namespace:ZitApp.UI.FeederMaterial"
+				mc:Ignorable="d" d:DesignWidth="1280" d:DesignHeight="720"
+				x:Class="ZitApp.UI.FeederMaterial.FeederMaterialView">
+	<Design.DataContext>
+		<feeder:FeederMaterialVM />
+	</Design.DataContext> 
+	<Grid RowDefinitions="Auto,*">
+		<Border Grid.Row="0" BorderBrush="{DynamicResource Brush-Border}" BorderThickness="0 0 0 1">
+			<LinearPanel Orientation="Horizontal" Spacing="10" Padding="5">
+				<Label Content="飞达物料" Theme="{StaticResource Label-Tag}" Classes="Ghost Green" Padding="5" />
+				<Control LinearPanel.Weight="1" />
+				<Button Content="{StaticResource I18N.Common.应用}"
+								Classes="Primary"
+								Theme="{DynamicResource Button-Outline}"
+								Command="{Binding ApplyCommand}" />
+				<Button Content="{StaticResource I18N.Common.保存}"
+								Classes="Primary"
+								Theme="{DynamicResource Button-Solid}"
+								Command="{Binding SaveCommand}" />
+			</LinearPanel>
+		</Border>
+
+		<Grid Grid.Row="1" RowDefinitions="Auto,*" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0 48 0 0">
+			<Grid Grid.Row="0" ColumnDefinitions="Auto,220,80,140" ColumnSpacing="10" Margin="0 0 0 24">
+				<TextBlock Grid.Column="0" Text="配方:" VerticalAlignment="Center" FontSize="18" />
+				<ComboBox Grid.Column="1"
+									ItemsSource="{Binding RecipeNames}"
+									SelectedItem="{Binding SelectedRecipeName}"
+									MinWidth="220" />
+				<TextBlock Grid.Column="2" Text="配方id:" VerticalAlignment="Center" FontSize="18" />
+				<TextBox Grid.Column="3" Text="{Binding CurrentRecipeId}" IsReadOnly="True" MinWidth="120" />
+			</Grid>
+
+			<ScrollViewer Grid.Row="1" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+			<ItemsControl ItemsSource="{Binding FeederItems}">
+				<ItemsControl.ItemTemplate>
+					<DataTemplate x:DataType="feeder:FeederMaterialItem">
+						<Grid ColumnDefinitions="64,110,220,110,220"
+									RowDefinitions="Auto,Auto,Auto,Auto"
+									ColumnSpacing="10"
+									RowSpacing="6"
+									Margin="0 4"
+									MinWidth="760">
+							<CheckBox Grid.Column="0"
+												Grid.Row="0"
+												Grid.RowSpan="4"
+												HorizontalAlignment="Center"
+												VerticalAlignment="Top"
+												IsChecked="{Binding IsUsed, Mode=TwoWay}" />
+							<TextBlock Grid.Column="1"
+												 Grid.Row="0"
+												 Text="{Binding FeederLabel}"
+												 VerticalAlignment="Center"
+												 FontSize="18" />
+							<TextBox Grid.Column="2"
+											 Grid.Row="0"
+											 Text="{Binding FeederCode, Mode=TwoWay}"
+											 Tag="FeederCode"
+											 KeyDown="FeederTextBox_OnKeyDown" />
+							<TextBlock Grid.Column="3"
+												 Grid.Row="0"
+												 Text="物料码1:"
+												 VerticalAlignment="Center"
+												 FontSize="18" />
+							<TextBox Grid.Column="4"
+											 Grid.Row="0"
+											 Text="{Binding MaterialCode1, Mode=TwoWay}"
+											 Tag="MaterialCode1"
+											 KeyDown="FeederTextBox_OnKeyDown" />
+
+							<TextBlock Grid.Column="1"
+												 Grid.Row="1"
+												 Text="物料码2:"
+												 VerticalAlignment="Center"
+												 FontSize="18" />
+							<TextBox Grid.Column="2"
+											 Grid.Row="1"
+											 Text="{Binding MaterialCode2, Mode=TwoWay}"
+											 Tag="MaterialCode2"
+											 KeyDown="FeederTextBox_OnKeyDown" />
+							<TextBlock Grid.Column="3"
+												 Grid.Row="1"
+												 Text="物料码3:"
+												 VerticalAlignment="Center"
+												 FontSize="18" />
+							<TextBox Grid.Column="4"
+											 Grid.Row="1"
+											 Text="{Binding MaterialCode3, Mode=TwoWay}"
+											 Tag="MaterialCode3"
+											 KeyDown="FeederTextBox_OnKeyDown" />
+
+							<TextBlock Grid.Column="1"
+												 Grid.Row="2"
+												 Text="物料码4:"
+												 VerticalAlignment="Center"
+												 FontSize="18" />
+							<TextBox Grid.Column="2"
+											 Grid.Row="2"
+											 Text="{Binding MaterialCode4, Mode=TwoWay}"
+											 Tag="MaterialCode4"
+											 KeyDown="FeederTextBox_OnKeyDown" />
+							<TextBlock Grid.Column="3"
+												 Grid.Row="2"
+												 Text="物料码5:"
+												 VerticalAlignment="Center"
+												 FontSize="18" />
+							<TextBox Grid.Column="4"
+											 Grid.Row="2"
+											 Text="{Binding MaterialCode5, Mode=TwoWay}"
+											 Tag="MaterialCode5"
+											 KeyDown="FeederTextBox_OnKeyDown" />
+						</Grid>
+					</DataTemplate>
+				</ItemsControl.ItemTemplate>
+			</ItemsControl>
+			</ScrollViewer>
+		</Grid>
+	</Grid>
+</UiView>

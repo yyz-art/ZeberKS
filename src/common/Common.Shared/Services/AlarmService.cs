@@ -5,9 +5,7 @@
 // using ZC.LOG;
 // using ZitApp.EAP;
 // using ZitApp.Models;
-//
 // namespace ZitApp.Services;
-//
 // [RegisterToIOC(LifetimeType.Singleton)]
 // [RegisterToTaskService(TaskStartMode.Automatic)]
 // public class AlarmService : AsyncMainTaskService, INamedObject
@@ -15,14 +13,11 @@
 // 	public required ISqlDbClient DbClient { get; init; }
 // 	public required ILogger Logger { get; init; }
 // 	public required EapServiceBase EapServiceBase { get; init; }
-//
 // 	private ConcurrentQueue<object> AlarmQueue { get; init; } = new();
-//
 // 	public void PushAlarm(object? sender, object alarm, object? args)
 // 	{
 // 		AlarmQueue.Enqueue(alarm);
 // 	}
-//
 // 	public async Task<Result<List<AlarmRecord>>> GetLatestAlarmRecordAsync(int count)
 // 	{
 // 		try
@@ -37,9 +32,7 @@
 // 			return Result.Err<List<AlarmRecord>>(ex);
 // 		}
 // 	}
-//
 // 	public string GetObjectName() => "ALARM-SERVICE";
-//
 // 	protected override async Task Main(CancellationToken ctk)
 // 	{
 // 		while (ctk.IsCancellationRequested == false)

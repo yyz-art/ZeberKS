@@ -3,7 +3,8 @@
   "profiles": {
     "App": {
       "commandName": "Project",
-      "targetProject": "./App.csproj"
+      "targetProject": "./ASM15-1.csproj",
+      "workingDirectory": "bin/Debug"
     },
     "App:Roslyn": {
       "commandName": "DebugRoslynComponent",

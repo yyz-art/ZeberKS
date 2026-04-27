@@ -4,6 +4,7 @@ using ZitApp.Services;
 using ZitApp.UI.Account;
 using ZitApp.UI.Alarm;
 using ZitApp.UI.Config;
+using FeederMaterialVM = ZitApp.UI.FeederMaterial.FeederMaterialVM;
 using RecipeVM = ZitApp.UI.Recipe.RecipeVM;
 
 namespace ZitApp.UI;
@@ -35,6 +36,7 @@ public partial class AppVM : CommonAppVM
 		new("/报警") { ViewModel = typeof(AlarmManageVM), AllowClose = false, CustomData = 3 },
 		new("/设置") { ViewModel = typeof(SystemConfigVM), AllowClose = false, CustomData = 5 },
 		new("/配方") { ViewModel = typeof(RecipeVM), AllowClose = false, CustomData = 3 },
+		new("/飞达物料") { ViewModel = typeof(FeederMaterialVM), AllowClose = false, CustomData = 3 },
 	};
 
 	public partial int UiTickInterval { get; set; } = 200;
@@ -43,6 +45,12 @@ public partial class AppVM : CommonAppVM
 	{
 		var mainWindow = View as MainWindow;
 		return ShowModalDialog(mainWindow!.AccountLoginDialog);
+	}
+
+	public async Task<bool> ShowConfirmMessageBox(object message, string title)
+	{
+		var option = await ShowMessageBox(message, title, MessageBoxIcon.Question, MessageBoxButton.YesNo);
+		return option is MessageBoxResult.Yes;
 	}
 
 	public partial string AccountLoginInputAccountName { get; set; }

@@ -22,7 +22,6 @@ public partial class ScrewMachineRecipeProperties : ObservableObject
 
 	// [BinaryPoint(Offset = 3, Description = "(保留参数)")]
 	// public partial ushort 是否开启入牙功能 { get; set; }
-	//
 	// [BinaryPoint(Offset = 4, Description = "(保留参数)")]
 	// public partial ushort 初始检出量 { get; set; }
 
@@ -40,7 +39,6 @@ public partial class ScrewMachineRecipeProperties : ObservableObject
 
 	// [BinaryPoint(Offset = 9, Description = "")]
 	// public partial ushort 浮高界定圈数 { get; set; }
-	//
 	// [BinaryPoint(Offset = 10, Description = "")]
 	// public partial ushort 滑牙界定圈数 { get; set; }
 
@@ -65,13 +63,10 @@ public partial class ScrewMachineRecipeProperties : ObservableObject
 
 	// [BinaryPoint(Offset = 18, Description = "(保留参数)")]
 	// public partial ushort 是否开启IO方式的分段扭力功能 { get; set; }
-	//
 	// [BinaryPoint(Offset = 19, Description = "")]
 	// public partial ushort IO方式的第一段扭力 { get; set; }
-	//
 	// [BinaryPoint(Offset = 20, Description = "")]
 	// public partial ushort 触发速度切换的扭力 { get; set; }
-	//
 	// [BinaryPoint(Offset = 21, Description = "")]
 	// public partial ushort 触发速度切换的速度比值 { get; set; }
 	[ValueInfo(MinValue = 0, MaxValue = 4000, Unit = "ms")]
@@ -82,7 +77,6 @@ public partial class ScrewMachineRecipeProperties : ObservableObject
 	// public partial ushort 工件螺丝数量 { get; set; }
 	// [BinaryPoint(Offset = 24, Description = "")]
 	// public partial ushort 是否开启IO触发圈数计数 { get; set; }
-	//
 	// [BinaryPoint(Offset = 25, Description = "")]
 	// public partial ushort IO触发的目标圈数 { get; set; }
 
@@ -92,7 +86,6 @@ public partial class ScrewMachineRecipeProperties : ObservableObject
 	// public partial ushort 扭力偏差下限 { get; set; }
 	// [BinaryPoint(Offset = 28, Description = "")]
 	// public partial ushort 扭力免检圈数 { get; set; }
-	//
 	// [BinaryPoint(Offset = 50, Description = "")]
 	// public partial ushort 自由旋转方向 { get; set; }
 	[ValueInfo(MinValue = 0, MaxValue = 4000, Unit = "r")]

@@ -1,9 +1,9 @@
 ﻿using System.Text.Json;
 using HslCommunication.ModBus;
+using NLog;
 using ZC;
 using ZC.BinStructs.Ext;
 using ZC.DP.Memory;
-using ZC.LOG;
 using ZC.Mvvm;
 using ZC.Shared.DefaultJson;
 using ZitApp.Devices.Screw;
@@ -14,9 +14,15 @@ namespace ZitApp.Services;
 [ObservableObject]
 public partial class ScrewService : MainTaskService
 {
-	public override string ServiceName => field ??= $"{Connection.Name}-SERVICE";
+	private static readonly Logger Logger = LogManager.GetLogger("SCREW-SERVICE");
+
+	public string? ServiceNameOverride { get; init; }
+	public override string ServiceName => field ??= ServiceNameOverride ?? $"{Connection.Name}-SERVICE";
 	public ScrewMachineData Data { get; private set; } = new();
 
+	public partial bool IsConnected { get; set; }
+	public partial string Status { get; set; } = "连接异常";
+	public partial DateTime LastSuccessfulReadAt { get; set; }
 
 	public bool EnableWaveCollect { get; set; } = true;
 	public List<double> WaveChannel1RealData { get; } = [];
@@ -31,7 +37,6 @@ public partial class ScrewService : MainTaskService
 			Data.Connection = value;
 		}
 	}
-	public required ILogger Logger { get; init; }
 	public const int ChartDataBaseAddress = 10000; // 波形数据基准地址
 	public const int WaveChannelPointCount = 2; // 通道数
 	public const int WavePointTotalCount = 600; // 总点数
@@ -66,10 +71,16 @@ public partial class ScrewService : MainTaskService
 			var readRealPartDataResult = Data.ReadPointGroup(ScrewMachineDataStructInfo.ScrewRealPartData, Connection);;
 			if (readRealPartDataResult.IsError())
 			{
+				IsConnected = false;
+				Status = "连接异常";
 				Logger.Error(readRealPartDataResult.Exception, "读取实时数据失败! {msg}",
 					readRealPartDataResult.Message);
 				goto TpsError;
 			}
+
+			IsConnected = true;
+			Status = "连接正常";
+			LastSuccessfulReadAt = DateTime.Now;
 
 			// var data = JsonSerializer.Serialize(ScrewMachine.Data.AsIScrewRealPartData(),Global.Json.DefaultIndentOptions);
 			// Logger.Debug(data);

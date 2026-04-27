@@ -26,6 +26,7 @@
 	<sys:String x:Key="I18N.Common.螺丝枪数据">螺丝枪数据</sys:String>
 	<sys:String x:Key="I18N.Common.双轴轨道位置">双轴轨道位置</sys:String>
 	<sys:String x:Key="I18N.Common.机器人吸头">机器人吸头</sys:String>
+	<sys:String x:Key="I18N.Common.设备详情">设备详情</sys:String>
 	<sys:String x:Key="I18N.Common.主页">主页</sys:String>
 	<sys:String x:Key="I18N.Common.配方">配方</sys:String>
 	<sys:String x:Key="I18N.Common.报警">报警</sys:String>
@@ -102,5 +103,5 @@
 	<sys:String x:Key="I18N.Common.良率_">良率:</sys:String>
 	<sys:String x:Key="I18N.Common.CT_">CT:</sys:String>
 	<sys:String x:Key="I18N.Common.工号_">工号:</sys:String>
-	<sys:String x:Key="I18N.Common.当前配方_">当前配方:</sys:String>
+	<sys:String x:Key="I18N.Common.当前配方_">机种号:</sys:String>
 </ResourceDictionary>

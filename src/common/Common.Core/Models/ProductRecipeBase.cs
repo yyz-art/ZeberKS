@@ -8,6 +8,8 @@ public class ProductRecipeBase
 
 	public string 机种型号 { get; set; } = "";
 
+	public Dictionary<string, string> 点位数据源 { get; set; } = [];
+
 	#region 上料
 
 	public List<产品上料信息> 产品上料信息 { get; set; } = [];

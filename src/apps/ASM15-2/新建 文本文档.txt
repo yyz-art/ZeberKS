@@ -1,0 +1,51 @@
+这是图片中提取的文字内容：
+
+```text
+SWJ X轴 Pos 自动位置         AT %MW64000:ARRAY[0..59] OF REAL;
+SWJ X轴 Vel 自动速度         AT %MW64120:ARRAY[0..59] OF REAL;
+
+SWJ Y轴 Pos 自动位置         AT %MW64240:ARRAY[0..59] OF REAL;
+SWJ Y轴 Vel 自动速度         AT %MW64360:ARRAY[0..59] OF REAL;
+
+SWJ Z轴 Pos 自动位置         AT %MW64480:ARRAY[0..59] OF REAL;
+SWJ Z轴 Vel 自动速度         AT %MW64600:ARRAY[0..59] OF REAL;
+
+SWJ 进料轴1 Pos 自动位置AT %MW64720:ARRAY[0..59] OF REAL;
+SWJ 进料轴1 Vel 自动速度AT %MW64840:ARRAY[0..59] OF REAL;
+
+SWJ 进料轴2 Pos 自动位置AT %MW64960:ARRAY[0..59] OF REAL;
+SWJ 进料轴2 Vel 自动速度AT %MW65080:ARRAY[0..59] OF REAL;
+
+SWJ 龙门轴1 Pos 自动位置AT %MW65200:ARRAY[0..59] OF REAL;
+SWJ 龙门轴1 Vel 自动速度AT %MW65320:ARRAY[0..59] OF REAL;
+
+SWJ 龙门平移轴 Pos 自动位置  AT %MW65440:ARRAY[0..59] OF REAL;
+SWJ 龙门平移轴 Vel 自动速度  AT %MW65560:ARRAY[0..59] OF REAL;
+
+SWJ 相机Z轴 Pos 自动位置AT %MW65680:ARRAY[0..59] OF REAL;
+SWJ 相机Z轴 Vel 自动速度 AT %MW65800:ARRAY[0..59] OF REAL;
+
+SWJ 取料1 Z轴1 Pos 自动位置    AT %MW65920:ARRAY[0..59] OF REAL;
+SWJ 取料1 Z轴1 Vel 自动速度    AT %MW66040:ARRAY[0..59] OF REAL;
+
+SWJ 取料1 R轴1 Pos 自动位置    AT %MW66160:ARRAY[0..59] OF REAL;
+SWJ 取料1 R轴1 Vel 自动速度    AT %MW66280:ARRAY[0..59] OF REAL;
+
+SWJ 取料1 Z轴2 Pos 自动位置    AT %MW66400:ARRAY[0..59] OF REAL;
+SWJ 取料1 Z轴2 Vel 自动速度    AT %MW66520:ARRAY[0..59] OF REAL;
+
+SWJ 取料1 R轴2 Pos 自动位置    AT %MW66640:ARRAY[0..59] OF REAL;
+SWJ 取料1 R轴2 Vel 自动速度    AT %MW66760:ARRAY[0..59] OF REAL;
+
+SWJ 取料1 Z轴3 Pos 自动位置    AT %MW66880:ARRAY[0..59] OF REAL;
+SWJ 取料1 Z轴3 Vel 自动速度    AT %MW67000:ARRAY[0..59] OF REAL;
+
+SWJ 取料1 R轴3 Pos 自动位置    AT %MW67120:ARRAY[0..59] OF REAL;
+SWJ 取料1 R轴3 Vel 自动速度    AT %MW67240:ARRAY[0..59] OF REAL;
+
+SWJ 取料1 Z轴4 Pos 自动位置    AT %MW67360:ARRAY[0..59] OF REAL;
+SWJ 取料1 Z轴4 Vel 自动速度    AT %MW67480:ARRAY[0..59] OF REAL;
+
+SWJ 取料1 R轴4 Pos 自动位置    AT %MW67600:ARRAY[0..59] OF REAL;
+SWJ 取料1 R轴4 Vel 自动速度    AT %MW67720:ARRAY[0..59] OF REAL;
+```

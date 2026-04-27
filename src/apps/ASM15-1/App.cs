@@ -1,4 +1,4 @@
-﻿using System.Runtime.CompilerServices;
+using System.Runtime.CompilerServices;
 using System.Text.Json;
 using ZC;
 using ZC.DB;
@@ -27,13 +27,18 @@ Result.EnableCollectErrorStackTrace = Debugger.IsAttached;
 DevUtils.DebugMode = DevDebugMode.LocalDebug;
 EnhanceAppCore.InitializeEnvironment();
 ObjectContainerOptions.Default.EnableCyclicDependencyCheck = true;
+if (File.Exists(Path.Combine(AppContext.BaseDirectory, "data", "NLog.config")))
+{
+	Directory.SetCurrentDirectory(AppContext.BaseDirectory);
+}
 var config = new AppConfig
 {
 	TaskServiceHostOptions = TaskServiceHostOptions.CreateDefault(),
 	Databases = [new DatabaseConnectionConfig(null, DatabaseType.Sqlite, @"Data Source=data/app.db")],
 };
-// config = Debugger.IsAttached ? config : AppCore.LoadConfig<AppConfig>();
-config = AppCore.LoadConfig<AppConfig>();
+config = Debugger.IsAttached || File.Exists(Path.Combine("data", "AppConfig.json5")) == false
+	? config
+	: AppCore.LoadConfig<AppConfig>();
 if (DevUtils.IsLocalDebugMode && Debugger.IsAttached)
 {
 	config.Plc.IpAddress = "127.0.0.1";
@@ -55,6 +60,8 @@ public sealed class App(AppConfig config) : CommonUiAppCore(config)
 	public new static App DesignTimeApp = new App(new AppConfig());
 	public new static App Current => Design.IsDesignMode ? DesignTimeApp : (App)AppCore.Current;
 	public new AppConfig Config { get; set; } = config;
+	public ScrewService? ScrewService1 { get; private set; }
+	public ScrewService? ScrewService2 { get; private set; }
 
 	protected override async Task OnInitialize(object? ctx, object? args)
 	{
@@ -76,10 +83,18 @@ public sealed class App(AppConfig config) : CommonUiAppCore(config)
 		await StartTaskServices();
 		var recipeService = IOC.Get<RecipeService>();
 		recipeService.LoadRecipes().Unwarp("Recipes load failed!");
-		var lScrewService = IOC.Get<ScrewService>(InjectArgument.Create(IOC.Get<ScrewMachineConnection>(specialName: "L")));
-		var rScrewService = IOC.Get<ScrewService>(InjectArgument.Create(IOC.Get<ScrewMachineConnection>(specialName: "R")));
-		TaskServiceManager.AddService(lScrewService);
-		// TaskServiceManager.AddService(rScrewService);
+		ScrewService1 = new ScrewService
+		{
+			ServiceNameOverride = "SCREW1-SERVICE",
+			Connection = IOC.Get<ScrewMachineConnection>(specialName: "L")
+		};
+		ScrewService2 = new ScrewService
+		{
+			ServiceNameOverride = "SCREW2-SERVICE",
+			Connection = IOC.Get<ScrewMachineConnection>(specialName: "R")
+		};
+		TaskServiceManager.AddService(ScrewService1);
+		TaskServiceManager.AddService(ScrewService2);
 		var connectionManageService = IOC.Get<ConnectionManageService>();
 		connectionManageService.RegisterConnection("PLC", IOC.Get<XinJEPlcClient>());
 		connectionManageService.RegisterConnection("SCREW-L", IOC.Get<ScrewMachineConnection>(specialName: "L"));

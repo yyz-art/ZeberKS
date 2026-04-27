@@ -36,7 +36,7 @@ while (true) await Task.Delay(1000);
 
 public sealed class App(AppConfig config) : CommonUiAppCore(config)
 {
-	public static string ApplicationName => "ASM15-2";
+	public static string ApplicationName => "ASM-4";
 	public new static App DesignTimeApp = new App(new AppConfig());
 	public new static App Current => Design.IsDesignMode ? DesignTimeApp : (App)AppCore.Current;
 	public new AppConfig Config { get; set; } = config;

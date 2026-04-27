@@ -78,13 +78,11 @@ public struct Message7Response
 // 	// GET_PN=1005-031111-00 ZEBRA_DTG=MODEL_NAME=1005-031111,DCS=HH,TIMON=ASTEROID,GROUP_NAME=T1,T2,T3,T4-1,T4-2,T5,T6,T7,T8,T9,T10,T11,T12-1,T12-2,T14;MODEL_NAME=1005-031111-00,DCS=HH,TIMON=ASTEROID,GROUP_NAME=CCD1,CCD2,CCD3; SN_NOW_GROUP=CCD2
 // 	public ReadOnlyMemory<char> ResponseVariablePayload { get; set; }
 // 	public int Index { get; private set; }
-//
 // 	// RET1 = (GET_PN,1005-031111-00)
 // 	// RET2 = (ZEBRA_DTG,MODEL_NAME=1005-031111,DCS=HH,TIMON=ASTEROID,GROUP_NAME=T1,T2,T3,T4-1,T4-2,T5,T6,T7,T8,T9,T10,T11,T12-1,T12-2,T14;MODEL_NAME=1005-031111-00,DCS=HH,TIMON=ASTEROID,GROUP_NAME=CCD1,CCD2,CCD3;)
 // 	// RET3 = (SN_NOW_GROUP=CCD2)
 // 	public bool MoveNext(out ReadOnlyMemory<char> name, out ReadOnlyMemory<char> value)
 // 	{
-// 		
 // 	}
 // }
 

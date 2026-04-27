@@ -36,6 +36,14 @@
 	  <Compile Update="UI\Views\SystemConfigView.axaml.cs">
 	    <SubType>Code</SubType>
 	  </Compile>
+	  <Compile Update="UI\Views\IoMonitorView.axaml.cs">
+	    <DependentUpon>IoMonitorView.axaml</DependentUpon>
+	    <SubType>Code</SubType>
+	  </Compile>
+	  <Compile Update="UI\Views\FeederMaterialView.axaml.cs">
+	    <DependentUpon>FeederMaterialView.axaml</DependentUpon>
+	    <SubType>Code</SubType>
+	  </Compile>
 	  <Compile Update="UI\UiApp.cs">
 	    <SubType>Code</SubType>
 	    <DependentUpon>AppVM.cs</DependentUpon>

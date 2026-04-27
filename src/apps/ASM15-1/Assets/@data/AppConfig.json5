@@ -32,10 +32,28 @@
   },
   "Scanner1": {
     "Port": "COM5",
-    "BaudRate": 1152200,
+    "BaudRate": 115200,
   },
   "Scanner2": {
     "Port": "COM6",
-    "BaudRate": 1152200,
-  }
+    "BaudRate": 115200,
+  },
+  "PlcIpAddress": "192.168.1.60",
+  "PlcPort": 502,
+  "Screw1IpAddress": "192.168.1.65",
+  "Screw1Port": 502,
+  "Screw2IpAddress": "192.168.1.66",
+  "Screw2Port": 502,
+  "Scanner1ComPort": "COM5",
+  "Scanner1BaudRate": 115200,
+  "Scanner2ComPort": "COM6",
+  "Scanner2BaudRate": 115200,
+  "WorkNo": "M000086",
+  "StationName": "ASM15-1-AUTO",
+  "飞达1标准码": "",
+  "飞达2标准码": "",
+  "飞达3标准码": "",
+  "飞达4标准码": "",
+  "飞达5标准码": "",
+  "飞达6标准码": ""
 }

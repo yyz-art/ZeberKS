@@ -2,221 +2,640 @@
 using ZC;
 using ZC.BinStructs;
 using ZC.BinStructs.Ext;
+using ZC.DP;
+using ZC.DP.Memory;
 using ZC.Mvvm;
+using ZC.UI.ControlLibs;
 using ZitApp.BinStructs;
+using ZitApp.Models;
+using ZitApp.UI;
 
 namespace ZitApp.Services;
 
 public enum FeederMonoState
 {
-	Matched,
-	NotMatched,
+    Matched,
+    NotMatched,
+}
+
+public enum MesRecipePrepareState
+{
+   Ready,
+   RecipeNotFound,
+   PlcResponseTimeout,
+   UserCanceled,
+   Failed,
 }
 
 [RegisterToIOC(LifetimeType.Singleton)]
 [ObservableObject]
 public partial class CoreService : CoreServiceBase
 {
-	public required ConnectionManageService ConnectionManageService { get; init; }
+    private readonly SemaphoreSlim _mesRecipePrepareLock = new(1, 1);
+    public required ConnectionManageService ConnectionManageService { get; init; }
 
-	public required ILogger Logger { get; init; }
-	public required PlcService Plc { get; init; }
-	public required RecipeService Recipe { get; init; }
-	public partial string RecipeName { get; set; } = "";
-	public partial int ProductCount { get; private set; } = 1234;
-	public partial double OkPrecent { get; private set; } = 55.69;
-	public partial int CT { get; private set; } = 10;
-	public partial string 工号 { get; set; } = "TestWorkNo0001";
-	public partial string 工单号 { get; set; } = "WorkOrderNo0001";
-	public partial ProductRecipe? 请求切换的配方 { get; set; }
-	public partial ProductRecipe? 当前下发配方 { get; set; }
-	public partial string 飞达1物料码 { get; set; } = "L-Test1";
-	public partial FeederMonoState 飞达1物料状态 { get; set; } = FeederMonoState.NotMatched;
-	public partial string 飞达2物料码 { get; set; } = "L-Test2";
-	public partial FeederMonoState 飞达2物料状态 { get; set; } = FeederMonoState.NotMatched;
-	public partial string 飞达3物料码 { get; set; } = "R-Test1";
-	public partial FeederMonoState 飞达3物料状态 { get; set; } = FeederMonoState.NotMatched;
-	public partial string 飞达4物料码 { get; set; } = "R-Test2";
-	public partial FeederMonoState 飞达4物料状态 { get; set; } = FeederMonoState.NotMatched;
+    public required ILogger Logger { get; init; }
+    public required PlcService Plc { get; init; }
+    public required RecipeService Recipe { get; init; }
+    public required AppConfig AppConfig { get; init; }
+    public partial string RecipeName { get; set; } = "";
+    public partial int ProductCount { get; private set; } = 1234;
+    public partial double OkPrecent { get; private set; } = 55.69;
+    public partial int CT { get; private set; } = 10;
+    public partial string 工号 { get; set; } = "M000086";
+    public partial string 工单号 { get; set; } = "WorkOrderNo0001";
+    public partial ProductRecipe? 请求切换的配方 { get; set; }
+    public partial ProductRecipe? 当前下发配方 { get; set; }
+    public partial string 飞达1物料码 { get; set; } = "L-Test1";
+    public partial FeederMonoState 飞达1物料状态 { get; set; } = FeederMonoState.NotMatched;
+    public partial string 飞达2物料码 { get; set; } = "L-Test2";
+    public partial FeederMonoState 飞达2物料状态 { get; set; } = FeederMonoState.NotMatched;
+    public partial string 飞达3物料码 { get; set; } = "R-Test1";
+    public partial FeederMonoState 飞达3物料状态 { get; set; } = FeederMonoState.NotMatched;
+    public partial string 飞达4物料码 { get; set; } = "R-Test2";
+    public partial FeederMonoState 飞达4物料状态 { get; set; } = FeederMonoState.NotMatched;
+    public partial string 飞达5物料码 { get; set; } = "";
+    public partial FeederMonoState 飞达5物料状态 { get; set; } = FeederMonoState.NotMatched;
+    public partial string 飞达6物料码 { get; set; } = "";
+    public partial FeederMonoState 飞达6物料状态 { get; set; } = FeederMonoState.NotMatched;
+    public partial bool MesSkipEnabled { get; set; }
 
-	public override IMainTaskServiceOptions GetServiceOptions() => DefaultThreadMainTaskServiceOptions;
+    public override IMainTaskServiceOptions GetServiceOptions() => DefaultThreadMainTaskServiceOptions;
 
-	protected override Task Main(CancellationToken ctk)
-	{
-		while (ctk.IsCancellationRequested == false)
-		{
-			Plc.WaitNextCycle();
-			if (请求切换的配方 is { } reqRecipe)
-			{
-				请求切换的配方 = null;
-				Logger.Info("find switch recipe request, start distribute recipe ...");
-				var distributeRecipeResult = DistributeRecipeAsync(reqRecipe).Result;
-				if (distributeRecipeResult.IsError())
-				{
-					Logger.Error("distribute recipe result error! {}", distributeRecipeResult.Message);
-					continue;
-				}
+    public override Task Initialize(object? ctx = null, object? args = null)
+    {
+       if (string.IsNullOrWhiteSpace(AppConfig.WorkNo) == false)
+          工号 = AppConfig.WorkNo;
 
-				Logger.Info("distribute recipe success!");
-				当前下发配方 = reqRecipe;
-			}
-		}
+       return base.Initialize(ctx, args);
+    }
+
+    // 允许内部使用 await，防止线程死锁
+    protected override async Task Main(CancellationToken ctk)
+    {
+       while (ctk.IsCancellationRequested == false)
+       {
+          Plc.WaitNextCycle();
+          if (请求切换的配方 is { } reqRecipe)
+          {
+             请求切换的配方 = null;
+             Logger.Info("find switch recipe request, start distribute recipe ...");
+             
+             var distributeRecipeResult = await DistributeRecipeAsync(reqRecipe);
+             
+             if (distributeRecipeResult.IsError())
+             {
+                Logger.Error("distribute recipe result error! {}", distributeRecipeResult.Message);
+                continue;
+             }
+
+             Logger.Info("distribute recipe success!");
+             当前下发配方 = reqRecipe;
+             
+             // 同步更新全局 RecipeName
+             RecipeName = reqRecipe.Name;
+          }
+       }
+       
+      
+    }
 
 
-		return Task.CompletedTask;
-	}
+	    public async Task<Result> RequestPlcWriteRecipeAsync()
+	    {
+	       Logger.Info("【PLC配方写入PC地址握手】开始，使用 PLC配方写入PC地址请求(21011) / PLC配方写入PC地址响应(22011)。");
+	
+	       Plc.Write.PLC配方写入PC地址请求 = 0;
+	       var result = await Plc.Write.WritePointAsync(PlcStructInfo.PLC配方写入PC地址请求);
+	       if (result.IsError())
+	          return result;
+	
+	       Plc.Write.PLC配方写入PC地址响应 = 0;
+	       result = await Plc.Write.WritePointAsync(PlcStructInfo.PLC配方写入PC地址响应);
+	       if (result.IsError())
+	          return result;
+	
+	       var resetTimeoutAt = DateTime.Now.AddSeconds(15);
+	       while (DateTime.Now < resetTimeoutAt)
+	       {
+	          await Task.Delay(200);
+	          result = await Plc.Read.ReadPointAsync(PlcStructInfo.PLC配方写入PC地址响应);
+	          if (result.IsError())
+	             return result;
+	
+	          Logger.Info("【PLC配方写入PC地址握手】等待 PLC配方写入PC地址响应(22011)=0，当前响应={response}", Plc.Read.PLC配方写入PC地址响应);
+	          if (Plc.Read.PLC配方写入PC地址响应 == 0)
+	             break;
+	       }
+	
+	       if (Plc.Read.PLC配方写入PC地址响应 != 0)
+	          return Result.Err("等待 PLC配方写入PC地址响应(22011)=0 超过15秒。");
+	
+	       Logger.Info("【PLC配方写入PC地址握手】写入 PLC配方写入PC地址请求(21011)=1。");
+	       Plc.Write.PLC配方写入PC地址请求 = 1;
+	       result = await Plc.Write.WritePointAsync(PlcStructInfo.PLC配方写入PC地址请求);
+	       if (result.IsError())
+	          return result;
+	
+	       var timeoutAt = DateTime.Now.AddSeconds(15);
+	       while (DateTime.Now < timeoutAt)
+	       {
+	          await Task.Delay(200);
+	          result = await Plc.Read.ReadPointAsync(PlcStructInfo.PLC配方写入PC地址响应);
+	          if (result.IsError())
+	             return result;
+	
+	          Logger.Info("【PLC配方写入PC地址握手】读取 PLC配方写入PC地址响应(22011)={response}", Plc.Read.PLC配方写入PC地址响应);
+	          if (Plc.Read.PLC配方写入PC地址响应 == 1)
+	          {
+	             Logger.Info("【PLC配方写入PC地址握手】收到响应=1，复位 21011 和 22011。");
+	             Plc.Write.PLC配方写入PC地址请求 = 0;
+	             result = await Plc.Write.WritePointAsync(PlcStructInfo.PLC配方写入PC地址请求);
+	             if (result.IsError())
+	                return result;
+	
+	             Plc.Write.PLC配方写入PC地址响应 = 0;
+	             result = await Plc.Write.WritePointAsync(PlcStructInfo.PLC配方写入PC地址响应);
+	             return result;
+	          }
+	       }
+	
+	       Plc.Write.PLC配方写入PC地址请求 = 0;
+	       _ = await Plc.Write.WritePointAsync(PlcStructInfo.PLC配方写入PC地址请求);
+	       return Result.Err("等待 PLC配方写入PC地址响应(22011)=1 超过15秒。");
+	    }
 
+    public async Task<Result> DistributeRecipeAsync(ProductRecipe recipe)
+    {
+       var structInfo = recipe.GetStructInfo();
+       Logger.Info("Start distribute recipe '{recipeName}'", recipe.Name);
+       try
+       {
+          foreach (var group in BuildRecipePointGroups(recipe, structInfo, p => p.WriterData?.ToString()))
+          {
+             var connection = ConnectionManageService.GetConnection(group.ConnectionName) as IBinaryWriter;
+             if (connection is null)
+                return Result.Err($"Distribute recipe writer '{group.ConnectionName}' is not found.");
 
-	public async Task<Result> RequestPlcWriteRecipeAsync()
-	{
-		Result result;
-		Logger.Info("Requesting plc write recipe...");
-		do
-		{
-			Plc.Write.PLC配方写入PC地址请求 = 0;
-			result = await Plc.Write.WritePointAsync(PlcStructInfo.PLC配方写入PC地址请求);
-			if (result.IsError()) break;
-			// wait plc reset signal
-			await Task.Delay(200);
-			result = await Plc.Read.ReadPointAsync(PlcStructInfo.PLC配方写入PC地址响应);
-			if (result.IsError()) break;
-			if (Plc.Read.PLC配方写入PC地址响应 != 0)
-			{
-				result = Result.Err("plc is not reset response signal!");
-				break;
-			}
+             var writePointResult = await Task.Run(() => recipe.WritePointGroup(group.PointGroup, connection));
+             if (writePointResult.IsError())
+             {
+                Logger.Error(writePointResult.Exception,
+                   "Distribute recipe write point group error! writer='{writer}' start={start} end={end} {msg}",
+                   group.ConnectionName, group.PointGroup.Start, group.PointGroup.End,
+                   writePointResult.Message);
+                return writePointResult;
+             }
+          }
 
-			Plc.Write.PLC配方写入PC地址请求 = 1;
-			result = await Plc.Write.WritePointAsync(PlcStructInfo.PLC配方写入PC地址请求);
-			if (result.IsError())
-				break;
-			// waiting plc write recipe
-			await Task.Delay(500);
-			result = await Plc.Read.ReadPointAsync(PlcStructInfo.PLC配方写入PC地址响应);
-			if (result.IsError()) break;
-			if (Plc.Read.PLC配方写入PC地址响应 != 1)
-			{
-				result = Result.Err("plc write recipe response signal timeout!");
-				break;
-			}
-		} while (false);
+          Plc.Write.上位机当前配方ID = (short)recipe.Id;
+          Plc.Write.WritePoint(PlcStructInfo.上位机当前配方ID).Unwarp();
+       }
+       finally
+       {
+          Logger.Info("End distribute recipe '{recipeName}'", recipe.Name);
+       }
 
-		Logger.Info("Request Plc write recipe end.");
-		return result;
-	}
+       return Result.OK;
+    }
 
-	public async Task<Result> DistributeRecipeAsync(ProductRecipe recipe)
-	{
-		var structInfo = recipe.GetStructInfo();
-		Logger.Info("Start distribute recipe '{recipeName}'", recipe.Name);
-		try
-		{
-			foreach (var pointInfo in structInfo.Members.Values.OfType<IBinaryPointInfo>())
-			{
-				var writerName = pointInfo.WriterData?.ToString();
-				if (writerName == null)
-					continue;
-				var connection = ConnectionManageService.GetConnection(writerName) as IBinaryWriter;
-				var writePointResult = await recipe.WritePointAsync(pointInfo, connection);
-				if (writePointResult.IsError())
-				{
-					Logger.Error(writePointResult.Exception,
-						"Distribute recipe write point error! writer='{writer}' {msg}", writerName,
-						writePointResult.Message);
-					return writePointResult;
-				}
-			}
+	    public async Task<Result> NotifyRecipeDistributedToPlcAsync()
+	    {
+	       Logger.Info("【配方下发】配方值写入完成，开始执行 PLC配方写入PC地址请求/响应 握手。");
+	       return await RequestPlcWriteRecipeAsync();
+	    }
 
-			Plc.Write.上位机当前配方ID = (short)recipe.Id;
-			Plc.Write.WritePoint(PlcStructInfo.上位机当前配方ID).Unwarp();
-		}
-		finally
-		{
-			Logger.Info("End distribute recipe '{recipeName}'", recipe.Name);
-		}
+    public async Task<Result> CollectRecipeAsync(ProductRecipe recipe)
+    {
+       var reqResult = await RequestPlcWriteRecipeAsync();
+       if (reqResult.IsError())
+          return reqResult;
+       var structInfo = recipe.GetStructInfo();
+       foreach (var group in BuildRecipePointGroups(recipe, structInfo, p => p.ReaderData?.ToString()))
+       {
+          var connection = ConnectionManageService.GetConnection(group.ConnectionName) as IBinaryReader;
+          if (connection is null)
+             return Result.Err($"Collect recipe reader '{group.ConnectionName}' is not found.");
 
-		return Result.OK;
-	}
+          var readPointResult = await Task.Run(() => recipe.ReadPointGroup(group.PointGroup, connection));
+          
+          if (readPointResult.IsError())
+          {
+              Logger.Error(readPointResult.Exception,
+                 "collect recipe read point group error! reader='{reader}' start={start} end={end} {msg}",
+                 group.ConnectionName, group.PointGroup.Start, group.PointGroup.End,
+                 readPointResult.Message);
+              return Result.Err(readPointResult);
+          }
+       }
 
-	public async Task<Result> CollectRecipeAsync(ProductRecipe recipe)
-	{
-		var reqResult = await RequestPlcWriteRecipeAsync();
-		if (reqResult.IsError())
-			return reqResult;
-		var structInfo = recipe.GetStructInfo();
-		foreach (var pointInfo in structInfo.Members.Values.OfType<IBinaryPointInfo>())
-		{
-			var readerName = pointInfo.ReaderData?.ToString();
-			if (readerName == null)
-				continue;
-			var connection = ConnectionManageService.GetConnection(readerName) as IBinaryReader;
-			var readPointResult = await recipe.ReadPointAsync(pointInfo, connection);
-			Logger.Error(readPointResult.Exception,
-				"collect recipe read point error! {msg}",
-				readPointResult.Message);
-			return Result.Err(readPointResult);
-		}
+       return Result.OK;
+    }
 
-		return Result.OK;
-	}
+    private static List<(string ConnectionName, IBinaryPointGroupInfo PointGroup)> BuildRecipePointGroups(
+       ProductRecipe recipe,
+       IBinaryStructInfo structInfo,
+       Func<IBinaryPointInfo, string?> getConnectionName)
+    {
+       const int maxWordsPerGroup = 100;
+       var points = structInfo.Members.Values
+          .OfType<IBinaryPointInfo>()
+          .Select(pointInfo => ProductRecipe.GetEffectivePointInfo(recipe, pointInfo))
+          .Select(pointInfo => new
+          {
+             Point = pointInfo,
+             ConnectionName = getConnectionName(pointInfo),
+             WordLength = Math.Max(1, (int)Math.Ceiling(pointInfo.ByteLength / 2.0)),
+          })
+          .Where(t => string.IsNullOrWhiteSpace(t.ConnectionName) == false)
+          .OrderBy(t => t.ConnectionName)
+          .ThenBy(t => t.Point.Offset)
+          .ToList();
 
-	public bool CheckRecipe(string 机种型号)
-	{
-		var recipes = Recipe.GetRecipes() as List<ProductRecipe>;
-		var productRecipe = recipes?.FirstOrDefault(t => t.机种型号 == 机种型号);
-		if (productRecipe?.Name == RecipeName)
-			return true;
-		return false;
-	}
+       var groups = new List<(string ConnectionName, IBinaryPointGroupInfo PointGroup)>();
+       foreach (var connectionGroup in points.GroupBy(t => t.ConnectionName!))
+       {
+          var currentPoints = new List<IBinaryPointInfo>();
+          var currentStart = 0;
+          var currentEndExclusive = 0;
 
-	public Result RequestStartSwitchRecipe(string 机种型号)
-	{
-		var recipes = Recipe.GetRecipes() as List<ProductRecipe>;
-		var productRecipe = recipes?.FirstOrDefault(t => t.机种型号 == 机种型号);
-		if (productRecipe is null)
-			return Result.Err("recipe not found!");
-		请求切换的配方 = productRecipe;
-		return Result.OK;
-	}
+          foreach (var item in connectionGroup)
+          {
+             var pointStart = item.Point.Offset;
+             var pointEndExclusive = item.Point.Offset + item.WordLength;
+             var wouldExceedGroup = currentPoints.Count > 0 && pointEndExclusive - currentStart > maxWordsPerGroup;
+             if (wouldExceedGroup)
+             {
+                groups.Add((connectionGroup.Key, CreateRecipePointGroup(connectionGroup.Key, currentStart, currentEndExclusive, currentPoints)));
+                currentPoints = [];
+                currentStart = 0;
+                currentEndExclusive = 0;
+             }
 
-	public bool CheckRecipeMono(string 机种型号)
-	{
-		var recipes = Recipe.GetRecipes() as List<ProductRecipe>;
-		var productRecipe = recipes?.FirstOrDefault(t => t.机种型号 == 机种型号);
-		// 配方不一致直接NG
-		if (productRecipe?.Name != RecipeName)
-			return false;
-		var 产品上料信息 = productRecipe.产品上料信息;
-		var l1 = 产品上料信息[0];
-		var l2 = 产品上料信息[1];
-		var r1 = 产品上料信息[2];
-		var r2 = 产品上料信息[3];
-		// 飞达1验证
-		if (false == ((l1.上料码1 == 飞达1物料码) || (l1.上料码2 == 飞达1物料码) || (l1.上料码3 == 飞达1物料码) || (l1.上料码4 == 飞达1物料码)))
-			飞达1物料状态 = FeederMonoState.NotMatched;
-		else
-			飞达1物料状态 = FeederMonoState.Matched;
-		// 飞达2验证
-		if (false == ((l2.上料码1 == 飞达2物料码) || (l2.上料码2 == 飞达2物料码) || (l2.上料码3 == 飞达2物料码) || (l2.上料码4 == 飞达2物料码)))
-			飞达2物料状态 = FeederMonoState.NotMatched;
-		else
-			飞达2物料状态 = FeederMonoState.Matched;
+             if (currentPoints.Count == 0)
+             {
+                currentStart = pointStart;
+                currentEndExclusive = pointEndExclusive;
+             }
+             else
+             {
+                currentEndExclusive = Math.Max(currentEndExclusive, pointEndExclusive);
+             }
 
-		// 飞达3验证
-		if (false == ((r1.上料码1 == 飞达3物料码) || (r1.上料码2 == 飞达3物料码) || (r1.上料码3 == 飞达3物料码) || (r1.上料码4 == 飞达3物料码)))
-			飞达3物料状态 = FeederMonoState.NotMatched;
-		else
-			飞达3物料状态 = FeederMonoState.Matched;
+             currentPoints.Add(item.Point);
+          }
 
-		// 飞达4验证
-		if (false == ((r2.上料码1 == 飞达4物料码) || (r2.上料码2 == 飞达4物料码) || (r2.上料码3 == 飞达4物料码) || (r2.上料码4 == 飞达4物料码)))
-			飞达4物料状态 = FeederMonoState.NotMatched;
-		else
-			飞达4物料状态 = FeederMonoState.Matched;
+          if (currentPoints.Count > 0)
+             groups.Add((connectionGroup.Key, CreateRecipePointGroup(connectionGroup.Key, currentStart, currentEndExclusive, currentPoints)));
+       }
 
-		return 飞达1物料状态 == FeederMonoState.Matched &&
-		       飞达2物料状态 == FeederMonoState.Matched &&
-		       飞达3物料状态 == FeederMonoState.Matched &&
-		       飞达4物料状态 == FeederMonoState.Matched;
-	}
+       return groups;
+    }
+
+    private static IBinaryPointGroupInfo CreateRecipePointGroup(
+       string connectionName,
+       int start,
+       int endExclusive,
+       List<IBinaryPointInfo> points)
+    {
+       return new BinaryPointGroupInfo
+       {
+          Name = $"Recipe_{connectionName}_{start}_{endExclusive}",
+          Start = start,
+          End = endExclusive,
+          Source = start.ToString(),
+          ByteLength = Math.Max(0, (endExclusive - start) * 2),
+          ByteFormat = ByteFormat.CDAB,
+          Points = points,
+       };
+    }
+
+    public bool CheckRecipe(string 机种型号)
+    {
+       var recipes = Recipe.GetRecipes() as List<ProductRecipe>;
+       var productRecipe = recipes?.FirstOrDefault(t => t.机种型号 == 机种型号);
+       if (productRecipe?.Name == RecipeName)
+          return true;
+       return false;
+    }
+
+    public Result RequestStartSwitchRecipe(string 机种型号)
+    {
+       var recipes = Recipe.GetRecipes() as List<ProductRecipe>;
+       var productRecipe = recipes?.FirstOrDefault(t => t.机种型号 == 机种型号);
+       if (productRecipe is null)
+          return Result.Err("recipe not found!");
+       请求切换的配方 = productRecipe;
+       return Result.OK;
+    }
+
+    public ProductRecipe SetCurrentRecipeByMesModelName(string modelName)
+    {
+       var recipes = Recipe.GetRecipes().ToList();
+       if (recipes.Count == 0)
+       {
+          var loadResult = Recipe.LoadRecipes();
+          if (loadResult.IsError())
+          {
+             Logger.Warn("MES下发当前配方 '{modelName}'，但读取本地配方列表失败: {msg}", modelName, loadResult.Message);
+          }
+
+          recipes = Recipe.GetRecipes().ToList();
+       }
+
+       var productRecipe = recipes.FirstOrDefault(t => string.Equals(t.Name, modelName, StringComparison.OrdinalIgnoreCase))
+                           ?? recipes.FirstOrDefault(t => string.Equals(t.机种型号, modelName, StringComparison.OrdinalIgnoreCase));
+
+       if (productRecipe is null)
+       {
+          productRecipe = new ProductRecipe
+          {
+             Name = modelName,
+             机种型号 = modelName,
+          };
+          Logger.Warn("MES下发当前配方 '{modelName}'，本地配方列表未找到同名配方，仅用于生产信息显示。", modelName);
+       }
+
+       当前下发配方 = productRecipe;
+       RecipeName = productRecipe.Name;
+       return productRecipe;
+    }
+
+    public async Task<MesRecipePrepareState> PrepareRecipeByMesModelNameAsync(string modelName)
+    {
+       await _mesRecipePrepareLock.WaitAsync();
+       try
+       {
+          Logger.Info("【配方切换】MES MODEL_NAME={modelName}，开始与当前配方对比。", modelName);
+
+          var recipes = Recipe.GetRecipes().ToList();
+          if (recipes.Count == 0)
+          {
+             Logger.Info("【配方切换】本地配方缓存为空，开始重新加载全部配方。");
+             var loadResult = Recipe.LoadRecipes();
+             if (loadResult.IsError())
+             {
+                Logger.Error("【配方切换】读取本地配方列表失败: {msg}", loadResult.Message);
+                return MesRecipePrepareState.Failed;
+             }
+
+             recipes = Recipe.GetRecipes().ToList();
+          }
+
+          var targetRecipe = recipes.FirstOrDefault(t => IsMesModelMatched(t, modelName));
+          if (targetRecipe is null)
+          {
+             Logger.Error("【配方切换】未找到与 MES MODEL_NAME={modelName} 相同的本地配方，流程退出。", modelName);
+             return MesRecipePrepareState.RecipeNotFound;
+          }
+
+          var readPlcRecipeIdResult = await Plc.Read.ReadPointAsync(PlcStructInfo.PLC当前配方ID);
+          if (readPlcRecipeIdResult.IsError())
+          {
+             Logger.Error("【配方切换】读取 PLC当前配方ID(22010) 失败: {msg}", readPlcRecipeIdResult.Message);
+             return MesRecipePrepareState.Failed;
+          }
+
+          var currentRecipeText = 当前下发配方 is null
+             ? RecipeName
+             : $"{当前下发配方.Name}(Id={当前下发配方.Id}, 机种={当前下发配方.机种型号})";
+          Logger.Info("【配方切换】当前配方={currentRecipe}，PLC当前配方ID={plcRecipeId}，MES目标配方={targetRecipe}(Id={targetId}, 机种={targetModel})。",
+             currentRecipeText, Plc.Read.PLC当前配方ID, targetRecipe.Name, targetRecipe.Id, targetRecipe.机种型号);
+
+          var isSoftwareRecipeMatched = IsCurrentRecipeMatched(targetRecipe, modelName);
+          var isPlcRecipeIdMatched = Plc.Read.PLC当前配方ID == targetRecipe.Id;
+          if (isSoftwareRecipeMatched && isPlcRecipeIdMatched)
+          {
+             当前下发配方 = targetRecipe;
+             RecipeName = targetRecipe.Name;
+             Logger.Info("【配方切换】当前配方与 PLC当前配方ID 均已与 MES MODEL_NAME 一致，无需下发。");
+             return MesRecipePrepareState.Ready;
+          }
+
+          Logger.Warn("【配方切换】检测到配方不一致，软件配方匹配={softwareMatched}，PLC当前配方ID匹配={plcMatched}，目标配方={recipeName}(Id={recipeId})。",
+             isSoftwareRecipeMatched, isPlcRecipeIdMatched, targetRecipe.Name, targetRecipe.Id);
+
+          var confirmSwitch = await ConfirmRecipeSwitchAsync(targetRecipe, Plc.Read.PLC当前配方ID);
+          if (confirmSwitch == false)
+          {
+             Logger.Warn("【配方切换】用户取消配方切换，流程退出。");
+             return MesRecipePrepareState.UserCanceled;
+          }
+
+          Logger.Info("【配方切换】用户确认配方切换，开始执行配方下发逻辑: {recipeName}。", targetRecipe.Name);
+          var distributeResult = await DistributeRecipeAsync(targetRecipe);
+          if (distributeResult.IsError())
+          {
+             Logger.Error("【配方切换】配方下发失败: {msg}", distributeResult.Message);
+             return MesRecipePrepareState.Failed;
+          }
+
+          Logger.Info("【配方切换】配方下发完成，开始执行 PLC 配方写入握手。");
+          var plcAckState = await RequestPlcRecipeWriteAddressAckAsync();
+          if (plcAckState != MesRecipePrepareState.Ready)
+          {
+             Logger.Error("【配方切换】PLC 配方写入握手失败: {state}", plcAckState);
+             return plcAckState;
+          }
+
+          当前下发配方 = targetRecipe;
+          RecipeName = targetRecipe.Name;
+          Logger.Info("【配方切换】PLC读取配方ID切换成功响应(22414)=1，配方切换成功。");
+          return MesRecipePrepareState.Ready;
+       }
+       finally
+       {
+          _mesRecipePrepareLock.Release();
+       }
+    }
+
+    private Task<bool> ConfirmRecipeSwitchAsync(ProductRecipe targetRecipe, short plcRecipeId)
+    {
+       var tcs = new TaskCompletionSource<bool>();
+       Avalonia.Threading.Dispatcher.UIThread.Post(async () =>
+       {
+          try
+          {
+             if (AvaloniaApplication.Current?.AppVM is not AppVM appVM)
+             {
+                Logger.Error("【配方切换】无法获取 UI AppVM，取消自动配方切换。");
+                tcs.TrySetResult(false);
+                return;
+             }
+
+             var message =
+                $"是否执行配方切换？\n\n当前PLC配方ID：{plcRecipeId}\n目标配方：{targetRecipe.Name}\n目标配方ID：{targetRecipe.Id}";
+             var confirm = await appVM.ShowConfirmMessageBox(
+                message,
+                "配方切换确认");
+             tcs.TrySetResult(confirm);
+          }
+          catch (Exception ex)
+          {
+             Logger.Error(ex, "【配方切换】弹出配方切换确认框失败: {msg}", ex.Message);
+             tcs.TrySetResult(false);
+          }
+       });
+
+       return tcs.Task;
+    }
+
+    private async Task<MesRecipePrepareState> RequestPlcRecipeWriteAddressAckAsync()
+    {
+       Logger.Info("【配方切换】复位 PC配方写入完成信号(21230)=0。");
+       Plc.Write.PC配方写入完成信号 = 0;
+       var resetWriteResult = await Plc.Write.WritePointAsync(PlcStructInfo.PC配方写入完成信号);
+       if (resetWriteResult.IsError())
+       {
+          Logger.Error("【配方切换】复位 PC配方写入完成信号(21230) 失败: {msg}", resetWriteResult.Message);
+          return MesRecipePrepareState.Failed;
+       }
+
+       var resetTimeoutAt = DateTime.Now.AddSeconds(15);
+       while (DateTime.Now < resetTimeoutAt)
+       {
+          await Task.Delay(200);
+          var resetReadResult = await Plc.Read.ReadPointAsync(PlcStructInfo.PLC读取配方ID切换成功响应);
+          if (resetReadResult.IsError())
+          {
+             Logger.Error("【配方切换】读取 PLC读取配方ID切换成功响应(22414) 失败: {msg}", resetReadResult.Message);
+             return MesRecipePrepareState.Failed;
+          }
+
+          Logger.Info("【配方切换】等待 PLC读取配方ID切换成功响应(22414) 复位，当前响应={response}", Plc.Read.PLC读取配方ID切换成功响应);
+          if (Plc.Read.PLC读取配方ID切换成功响应 == 0)
+             break;
+       }
+
+       if (Plc.Read.PLC读取配方ID切换成功响应 != 0)
+       {
+          Logger.Error("【配方切换】等待 PLC读取配方ID切换成功响应(22414)=0 超过15秒。");
+          return MesRecipePrepareState.PlcResponseTimeout;
+       }
+
+       Logger.Info("【配方切换】写入 PC配方写入完成信号(21230)=1。");
+       Plc.Write.PC配方写入完成信号 = 1;
+       var writeResult = await Plc.Write.WritePointAsync(PlcStructInfo.PC配方写入完成信号);
+       if (writeResult.IsError())
+       {
+          Logger.Error("【配方切换】写入 PC配方写入完成信号(21230)=1 失败: {msg}", writeResult.Message);
+          return MesRecipePrepareState.Failed;
+       }
+
+       var timeoutAt = DateTime.Now.AddSeconds(15);
+       while (DateTime.Now < timeoutAt)
+       {
+          await Task.Delay(200);
+          var readResult = await Plc.Read.ReadPointAsync(PlcStructInfo.PLC读取配方ID切换成功响应);
+          if (readResult.IsError())
+          {
+             Logger.Error("【配方切换】读取 PLC读取配方ID切换成功响应(22414) 失败: {msg}", readResult.Message);
+             return MesRecipePrepareState.Failed;
+          }
+
+          Logger.Info("【配方切换】读取 PLC读取配方ID切换成功响应(22414)={response}", Plc.Read.PLC读取配方ID切换成功响应);
+          if (Plc.Read.PLC读取配方ID切换成功响应 == 1)
+          {
+             Logger.Info("【配方切换】收到 PLC 响应=1，复位 PC配方写入完成信号(21230)=0。");
+             Plc.Write.PC配方写入完成信号 = 0;
+             var clearResult = await Plc.Write.WritePointAsync(PlcStructInfo.PC配方写入完成信号);
+             if (clearResult.IsError())
+             {
+                Logger.Error("【配方切换】成功响应后复位 PC配方写入完成信号(21230) 失败: {msg}", clearResult.Message);
+                return MesRecipePrepareState.Failed;
+             }
+
+             return MesRecipePrepareState.Ready;
+          }
+       }
+
+       Logger.Error("【配方切换】等待 PLC读取配方ID切换成功响应(22414)=1 超过15秒。");
+       return MesRecipePrepareState.PlcResponseTimeout;
+    }
+
+    private bool IsCurrentRecipeMatched(ProductRecipe targetRecipe, string modelName)
+    {
+       if (当前下发配方 is not null)
+       {
+          return 当前下发配方.Id == targetRecipe.Id ||
+                 IsMesModelMatched(当前下发配方, modelName);
+       }
+
+       return string.Equals(RecipeName, targetRecipe.Name, StringComparison.OrdinalIgnoreCase) ||
+              string.Equals(RecipeName, targetRecipe.机种型号, StringComparison.OrdinalIgnoreCase);
+    }
+
+    private static bool IsMesModelMatched(ProductRecipe recipe, string modelName)
+    {
+       return string.Equals(recipe.Name, modelName, StringComparison.OrdinalIgnoreCase) ||
+              string.Equals(recipe.机种型号, modelName, StringComparison.OrdinalIgnoreCase);
+    }
+
+    public bool CheckRecipeMono(string 机种型号)
+    {
+       var recipes = Recipe.GetRecipes() as List<ProductRecipe>;
+       var productRecipe = recipes?.FirstOrDefault(t => t.机种型号 == 机种型号);
+       
+       // 配方不一致直接NG
+       if (productRecipe?.Name != RecipeName)
+          return false;
+          
+       EnsureFeederRows(productRecipe, 6);
+       var 产品上料信息 = productRecipe.产品上料信息;
+
+       bool CheckFeeder(int index, string currentMono, Action<FeederMonoState> setState, bool skipWhenCurrentEmpty = false)
+       {
+          var configInfo = 产品上料信息[index];
+          if (configInfo.是否使用 == false || (skipWhenCurrentEmpty && string.IsNullOrWhiteSpace(currentMono)))
+          {
+             setState(FeederMonoState.Matched);
+             return true;
+          }
+
+          var matched = IsMatch(currentMono, configInfo);
+          setState(matched ? FeederMonoState.Matched : FeederMonoState.NotMatched);
+          return matched;
+       }
+
+       var feeder1Matched = CheckFeeder(0, 飞达1物料码, state => 飞达1物料状态 = state);
+       var feeder2Matched = CheckFeeder(1, 飞达2物料码, state => 飞达2物料状态 = state);
+       var feeder3Matched = CheckFeeder(2, 飞达3物料码, state => 飞达3物料状态 = state);
+       var feeder4Matched = CheckFeeder(3, 飞达4物料码, state => 飞达4物料状态 = state);
+       var feeder5Matched = CheckFeeder(4, 飞达5物料码, state => 飞达5物料状态 = state, true);
+       var feeder6Matched = CheckFeeder(5, 飞达6物料码, state => 飞达6物料状态 = state, true);
+
+       return feeder1Matched &&
+              feeder2Matched &&
+              feeder3Matched &&
+              feeder4Matched &&
+              feeder5Matched &&
+              feeder6Matched;
+    }
+
+    private static bool IsMatch(string currentMono, 产品上料信息 configInfo)
+    {
+       if (string.IsNullOrWhiteSpace(currentMono))
+          return false;
+
+       return string.Equals(configInfo.上料码1, currentMono, StringComparison.Ordinal) ||
+              string.Equals(configInfo.上料码2, currentMono, StringComparison.Ordinal) ||
+              string.Equals(configInfo.上料码3, currentMono, StringComparison.Ordinal) ||
+              string.Equals(configInfo.上料码4, currentMono, StringComparison.Ordinal) ||
+              string.Equals(configInfo.上料码5, currentMono, StringComparison.Ordinal);
+    }
+
+    private static void EnsureFeederRows(ProductRecipe recipe, int count)
+    {
+       recipe.产品上料信息 ??= [];
+       for (var i = recipe.产品上料信息.Count; i < count; i++)
+       {
+          recipe.产品上料信息.Add(new 产品上料信息
+          {
+             是否使用 = true,
+             上料位置名 = $"飞达{i + 1}",
+             上料位置识别码 = "",
+             上料码1 = "",
+          });
+       }
+    }
 }

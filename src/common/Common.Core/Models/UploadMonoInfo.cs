@@ -2,6 +2,7 @@
 
 public class 产品上料信息
 {
+	public bool 是否使用 { get; set; } = true;
 	public string 上料位置名 { get; set; } = null!;
 	public string 上料位置识别码 { get; set; } = null!;
 	public string? 上料码1 { get; set; }

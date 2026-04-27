@@ -52,6 +52,10 @@
 									SelectedItem="{Binding SelectedRecipeName}" />
 				<TextBlock Margin="10 0 0 0" Text="{StaticResource I18N.Common.配方Id_}" VerticalAlignment="Center" />
 				<TextBox Text="{Binding EditRecipe.Id}" MinWidth="100" IsReadOnly="True" />
+				<Button Content="{StaticResource I18N.Common.应用}"
+								Classes="Primary"
+								Theme="{DynamicResource Button-Outline}"
+								Command="{Binding ApplySelectedRecipeCommand}" />
 				<Control LinearPanel.Weight="1" />
 				<Button Content="{StaticResource I18N.Common.删除}" Classes="Danger"
 								Theme="{DynamicResource Button-Outline}"
@@ -68,6 +72,10 @@
 				<Button Content="{StaticResource I18N.Common.新建}" Classes="Success"
 								Theme="{DynamicResource Button-Outline}"
 								Command="{Binding CreateNewRecipeCommand}" />
+				<Button Content="导入" Classes="Success"
+								Command="{Binding ImportSelectedRecipeCommand}" />
+				<Button Content="批量导入地址" Classes="Success"
+								Command="{Binding ImportAllRecipeSourcesCommand}" />
 				<Button Content="{StaticResource I18N.Common.导出}" Classes="Success"
 								Command="{Binding ExportSelectedRecipeCommand}" />
 				<Button Content="{StaticResource I18N.Common.保存}"
@@ -148,7 +156,36 @@
 				</DataGrid>
 			</TabItem>
 			<TabItem Header="{StaticResource I18N.Common.视觉}">
+				<Grid Margin="20" RowDefinitions="Auto,Auto,Auto,*" ColumnDefinitions="120,500,Auto" RowSpacing="12" ColumnSpacing="10">
+					<TextBlock Grid.Row="0" Grid.Column="0"
+										 Text="手动SN:"
+										 VerticalAlignment="Center"
+										 HorizontalAlignment="Right" />
+					<TextBox Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2"
+									 Text="{Binding AppConfig.ManualVisionSn, Mode=TwoWay}"
+									 Watermark="手动输入SN，区别于扫码SN" />
 
+					<TextBlock Grid.Row="1" Grid.Column="0"
+										 Text="图片路径:"
+										 VerticalAlignment="Center"
+										 HorizontalAlignment="Right" />
+					<TextBox Grid.Row="1" Grid.Column="1"
+									 Text="{Binding AppConfig.ManualVisionImagePath, Mode=TwoWay}"
+									 Watermark="选择要打包的图片文件夹" />
+					<Button Grid.Row="1" Grid.Column="2"
+									Content="选择路径"
+									Command="{Binding SelectManualVisionImagePathCommand}" />
+
+					<Button Grid.Row="2" Grid.Column="1"
+									Content="打包图片"
+									Classes="Primary"
+									HorizontalAlignment="Left"
+									Padding="20 4"
+									Command="{Binding PackManualVisionImagesCommand}" />
+					<TextBlock Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2"
+										 Text="输出目录：D:\MesZip，文件名：UUID_SN.zip"
+										 Foreground="{DynamicResource Brush-Foreground-Secondary}" />
+				</Grid>
 			</TabItem>
 		</TabControl>
 	</Grid>

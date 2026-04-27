@@ -4,21 +4,17 @@
 // using ZC.BinStructs.Ext;
 // using ZC.Mvvm;
 // using ZitApp.BinStructs;
-//
 // namespace ZitApp.Services;
-//
 // public enum FeederMonoState
 // {
 // 	Matched,
 // 	NotMatched,
 // }
-//
 // [RegisterToIOC(LifetimeType.Singleton)]
 // [ObservableObject]
 // public partial class CoreService : CoreServiceBase
 // {
 // 	public required ConnectionManageService ConnectionManageService { get; init; }
-//
 // 	public required ILogger Logger { get; init; }
 // 	public required PlcService Plc { get; init; }
 // 	public required RecipeService Recipe { get; init; }
@@ -38,9 +34,7 @@
 // 	public partial FeederMonoState 飞达3物料状态 { get; set; } = FeederMonoState.NotMatched;
 // 	public partial string 飞达4物料码 { get; set; } = "R-Test2";
 // 	public partial FeederMonoState 飞达4物料状态 { get; set; } = FeederMonoState.NotMatched;
-//
 // 	public override IMainTaskServiceOptions GetServiceOptions() => DefaultThreadMainTaskServiceOptions;
-//
 // 	protected override Task Main(CancellationToken ctk)
 // 	{
 // 		while (ctk.IsCancellationRequested == false)
@@ -56,17 +50,12 @@
 // 					Logger.Error("distribute recipe result error! {}", distributeRecipeResult.Message);
 // 					continue;
 // 				}
-//
 // 				Logger.Info("distribute recipe success!");
 // 				当前下发配方 = reqRecipe;
 // 			}
 // 		}
-//
-//
 // 		return Task.CompletedTask;
 // 	}
-//
-//
 // 	public async Task<Result> RequestPlcWriteRecipeAsync()
 // 	{
 // 		Result result;
@@ -85,7 +74,6 @@
 // 				result = Result.Err("plc is not reset response signal!");
 // 				break;
 // 			}
-//
 // 			Plc.Write.PLC配方写入PC地址请求 = 1;
 // 			result = await Plc.Write.WritePointAsync(PlcStructInfo.PLC配方写入PC地址请求);
 // 			if (result.IsError())
@@ -100,11 +88,9 @@
 // 				break;
 // 			}
 // 		} while (false);
-//
 // 		Logger.Info("Request Plc write recipe end.");
 // 		return result;
 // 	}
-//
 // 	public async Task<Result> DistributeRecipeAsync(ProductRecipe recipe)
 // 	{
 // 		var structInfo = recipe.GetStructInfo();
@@ -126,7 +112,6 @@
 // 					return writePointResult;
 // 				}
 // 			}
-//
 // 			Plc.Write.上位机当前配方ID = (short)recipe.Id;
 // 			Plc.Write.WritePoint(PlcStructInfo.上位机当前配方ID).Unwarp();
 // 		}
@@ -134,10 +119,8 @@
 // 		{
 // 			Logger.Info("End distribute recipe '{recipeName}'", recipe.Name);
 // 		}
-//
 // 		return Result.OK;
 // 	}
-//
 // 	public async Task<Result> CollectRecipeAsync(ProductRecipe recipe)
 // 	{
 // 		var reqResult = await RequestPlcWriteRecipeAsync();
@@ -156,10 +139,8 @@
 // 				readPointResult.Message);
 // 			return Result.Err(readPointResult);
 // 		}
-//
 // 		return Result.OK;
 // 	}
-//
 // 	public bool CheckRecipe(string 机种型号)
 // 	{
 // 		var recipes = Recipe.GetRecipes() as List<ProductRecipe>;
@@ -168,7 +149,6 @@
 // 			return true;
 // 		return false;
 // 	}
-//
 // 	public Result RequestStartSwitchRecipe(string 机种型号)
 // 	{
 // 		var recipes = Recipe.GetRecipes() as List<ProductRecipe>;
@@ -178,7 +158,6 @@
 // 		请求切换的配方 = productRecipe;
 // 		return Result.OK;
 // 	}
-//
 // 	public bool CheckRecipeMono(string 机种型号)
 // 	{
 // 		var recipes = Recipe.GetRecipes() as List<ProductRecipe>;
@@ -201,19 +180,16 @@
 // 			飞达2物料状态 = FeederMonoState.NotMatched;
 // 		else
 // 			飞达2物料状态 = FeederMonoState.Matched;
-//
 // 		// 飞达3验证
 // 		if (false == ((r1.上料码1 == 飞达3物料码) || (r1.上料码2 == 飞达3物料码) || (r1.上料码3 == 飞达3物料码) || (r1.上料码4 == 飞达3物料码)))
 // 			飞达3物料状态 = FeederMonoState.NotMatched;
 // 		else
 // 			飞达3物料状态 = FeederMonoState.Matched;
-//
 // 		// 飞达4验证
 // 		if (false == ((r2.上料码1 == 飞达4物料码) || (r2.上料码2 == 飞达4物料码) || (r2.上料码3 == 飞达4物料码) || (r2.上料码4 == 飞达4物料码)))
 // 			飞达4物料状态 = FeederMonoState.NotMatched;
 // 		else
 // 			飞达4物料状态 = FeederMonoState.Matched;
-//
 // 		return 飞达1物料状态 == FeederMonoState.Matched &&
 // 		       飞达2物料状态 == FeederMonoState.Matched &&
 // 		       飞达3物料状态 == FeederMonoState.Matched &&

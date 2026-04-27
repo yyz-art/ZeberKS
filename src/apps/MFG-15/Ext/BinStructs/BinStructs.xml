@@ -91,6 +91,7 @@
 			吸头1良率,PLC->PC,22402,float,
 			吸头2料号,PLC->PC,22410,int,
 			吸头2良率,PLC->PC,22412,float,
+			PLC读取配方ID切换成功响应,PLC->PC,22414,short,"1=配方ID切换成功,0=无请求"
 			吸头3料号,PLC->PC,22420,int,
 			吸头3良率,PLC->PC,22422,float,
 			吸头4料号,PLC->PC,22430,int,
@@ -143,6 +144,7 @@
 			Feeder2PC下发物料上料数量,PLC->PC,21222,int,
 			Feeder2解锁请求,PC->PLC,21228,short,预留
 			Feeder2换料请求,PC->PLC,21229,short,"1=查询是否允许换料,2=换料中,3=换料完成"
+			PC配方写入完成信号,PC->PLC,21230,short,"1=配方写入完成,0=无请求"
 			Feeder3PC下发料号,PLC->PC,21240,int,
 			Feeder3PC下发物料上料数量,PLC->PC,21242,int,
 			Feeder3解锁请求,PC->PLC,21248,short,预留

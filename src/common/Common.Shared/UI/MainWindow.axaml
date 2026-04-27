@@ -103,6 +103,7 @@
 						</MenuItem.ItemTemplate>
 					</MenuItem>
 				</MenuItem>
+				<MenuItem Header="飞达物料" Tag="/飞达物料" Classes="NavInstance" />
 			</Menu>
 			<Label Content="V0.0.1" Margin="15 0 0 0" VerticalAlignment="Center" Foreground="{StaticResource Brush-Text3}"></Label>
 			<Control LinearPanel.Weight="1" />

@@ -8,11 +8,8 @@
 // using ZitApp.BinStructs;
 // using ZitApp.Devices.Plc;
 // using ZitApp.Devices.Screw;
-//
 // namespace ZitApp.Services;
-//
 // [RegisterToIOC(LifetimeType.Singleton)]
 // public class RecipeService : RecipeService<ProductRecipe>
 // {
-//
 // }

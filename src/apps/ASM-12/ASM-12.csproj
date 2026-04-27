@@ -36,6 +36,14 @@
 	    <DependentUpon>RecipeView.axaml</DependentUpon>
 	    <SubType>Code</SubType>
 	  </Compile>
+	  <Compile Update="UI\Views\IoMonitorView.axaml.cs">
+	    <DependentUpon>IoMonitorView.axaml</DependentUpon>
+	    <SubType>Code</SubType>
+	  </Compile>
+	  <Compile Update="UI\Views\FeederMaterialView.axaml.cs">
+	    <DependentUpon>FeederMaterialView.axaml</DependentUpon>
+	    <SubType>Code</SubType>
+	  </Compile>
 	  <Compile Update="UI\Views\SystemConfigView.axaml.cs">
 	    <DependentUpon>SystemConfigView.axaml</DependentUpon>
 	    <SubType>Code</SubType>
@@ -69,6 +77,8 @@
 	  <AdditionalFiles Include="UI\Views\AlarmManageView.axaml" />
 	  <AdditionalFiles Include="UI\Views\MainView.axaml" />
 	  <AdditionalFiles Include="UI\Views\RecipeView.axaml" />
+	  <AdditionalFiles Include="UI\Views\IoMonitorView.axaml" />
+	  <AdditionalFiles Include="UI\Views\FeederMaterialView.axaml" />
 	  <AdditionalFiles Include="UI\Views\SystemConfigView.axaml" />
 	</ItemGroup>
 

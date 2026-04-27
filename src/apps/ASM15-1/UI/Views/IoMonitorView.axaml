@@ -1,0 +1,63 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:mvvm="clr-namespace:ZC.Mvvm;assembly=ZC.Framework"
+        xmlns:models="clr-namespace:ZitApp.Models"
+        mc:Ignorable="d" d:DesignWidth="850" d:DesignHeight="600"
+        x:Class="ZitApp.UI.IoMonitorView"
+        Title="PLC 实时 IO 监控"
+        WindowStartupLocation="CenterOwner"
+        Background="#1E1E1E">
+    
+    <Grid RowDefinitions="Auto,*">
+       
+       <Border Grid.Row="0" BorderBrush="#454548" BorderThickness="0 0 0 1">
+          <LinearPanel Orientation="Horizontal" Spacing="10" Padding="5">
+             <Label Content="PLC 实时 IO 监控" Theme="{StaticResource Label-Tag}" Classes="Ghost Green" Padding="5" />
+             <Control LinearPanel.Weight="1" />
+          </LinearPanel>
+       </Border>
+
+       <DataGrid Grid.Row="1" ItemsSource="{Binding IoItems}" 
+                 AutoGenerateColumns="False" 
+                 CanUserSortColumns="False" 
+                 IsReadOnly="False" 
+                 Margin="10">
+          <DataGrid.Columns>
+             <DataGridTextColumn Header="数据名称" x:DataType="models:IoItemModel" Binding="{Binding Name}" IsReadOnly="True" Width="200" />
+             <DataGridTextColumn Header="方向" x:DataType="models:IoItemModel" Binding="{Binding Direction}" IsReadOnly="True" Width="80" />
+             <DataGridTemplateColumn Header="地址 (可修改)" Width="150">
+                <DataGridTemplateColumn.CellTemplate>
+                   <DataTemplate>
+                      <TextBox x:DataType="models:IoItemModel" Text="{Binding Address, Mode=TwoWay}" Foreground="#00BFFF" Background="Transparent" BorderThickness="0" VerticalContentAlignment="Center" Padding="5,0,0,0"/>
+                   </DataTemplate>
+                </DataGridTemplateColumn.CellTemplate>
+             </DataGridTemplateColumn>
+             <DataGridTemplateColumn Header="内容" Width="150">
+                <DataGridTemplateColumn.CellTemplate>
+                   <DataTemplate>
+                      <TextBlock x:DataType="models:IoItemModel" Text="{Binding Value}" Foreground="LimeGreen" FontWeight="Bold" VerticalAlignment="Center" Margin="5,0,0,0"/>
+                   </DataTemplate>
+                </DataGridTemplateColumn.CellTemplate>
+             </DataGridTemplateColumn>
+             <DataGridTextColumn Header="备注" x:DataType="models:IoItemModel" Binding="{Binding Remark}" IsReadOnly="True" Width="400" />
+             <DataGridTemplateColumn Header="写入" Width="150">
+                <DataGridTemplateColumn.CellTemplate>
+                   <DataTemplate>
+                      <TextBox x:DataType="models:IoItemModel"
+                               Text="{Binding WriteValue, Mode=TwoWay}"
+                               Watermark="输入整数后回车"
+                               Foreground="#FFD580"
+                               Background="Transparent"
+                               BorderThickness="0"
+                               VerticalContentAlignment="Center"
+                               Padding="5,0,0,0"
+                               KeyDown="WriteValueTextBox_OnKeyDown"/>
+                   </DataTemplate>
+                </DataGridTemplateColumn.CellTemplate>
+             </DataGridTemplateColumn>
+          </DataGrid.Columns>
+       </DataGrid>
+    </Grid>
+</Window>

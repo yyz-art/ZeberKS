@@ -1,5 +1,9 @@
-﻿namespace ZitApp.Services;
+﻿using ZC.Mvvm;
+
+namespace ZitApp.Services; 
+
 [RegisterToIOC(LifetimeType.Singleton)]
-public class MesService : MesServiceBase<AppConfig>
+public partial class MesService : MesServiceBase<AppConfig>
 {
+   
 }

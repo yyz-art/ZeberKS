@@ -52,6 +52,10 @@
 									SelectedItem="{Binding SelectedRecipeName}" />
 				<TextBlock Margin="10 0 0 0" Text="{StaticResource I18N.Common.配方Id_}" VerticalAlignment="Center" />
 				<TextBox Text="{Binding EditRecipe.Id}" MinWidth="100" IsReadOnly="True" />
+				<Button Content="{StaticResource I18N.Common.应用}"
+								Classes="Primary"
+								Theme="{DynamicResource Button-Outline}"
+								Command="{Binding ApplySelectedRecipeCommand}" />
 				<Control LinearPanel.Weight="1" />
 				<Button Content="{StaticResource I18N.Common.删除}" Classes="Danger"
 								Theme="{DynamicResource Button-Outline}"
@@ -68,6 +72,10 @@
 				<Button Content="{StaticResource I18N.Common.新建}" Classes="Success"
 								Theme="{DynamicResource Button-Outline}"
 								Command="{Binding CreateNewRecipeCommand}" />
+				<Button Content="导入" Classes="Success"
+								Command="{Binding ImportSelectedRecipeCommand}" />
+				<Button Content="批量导入地址" Classes="Success"
+								Command="{Binding ImportAllRecipeSourcesCommand}" />
 				<Button Content="{StaticResource I18N.Common.导出}" Classes="Success"
 								Command="{Binding ExportSelectedRecipeCommand}" />
 				<Button Content="{StaticResource I18N.Common.保存}"

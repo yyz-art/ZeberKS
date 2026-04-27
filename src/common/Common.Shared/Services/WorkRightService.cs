@@ -4,9 +4,7 @@
 // using ZC.DP.Number;
 // using ZC.EasyIO;
 // using ZitApp.BinStructs;
-//
 // namespace ZitApp.Services;
-//
 // [RegisterToIOC(LifetimeType.Singleton)]
 // // [RegisterToTaskService(TaskStartMode.Automatic)]
 // public class WorkRightService : WorkServiceBase
@@ -15,9 +13,7 @@
 // 	public required PlcService Plc { get; init; }
 // 	public required CoreService Core { get; init; }
 // 	private byte[] _buffer = new byte[1024];
-//
 // 	public override IMainTaskServiceOptions GetServiceOptions() => DefaultThreadMainTaskServiceOptions;
-//
 // 	protected override Task Main(CancellationToken ctk)
 // 	{
 // 		Span<char> charBuffer = stackalloc char[1024];
@@ -31,7 +27,6 @@
 // 				Plc.Write.WritePoint(PlcStructInfo.扫码枪2触发结果).Unwarp("Clear left scanner result failed!");
 // 				continue;
 // 			}
-//
 // 			if (Plc.Read.扫码枪2触发 != 1) continue;
 // 			Socket.ReadToDiscard().Unwarp("Clear left scanner cache failed!");
 // 			Socket.Write(StartScanCommandBytes).Unwarp("Send left scanner scan command failed!");
@@ -43,7 +38,6 @@
 // 				Logger.Error("Start scan command response data is error! {}", responseHex);
 // 				goto SendNG;
 // 			}
-//
 // 			var codeBytes = _buffer.AsSpan(StartScanResponseBytes.Length, readLength - StartScanResponseBytes.Length);
 // 			if (false == Encoding.UTF8.TryGetChars(codeBytes, charBuffer, out var codeLength))
 // 			{
@@ -51,10 +45,8 @@
 // 				Logger.Error("Start scan command response code is error! {}", responseHex);
 // 				goto SendNG;
 // 			}
-//
 // 			var code = charBuffer.Slice(0, codeLength).ToString();
 // 			Logger.Info("Scanned code is '{code}'", code);
-//
 // 			SendOK:
 // 			Plc.Write.扫码枪2触发结果 = CodeOfOK;
 // 			Plc.Write.WritePoint(PlcStructInfo.扫码枪2触发结果).Unwarp("write left scanner scan result failed!");
@@ -64,7 +56,6 @@
 // 			Plc.Write.WritePoint(PlcStructInfo.扫码枪2触发结果).Unwarp("write left scanner scan result failed!");
 // 			continue;
 // 		}
-//
 // 		return Task.CompletedTask;
 // 	}
 // }
