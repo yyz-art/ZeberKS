@@ -38,20 +38,12 @@
 		  <DependentUpon>AlarmManageView.axaml</DependentUpon>
 		  <SubType>Code</SubType>
 		</Compile>
-		<Compile Update="UI\Views\IoMonitorView.axaml.cs">
-		  <DependentUpon>IoMonitorView.axaml</DependentUpon>
-		  <SubType>Code</SubType>
-		</Compile>
-		<Compile Update="UI\Views\FeederMaterialView.axaml.cs">
-		  <DependentUpon>FeederMaterialView.axaml</DependentUpon>
-		  <SubType>Code</SubType>
-		</Compile>
 	</ItemGroup>
 	<ItemGroup>
 		<PackageReference Include="System.IO.Ports" Version="10.0.3"/>
 	</ItemGroup>
 	<ItemGroup>
-		<Folder Include="Assets\.generated\"/>
+	  <Folder Include="UI\ViewModels\" />
 	</ItemGroup>
 
 </Project>

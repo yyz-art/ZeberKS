@@ -1,6 +1,6 @@
 namespace ZitApp.Models;
 
-public enum PassState
+public enum OkNgState
 {
 	NA,
 	OK,

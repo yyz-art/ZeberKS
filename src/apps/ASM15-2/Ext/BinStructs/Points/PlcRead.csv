@@ -1,0 +1,68 @@
+﻿Name,DataDir,Offset,DataType,Description
+PLC心跳,PLC->PC,22000,short,
+PLC状态,PLC->PC,22001,short,"1=启动,2=停止,3=初始化中,4=报警中"
+PLC错误码,PLC->PC,22002,short,
+工位1状态,PLC->PC,22003,short,"1=启动,2=停止,3=初始化中,4=报警中"
+工位2状态,PLC->PC,22004,short,"1=启动,2=停止,3=初始化中,4=报警中"
+PLC当前配方ID,PLC->PC,22010,short,PLC初始化使用的配方ID
+PLC配方写入PC地址响应,PLC->PC,22011,short,"1=已完成,0=无请求 "
+PLC读取配方ID切换成功响应,PLC->PC,22012,short,"1=已完成,0=无请求 "
+工位1数据上报请求,PLC->PC,22015,short,"0=未上报,1=OK,2=NG,收到响应后复位"
+工位2数据上报请求,PLC->PC,22016,short,"0=未上报,1=OK,2=NG,收到响应后复位"
+扫码枪1触发,PLC->PC,22020,short,大于等于1触发，收到响应后复位
+扫码枪2触发,PLC->PC,22021,short,大于等于1触发，收到响应后复位
+工位1生产状态,PLC->PC,22025,short,1=生产中,2=空闲中
+工位2生产状态,PLC->PC,22026,short,1=生产中,2=空闲中
+上相机连接状态,PLC->PC,22030,short,1=正常，2断开
+下相机1连接状态,PLC->PC,22031,short,1=正常，2断开
+下相机2连接状态,PLC->PC,22032,short,1=正常，2断开
+已生产数量,PLC->PC,22050,int,
+良率,PLC->PC,22052,float,
+CT,PLC->PC,22054,float,单位ms
+工位1轨道百分比位置,PLC->PC,22060,float,0.5 = 50%
+工位2轨道百分比位置,PLC->PC,22062,float,0.5 = 50%
+工位1螺丝拧紧完成信号,PLC->PC,22075,short,[1-n] n最大螺丝颗数 0=无
+工位2螺丝拧紧完成信号,PLC->PC,22076,short,[1-n] n最大螺丝颗数 0=无
+Feeder1料号,PLC->PC,22200,int,
+Feeder1物料上料数量,PLC->PC,22202,int,
+Feeder1物料剩余数量,PLC->PC,22204,int,
+Feeder1抛料率,PLC->PC,22206,float,
+Feeder1解锁响应,PLC->PC,22208,short,预留
+Feeder1换料响应,PLC->PC,22209,short,"0=不允许换料，1=允许换料,2=收到换料中,3=收到换料完成"
+Feeder2料号,PLC->PC,22220,int,
+Feeder2物料上料数量,PLC->PC,22222,int,
+Feeder2物料剩余数量,PLC->PC,22224,int,
+Feeder2抛料率,PLC->PC,22226,float,
+Feeder2解锁响应,PLC->PC,22228,short,预留
+Feeder2换料响应,PLC->PC,22229,short,"0=不允许换料，1=允许换料,2=收到换料中,3=收到换料完成"
+Feeder3料号,PLC->PC,22240,int,
+Feeder3物料上料数量,PLC->PC,22242,int,
+Feeder3物料剩余数量,PLC->PC,22244,int,
+Feeder3抛料率,PLC->PC,22246,float,
+Feeder3解锁响应,PLC->PC,22248,short,预留
+Feeder3换料响应,PLC->PC,22249,short,"0=不允许换料，1=允许换料,2=收到换料中,3=收到换料完成"
+Feeder4料号,PLC->PC,22260,int,
+Feeder4物料上料数量,PLC->PC,22262,int,
+Feeder4物料剩余数量,PLC->PC,22264,int,
+Feeder4抛料率,PLC->PC,22266,float,
+Feeder4解锁响应,PLC->PC,22268,short,预留
+Feeder4换料响应,PLC->PC,22269,short,"0=不允许换料，1=允许换料,2=收到换料中,3=收到换料完成"
+Feeder5料号,PLC->PC,22280,int,
+Feeder5物料上料数量,PLC->PC,22282,int,
+Feeder5物料剩余数量,PLC->PC,22284,int,
+Feeder5抛料率,PLC->PC,22286,float,
+Feeder5解锁响应,PLC->PC,22288,short,预留
+Feeder5换料响应,PLC->PC,22289,short,"0=不允许换料，1=允许换料,2=收到换料中,3=收到换料完成"
+Feeder6料号,PLC->PC,22300,int,
+Feeder6物料上料数量,PLC->PC,22302,int,
+Feeder6物料剩余数量,PLC->PC,22304,int,
+Feeder6抛料率,PLC->PC,22306,float,
+Feeder6解锁响应,PLC->PC,22308,short,预留
+Feeder6换料响应,PLC->PC,22309,short,"0=不允许换料，1=允许换料,2=收到换料中,3=收到换料完成"
+吸头1压力,PLC->PC,22800,float,
+吸头2压力,PLC->PC,22810,float,
+吸头3压力,PLC->PC,22820,float,
+吸头4压力,PLC->PC,22830,float,
+吸头5压力,PLC->PC,22840,float,
+吸头6压力,PLC->PC,22850,float,
+吸头7压力,PLC->PC,22860,float,

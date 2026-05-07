@@ -1,4 +1,5 @@
-﻿using System.Text.Json;
+﻿using System.IO.Ports;
+using System.Text.Json;
 using ZC;
 using ZC.DB;
 using ZC.Development;
@@ -12,8 +13,9 @@ using ZitApp.Devices.Plc;
 using ZitApp.Models;
 using ZitApp.Services;
 
-Result.EnableCollectErrorStackTrace = Debugger.IsAttached;
-DevUtils.DebugMode = DevDebugMode.LocalDebug;
+CommonAppConfig.MaterialSpaceCount = 4;
+CommonAppConfig.IsDevTestMode = Debugger.IsAttached;
+DevUtils.DebugMode = Debugger.IsAttached ? DevDebugMode.LocalDebug : 0;
 EnhanceAppCore.InitializeEnvironment();
 ObjectContainerOptions.Default.EnableCyclicDependencyCheck = true;
 var config = new AppConfig
@@ -45,9 +47,19 @@ public sealed class App(AppConfig config) : CommonUiAppCore(config)
 	{
 		// IOC.GetOrNull<IAppStartUpVM>()?.SetProgress(40, 500);
 		using var dbClient = IOC.Get<ISqlSugarClient>();
-		dbClient.CodeFirst.InitTables<DbKeyValueItem,AlarmRecord>();
-		IOC.AddSingleton<IDataSocket>(specialName: "Scanner-L", creator: _ => new SerialPortSocket(Config.Scanner1));
-		IOC.AddSingleton<IDataSocket>(specialName: "Scanner-R", creator: _ => new SerialPortSocket(Config.Scanner2));
+		dbClient.CodeFirst.InitTables<DbKeyValueItem, AlarmRecord>();
+		IOC.AddSingleton<IDataSocket>(specialName: "Scanner工位1", creator: _ => new SerialPortSocket(Config.Scanner1)
+		{
+			Parity = Parity.None,
+			DataBits = 8,
+			StopBits = StopBits.One
+		});
+		IOC.AddSingleton<IDataSocket>(specialName: "Scanner工位2", creator: _ => new SerialPortSocket(Config.Scanner2)
+		{
+			Parity = Parity.None,
+			DataBits = 8,
+			StopBits = StopBits.One
+		});
 		IOC.AddSingleton<XinJEPlcClient>(creator: oc => oc.Get<XinJEPlcClient>(
 			InjectArgument.Create<INetworkSocketConfig>(Config.Plc)));
 		await StartUi();

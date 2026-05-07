@@ -3,7 +3,7 @@
 		<RootNamespace>$(ProjectApplicationBaseName)</RootNamespace>
 		<AssemblyName>$(ProjectApplicationBaseName)</AssemblyName>
 		<OutputType>Exe</OutputType>
-		<DefineConstants>$(DefineConstants);MFG-15;DEFINE_MODEL_INCLUDE</DefineConstants>
+		<DefineConstants>$(DefineConstants);MFG_15;DEFINE_MODEL_INCLUDE</DefineConstants>
 		<ApplicationManifest>Assets/app.manifest</ApplicationManifest>
 		<IsUiProject>true</IsUiProject>
 	</PropertyGroup>
@@ -25,7 +25,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<Reference Include="C:\Program Files\dotnet\shared\Microsoft.WindowsDesktop.App\10.0.3\Accessibility.dll"/>
+<!--		<Reference Include="C:\Program Files\dotnet\shared\Microsoft.WindowsDesktop.App\10.0.3\Accessibility.dll"/>-->
 		<PackageReference Include="FlaUI.UIA3" Version="5.0.0" />
 	</ItemGroup>
 

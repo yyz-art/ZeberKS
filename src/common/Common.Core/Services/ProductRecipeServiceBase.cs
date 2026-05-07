@@ -15,7 +15,7 @@ public class RecipeService<T> where T : ProductRecipeBase
 
 	public Result LoadRecipes()
 	{
-		var getRecipeNamesResult = GetRecipeNames();
+		var getRecipeNamesResult = KvStorage.GetItemNames(RecipesKvStorageName);
 		if (getRecipeNamesResult.IsError())
 			return getRecipeNamesResult;
 		Recipes.Clear();
@@ -30,46 +30,56 @@ public class RecipeService<T> where T : ProductRecipeBase
 		return Result.OK;
 	}
 
-	public Result<T> GetRecipe(string name, bool useLocalCache)
+	public Result<T> GetRecipe(string name)
 	{
-		if (Recipes.Count == 0)
+		foreach (var recipe in Recipes)
 		{
-			var loadRecipesResult = LoadRecipes();
-			if (loadRecipesResult.IsError())
-				return Result.Err<T>(loadRecipesResult);
+			if (recipe.Name == name)
+				return Result.Ok(recipe);
 		}
 
-		if (useLocalCache)
+		return Result.Err<T>("Recipe not found!");
+	}
+	
+	public Result<T> GetRecipeByModelName(string name)
+	{
+		foreach (var recipe in Recipes)
 		{
-			foreach (var recipe in Recipes)
-			{
-				if (recipe.Name == name)
-					return Result.Ok(recipe);
-			}
+			if (recipe.Name == name)
+				return Result.Ok(recipe);
+			if(recipe.ModelName == name)
+				return Result.Ok(recipe);
 		}
-
-		var getResult = KvStorage.GetValue<T>(RecipesKvStorageName, name);
-		if (getResult.IsOk() && useLocalCache)
-		{
-			Recipes.Add(getResult.Value!);
-		}
-
-		return getResult;
+		return Result.Err<T>("Recipe not found!");
 	}
 
 	public void RemoveLocalRecipeCache(string name) => Recipes.RemoveAll(t => t.Name == name);
 
 	public Result UpdateRecipe(T recipe)
 	{
+		TryFixRecipe(recipe);
 		return KvStorage.SetValue(RecipesKvStorageName, recipe.Name, recipe);
 	}
 
+	public void TryFixRecipe(T recipe)
+	{
+		var 产品上料信息 = recipe.MaterialConfigs ??= [];
+		if(产品上料信息.Count >= 6)return;
+		for (var i = 产品上料信息.Count; i <= 5; i++)
+		{
+			产品上料信息.Add(new MaterialConfig { Id = i+1, PositionName = $"上料位置{i+1}"});
+		}
+
+		recipe.MaterialConfigs = null!;
+		recipe.MaterialConfigs = 产品上料信息;
+	}
 	public Result CreateRecipe(T recipe)
 	{
 		if (recipe.Id == 0)
 			recipe.Id = Recipes.Count > 0 ? Recipes.Max(t => t.Id) + 1 : 1;
 		if (Recipes.Any(t => t.Id == recipe.Id))
 			return Result.Err("Recipe with this id already exists.");
+		TryFixRecipe(recipe);
 		var setValueResult = KvStorage.SetValue(RecipesKvStorageName, recipe.Name, recipe);
 		if (setValueResult.IsError())
 			return setValueResult;
@@ -88,8 +98,7 @@ public class RecipeService<T> where T : ProductRecipeBase
 		return ret;
 	}
 
-	public Result<IEnumerable<string>> GetRecipeNames() =>
-		KvStorage.GetItemNames(RecipesKvStorageName);
+	public Result<IEnumerable<string>> GetRecipeNames() => Result.Ok(Recipes.Select(t=>t.Name));
 
 	public ValueTask<Result<IEnumerable<string>>> GetRecipeNamesAsync() =>
 		KvStorage.GetItemNamesAsync(RecipesKvStorageName);

@@ -1,13 +1,12 @@
 ﻿namespace ZitApp.Models;
 
-public class 产品上料信息
+public class MaterialConfig
 {
-	public bool 是否使用 { get; set; } = true;
-	public string 上料位置名 { get; set; } = null!;
-	public string 上料位置识别码 { get; set; } = null!;
-	public string? 上料码1 { get; set; }
-	public string? 上料码2 { get; set; }
-	public string? 上料码3 { get; set; }
-	public string? 上料码4 { get; set; }
-	public string? 上料码5 { get; set; }
+	public int Id { get; set; }
+	public bool IsUsed { get; set; } = true;
+	public string PositionName { get; set; } = null!;
+	
+	public int AlarmRemainCount { get; set; }
+	public int DefaultReplaceCount { get; set; }
+	public string[] MaterialCodes { get; set; } = new string[4];
 }

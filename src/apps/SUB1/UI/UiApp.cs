@@ -1,5 +1,5 @@
 using Avalonia.Markup.Xaml;
-using HotAvalonia;
+//using HotAvalonia;
 using LiveChartsCore;
 using ZC;
 using ReactiveUI.Avalonia;
@@ -19,17 +19,21 @@ public class UiApp : CommonUiApp
 			.AddLiveChartsAppSettings()); // mark
 #if DEBUG
 		// 启用HotAvalonia热重载功能
-		HotAvalonia.AvaloniaHotReload.Enable(this);
+		// if (Debugger.IsAttached)
+		// 	HotAvalonia.AvaloniaHotReload.Enable(this);
 #endif
 	}
 
 
-	public static AppBuilder Build() =>
-		AppBuilder.Configure<UiApp>().UseSkia().UsePlatformDetect().LogToTrace().UseReactiveUI()
-#if DEBUG
-			.UseHotReload()
-#endif
-	;
+	public static AppBuilder Build()
+	{
+		var app = AppBuilder.Configure<UiApp>().UseSkia().UsePlatformDetect().LogToTrace().UseReactiveUI();
+// #if DEBUG
+// 		if (Debugger.IsAttached)
+// 			app.UseHotReload();
+// #endif
+		return app;
+	}
 
 	public static Task StartAsync()
 	{

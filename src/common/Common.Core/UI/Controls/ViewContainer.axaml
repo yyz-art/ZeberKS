@@ -15,9 +15,9 @@
 				<LinearPanel Orientation="Vertical" Background="{TemplateBinding Background}"
 										VerticalAlignment="{TemplateBinding VerticalAlignment}"
 										HorizontalAlignment="{TemplateBinding HorizontalAlignment}">
-					<LinearPanel Orientation="Horizontal" Background="#2d2d30">
+					<Border Background="#2d2d30">
 						<ContentPresenter Content="{TemplateBinding Header}" />
-					</LinearPanel>
+					</Border>
 				<ContentPresenter LinearPanel.Weight="1"
 						Name="PART_ContentPresenter"
 						Padding="{TemplateBinding Padding}"

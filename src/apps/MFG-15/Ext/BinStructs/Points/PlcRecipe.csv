@@ -1,0 +1,308 @@
+﻿Category,Name,Offset,NameByCN,NameByEN,NameByVI
+PLC/X_Axis_Pos,X_Axis_Pos_0,24000,X_Axis_Pos_0,X_Axis_Pos_0,X_trục_Địa điểm_0
+PLC/X_Axis_Pos,X_Axis_Pos_1,24002,X_Axis_Pos_1,X_Axis_Pos_1,X_trục_Địa điểm_1
+PLC/X_Axis_Pos,X_Axis_Pos_2,24004,X_Axis_Pos_2,X_Axis_Pos_2,X_trục_Địa điểm_2
+PLC/X_Axis_Pos,X_Axis_Pos_3,24006,X_Axis_Pos_3,X_Axis_Pos_3,X_trục_Địa điểm_3
+PLC/X_Axis_Pos,X_Axis_Pos_4,24008,X_Axis_Pos_4,X_Axis_Pos_4,X_trục_Địa điểm_4
+PLC/X_Axis_Pos,X_Axis_Pos_5,24010,X_Axis_Pos_5,X_Axis_Pos_5,X_trục_Địa điểm_5
+PLC/X_Axis_Pos,X_Axis_Pos_6,24012,X_Axis_Pos_6,X_Axis_Pos_6,X_trục_Địa điểm_6
+PLC/X_Axis_Pos,X_Axis_Pos_7,24014,X_Axis_Pos_7,X_Axis_Pos_7,X_trục_Địa điểm_7
+PLC/X_Axis_Pos,X_Axis_Pos_8,24016,X_Axis_Pos_8,X_Axis_Pos_8,X_trục_Địa điểm_8
+PLC/X_Axis_Pos,X_Axis_Pos_9,24018,X_Axis_Pos_9,X_Axis_Pos_9,X_trục_Địa điểm_9
+PLC/X_Axis_Pos,X_Axis_Pos_10,24020,X_Axis_Pos_10,X_Axis_Pos_10,X_trục_Địa điểm_10
+PLC/X_Axis_Pos,X_Axis_Pos_11,24022,X_Axis_Pos_11,X_Axis_Pos_11,X_trục_Địa điểm_11
+PLC/X_Axis_Pos,X_Axis_Pos_12,24024,X_Axis_Pos_12,X_Axis_Pos_12,X_trục_Địa điểm_12
+PLC/X_Axis_Pos,X_Axis_Pos_13,24026,X_Axis_Pos_13,X_Axis_Pos_13,X_trục_Địa điểm_13
+PLC/X_Axis_Pos,X_Axis_Pos_14,24028,X_Axis_Pos_14,X_Axis_Pos_14,X_trục_Địa điểm_14
+PLC/X_Axis_Pos,X_Axis_Pos_15,24030,X_Axis_Pos_15,X_Axis_Pos_15,X_trục_Địa điểm_15
+PLC/X_Axis_Pos,X_Axis_Pos_16,24032,X_Axis_Pos_16,X_Axis_Pos_16,X_trục_Địa điểm_16
+PLC/X_Axis_Pos,X_Axis_Pos_17,24034,X_Axis_Pos_17,X_Axis_Pos_17,X_trục_Địa điểm_17
+PLC/X_Axis_Pos,X_Axis_Pos_18,24036,X_Axis_Pos_18,X_Axis_Pos_18,X_trục_Địa điểm_18
+PLC/X_Axis_Pos,X_Axis_Pos_19,24038,X_Axis_Pos_19,X_Axis_Pos_19,X_trục_Địa điểm_19
+PLC/X_Axis_Pos,X_Axis_Pos_20,24040,X_Axis_Pos_20,X_Axis_Pos_20,X_trục_Địa điểm_20
+
+PLC/X_Axis_Vel,X_Axis_Vel_0,24050,X_Axis_Vel_0,X_Axis_Vel_0,X_trục_tốc độ_0
+PLC/X_Axis_Vel,X_Axis_Vel_1,24052,X_Axis_Vel_1,X_Axis_Vel_1,X_trục_tốc độ_1
+PLC/X_Axis_Vel,X_Axis_Vel_2,24054,X_Axis_Vel_2,X_Axis_Vel_2,X_trục_tốc độ_2
+PLC/X_Axis_Vel,X_Axis_Vel_3,24056,X_Axis_Vel_3,X_Axis_Vel_3,X_trục_tốc độ_3
+PLC/X_Axis_Vel,X_Axis_Vel_4,24058,X_Axis_Vel_4,X_Axis_Vel_4,X_trục_tốc độ_4
+PLC/X_Axis_Vel,X_Axis_Vel_5,24060,X_Axis_Vel_5,X_Axis_Vel_5,X_trục_tốc độ_5
+PLC/X_Axis_Vel,X_Axis_Vel_6,24062,X_Axis_Vel_6,X_Axis_Vel_6,X_trục_tốc độ_6
+PLC/X_Axis_Vel,X_Axis_Vel_7,24064,X_Axis_Vel_7,X_Axis_Vel_7,X_trục_tốc độ_7
+PLC/X_Axis_Vel,X_Axis_Vel_8,24066,X_Axis_Vel_8,X_Axis_Vel_8,X_trục_tốc độ_8
+PLC/X_Axis_Vel,X_Axis_Vel_9,24068,X_Axis_Vel_9,X_Axis_Vel_9,X_trục_tốc độ_9
+PLC/X_Axis_Vel,X_Axis_Vel_10,24070,X_Axis_Vel_10,X_Axis_Vel_10,X_trục_tốc độ_10
+PLC/X_Axis_Vel,X_Axis_Vel_11,24072,X_Axis_Vel_11,X_Axis_Vel_11,X_trục_tốc độ_11
+PLC/X_Axis_Vel,X_Axis_Vel_12,24074,X_Axis_Vel_12,X_Axis_Vel_12,X_trục_tốc độ_12
+PLC/X_Axis_Vel,X_Axis_Vel_13,24076,X_Axis_Vel_13,X_Axis_Vel_13,X_trục_tốc độ_13
+PLC/X_Axis_Vel,X_Axis_Vel_14,24078,X_Axis_Vel_14,X_Axis_Vel_14,X_trục_tốc độ_14
+PLC/X_Axis_Vel,X_Axis_Vel_15,24080,X_Axis_Vel_15,X_Axis_Vel_15,X_trục_tốc độ_15
+PLC/X_Axis_Vel,X_Axis_Vel_16,24082,X_Axis_Vel_16,X_Axis_Vel_16,X_trục_tốc độ_16
+PLC/X_Axis_Vel,X_Axis_Vel_17,24084,X_Axis_Vel_17,X_Axis_Vel_17,X_trục_tốc độ_17
+PLC/X_Axis_Vel,X_Axis_Vel_18,24086,X_Axis_Vel_18,X_Axis_Vel_18,X_trục_tốc độ_18
+PLC/X_Axis_Vel,X_Axis_Vel_19,24088,X_Axis_Vel_19,X_Axis_Vel_19,X_trục_tốc độ_19
+PLC/X_Axis_Vel,X_Axis_Vel_20,24090,X_Axis_Vel_20,X_Axis_Vel_20,X_trục_tốc độ_20
+
+PLC/Y_Axis_Pos,Y_Axis_Pos_0,24100,Y_Axis_Pos_0,Y_Axis_Pos_0,Y_trục_Địa điểm_0
+PLC/Y_Axis_Pos,Y_Axis_Pos_1,24102,Y_Axis_Pos_1,Y_Axis_Pos_1,Y_trục_Địa điểm_1
+PLC/Y_Axis_Pos,Y_Axis_Pos_2,24104,Y_Axis_Pos_2,Y_Axis_Pos_2,Y_trục_Địa điểm_2
+PLC/Y_Axis_Pos,Y_Axis_Pos_3,24106,Y_Axis_Pos_3,Y_Axis_Pos_3,Y_trục_Địa điểm_3
+PLC/Y_Axis_Pos,Y_Axis_Pos_4,24108,Y_Axis_Pos_4,Y_Axis_Pos_4,Y_trục_Địa điểm_4
+PLC/Y_Axis_Pos,Y_Axis_Pos_5,24110,Y_Axis_Pos_5,Y_Axis_Pos_5,Y_trục_Địa điểm_5
+PLC/Y_Axis_Pos,Y_Axis_Pos_6,24112,Y_Axis_Pos_6,Y_Axis_Pos_6,Y_trục_Địa điểm_6
+PLC/Y_Axis_Pos,Y_Axis_Pos_7,24114,Y_Axis_Pos_7,Y_Axis_Pos_7,Y_trục_Địa điểm_7
+PLC/Y_Axis_Pos,Y_Axis_Pos_8,24116,Y_Axis_Pos_8,Y_Axis_Pos_8,Y_trục_Địa điểm_8
+PLC/Y_Axis_Pos,Y_Axis_Pos_9,24118,Y_Axis_Pos_9,Y_Axis_Pos_9,Y_trục_Địa điểm_9
+PLC/Y_Axis_Pos,Y_Axis_Pos_10,24120,Y_Axis_Pos_10,Y_Axis_Pos_10,Y_trục_Địa điểm_10
+PLC/Y_Axis_Pos,Y_Axis_Pos_11,24122,Y_Axis_Pos_11,Y_Axis_Pos_11,Y_trục_Địa điểm_11
+PLC/Y_Axis_Pos,Y_Axis_Pos_12,24124,Y_Axis_Pos_12,Y_Axis_Pos_12,Y_trục_Địa điểm_12
+PLC/Y_Axis_Pos,Y_Axis_Pos_13,24126,Y_Axis_Pos_13,Y_Axis_Pos_13,Y_trục_Địa điểm_13
+PLC/Y_Axis_Pos,Y_Axis_Pos_14,24128,Y_Axis_Pos_14,Y_Axis_Pos_14,Y_trục_Địa điểm_14
+PLC/Y_Axis_Pos,Y_Axis_Pos_15,24130,Y_Axis_Pos_15,Y_Axis_Pos_15,Y_trục_Địa điểm_15
+PLC/Y_Axis_Pos,Y_Axis_Pos_16,24132,Y_Axis_Pos_16,Y_Axis_Pos_16,Y_trục_Địa điểm_16
+PLC/Y_Axis_Pos,Y_Axis_Pos_17,24134,Y_Axis_Pos_17,Y_Axis_Pos_17,Y_trục_Địa điểm_17
+PLC/Y_Axis_Pos,Y_Axis_Pos_18,24136,Y_Axis_Pos_18,Y_Axis_Pos_18,Y_trục_Địa điểm_18
+PLC/Y_Axis_Pos,Y_Axis_Pos_19,24138,Y_Axis_Pos_19,Y_Axis_Pos_19,Y_trục_Địa điểm_19
+PLC/Y_Axis_Pos,Y_Axis_Pos_20,24140,Y_Axis_Pos_20,Y_Axis_Pos_20,Y_trục_Địa điểm_20
+
+PLC/Y_Axis_Vel,Y_Axis_Vel_0,24150,Y_Axis_Vel_0,Y_Axis_Vel_0,Y_trục_tốc độ_0
+PLC/Y_Axis_Vel,Y_Axis_Vel_1,24152,Y_Axis_Vel_1,Y_Axis_Vel_1,Y_trục_tốc độ_1
+PLC/Y_Axis_Vel,Y_Axis_Vel_2,24154,Y_Axis_Vel_2,Y_Axis_Vel_2,Y_trục_tốc độ_2
+PLC/Y_Axis_Vel,Y_Axis_Vel_3,24156,Y_Axis_Vel_3,Y_Axis_Vel_3,Y_trục_tốc độ_3
+PLC/Y_Axis_Vel,Y_Axis_Vel_4,24158,Y_Axis_Vel_4,Y_Axis_Vel_4,Y_trục_tốc độ_4
+PLC/Y_Axis_Vel,Y_Axis_Vel_5,24160,Y_Axis_Vel_5,Y_Axis_Vel_5,Y_trục_tốc độ_5
+PLC/Y_Axis_Vel,Y_Axis_Vel_6,24162,Y_Axis_Vel_6,Y_Axis_Vel_6,Y_trục_tốc độ_6
+PLC/Y_Axis_Vel,Y_Axis_Vel_7,24164,Y_Axis_Vel_7,Y_Axis_Vel_7,Y_trục_tốc độ_7
+PLC/Y_Axis_Vel,Y_Axis_Vel_8,24166,Y_Axis_Vel_8,Y_Axis_Vel_8,Y_trục_tốc độ_8
+PLC/Y_Axis_Vel,Y_Axis_Vel_9,24168,Y_Axis_Vel_9,Y_Axis_Vel_9,Y_trục_tốc độ_9
+PLC/Y_Axis_Vel,Y_Axis_Vel_10,24170,Y_Axis_Vel_10,Y_Axis_Vel_10,Y_trục_tốc độ_10
+PLC/Y_Axis_Vel,Y_Axis_Vel_11,24172,Y_Axis_Vel_11,Y_Axis_Vel_11,Y_trục_tốc độ_11
+PLC/Y_Axis_Vel,Y_Axis_Vel_12,24174,Y_Axis_Vel_12,Y_Axis_Vel_12,Y_trục_tốc độ_12
+PLC/Y_Axis_Vel,Y_Axis_Vel_13,24176,Y_Axis_Vel_13,Y_Axis_Vel_13,Y_trục_tốc độ_13
+PLC/Y_Axis_Vel,Y_Axis_Vel_14,24178,Y_Axis_Vel_14,Y_Axis_Vel_14,Y_trục_tốc độ_14
+PLC/Y_Axis_Vel,Y_Axis_Vel_15,24180,Y_Axis_Vel_15,Y_Axis_Vel_15,Y_trục_tốc độ_15
+PLC/Y_Axis_Vel,Y_Axis_Vel_16,24182,Y_Axis_Vel_16,Y_Axis_Vel_16,Y_trục_tốc độ_16
+PLC/Y_Axis_Vel,Y_Axis_Vel_17,24184,Y_Axis_Vel_17,Y_Axis_Vel_17,Y_trục_tốc độ_17
+PLC/Y_Axis_Vel,Y_Axis_Vel_18,24186,Y_Axis_Vel_18,Y_Axis_Vel_18,Y_trục_tốc độ_18
+PLC/Y_Axis_Vel,Y_Axis_Vel_19,24188,Y_Axis_Vel_19,Y_Axis_Vel_19,Y_trục_tốc độ_19
+PLC/Y_Axis_Vel,Y_Axis_Vel_20,24190,Y_Axis_Vel_20,Y_Axis_Vel_20,Y_trục_tốc độ_20
+
+PLC/Z_Axis_Pos,Z_Axis_Pos_0,24200,Z_Axis_Pos_0,Z_Axis_Pos_0,Z_trục_Địa điểm_0
+PLC/Z_Axis_Pos,Z_Axis_Pos_1,24202,Z_Axis_Pos_1,Z_Axis_Pos_1,Z_trục_Địa điểm_1
+PLC/Z_Axis_Pos,Z_Axis_Pos_2,24204,Z_Axis_Pos_2,Z_Axis_Pos_2,Z_trục_Địa điểm_2
+PLC/Z_Axis_Pos,Z_Axis_Pos_3,24206,Z_Axis_Pos_3,Z_Axis_Pos_3,Z_trục_Địa điểm_3
+PLC/Z_Axis_Pos,Z_Axis_Pos_4,24208,Z_Axis_Pos_4,Z_Axis_Pos_4,Z_trục_Địa điểm_4
+PLC/Z_Axis_Pos,Z_Axis_Pos_5,24210,Z_Axis_Pos_5,Z_Axis_Pos_5,Z_trục_Địa điểm_5
+PLC/Z_Axis_Pos,Z_Axis_Pos_6,24212,Z_Axis_Pos_6,Z_Axis_Pos_6,Z_trục_Địa điểm_6
+PLC/Z_Axis_Pos,Z_Axis_Pos_7,24214,Z_Axis_Pos_7,Z_Axis_Pos_7,Z_trục_Địa điểm_7
+PLC/Z_Axis_Pos,Z_Axis_Pos_8,24216,Z_Axis_Pos_8,Z_Axis_Pos_8,Z_trục_Địa điểm_8
+PLC/Z_Axis_Pos,Z_Axis_Pos_9,24218,Z_Axis_Pos_9,Z_Axis_Pos_9,Z_trục_Địa điểm_9
+PLC/Z_Axis_Pos,Z_Axis_Pos_10,24220,Z_Axis_Pos_10,Z_Axis_Pos_10,Z_trục_Địa điểm_10
+PLC/Z_Axis_Pos,Z_Axis_Pos_11,24222,Z_Axis_Pos_11,Z_Axis_Pos_11,Z_trục_Địa điểm_11
+PLC/Z_Axis_Pos,Z_Axis_Pos_12,24224,Z_Axis_Pos_12,Z_Axis_Pos_12,Z_trục_Địa điểm_12
+PLC/Z_Axis_Pos,Z_Axis_Pos_13,24226,Z_Axis_Pos_13,Z_Axis_Pos_13,Z_trục_Địa điểm_13
+PLC/Z_Axis_Pos,Z_Axis_Pos_14,24228,Z_Axis_Pos_14,Z_Axis_Pos_14,Z_trục_Địa điểm_14
+PLC/Z_Axis_Pos,Z_Axis_Pos_15,24230,Z_Axis_Pos_15,Z_Axis_Pos_15,Z_trục_Địa điểm_15
+PLC/Z_Axis_Pos,Z_Axis_Pos_16,24232,Z_Axis_Pos_16,Z_Axis_Pos_16,Z_trục_Địa điểm_16
+PLC/Z_Axis_Pos,Z_Axis_Pos_17,24234,Z_Axis_Pos_17,Z_Axis_Pos_17,Z_trục_Địa điểm_17
+PLC/Z_Axis_Pos,Z_Axis_Pos_18,24236,Z_Axis_Pos_18,Z_Axis_Pos_18,Z_trục_Địa điểm_18
+PLC/Z_Axis_Pos,Z_Axis_Pos_19,24238,Z_Axis_Pos_19,Z_Axis_Pos_19,Z_trục_Địa điểm_19
+PLC/Z_Axis_Pos,Z_Axis_Pos_20,24240,Z_Axis_Pos_20,Z_Axis_Pos_20,Z_trục_Địa điểm_20
+
+PLC/Z_Axis_Vel,Z_Axis_Vel_0,24250,Z_Axis_Vel_0,Z_Axis_Vel_0,Z_trục_tốc độ_0
+PLC/Z_Axis_Vel,Z_Axis_Vel_1,24252,Z_Axis_Vel_1,Z_Axis_Vel_1,Z_trục_tốc độ_1
+PLC/Z_Axis_Vel,Z_Axis_Vel_2,24254,Z_Axis_Vel_2,Z_Axis_Vel_2,Z_trục_tốc độ_2
+PLC/Z_Axis_Vel,Z_Axis_Vel_3,24256,Z_Axis_Vel_3,Z_Axis_Vel_3,Z_trục_tốc độ_3
+PLC/Z_Axis_Vel,Z_Axis_Vel_4,24258,Z_Axis_Vel_4,Z_Axis_Vel_4,Z_trục_tốc độ_4
+PLC/Z_Axis_Vel,Z_Axis_Vel_5,24260,Z_Axis_Vel_5,Z_Axis_Vel_5,Z_trục_tốc độ_5
+PLC/Z_Axis_Vel,Z_Axis_Vel_6,24262,Z_Axis_Vel_6,Z_Axis_Vel_6,Z_trục_tốc độ_6
+PLC/Z_Axis_Vel,Z_Axis_Vel_7,24264,Z_Axis_Vel_7,Z_Axis_Vel_7,Z_trục_tốc độ_7
+PLC/Z_Axis_Vel,Z_Axis_Vel_8,24266,Z_Axis_Vel_8,Z_Axis_Vel_8,Z_trục_tốc độ_8
+PLC/Z_Axis_Vel,Z_Axis_Vel_9,24268,Z_Axis_Vel_9,Z_Axis_Vel_9,Z_trục_tốc độ_9
+PLC/Z_Axis_Vel,Z_Axis_Vel_10,24270,Z_Axis_Vel_10,Z_Axis_Vel_10,Z_trục_tốc độ_10
+PLC/Z_Axis_Vel,Z_Axis_Vel_11,24272,Z_Axis_Vel_11,Z_Axis_Vel_11,Z_trục_tốc độ_11
+PLC/Z_Axis_Vel,Z_Axis_Vel_12,24274,Z_Axis_Vel_12,Z_Axis_Vel_12,Z_trục_tốc độ_12
+PLC/Z_Axis_Vel,Z_Axis_Vel_13,24276,Z_Axis_Vel_13,Z_Axis_Vel_13,Z_trục_tốc độ_13
+PLC/Z_Axis_Vel,Z_Axis_Vel_14,24278,Z_Axis_Vel_14,Z_Axis_Vel_14,Z_trục_tốc độ_14
+PLC/Z_Axis_Vel,Z_Axis_Vel_15,24280,Z_Axis_Vel_15,Z_Axis_Vel_15,Z_trục_tốc độ_15
+PLC/Z_Axis_Vel,Z_Axis_Vel_16,24282,Z_Axis_Vel_16,Z_Axis_Vel_16,Z_trục_tốc độ_16
+PLC/Z_Axis_Vel,Z_Axis_Vel_17,24284,Z_Axis_Vel_17,Z_Axis_Vel_17,Z_trục_tốc độ_17
+PLC/Z_Axis_Vel,Z_Axis_Vel_18,24286,Z_Axis_Vel_18,Z_Axis_Vel_18,Z_trục_tốc độ_18
+PLC/Z_Axis_Vel,Z_Axis_Vel_19,24288,Z_Axis_Vel_19,Z_Axis_Vel_19,Z_trục_tốc độ_19
+PLC/Z_Axis_Vel,Z_Axis_Vel_20,24290,Z_Axis_Vel_20,Z_Axis_Vel_20,Z_trục_tốc độ_20
+
+PLC/R_Axis_Pos,R_Axis_Pos_0,24300,R_Axis_Pos_0,R_Axis_Pos_0,R_trục_Địa điểm_0
+PLC/R_Axis_Pos,R_Axis_Pos_1,24302,R_Axis_Pos_1,R_Axis_Pos_1,R_trục_Địa điểm_1
+PLC/R_Axis_Pos,R_Axis_Pos_2,24304,R_Axis_Pos_2,R_Axis_Pos_2,R_trục_Địa điểm_2
+PLC/R_Axis_Pos,R_Axis_Pos_3,24306,R_Axis_Pos_3,R_Axis_Pos_3,R_trục_Địa điểm_3
+PLC/R_Axis_Pos,R_Axis_Pos_4,24308,R_Axis_Pos_4,R_Axis_Pos_4,R_trục_Địa điểm_4
+PLC/R_Axis_Pos,R_Axis_Pos_5,24310,R_Axis_Pos_5,R_Axis_Pos_5,R_trục_Địa điểm_5
+PLC/R_Axis_Pos,R_Axis_Pos_6,24312,R_Axis_Pos_6,R_Axis_Pos_6,R_trục_Địa điểm_6
+PLC/R_Axis_Pos,R_Axis_Pos_7,24314,R_Axis_Pos_7,R_Axis_Pos_7,R_trục_Địa điểm_7
+PLC/R_Axis_Pos,R_Axis_Pos_8,24316,R_Axis_Pos_8,R_Axis_Pos_8,R_trục_Địa điểm_8
+PLC/R_Axis_Pos,R_Axis_Pos_9,24318,R_Axis_Pos_9,R_Axis_Pos_9,R_trục_Địa điểm_9
+PLC/R_Axis_Pos,R_Axis_Pos_10,24320,R_Axis_Pos_10,R_Axis_Pos_10,R_trục_Địa điểm_10
+PLC/R_Axis_Pos,R_Axis_Pos_11,24322,R_Axis_Pos_11,R_Axis_Pos_11,R_trục_Địa điểm_11
+PLC/R_Axis_Pos,R_Axis_Pos_12,24324,R_Axis_Pos_12,R_Axis_Pos_12,R_trục_Địa điểm_12
+PLC/R_Axis_Pos,R_Axis_Pos_13,24326,R_Axis_Pos_13,R_Axis_Pos_13,R_trục_Địa điểm_13
+PLC/R_Axis_Pos,R_Axis_Pos_14,24328,R_Axis_Pos_14,R_Axis_Pos_14,R_trục_Địa điểm_14
+PLC/R_Axis_Pos,R_Axis_Pos_15,24330,R_Axis_Pos_15,R_Axis_Pos_15,R_trục_Địa điểm_15
+PLC/R_Axis_Pos,R_Axis_Pos_16,24332,R_Axis_Pos_16,R_Axis_Pos_16,R_trục_Địa điểm_16
+PLC/R_Axis_Pos,R_Axis_Pos_17,24334,R_Axis_Pos_17,R_Axis_Pos_17,R_trục_Địa điểm_17
+PLC/R_Axis_Pos,R_Axis_Pos_18,24336,R_Axis_Pos_18,R_Axis_Pos_18,R_trục_Địa điểm_18
+PLC/R_Axis_Pos,R_Axis_Pos_19,24338,R_Axis_Pos_19,R_Axis_Pos_19,R_trục_Địa điểm_19
+PLC/R_Axis_Pos,R_Axis_Pos_20,24340,R_Axis_Pos_20,R_Axis_Pos_20,R_trục_Địa điểm_20
+
+PLC/R_Axis_Vel,R_Axis_Vel_0,24350,R_Axis_Vel_0,R_Axis_Vel_0,R_trục_tốc độ_0
+PLC/R_Axis_Vel,R_Axis_Vel_1,24352,R_Axis_Vel_1,R_Axis_Vel_1,R_trục_tốc độ_1
+PLC/R_Axis_Vel,R_Axis_Vel_2,24354,R_Axis_Vel_2,R_Axis_Vel_2,R_trục_tốc độ_2
+PLC/R_Axis_Vel,R_Axis_Vel_3,24356,R_Axis_Vel_3,R_Axis_Vel_3,R_trục_tốc độ_3
+PLC/R_Axis_Vel,R_Axis_Vel_4,24358,R_Axis_Vel_4,R_Axis_Vel_4,R_trục_tốc độ_4
+PLC/R_Axis_Vel,R_Axis_Vel_5,24360,R_Axis_Vel_5,R_Axis_Vel_5,R_trục_tốc độ_5
+PLC/R_Axis_Vel,R_Axis_Vel_6,24362,R_Axis_Vel_6,R_Axis_Vel_6,R_trục_tốc độ_6
+PLC/R_Axis_Vel,R_Axis_Vel_7,24364,R_Axis_Vel_7,R_Axis_Vel_7,R_trục_tốc độ_7
+PLC/R_Axis_Vel,R_Axis_Vel_8,24366,R_Axis_Vel_8,R_Axis_Vel_8,R_trục_tốc độ_8
+PLC/R_Axis_Vel,R_Axis_Vel_9,24368,R_Axis_Vel_9,R_Axis_Vel_9,R_trục_tốc độ_9
+PLC/R_Axis_Vel,R_Axis_Vel_10,24370,R_Axis_Vel_10,R_Axis_Vel_10,R_trục_tốc độ_10
+PLC/R_Axis_Vel,R_Axis_Vel_11,24372,R_Axis_Vel_11,R_Axis_Vel_11,R_trục_tốc độ_11
+PLC/R_Axis_Vel,R_Axis_Vel_12,24374,R_Axis_Vel_12,R_Axis_Vel_12,R_trục_tốc độ_12
+PLC/R_Axis_Vel,R_Axis_Vel_13,24376,R_Axis_Vel_13,R_Axis_Vel_13,R_trục_tốc độ_13
+PLC/R_Axis_Vel,R_Axis_Vel_14,24378,R_Axis_Vel_14,R_Axis_Vel_14,R_trục_tốc độ_14
+PLC/R_Axis_Vel,R_Axis_Vel_15,24380,R_Axis_Vel_15,R_Axis_Vel_15,R_trục_tốc độ_15
+PLC/R_Axis_Vel,R_Axis_Vel_16,24382,R_Axis_Vel_16,R_Axis_Vel_16,R_trục_tốc độ_16
+PLC/R_Axis_Vel,R_Axis_Vel_17,24384,R_Axis_Vel_17,R_Axis_Vel_17,R_trục_tốc độ_17
+PLC/R_Axis_Vel,R_Axis_Vel_18,24386,R_Axis_Vel_18,R_Axis_Vel_18,R_trục_tốc độ_18
+PLC/R_Axis_Vel,R_Axis_Vel_19,24388,R_Axis_Vel_19,R_Axis_Vel_19,R_trục_tốc độ_19
+PLC/R_Axis_Vel,R_Axis_Vel_20,24390,R_Axis_Vel_20,R_Axis_Vel_20,R_trục_tốc độ_20
+
+PLC/上料轴1__Axis,上料轴1__Axis_Pos_0,24400,上料轴1__Axis_Pos_0,Loading shaft 1_Axis_Pos_0,Trục cho ăn 1_trục_Địa điểm_0
+PLC/上料轴1__Axis,上料轴1__Axis_Pos_1,24402,上料轴1__Axis_Pos_1,Loading shaft 1_Axis_Pos_1,Trục cho ăn 1_trục_Địa điểm_1
+PLC/上料轴1__Axis,上料轴1__Axis_Pos_2,24404,上料轴1__Axis_Pos_2,Loading shaft 1_Axis_Pos_2,Trục cho ăn 1_trục_Địa điểm_2
+PLC/上料轴1__Axis,上料轴1__Axis_Pos_3,24406,上料轴1__Axis_Pos_3,Loading shaft 1_Axis_Pos_3,Trục cho ăn 1_trục_Địa điểm_3
+PLC/上料轴1__Axis,上料轴1__Axis_Pos_4,24408,上料轴1__Axis_Pos_4,Loading shaft 1_Axis_Pos_4,Trục cho ăn 1_trục_Địa điểm_4
+PLC/上料轴1__Axis,上料轴1__Axis_Pos_5,24410,上料轴1__Axis_Pos_5,Loading shaft 1_Axis_Pos_5,Trục cho ăn 1_trục_Địa điểm_5
+PLC/上料轴1__Axis,上料轴1__Axis_Pos_6,24412,上料轴1__Axis_Pos_6,Loading shaft 1_Axis_Pos_6,Trục cho ăn 1_trục_Địa điểm_6
+PLC/上料轴1__Axis,上料轴1__Axis_Pos_7,24414,上料轴1__Axis_Pos_7,Loading shaft 1_Axis_Pos_7,Trục cho ăn 1_trục_Địa điểm_7
+PLC/上料轴1__Axis,上料轴1__Axis_Pos_8,24416,上料轴1__Axis_Pos_8,Loading shaft 1_Axis_Pos_8,Trục cho ăn 1_trục_Địa điểm_8
+PLC/上料轴1__Axis,上料轴1__Axis_Pos_9,24418,上料轴1__Axis_Pos_9,Loading shaft 1_Axis_Pos_9,Trục cho ăn 1_trục_Địa điểm_9
+PLC/上料轴1__Axis,上料轴1__Axis_Pos_10,24420,上料轴1__Axis_Pos_10,Loading shaft 1_Axis_Pos_10,Trục cho ăn 1_trục_Địa điểm_10
+PLC/上料轴1__Axis,上料轴1__Axis_Pos_11,24422,上料轴1__Axis_Pos_11,Loading shaft 1_Axis_Pos_11,Trục cho ăn 1_trục_Địa điểm_11
+PLC/上料轴1__Axis,上料轴1__Axis_Pos_12,24424,上料轴1__Axis_Pos_12,Loading shaft 1_Axis_Pos_12,Trục cho ăn 1_trục_Địa điểm_12
+PLC/上料轴1__Axis,上料轴1__Axis_Pos_13,24426,上料轴1__Axis_Pos_13,Loading shaft 1_Axis_Pos_13,Trục cho ăn 1_trục_Địa điểm_13
+PLC/上料轴1__Axis,上料轴1__Axis_Pos_14,24428,上料轴1__Axis_Pos_14,Loading shaft 1_Axis_Pos_14,Trục cho ăn 1_trục_Địa điểm_14
+PLC/上料轴1__Axis,上料轴1__Axis_Pos_15,24430,上料轴1__Axis_Pos_15,Loading shaft 1_Axis_Pos_15,Trục cho ăn 1_trục_Địa điểm_15
+PLC/上料轴1__Axis,上料轴1__Axis_Pos_16,24432,上料轴1__Axis_Pos_16,Loading shaft 1_Axis_Pos_16,Trục cho ăn 1_trục_Địa điểm_16
+PLC/上料轴1__Axis,上料轴1__Axis_Pos_17,24434,上料轴1__Axis_Pos_17,Loading shaft 1_Axis_Pos_17,Trục cho ăn 1_trục_Địa điểm_17
+PLC/上料轴1__Axis,上料轴1__Axis_Pos_18,24436,上料轴1__Axis_Pos_18,Loading shaft 1_Axis_Pos_18,Trục cho ăn 1_trục_Địa điểm_18
+PLC/上料轴1__Axis,上料轴1__Axis_Pos_19,24438,上料轴1__Axis_Pos_19,Loading shaft 1_Axis_Pos_19,Trục cho ăn 1_trục_Địa điểm_19
+PLC/上料轴1__Axis,上料轴1__Axis_Pos_20,24440,上料轴1__Axis_Pos_20,Loading shaft 1_Axis_Pos_20,Trục cho ăn 1_trục_Địa điểm_20
+
+PLC/上料轴1_Axis_Vel,上料轴1_Axis_Vel_0,24450,上料轴1_Axis_Vel_0,Loading shaft 1_Axis_Vel_0,Trục cho ăn 1_trục_tốc độ_0
+PLC/上料轴1_Axis_Vel,上料轴1_Axis_Vel_1,24452,上料轴1_Axis_Vel_1,Loading shaft 1_Axis_Vel_1,Trục cho ăn 1_trục_tốc độ_1
+PLC/上料轴1_Axis_Vel,上料轴1_Axis_Vel_2,24454,上料轴1_Axis_Vel_2,Loading shaft 1_Axis_Vel_2,Trục cho ăn 1_trục_tốc độ_2
+PLC/上料轴1_Axis_Vel,上料轴1_Axis_Vel_3,24456,上料轴1_Axis_Vel_3,Loading shaft 1_Axis_Vel_3,Trục cho ăn 1_trục_tốc độ_3
+PLC/上料轴1_Axis_Vel,上料轴1_Axis_Vel_4,24458,上料轴1_Axis_Vel_4,Loading shaft 1_Axis_Vel_4,Trục cho ăn 1_trục_tốc độ_4
+PLC/上料轴1_Axis_Vel,上料轴1_Axis_Vel_5,24460,上料轴1_Axis_Vel_5,Loading shaft 1_Axis_Vel_5,Trục cho ăn 1_trục_tốc độ_5
+PLC/上料轴1_Axis_Vel,上料轴1_Axis_Vel_6,24462,上料轴1_Axis_Vel_6,Loading shaft 1_Axis_Vel_6,Trục cho ăn 1_trục_tốc độ_6
+PLC/上料轴1_Axis_Vel,上料轴1_Axis_Vel_7,24464,上料轴1_Axis_Vel_7,Loading shaft 1_Axis_Vel_7,Trục cho ăn 1_trục_tốc độ_7
+PLC/上料轴1_Axis_Vel,上料轴1_Axis_Vel_8,24466,上料轴1_Axis_Vel_8,Loading shaft 1_Axis_Vel_8,Trục cho ăn 1_trục_tốc độ_8
+PLC/上料轴1_Axis_Vel,上料轴1_Axis_Vel_9,24468,上料轴1_Axis_Vel_9,Loading shaft 1_Axis_Vel_9,Trục cho ăn 1_trục_tốc độ_9
+PLC/上料轴1_Axis_Vel,上料轴1_Axis_Vel_10,24470,上料轴1_Axis_Vel_10,Loading shaft 1_Axis_Vel_10,Trục cho ăn 1_trục_tốc độ_10
+PLC/上料轴1_Axis_Vel,上料轴1_Axis_Vel_11,24472,上料轴1_Axis_Vel_11,Loading shaft 1_Axis_Vel_11,Trục cho ăn 1_trục_tốc độ_11
+PLC/上料轴1_Axis_Vel,上料轴1_Axis_Vel_12,24474,上料轴1_Axis_Vel_12,Loading shaft 1_Axis_Vel_12,Trục cho ăn 1_trục_tốc độ_12
+PLC/上料轴1_Axis_Vel,上料轴1_Axis_Vel_13,24476,上料轴1_Axis_Vel_13,Loading shaft 1_Axis_Vel_13,Trục cho ăn 1_trục_tốc độ_13
+PLC/上料轴1_Axis_Vel,上料轴1_Axis_Vel_14,24478,上料轴1_Axis_Vel_14,Loading shaft 1_Axis_Vel_14,Trục cho ăn 1_trục_tốc độ_14
+PLC/上料轴1_Axis_Vel,上料轴1_Axis_Vel_15,24480,上料轴1_Axis_Vel_15,Loading shaft 1_Axis_Vel_15,Trục cho ăn 1_trục_tốc độ_15
+PLC/上料轴1_Axis_Vel,上料轴1_Axis_Vel_16,24482,上料轴1_Axis_Vel_16,Loading shaft 1_Axis_Vel_16,Trục cho ăn 1_trục_tốc độ_16
+PLC/上料轴1_Axis_Vel,上料轴1_Axis_Vel_17,24484,上料轴1_Axis_Vel_17,Loading shaft 1_Axis_Vel_17,Trục cho ăn 1_trục_tốc độ_17
+PLC/上料轴1_Axis_Vel,上料轴1_Axis_Vel_18,24486,上料轴1_Axis_Vel_18,Loading shaft 1_Axis_Vel_18,Trục cho ăn 1_trục_tốc độ_18
+PLC/上料轴1_Axis_Vel,上料轴1_Axis_Vel_19,24488,上料轴1_Axis_Vel_19,Loading shaft 1_Axis_Vel_19,Trục cho ăn 1_trục_tốc độ_19
+PLC/上料轴1_Axis_Vel,上料轴1_Axis_Vel_20,24490,上料轴1_Axis_Vel_20,Loading shaft 1_Axis_Vel_20,Trục cho ăn 1_trục_tốc độ_20
+
+PLC/上料轴2__Axis,上料轴2__Axis_Pos_0,24500,上料轴2__Axis_Pos_0,Loading shaft 2_Axis_Pos_0,Trục cho ăn 2_trục_Địa điểm_0
+PLC/上料轴2__Axis,上料轴2__Axis_Pos_1,24502,上料轴2__Axis_Pos_1,Loading shaft 2_Axis_Pos_1,Trục cho ăn 2_trục_Địa điểm_1
+PLC/上料轴2__Axis,上料轴2__Axis_Pos_2,24504,上料轴2__Axis_Pos_2,Loading shaft 2_Axis_Pos_2,Trục cho ăn 2_trục_Địa điểm_2
+PLC/上料轴2__Axis,上料轴2__Axis_Pos_3,24506,上料轴2__Axis_Pos_3,Loading shaft 2_Axis_Pos_3,Trục cho ăn 2_trục_Địa điểm_3
+PLC/上料轴2__Axis,上料轴2__Axis_Pos_4,24508,上料轴2__Axis_Pos_4,Loading shaft 2_Axis_Pos_4,Trục cho ăn 2_trục_Địa điểm_4
+PLC/上料轴2__Axis,上料轴2__Axis_Pos_5,24510,上料轴2__Axis_Pos_5,Loading shaft 2_Axis_Pos_5,Trục cho ăn 2_trục_Địa điểm_5
+PLC/上料轴2__Axis,上料轴2__Axis_Pos_6,24512,上料轴2__Axis_Pos_6,Loading shaft 2_Axis_Pos_6,Trục cho ăn 2_trục_Địa điểm_6
+PLC/上料轴2__Axis,上料轴2__Axis_Pos_7,24514,上料轴2__Axis_Pos_7,Loading shaft 2_Axis_Pos_7,Trục cho ăn 2_trục_Địa điểm_7
+PLC/上料轴2__Axis,上料轴2__Axis_Pos_8,24516,上料轴2__Axis_Pos_8,Loading shaft 2_Axis_Pos_8,Trục cho ăn 2_trục_Địa điểm_8
+PLC/上料轴2__Axis,上料轴2__Axis_Pos_9,24518,上料轴2__Axis_Pos_9,Loading shaft 2_Axis_Pos_9,Trục cho ăn 2_trục_Địa điểm_9
+PLC/上料轴2__Axis,上料轴2__Axis_Pos_10,24520,上料轴2__Axis_Pos_10,Loading shaft 2_Axis_Pos_10,Trục cho ăn 2_trục_Địa điểm_10
+PLC/上料轴2__Axis,上料轴2__Axis_Pos_11,24522,上料轴2__Axis_Pos_11,Loading shaft 2_Axis_Pos_11,Trục cho ăn 2_trục_Địa điểm_11
+PLC/上料轴2__Axis,上料轴2__Axis_Pos_12,24524,上料轴2__Axis_Pos_12,Loading shaft 2_Axis_Pos_12,Trục cho ăn 2_trục_Địa điểm_12
+PLC/上料轴2__Axis,上料轴2__Axis_Pos_13,24526,上料轴2__Axis_Pos_13,Loading shaft 2_Axis_Pos_13,Trục cho ăn 2_trục_Địa điểm_13
+PLC/上料轴2__Axis,上料轴2__Axis_Pos_14,24528,上料轴2__Axis_Pos_14,Loading shaft 2_Axis_Pos_14,Trục cho ăn 2_trục_Địa điểm_14
+PLC/上料轴2__Axis,上料轴2__Axis_Pos_15,24530,上料轴2__Axis_Pos_15,Loading shaft 2_Axis_Pos_15,Trục cho ăn 2_trục_Địa điểm_15
+PLC/上料轴2__Axis,上料轴2__Axis_Pos_16,24532,上料轴2__Axis_Pos_16,Loading shaft 2_Axis_Pos_16,Trục cho ăn 2_trục_Địa điểm_16
+PLC/上料轴2__Axis,上料轴2__Axis_Pos_17,24534,上料轴2__Axis_Pos_17,Loading shaft 2_Axis_Pos_17,Trục cho ăn 2_trục_Địa điểm_17
+PLC/上料轴2__Axis,上料轴2__Axis_Pos_18,24536,上料轴2__Axis_Pos_18,Loading shaft 2_Axis_Pos_18,Trục cho ăn 2_trục_Địa điểm_18
+PLC/上料轴2__Axis,上料轴2__Axis_Pos_19,24538,上料轴2__Axis_Pos_19,Loading shaft 2_Axis_Pos_19,Trục cho ăn 2_trục_Địa điểm_19
+PLC/上料轴2__Axis,上料轴2__Axis_Pos_20,24540,上料轴2__Axis_Pos_20,Loading shaft 2_Axis_Pos_20,Trục cho ăn 2_trục_Địa điểm_20
+
+PLC/上料轴2_Axis_Vel,上料轴2_Axis_Vel_0,24550,上料轴2_Axis_Vel_0,Loading shaft 2_Axis_Vel_0,Trục cho ăn 2_trục_tốc độ_0
+PLC/上料轴2_Axis_Vel,上料轴2_Axis_Vel_1,24552,上料轴2_Axis_Vel_1,Loading shaft 2_Axis_Vel_1,Trục cho ăn 2_trục_tốc độ_1
+PLC/上料轴2_Axis_Vel,上料轴2_Axis_Vel_2,24554,上料轴2_Axis_Vel_2,Loading shaft 2_Axis_Vel_2,Trục cho ăn 2_trục_tốc độ_2
+PLC/上料轴2_Axis_Vel,上料轴2_Axis_Vel_3,24556,上料轴2_Axis_Vel_3,Loading shaft 2_Axis_Vel_3,Trục cho ăn 2_trục_tốc độ_3
+PLC/上料轴2_Axis_Vel,上料轴2_Axis_Vel_4,24558,上料轴2_Axis_Vel_4,Loading shaft 2_Axis_Vel_4,Trục cho ăn 2_trục_tốc độ_4
+PLC/上料轴2_Axis_Vel,上料轴2_Axis_Vel_5,24560,上料轴2_Axis_Vel_5,Loading shaft 2_Axis_Vel_5,Trục cho ăn 2_trục_tốc độ_5
+PLC/上料轴2_Axis_Vel,上料轴2_Axis_Vel_6,24562,上料轴2_Axis_Vel_6,Loading shaft 2_Axis_Vel_6,Trục cho ăn 2_trục_tốc độ_6
+PLC/上料轴2_Axis_Vel,上料轴2_Axis_Vel_7,24564,上料轴2_Axis_Vel_7,Loading shaft 2_Axis_Vel_7,Trục cho ăn 2_trục_tốc độ_7
+PLC/上料轴2_Axis_Vel,上料轴2_Axis_Vel_8,24566,上料轴2_Axis_Vel_8,Loading shaft 2_Axis_Vel_8,Trục cho ăn 2_trục_tốc độ_8
+PLC/上料轴2_Axis_Vel,上料轴2_Axis_Vel_9,24568,上料轴2_Axis_Vel_9,Loading shaft 2_Axis_Vel_9,Trục cho ăn 2_trục_tốc độ_9
+PLC/上料轴2_Axis_Vel,上料轴2_Axis_Vel_10,24570,上料轴2_Axis_Vel_10,Loading shaft 2_Axis_Vel_10,Trục cho ăn 2_trục_tốc độ_10
+PLC/上料轴2_Axis_Vel,上料轴2_Axis_Vel_11,24572,上料轴2_Axis_Vel_11,Loading shaft 2_Axis_Vel_11,Trục cho ăn 2_trục_tốc độ_11
+PLC/上料轴2_Axis_Vel,上料轴2_Axis_Vel_12,24574,上料轴2_Axis_Vel_12,Loading shaft 2_Axis_Vel_12,Trục cho ăn 2_trục_tốc độ_12
+PLC/上料轴2_Axis_Vel,上料轴2_Axis_Vel_13,24576,上料轴2_Axis_Vel_13,Loading shaft 2_Axis_Vel_13,Trục cho ăn 2_trục_tốc độ_13
+PLC/上料轴2_Axis_Vel,上料轴2_Axis_Vel_14,24578,上料轴2_Axis_Vel_14,Loading shaft 2_Axis_Vel_14,Trục cho ăn 2_trục_tốc độ_14
+PLC/上料轴2_Axis_Vel,上料轴2_Axis_Vel_15,24580,上料轴2_Axis_Vel_15,Loading shaft 2_Axis_Vel_15,Trục cho ăn 2_trục_tốc độ_15
+PLC/上料轴2_Axis_Vel,上料轴2_Axis_Vel_16,24582,上料轴2_Axis_Vel_16,Loading shaft 2_Axis_Vel_16,Trục cho ăn 2_trục_tốc độ_16
+PLC/上料轴2_Axis_Vel,上料轴2_Axis_Vel_17,24584,上料轴2_Axis_Vel_17,Loading shaft 2_Axis_Vel_17,Trục cho ăn 2_trục_tốc độ_17
+PLC/上料轴2_Axis_Vel,上料轴2_Axis_Vel_18,24586,上料轴2_Axis_Vel_18,Loading shaft 2_Axis_Vel_18,Trục cho ăn 2_trục_tốc độ_18
+PLC/上料轴2_Axis_Vel,上料轴2_Axis_Vel_19,24588,上料轴2_Axis_Vel_19,Loading shaft 2_Axis_Vel_19,Trục cho ăn 2_trục_tốc độ_19
+PLC/上料轴2_Axis_Vel,上料轴2_Axis_Vel_20,24590,上料轴2_Axis_Vel_20,Loading shaft 2_Axis_Vel_20,Trục cho ăn 2_trục_tốc độ_20
+
+PLC/步进电机__Axis,步进电机__Axis_Pos_0,24600,步进电机__Axis_Pos_0,stepper motor_Axis_Pos_0,Động cơ bước_trục_Địa điểm_0
+PLC/步进电机__Axis,步进电机__Axis_Pos_1,24602,步进电机__Axis_Pos_1,stepper motor_Axis_Pos_1,Động cơ bước_trục_Địa điểm_1
+PLC/步进电机__Axis,步进电机__Axis_Pos_2,24604,步进电机__Axis_Pos_2,stepper motor_Axis_Pos_2,Động cơ bước_trục_Địa điểm_2
+PLC/步进电机__Axis,步进电机__Axis_Pos_3,24606,步进电机__Axis_Pos_3,stepper motor_Axis_Pos_3,Động cơ bước_trục_Địa điểm_3
+PLC/步进电机__Axis,步进电机__Axis_Pos_4,24608,步进电机__Axis_Pos_4,stepper motor_Axis_Pos_4,Động cơ bước_trục_Địa điểm_4
+PLC/步进电机__Axis,步进电机__Axis_Pos_5,24610,步进电机__Axis_Pos_5,stepper motor_Axis_Pos_5,Động cơ bước_trục_Địa điểm_5
+PLC/步进电机__Axis,步进电机__Axis_Pos_6,24612,步进电机__Axis_Pos_6,stepper motor_Axis_Pos_6,Động cơ bước_trục_Địa điểm_6
+PLC/步进电机__Axis,步进电机__Axis_Pos_7,24614,步进电机__Axis_Pos_7,stepper motor_Axis_Pos_7,Động cơ bước_trục_Địa điểm_7
+PLC/步进电机__Axis,步进电机__Axis_Pos_8,24616,步进电机__Axis_Pos_8,stepper motor_Axis_Pos_8,Động cơ bước_trục_Địa điểm_8
+PLC/步进电机__Axis,步进电机__Axis_Pos_9,24618,步进电机__Axis_Pos_9,stepper motor_Axis_Pos_9,Động cơ bước_trục_Địa điểm_9
+PLC/步进电机__Axis,步进电机__Axis_Pos_10,24620,步进电机__Axis_Pos_10,stepper motor_Axis_Pos_10,Động cơ bước_trục_Địa điểm_10
+PLC/步进电机__Axis,步进电机__Axis_Pos_11,24622,步进电机__Axis_Pos_11,stepper motor_Axis_Pos_11,Động cơ bước_trục_Địa điểm_11
+PLC/步进电机__Axis,步进电机__Axis_Pos_12,24624,步进电机__Axis_Pos_12,stepper motor_Axis_Pos_12,Động cơ bước_trục_Địa điểm_12
+PLC/步进电机__Axis,步进电机__Axis_Pos_13,24626,步进电机__Axis_Pos_13,stepper motor_Axis_Pos_13,Động cơ bước_trục_Địa điểm_13
+PLC/步进电机__Axis,步进电机__Axis_Pos_14,24628,步进电机__Axis_Pos_14,stepper motor_Axis_Pos_14,Động cơ bước_trục_Địa điểm_14
+PLC/步进电机__Axis,步进电机__Axis_Pos_15,24630,步进电机__Axis_Pos_15,stepper motor_Axis_Pos_15,Động cơ bước_trục_Địa điểm_15
+PLC/步进电机__Axis,步进电机__Axis_Pos_16,24632,步进电机__Axis_Pos_16,stepper motor_Axis_Pos_16,Động cơ bước_trục_Địa điểm_16
+PLC/步进电机__Axis,步进电机__Axis_Pos_17,24634,步进电机__Axis_Pos_17,stepper motor_Axis_Pos_17,Động cơ bước_trục_Địa điểm_17
+PLC/步进电机__Axis,步进电机__Axis_Pos_18,24636,步进电机__Axis_Pos_18,stepper motor_Axis_Pos_18,Động cơ bước_trục_Địa điểm_18
+PLC/步进电机__Axis,步进电机__Axis_Pos_19,24638,步进电机__Axis_Pos_19,stepper motor_Axis_Pos_19,Động cơ bước_trục_Địa điểm_19
+PLC/步进电机__Axis,步进电机__Axis_Pos_20,24640,步进电机__Axis_Pos_20,stepper motor_Axis_Pos_20,Động cơ bước_trục_Địa điểm_20
+
+PLC/步进电机_Axis_Vel,步进电机_Axis_Vel_0,24650,步进电机_Axis_Vel_0,stepper motor_Axis_Vel_0,Động cơ bước_trục_tốc độ_0
+PLC/步进电机_Axis_Vel,步进电机_Axis_Vel_1,24652,步进电机_Axis_Vel_1,stepper motor_Axis_Vel_1,Động cơ bước_trục_tốc độ_1
+PLC/步进电机_Axis_Vel,步进电机_Axis_Vel_2,24654,步进电机_Axis_Vel_2,stepper motor_Axis_Vel_2,Động cơ bước_trục_tốc độ_2
+PLC/步进电机_Axis_Vel,步进电机_Axis_Vel_3,24656,步进电机_Axis_Vel_3,stepper motor_Axis_Vel_3,Động cơ bước_trục_tốc độ_3
+PLC/步进电机_Axis_Vel,步进电机_Axis_Vel_4,24658,步进电机_Axis_Vel_4,stepper motor_Axis_Vel_4,Động cơ bước_trục_tốc độ_4
+PLC/步进电机_Axis_Vel,步进电机_Axis_Vel_5,24660,步进电机_Axis_Vel_5,stepper motor_Axis_Vel_5,Động cơ bước_trục_tốc độ_5
+PLC/步进电机_Axis_Vel,步进电机_Axis_Vel_6,24662,步进电机_Axis_Vel_6,stepper motor_Axis_Vel_6,Động cơ bước_trục_tốc độ_6
+PLC/步进电机_Axis_Vel,步进电机_Axis_Vel_7,24664,步进电机_Axis_Vel_7,stepper motor_Axis_Vel_7,Động cơ bước_trục_tốc độ_7
+PLC/步进电机_Axis_Vel,步进电机_Axis_Vel_8,24666,步进电机_Axis_Vel_8,stepper motor_Axis_Vel_8,Động cơ bước_trục_tốc độ_8
+PLC/步进电机_Axis_Vel,步进电机_Axis_Vel_9,24668,步进电机_Axis_Vel_9,stepper motor_Axis_Vel_9,Động cơ bước_trục_tốc độ_9
+PLC/步进电机_Axis_Vel,步进电机_Axis_Vel_10,24670,步进电机_Axis_Vel_10,stepper motor_Axis_Vel_10,Động cơ bước_trục_tốc độ_10
+PLC/步进电机_Axis_Vel,步进电机_Axis_Vel_11,24672,步进电机_Axis_Vel_11,stepper motor_Axis_Vel_11,Động cơ bước_trục_tốc độ_11
+PLC/步进电机_Axis_Vel,步进电机_Axis_Vel_12,24674,步进电机_Axis_Vel_12,stepper motor_Axis_Vel_12,Động cơ bước_trục_tốc độ_12
+PLC/步进电机_Axis_Vel,步进电机_Axis_Vel_13,24676,步进电机_Axis_Vel_13,stepper motor_Axis_Vel_13,Động cơ bước_trục_tốc độ_13
+PLC/步进电机_Axis_Vel,步进电机_Axis_Vel_14,24678,步进电机_Axis_Vel_14,stepper motor_Axis_Vel_14,Động cơ bước_trục_tốc độ_14
+PLC/步进电机_Axis_Vel,步进电机_Axis_Vel_15,24680,步进电机_Axis_Vel_15,stepper motor_Axis_Vel_15,Động cơ bước_trục_tốc độ_15
+PLC/步进电机_Axis_Vel,步进电机_Axis_Vel_16,24682,步进电机_Axis_Vel_16,stepper motor_Axis_Vel_16,Động cơ bước_trục_tốc độ_16
+PLC/步进电机_Axis_Vel,步进电机_Axis_Vel_17,24684,步进电机_Axis_Vel_17,stepper motor_Axis_Vel_17,Động cơ bước_trục_tốc độ_17
+PLC/步进电机_Axis_Vel,步进电机_Axis_Vel_18,24686,步进电机_Axis_Vel_18,stepper motor_Axis_Vel_18,Động cơ bước_trục_tốc độ_18
+PLC/步进电机_Axis_Vel,步进电机_Axis_Vel_19,24688,步进电机_Axis_Vel_19,stepper motor_Axis_Vel_19,Động cơ bước_trục_tốc độ_19
+PLC/步进电机_Axis_Vel,步进电机_Axis_Vel_20,24690,步进电机_Axis_Vel_20,stepper motor_Axis_Vel_20,Động cơ bước_trục_tốc độ_20

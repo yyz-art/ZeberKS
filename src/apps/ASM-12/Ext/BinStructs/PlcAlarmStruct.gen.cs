@@ -1,5 +1,5 @@
 
-// GENERATE AT 2026/4/8 9:56:05
+// GENERATE AT 2026/5/5 17:34:26
 using ZC.Annotations;
 using ZC.DP.Memory;
 using ZC.DP;
@@ -19,7 +19,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "1",
 		DataDefine.KeyValue,"NameByCN", "上料轴1_未使能提示",
 		DataDefine.KeyValue,"NameByEN", "Load_Axis1_Not_Enabled",
-		DataDefine.KeyValue,"NameByVI", "Loading Axis 1_Chưa cho phép hoạt động",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 上料轴1_未使能提示 { get; set; }= new WordBool();
 
@@ -28,7 +28,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "2",
 		DataDefine.KeyValue,"NameByCN", "上料轴1_指令报错",
 		DataDefine.KeyValue,"NameByEN", "Load_Axis1_Command_Error",
-		DataDefine.KeyValue,"NameByVI", "Loading Axis 1_Lỗi lệnh",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 上料轴1_指令报错 { get; set; }= new WordBool();
 
@@ -37,7 +37,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "3",
 		DataDefine.KeyValue,"NameByCN", "上料轴1_正极限",
 		DataDefine.KeyValue,"NameByEN", "Load_Axis1_Pos_Limit",
-		DataDefine.KeyValue,"NameByVI", "Loading Axis 1_Giới hạn dương",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 上料轴1_正极限 { get; set; }= new WordBool();
 
@@ -46,7 +46,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "4",
 		DataDefine.KeyValue,"NameByCN", "上料轴1_负极限",
 		DataDefine.KeyValue,"NameByEN", "Load_Axis1_Neg_Limit",
-		DataDefine.KeyValue,"NameByVI", "Loading Axis 1_Giới hạn âm",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 上料轴1_负极限 { get; set; }= new WordBool();
 
@@ -55,7 +55,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "5",
 		DataDefine.KeyValue,"NameByCN", "上料轴1_JOG安全条件报警",
 		DataDefine.KeyValue,"NameByEN", "Load_Axis1_JOG_Safety_Alarm",
-		DataDefine.KeyValue,"NameByVI", "Loading Axis 1_Cảnh báo điều kiện an toàn JOG",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 上料轴1_JOG安全条件报警 { get; set; }= new WordBool();
 
@@ -64,7 +64,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "6",
 		DataDefine.KeyValue,"NameByCN", "上料轴1_PTP安全条件报警",
 		DataDefine.KeyValue,"NameByEN", "Load_Axis1_PTP_Safety_Alarm",
-		DataDefine.KeyValue,"NameByVI", "Loading Axis 1_Cảnh báo điều kiện an toàn PTP",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 上料轴1_PTP安全条件报警 { get; set; }= new WordBool();
 
@@ -73,7 +73,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "7",
 		DataDefine.KeyValue,"NameByCN", "上料轴1_手自动不一致",
 		DataDefine.KeyValue,"NameByEN", "Load_Axis1_Manual_Auto_Mismatch",
-		DataDefine.KeyValue,"NameByVI", "Loading Axis 1_Không đồng bộ tay-tự động",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 上料轴1_手自动不一致 { get; set; }= new WordBool();
 
@@ -82,7 +82,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "8",
 		DataDefine.KeyValue,"NameByCN", "上料轴2_未使能提示",
 		DataDefine.KeyValue,"NameByEN", "Load_Axis2_Not_Enabled",
-		DataDefine.KeyValue,"NameByVI", "Loading Axis 2_Chưa cho phép hoạt động",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 上料轴2_未使能提示 { get; set; }= new WordBool();
 
@@ -91,7 +91,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "9",
 		DataDefine.KeyValue,"NameByCN", "上料轴2_指令报错",
 		DataDefine.KeyValue,"NameByEN", "Load_Axis2_Command_Error",
-		DataDefine.KeyValue,"NameByVI", "Loading Axis 2_Lỗi lệnh",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 上料轴2_指令报错 { get; set; }= new WordBool();
 
@@ -100,7 +100,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "10",
 		DataDefine.KeyValue,"NameByCN", "上料轴2_正极限",
 		DataDefine.KeyValue,"NameByEN", "Load_Axis2_Pos_Limit",
-		DataDefine.KeyValue,"NameByVI", "Loading Axis 2_Giới hạn dương",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 上料轴2_正极限 { get; set; }= new WordBool();
 
@@ -109,7 +109,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "11",
 		DataDefine.KeyValue,"NameByCN", "上料轴2_负极限",
 		DataDefine.KeyValue,"NameByEN", "Load_Axis2_Neg_Limit",
-		DataDefine.KeyValue,"NameByVI", "Loading Axis 2_Giới hạn âm",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 上料轴2_负极限 { get; set; }= new WordBool();
 
@@ -118,7 +118,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "12",
 		DataDefine.KeyValue,"NameByCN", "上料轴2_JOG安全条件报警",
 		DataDefine.KeyValue,"NameByEN", "Load_Axis2_JOG_Safety_Alarm",
-		DataDefine.KeyValue,"NameByVI", "Loading Axis 2_Cảnh báo điều kiện an toàn JOG",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 上料轴2_JOG安全条件报警 { get; set; }= new WordBool();
 
@@ -127,7 +127,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "13",
 		DataDefine.KeyValue,"NameByCN", "上料轴2_PTP安全条件报警",
 		DataDefine.KeyValue,"NameByEN", "Load_Axis2_PTP_Safety_Alarm",
-		DataDefine.KeyValue,"NameByVI", "Loading Axis 2_Cảnh báo điều kiện an toàn PTP",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 上料轴2_PTP安全条件报警 { get; set; }= new WordBool();
 
@@ -136,7 +136,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "14",
 		DataDefine.KeyValue,"NameByCN", "上料轴2_手自动不一致",
 		DataDefine.KeyValue,"NameByEN", "Load_Axis2_Manual_Auto_Mismatch",
-		DataDefine.KeyValue,"NameByVI", "Loading Axis 2_Không đồng bộ tay-tự động",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 上料轴2_手自动不一致 { get; set; }= new WordBool();
 
@@ -145,7 +145,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "15",
 		DataDefine.KeyValue,"NameByCN", "X轴_未使能提示",
 		DataDefine.KeyValue,"NameByEN", "X_Axis_Not_Enabled",
-		DataDefine.KeyValue,"NameByVI", "Trục X_Chưa cho phép hoạt động",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool X轴_未使能提示 { get; set; }= new WordBool();
 
@@ -154,7 +154,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "16",
 		DataDefine.KeyValue,"NameByCN", "X轴_指令报错",
 		DataDefine.KeyValue,"NameByEN", "X_Axis_Command_Error",
-		DataDefine.KeyValue,"NameByVI", "Trục X_Lỗi lệnh",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool X轴_指令报错 { get; set; }= new WordBool();
 
@@ -163,7 +163,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "17",
 		DataDefine.KeyValue,"NameByCN", "X轴_正极限",
 		DataDefine.KeyValue,"NameByEN", "X_Axis_Pos_Limit",
-		DataDefine.KeyValue,"NameByVI", "Trục X_Giới hạn dương",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool X轴_正极限 { get; set; }= new WordBool();
 
@@ -172,7 +172,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "18",
 		DataDefine.KeyValue,"NameByCN", "X轴_负极限",
 		DataDefine.KeyValue,"NameByEN", "X_Axis_Neg_Limit",
-		DataDefine.KeyValue,"NameByVI", "Trục X_Giới hạn âm",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool X轴_负极限 { get; set; }= new WordBool();
 
@@ -181,7 +181,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "19",
 		DataDefine.KeyValue,"NameByCN", "X轴_JOG安全条件报警",
 		DataDefine.KeyValue,"NameByEN", "X_Axis_JOG_Safety_Alarm",
-		DataDefine.KeyValue,"NameByVI", "Trục X_Cảnh báo điều kiện an toàn JOG",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool X轴_JOG安全条件报警 { get; set; }= new WordBool();
 
@@ -190,7 +190,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "20",
 		DataDefine.KeyValue,"NameByCN", "X轴_PTP安全条件报警",
 		DataDefine.KeyValue,"NameByEN", "X_Axis_PTP_Safety_Alarm",
-		DataDefine.KeyValue,"NameByVI", "Trục X_Cảnh báo điều kiện an toàn PTP",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool X轴_PTP安全条件报警 { get; set; }= new WordBool();
 
@@ -199,7 +199,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "21",
 		DataDefine.KeyValue,"NameByCN", "X轴_手自动不一致",
 		DataDefine.KeyValue,"NameByEN", "X_Axis_Manual_Auto_Mismatch",
-		DataDefine.KeyValue,"NameByVI", "Trục X_Không đồng bộ tay-tự động",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool X轴_手自动不一致 { get; set; }= new WordBool();
 
@@ -208,7 +208,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "22",
 		DataDefine.KeyValue,"NameByCN", "Y轴_未使能提示",
 		DataDefine.KeyValue,"NameByEN", "Y_Axis_Not_Enabled",
-		DataDefine.KeyValue,"NameByVI", "Trục Y_Chưa cho phép hoạt động",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool Y轴_未使能提示 { get; set; }= new WordBool();
 
@@ -217,7 +217,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "23",
 		DataDefine.KeyValue,"NameByCN", "Y轴_指令报错",
 		DataDefine.KeyValue,"NameByEN", "Y_Axis_Command_Error",
-		DataDefine.KeyValue,"NameByVI", "Trục Y_Lỗi lệnh",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool Y轴_指令报错 { get; set; }= new WordBool();
 
@@ -226,7 +226,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "24",
 		DataDefine.KeyValue,"NameByCN", "Y轴_正极限",
 		DataDefine.KeyValue,"NameByEN", "Y_Axis_Pos_Limit",
-		DataDefine.KeyValue,"NameByVI", "Trục Y_Giới hạn dương",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool Y轴_正极限 { get; set; }= new WordBool();
 
@@ -235,7 +235,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "25",
 		DataDefine.KeyValue,"NameByCN", "Y轴_负极限",
 		DataDefine.KeyValue,"NameByEN", "Y_Axis_Neg_Limit",
-		DataDefine.KeyValue,"NameByVI", "Trục Y_Giới hạn âm",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool Y轴_负极限 { get; set; }= new WordBool();
 
@@ -244,7 +244,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "26",
 		DataDefine.KeyValue,"NameByCN", "Y轴_JOG安全条件报警",
 		DataDefine.KeyValue,"NameByEN", "Y_Axis_JOG_Safety_Alarm",
-		DataDefine.KeyValue,"NameByVI", "Trục Y_Cảnh báo điều kiện an toàn JOG",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool Y轴_JOG安全条件报警 { get; set; }= new WordBool();
 
@@ -253,7 +253,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "27",
 		DataDefine.KeyValue,"NameByCN", "Y轴_PTP安全条件报警",
 		DataDefine.KeyValue,"NameByEN", "Y_Axis_PTP_Safety_Alarm",
-		DataDefine.KeyValue,"NameByVI", "Trục Y_Cảnh báo điều kiện an toàn PTP",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool Y轴_PTP安全条件报警 { get; set; }= new WordBool();
 
@@ -262,7 +262,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "28",
 		DataDefine.KeyValue,"NameByCN", "Y轴_手自动不一致",
 		DataDefine.KeyValue,"NameByEN", "Y_Axis_Manual_Auto_Mismatch",
-		DataDefine.KeyValue,"NameByVI", "Trục Y_Không đồng bộ tay-tự động",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool Y轴_手自动不一致 { get; set; }= new WordBool();
 
@@ -271,7 +271,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "29",
 		DataDefine.KeyValue,"NameByCN", "相机调节步进轴_未使能提示",
 		DataDefine.KeyValue,"NameByEN", "Cam_Adj_Step_Axis_Not_Enabled",
-		DataDefine.KeyValue,"NameByVI", "Trục bước điều chỉnh camera_Chưa cho phép hoạt động",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 相机调节步进轴_未使能提示 { get; set; }= new WordBool();
 
@@ -280,7 +280,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "30",
 		DataDefine.KeyValue,"NameByCN", "相机调节步进轴_指令报错",
 		DataDefine.KeyValue,"NameByEN", "Cam_Adj_Step_Axis_Command_Error",
-		DataDefine.KeyValue,"NameByVI", "Trục bước điều chỉnh camera_Lỗi lệnh",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 相机调节步进轴_指令报错 { get; set; }= new WordBool();
 
@@ -289,7 +289,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "31",
 		DataDefine.KeyValue,"NameByCN", "相机调节步进轴_正极限",
 		DataDefine.KeyValue,"NameByEN", "Cam_Adj_Step_Axis_Pos_Limit",
-		DataDefine.KeyValue,"NameByVI", "Trục bước điều chỉnh camera_Giới hạn dương",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 相机调节步进轴_正极限 { get; set; }= new WordBool();
 
@@ -298,7 +298,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "32",
 		DataDefine.KeyValue,"NameByCN", "相机调节步进轴_负极限",
 		DataDefine.KeyValue,"NameByEN", "Cam_Adj_Step_Axis_Neg_Limit",
-		DataDefine.KeyValue,"NameByVI", "Trục bước điều chỉnh camera_Giới hạn âm",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 相机调节步进轴_负极限 { get; set; }= new WordBool();
 
@@ -307,7 +307,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "33",
 		DataDefine.KeyValue,"NameByCN", "相机调节步进轴_JOG安全条件报警",
 		DataDefine.KeyValue,"NameByEN", "Cam_Adj_Step_Axis_JOG_Safety_Alarm",
-		DataDefine.KeyValue,"NameByVI", "Trục bước điều chỉnh camera_Cảnh báo điều kiện an toàn JOG",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 相机调节步进轴_JOG安全条件报警 { get; set; }= new WordBool();
 
@@ -316,7 +316,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "34",
 		DataDefine.KeyValue,"NameByCN", "相机调节步进轴_PTP安全条件报警",
 		DataDefine.KeyValue,"NameByEN", "Cam_Adj_Step_Axis_PTP_Safety_Alarm",
-		DataDefine.KeyValue,"NameByVI", "Trục bước điều chỉnh camera_Cảnh báo điều kiện an toàn PTP",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 相机调节步进轴_PTP安全条件报警 { get; set; }= new WordBool();
 
@@ -325,7 +325,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "35",
 		DataDefine.KeyValue,"NameByCN", "相机调节步进轴_手自动不一致",
 		DataDefine.KeyValue,"NameByEN", "Cam_Adj_Step_Axis_Manual_Auto_Mismatch",
-		DataDefine.KeyValue,"NameByVI", "Trục bước điều chỉnh camera_Không đồng bộ tay-tự động",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 相机调节步进轴_手自动不一致 { get; set; }= new WordBool();
 
@@ -334,7 +334,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "36",
 		DataDefine.KeyValue,"NameByCN", "吸料轴Z1_未使能提示",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_Z1_Not_Enabled",
-		DataDefine.KeyValue,"NameByVI", "Feeding Axis Z1_Chưa cho phép hoạt động",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 吸料轴Z1_未使能提示 { get; set; }= new WordBool();
 
@@ -343,7 +343,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "37",
 		DataDefine.KeyValue,"NameByCN", "吸料轴Z1_指令报错",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_Z1_Command_Error",
-		DataDefine.KeyValue,"NameByVI", "Feeding Axis Z1_Lỗi lệnh",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 吸料轴Z1_指令报错 { get; set; }= new WordBool();
 
@@ -352,7 +352,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "38",
 		DataDefine.KeyValue,"NameByCN", "吸料轴Z1_正极限",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_Z1_Pos_Limit",
-		DataDefine.KeyValue,"NameByVI", "Feeding Axis Z1_Giới hạn dương",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 吸料轴Z1_正极限 { get; set; }= new WordBool();
 
@@ -361,7 +361,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "39",
 		DataDefine.KeyValue,"NameByCN", "吸料轴Z1_负极限",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_Z1_Neg_Limit",
-		DataDefine.KeyValue,"NameByVI", "Feeding Axis Z1_Giới hạn âm",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 吸料轴Z1_负极限 { get; set; }= new WordBool();
 
@@ -370,7 +370,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "40",
 		DataDefine.KeyValue,"NameByCN", "吸料轴Z1_JOG安全条件报警",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_Z1_JOG_Safety_Alarm",
-		DataDefine.KeyValue,"NameByVI", "Feeding Axis Z1_Cảnh báo điều kiện an toàn JOG",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 吸料轴Z1_JOG安全条件报警 { get; set; }= new WordBool();
 
@@ -379,7 +379,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "41",
 		DataDefine.KeyValue,"NameByCN", "吸料轴Z1_PTP安全条件报警",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_Z1_PTP_Safety_Alarm",
-		DataDefine.KeyValue,"NameByVI", "Feeding Axis Z1_Cảnh báo điều kiện an toàn PTP",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 吸料轴Z1_PTP安全条件报警 { get; set; }= new WordBool();
 
@@ -388,7 +388,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "42",
 		DataDefine.KeyValue,"NameByCN", "吸料轴Z1_手自动不一致",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_Z1_Manual_Auto_Mismatch",
-		DataDefine.KeyValue,"NameByVI", "Feeding Axis Z1_Không đồng bộ tay-tự động",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 吸料轴Z1_手自动不一致 { get; set; }= new WordBool();
 
@@ -397,7 +397,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "43",
 		DataDefine.KeyValue,"NameByCN", "吸料轴R1_未使能提示",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_R1_Not_Enabled",
-		DataDefine.KeyValue,"NameByVI", "Feeding Axis R1_Chưa cho phép hoạt động",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 吸料轴R1_未使能提示 { get; set; }= new WordBool();
 
@@ -406,7 +406,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "44",
 		DataDefine.KeyValue,"NameByCN", "吸料轴R1_指令报错",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_R1_Command_Error",
-		DataDefine.KeyValue,"NameByVI", "Feeding Axis R1_Lỗi lệnh",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 吸料轴R1_指令报错 { get; set; }= new WordBool();
 
@@ -415,7 +415,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "45",
 		DataDefine.KeyValue,"NameByCN", "吸料轴R1_正极限",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_R1_Pos_Limit",
-		DataDefine.KeyValue,"NameByVI", "Feeding Axis R1_Giới hạn dương",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 吸料轴R1_正极限 { get; set; }= new WordBool();
 
@@ -424,7 +424,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "46",
 		DataDefine.KeyValue,"NameByCN", "吸料轴R1_负极限",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_R1_Neg_Limit",
-		DataDefine.KeyValue,"NameByVI", "Feeding Axis R1_Giới hạn âm",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 吸料轴R1_负极限 { get; set; }= new WordBool();
 
@@ -433,7 +433,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "47",
 		DataDefine.KeyValue,"NameByCN", "吸料轴R1_JOG安全条件报警",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_R1_JOG_Safety_Alarm",
-		DataDefine.KeyValue,"NameByVI", "Feeding Axis R1_Cảnh báo điều kiện an toàn JOG",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 吸料轴R1_JOG安全条件报警 { get; set; }= new WordBool();
 
@@ -442,7 +442,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "48",
 		DataDefine.KeyValue,"NameByCN", "吸料轴R1_PTP安全条件报警",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_R1_PTP_Safety_Alarm",
-		DataDefine.KeyValue,"NameByVI", "Feeding Axis R1_Cảnh báo điều kiện an toàn PTP",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 吸料轴R1_PTP安全条件报警 { get; set; }= new WordBool();
 
@@ -451,7 +451,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "49",
 		DataDefine.KeyValue,"NameByCN", "吸料轴R1_手自动不一致",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_R1_Manual_Auto_Mismatch",
-		DataDefine.KeyValue,"NameByVI", "Feeding Axis R1_Không đồng bộ tay-tự động",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 吸料轴R1_手自动不一致 { get; set; }= new WordBool();
 
@@ -460,7 +460,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "50",
 		DataDefine.KeyValue,"NameByCN", "吸料轴Z2_未使能提示",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_Z2_Not_Enabled",
-		DataDefine.KeyValue,"NameByVI", "Feeding Axis Z2_Chưa cho phép hoạt động",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 吸料轴Z2_未使能提示 { get; set; }= new WordBool();
 
@@ -469,7 +469,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "51",
 		DataDefine.KeyValue,"NameByCN", "吸料轴Z2_指令报错",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_Z2_Command_Error",
-		DataDefine.KeyValue,"NameByVI", "Feeding Axis Z2_Lỗi lệnh",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 吸料轴Z2_指令报错 { get; set; }= new WordBool();
 
@@ -478,7 +478,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "52",
 		DataDefine.KeyValue,"NameByCN", "吸料轴Z2_正极限",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_Z2_Pos_Limit",
-		DataDefine.KeyValue,"NameByVI", "Feeding Axis Z2_Giới hạn dương",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 吸料轴Z2_正极限 { get; set; }= new WordBool();
 
@@ -487,7 +487,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "53",
 		DataDefine.KeyValue,"NameByCN", "吸料轴Z2_负极限",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_Z2_Neg_Limit",
-		DataDefine.KeyValue,"NameByVI", "Feeding Axis Z2_Giới hạn âm",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 吸料轴Z2_负极限 { get; set; }= new WordBool();
 
@@ -496,7 +496,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "54",
 		DataDefine.KeyValue,"NameByCN", "吸料轴Z2_JOG安全条件报警",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_Z2_JOG_Safety_Alarm",
-		DataDefine.KeyValue,"NameByVI", "Feeding Axis Z2_Cảnh báo điều kiện an toàn JOG",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 吸料轴Z2_JOG安全条件报警 { get; set; }= new WordBool();
 
@@ -505,7 +505,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "55",
 		DataDefine.KeyValue,"NameByCN", "吸料轴Z2_PTP安全条件报警",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_Z2_PTP_Safety_Alarm",
-		DataDefine.KeyValue,"NameByVI", "Feeding Axis Z2_Cảnh báo điều kiện an toàn PTP",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 吸料轴Z2_PTP安全条件报警 { get; set; }= new WordBool();
 
@@ -514,7 +514,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "56",
 		DataDefine.KeyValue,"NameByCN", "吸料轴Z2_手自动不一致",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_Z2_Manual_Auto_Mismatch",
-		DataDefine.KeyValue,"NameByVI", "Feeding Axis Z2_Không đồng bộ tay-tự động",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 吸料轴Z2_手自动不一致 { get; set; }= new WordBool();
 
@@ -523,7 +523,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "57",
 		DataDefine.KeyValue,"NameByCN", "吸料轴R2_未使能提示",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_R2_Not_Enabled",
-		DataDefine.KeyValue,"NameByVI", "Feeding Axis R2_Chưa cho phép hoạt động",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 吸料轴R2_未使能提示 { get; set; }= new WordBool();
 
@@ -532,7 +532,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "58",
 		DataDefine.KeyValue,"NameByCN", "吸料轴R2_指令报错",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_R2_Command_Error",
-		DataDefine.KeyValue,"NameByVI", "Feeding Axis R2_Lỗi lệnh",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 吸料轴R2_指令报错 { get; set; }= new WordBool();
 
@@ -541,7 +541,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "59",
 		DataDefine.KeyValue,"NameByCN", "吸料轴R2_正极限",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_R2_Pos_Limit",
-		DataDefine.KeyValue,"NameByVI", "Feeding Axis R2_Giới hạn dương",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 吸料轴R2_正极限 { get; set; }= new WordBool();
 
@@ -550,7 +550,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "60",
 		DataDefine.KeyValue,"NameByCN", "吸料轴R2_负极限",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_R2_Neg_Limit",
-		DataDefine.KeyValue,"NameByVI", "Feeding Axis R2_Giới hạn âm",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 吸料轴R2_负极限 { get; set; }= new WordBool();
 
@@ -559,7 +559,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "61",
 		DataDefine.KeyValue,"NameByCN", "吸料轴R2_JOG安全条件报警",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_R2_JOG_Safety_Alarm",
-		DataDefine.KeyValue,"NameByVI", "Feeding Axis R2_Cảnh báo điều kiện an toàn JOG",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 吸料轴R2_JOG安全条件报警 { get; set; }= new WordBool();
 
@@ -568,7 +568,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "62",
 		DataDefine.KeyValue,"NameByCN", "吸料轴R2_PTP安全条件报警",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_R2_PTP_Safety_Alarm",
-		DataDefine.KeyValue,"NameByVI", "Feeding Axis R2_Cảnh báo điều kiện an toàn PTP",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 吸料轴R2_PTP安全条件报警 { get; set; }= new WordBool();
 
@@ -577,7 +577,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "63",
 		DataDefine.KeyValue,"NameByCN", "吸料轴R2_手自动不一致",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_R2_Manual_Auto_Mismatch",
-		DataDefine.KeyValue,"NameByVI", "Feeding Axis R2_Không đồng bộ tay-tự động",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 吸料轴R2_手自动不一致 { get; set; }= new WordBool();
 
@@ -586,7 +586,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "64",
 		DataDefine.KeyValue,"NameByCN", "吸料轴Z3_未使能提示",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_Z3_Not_Enabled",
-		DataDefine.KeyValue,"NameByVI", "Feeding Axis Z3_Chưa cho phép hoạt động",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 吸料轴Z3_未使能提示 { get; set; }= new WordBool();
 
@@ -595,7 +595,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "65",
 		DataDefine.KeyValue,"NameByCN", "吸料轴Z3_指令报错",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_Z3_Command_Error",
-		DataDefine.KeyValue,"NameByVI", "Feeding Axis Z3_Lỗi lệnh",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 吸料轴Z3_指令报错 { get; set; }= new WordBool();
 
@@ -604,7 +604,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "66",
 		DataDefine.KeyValue,"NameByCN", "吸料轴Z3_正极限",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_Z3_Pos_Limit",
-		DataDefine.KeyValue,"NameByVI", "Feeding Axis Z3_Giới hạn dương",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 吸料轴Z3_正极限 { get; set; }= new WordBool();
 
@@ -613,7 +613,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "67",
 		DataDefine.KeyValue,"NameByCN", "吸料轴Z3_负极限",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_Z3_Neg_Limit",
-		DataDefine.KeyValue,"NameByVI", "Feeding Axis Z3_Giới hạn âm",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 吸料轴Z3_负极限 { get; set; }= new WordBool();
 
@@ -622,7 +622,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "68",
 		DataDefine.KeyValue,"NameByCN", "吸料轴Z3_JOG安全条件报警",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_Z3_JOG_Safety_Alarm",
-		DataDefine.KeyValue,"NameByVI", "Feeding Axis Z3_Cảnh báo điều kiện an toàn JOG",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 吸料轴Z3_JOG安全条件报警 { get; set; }= new WordBool();
 
@@ -631,7 +631,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "69",
 		DataDefine.KeyValue,"NameByCN", "吸料轴Z3_PTP安全条件报警",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_Z3_PTP_Safety_Alarm",
-		DataDefine.KeyValue,"NameByVI", "Feeding Axis Z3_Cảnh báo điều kiện an toàn PTP",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 吸料轴Z3_PTP安全条件报警 { get; set; }= new WordBool();
 
@@ -640,7 +640,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "70",
 		DataDefine.KeyValue,"NameByCN", "吸料轴Z3_手自动不一致",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_Z3_Manual_Auto_Mismatch",
-		DataDefine.KeyValue,"NameByVI", "Feeding Axis Z3_Không đồng bộ tay-tự động",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 吸料轴Z3_手自动不一致 { get; set; }= new WordBool();
 
@@ -649,7 +649,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "71",
 		DataDefine.KeyValue,"NameByCN", "吸料轴R3_未使能提示",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_R3_Not_Enabled",
-		DataDefine.KeyValue,"NameByVI", "Feeding Axis R3_Chưa cho phép hoạt động",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 吸料轴R3_未使能提示 { get; set; }= new WordBool();
 
@@ -658,7 +658,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "72",
 		DataDefine.KeyValue,"NameByCN", "吸料轴R3_指令报错",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_R3_Command_Error",
-		DataDefine.KeyValue,"NameByVI", "Feeding Axis R3_Lỗi lệnh",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 吸料轴R3_指令报错 { get; set; }= new WordBool();
 
@@ -667,7 +667,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "73",
 		DataDefine.KeyValue,"NameByCN", "吸料轴R3_正极限",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_R3_Pos_Limit",
-		DataDefine.KeyValue,"NameByVI", "Feeding Axis R3_Giới hạn dương",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 吸料轴R3_正极限 { get; set; }= new WordBool();
 
@@ -676,7 +676,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "74",
 		DataDefine.KeyValue,"NameByCN", "吸料轴R3_负极限",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_R3_Neg_Limit",
-		DataDefine.KeyValue,"NameByVI", "Feeding Axis R3_Giới hạn âm",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 吸料轴R3_负极限 { get; set; }= new WordBool();
 
@@ -685,7 +685,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "75",
 		DataDefine.KeyValue,"NameByCN", "吸料轴R3_JOG安全条件报警",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_R3_JOG_Safety_Alarm",
-		DataDefine.KeyValue,"NameByVI", "Feeding Axis R3_Cảnh báo điều kiện an toàn JOG",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 吸料轴R3_JOG安全条件报警 { get; set; }= new WordBool();
 
@@ -694,7 +694,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "76",
 		DataDefine.KeyValue,"NameByCN", "吸料轴R3_PTP安全条件报警",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_R3_PTP_Safety_Alarm",
-		DataDefine.KeyValue,"NameByVI", "Feeding Axis R3_Cảnh báo điều kiện an toàn PTP",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 吸料轴R3_PTP安全条件报警 { get; set; }= new WordBool();
 
@@ -703,7 +703,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "77",
 		DataDefine.KeyValue,"NameByCN", "吸料轴R3_手自动不一致",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_R3_Manual_Auto_Mismatch",
-		DataDefine.KeyValue,"NameByVI", "Feeding Axis R3_Không đồng bộ tay-tự động",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 吸料轴R3_手自动不一致 { get; set; }= new WordBool();
 
@@ -712,7 +712,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "78",
 		DataDefine.KeyValue,"NameByCN", "吸料轴Z4_未使能提示",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_Z4_Not_Enabled",
-		DataDefine.KeyValue,"NameByVI", "Feeding Axis Z4_Chưa cho phép hoạt động",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 吸料轴Z4_未使能提示 { get; set; }= new WordBool();
 
@@ -721,7 +721,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "79",
 		DataDefine.KeyValue,"NameByCN", "吸料轴Z4_指令报错",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_Z4_Command_Error",
-		DataDefine.KeyValue,"NameByVI", "Feeding Axis Z4_Lỗi lệnh",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 吸料轴Z4_指令报错 { get; set; }= new WordBool();
 
@@ -730,7 +730,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "80",
 		DataDefine.KeyValue,"NameByCN", "吸料轴Z4_正极限",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_Z4_Pos_Limit",
-		DataDefine.KeyValue,"NameByVI", "Feeding Axis Z4_Giới hạn dương",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 吸料轴Z4_正极限 { get; set; }= new WordBool();
 
@@ -739,7 +739,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "81",
 		DataDefine.KeyValue,"NameByCN", "吸料轴Z4_负极限",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_Z4_Neg_Limit",
-		DataDefine.KeyValue,"NameByVI", "Feeding Axis Z4_Giới hạn âm",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 吸料轴Z4_负极限 { get; set; }= new WordBool();
 
@@ -748,7 +748,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "82",
 		DataDefine.KeyValue,"NameByCN", "吸料轴Z4_JOG安全条件报警",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_Z4_JOG_Safety_Alarm",
-		DataDefine.KeyValue,"NameByVI", "Feeding Axis Z4_Cảnh báo điều kiện an toàn JOG",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 吸料轴Z4_JOG安全条件报警 { get; set; }= new WordBool();
 
@@ -757,7 +757,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "83",
 		DataDefine.KeyValue,"NameByCN", "吸料轴Z4_PTP安全条件报警",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_Z4_PTP_Safety_Alarm",
-		DataDefine.KeyValue,"NameByVI", "Feeding Axis Z4_Cảnh báo điều kiện an toàn PTP",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 吸料轴Z4_PTP安全条件报警 { get; set; }= new WordBool();
 
@@ -766,7 +766,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "84",
 		DataDefine.KeyValue,"NameByCN", "吸料轴Z4_手自动不一致",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_Z4_Manual_Auto_Mismatch",
-		DataDefine.KeyValue,"NameByVI", "Feeding Axis Z4_Không đồng bộ tay-tự động",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 吸料轴Z4_手自动不一致 { get; set; }= new WordBool();
 
@@ -775,7 +775,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "85",
 		DataDefine.KeyValue,"NameByCN", "吸料轴R4_未使能提示",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_R4_Not_Enabled",
-		DataDefine.KeyValue,"NameByVI", "Feeding Axis R4_Chưa cho phép hoạt động",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 吸料轴R4_未使能提示 { get; set; }= new WordBool();
 
@@ -784,7 +784,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "86",
 		DataDefine.KeyValue,"NameByCN", "吸料轴R4_指令报错",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_R4_Command_Error",
-		DataDefine.KeyValue,"NameByVI", "Feeding Axis R4_Lỗi lệnh",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 吸料轴R4_指令报错 { get; set; }= new WordBool();
 
@@ -793,7 +793,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "87",
 		DataDefine.KeyValue,"NameByCN", "吸料轴R4_正极限",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_R4_Pos_Limit",
-		DataDefine.KeyValue,"NameByVI", "Feeding Axis R4_Giới hạn dương",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 吸料轴R4_正极限 { get; set; }= new WordBool();
 
@@ -802,7 +802,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "88",
 		DataDefine.KeyValue,"NameByCN", "吸料轴R4_负极限",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_R4_Neg_Limit",
-		DataDefine.KeyValue,"NameByVI", "Feeding Axis R4_Giới hạn âm",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 吸料轴R4_负极限 { get; set; }= new WordBool();
 
@@ -811,7 +811,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "89",
 		DataDefine.KeyValue,"NameByCN", "吸料轴R4_JOG安全条件报警",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_R4_JOG_Safety_Alarm",
-		DataDefine.KeyValue,"NameByVI", "Feeding Axis R4_Cảnh báo điều kiện an toàn JOG",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 吸料轴R4_JOG安全条件报警 { get; set; }= new WordBool();
 
@@ -820,7 +820,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "90",
 		DataDefine.KeyValue,"NameByCN", "吸料轴R4_PTP安全条件报警",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_R4_PTP_Safety_Alarm",
-		DataDefine.KeyValue,"NameByVI", "Feeding Axis R4_Cảnh báo điều kiện an toàn PTP",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 吸料轴R4_PTP安全条件报警 { get; set; }= new WordBool();
 
@@ -829,7 +829,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "91",
 		DataDefine.KeyValue,"NameByCN", "吸料轴R4_手自动不一致",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_R4_Manual_Auto_Mismatch",
-		DataDefine.KeyValue,"NameByVI", "Feeding Axis R4_Không đồng bộ tay-tự động",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 吸料轴R4_手自动不一致 { get; set; }= new WordBool();
 
@@ -838,7 +838,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "92",
 		DataDefine.KeyValue,"NameByCN", "吸料轴Z5_未使能提示",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_Z5_Not_Enabled",
-		DataDefine.KeyValue,"NameByVI", "Feeding Axis Z5_Chưa cho phép hoạt động",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 吸料轴Z5_未使能提示 { get; set; }= new WordBool();
 
@@ -847,7 +847,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "93",
 		DataDefine.KeyValue,"NameByCN", "吸料轴Z5_指令报错",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_Z5_Command_Error",
-		DataDefine.KeyValue,"NameByVI", "Feeding Axis Z5_Lỗi lệnh",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 吸料轴Z5_指令报错 { get; set; }= new WordBool();
 
@@ -856,7 +856,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "94",
 		DataDefine.KeyValue,"NameByCN", "吸料轴Z5_正极限",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_Z5_Pos_Limit",
-		DataDefine.KeyValue,"NameByVI", "Feeding Axis Z5_Giới hạn dương",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 吸料轴Z5_正极限 { get; set; }= new WordBool();
 
@@ -865,7 +865,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "95",
 		DataDefine.KeyValue,"NameByCN", "吸料轴Z5_负极限",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_Z5_Neg_Limit",
-		DataDefine.KeyValue,"NameByVI", "Feeding Axis Z5_Giới hạn âm",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 吸料轴Z5_负极限 { get; set; }= new WordBool();
 
@@ -874,7 +874,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "96",
 		DataDefine.KeyValue,"NameByCN", "吸料轴Z5_JOG安全条件报警",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_Z5_JOG_Safety_Alarm",
-		DataDefine.KeyValue,"NameByVI", "Feeding Axis Z5_Cảnh báo điều kiện an toàn JOG",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 吸料轴Z5_JOG安全条件报警 { get; set; }= new WordBool();
 
@@ -883,7 +883,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "97",
 		DataDefine.KeyValue,"NameByCN", "吸料轴Z5_PTP安全条件报警",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_Z5_PTP_Safety_Alarm",
-		DataDefine.KeyValue,"NameByVI", "Feeding Axis Z5_Cảnh báo điều kiện an toàn PTP",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 吸料轴Z5_PTP安全条件报警 { get; set; }= new WordBool();
 
@@ -892,7 +892,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "98",
 		DataDefine.KeyValue,"NameByCN", "吸料轴Z5_手自动不一致",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_Z5_Manual_Auto_Mismatch",
-		DataDefine.KeyValue,"NameByVI", "Feeding Axis Z5_Không đồng bộ tay-tự động",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 吸料轴Z5_手自动不一致 { get; set; }= new WordBool();
 
@@ -901,7 +901,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "99",
 		DataDefine.KeyValue,"NameByCN", "吸料轴R5_未使能提示",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_R5_Not_Enabled",
-		DataDefine.KeyValue,"NameByVI", "Feeding Axis R5_Chưa cho phép hoạt động",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 吸料轴R5_未使能提示 { get; set; }= new WordBool();
 
@@ -910,7 +910,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "100",
 		DataDefine.KeyValue,"NameByCN", "吸料轴R5_指令报错",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_R5_Command_Error",
-		DataDefine.KeyValue,"NameByVI", "Feeding Axis R5_Lỗi lệnh",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 吸料轴R5_指令报错 { get; set; }= new WordBool();
 
@@ -919,7 +919,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "101",
 		DataDefine.KeyValue,"NameByCN", "吸料轴R5_正极限",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_R5_Pos_Limit",
-		DataDefine.KeyValue,"NameByVI", "Feeding Axis R5_Giới hạn dương",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 吸料轴R5_正极限 { get; set; }= new WordBool();
 
@@ -928,7 +928,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "102",
 		DataDefine.KeyValue,"NameByCN", "吸料轴R5_负极限",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_R5_Neg_Limit",
-		DataDefine.KeyValue,"NameByVI", "Feeding Axis R5_Giới hạn âm",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 吸料轴R5_负极限 { get; set; }= new WordBool();
 
@@ -937,7 +937,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "103",
 		DataDefine.KeyValue,"NameByCN", "吸料轴R5_JOG安全条件报警",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_R5_JOG_Safety_Alarm",
-		DataDefine.KeyValue,"NameByVI", "Feeding Axis R5_Cảnh báo điều kiện an toàn JOG",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 吸料轴R5_JOG安全条件报警 { get; set; }= new WordBool();
 
@@ -946,7 +946,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "104",
 		DataDefine.KeyValue,"NameByCN", "吸料轴R5_PTP安全条件报警",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_R5_PTP_Safety_Alarm",
-		DataDefine.KeyValue,"NameByVI", "Feeding Axis R5_Cảnh báo điều kiện an toàn PTP",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 吸料轴R5_PTP安全条件报警 { get; set; }= new WordBool();
 
@@ -955,7 +955,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "105",
 		DataDefine.KeyValue,"NameByCN", "吸料轴R5_手自动不一致",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_R5_Manual_Auto_Mismatch",
-		DataDefine.KeyValue,"NameByVI", "Feeding Axis R5_Không đồng bộ tay-tự động",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 吸料轴R5_手自动不一致 { get; set; }= new WordBool();
 
@@ -964,7 +964,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "106",
 		DataDefine.KeyValue,"NameByCN", "吸料轴Z6_未使能提示",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_Z6_Not_Enabled",
-		DataDefine.KeyValue,"NameByVI", "Feeding Axis Z6_Chưa cho phép hoạt động",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 吸料轴Z6_未使能提示 { get; set; }= new WordBool();
 
@@ -973,7 +973,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "107",
 		DataDefine.KeyValue,"NameByCN", "吸料轴Z6_指令报错",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_Z6_Command_Error",
-		DataDefine.KeyValue,"NameByVI", "Feeding Axis Z6_Lỗi lệnh",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 吸料轴Z6_指令报错 { get; set; }= new WordBool();
 
@@ -982,7 +982,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "108",
 		DataDefine.KeyValue,"NameByCN", "吸料轴Z6_正极限",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_Z6_Pos_Limit",
-		DataDefine.KeyValue,"NameByVI", "Feeding Axis Z6_Giới hạn dương",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 吸料轴Z6_正极限 { get; set; }= new WordBool();
 
@@ -991,7 +991,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "109",
 		DataDefine.KeyValue,"NameByCN", "吸料轴Z6_负极限",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_Z6_Neg_Limit",
-		DataDefine.KeyValue,"NameByVI", "Feeding Axis Z6_Giới hạn âm",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 吸料轴Z6_负极限 { get; set; }= new WordBool();
 
@@ -1000,7 +1000,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "110",
 		DataDefine.KeyValue,"NameByCN", "吸料轴Z6_JOG安全条件报警",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_Z6_JOG_Safety_Alarm",
-		DataDefine.KeyValue,"NameByVI", "Feeding Axis Z6_Cảnh báo điều kiện an toàn JOG",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 吸料轴Z6_JOG安全条件报警 { get; set; }= new WordBool();
 
@@ -1009,7 +1009,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "111",
 		DataDefine.KeyValue,"NameByCN", "吸料轴Z6_PTP安全条件报警",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_Z6_PTP_Safety_Alarm",
-		DataDefine.KeyValue,"NameByVI", "Feeding Axis Z6_Cảnh báo điều kiện an toàn PTP",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 吸料轴Z6_PTP安全条件报警 { get; set; }= new WordBool();
 
@@ -1018,7 +1018,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "112",
 		DataDefine.KeyValue,"NameByCN", "吸料轴Z6_手自动不一致",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_Z6_Manual_Auto_Mismatch",
-		DataDefine.KeyValue,"NameByVI", "Feeding Axis Z6_Không đồng bộ tay-tự động",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 吸料轴Z6_手自动不一致 { get; set; }= new WordBool();
 
@@ -1027,7 +1027,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "113",
 		DataDefine.KeyValue,"NameByCN", "吸料轴R6_未使能提示",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_R6_Not_Enabled",
-		DataDefine.KeyValue,"NameByVI", "Feeding Axis R6_Chưa cho phép hoạt động",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 吸料轴R6_未使能提示 { get; set; }= new WordBool();
 
@@ -1036,7 +1036,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "114",
 		DataDefine.KeyValue,"NameByCN", "吸料轴R6_指令报错",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_R6_Command_Error",
-		DataDefine.KeyValue,"NameByVI", "Feeding Axis R6_Lỗi lệnh",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 吸料轴R6_指令报错 { get; set; }= new WordBool();
 
@@ -1045,7 +1045,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "115",
 		DataDefine.KeyValue,"NameByCN", "吸料轴R6_正极限",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_R6_Pos_Limit",
-		DataDefine.KeyValue,"NameByVI", "Feeding Axis R6_Giới hạn dương",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 吸料轴R6_正极限 { get; set; }= new WordBool();
 
@@ -1054,7 +1054,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "116",
 		DataDefine.KeyValue,"NameByCN", "吸料轴R6_负极限",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_R6_Neg_Limit",
-		DataDefine.KeyValue,"NameByVI", "Feeding Axis R6_Giới hạn âm",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 吸料轴R6_负极限 { get; set; }= new WordBool();
 
@@ -1063,7 +1063,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "117",
 		DataDefine.KeyValue,"NameByCN", "吸料轴R6_JOG安全条件报警",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_R6_JOG_Safety_Alarm",
-		DataDefine.KeyValue,"NameByVI", "Feeding Axis R6_Cảnh báo điều kiện an toàn JOG",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 吸料轴R6_JOG安全条件报警 { get; set; }= new WordBool();
 
@@ -1072,7 +1072,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "118",
 		DataDefine.KeyValue,"NameByCN", "吸料轴R6_PTP安全条件报警",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_R6_PTP_Safety_Alarm",
-		DataDefine.KeyValue,"NameByVI", "Feeding Axis R6_Cảnh báo điều kiện an toàn PTP",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 吸料轴R6_PTP安全条件报警 { get; set; }= new WordBool();
 
@@ -1081,7 +1081,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "119",
 		DataDefine.KeyValue,"NameByCN", "吸料轴R6_手自动不一致",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_R6_Manual_Auto_Mismatch",
-		DataDefine.KeyValue,"NameByVI", "Feeding Axis R6_Không đồng bộ tay-tự động",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 吸料轴R6_手自动不一致 { get; set; }= new WordBool();
 
@@ -1090,7 +1090,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "120",
 		DataDefine.KeyValue,"NameByCN", "吸料轴Z7_未使能提示",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_Z7_Not_Enabled",
-		DataDefine.KeyValue,"NameByVI", "Feeding Axis Z7_Chưa cho phép hoạt động",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 吸料轴Z7_未使能提示 { get; set; }= new WordBool();
 
@@ -1099,7 +1099,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "121",
 		DataDefine.KeyValue,"NameByCN", "吸料轴Z7_指令报错",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_Z7_Command_Error",
-		DataDefine.KeyValue,"NameByVI", "Feeding Axis Z7_Lỗi lệnh",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 吸料轴Z7_指令报错 { get; set; }= new WordBool();
 
@@ -1108,7 +1108,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "122",
 		DataDefine.KeyValue,"NameByCN", "吸料轴Z7_正极限",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_Z7_Pos_Limit",
-		DataDefine.KeyValue,"NameByVI", "Feeding Axis Z7_Giới hạn dương",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 吸料轴Z7_正极限 { get; set; }= new WordBool();
 
@@ -1117,7 +1117,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "123",
 		DataDefine.KeyValue,"NameByCN", "吸料轴Z7_负极限",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_Z7_Neg_Limit",
-		DataDefine.KeyValue,"NameByVI", "Feeding Axis Z7_Giới hạn âm",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 吸料轴Z7_负极限 { get; set; }= new WordBool();
 
@@ -1126,7 +1126,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "124",
 		DataDefine.KeyValue,"NameByCN", "吸料轴Z7_JOG安全条件报警",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_Z7_JOG_Safety_Alarm",
-		DataDefine.KeyValue,"NameByVI", "Feeding Axis Z7_Cảnh báo điều kiện an toàn JOG",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 吸料轴Z7_JOG安全条件报警 { get; set; }= new WordBool();
 
@@ -1135,7 +1135,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "125",
 		DataDefine.KeyValue,"NameByCN", "吸料轴Z7_PTP安全条件报警",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_Z7_PTP_Safety_Alarm",
-		DataDefine.KeyValue,"NameByVI", "Feeding Axis Z7_Cảnh báo điều kiện an toàn PTP",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 吸料轴Z7_PTP安全条件报警 { get; set; }= new WordBool();
 
@@ -1144,7 +1144,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "126",
 		DataDefine.KeyValue,"NameByCN", "吸料轴Z7_手自动不一致",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_Z7_Manual_Auto_Mismatch",
-		DataDefine.KeyValue,"NameByVI", "Feeding Axis Z7_Không đồng bộ tay-tự động",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 吸料轴Z7_手自动不一致 { get; set; }= new WordBool();
 
@@ -1153,7 +1153,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "127",
 		DataDefine.KeyValue,"NameByCN", "吸料轴R7_未使能提示",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_R7_Not_Enabled",
-		DataDefine.KeyValue,"NameByVI", "Feeding Axis R7_Chưa cho phép hoạt động",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 吸料轴R7_未使能提示 { get; set; }= new WordBool();
 
@@ -1162,7 +1162,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "128",
 		DataDefine.KeyValue,"NameByCN", "吸料轴R7_指令报错",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_R7_Command_Error",
-		DataDefine.KeyValue,"NameByVI", "Feeding Axis R7_Lỗi lệnh",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 吸料轴R7_指令报错 { get; set; }= new WordBool();
 
@@ -1171,7 +1171,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "129",
 		DataDefine.KeyValue,"NameByCN", "吸料轴R7_正极限",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_R7_Pos_Limit",
-		DataDefine.KeyValue,"NameByVI", "Feeding Axis R7_Giới hạn dương",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 吸料轴R7_正极限 { get; set; }= new WordBool();
 
@@ -1180,7 +1180,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "130",
 		DataDefine.KeyValue,"NameByCN", "吸料轴R7_负极限",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_R7_Neg_Limit",
-		DataDefine.KeyValue,"NameByVI", "Feeding Axis R7_Giới hạn âm",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 吸料轴R7_负极限 { get; set; }= new WordBool();
 
@@ -1189,7 +1189,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "131",
 		DataDefine.KeyValue,"NameByCN", "吸料轴R7_JOG安全条件报警",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_R7_JOG_Safety_Alarm",
-		DataDefine.KeyValue,"NameByVI", "Feeding Axis R7_Cảnh báo điều kiện an toàn JOG",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 吸料轴R7_JOG安全条件报警 { get; set; }= new WordBool();
 
@@ -1198,7 +1198,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "132",
 		DataDefine.KeyValue,"NameByCN", "吸料轴R7_PTP安全条件报警",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_R7_PTP_Safety_Alarm",
-		DataDefine.KeyValue,"NameByVI", "Feeding Axis R7_Cảnh báo điều kiện an toàn PTP",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 吸料轴R7_PTP安全条件报警 { get; set; }= new WordBool();
 
@@ -1207,7 +1207,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "133",
 		DataDefine.KeyValue,"NameByCN", "吸料轴R7_手自动不一致",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_R7_Manual_Auto_Mismatch",
-		DataDefine.KeyValue,"NameByVI", "Feeding Axis R7_Không đồng bộ tay-tự động",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 吸料轴R7_手自动不一致 { get; set; }= new WordBool();
 
@@ -1216,7 +1216,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "134",
 		DataDefine.KeyValue,"NameByCN", "轴1_定位气缸1-原位报警",
 		DataDefine.KeyValue,"NameByEN", "Axis1_PosCyl1_Home_Alarm",
-		DataDefine.KeyValue,"NameByVI", "Trục 1_Xylanh định vị 1-Cảnh báo vị trí gốc",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 轴1_定位气缸1_原位报警 { get; set; }= new WordBool();
 
@@ -1225,7 +1225,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "135",
 		DataDefine.KeyValue,"NameByCN", "轴1_定位气缸1-工作位报警",
 		DataDefine.KeyValue,"NameByEN", "Axis1_PosCyl1_WorkPos_Alarm",
-		DataDefine.KeyValue,"NameByVI", "Trục 1_Xylanh định vị 1-Cảnh báo vị trí làm việc",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 轴1_定位气缸1_工作位报警 { get; set; }= new WordBool();
 
@@ -1234,7 +1234,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "136",
 		DataDefine.KeyValue,"NameByCN", "轴1_定位气缸1-原点安全条件触发异常",
 		DataDefine.KeyValue,"NameByEN", "Axis1_PosCyl1_Home_Safety_Cond_Error",
-		DataDefine.KeyValue,"NameByVI", "Trục 1_Xylanh định vị 1-Bất thường kích hoạt điều kiện an toàn gốc",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 轴1_定位气缸1_原点安全条件触发异常 { get; set; }= new WordBool();
 
@@ -1243,7 +1243,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "137",
 		DataDefine.KeyValue,"NameByCN", "轴1_定位气缸1-工作位安全条件触发异常",
 		DataDefine.KeyValue,"NameByEN", "Axis1_PosCyl1_WorkPos_Safety_Cond_Error",
-		DataDefine.KeyValue,"NameByVI", "Trục 1_Xylanh định vị 1-Bất thường kích hoạt điều kiện an toàn vị trí làm việc",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 轴1_定位气缸1_工作位安全条件触发异常 { get; set; }= new WordBool();
 
@@ -1252,7 +1252,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "138",
 		DataDefine.KeyValue,"NameByCN", "轴1_定位气缸1-手自动联锁中",
 		DataDefine.KeyValue,"NameByEN", "Axis1_PosCyl1_Manual_Auto_Interlock",
-		DataDefine.KeyValue,"NameByVI", "Trục 1_Xylanh định vị 1_Đang khóa liên động tay-tự động",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 轴1_定位气缸1_手自动联锁中 { get; set; }= new WordBool();
 
@@ -1261,7 +1261,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "139",
 		DataDefine.KeyValue,"NameByCN", "轴1_定位气缸2-原位报警",
 		DataDefine.KeyValue,"NameByEN", "Axis1_PosCyl2_Home_Alarm",
-		DataDefine.KeyValue,"NameByVI", "Trục 1_Xylanh định vị 2-Cảnh báo vị trí gốc",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 轴1_定位气缸2_原位报警 { get; set; }= new WordBool();
 
@@ -1270,7 +1270,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "140",
 		DataDefine.KeyValue,"NameByCN", "轴1_定位气缸2-工作位报警",
 		DataDefine.KeyValue,"NameByEN", "Axis1_PosCyl2_WorkPos_Alarm",
-		DataDefine.KeyValue,"NameByVI", "Trục 1_Xylanh định vị 2-Cảnh báo vị trí làm việc",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 轴1_定位气缸2_工作位报警 { get; set; }= new WordBool();
 
@@ -1279,7 +1279,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "141",
 		DataDefine.KeyValue,"NameByCN", "轴1_定位气缸2-原点安全条件触发异常",
 		DataDefine.KeyValue,"NameByEN", "Axis1_PosCyl2_Home_Safety_Cond_Error",
-		DataDefine.KeyValue,"NameByVI", "Trục 1_Xylanh định vị 2-Bất thường kích hoạt điều kiện an toàn gốc",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 轴1_定位气缸2_原点安全条件触发异常 { get; set; }= new WordBool();
 
@@ -1288,7 +1288,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "142",
 		DataDefine.KeyValue,"NameByCN", "轴1_定位气缸2-工作位安全条件触发异常",
 		DataDefine.KeyValue,"NameByEN", "Axis1_PosCyl2_WorkPos_Safety_Cond_Error",
-		DataDefine.KeyValue,"NameByVI", "Trục 1_Xylanh định vị 2-Bất thường kích hoạt điều kiện an toàn vị trí làm việc",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 轴1_定位气缸2_工作位安全条件触发异常 { get; set; }= new WordBool();
 
@@ -1297,7 +1297,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "143",
 		DataDefine.KeyValue,"NameByCN", "轴1_定位气缸2-手自动联锁中",
 		DataDefine.KeyValue,"NameByEN", "Axis1_PosCyl2_Manual_Auto_Interlock",
-		DataDefine.KeyValue,"NameByVI", "Trục 1_Xylanh định vị 2_Đang khóa liên động tay-tự động",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 轴1_定位气缸2_手自动联锁中 { get; set; }= new WordBool();
 
@@ -1306,7 +1306,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "144",
 		DataDefine.KeyValue,"NameByCN", "轴1_定位气缸3-原位报警",
 		DataDefine.KeyValue,"NameByEN", "Axis1_PosCyl3_Home_Alarm",
-		DataDefine.KeyValue,"NameByVI", "Trục 1_Xylanh định vị 3-Cảnh báo vị trí gốc",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 轴1_定位气缸3_原位报警 { get; set; }= new WordBool();
 
@@ -1315,7 +1315,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "145",
 		DataDefine.KeyValue,"NameByCN", "轴1_定位气缸3-工作位报警",
 		DataDefine.KeyValue,"NameByEN", "Axis1_PosCyl3_WorkPos_Alarm",
-		DataDefine.KeyValue,"NameByVI", "Trục 1_Xylanh định vị 3-Cảnh báo vị trí làm việc",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 轴1_定位气缸3_工作位报警 { get; set; }= new WordBool();
 
@@ -1324,7 +1324,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "146",
 		DataDefine.KeyValue,"NameByCN", "轴1_定位气缸3-原点安全条件触发异常",
 		DataDefine.KeyValue,"NameByEN", "Axis1_PosCyl3_Home_Safety_Cond_Error",
-		DataDefine.KeyValue,"NameByVI", "Trục 1_Xylanh định vị 3-Bất thường kích hoạt điều kiện an toàn gốc",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 轴1_定位气缸3_原点安全条件触发异常 { get; set; }= new WordBool();
 
@@ -1333,7 +1333,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "147",
 		DataDefine.KeyValue,"NameByCN", "轴1_定位气缸3-工作位安全条件触发异常",
 		DataDefine.KeyValue,"NameByEN", "Axis1_PosCyl3_WorkPos_Safety_Cond_Error",
-		DataDefine.KeyValue,"NameByVI", "Trục 1_Xylanh định vị 3-Bất thường kích hoạt điều kiện an toàn vị trí làm việc",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 轴1_定位气缸3_工作位安全条件触发异常 { get; set; }= new WordBool();
 
@@ -1342,7 +1342,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "148",
 		DataDefine.KeyValue,"NameByCN", "轴1_定位气缸3-手自动联锁中",
 		DataDefine.KeyValue,"NameByEN", "Axis1_PosCyl3_Manual_Auto_Interlock",
-		DataDefine.KeyValue,"NameByVI", "Trục 1_Xylanh định vị 3_Đang khóa liên động tay-tự động",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 轴1_定位气缸3_手自动联锁中 { get; set; }= new WordBool();
 
@@ -1351,7 +1351,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "149",
 		DataDefine.KeyValue,"NameByCN", "轴2_定位气缸1-原位报警",
 		DataDefine.KeyValue,"NameByEN", "Axis2_PosCyl1_Home_Alarm",
-		DataDefine.KeyValue,"NameByVI", "Trục 2_Xylanh định vị 1-Cảnh báo vị trí gốc",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 轴2_定位气缸1_原位报警 { get; set; }= new WordBool();
 
@@ -1360,7 +1360,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "150",
 		DataDefine.KeyValue,"NameByCN", "轴2_定位气缸1-工作位报警",
 		DataDefine.KeyValue,"NameByEN", "Axis2_PosCyl1_WorkPos_Alarm",
-		DataDefine.KeyValue,"NameByVI", "Trục 2_Xylanh định vị 1-Cảnh báo vị trí làm việc",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 轴2_定位气缸1_工作位报警 { get; set; }= new WordBool();
 
@@ -1369,7 +1369,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "151",
 		DataDefine.KeyValue,"NameByCN", "轴2_定位气缸1-原点安全条件触发异常",
 		DataDefine.KeyValue,"NameByEN", "Axis2_PosCyl1_Home_Safety_Cond_Error",
-		DataDefine.KeyValue,"NameByVI", "Trục 2_Xylanh định vị 1-Bất thường kích hoạt điều kiện an toàn gốc",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 轴2_定位气缸1_原点安全条件触发异常 { get; set; }= new WordBool();
 
@@ -1378,7 +1378,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "152",
 		DataDefine.KeyValue,"NameByCN", "轴2_定位气缸1-工作位安全条件触发异常",
 		DataDefine.KeyValue,"NameByEN", "Axis2_PosCyl1_WorkPos_Safety_Cond_Error",
-		DataDefine.KeyValue,"NameByVI", "Trục 2_Xylanh định vị 1-Bất thường kích hoạt điều kiện an toàn vị trí làm việc",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 轴2_定位气缸1_工作位安全条件触发异常 { get; set; }= new WordBool();
 
@@ -1387,7 +1387,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "153",
 		DataDefine.KeyValue,"NameByCN", "轴2_定位气缸1-手自动联锁中",
 		DataDefine.KeyValue,"NameByEN", "Axis2_PosCyl1_Manual_Auto_Interlock",
-		DataDefine.KeyValue,"NameByVI", "Trục 2_Xylanh định vị 1_Đang khóa liên động tay-tự động",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 轴2_定位气缸1_手自动联锁中 { get; set; }= new WordBool();
 
@@ -1396,7 +1396,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "154",
 		DataDefine.KeyValue,"NameByCN", "轴2_定位气缸2-原位报警",
 		DataDefine.KeyValue,"NameByEN", "Axis2_PosCyl2_Home_Alarm",
-		DataDefine.KeyValue,"NameByVI", "Trục 2_Xylanh định vị 2-Cảnh báo vị trí gốc",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 轴2_定位气缸2_原位报警 { get; set; }= new WordBool();
 
@@ -1405,7 +1405,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "155",
 		DataDefine.KeyValue,"NameByCN", "轴2_定位气缸2-工作位报警",
 		DataDefine.KeyValue,"NameByEN", "Axis2_PosCyl2_WorkPos_Alarm",
-		DataDefine.KeyValue,"NameByVI", "Trục 2_Xylanh định vị 2-Cảnh báo vị trí làm việc",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 轴2_定位气缸2_工作位报警 { get; set; }= new WordBool();
 
@@ -1414,7 +1414,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "156",
 		DataDefine.KeyValue,"NameByCN", "轴2_定位气缸2-原点安全条件触发异常",
 		DataDefine.KeyValue,"NameByEN", "Axis2_PosCyl2_Home_Safety_Cond_Error",
-		DataDefine.KeyValue,"NameByVI", "Trục 2_Xylanh định vị 2-Bất thường kích hoạt điều kiện an toàn gốc",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 轴2_定位气缸2_原点安全条件触发异常 { get; set; }= new WordBool();
 
@@ -1423,7 +1423,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "157",
 		DataDefine.KeyValue,"NameByCN", "轴2_定位气缸2-工作位安全条件触发异常",
 		DataDefine.KeyValue,"NameByEN", "Axis2_PosCyl2_WorkPos_Safety_Cond_Error",
-		DataDefine.KeyValue,"NameByVI", "Trục 2_Xylanh định vị 2-Bất thường kích hoạt điều kiện an toàn vị trí làm việc",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 轴2_定位气缸2_工作位安全条件触发异常 { get; set; }= new WordBool();
 
@@ -1432,7 +1432,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "158",
 		DataDefine.KeyValue,"NameByCN", "轴2_定位气缸2-手自动联锁中",
 		DataDefine.KeyValue,"NameByEN", "Axis2_PosCyl2_Manual_Auto_Interlock",
-		DataDefine.KeyValue,"NameByVI", "Trục 2_Xylanh định vị 2_Đang khóa liên động tay-tự động",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 轴2_定位气缸2_手自动联锁中 { get; set; }= new WordBool();
 
@@ -1441,7 +1441,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "159",
 		DataDefine.KeyValue,"NameByCN", "轴2_定位气缸3-原位报警",
 		DataDefine.KeyValue,"NameByEN", "Axis2_PosCyl3_Home_Alarm",
-		DataDefine.KeyValue,"NameByVI", "Trục 2_Xylanh định vị 3-Cảnh báo vị trí gốc",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 轴2_定位气缸3_原位报警 { get; set; }= new WordBool();
 
@@ -1450,7 +1450,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "160",
 		DataDefine.KeyValue,"NameByCN", "轴2_定位气缸3-工作位报警",
 		DataDefine.KeyValue,"NameByEN", "Axis2_PosCyl3_WorkPos_Alarm",
-		DataDefine.KeyValue,"NameByVI", "Trục 2_Xylanh định vị 3-Cảnh báo vị trí làm việc",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 轴2_定位气缸3_工作位报警 { get; set; }= new WordBool();
 
@@ -1459,7 +1459,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "161",
 		DataDefine.KeyValue,"NameByCN", "轴2_定位气缸3-原点安全条件触发异常",
 		DataDefine.KeyValue,"NameByEN", "Axis2_PosCyl3_Home_Safety_Cond_Error",
-		DataDefine.KeyValue,"NameByVI", "Trục 2_Xylanh định vị 3-Bất thường kích hoạt điều kiện an toàn gốc",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 轴2_定位气缸3_原点安全条件触发异常 { get; set; }= new WordBool();
 
@@ -1468,7 +1468,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "162",
 		DataDefine.KeyValue,"NameByCN", "轴2_定位气缸3-工作位安全条件触发异常",
 		DataDefine.KeyValue,"NameByEN", "Axis2_PosCyl3_WorkPos_Safety_Cond_Error",
-		DataDefine.KeyValue,"NameByVI", "Trục 2_Xylanh định vị 3-Bất thường kích hoạt điều kiện an toàn vị trí làm việc",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 轴2_定位气缸3_工作位安全条件触发异常 { get; set; }= new WordBool();
 
@@ -1477,7 +1477,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "163",
 		DataDefine.KeyValue,"NameByCN", "轴2_定位气缸3-手自动联锁中",
 		DataDefine.KeyValue,"NameByEN", "Axis2_PosCyl3_Manual_Auto_Interlock",
-		DataDefine.KeyValue,"NameByVI", "Trục 2_Xylanh định vị 3_Đang khóa liên động tay-tự động",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 轴2_定位气缸3_手自动联锁中 { get; set; }= new WordBool();
 
@@ -1486,7 +1486,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "164",
 		DataDefine.KeyValue,"NameByCN", "载具1后底模_真空 -负压报警",
 		DataDefine.KeyValue,"NameByEN", "Load1_Bottom_Vacuum_Negative_Pressure_Alarm",
-		DataDefine.KeyValue,"NameByVI", "Mặt khuôn sau xe tải 1_Chân không - Cảnh báo áp suất âm",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 载具1后底模_真空_负压报警 { get; set; }= new WordBool();
 
@@ -1495,7 +1495,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "165",
 		DataDefine.KeyValue,"NameByCN", "载具1后底模_真空-禁止破真空报警-提示",
 		DataDefine.KeyValue,"NameByEN", "Load1_Bottom_Vacuum_Forbid_Vacuum_Break_Alarm",
-		DataDefine.KeyValue,"NameByVI", "Mặt khuôn sau xe tải 1_Chân không - Cảnh báo cấm phá chân không, thông báo",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 载具1后底模_真空_禁止破真空报警_提示 { get; set; }= new WordBool();
 
@@ -1504,7 +1504,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "166",
 		DataDefine.KeyValue,"NameByCN", "载具1后底模_真空-手自动联锁中",
 		DataDefine.KeyValue,"NameByEN", "Load1_Bottom_Vacuum_Manual_Auto_Interlock",
-		DataDefine.KeyValue,"NameByVI", "Mặt khuôn sau xe tải 1_Chân không - Đang khóa liên động tay-tự động",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 载具1后底模_真空_手自动联锁中 { get; set; }= new WordBool();
 
@@ -1513,7 +1513,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "167",
 		DataDefine.KeyValue,"NameByCN", "载具1前底模_真空-负压报警",
 		DataDefine.KeyValue,"NameByEN", "Load1_Bottom_Vacuum_Negative_Pressure_Alarm",
-		DataDefine.KeyValue,"NameByVI", "Mặt khuôn trước xe tải 1_Chân không - Cảnh báo áp suất âm",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 载具1前底模_真空_负压报警 { get; set; }= new WordBool();
 
@@ -1522,7 +1522,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "168",
 		DataDefine.KeyValue,"NameByCN", "载具1前底模_真空-禁止破真空报警-提示",
 		DataDefine.KeyValue,"NameByEN", "Load1_Bottom_Vacuum_Forbid_Vacuum_Break_Alarm",
-		DataDefine.KeyValue,"NameByVI", "Mặt khuôn trước xe tải 1_Chân không - Cảnh báo cấm phá chân không, thông báo",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 载具1前底模_真空_禁止破真空报警_提示 { get; set; }= new WordBool();
 
@@ -1531,7 +1531,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "169",
 		DataDefine.KeyValue,"NameByCN", "载具1前底模_真空-手自动联锁中",
 		DataDefine.KeyValue,"NameByEN", "Load1_Bottom_Vacuum_Manual_Auto_Interlock",
-		DataDefine.KeyValue,"NameByVI", "Mặt khuôn trước xe tải 1_Chân không - Đang khóa liên động tay-tự động",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 载具1前底模_真空_手自动联锁中 { get; set; }= new WordBool();
 
@@ -1540,7 +1540,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "170",
 		DataDefine.KeyValue,"NameByCN", "载具2前底模_真空-负压报警",
 		DataDefine.KeyValue,"NameByEN", "Load2_Bottom_Vacuum_Negative_Pressure_Alarm",
-		DataDefine.KeyValue,"NameByVI", "Mặt khuôn trước xe tải 2_Chân không - Cảnh báo áp suất âm",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 载具2前底模_真空_负压报警 { get; set; }= new WordBool();
 
@@ -1549,7 +1549,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "171",
 		DataDefine.KeyValue,"NameByCN", "载具2前底模_真空-禁止破真空报警-提示",
 		DataDefine.KeyValue,"NameByEN", "Load2_Bottom_Vacuum_Forbid_Vacuum_Break_Alarm",
-		DataDefine.KeyValue,"NameByVI", "Mặt khuôn trước xe tải 2_Chân không - Cảnh báo cấm phá chân không, thông báo",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 载具2前底模_真空_禁止破真空报警_提示 { get; set; }= new WordBool();
 
@@ -1558,7 +1558,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "172",
 		DataDefine.KeyValue,"NameByCN", "载具2前底模_真空-手自动联锁中",
 		DataDefine.KeyValue,"NameByEN", "Load2_Bottom_Vacuum_Manual_Auto_Interlock",
-		DataDefine.KeyValue,"NameByVI", "Mặt khuôn trước xe tải 2_Chân không - Đang khóa liên động tay-tự động",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 载具2前底模_真空_手自动联锁中 { get; set; }= new WordBool();
 
@@ -1567,7 +1567,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "173",
 		DataDefine.KeyValue,"NameByCN", "载具2后底模_真空-负压报警",
 		DataDefine.KeyValue,"NameByEN", "Load2_Bottom_Vacuum_Negative_Pressure_Alarm",
-		DataDefine.KeyValue,"NameByVI", "Mặt khuôn sau xe tải 2_Chân không - Cảnh báo áp suất âm",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 载具2后底模_真空_负压报警 { get; set; }= new WordBool();
 
@@ -1576,7 +1576,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "174",
 		DataDefine.KeyValue,"NameByCN", "载具2后底模_真空-禁止破真空报警-提示",
 		DataDefine.KeyValue,"NameByEN", "Load2_Bottom_Vacuum_Forbid_Vacuum_Break_Alarm",
-		DataDefine.KeyValue,"NameByVI", "Mặt khuôn sau xe tải 2_Chân không - Cảnh báo cấm phá chân không, thông báo",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 载具2后底模_真空_禁止破真空报警_提示 { get; set; }= new WordBool();
 
@@ -1585,7 +1585,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "175",
 		DataDefine.KeyValue,"NameByCN", "载具2后底模_真空-手自动联锁中",
 		DataDefine.KeyValue,"NameByEN", "Load2_Bottom_Vacuum_Manual_Auto_Interlock",
-		DataDefine.KeyValue,"NameByVI", "Mặt khuôn sau xe tải 2_Chân không - Đang khóa liên động tay-tự động",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool 载具2后底模_真空_手自动联锁中 { get; set; }= new WordBool();
 
@@ -1594,7 +1594,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "176",
 		DataDefine.KeyValue,"NameByCN", "ZR1_真空-负压报警",
 		DataDefine.KeyValue,"NameByEN", "ZR1_Vacuum_Negative_Pressure_Alarm",
-		DataDefine.KeyValue,"NameByVI", "ZR1_Chân không - Cảnh báo áp suất âm",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool ZR1_真空_负压报警 { get; set; }= new WordBool();
 
@@ -1603,7 +1603,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "177",
 		DataDefine.KeyValue,"NameByCN", "ZR1_真空-禁止破真空报警-提示",
 		DataDefine.KeyValue,"NameByEN", "ZR1_Vacuum_Forbid_Vacuum_Break_Alarm",
-		DataDefine.KeyValue,"NameByVI", "ZR1_Chân không - Cảnh báo cấm phá chân không, thông báo",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool ZR1_真空_禁止破真空报警_提示 { get; set; }= new WordBool();
 
@@ -1612,7 +1612,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "178",
 		DataDefine.KeyValue,"NameByCN", "ZR1_真空-手自动联锁中",
 		DataDefine.KeyValue,"NameByEN", "ZR1_Vacuum_Manual_Auto_Interlock",
-		DataDefine.KeyValue,"NameByVI", "ZR1_Chân không - Đang khóa liên động tay-tự động",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool ZR1_真空_手自动联锁中 { get; set; }= new WordBool();
 
@@ -1621,7 +1621,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "179",
 		DataDefine.KeyValue,"NameByCN", "ZR2_真空-负压报警",
 		DataDefine.KeyValue,"NameByEN", "ZR2_Vacuum_Negative_Pressure_Alarm",
-		DataDefine.KeyValue,"NameByVI", "ZR2_Chân không - Cảnh báo áp suất âm",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool ZR2_真空_负压报警 { get; set; }= new WordBool();
 
@@ -1630,7 +1630,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "180",
 		DataDefine.KeyValue,"NameByCN", "ZR2_真空-禁止破真空报警-提示",
 		DataDefine.KeyValue,"NameByEN", "ZR2_Vacuum_Forbid_Vacuum_Break_Alarm",
-		DataDefine.KeyValue,"NameByVI", "ZR2_Chân không - Cảnh báo cấm phá chân không, thông báo",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool ZR2_真空_禁止破真空报警_提示 { get; set; }= new WordBool();
 
@@ -1639,7 +1639,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "181",
 		DataDefine.KeyValue,"NameByCN", "ZR2_真空-手自动联锁中",
 		DataDefine.KeyValue,"NameByEN", "ZR2_Vacuum_Manual_Auto_Interlock",
-		DataDefine.KeyValue,"NameByVI", "ZR2_Chân không - Đang khóa liên động tay-tự động",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool ZR2_真空_手自动联锁中 { get; set; }= new WordBool();
 
@@ -1648,7 +1648,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "182",
 		DataDefine.KeyValue,"NameByCN", "ZR3_真空-负压报警",
 		DataDefine.KeyValue,"NameByEN", "ZR3_Vacuum_Negative_Pressure_Alarm",
-		DataDefine.KeyValue,"NameByVI", "ZR3_Chân không - Cảnh báo áp suất âm",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool ZR3_真空_负压报警 { get; set; }= new WordBool();
 
@@ -1657,7 +1657,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "183",
 		DataDefine.KeyValue,"NameByCN", "ZR3_真空-禁止破真空报警-提示",
 		DataDefine.KeyValue,"NameByEN", "ZR3_Vacuum_Forbid_Vacuum_Break_Alarm",
-		DataDefine.KeyValue,"NameByVI", "ZR3_Chân không - Cảnh báo cấm phá chân không, thông báo",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool ZR3_真空_禁止破真空报警_提示 { get; set; }= new WordBool();
 
@@ -1666,7 +1666,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "184",
 		DataDefine.KeyValue,"NameByCN", "ZR3_真空-手自动联锁中",
 		DataDefine.KeyValue,"NameByEN", "ZR3_Vacuum_Manual_Auto_Interlock",
-		DataDefine.KeyValue,"NameByVI", "ZR3_Chân không - Đang khóa liên động tay-tự động",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool ZR3_真空_手自动联锁中 { get; set; }= new WordBool();
 
@@ -1675,7 +1675,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "185",
 		DataDefine.KeyValue,"NameByCN", "ZR4_真空-负压报警",
 		DataDefine.KeyValue,"NameByEN", "ZR4_Vacuum_Negative_Pressure_Alarm",
-		DataDefine.KeyValue,"NameByVI", "ZR4_Chân không - Cảnh báo áp suất âm",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool ZR4_真空_负压报警 { get; set; }= new WordBool();
 
@@ -1684,7 +1684,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "186",
 		DataDefine.KeyValue,"NameByCN", "ZR4_真空-禁止破真空报警-提示",
 		DataDefine.KeyValue,"NameByEN", "ZR4_Vacuum_Forbid_Vacuum_Break_Alarm",
-		DataDefine.KeyValue,"NameByVI", "ZR4_Chân không - Cảnh báo cấm phá chân không, thông báo",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool ZR4_真空_禁止破真空报警_提示 { get; set; }= new WordBool();
 
@@ -1693,7 +1693,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "187",
 		DataDefine.KeyValue,"NameByCN", "ZR4_真空-手自动联锁中",
 		DataDefine.KeyValue,"NameByEN", "ZR4_Vacuum_Manual_Auto_Interlock",
-		DataDefine.KeyValue,"NameByVI", "ZR4_Chân không - Đang khóa liên động tay-tự động",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool ZR4_真空_手自动联锁中 { get; set; }= new WordBool();
 
@@ -1702,7 +1702,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "188",
 		DataDefine.KeyValue,"NameByCN", "ZR5_真空-负压报警",
 		DataDefine.KeyValue,"NameByEN", "ZR5_Vacuum_Negative_Pressure_Alarm",
-		DataDefine.KeyValue,"NameByVI", "ZR5_Chân không - Cảnh báo áp suất âm",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool ZR5_真空_负压报警 { get; set; }= new WordBool();
 
@@ -1711,7 +1711,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "189",
 		DataDefine.KeyValue,"NameByCN", "ZR5_真空-禁止破真空报警-提示",
 		DataDefine.KeyValue,"NameByEN", "ZR5_Vacuum_Forbid_Vacuum_Break_Alarm",
-		DataDefine.KeyValue,"NameByVI", "ZR5_Chân không - Cảnh báo cấm phá chân không, thông báo",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool ZR5_真空_禁止破真空报警_提示 { get; set; }= new WordBool();
 
@@ -1720,7 +1720,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "190",
 		DataDefine.KeyValue,"NameByCN", "ZR5_真空-手自动联锁中",
 		DataDefine.KeyValue,"NameByEN", "ZR5_Vacuum_Manual_Auto_Interlock",
-		DataDefine.KeyValue,"NameByVI", "ZR5_Chân không - Đang khóa liên động tay-tự động",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool ZR5_真空_手自动联锁中 { get; set; }= new WordBool();
 
@@ -1729,7 +1729,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "191",
 		DataDefine.KeyValue,"NameByCN", "ZR6_真空-负压报警",
 		DataDefine.KeyValue,"NameByEN", "ZR6_Vacuum_Negative_Pressure_Alarm",
-		DataDefine.KeyValue,"NameByVI", "ZR6_Chân không - Cảnh báo áp suất âm",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool ZR6_真空_负压报警 { get; set; }= new WordBool();
 
@@ -1738,7 +1738,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "192",
 		DataDefine.KeyValue,"NameByCN", "ZR6_真空-禁止破真空报警-提示",
 		DataDefine.KeyValue,"NameByEN", "ZR6_Vacuum_Forbid_Vacuum_Break_Alarm",
-		DataDefine.KeyValue,"NameByVI", "ZR6_Chân không - Cảnh báo cấm phá chân không, thông báo",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool ZR6_真空_禁止破真空报警_提示 { get; set; }= new WordBool();
 
@@ -1747,7 +1747,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "193",
 		DataDefine.KeyValue,"NameByCN", "ZR6_真空-手自动联锁中",
 		DataDefine.KeyValue,"NameByEN", "ZR6_Vacuum_Manual_Auto_Interlock",
-		DataDefine.KeyValue,"NameByVI", "ZR6_Chân không - Đang khóa liên động tay-tự động",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool ZR6_真空_手自动联锁中 { get; set; }= new WordBool();
 
@@ -1756,7 +1756,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "194",
 		DataDefine.KeyValue,"NameByCN", "ZR7_真空-负压报警",
 		DataDefine.KeyValue,"NameByEN", "ZR7_Vacuum_Negative_Pressure_Alarm",
-		DataDefine.KeyValue,"NameByVI", "ZR7_Chân không - Cảnh báo áp suất âm",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool ZR7_真空_负压报警 { get; set; }= new WordBool();
 
@@ -1765,7 +1765,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "195",
 		DataDefine.KeyValue,"NameByCN", "ZR7_真空-禁止破真空报警-提示",
 		DataDefine.KeyValue,"NameByEN", "ZR7_Vacuum_Forbid_Vacuum_Break_Alarm",
-		DataDefine.KeyValue,"NameByVI", "ZR7_Chân không - Cảnh báo cấm phá chân không, thông báo",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool ZR7_真空_禁止破真空报警_提示 { get; set; }= new WordBool();
 
@@ -1774,7 +1774,7 @@ public partial class PlcAlarmStruct
 		DataDefine.KeyValue,"Id", "196",
 		DataDefine.KeyValue,"NameByCN", "ZR7_真空-手自动联锁中",
 		DataDefine.KeyValue,"NameByEN", "ZR7_Vacuum_Manual_Auto_Interlock",
-		DataDefine.KeyValue,"NameByVI", "ZR7_Chân không - Đang khóa liên động tay-tự động",
+		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
 	public partial WordBool ZR7_真空_手自动联锁中 { get; set; }= new WordBool();
 

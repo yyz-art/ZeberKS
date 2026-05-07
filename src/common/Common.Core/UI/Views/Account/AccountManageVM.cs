@@ -17,7 +17,7 @@ public partial class AccountManageVM : CommonUiVM<AccountManageView>
 		var accountsResult = await AccountService.GetAllAccountsAsync();
 		foreach (var account in accountsResult.Value!)
 		{
-			if (AvaloniaApplication.Current.TryGetResource($"I18N.Common.{account.IdentityName}", out var displayName))
+			if (AvaloniaApplication.Current.TryGetResource($"I18N.G.{account.IdentityName}", out var displayName))
 				account.DisplayName = displayName?.ToString();
 			account.DisplayName ??= account.IdentityName;
 		}

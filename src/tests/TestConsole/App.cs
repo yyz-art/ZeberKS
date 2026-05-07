@@ -1,5 +1,6 @@
 ﻿using System.Runtime.CompilerServices;
-using HslCommunication.ModBus;using ZC;
+using HslCommunication.ModBus;
+using ZC;
 using ZC.Development;
 using ZC.EnhanceApp;
 using ZC.Web.Server;
@@ -10,16 +11,19 @@ using TestConsole;
 using ZitApp.EAP;
 using ZitApp.SIFS;
 using ZitApp.Utils;
+
 var generator = new BinStructSourceGenerator();
-var projectNames = new String[] { "ASM-15"};
-var templatePath = "E:\\XKJ-ZEBER\\src\\apps\\{0}\\Ext\\BinStructs\\BinStructs.xml";
-generator.Generate( File.ReadAllText(string.Format(templatePath,"ASM15-1")));
-generator.Generate( File.ReadAllText(string.Format(templatePath,"ASM15-2")));
-generator.Generate( File.ReadAllText(string.Format(templatePath,"MFG-15")));
-generator.Generate( File.ReadAllText(string.Format(templatePath,"ASM-4")));
-generator.Generate( File.ReadAllText(string.Format(templatePath,"ASM-12")));
-generator.Generate( File.ReadAllText(string.Format(templatePath,"SUB1")));
-generator.Generate( File.ReadAllText("E:\\XKJ-ZEBER\\src\\common\\Common.Shared\\Ext\\BinStructs\\BinStructs.xml"));
+var projectNames = new String[] { "ASM-15" };
+
+var slnPath = Path.GetFullPath("../../../../");
+var templatePath = slnPath + "apps\\{0}\\Ext\\BinStructs\\BinStructs.xml";
+// generator.GenerateFromFile(string.Format(templatePath, "ASM15-1"));
+// generator.GenerateFromFile(string.Format(templatePath, "ASM15-2"));
+generator.GenerateFromFile(string.Format(templatePath, "MFG-15"));
+// generator.GenerateFromFile(string.Format(templatePath, "ASM-4"));
+// generator.GenerateFromFile(string.Format(templatePath, "ASM-12"));
+// generator.GenerateFromFile(string.Format(templatePath, "SUB1"));
+// generator.Generate( File.ReadAllText("E:\\XKJ-ZEBER\\src\\common\\Common.Shared\\Ext\\BinStructs\\BinStructs.xml"));
 Environment.Exit(0);
 // var modbusTcpNet = new ModbusTcpNet("127.0.0.1",502);
 // var operateResult = modbusTcpNet.Read("100",1);
@@ -37,17 +41,16 @@ var app = new App(config).UseLogger()
 
 await app.Initialize();
 await app.Start();
- // var eapService = app.IOC.AddSingleton<EapCoreService>().Get<EapCoreService>(
- // 	null,
- // 	arg: InjectArgument.Create(new TcpServerSocket("127.0.0.1", 23456)));
- // eapService.RegisterHandlerMethods();
- // await eapService.Start();
- // while (true)
+// var eapService = app.IOC.AddSingleton<EapCoreService>().Get<EapCoreService>(
+// 	null,
+// 	arg: InjectArgument.Create(new TcpServerSocket("127.0.0.1", 23456)));
+// eapService.RegisterHandlerMethods();
+// await eapService.Start();
+// while (true)
 {
 	// var client = new SifsClient(new NetworkSocketConfig("127.0.0.1", 502));
 	// client.Test();
 }
-
 
 
 var filesZipToLocalFs = ZipUtils.CreateFilesZipToLocalFS("/out-z.zip", [
@@ -60,11 +63,11 @@ Console.WriteLine("Hello World!");
 public sealed class App(AppConfig config) : CommonUiAppCore(config)
 {
 	public new AppConfig Config { get; set; } = config;
+
 	protected override async Task OnInitialize(object? ctx, object? args)
 	{
 		await base.OnInitialize(ctx, args);
 	}
-
 
 
 	protected override async Task OnStart(object? ctx, object? args)
@@ -75,6 +78,7 @@ public sealed class App(AppConfig config) : CommonUiAppCore(config)
 
 public static partial class Program
 {
+
 	// public static AppBuilder BuildAvaloniaApp() => UiApp.Build();
 }
 
@@ -85,3 +89,4 @@ public static class AppLoader
 #endif
 	public static void Initialize() => CommonLibLoader.Initialize();
 }
+

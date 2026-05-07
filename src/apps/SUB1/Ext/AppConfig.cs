@@ -29,9 +29,6 @@ public partial class PlcConfig : ObservableObject, INetworkSocketConfig
 [ObservableObject(RequiredGenerate = true)]
 public partial class AppConfig : CommonAppConfig
 {
-    public const string NameByCN = "NameByCN";
-    public const string NameByVI = "NameByVI";
-    public const string NameByEN = "NameByEN";
 
     public AppConfig()
     {
@@ -164,76 +161,5 @@ public partial class AppConfig : CommonAppConfig
     } = 9600;
 
     #endregion
-
-    #region 飞达配置
-
-    [ValueInfo(Category = "飞达配置", InitAttachData =
-    [
-       DataDefine.KeyValue, NameByCN, "飞达1标准码",
-       DataDefine.KeyValue, NameByEN, "Feeder1 Standard Code",
-       DataDefine.KeyValue, NameByVI, "Feeder1 Standard Code",
-    ], DefaultValue = "", Description = "飞达1标准码")]
-    public partial string 飞达1标准码 { get; set; } = "";
-
-    [ValueInfo(Category = "飞达配置", InitAttachData =
-    [
-       DataDefine.KeyValue, NameByCN, "飞达2标准码",
-       DataDefine.KeyValue, NameByEN, "Feeder2 Standard Code",
-       DataDefine.KeyValue, NameByVI, "Feeder2 Standard Code",
-    ], DefaultValue = "", Description = "飞达2标准码")]
-    public partial string 飞达2标准码 { get; set; } = "";
-
-    [ValueInfo(Category = "飞达配置", InitAttachData =
-    [
-       DataDefine.KeyValue, NameByCN, "飞达3标准码",
-       DataDefine.KeyValue, NameByEN, "Feeder3 Standard Code",
-       DataDefine.KeyValue, NameByVI, "Feeder3 Standard Code",
-    ], DefaultValue = "", Description = "飞达3标准码")]
-    public partial string 飞达3标准码 { get; set; } = "";
-
-    [ValueInfo(Category = "飞达配置", InitAttachData =
-    [
-       DataDefine.KeyValue, NameByCN, "飞达4标准码",
-       DataDefine.KeyValue, NameByEN, "Feeder4 Standard Code",
-       DataDefine.KeyValue, NameByVI, "Feeder4 Standard Code",
-    ], DefaultValue = "", Description = "飞达4标准码")]
-    public partial string 飞达4标准码 { get; set; } = "";
-
-    [ValueInfo(Category = "飞达配置", InitAttachData =
-    [
-       DataDefine.KeyValue, NameByCN, "飞达5标准码",
-       DataDefine.KeyValue, NameByEN, "Feeder5 Standard Code",
-       DataDefine.KeyValue, NameByVI, "Feeder5 Standard Code",
-    ], DefaultValue = "", Description = "飞达5标准码")]
-    public partial string 飞达5标准码 { get; set; } = "";
-
-    [ValueInfo(Category = "飞达配置", InitAttachData =
-    [
-       DataDefine.KeyValue, NameByCN, "飞达6标准码",
-       DataDefine.KeyValue, NameByEN, "Feeder6 Standard Code",
-       DataDefine.KeyValue, NameByVI, "Feeder6 Standard Code",
-    ], DefaultValue = "", Description = "飞达6标准码")]
-    public partial string 飞达6标准码 { get; set; } = "";
-
-    #endregion
-
-    #region 吸嘴压力点检
-
-    public partial string Nozzle1PressureAddress { get; set; } = "";
-    public partial float Nozzle1PressureMax { get; set; } = 0;
-    public partial float Nozzle1PressureMin { get; set; } = 0;
-
-    public partial string Nozzle2PressureAddress { get; set; } = "";
-    public partial float Nozzle2PressureMax { get; set; } = 0;
-    public partial float Nozzle2PressureMin { get; set; } = 0;
-
-    public partial string Nozzle3PressureAddress { get; set; } = "";
-    public partial float Nozzle3PressureMax { get; set; } = 0;
-    public partial float Nozzle3PressureMin { get; set; } = 0;
-
-    public partial string Nozzle4PressureAddress { get; set; } = "";
-    public partial float Nozzle4PressureMax { get; set; } = 0;
-    public partial float Nozzle4PressureMin { get; set; } = 0;
-
-    #endregion
+    
 }

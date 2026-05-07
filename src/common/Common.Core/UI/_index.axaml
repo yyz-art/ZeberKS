@@ -4,7 +4,7 @@
 	<converters:LogLevelToConverter
 		x:Key="LogLevelToConverter"
 		Info="{StaticResource Brush-Grey0}"
-		Error="{StaticResource Brush-Red7}"
+		Error="{StaticResource Brush-Red5}"
 		Warning="{StaticResource Brush-Orange5}"
 		Debug="{StaticResource Brush-Grey4}"
 		Trace="{StaticResource Brush-Grey5}" />

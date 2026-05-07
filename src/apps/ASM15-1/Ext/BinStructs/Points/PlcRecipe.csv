@@ -1,0 +1,520 @@
+Category,Name,Offset,NameByCN,NameByEN,NameByVI
+PLC/信捷Z1轴_PC位置,信捷Z1轴_PC位置_0,43000,信捷Z1轴_PC位置_0,XINJE Z1 Axis_PC Position 0,Tr?c Z1 XINJE_V? trí_PC_0
+PLC/信捷Z1轴_PC位置,信捷Z1轴_PC位置_1,43002,信捷Z1轴_PC位置_1,XINJE Z1 Axis_PC Position 1,Tr?c Z1 XINJE_V? trí_PC_1
+PLC/信捷Z1轴_PC位置,信捷Z1轴_PC位置_2,43004,信捷Z1轴_PC位置_2,XINJE Z1 Axis_PC Position 2,Tr?c Z1 XINJE_V? trí_PC_2
+PLC/信捷Z1轴_PC位置,信捷Z1轴_PC位置_3,43006,信捷Z1轴_PC位置_3,XINJE Z1 Axis_PC Position 3,Tr?c Z1 XINJE_V? trí_PC_3
+PLC/信捷Z1轴_PC位置,信捷Z1轴_PC位置_4,43008,信捷Z1轴_PC位置_4,XINJE Z1 Axis_PC Position 4,Tr?c Z1 XINJE_V? trí_PC_4
+PLC/信捷Z1轴_PC位置,信捷Z1轴_PC位置_5,43010,信捷Z1轴_PC位置_5,XINJE Z1 Axis_PC Position 5,Tr?c Z1 XINJE_V? trí_PC_5
+PLC/信捷Z1轴_PC位置,信捷Z1轴_PC位置_6,43012,信捷Z1轴_PC位置_6,XINJE Z1 Axis_PC Position 6,Tr?c Z1 XINJE_V? trí_PC_6
+PLC/信捷Z1轴_PC位置,信捷Z1轴_PC位置_7,43014,信捷Z1轴_PC位置_7,XINJE Z1 Axis_PC Position 7,Tr?c Z1 XINJE_V? trí_PC_7
+PLC/信捷Z1轴_PC位置,信捷Z1轴_PC位置_8,43016,信捷Z1轴_PC位置_8,XINJE Z1 Axis_PC Position 8,Tr?c Z1 XINJE_V? trí_PC_8
+PLC/信捷Z1轴_PC位置,信捷Z1轴_PC位置_9,43018,信捷Z1轴_PC位置_9,XINJE Z1 Axis_PC Position 9,Tr?c Z1 XINJE_V? trí_PC_9
+PLC/信捷Z1轴_PC位置,信捷Z1轴_PC位置_10,43020,信捷Z1轴_PC位置_10,XINJE Z1 Axis_PC Position 10,Tr?c Z1 XINJE_V? trí_PC_10
+PLC/信捷Z1轴_PC位置,信捷Z1轴_PC位置_11,43022,信捷Z1轴_PC位置_11,XINJE Z1 Axis_PC Position 11,Tr?c Z1 XINJE_V? trí_PC_11
+PLC/信捷Z1轴_PC位置,信捷Z1轴_PC位置_12,43024,信捷Z1轴_PC位置_12,XINJE Z1 Axis_PC Position 12,Tr?c Z1 XINJE_V? trí_PC_12
+PLC/信捷Z1轴_PC位置,信捷Z1轴_PC位置_13,43026,信捷Z1轴_PC位置_13,XINJE Z1 Axis_PC Position 13,Tr?c Z1 XINJE_V? trí_PC_13
+PLC/信捷Z1轴_PC位置,信捷Z1轴_PC位置_14,43028,信捷Z1轴_PC位置_14,XINJE Z1 Axis_PC Position 14,Tr?c Z1 XINJE_V? trí_PC_14
+PLC/信捷Z1轴_PC位置,信捷Z1轴_PC位置_15,43030,信捷Z1轴_PC位置_15,XINJE Z1 Axis_PC Position 15,Tr?c Z1 XINJE_V? trí_PC_15
+PLC/信捷Z1轴_PC位置,信捷Z1轴_PC位置_16,43032,信捷Z1轴_PC位置_16,XINJE Z1 Axis_PC Position 16,Tr?c Z1 XINJE_V? trí_PC_16
+PLC/信捷Z1轴_PC位置,信捷Z1轴_PC位置_17,43034,信捷Z1轴_PC位置_17,XINJE Z1 Axis_PC Position 17,Tr?c Z1 XINJE_V? trí_PC_17
+PLC/信捷Z1轴_PC位置,信捷Z1轴_PC位置_18,43036,信捷Z1轴_PC位置_18,XINJE Z1 Axis_PC Position 18,Tr?c Z1 XINJE_V? trí_PC_18
+PLC/信捷Z1轴_PC位置,信捷Z1轴_PC位置_19,43038,信捷Z1轴_PC位置_19,XINJE Z1 Axis_PC Position 19,Tr?c Z1 XINJE_V? trí_PC_19
+PLC/信捷Z1轴_PC位置,信捷Z1轴_PC位置_20,43040,信捷Z1轴_PC位置_20,XINJE Z1 Axis_PC Position 20,Tr?c Z1 XINJE_V? trí_PC_20
+PLC/信捷Z1轴_PC位置,信捷Z1轴_PC位置_21,43042,信捷Z1轴_PC位置_21,XINJE Z1 Axis_PC Position 21,Tr?c Z1 XINJE_V? trí_PC_21
+PLC/信捷Z1轴_PC位置,信捷Z1轴_PC位置_22,43044,信捷Z1轴_PC位置_22,XINJE Z1 Axis_PC Position 22,Tr?c Z1 XINJE_V? trí_PC_22
+PLC/信捷Z1轴_PC位置,信捷Z1轴_PC位置_23,43046,信捷Z1轴_PC位置_23,XINJE Z1 Axis_PC Position 23,Tr?c Z1 XINJE_V? trí_PC_23
+PLC/信捷Z1轴_PC位置,信捷Z1轴_PC位置_24,43048,信捷Z1轴_PC位置_24,XINJE Z1 Axis_PC Position 24,Tr?c Z1 XINJE_V? trí_PC_24
+PLC/信捷Z1轴_PC位置,信捷Z1轴_PC位置_25,43050,信捷Z1轴_PC位置_25,XINJE Z1 Axis_PC Position 25,Tr?c Z1 XINJE_V? trí_PC_25
+PLC/信捷Z1轴_PC位置,信捷Z1轴_PC位置_26,43052,信捷Z1轴_PC位置_26,XINJE Z1 Axis_PC Position 26,Tr?c Z1 XINJE_V? trí_PC_26
+PLC/信捷Z1轴_PC位置,信捷Z1轴_PC位置_27,43054,信捷Z1轴_PC位置_27,XINJE Z1 Axis_PC Position 27,Tr?c Z1 XINJE_V? trí_PC_27
+PLC/信捷Z1轴_PC位置,信捷Z1轴_PC位置_28,43056,信捷Z1轴_PC位置_28,XINJE Z1 Axis_PC Position 28,Tr?c Z1 XINJE_V? trí_PC_28
+PLC/信捷Z1轴_PC位置,信捷Z1轴_PC位置_29,43058,信捷Z1轴_PC位置_29,XINJE Z1 Axis_PC Position 29,Tr?c Z1 XINJE_V? trí_PC_29
+PLC/信捷Z1轴_PC位置,信捷Z1轴_PC位置_30,43060,信捷Z1轴_PC位置_30,XINJE Z1 Axis_PC Position 30,Tr?c Z1 XINJE_V? trí_PC_30
+PLC/信捷Z1轴_PC位置,信捷Z1轴_PC位置_31,43062,信捷Z1轴_PC位置_31,XINJE Z1 Axis_PC Position 31,Tr?c Z1 XINJE_V? trí_PC_31
+PLC/信捷Z1轴_PC位置,信捷Z1轴_PC位置_32,43064,信捷Z1轴_PC位置_32,XINJE Z1 Axis_PC Position 32,Tr?c Z1 XINJE_V? trí_PC_32
+PLC/信捷Z1轴_PC位置,信捷Z1轴_PC位置_33,43066,信捷Z1轴_PC位置_33,XINJE Z1 Axis_PC Position 33,Tr?c Z1 XINJE_V? trí_PC_33
+PLC/信捷Z1轴_PC位置,信捷Z1轴_PC位置_34,43068,信捷Z1轴_PC位置_34,XINJE Z1 Axis_PC Position 34,Tr?c Z1 XINJE_V? trí_PC_34
+PLC/信捷Z1轴_PC位置,信捷Z1轴_PC位置_35,43070,信捷Z1轴_PC位置_35,XINJE Z1 Axis_PC Position 35,Tr?c Z1 XINJE_V? trí_PC_35
+PLC/信捷Z1轴_PC位置,信捷Z1轴_PC位置_36,43072,信捷Z1轴_PC位置_36,XINJE Z1 Axis_PC Position 36,Tr?c Z1 XINJE_V? trí_PC_36
+PLC/信捷Z1轴_PC位置,信捷Z1轴_PC位置_37,43074,信捷Z1轴_PC位置_37,XINJE Z1 Axis_PC Position 37,Tr?c Z1 XINJE_V? trí_PC_37
+PLC/信捷Z1轴_PC位置,信捷Z1轴_PC位置_38,43076,信捷Z1轴_PC位置_38,XINJE Z1 Axis_PC Position 38,Tr?c Z1 XINJE_V? trí_PC_38
+PLC/信捷Z1轴_PC位置,信捷Z1轴_PC位置_39,43078,信捷Z1轴_PC位置_39,XINJE Z1 Axis_PC Position 39,Tr?c Z1 XINJE_V? trí_PC_39
+PLC/信捷Z1轴_PC位置,信捷Z1轴_PC位置_40,43080,信捷Z1轴_PC位置_40,XINJE Z1 Axis_PC Position 40,Tr?c Z1 XINJE_V? trí_PC_40
+PLC/信捷Z1轴_PC位置,信捷Z1轴_PC位置_41,43082,信捷Z1轴_PC位置_41,XINJE Z1 Axis_PC Position 41,Tr?c Z1 XINJE_V? trí_PC_41
+PLC/信捷Z1轴_PC位置,信捷Z1轴_PC位置_42,43084,信捷Z1轴_PC位置_42,XINJE Z1 Axis_PC Position 42,Tr?c Z1 XINJE_V? trí_PC_42
+PLC/信捷Z1轴_PC位置,信捷Z1轴_PC位置_43,43086,信捷Z1轴_PC位置_43,XINJE Z1 Axis_PC Position 43,Tr?c Z1 XINJE_V? trí_PC_43
+PLC/信捷Z1轴_PC位置,信捷Z1轴_PC位置_44,43088,信捷Z1轴_PC位置_44,XINJE Z1 Axis_PC Position 44,Tr?c Z1 XINJE_V? trí_PC_44
+PLC/信捷Z1轴_PC位置,信捷Z1轴_PC位置_45,43090,信捷Z1轴_PC位置_45,XINJE Z1 Axis_PC Position 45,Tr?c Z1 XINJE_V? trí_PC_45
+PLC/信捷Z1轴_PC位置,信捷Z1轴_PC位置_46,43092,信捷Z1轴_PC位置_46,XINJE Z1 Axis_PC Position 46,Tr?c Z1 XINJE_V? trí_PC_46
+PLC/信捷Z1轴_PC位置,信捷Z1轴_PC位置_47,43094,信捷Z1轴_PC位置_47,XINJE Z1 Axis_PC Position 47,Tr?c Z1 XINJE_V? trí_PC_47
+PLC/信捷Z1轴_PC位置,信捷Z1轴_PC位置_48,43096,信捷Z1轴_PC位置_48,XINJE Z1 Axis_PC Position 48,Tr?c Z1 XINJE_V? trí_PC_48
+PLC/信捷Z1轴_PC位置,信捷Z1轴_PC位置_49,43098,信捷Z1轴_PC位置_49,XINJE Z1 Axis_PC Position 49,Tr?c Z1 XINJE_V? trí_PC_49
+PLC/信捷Z1轴_PC位置,信捷Z1轴_PC位置_50,43100,信捷Z1轴_PC位置_50,XINJE Z1 Axis_PC Position 50,Tr?c Z1 XINJE_V? trí_PC_50
+
+PLC/信捷Z2轴_PC位置,信捷Z2轴_PC位置_0,43200,信捷Z2轴_PC位置_0,XINJE Z2 Axis_PC Position 0,Tr?c Z2 XINJE_V? trí_PC_0
+PLC/信捷Z2轴_PC位置,信捷Z2轴_PC位置_1,43202,信捷Z2轴_PC位置_1,XINJE Z2 Axis_PC Position 1,Tr?c Z2 XINJE_V? trí_PC_1
+PLC/信捷Z2轴_PC位置,信捷Z2轴_PC位置_2,43204,信捷Z2轴_PC位置_2,XINJE Z2 Axis_PC Position 2,Tr?c Z2 XINJE_V? trí_PC_2
+PLC/信捷Z2轴_PC位置,信捷Z2轴_PC位置_3,43206,信捷Z2轴_PC位置_3,XINJE Z2 Axis_PC Position 3,Tr?c Z2 XINJE_V? trí_PC_3
+PLC/信捷Z2轴_PC位置,信捷Z2轴_PC位置_4,43208,信捷Z2轴_PC位置_4,XINJE Z2 Axis_PC Position 4,Tr?c Z2 XINJE_V? trí_PC_4
+PLC/信捷Z2轴_PC位置,信捷Z2轴_PC位置_5,43210,信捷Z2轴_PC位置_5,XINJE Z2 Axis_PC Position 5,Tr?c Z2 XINJE_V? trí_PC_5
+PLC/信捷Z2轴_PC位置,信捷Z2轴_PC位置_6,43212,信捷Z2轴_PC位置_6,XINJE Z2 Axis_PC Position 6,Tr?c Z2 XINJE_V? trí_PC_6
+PLC/信捷Z2轴_PC位置,信捷Z2轴_PC位置_7,43214,信捷Z2轴_PC位置_7,XINJE Z2 Axis_PC Position 7,Tr?c Z2 XINJE_V? trí_PC_7
+PLC/信捷Z2轴_PC位置,信捷Z2轴_PC位置_8,43216,信捷Z2轴_PC位置_8,XINJE Z2 Axis_PC Position 8,Tr?c Z2 XINJE_V? trí_PC_8
+PLC/信捷Z2轴_PC位置,信捷Z2轴_PC位置_9,43218,信捷Z2轴_PC位置_9,XINJE Z2 Axis_PC Position 9,Tr?c Z2 XINJE_V? trí_PC_9
+PLC/信捷Z2轴_PC位置,信捷Z2轴_PC位置_10,43220,信捷Z2轴_PC位置_10,XINJE Z2 Axis_PC Position 10,Tr?c Z2 XINJE_V? trí_PC_10
+PLC/信捷Z2轴_PC位置,信捷Z2轴_PC位置_11,43222,信捷Z2轴_PC位置_11,XINJE Z2 Axis_PC Position 11,Tr?c Z2 XINJE_V? trí_PC_11
+PLC/信捷Z2轴_PC位置,信捷Z2轴_PC位置_12,43224,信捷Z2轴_PC位置_12,XINJE Z2 Axis_PC Position 12,Tr?c Z2 XINJE_V? trí_PC_12
+PLC/信捷Z2轴_PC位置,信捷Z2轴_PC位置_13,43226,信捷Z2轴_PC位置_13,XINJE Z2 Axis_PC Position 13,Tr?c Z2 XINJE_V? trí_PC_13
+PLC/信捷Z2轴_PC位置,信捷Z2轴_PC位置_14,43228,信捷Z2轴_PC位置_14,XINJE Z2 Axis_PC Position 14,Tr?c Z2 XINJE_V? trí_PC_14
+PLC/信捷Z2轴_PC位置,信捷Z2轴_PC位置_15,43230,信捷Z2轴_PC位置_15,XINJE Z2 Axis_PC Position 15,Tr?c Z2 XINJE_V? trí_PC_15
+PLC/信捷Z2轴_PC位置,信捷Z2轴_PC位置_16,43232,信捷Z2轴_PC位置_16,XINJE Z2 Axis_PC Position 16,Tr?c Z2 XINJE_V? trí_PC_16
+PLC/信捷Z2轴_PC位置,信捷Z2轴_PC位置_17,43234,信捷Z2轴_PC位置_17,XINJE Z2 Axis_PC Position 17,Tr?c Z2 XINJE_V? trí_PC_17
+PLC/信捷Z2轴_PC位置,信捷Z2轴_PC位置_18,43236,信捷Z2轴_PC位置_18,XINJE Z2 Axis_PC Position 18,Tr?c Z2 XINJE_V? trí_PC_18
+PLC/信捷Z2轴_PC位置,信捷Z2轴_PC位置_19,43238,信捷Z2轴_PC位置_19,XINJE Z2 Axis_PC Position 19,Tr?c Z2 XINJE_V? trí_PC_19
+PLC/信捷Z2轴_PC位置,信捷Z2轴_PC位置_20,43240,信捷Z2轴_PC位置_20,XINJE Z2 Axis_PC Position 20,Tr?c Z2 XINJE_V? trí_PC_20
+PLC/信捷Z2轴_PC位置,信捷Z2轴_PC位置_21,43242,信捷Z2轴_PC位置_21,XINJE Z2 Axis_PC Position 21,Tr?c Z2 XINJE_V? trí_PC_21
+PLC/信捷Z2轴_PC位置,信捷Z2轴_PC位置_22,43244,信捷Z2轴_PC位置_22,XINJE Z2 Axis_PC Position 22,Tr?c Z2 XINJE_V? trí_PC_22
+PLC/信捷Z2轴_PC位置,信捷Z2轴_PC位置_23,43246,信捷Z2轴_PC位置_23,XINJE Z2 Axis_PC Position 23,Tr?c Z2 XINJE_V? trí_PC_23
+PLC/信捷Z2轴_PC位置,信捷Z2轴_PC位置_24,43248,信捷Z2轴_PC位置_24,XINJE Z2 Axis_PC Position 24,Tr?c Z2 XINJE_V? trí_PC_24
+PLC/信捷Z2轴_PC位置,信捷Z2轴_PC位置_25,43250,信捷Z2轴_PC位置_25,XINJE Z2 Axis_PC Position 25,Tr?c Z2 XINJE_V? trí_PC_25
+PLC/信捷Z2轴_PC位置,信捷Z2轴_PC位置_26,43252,信捷Z2轴_PC位置_26,XINJE Z2 Axis_PC Position 26,Tr?c Z2 XINJE_V? trí_PC_26
+PLC/信捷Z2轴_PC位置,信捷Z2轴_PC位置_27,43254,信捷Z2轴_PC位置_27,XINJE Z2 Axis_PC Position 27,Tr?c Z2 XINJE_V? trí_PC_27
+PLC/信捷Z2轴_PC位置,信捷Z2轴_PC位置_28,43256,信捷Z2轴_PC位置_28,XINJE Z2 Axis_PC Position 28,Tr?c Z2 XINJE_V? trí_PC_28
+PLC/信捷Z2轴_PC位置,信捷Z2轴_PC位置_29,43258,信捷Z2轴_PC位置_29,XINJE Z2 Axis_PC Position 29,Tr?c Z2 XINJE_V? trí_PC_29
+PLC/信捷Z2轴_PC位置,信捷Z2轴_PC位置_30,43260,信捷Z2轴_PC位置_30,XINJE Z2 Axis_PC Position 30,Tr?c Z2 XINJE_V? trí_PC_30
+PLC/信捷Z2轴_PC位置,信捷Z2轴_PC位置_31,43262,信捷Z2轴_PC位置_31,XINJE Z2 Axis_PC Position 31,Tr?c Z2 XINJE_V? trí_PC_31
+PLC/信捷Z2轴_PC位置,信捷Z2轴_PC位置_32,43264,信捷Z2轴_PC位置_32,XINJE Z2 Axis_PC Position 32,Tr?c Z2 XINJE_V? trí_PC_32
+PLC/信捷Z2轴_PC位置,信捷Z2轴_PC位置_33,43266,信捷Z2轴_PC位置_33,XINJE Z2 Axis_PC Position 33,Tr?c Z2 XINJE_V? trí_PC_33
+PLC/信捷Z2轴_PC位置,信捷Z2轴_PC位置_34,43268,信捷Z2轴_PC位置_34,XINJE Z2 Axis_PC Position 34,Tr?c Z2 XINJE_V? trí_PC_34
+PLC/信捷Z2轴_PC位置,信捷Z2轴_PC位置_35,43270,信捷Z2轴_PC位置_35,XINJE Z2 Axis_PC Position 35,Tr?c Z2 XINJE_V? trí_PC_35
+PLC/信捷Z2轴_PC位置,信捷Z2轴_PC位置_36,43272,信捷Z2轴_PC位置_36,XINJE Z2 Axis_PC Position 36,Tr?c Z2 XINJE_V? trí_PC_36
+PLC/信捷Z2轴_PC位置,信捷Z2轴_PC位置_37,43274,信捷Z2轴_PC位置_37,XINJE Z2 Axis_PC Position 37,Tr?c Z2 XINJE_V? trí_PC_37
+PLC/信捷Z2轴_PC位置,信捷Z2轴_PC位置_38,43276,信捷Z2轴_PC位置_38,XINJE Z2 Axis_PC Position 38,Tr?c Z2 XINJE_V? trí_PC_38
+PLC/信捷Z2轴_PC位置,信捷Z2轴_PC位置_39,43278,信捷Z2轴_PC位置_39,XINJE Z2 Axis_PC Position 39,Tr?c Z2 XINJE_V? trí_PC_39
+PLC/信捷Z2轴_PC位置,信捷Z2轴_PC位置_40,43280,信捷Z2轴_PC位置_40,XINJE Z2 Axis_PC Position 40,Tr?c Z2 XINJE_V? trí_PC_40
+PLC/信捷Z2轴_PC位置,信捷Z2轴_PC位置_41,43282,信捷Z2轴_PC位置_41,XINJE Z2 Axis_PC Position 41,Tr?c Z2 XINJE_V? trí_PC_41
+PLC/信捷Z2轴_PC位置,信捷Z2轴_PC位置_42,43284,信捷Z2轴_PC位置_42,XINJE Z2 Axis_PC Position 42,Tr?c Z2 XINJE_V? trí_PC_42
+PLC/信捷Z2轴_PC位置,信捷Z2轴_PC位置_43,43286,信捷Z2轴_PC位置_43,XINJE Z2 Axis_PC Position 43,Tr?c Z2 XINJE_V? trí_PC_43
+PLC/信捷Z2轴_PC位置,信捷Z2轴_PC位置_44,43288,信捷Z2轴_PC位置_44,XINJE Z2 Axis_PC Position 44,Tr?c Z2 XINJE_V? trí_PC_44
+PLC/信捷Z2轴_PC位置,信捷Z2轴_PC位置_45,43290,信捷Z2轴_PC位置_45,XINJE Z2 Axis_PC Position 45,Tr?c Z2 XINJE_V? trí_PC_45
+PLC/信捷Z2轴_PC位置,信捷Z2轴_PC位置_46,43292,信捷Z2轴_PC位置_46,XINJE Z2 Axis_PC Position 46,Tr?c Z2 XINJE_V? trí_PC_46
+PLC/信捷Z2轴_PC位置,信捷Z2轴_PC位置_47,43294,信捷Z2轴_PC位置_47,XINJE Z2 Axis_PC Position 47,Tr?c Z2 XINJE_V? trí_PC_47
+PLC/信捷Z2轴_PC位置,信捷Z2轴_PC位置_48,43296,信捷Z2轴_PC位置_48,XINJE Z2 Axis_PC Position 48,Tr?c Z2 XINJE_V? trí_PC_48
+PLC/信捷Z2轴_PC位置,信捷Z2轴_PC位置_49,43298,信捷Z2轴_PC位置_49,XINJE Z2 Axis_PC Position 49,Tr?c Z2 XINJE_V? trí_PC_49
+PLC/信捷Z2轴_PC位置,信捷Z2轴_PC位置_50,43300,信捷Z2轴_PC位置_50,XINJE Z2 Axis_PC Position 50,Tr?c Z2 XINJE_V? trí_PC_50
+
+PLC/信捷X1轴_PC位置,信捷X1轴_PC位置_0,43400,信捷X1轴_PC位置_0,XINJE X1 Axis_PC Position 0,Tr?c X1 XINJE_V? trí_PC_0
+PLC/信捷X1轴_PC位置,信捷X1轴_PC位置_1,43402,信捷X1轴_PC位置_1,XINJE X1 Axis_PC Position 1,Tr?c X1 XINJE_V? trí_PC_1
+PLC/信捷X1轴_PC位置,信捷X1轴_PC位置_2,43404,信捷X1轴_PC位置_2,XINJE X1 Axis_PC Position 2,Tr?c X1 XINJE_V? trí_PC_2
+PLC/信捷X1轴_PC位置,信捷X1轴_PC位置_3,43406,信捷X1轴_PC位置_3,XINJE X1 Axis_PC Position 3,Tr?c X1 XINJE_V? trí_PC_3
+PLC/信捷X1轴_PC位置,信捷X1轴_PC位置_4,43408,信捷X1轴_PC位置_4,XINJE X1 Axis_PC Position 4,Tr?c X1 XINJE_V? trí_PC_4
+PLC/信捷X1轴_PC位置,信捷X1轴_PC位置_5,43410,信捷X1轴_PC位置_5,XINJE X1 Axis_PC Position 5,Tr?c X1 XINJE_V? trí_PC_5
+PLC/信捷X1轴_PC位置,信捷X1轴_PC位置_6,43412,信捷X1轴_PC位置_6,XINJE X1 Axis_PC Position 6,Tr?c X1 XINJE_V? trí_PC_6
+PLC/信捷X1轴_PC位置,信捷X1轴_PC位置_7,43414,信捷X1轴_PC位置_7,XINJE X1 Axis_PC Position 7,Tr?c X1 XINJE_V? trí_PC_7
+PLC/信捷X1轴_PC位置,信捷X1轴_PC位置_8,43416,信捷X1轴_PC位置_8,XINJE X1 Axis_PC Position 8,Tr?c X1 XINJE_V? trí_PC_8
+PLC/信捷X1轴_PC位置,信捷X1轴_PC位置_9,43418,信捷X1轴_PC位置_9,XINJE X1 Axis_PC Position 9,Tr?c X1 XINJE_V? trí_PC_9
+PLC/信捷X1轴_PC位置,信捷X1轴_PC位置_10,43420,信捷X1轴_PC位置_10,XINJE X1 Axis_PC Position 10,Tr?c X1 XINJE_V? trí_PC_10
+PLC/信捷X1轴_PC位置,信捷X1轴_PC位置_11,43422,信捷X1轴_PC位置_11,XINJE X1 Axis_PC Position 11,Tr?c X1 XINJE_V? trí_PC_11
+PLC/信捷X1轴_PC位置,信捷X1轴_PC位置_12,43424,信捷X1轴_PC位置_12,XINJE X1 Axis_PC Position 12,Tr?c X1 XINJE_V? trí_PC_12
+PLC/信捷X1轴_PC位置,信捷X1轴_PC位置_13,43426,信捷X1轴_PC位置_13,XINJE X1 Axis_PC Position 13,Tr?c X1 XINJE_V? trí_PC_13
+PLC/信捷X1轴_PC位置,信捷X1轴_PC位置_14,43428,信捷X1轴_PC位置_14,XINJE X1 Axis_PC Position 14,Tr?c X1 XINJE_V? trí_PC_14
+PLC/信捷X1轴_PC位置,信捷X1轴_PC位置_15,43430,信捷X1轴_PC位置_15,XINJE X1 Axis_PC Position 15,Tr?c X1 XINJE_V? trí_PC_15
+PLC/信捷X1轴_PC位置,信捷X1轴_PC位置_16,43432,信捷X1轴_PC位置_16,XINJE X1 Axis_PC Position 16,Tr?c X1 XINJE_V? trí_PC_16
+PLC/信捷X1轴_PC位置,信捷X1轴_PC位置_17,43434,信捷X1轴_PC位置_17,XINJE X1 Axis_PC Position 17,Tr?c X1 XINJE_V? trí_PC_17
+PLC/信捷X1轴_PC位置,信捷X1轴_PC位置_18,43436,信捷X1轴_PC位置_18,XINJE X1 Axis_PC Position 18,Tr?c X1 XINJE_V? trí_PC_18
+PLC/信捷X1轴_PC位置,信捷X1轴_PC位置_19,43438,信捷X1轴_PC位置_19,XINJE X1 Axis_PC Position 19,Tr?c X1 XINJE_V? trí_PC_19
+PLC/信捷X1轴_PC位置,信捷X1轴_PC位置_20,43440,信捷X1轴_PC位置_20,XINJE X1 Axis_PC Position 20,Tr?c X1 XINJE_V? trí_PC_20
+PLC/信捷X1轴_PC位置,信捷X1轴_PC位置_21,43442,信捷X1轴_PC位置_21,XINJE X1 Axis_PC Position 21,Tr?c X1 XINJE_V? trí_PC_21
+PLC/信捷X1轴_PC位置,信捷X1轴_PC位置_22,43444,信捷X1轴_PC位置_22,XINJE X1 Axis_PC Position 22,Tr?c X1 XINJE_V? trí_PC_22
+PLC/信捷X1轴_PC位置,信捷X1轴_PC位置_23,43446,信捷X1轴_PC位置_23,XINJE X1 Axis_PC Position 23,Tr?c X1 XINJE_V? trí_PC_23
+PLC/信捷X1轴_PC位置,信捷X1轴_PC位置_24,43448,信捷X1轴_PC位置_24,XINJE X1 Axis_PC Position 24,Tr?c X1 XINJE_V? trí_PC_24
+PLC/信捷X1轴_PC位置,信捷X1轴_PC位置_25,43450,信捷X1轴_PC位置_25,XINJE X1 Axis_PC Position 25,Tr?c X1 XINJE_V? trí_PC_25
+PLC/信捷X1轴_PC位置,信捷X1轴_PC位置_26,43452,信捷X1轴_PC位置_26,XINJE X1 Axis_PC Position 26,Tr?c X1 XINJE_V? trí_PC_26
+PLC/信捷X1轴_PC位置,信捷X1轴_PC位置_27,43454,信捷X1轴_PC位置_27,XINJE X1 Axis_PC Position 27,Tr?c X1 XINJE_V? trí_PC_27
+PLC/信捷X1轴_PC位置,信捷X1轴_PC位置_28,43456,信捷X1轴_PC位置_28,XINJE X1 Axis_PC Position 28,Tr?c X1 XINJE_V? trí_PC_28
+PLC/信捷X1轴_PC位置,信捷X1轴_PC位置_29,43458,信捷X1轴_PC位置_29,XINJE X1 Axis_PC Position 29,Tr?c X1 XINJE_V? trí_PC_29
+PLC/信捷X1轴_PC位置,信捷X1轴_PC位置_30,43460,信捷X1轴_PC位置_30,XINJE X1 Axis_PC Position 30,Tr?c X1 XINJE_V? trí_PC_30
+PLC/信捷X1轴_PC位置,信捷X1轴_PC位置_31,43462,信捷X1轴_PC位置_31,XINJE X1 Axis_PC Position 31,Tr?c X1 XINJE_V? trí_PC_31
+PLC/信捷X1轴_PC位置,信捷X1轴_PC位置_32,43464,信捷X1轴_PC位置_32,XINJE X1 Axis_PC Position 32,Tr?c X1 XINJE_V? trí_PC_32
+PLC/信捷X1轴_PC位置,信捷X1轴_PC位置_33,43466,信捷X1轴_PC位置_33,XINJE X1 Axis_PC Position 33,Tr?c X1 XINJE_V? trí_PC_33
+PLC/信捷X1轴_PC位置,信捷X1轴_PC位置_34,43468,信捷X1轴_PC位置_34,XINJE X1 Axis_PC Position 34,Tr?c X1 XINJE_V? trí_PC_34
+PLC/信捷X1轴_PC位置,信捷X1轴_PC位置_35,43470,信捷X1轴_PC位置_35,XINJE X1 Axis_PC Position 35,Tr?c X1 XINJE_V? trí_PC_35
+PLC/信捷X1轴_PC位置,信捷X1轴_PC位置_36,43472,信捷X1轴_PC位置_36,XINJE X1 Axis_PC Position 36,Tr?c X1 XINJE_V? trí_PC_36
+PLC/信捷X1轴_PC位置,信捷X1轴_PC位置_37,43474,信捷X1轴_PC位置_37,XINJE X1 Axis_PC Position 37,Tr?c X1 XINJE_V? trí_PC_37
+PLC/信捷X1轴_PC位置,信捷X1轴_PC位置_38,43476,信捷X1轴_PC位置_38,XINJE X1 Axis_PC Position 38,Tr?c X1 XINJE_V? trí_PC_38
+PLC/信捷X1轴_PC位置,信捷X1轴_PC位置_39,43478,信捷X1轴_PC位置_39,XINJE X1 Axis_PC Position 39,Tr?c X1 XINJE_V? trí_PC_39
+PLC/信捷X1轴_PC位置,信捷X1轴_PC位置_40,43480,信捷X1轴_PC位置_40,XINJE X1 Axis_PC Position 40,Tr?c X1 XINJE_V? trí_PC_40
+PLC/信捷X1轴_PC位置,信捷X1轴_PC位置_41,43482,信捷X1轴_PC位置_41,XINJE X1 Axis_PC Position 41,Tr?c X1 XINJE_V? trí_PC_41
+PLC/信捷X1轴_PC位置,信捷X1轴_PC位置_42,43484,信捷X1轴_PC位置_42,XINJE X1 Axis_PC Position 42,Tr?c X1 XINJE_V? trí_PC_42
+PLC/信捷X1轴_PC位置,信捷X1轴_PC位置_43,43486,信捷X1轴_PC位置_43,XINJE X1 Axis_PC Position 43,Tr?c X1 XINJE_V? trí_PC_43
+PLC/信捷X1轴_PC位置,信捷X1轴_PC位置_44,43488,信捷X1轴_PC位置_44,XINJE X1 Axis_PC Position 44,Tr?c X1 XINJE_V? trí_PC_44
+PLC/信捷X1轴_PC位置,信捷X1轴_PC位置_45,43490,信捷X1轴_PC位置_45,XINJE X1 Axis_PC Position 45,Tr?c X1 XINJE_V? trí_PC_45
+PLC/信捷X1轴_PC位置,信捷X1轴_PC位置_46,43492,信捷X1轴_PC位置_46,XINJE X1 Axis_PC Position 46,Tr?c X1 XINJE_V? trí_PC_46
+PLC/信捷X1轴_PC位置,信捷X1轴_PC位置_47,43494,信捷X1轴_PC位置_47,XINJE X1 Axis_PC Position 47,Tr?c X1 XINJE_V? trí_PC_47
+PLC/信捷X1轴_PC位置,信捷X1轴_PC位置_48,43496,信捷X1轴_PC位置_48,XINJE X1 Axis_PC Position 48,Tr?c X1 XINJE_V? trí_PC_48
+PLC/信捷X1轴_PC位置,信捷X1轴_PC位置_49,43498,信捷X1轴_PC位置_49,XINJE X1 Axis_PC Position 49,Tr?c X1 XINJE_V? trí_PC_49
+PLC/信捷X1轴_PC位置,信捷X1轴_PC位置_50,43500,信捷X1轴_PC位置_50,XINJE X1 Axis_PC Position 50,Tr?c X1 XINJE_V? trí_PC_50
+
+PLC/信捷X2轴_PC位置,信捷X2轴_PC位置_0,43600,信捷X2轴_PC位置_0,XINJE X2 Axis_PC Position 0,Tr?c X2 XINJE_V? trí_PC_0
+PLC/信捷X2轴_PC位置,信捷X2轴_PC位置_1,43602,信捷X2轴_PC位置_1,XINJE X2 Axis_PC Position 1,Tr?c X2 XINJE_V? trí_PC_1
+PLC/信捷X2轴_PC位置,信捷X2轴_PC位置_2,43604,信捷X2轴_PC位置_2,XINJE X2 Axis_PC Position 2,Tr?c X2 XINJE_V? trí_PC_2
+PLC/信捷X2轴_PC位置,信捷X2轴_PC位置_3,43606,信捷X2轴_PC位置_3,XINJE X2 Axis_PC Position 3,Tr?c X2 XINJE_V? trí_PC_3
+PLC/信捷X2轴_PC位置,信捷X2轴_PC位置_4,43608,信捷X2轴_PC位置_4,XINJE X2 Axis_PC Position 4,Tr?c X2 XINJE_V? trí_PC_4
+PLC/信捷X2轴_PC位置,信捷X2轴_PC位置_5,43610,信捷X2轴_PC位置_5,XINJE X2 Axis_PC Position 5,Tr?c X2 XINJE_V? trí_PC_5
+PLC/信捷X2轴_PC位置,信捷X2轴_PC位置_6,43612,信捷X2轴_PC位置_6,XINJE X2 Axis_PC Position 6,Tr?c X2 XINJE_V? trí_PC_6
+PLC/信捷X2轴_PC位置,信捷X2轴_PC位置_7,43614,信捷X2轴_PC位置_7,XINJE X2 Axis_PC Position 7,Tr?c X2 XINJE_V? trí_PC_7
+PLC/信捷X2轴_PC位置,信捷X2轴_PC位置_8,43616,信捷X2轴_PC位置_8,XINJE X2 Axis_PC Position 8,Tr?c X2 XINJE_V? trí_PC_8
+PLC/信捷X2轴_PC位置,信捷X2轴_PC位置_9,43618,信捷X2轴_PC位置_9,XINJE X2 Axis_PC Position 9,Tr?c X2 XINJE_V? trí_PC_9
+PLC/信捷X2轴_PC位置,信捷X2轴_PC位置_10,43620,信捷X2轴_PC位置_10,XINJE X2 Axis_PC Position 10,Tr?c X2 XINJE_V? trí_PC_10
+PLC/信捷X2轴_PC位置,信捷X2轴_PC位置_11,43622,信捷X2轴_PC位置_11,XINJE X2 Axis_PC Position 11,Tr?c X2 XINJE_V? trí_PC_11
+PLC/信捷X2轴_PC位置,信捷X2轴_PC位置_12,43624,信捷X2轴_PC位置_12,XINJE X2 Axis_PC Position 12,Tr?c X2 XINJE_V? trí_PC_12
+PLC/信捷X2轴_PC位置,信捷X2轴_PC位置_13,43626,信捷X2轴_PC位置_13,XINJE X2 Axis_PC Position 13,Tr?c X2 XINJE_V? trí_PC_13
+PLC/信捷X2轴_PC位置,信捷X2轴_PC位置_14,43628,信捷X2轴_PC位置_14,XINJE X2 Axis_PC Position 14,Tr?c X2 XINJE_V? trí_PC_14
+PLC/信捷X2轴_PC位置,信捷X2轴_PC位置_15,43630,信捷X2轴_PC位置_15,XINJE X2 Axis_PC Position 15,Tr?c X2 XINJE_V? trí_PC_15
+PLC/信捷X2轴_PC位置,信捷X2轴_PC位置_16,43632,信捷X2轴_PC位置_16,XINJE X2 Axis_PC Position 16,Tr?c X2 XINJE_V? trí_PC_16
+PLC/信捷X2轴_PC位置,信捷X2轴_PC位置_17,43634,信捷X2轴_PC位置_17,XINJE X2 Axis_PC Position 17,Tr?c X2 XINJE_V? trí_PC_17
+PLC/信捷X2轴_PC位置,信捷X2轴_PC位置_18,43636,信捷X2轴_PC位置_18,XINJE X2 Axis_PC Position 18,Tr?c X2 XINJE_V? trí_PC_18
+PLC/信捷X2轴_PC位置,信捷X2轴_PC位置_19,43638,信捷X2轴_PC位置_19,XINJE X2 Axis_PC Position 19,Tr?c X2 XINJE_V? trí_PC_19
+PLC/信捷X2轴_PC位置,信捷X2轴_PC位置_20,43640,信捷X2轴_PC位置_20,XINJE X2 Axis_PC Position 20,Tr?c X2 XINJE_V? trí_PC_20
+PLC/信捷X2轴_PC位置,信捷X2轴_PC位置_21,43642,信捷X2轴_PC位置_21,XINJE X2 Axis_PC Position 21,Tr?c X2 XINJE_V? trí_PC_21
+PLC/信捷X2轴_PC位置,信捷X2轴_PC位置_22,43644,信捷X2轴_PC位置_22,XINJE X2 Axis_PC Position 22,Tr?c X2 XINJE_V? trí_PC_22
+PLC/信捷X2轴_PC位置,信捷X2轴_PC位置_23,43646,信捷X2轴_PC位置_23,XINJE X2 Axis_PC Position 23,Tr?c X2 XINJE_V? trí_PC_23
+PLC/信捷X2轴_PC位置,信捷X2轴_PC位置_24,43648,信捷X2轴_PC位置_24,XINJE X2 Axis_PC Position 24,Tr?c X2 XINJE_V? trí_PC_24
+PLC/信捷X2轴_PC位置,信捷X2轴_PC位置_25,43650,信捷X2轴_PC位置_25,XINJE X2 Axis_PC Position 25,Tr?c X2 XINJE_V? trí_PC_25
+PLC/信捷X2轴_PC位置,信捷X2轴_PC位置_26,43652,信捷X2轴_PC位置_26,XINJE X2 Axis_PC Position 26,Tr?c X2 XINJE_V? trí_PC_26
+PLC/信捷X2轴_PC位置,信捷X2轴_PC位置_27,43654,信捷X2轴_PC位置_27,XINJE X2 Axis_PC Position 27,Tr?c X2 XINJE_V? trí_PC_27
+PLC/信捷X2轴_PC位置,信捷X2轴_PC位置_28,43656,信捷X2轴_PC位置_28,XINJE X2 Axis_PC Position 28,Tr?c X2 XINJE_V? trí_PC_28
+PLC/信捷X2轴_PC位置,信捷X2轴_PC位置_29,43658,信捷X2轴_PC位置_29,XINJE X2 Axis_PC Position 29,Tr?c X2 XINJE_V? trí_PC_29
+PLC/信捷X2轴_PC位置,信捷X2轴_PC位置_30,43660,信捷X2轴_PC位置_30,XINJE X2 Axis_PC Position 30,Tr?c X2 XINJE_V? trí_PC_30
+PLC/信捷X2轴_PC位置,信捷X2轴_PC位置_31,43662,信捷X2轴_PC位置_31,XINJE X2 Axis_PC Position 31,Tr?c X2 XINJE_V? trí_PC_31
+PLC/信捷X2轴_PC位置,信捷X2轴_PC位置_32,43664,信捷X2轴_PC位置_32,XINJE X2 Axis_PC Position 32,Tr?c X2 XINJE_V? trí_PC_32
+PLC/信捷X2轴_PC位置,信捷X2轴_PC位置_33,43666,信捷X2轴_PC位置_33,XINJE X2 Axis_PC Position 33,Tr?c X2 XINJE_V? trí_PC_33
+PLC/信捷X2轴_PC位置,信捷X2轴_PC位置_34,43668,信捷X2轴_PC位置_34,XINJE X2 Axis_PC Position 34,Tr?c X2 XINJE_V? trí_PC_34
+PLC/信捷X2轴_PC位置,信捷X2轴_PC位置_35,43670,信捷X2轴_PC位置_35,XINJE X2 Axis_PC Position 35,Tr?c X2 XINJE_V? trí_PC_35
+PLC/信捷X2轴_PC位置,信捷X2轴_PC位置_36,43672,信捷X2轴_PC位置_36,XINJE X2 Axis_PC Position 36,Tr?c X2 XINJE_V? trí_PC_36
+PLC/信捷X2轴_PC位置,信捷X2轴_PC位置_37,43674,信捷X2轴_PC位置_37,XINJE X2 Axis_PC Position 37,Tr?c X2 XINJE_V? trí_PC_37
+PLC/信捷X2轴_PC位置,信捷X2轴_PC位置_38,43676,信捷X2轴_PC位置_38,XINJE X2 Axis_PC Position 38,Tr?c X2 XINJE_V? trí_PC_38
+PLC/信捷X2轴_PC位置,信捷X2轴_PC位置_39,43678,信捷X2轴_PC位置_39,XINJE X2 Axis_PC Position 39,Tr?c X2 XINJE_V? trí_PC_39
+PLC/信捷X2轴_PC位置,信捷X2轴_PC位置_40,43680,信捷X2轴_PC位置_40,XINJE X2 Axis_PC Position 40,Tr?c X2 XINJE_V? trí_PC_40
+PLC/信捷X2轴_PC位置,信捷X2轴_PC位置_41,43682,信捷X2轴_PC位置_41,XINJE X2 Axis_PC Position 41,Tr?c X2 XINJE_V? trí_PC_41
+PLC/信捷X2轴_PC位置,信捷X2轴_PC位置_42,43684,信捷X2轴_PC位置_42,XINJE X2 Axis_PC Position 42,Tr?c X2 XINJE_V? trí_PC_42
+PLC/信捷X2轴_PC位置,信捷X2轴_PC位置_43,43686,信捷X2轴_PC位置_43,XINJE X2 Axis_PC Position 43,Tr?c X2 XINJE_V? trí_PC_43
+PLC/信捷X2轴_PC位置,信捷X2轴_PC位置_44,43688,信捷X2轴_PC位置_44,XINJE X2 Axis_PC Position 44,Tr?c X2 XINJE_V? trí_PC_44
+PLC/信捷X2轴_PC位置,信捷X2轴_PC位置_45,43690,信捷X2轴_PC位置_45,XINJE X2 Axis_PC Position 45,Tr?c X2 XINJE_V? trí_PC_45
+PLC/信捷X2轴_PC位置,信捷X2轴_PC位置_46,43692,信捷X2轴_PC位置_46,XINJE X2 Axis_PC Position 46,Tr?c X2 XINJE_V? trí_PC_46
+PLC/信捷X2轴_PC位置,信捷X2轴_PC位置_47,43694,信捷X2轴_PC位置_47,XINJE X2 Axis_PC Position 47,Tr?c X2 XINJE_V? trí_PC_47
+PLC/信捷X2轴_PC位置,信捷X2轴_PC位置_48,43696,信捷X2轴_PC位置_48,XINJE X2 Axis_PC Position 48,Tr?c X2 XINJE_V? trí_PC_48
+PLC/信捷X2轴_PC位置,信捷X2轴_PC位置_49,43698,信捷X2轴_PC位置_49,XINJE X2 Axis_PC Position 49,Tr?c X2 XINJE_V? trí_PC_49
+PLC/信捷X2轴_PC位置,信捷X2轴_PC位置_50,43700,信捷X2轴_PC位置_50,XINJE X2 Axis_PC Position 50,Tr?c X2 XINJE_V? trí_PC_50
+
+PLC/信捷Y1轴_PC位置,信捷Y1轴_PC位置_0,43800,信捷Y1轴_PC位置_0,XINJE Y1 Axis_PC Position 0,Tr?c Y1 XINJE_V? trí_PC_0
+PLC/信捷Y1轴_PC位置,信捷Y1轴_PC位置_1,43802,信捷Y1轴_PC位置_1,XINJE Y1 Axis_PC Position 1,Tr?c Y1 XINJE_V? trí_PC_1
+PLC/信捷Y1轴_PC位置,信捷Y1轴_PC位置_2,43804,信捷Y1轴_PC位置_2,XINJE Y1 Axis_PC Position 2,Tr?c Y1 XINJE_V? trí_PC_2
+PLC/信捷Y1轴_PC位置,信捷Y1轴_PC位置_3,43806,信捷Y1轴_PC位置_3,XINJE Y1 Axis_PC Position 3,Tr?c Y1 XINJE_V? trí_PC_3
+PLC/信捷Y1轴_PC位置,信捷Y1轴_PC位置_4,43808,信捷Y1轴_PC位置_4,XINJE Y1 Axis_PC Position 4,Tr?c Y1 XINJE_V? trí_PC_4
+PLC/信捷Y1轴_PC位置,信捷Y1轴_PC位置_5,43810,信捷Y1轴_PC位置_5,XINJE Y1 Axis_PC Position 5,Tr?c Y1 XINJE_V? trí_PC_5
+PLC/信捷Y1轴_PC位置,信捷Y1轴_PC位置_6,43812,信捷Y1轴_PC位置_6,XINJE Y1 Axis_PC Position 6,Tr?c Y1 XINJE_V? trí_PC_6
+PLC/信捷Y1轴_PC位置,信捷Y1轴_PC位置_7,43814,信捷Y1轴_PC位置_7,XINJE Y1 Axis_PC Position 7,Tr?c Y1 XINJE_V? trí_PC_7
+PLC/信捷Y1轴_PC位置,信捷Y1轴_PC位置_8,43816,信捷Y1轴_PC位置_8,XINJE Y1 Axis_PC Position 8,Tr?c Y1 XINJE_V? trí_PC_8
+PLC/信捷Y1轴_PC位置,信捷Y1轴_PC位置_9,43818,信捷Y1轴_PC位置_9,XINJE Y1 Axis_PC Position 9,Tr?c Y1 XINJE_V? trí_PC_9
+PLC/信捷Y1轴_PC位置,信捷Y1轴_PC位置_10,43820,信捷Y1轴_PC位置_10,XINJE Y1 Axis_PC Position 10,Tr?c Y1 XINJE_V? trí_PC_10
+PLC/信捷Y1轴_PC位置,信捷Y1轴_PC位置_11,43822,信捷Y1轴_PC位置_11,XINJE Y1 Axis_PC Position 11,Tr?c Y1 XINJE_V? trí_PC_11
+PLC/信捷Y1轴_PC位置,信捷Y1轴_PC位置_12,43824,信捷Y1轴_PC位置_12,XINJE Y1 Axis_PC Position 12,Tr?c Y1 XINJE_V? trí_PC_12
+PLC/信捷Y1轴_PC位置,信捷Y1轴_PC位置_13,43826,信捷Y1轴_PC位置_13,XINJE Y1 Axis_PC Position 13,Tr?c Y1 XINJE_V? trí_PC_13
+PLC/信捷Y1轴_PC位置,信捷Y1轴_PC位置_14,43828,信捷Y1轴_PC位置_14,XINJE Y1 Axis_PC Position 14,Tr?c Y1 XINJE_V? trí_PC_14
+PLC/信捷Y1轴_PC位置,信捷Y1轴_PC位置_15,43830,信捷Y1轴_PC位置_15,XINJE Y1 Axis_PC Position 15,Tr?c Y1 XINJE_V? trí_PC_15
+PLC/信捷Y1轴_PC位置,信捷Y1轴_PC位置_16,43832,信捷Y1轴_PC位置_16,XINJE Y1 Axis_PC Position 16,Tr?c Y1 XINJE_V? trí_PC_16
+PLC/信捷Y1轴_PC位置,信捷Y1轴_PC位置_17,43834,信捷Y1轴_PC位置_17,XINJE Y1 Axis_PC Position 17,Tr?c Y1 XINJE_V? trí_PC_17
+PLC/信捷Y1轴_PC位置,信捷Y1轴_PC位置_18,43836,信捷Y1轴_PC位置_18,XINJE Y1 Axis_PC Position 18,Tr?c Y1 XINJE_V? trí_PC_18
+PLC/信捷Y1轴_PC位置,信捷Y1轴_PC位置_19,43838,信捷Y1轴_PC位置_19,XINJE Y1 Axis_PC Position 19,Tr?c Y1 XINJE_V? trí_PC_19
+PLC/信捷Y1轴_PC位置,信捷Y1轴_PC位置_20,43840,信捷Y1轴_PC位置_20,XINJE Y1 Axis_PC Position 20,Tr?c Y1 XINJE_V? trí_PC_20
+PLC/信捷Y1轴_PC位置,信捷Y1轴_PC位置_21,43842,信捷Y1轴_PC位置_21,XINJE Y1 Axis_PC Position 21,Tr?c Y1 XINJE_V? trí_PC_21
+PLC/信捷Y1轴_PC位置,信捷Y1轴_PC位置_22,43844,信捷Y1轴_PC位置_22,XINJE Y1 Axis_PC Position 22,Tr?c Y1 XINJE_V? trí_PC_22
+PLC/信捷Y1轴_PC位置,信捷Y1轴_PC位置_23,43846,信捷Y1轴_PC位置_23,XINJE Y1 Axis_PC Position 23,Tr?c Y1 XINJE_V? trí_PC_23
+PLC/信捷Y1轴_PC位置,信捷Y1轴_PC位置_24,43848,信捷Y1轴_PC位置_24,XINJE Y1 Axis_PC Position 24,Tr?c Y1 XINJE_V? trí_PC_24
+PLC/信捷Y1轴_PC位置,信捷Y1轴_PC位置_25,43850,信捷Y1轴_PC位置_25,XINJE Y1 Axis_PC Position 25,Tr?c Y1 XINJE_V? trí_PC_25
+PLC/信捷Y1轴_PC位置,信捷Y1轴_PC位置_26,43852,信捷Y1轴_PC位置_26,XINJE Y1 Axis_PC Position 26,Tr?c Y1 XINJE_V? trí_PC_26
+PLC/信捷Y1轴_PC位置,信捷Y1轴_PC位置_27,43854,信捷Y1轴_PC位置_27,XINJE Y1 Axis_PC Position 27,Tr?c Y1 XINJE_V? trí_PC_27
+PLC/信捷Y1轴_PC位置,信捷Y1轴_PC位置_28,43856,信捷Y1轴_PC位置_28,XINJE Y1 Axis_PC Position 28,Tr?c Y1 XINJE_V? trí_PC_28
+PLC/信捷Y1轴_PC位置,信捷Y1轴_PC位置_29,43858,信捷Y1轴_PC位置_29,XINJE Y1 Axis_PC Position 29,Tr?c Y1 XINJE_V? trí_PC_29
+PLC/信捷Y1轴_PC位置,信捷Y1轴_PC位置_30,43860,信捷Y1轴_PC位置_30,XINJE Y1 Axis_PC Position 30,Tr?c Y1 XINJE_V? trí_PC_30
+PLC/信捷Y1轴_PC位置,信捷Y1轴_PC位置_31,43862,信捷Y1轴_PC位置_31,XINJE Y1 Axis_PC Position 31,Tr?c Y1 XINJE_V? trí_PC_31
+PLC/信捷Y1轴_PC位置,信捷Y1轴_PC位置_32,43864,信捷Y1轴_PC位置_32,XINJE Y1 Axis_PC Position 32,Tr?c Y1 XINJE_V? trí_PC_32
+PLC/信捷Y1轴_PC位置,信捷Y1轴_PC位置_33,43866,信捷Y1轴_PC位置_33,XINJE Y1 Axis_PC Position 33,Tr?c Y1 XINJE_V? trí_PC_33
+PLC/信捷Y1轴_PC位置,信捷Y1轴_PC位置_34,43868,信捷Y1轴_PC位置_34,XINJE Y1 Axis_PC Position 34,Tr?c Y1 XINJE_V? trí_PC_34
+PLC/信捷Y1轴_PC位置,信捷Y1轴_PC位置_35,43870,信捷Y1轴_PC位置_35,XINJE Y1 Axis_PC Position 35,Tr?c Y1 XINJE_V? trí_PC_35
+PLC/信捷Y1轴_PC位置,信捷Y1轴_PC位置_36,43872,信捷Y1轴_PC位置_36,XINJE Y1 Axis_PC Position 36,Tr?c Y1 XINJE_V? trí_PC_36
+PLC/信捷Y1轴_PC位置,信捷Y1轴_PC位置_37,43874,信捷Y1轴_PC位置_37,XINJE Y1 Axis_PC Position 37,Tr?c Y1 XINJE_V? trí_PC_37
+PLC/信捷Y1轴_PC位置,信捷Y1轴_PC位置_38,43876,信捷Y1轴_PC位置_38,XINJE Y1 Axis_PC Position 38,Tr?c Y1 XINJE_V? trí_PC_38
+PLC/信捷Y1轴_PC位置,信捷Y1轴_PC位置_39,43878,信捷Y1轴_PC位置_39,XINJE Y1 Axis_PC Position 39,Tr?c Y1 XINJE_V? trí_PC_39
+PLC/信捷Y1轴_PC位置,信捷Y1轴_PC位置_40,43880,信捷Y1轴_PC位置_40,XINJE Y1 Axis_PC Position 40,Tr?c Y1 XINJE_V? trí_PC_40
+PLC/信捷Y1轴_PC位置,信捷Y1轴_PC位置_41,43882,信捷Y1轴_PC位置_41,XINJE Y1 Axis_PC Position 41,Tr?c Y1 XINJE_V? trí_PC_41
+PLC/信捷Y1轴_PC位置,信捷Y1轴_PC位置_42,43884,信捷Y1轴_PC位置_42,XINJE Y1 Axis_PC Position 42,Tr?c Y1 XINJE_V? trí_PC_42
+PLC/信捷Y1轴_PC位置,信捷Y1轴_PC位置_43,43886,信捷Y1轴_PC位置_43,XINJE Y1 Axis_PC Position 43,Tr?c Y1 XINJE_V? trí_PC_43
+PLC/信捷Y1轴_PC位置,信捷Y1轴_PC位置_44,43888,信捷Y1轴_PC位置_44,XINJE Y1 Axis_PC Position 44,Tr?c Y1 XINJE_V? trí_PC_44
+PLC/信捷Y1轴_PC位置,信捷Y1轴_PC位置_45,43890,信捷Y1轴_PC位置_45,XINJE Y1 Axis_PC Position 45,Tr?c Y1 XINJE_V? trí_PC_45
+PLC/信捷Y1轴_PC位置,信捷Y1轴_PC位置_46,43892,信捷Y1轴_PC位置_46,XINJE Y1 Axis_PC Position 46,Tr?c Y1 XINJE_V? trí_PC_46
+PLC/信捷Y1轴_PC位置,信捷Y1轴_PC位置_47,43894,信捷Y1轴_PC位置_47,XINJE Y1 Axis_PC Position 47,Tr?c Y1 XINJE_V? trí_PC_47
+PLC/信捷Y1轴_PC位置,信捷Y1轴_PC位置_48,43896,信捷Y1轴_PC位置_48,XINJE Y1 Axis_PC Position 48,Tr?c Y1 XINJE_V? trí_PC_48
+PLC/信捷Y1轴_PC位置,信捷Y1轴_PC位置_49,43898,信捷Y1轴_PC位置_49,XINJE Y1 Axis_PC Position 49,Tr?c Y1 XINJE_V? trí_PC_49
+PLC/信捷Y1轴_PC位置,信捷Y1轴_PC位置_50,43900,信捷Y1轴_PC位置_50,XINJE Y1 Axis_PC Position 50,Tr?c Y1 XINJE_V? trí_PC_50
+
+PLC/信捷Y2轴_PC位置,信捷Y2轴_PC位置_0,44000,信捷Y2轴_PC位置_0,XINJE Y2 Axis_PC Position 0,Tr?c Y2 XINJE_V? trí_PC_0
+PLC/信捷Y2轴_PC位置,信捷Y2轴_PC位置_1,44002,信捷Y2轴_PC位置_1,XINJE Y2 Axis_PC Position 1,Tr?c Y2 XINJE_V? trí_PC_1
+PLC/信捷Y2轴_PC位置,信捷Y2轴_PC位置_2,44004,信捷Y2轴_PC位置_2,XINJE Y2 Axis_PC Position 2,Tr?c Y2 XINJE_V? trí_PC_2
+PLC/信捷Y2轴_PC位置,信捷Y2轴_PC位置_3,44006,信捷Y2轴_PC位置_3,XINJE Y2 Axis_PC Position 3,Tr?c Y2 XINJE_V? trí_PC_3
+PLC/信捷Y2轴_PC位置,信捷Y2轴_PC位置_4,44008,信捷Y2轴_PC位置_4,XINJE Y2 Axis_PC Position 4,Tr?c Y2 XINJE_V? trí_PC_4
+PLC/信捷Y2轴_PC位置,信捷Y2轴_PC位置_5,44010,信捷Y2轴_PC位置_5,XINJE Y2 Axis_PC Position 5,Tr?c Y2 XINJE_V? trí_PC_5
+PLC/信捷Y2轴_PC位置,信捷Y2轴_PC位置_6,44012,信捷Y2轴_PC位置_6,XINJE Y2 Axis_PC Position 6,Tr?c Y2 XINJE_V? trí_PC_6
+PLC/信捷Y2轴_PC位置,信捷Y2轴_PC位置_7,44014,信捷Y2轴_PC位置_7,XINJE Y2 Axis_PC Position 7,Tr?c Y2 XINJE_V? trí_PC_7
+PLC/信捷Y2轴_PC位置,信捷Y2轴_PC位置_8,44016,信捷Y2轴_PC位置_8,XINJE Y2 Axis_PC Position 8,Tr?c Y2 XINJE_V? trí_PC_8
+PLC/信捷Y2轴_PC位置,信捷Y2轴_PC位置_9,44018,信捷Y2轴_PC位置_9,XINJE Y2 Axis_PC Position 9,Tr?c Y2 XINJE_V? trí_PC_9
+PLC/信捷Y2轴_PC位置,信捷Y2轴_PC位置_10,44020,信捷Y2轴_PC位置_10,XINJE Y2 Axis_PC Position 10,Tr?c Y2 XINJE_V? trí_PC_10
+PLC/信捷Y2轴_PC位置,信捷Y2轴_PC位置_11,44022,信捷Y2轴_PC位置_11,XINJE Y2 Axis_PC Position 11,Tr?c Y2 XINJE_V? trí_PC_11
+PLC/信捷Y2轴_PC位置,信捷Y2轴_PC位置_12,44024,信捷Y2轴_PC位置_12,XINJE Y2 Axis_PC Position 12,Tr?c Y2 XINJE_V? trí_PC_12
+PLC/信捷Y2轴_PC位置,信捷Y2轴_PC位置_13,44026,信捷Y2轴_PC位置_13,XINJE Y2 Axis_PC Position 13,Tr?c Y2 XINJE_V? trí_PC_13
+PLC/信捷Y2轴_PC位置,信捷Y2轴_PC位置_14,44028,信捷Y2轴_PC位置_14,XINJE Y2 Axis_PC Position 14,Tr?c Y2 XINJE_V? trí_PC_14
+PLC/信捷Y2轴_PC位置,信捷Y2轴_PC位置_15,44030,信捷Y2轴_PC位置_15,XINJE Y2 Axis_PC Position 15,Tr?c Y2 XINJE_V? trí_PC_15
+PLC/信捷Y2轴_PC位置,信捷Y2轴_PC位置_16,44032,信捷Y2轴_PC位置_16,XINJE Y2 Axis_PC Position 16,Tr?c Y2 XINJE_V? trí_PC_16
+PLC/信捷Y2轴_PC位置,信捷Y2轴_PC位置_17,44034,信捷Y2轴_PC位置_17,XINJE Y2 Axis_PC Position 17,Tr?c Y2 XINJE_V? trí_PC_17
+PLC/信捷Y2轴_PC位置,信捷Y2轴_PC位置_18,44036,信捷Y2轴_PC位置_18,XINJE Y2 Axis_PC Position 18,Tr?c Y2 XINJE_V? trí_PC_18
+PLC/信捷Y2轴_PC位置,信捷Y2轴_PC位置_19,44038,信捷Y2轴_PC位置_19,XINJE Y2 Axis_PC Position 19,Tr?c Y2 XINJE_V? trí_PC_19
+PLC/信捷Y2轴_PC位置,信捷Y2轴_PC位置_20,44040,信捷Y2轴_PC位置_20,XINJE Y2 Axis_PC Position 20,Tr?c Y2 XINJE_V? trí_PC_20
+PLC/信捷Y2轴_PC位置,信捷Y2轴_PC位置_21,44042,信捷Y2轴_PC位置_21,XINJE Y2 Axis_PC Position 21,Tr?c Y2 XINJE_V? trí_PC_21
+PLC/信捷Y2轴_PC位置,信捷Y2轴_PC位置_22,44044,信捷Y2轴_PC位置_22,XINJE Y2 Axis_PC Position 22,Tr?c Y2 XINJE_V? trí_PC_22
+PLC/信捷Y2轴_PC位置,信捷Y2轴_PC位置_23,44046,信捷Y2轴_PC位置_23,XINJE Y2 Axis_PC Position 23,Tr?c Y2 XINJE_V? trí_PC_23
+PLC/信捷Y2轴_PC位置,信捷Y2轴_PC位置_24,44048,信捷Y2轴_PC位置_24,XINJE Y2 Axis_PC Position 24,Tr?c Y2 XINJE_V? trí_PC_24
+PLC/信捷Y2轴_PC位置,信捷Y2轴_PC位置_25,44050,信捷Y2轴_PC位置_25,XINJE Y2 Axis_PC Position 25,Tr?c Y2 XINJE_V? trí_PC_25
+PLC/信捷Y2轴_PC位置,信捷Y2轴_PC位置_26,44052,信捷Y2轴_PC位置_26,XINJE Y2 Axis_PC Position 26,Tr?c Y2 XINJE_V? trí_PC_26
+PLC/信捷Y2轴_PC位置,信捷Y2轴_PC位置_27,44054,信捷Y2轴_PC位置_27,XINJE Y2 Axis_PC Position 27,Tr?c Y2 XINJE_V? trí_PC_27
+PLC/信捷Y2轴_PC位置,信捷Y2轴_PC位置_28,44056,信捷Y2轴_PC位置_28,XINJE Y2 Axis_PC Position 28,Tr?c Y2 XINJE_V? trí_PC_28
+PLC/信捷Y2轴_PC位置,信捷Y2轴_PC位置_29,44058,信捷Y2轴_PC位置_29,XINJE Y2 Axis_PC Position 29,Tr?c Y2 XINJE_V? trí_PC_29
+PLC/信捷Y2轴_PC位置,信捷Y2轴_PC位置_30,44060,信捷Y2轴_PC位置_30,XINJE Y2 Axis_PC Position 30,Tr?c Y2 XINJE_V? trí_PC_30
+PLC/信捷Y2轴_PC位置,信捷Y2轴_PC位置_31,44062,信捷Y2轴_PC位置_31,XINJE Y2 Axis_PC Position 31,Tr?c Y2 XINJE_V? trí_PC_31
+PLC/信捷Y2轴_PC位置,信捷Y2轴_PC位置_32,44064,信捷Y2轴_PC位置_32,XINJE Y2 Axis_PC Position 32,Tr?c Y2 XINJE_V? trí_PC_32
+PLC/信捷Y2轴_PC位置,信捷Y2轴_PC位置_33,44066,信捷Y2轴_PC位置_33,XINJE Y2 Axis_PC Position 33,Tr?c Y2 XINJE_V? trí_PC_33
+PLC/信捷Y2轴_PC位置,信捷Y2轴_PC位置_34,44068,信捷Y2轴_PC位置_34,XINJE Y2 Axis_PC Position 34,Tr?c Y2 XINJE_V? trí_PC_34
+PLC/信捷Y2轴_PC位置,信捷Y2轴_PC位置_35,44070,信捷Y2轴_PC位置_35,XINJE Y2 Axis_PC Position 35,Tr?c Y2 XINJE_V? trí_PC_35
+PLC/信捷Y2轴_PC位置,信捷Y2轴_PC位置_36,44072,信捷Y2轴_PC位置_36,XINJE Y2 Axis_PC Position 36,Tr?c Y2 XINJE_V? trí_PC_36
+PLC/信捷Y2轴_PC位置,信捷Y2轴_PC位置_37,44074,信捷Y2轴_PC位置_37,XINJE Y2 Axis_PC Position 37,Tr?c Y2 XINJE_V? trí_PC_37
+PLC/信捷Y2轴_PC位置,信捷Y2轴_PC位置_38,44076,信捷Y2轴_PC位置_38,XINJE Y2 Axis_PC Position 38,Tr?c Y2 XINJE_V? trí_PC_38
+PLC/信捷Y2轴_PC位置,信捷Y2轴_PC位置_39,44078,信捷Y2轴_PC位置_39,XINJE Y2 Axis_PC Position 39,Tr?c Y2 XINJE_V? trí_PC_39
+PLC/信捷Y2轴_PC位置,信捷Y2轴_PC位置_40,44080,信捷Y2轴_PC位置_40,XINJE Y2 Axis_PC Position 40,Tr?c Y2 XINJE_V? trí_PC_40
+PLC/信捷Y2轴_PC位置,信捷Y2轴_PC位置_41,44082,信捷Y2轴_PC位置_41,XINJE Y2 Axis_PC Position 41,Tr?c Y2 XINJE_V? trí_PC_41
+PLC/信捷Y2轴_PC位置,信捷Y2轴_PC位置_42,44084,信捷Y2轴_PC位置_42,XINJE Y2 Axis_PC Position 42,Tr?c Y2 XINJE_V? trí_PC_42
+PLC/信捷Y2轴_PC位置,信捷Y2轴_PC位置_43,44086,信捷Y2轴_PC位置_43,XINJE Y2 Axis_PC Position 43,Tr?c Y2 XINJE_V? trí_PC_43
+PLC/信捷Y2轴_PC位置,信捷Y2轴_PC位置_44,44088,信捷Y2轴_PC位置_44,XINJE Y2 Axis_PC Position 44,Tr?c Y2 XINJE_V? trí_PC_44
+PLC/信捷Y2轴_PC位置,信捷Y2轴_PC位置_45,44090,信捷Y2轴_PC位置_45,XINJE Y2 Axis_PC Position 45,Tr?c Y2 XINJE_V? trí_PC_45
+PLC/信捷Y2轴_PC位置,信捷Y2轴_PC位置_46,44092,信捷Y2轴_PC位置_46,XINJE Y2 Axis_PC Position 46,Tr?c Y2 XINJE_V? trí_PC_46
+PLC/信捷Y2轴_PC位置,信捷Y2轴_PC位置_47,44094,信捷Y2轴_PC位置_47,XINJE Y2 Axis_PC Position 47,Tr?c Y2 XINJE_V? trí_PC_47
+PLC/信捷Y2轴_PC位置,信捷Y2轴_PC位置_48,44096,信捷Y2轴_PC位置_48,XINJE Y2 Axis_PC Position 48,Tr?c Y2 XINJE_V? trí_PC_48
+PLC/信捷Y2轴_PC位置,信捷Y2轴_PC位置_49,44098,信捷Y2轴_PC位置_49,XINJE Y2 Axis_PC Position 49,Tr?c Y2 XINJE_V? trí_PC_49
+PLC/信捷Y2轴_PC位置,信捷Y2轴_PC位置_50,44100,信捷Y2轴_PC位置_50,XINJE Y2 Axis_PC Position 50,Tr?c Y2 XINJE_V? trí_PC_50
+
+PLC/雷赛步进Z1轴_PC位置,雷赛步进Z1轴_PC位置_0,44200,雷赛步进Z1轴_PC位置_0,LEADSHINE Stepper Z1 Axis_PC Position 0,Tr?c Z1 LEADSHINE Stepper_V? trí_PC_0
+PLC/雷赛步进Z1轴_PC位置,雷赛步进Z1轴_PC位置_1,44202,雷赛步进Z1轴_PC位置_1,LEADSHINE Stepper Z1 Axis_PC Position 1,Tr?c Z1 LEADSHINE Stepper_V? trí_PC_1
+PLC/雷赛步进Z1轴_PC位置,雷赛步进Z1轴_PC位置_2,44204,雷赛步进Z1轴_PC位置_2,LEADSHINE Stepper Z1 Axis_PC Position 2,Tr?c Z1 LEADSHINE Stepper_V? trí_PC_2
+PLC/雷赛步进Z1轴_PC位置,雷赛步进Z1轴_PC位置_3,44206,雷赛步进Z1轴_PC位置_3,LEADSHINE Stepper Z1 Axis_PC Position 3,Tr?c Z1 LEADSHINE Stepper_V? trí_PC_3
+PLC/雷赛步进Z1轴_PC位置,雷赛步进Z1轴_PC位置_4,44208,雷赛步进Z1轴_PC位置_4,LEADSHINE Stepper Z1 Axis_PC Position 4,Tr?c Z1 LEADSHINE Stepper_V? trí_PC_4
+PLC/雷赛步进Z1轴_PC位置,雷赛步进Z1轴_PC位置_5,44210,雷赛步进Z1轴_PC位置_5,LEADSHINE Stepper Z1 Axis_PC Position 5,Tr?c Z1 LEADSHINE Stepper_V? trí_PC_5
+PLC/雷赛步进Z1轴_PC位置,雷赛步进Z1轴_PC位置_6,44212,雷赛步进Z1轴_PC位置_6,LEADSHINE Stepper Z1 Axis_PC Position 6,Tr?c Z1 LEADSHINE Stepper_V? trí_PC_6
+PLC/雷赛步进Z1轴_PC位置,雷赛步进Z1轴_PC位置_7,44214,雷赛步进Z1轴_PC位置_7,LEADSHINE Stepper Z1 Axis_PC Position 7,Tr?c Z1 LEADSHINE Stepper_V? trí_PC_7
+PLC/雷赛步进Z1轴_PC位置,雷赛步进Z1轴_PC位置_8,44216,雷赛步进Z1轴_PC位置_8,LEADSHINE Stepper Z1 Axis_PC Position 8,Tr?c Z1 LEADSHINE Stepper_V? trí_PC_8
+PLC/雷赛步进Z1轴_PC位置,雷赛步进Z1轴_PC位置_9,44218,雷赛步进Z1轴_PC位置_9,LEADSHINE Stepper Z1 Axis_PC Position 9,Tr?c Z1 LEADSHINE Stepper_V? trí_PC_9
+PLC/雷赛步进Z1轴_PC位置,雷赛步进Z1轴_PC位置_10,44220,雷赛步进Z1轴_PC位置_10,LEADSHINE Stepper Z1 Axis_PC Position 10,Tr?c Z1 LEADSHINE Stepper_V? trí_PC_10
+PLC/雷赛步进Z1轴_PC位置,雷赛步进Z1轴_PC位置_11,44222,雷赛步进Z1轴_PC位置_11,LEADSHINE Stepper Z1 Axis_PC Position 11,Tr?c Z1 LEADSHINE Stepper_V? trí_PC_11
+PLC/雷赛步进Z1轴_PC位置,雷赛步进Z1轴_PC位置_12,44224,雷赛步进Z1轴_PC位置_12,LEADSHINE Stepper Z1 Axis_PC Position 12,Tr?c Z1 LEADSHINE Stepper_V? trí_PC_12
+PLC/雷赛步进Z1轴_PC位置,雷赛步进Z1轴_PC位置_13,44226,雷赛步进Z1轴_PC位置_13,LEADSHINE Stepper Z1 Axis_PC Position 13,Tr?c Z1 LEADSHINE Stepper_V? trí_PC_13
+PLC/雷赛步进Z1轴_PC位置,雷赛步进Z1轴_PC位置_14,44228,雷赛步进Z1轴_PC位置_14,LEADSHINE Stepper Z1 Axis_PC Position 14,Tr?c Z1 LEADSHINE Stepper_V? trí_PC_14
+PLC/雷赛步进Z1轴_PC位置,雷赛步进Z1轴_PC位置_15,44230,雷赛步进Z1轴_PC位置_15,LEADSHINE Stepper Z1 Axis_PC Position 15,Tr?c Z1 LEADSHINE Stepper_V? trí_PC_15
+PLC/雷赛步进Z1轴_PC位置,雷赛步进Z1轴_PC位置_16,44232,雷赛步进Z1轴_PC位置_16,LEADSHINE Stepper Z1 Axis_PC Position 16,Tr?c Z1 LEADSHINE Stepper_V? trí_PC_16
+PLC/雷赛步进Z1轴_PC位置,雷赛步进Z1轴_PC位置_17,44234,雷赛步进Z1轴_PC位置_17,LEADSHINE Stepper Z1 Axis_PC Position 17,Tr?c Z1 LEADSHINE Stepper_V? trí_PC_17
+PLC/雷赛步进Z1轴_PC位置,雷赛步进Z1轴_PC位置_18,44236,雷赛步进Z1轴_PC位置_18,LEADSHINE Stepper Z1 Axis_PC Position 18,Tr?c Z1 LEADSHINE Stepper_V? trí_PC_18
+PLC/雷赛步进Z1轴_PC位置,雷赛步进Z1轴_PC位置_19,44238,雷赛步进Z1轴_PC位置_19,LEADSHINE Stepper Z1 Axis_PC Position 19,Tr?c Z1 LEADSHINE Stepper_V? trí_PC_19
+PLC/雷赛步进Z1轴_PC位置,雷赛步进Z1轴_PC位置_20,44240,雷赛步进Z1轴_PC位置_20,LEADSHINE Stepper Z1 Axis_PC Position 20,Tr?c Z1 LEADSHINE Stepper_V? trí_PC_20
+PLC/雷赛步进Z1轴_PC位置,雷赛步进Z1轴_PC位置_21,44242,雷赛步进Z1轴_PC位置_21,LEADSHINE Stepper Z1 Axis_PC Position 21,Tr?c Z1 LEADSHINE Stepper_V? trí_PC_21
+PLC/雷赛步进Z1轴_PC位置,雷赛步进Z1轴_PC位置_22,44244,雷赛步进Z1轴_PC位置_22,LEADSHINE Stepper Z1 Axis_PC Position 22,Tr?c Z1 LEADSHINE Stepper_V? trí_PC_22
+PLC/雷赛步进Z1轴_PC位置,雷赛步进Z1轴_PC位置_23,44246,雷赛步进Z1轴_PC位置_23,LEADSHINE Stepper Z1 Axis_PC Position 23,Tr?c Z1 LEADSHINE Stepper_V? trí_PC_23
+PLC/雷赛步进Z1轴_PC位置,雷赛步进Z1轴_PC位置_24,44248,雷赛步进Z1轴_PC位置_24,LEADSHINE Stepper Z1 Axis_PC Position 24,Tr?c Z1 LEADSHINE Stepper_V? trí_PC_24
+PLC/雷赛步进Z1轴_PC位置,雷赛步进Z1轴_PC位置_25,44250,雷赛步进Z1轴_PC位置_25,LEADSHINE Stepper Z1 Axis_PC Position 25,Tr?c Z1 LEADSHINE Stepper_V? trí_PC_25
+PLC/雷赛步进Z1轴_PC位置,雷赛步进Z1轴_PC位置_26,44252,雷赛步进Z1轴_PC位置_26,LEADSHINE Stepper Z1 Axis_PC Position 26,Tr?c Z1 LEADSHINE Stepper_V? trí_PC_26
+PLC/雷赛步进Z1轴_PC位置,雷赛步进Z1轴_PC位置_27,44254,雷赛步进Z1轴_PC位置_27,LEADSHINE Stepper Z1 Axis_PC Position 27,Tr?c Z1 LEADSHINE Stepper_V? trí_PC_27
+PLC/雷赛步进Z1轴_PC位置,雷赛步进Z1轴_PC位置_28,44256,雷赛步进Z1轴_PC位置_28,LEADSHINE Stepper Z1 Axis_PC Position 28,Tr?c Z1 LEADSHINE Stepper_V? trí_PC_28
+PLC/雷赛步进Z1轴_PC位置,雷赛步进Z1轴_PC位置_29,44258,雷赛步进Z1轴_PC位置_29,LEADSHINE Stepper Z1 Axis_PC Position 29,Tr?c Z1 LEADSHINE Stepper_V? trí_PC_29
+PLC/雷赛步进Z1轴_PC位置,雷赛步进Z1轴_PC位置_30,44260,雷赛步进Z1轴_PC位置_30,LEADSHINE Stepper Z1 Axis_PC Position 30,Tr?c Z1 LEADSHINE Stepper_V? trí_PC_30
+PLC/雷赛步进Z1轴_PC位置,雷赛步进Z1轴_PC位置_31,44262,雷赛步进Z1轴_PC位置_31,LEADSHINE Stepper Z1 Axis_PC Position 31,Tr?c Z1 LEADSHINE Stepper_V? trí_PC_31
+PLC/雷赛步进Z1轴_PC位置,雷赛步进Z1轴_PC位置_32,44264,雷赛步进Z1轴_PC位置_32,LEADSHINE Stepper Z1 Axis_PC Position 32,Tr?c Z1 LEADSHINE Stepper_V? trí_PC_32
+PLC/雷赛步进Z1轴_PC位置,雷赛步进Z1轴_PC位置_33,44266,雷赛步进Z1轴_PC位置_33,LEADSHINE Stepper Z1 Axis_PC Position 33,Tr?c Z1 LEADSHINE Stepper_V? trí_PC_33
+PLC/雷赛步进Z1轴_PC位置,雷赛步进Z1轴_PC位置_34,44268,雷赛步进Z1轴_PC位置_34,LEADSHINE Stepper Z1 Axis_PC Position 34,Tr?c Z1 LEADSHINE Stepper_V? trí_PC_34
+PLC/雷赛步进Z1轴_PC位置,雷赛步进Z1轴_PC位置_35,44270,雷赛步进Z1轴_PC位置_35,LEADSHINE Stepper Z1 Axis_PC Position 35,Tr?c Z1 LEADSHINE Stepper_V? trí_PC_35
+PLC/雷赛步进Z1轴_PC位置,雷赛步进Z1轴_PC位置_36,44272,雷赛步进Z1轴_PC位置_36,LEADSHINE Stepper Z1 Axis_PC Position 36,Tr?c Z1 LEADSHINE Stepper_V? trí_PC_36
+PLC/雷赛步进Z1轴_PC位置,雷赛步进Z1轴_PC位置_37,44274,雷赛步进Z1轴_PC位置_37,LEADSHINE Stepper Z1 Axis_PC Position 37,Tr?c Z1 LEADSHINE Stepper_V? trí_PC_37
+PLC/雷赛步进Z1轴_PC位置,雷赛步进Z1轴_PC位置_38,44276,雷赛步进Z1轴_PC位置_38,LEADSHINE Stepper Z1 Axis_PC Position 38,Tr?c Z1 LEADSHINE Stepper_V? trí_PC_38
+PLC/雷赛步进Z1轴_PC位置,雷赛步进Z1轴_PC位置_39,44278,雷赛步进Z1轴_PC位置_39,LEADSHINE Stepper Z1 Axis_PC Position 39,Tr?c Z1 LEADSHINE Stepper_V? trí_PC_39
+PLC/雷赛步进Z1轴_PC位置,雷赛步进Z1轴_PC位置_40,44280,雷赛步进Z1轴_PC位置_40,LEADSHINE Stepper Z1 Axis_PC Position 40,Tr?c Z1 LEADSHINE Stepper_V? trí_PC_40
+PLC/雷赛步进Z1轴_PC位置,雷赛步进Z1轴_PC位置_41,44282,雷赛步进Z1轴_PC位置_41,LEADSHINE Stepper Z1 Axis_PC Position 41,Tr?c Z1 LEADSHINE Stepper_V? trí_PC_41
+PLC/雷赛步进Z1轴_PC位置,雷赛步进Z1轴_PC位置_42,44284,雷赛步进Z1轴_PC位置_42,LEADSHINE Stepper Z1 Axis_PC Position 42,Tr?c Z1 LEADSHINE Stepper_V? trí_PC_42
+PLC/雷赛步进Z1轴_PC位置,雷赛步进Z1轴_PC位置_43,44286,雷赛步进Z1轴_PC位置_43,LEADSHINE Stepper Z1 Axis_PC Position 43,Tr?c Z1 LEADSHINE Stepper_V? trí_PC_43
+PLC/雷赛步进Z1轴_PC位置,雷赛步进Z1轴_PC位置_44,44288,雷赛步进Z1轴_PC位置_44,LEADSHINE Stepper Z1 Axis_PC Position 44,Tr?c Z1 LEADSHINE Stepper_V? trí_PC_44
+PLC/雷赛步进Z1轴_PC位置,雷赛步进Z1轴_PC位置_45,44290,雷赛步进Z1轴_PC位置_45,LEADSHINE Stepper Z1 Axis_PC Position 45,Tr?c Z1 LEADSHINE Stepper_V? trí_PC_45
+PLC/雷赛步进Z1轴_PC位置,雷赛步进Z1轴_PC位置_46,44292,雷赛步进Z1轴_PC位置_46,LEADSHINE Stepper Z1 Axis_PC Position 46,Tr?c Z1 LEADSHINE Stepper_V? trí_PC_46
+PLC/雷赛步进Z1轴_PC位置,雷赛步进Z1轴_PC位置_47,44294,雷赛步进Z1轴_PC位置_47,LEADSHINE Stepper Z1 Axis_PC Position 47,Tr?c Z1 LEADSHINE Stepper_V? trí_PC_47
+PLC/雷赛步进Z1轴_PC位置,雷赛步进Z1轴_PC位置_48,44296,雷赛步进Z1轴_PC位置_48,LEADSHINE Stepper Z1 Axis_PC Position 48,Tr?c Z1 LEADSHINE Stepper_V? trí_PC_48
+PLC/雷赛步进Z1轴_PC位置,雷赛步进Z1轴_PC位置_49,44298,雷赛步进Z1轴_PC位置_49,LEADSHINE Stepper Z1 Axis_PC Position 49,Tr?c Z1 LEADSHINE Stepper_V? trí_PC_49
+PLC/雷赛步进Z1轴_PC位置,雷赛步进Z1轴_PC位置_50,44300,雷赛步进Z1轴_PC位置_50,LEADSHINE Stepper Z1 Axis_PC Position 50,Tr?c Z1 LEADSHINE Stepper_V? trí_PC_50
+
+PLC/雷赛步进Z2轴_PC位置,雷赛步进Z2轴_PC位置_0,44400,雷赛步进Z2轴_PC位置_0,LEADSHINE Stepper Z2 Axis_PC Position 0,Tr?c Z2 LEADSHINE Stepper_V? trí_PC_0
+PLC/雷赛步进Z2轴_PC位置,雷赛步进Z2轴_PC位置_1,44402,雷赛步进Z2轴_PC位置_1,LEADSHINE Stepper Z2 Axis_PC Position 1,Tr?c Z2 LEADSHINE Stepper_V? trí_PC_1
+PLC/雷赛步进Z2轴_PC位置,雷赛步进Z2轴_PC位置_2,44404,雷赛步进Z2轴_PC位置_2,LEADSHINE Stepper Z2 Axis_PC Position 2,Tr?c Z2 LEADSHINE Stepper_V? trí_PC_2
+PLC/雷赛步进Z2轴_PC位置,雷赛步进Z2轴_PC位置_3,44406,雷赛步进Z2轴_PC位置_3,LEADSHINE Stepper Z2 Axis_PC Position 3,Tr?c Z2 LEADSHINE Stepper_V? trí_PC_3
+PLC/雷赛步进Z2轴_PC位置,雷赛步进Z2轴_PC位置_4,44408,雷赛步进Z2轴_PC位置_4,LEADSHINE Stepper Z2 Axis_PC Position 4,Tr?c Z2 LEADSHINE Stepper_V? trí_PC_4
+PLC/雷赛步进Z2轴_PC位置,雷赛步进Z2轴_PC位置_5,44410,雷赛步进Z2轴_PC位置_5,LEADSHINE Stepper Z2 Axis_PC Position 5,Tr?c Z2 LEADSHINE Stepper_V? trí_PC_5
+PLC/雷赛步进Z2轴_PC位置,雷赛步进Z2轴_PC位置_6,44412,雷赛步进Z2轴_PC位置_6,LEADSHINE Stepper Z2 Axis_PC Position 6,Tr?c Z2 LEADSHINE Stepper_V? trí_PC_6
+PLC/雷赛步进Z2轴_PC位置,雷赛步进Z2轴_PC位置_7,44414,雷赛步进Z2轴_PC位置_7,LEADSHINE Stepper Z2 Axis_PC Position 7,Tr?c Z2 LEADSHINE Stepper_V? trí_PC_7
+PLC/雷赛步进Z2轴_PC位置,雷赛步进Z2轴_PC位置_8,44416,雷赛步进Z2轴_PC位置_8,LEADSHINE Stepper Z2 Axis_PC Position 8,Tr?c Z2 LEADSHINE Stepper_V? trí_PC_8
+PLC/雷赛步进Z2轴_PC位置,雷赛步进Z2轴_PC位置_9,44418,雷赛步进Z2轴_PC位置_9,LEADSHINE Stepper Z2 Axis_PC Position 9,Tr?c Z2 LEADSHINE Stepper_V? trí_PC_9
+PLC/雷赛步进Z2轴_PC位置,雷赛步进Z2轴_PC位置_10,44420,雷赛步进Z2轴_PC位置_10,LEADSHINE Stepper Z2 Axis_PC Position 10,Tr?c Z2 LEADSHINE Stepper_V? trí_PC_10
+PLC/雷赛步进Z2轴_PC位置,雷赛步进Z2轴_PC位置_11,44422,雷赛步进Z2轴_PC位置_11,LEADSHINE Stepper Z2 Axis_PC Position 11,Tr?c Z2 LEADSHINE Stepper_V? trí_PC_11
+PLC/雷赛步进Z2轴_PC位置,雷赛步进Z2轴_PC位置_12,44424,雷赛步进Z2轴_PC位置_12,LEADSHINE Stepper Z2 Axis_PC Position 12,Tr?c Z2 LEADSHINE Stepper_V? trí_PC_12
+PLC/雷赛步进Z2轴_PC位置,雷赛步进Z2轴_PC位置_13,44426,雷赛步进Z2轴_PC位置_13,LEADSHINE Stepper Z2 Axis_PC Position 13,Tr?c Z2 LEADSHINE Stepper_V? trí_PC_13
+PLC/雷赛步进Z2轴_PC位置,雷赛步进Z2轴_PC位置_14,44428,雷赛步进Z2轴_PC位置_14,LEADSHINE Stepper Z2 Axis_PC Position 14,Tr?c Z2 LEADSHINE Stepper_V? trí_PC_14
+PLC/雷赛步进Z2轴_PC位置,雷赛步进Z2轴_PC位置_15,44430,雷赛步进Z2轴_PC位置_15,LEADSHINE Stepper Z2 Axis_PC Position 15,Tr?c Z2 LEADSHINE Stepper_V? trí_PC_15
+PLC/雷赛步进Z2轴_PC位置,雷赛步进Z2轴_PC位置_16,44432,雷赛步进Z2轴_PC位置_16,LEADSHINE Stepper Z2 Axis_PC Position 16,Tr?c Z2 LEADSHINE Stepper_V? trí_PC_16
+PLC/雷赛步进Z2轴_PC位置,雷赛步进Z2轴_PC位置_17,44434,雷赛步进Z2轴_PC位置_17,LEADSHINE Stepper Z2 Axis_PC Position 17,Tr?c Z2 LEADSHINE Stepper_V? trí_PC_17
+PLC/雷赛步进Z2轴_PC位置,雷赛步进Z2轴_PC位置_18,44436,雷赛步进Z2轴_PC位置_18,LEADSHINE Stepper Z2 Axis_PC Position 18,Tr?c Z2 LEADSHINE Stepper_V? trí_PC_18
+PLC/雷赛步进Z2轴_PC位置,雷赛步进Z2轴_PC位置_19,44438,雷赛步进Z2轴_PC位置_19,LEADSHINE Stepper Z2 Axis_PC Position 19,Tr?c Z2 LEADSHINE Stepper_V? trí_PC_19
+PLC/雷赛步进Z2轴_PC位置,雷赛步进Z2轴_PC位置_20,44440,雷赛步进Z2轴_PC位置_20,LEADSHINE Stepper Z2 Axis_PC Position 20,Tr?c Z2 LEADSHINE Stepper_V? trí_PC_20
+PLC/雷赛步进Z2轴_PC位置,雷赛步进Z2轴_PC位置_21,44442,雷赛步进Z2轴_PC位置_21,LEADSHINE Stepper Z2 Axis_PC Position 21,Tr?c Z2 LEADSHINE Stepper_V? trí_PC_21
+PLC/雷赛步进Z2轴_PC位置,雷赛步进Z2轴_PC位置_22,44444,雷赛步进Z2轴_PC位置_22,LEADSHINE Stepper Z2 Axis_PC Position 22,Tr?c Z2 LEADSHINE Stepper_V? trí_PC_22
+PLC/雷赛步进Z2轴_PC位置,雷赛步进Z2轴_PC位置_23,44446,雷赛步进Z2轴_PC位置_23,LEADSHINE Stepper Z2 Axis_PC Position 23,Tr?c Z2 LEADSHINE Stepper_V? trí_PC_23
+PLC/雷赛步进Z2轴_PC位置,雷赛步进Z2轴_PC位置_24,44448,雷赛步进Z2轴_PC位置_24,LEADSHINE Stepper Z2 Axis_PC Position 24,Tr?c Z2 LEADSHINE Stepper_V? trí_PC_24
+PLC/雷赛步进Z2轴_PC位置,雷赛步进Z2轴_PC位置_25,44450,雷赛步进Z2轴_PC位置_25,LEADSHINE Stepper Z2 Axis_PC Position 25,Tr?c Z2 LEADSHINE Stepper_V? trí_PC_25
+PLC/雷赛步进Z2轴_PC位置,雷赛步进Z2轴_PC位置_26,44452,雷赛步进Z2轴_PC位置_26,LEADSHINE Stepper Z2 Axis_PC Position 26,Tr?c Z2 LEADSHINE Stepper_V? trí_PC_26
+PLC/雷赛步进Z2轴_PC位置,雷赛步进Z2轴_PC位置_27,44454,雷赛步进Z2轴_PC位置_27,LEADSHINE Stepper Z2 Axis_PC Position 27,Tr?c Z2 LEADSHINE Stepper_V? trí_PC_27
+PLC/雷赛步进Z2轴_PC位置,雷赛步进Z2轴_PC位置_28,44456,雷赛步进Z2轴_PC位置_28,LEADSHINE Stepper Z2 Axis_PC Position 28,Tr?c Z2 LEADSHINE Stepper_V? trí_PC_28
+PLC/雷赛步进Z2轴_PC位置,雷赛步进Z2轴_PC位置_29,44458,雷赛步进Z2轴_PC位置_29,LEADSHINE Stepper Z2 Axis_PC Position 29,Tr?c Z2 LEADSHINE Stepper_V? trí_PC_29
+PLC/雷赛步进Z2轴_PC位置,雷赛步进Z2轴_PC位置_30,44460,雷赛步进Z2轴_PC位置_30,LEADSHINE Stepper Z2 Axis_PC Position 30,Tr?c Z2 LEADSHINE Stepper_V? trí_PC_30
+PLC/雷赛步进Z2轴_PC位置,雷赛步进Z2轴_PC位置_31,44462,雷赛步进Z2轴_PC位置_31,LEADSHINE Stepper Z2 Axis_PC Position 31,Tr?c Z2 LEADSHINE Stepper_V? trí_PC_31
+PLC/雷赛步进Z2轴_PC位置,雷赛步进Z2轴_PC位置_32,44464,雷赛步进Z2轴_PC位置_32,LEADSHINE Stepper Z2 Axis_PC Position 32,Tr?c Z2 LEADSHINE Stepper_V? trí_PC_32
+PLC/雷赛步进Z2轴_PC位置,雷赛步进Z2轴_PC位置_33,44466,雷赛步进Z2轴_PC位置_33,LEADSHINE Stepper Z2 Axis_PC Position 33,Tr?c Z2 LEADSHINE Stepper_V? trí_PC_33
+PLC/雷赛步进Z2轴_PC位置,雷赛步进Z2轴_PC位置_34,44468,雷赛步进Z2轴_PC位置_34,LEADSHINE Stepper Z2 Axis_PC Position 34,Tr?c Z2 LEADSHINE Stepper_V? trí_PC_34
+PLC/雷赛步进Z2轴_PC位置,雷赛步进Z2轴_PC位置_35,44470,雷赛步进Z2轴_PC位置_35,LEADSHINE Stepper Z2 Axis_PC Position 35,Tr?c Z2 LEADSHINE Stepper_V? trí_PC_35
+PLC/雷赛步进Z2轴_PC位置,雷赛步进Z2轴_PC位置_36,44472,雷赛步进Z2轴_PC位置_36,LEADSHINE Stepper Z2 Axis_PC Position 36,Tr?c Z2 LEADSHINE Stepper_V? trí_PC_36
+PLC/雷赛步进Z2轴_PC位置,雷赛步进Z2轴_PC位置_37,44474,雷赛步进Z2轴_PC位置_37,LEADSHINE Stepper Z2 Axis_PC Position 37,Tr?c Z2 LEADSHINE Stepper_V? trí_PC_37
+PLC/雷赛步进Z2轴_PC位置,雷赛步进Z2轴_PC位置_38,44476,雷赛步进Z2轴_PC位置_38,LEADSHINE Stepper Z2 Axis_PC Position 38,Tr?c Z2 LEADSHINE Stepper_V? trí_PC_38
+PLC/雷赛步进Z2轴_PC位置,雷赛步进Z2轴_PC位置_39,44478,雷赛步进Z2轴_PC位置_39,LEADSHINE Stepper Z2 Axis_PC Position 39,Tr?c Z2 LEADSHINE Stepper_V? trí_PC_39
+PLC/雷赛步进Z2轴_PC位置,雷赛步进Z2轴_PC位置_40,44480,雷赛步进Z2轴_PC位置_40,LEADSHINE Stepper Z2 Axis_PC Position 40,Tr?c Z2 LEADSHINE Stepper_V? trí_PC_40
+PLC/雷赛步进Z2轴_PC位置,雷赛步进Z2轴_PC位置_41,44482,雷赛步进Z2轴_PC位置_41,LEADSHINE Stepper Z2 Axis_PC Position 41,Tr?c Z2 LEADSHINE Stepper_V? trí_PC_41
+PLC/雷赛步进Z2轴_PC位置,雷赛步进Z2轴_PC位置_42,44484,雷赛步进Z2轴_PC位置_42,LEADSHINE Stepper Z2 Axis_PC Position 42,Tr?c Z2 LEADSHINE Stepper_V? trí_PC_42
+PLC/雷赛步进Z2轴_PC位置,雷赛步进Z2轴_PC位置_43,44486,雷赛步进Z2轴_PC位置_43,LEADSHINE Stepper Z2 Axis_PC Position 43,Tr?c Z2 LEADSHINE Stepper_V? trí_PC_43
+PLC/雷赛步进Z2轴_PC位置,雷赛步进Z2轴_PC位置_44,44488,雷赛步进Z2轴_PC位置_44,LEADSHINE Stepper Z2 Axis_PC Position 44,Tr?c Z2 LEADSHINE Stepper_V? trí_PC_44
+PLC/雷赛步进Z2轴_PC位置,雷赛步进Z2轴_PC位置_45,44490,雷赛步进Z2轴_PC位置_45,LEADSHINE Stepper Z2 Axis_PC Position 45,Tr?c Z2 LEADSHINE Stepper_V? trí_PC_45
+PLC/雷赛步进Z2轴_PC位置,雷赛步进Z2轴_PC位置_46,44492,雷赛步进Z2轴_PC位置_46,LEADSHINE Stepper Z2 Axis_PC Position 46,Tr?c Z2 LEADSHINE Stepper_V? trí_PC_46
+PLC/雷赛步进Z2轴_PC位置,雷赛步进Z2轴_PC位置_47,44494,雷赛步进Z2轴_PC位置_47,LEADSHINE Stepper Z2 Axis_PC Position 47,Tr?c Z2 LEADSHINE Stepper_V? trí_PC_47
+PLC/雷赛步进Z2轴_PC位置,雷赛步进Z2轴_PC位置_48,44496,雷赛步进Z2轴_PC位置_48,LEADSHINE Stepper Z2 Axis_PC Position 48,Tr?c Z2 LEADSHINE Stepper_V? trí_PC_48
+PLC/雷赛步进Z2轴_PC位置,雷赛步进Z2轴_PC位置_49,44498,雷赛步进Z2轴_PC位置_49,LEADSHINE Stepper Z2 Axis_PC Position 49,Tr?c Z2 LEADSHINE Stepper_V? trí_PC_49
+PLC/雷赛步进Z2轴_PC位置,雷赛步进Z2轴_PC位置_50,44500,雷赛步进Z2轴_PC位置_50,LEADSHINE Stepper Z2 Axis_PC Position 50,Tr?c Z2 LEADSHINE Stepper_V? trí_PC_50
+
+PLC/固高直线Y1轴_PC位置,固高直线Y1轴_PC位置_0,44600,固高直线Y1轴_PC位置_0,GUGAO Linear Y1 Axis_PC Position 0,Tr?c Y1 GUGAO Linear_V? trí_PC_0
+PLC/固高直线Y1轴_PC位置,固高直线Y1轴_PC位置_1,44602,固高直线Y1轴_PC位置_1,GUGAO Linear Y1 Axis_PC Position 1,Tr?c Y1 GUGAO Linear_V? trí_PC_1
+PLC/固高直线Y1轴_PC位置,固高直线Y1轴_PC位置_2,44604,固高直线Y1轴_PC位置_2,GUGAO Linear Y1 Axis_PC Position 2,Tr?c Y1 GUGAO Linear_V? trí_PC_2
+PLC/固高直线Y1轴_PC位置,固高直线Y1轴_PC位置_3,44606,固高直线Y1轴_PC位置_3,GUGAO Linear Y1 Axis_PC Position 3,Tr?c Y1 GUGAO Linear_V? trí_PC_3
+PLC/固高直线Y1轴_PC位置,固高直线Y1轴_PC位置_4,44608,固高直线Y1轴_PC位置_4,GUGAO Linear Y1 Axis_PC Position 4,Tr?c Y1 GUGAO Linear_V? trí_PC_4
+PLC/固高直线Y1轴_PC位置,固高直线Y1轴_PC位置_5,44610,固高直线Y1轴_PC位置_5,GUGAO Linear Y1 Axis_PC Position 5,Tr?c Y1 GUGAO Linear_V? trí_PC_5
+PLC/固高直线Y1轴_PC位置,固高直线Y1轴_PC位置_6,44612,固高直线Y1轴_PC位置_6,GUGAO Linear Y1 Axis_PC Position 6,Tr?c Y1 GUGAO Linear_V? trí_PC_6
+PLC/固高直线Y1轴_PC位置,固高直线Y1轴_PC位置_7,44614,固高直线Y1轴_PC位置_7,GUGAO Linear Y1 Axis_PC Position 7,Tr?c Y1 GUGAO Linear_V? trí_PC_7
+PLC/固高直线Y1轴_PC位置,固高直线Y1轴_PC位置_8,44616,固高直线Y1轴_PC位置_8,GUGAO Linear Y1 Axis_PC Position 8,Tr?c Y1 GUGAO Linear_V? trí_PC_8
+PLC/固高直线Y1轴_PC位置,固高直线Y1轴_PC位置_9,44618,固高直线Y1轴_PC位置_9,GUGAO Linear Y1 Axis_PC Position 9,Tr?c Y1 GUGAO Linear_V? trí_PC_9
+PLC/固高直线Y1轴_PC位置,固高直线Y1轴_PC位置_10,44620,固高直线Y1轴_PC位置_10,GUGAO Linear Y1 Axis_PC Position 10,Tr?c Y1 GUGAO Linear_V? trí_PC_10
+PLC/固高直线Y1轴_PC位置,固高直线Y1轴_PC位置_11,44622,固高直线Y1轴_PC位置_11,GUGAO Linear Y1 Axis_PC Position 11,Tr?c Y1 GUGAO Linear_V? trí_PC_11
+PLC/固高直线Y1轴_PC位置,固高直线Y1轴_PC位置_12,44624,固高直线Y1轴_PC位置_12,GUGAO Linear Y1 Axis_PC Position 12,Tr?c Y1 GUGAO Linear_V? trí_PC_12
+PLC/固高直线Y1轴_PC位置,固高直线Y1轴_PC位置_13,44626,固高直线Y1轴_PC位置_13,GUGAO Linear Y1 Axis_PC Position 13,Tr?c Y1 GUGAO Linear_V? trí_PC_13
+PLC/固高直线Y1轴_PC位置,固高直线Y1轴_PC位置_14,44628,固高直线Y1轴_PC位置_14,GUGAO Linear Y1 Axis_PC Position 14,Tr?c Y1 GUGAO Linear_V? trí_PC_14
+PLC/固高直线Y1轴_PC位置,固高直线Y1轴_PC位置_15,44630,固高直线Y1轴_PC位置_15,GUGAO Linear Y1 Axis_PC Position 15,Tr?c Y1 GUGAO Linear_V? trí_PC_15
+PLC/固高直线Y1轴_PC位置,固高直线Y1轴_PC位置_16,44632,固高直线Y1轴_PC位置_16,GUGAO Linear Y1 Axis_PC Position 16,Tr?c Y1 GUGAO Linear_V? trí_PC_16
+PLC/固高直线Y1轴_PC位置,固高直线Y1轴_PC位置_17,44634,固高直线Y1轴_PC位置_17,GUGAO Linear Y1 Axis_PC Position 17,Tr?c Y1 GUGAO Linear_V? trí_PC_17
+PLC/固高直线Y1轴_PC位置,固高直线Y1轴_PC位置_18,44636,固高直线Y1轴_PC位置_18,GUGAO Linear Y1 Axis_PC Position 18,Tr?c Y1 GUGAO Linear_V? trí_PC_18
+PLC/固高直线Y1轴_PC位置,固高直线Y1轴_PC位置_19,44638,固高直线Y1轴_PC位置_19,GUGAO Linear Y1 Axis_PC Position 19,Tr?c Y1 GUGAO Linear_V? trí_PC_19
+PLC/固高直线Y1轴_PC位置,固高直线Y1轴_PC位置_20,44640,固高直线Y1轴_PC位置_20,GUGAO Linear Y1 Axis_PC Position 20,Tr?c Y1 GUGAO Linear_V? trí_PC_20
+PLC/固高直线Y1轴_PC位置,固高直线Y1轴_PC位置_21,44642,固高直线Y1轴_PC位置_21,GUGAO Linear Y1 Axis_PC Position 21,Tr?c Y1 GUGAO Linear_V? trí_PC_21
+PLC/固高直线Y1轴_PC位置,固高直线Y1轴_PC位置_22,44644,固高直线Y1轴_PC位置_22,GUGAO Linear Y1 Axis_PC Position 22,Tr?c Y1 GUGAO Linear_V? trí_PC_22
+PLC/固高直线Y1轴_PC位置,固高直线Y1轴_PC位置_23,44646,固高直线Y1轴_PC位置_23,GUGAO Linear Y1 Axis_PC Position 23,Tr?c Y1 GUGAO Linear_V? trí_PC_23
+PLC/固高直线Y1轴_PC位置,固高直线Y1轴_PC位置_24,44648,固高直线Y1轴_PC位置_24,GUGAO Linear Y1 Axis_PC Position 24,Tr?c Y1 GUGAO Linear_V? trí_PC_24
+PLC/固高直线Y1轴_PC位置,固高直线Y1轴_PC位置_25,44650,固高直线Y1轴_PC位置_25,GUGAO Linear Y1 Axis_PC Position 25,Tr?c Y1 GUGAO Linear_V? trí_PC_25
+PLC/固高直线Y1轴_PC位置,固高直线Y1轴_PC位置_26,44652,固高直线Y1轴_PC位置_26,GUGAO Linear Y1 Axis_PC Position 26,Tr?c Y1 GUGAO Linear_V? trí_PC_26
+PLC/固高直线Y1轴_PC位置,固高直线Y1轴_PC位置_27,44654,固高直线Y1轴_PC位置_27,GUGAO Linear Y1 Axis_PC Position 27,Tr?c Y1 GUGAO Linear_V? trí_PC_27
+PLC/固高直线Y1轴_PC位置,固高直线Y1轴_PC位置_28,44656,固高直线Y1轴_PC位置_28,GUGAO Linear Y1 Axis_PC Position 28,Tr?c Y1 GUGAO Linear_V? trí_PC_28
+PLC/固高直线Y1轴_PC位置,固高直线Y1轴_PC位置_29,44658,固高直线Y1轴_PC位置_29,GUGAO Linear Y1 Axis_PC Position 29,Tr?c Y1 GUGAO Linear_V? trí_PC_29
+PLC/固高直线Y1轴_PC位置,固高直线Y1轴_PC位置_30,44660,固高直线Y1轴_PC位置_30,GUGAO Linear Y1 Axis_PC Position 30,Tr?c Y1 GUGAO Linear_V? trí_PC_30
+PLC/固高直线Y1轴_PC位置,固高直线Y1轴_PC位置_31,44662,固高直线Y1轴_PC位置_31,GUGAO Linear Y1 Axis_PC Position 31,Tr?c Y1 GUGAO Linear_V? trí_PC_31
+PLC/固高直线Y1轴_PC位置,固高直线Y1轴_PC位置_32,44664,固高直线Y1轴_PC位置_32,GUGAO Linear Y1 Axis_PC Position 32,Tr?c Y1 GUGAO Linear_V? trí_PC_32
+PLC/固高直线Y1轴_PC位置,固高直线Y1轴_PC位置_33,44666,固高直线Y1轴_PC位置_33,GUGAO Linear Y1 Axis_PC Position 33,Tr?c Y1 GUGAO Linear_V? trí_PC_33
+PLC/固高直线Y1轴_PC位置,固高直线Y1轴_PC位置_34,44668,固高直线Y1轴_PC位置_34,GUGAO Linear Y1 Axis_PC Position 34,Tr?c Y1 GUGAO Linear_V? trí_PC_34
+PLC/固高直线Y1轴_PC位置,固高直线Y1轴_PC位置_35,44670,固高直线Y1轴_PC位置_35,GUGAO Linear Y1 Axis_PC Position 35,Tr?c Y1 GUGAO Linear_V? trí_PC_35
+PLC/固高直线Y1轴_PC位置,固高直线Y1轴_PC位置_36,44672,固高直线Y1轴_PC位置_36,GUGAO Linear Y1 Axis_PC Position 36,Tr?c Y1 GUGAO Linear_V? trí_PC_36
+PLC/固高直线Y1轴_PC位置,固高直线Y1轴_PC位置_37,44674,固高直线Y1轴_PC位置_37,GUGAO Linear Y1 Axis_PC Position 37,Tr?c Y1 GUGAO Linear_V? trí_PC_37
+PLC/固高直线Y1轴_PC位置,固高直线Y1轴_PC位置_38,44676,固高直线Y1轴_PC位置_38,GUGAO Linear Y1 Axis_PC Position 38,Tr?c Y1 GUGAO Linear_V? trí_PC_38
+PLC/固高直线Y1轴_PC位置,固高直线Y1轴_PC位置_39,44678,固高直线Y1轴_PC位置_39,GUGAO Linear Y1 Axis_PC Position 39,Tr?c Y1 GUGAO Linear_V? trí_PC_39
+PLC/固高直线Y1轴_PC位置,固高直线Y1轴_PC位置_40,44680,固高直线Y1轴_PC位置_40,GUGAO Linear Y1 Axis_PC Position 40,Tr?c Y1 GUGAO Linear_V? trí_PC_40
+PLC/固高直线Y1轴_PC位置,固高直线Y1轴_PC位置_41,44682,固高直线Y1轴_PC位置_41,GUGAO Linear Y1 Axis_PC Position 41,Tr?c Y1 GUGAO Linear_V? trí_PC_41
+PLC/固高直线Y1轴_PC位置,固高直线Y1轴_PC位置_42,44684,固高直线Y1轴_PC位置_42,GUGAO Linear Y1 Axis_PC Position 42,Tr?c Y1 GUGAO Linear_V? trí_PC_42
+PLC/固高直线Y1轴_PC位置,固高直线Y1轴_PC位置_43,44686,固高直线Y1轴_PC位置_43,GUGAO Linear Y1 Axis_PC Position 43,Tr?c Y1 GUGAO Linear_V? trí_PC_43
+PLC/固高直线Y1轴_PC位置,固高直线Y1轴_PC位置_44,44688,固高直线Y1轴_PC位置_44,GUGAO Linear Y1 Axis_PC Position 44,Tr?c Y1 GUGAO Linear_V? trí_PC_44
+PLC/固高直线Y1轴_PC位置,固高直线Y1轴_PC位置_45,44690,固高直线Y1轴_PC位置_45,GUGAO Linear Y1 Axis_PC Position 45,Tr?c Y1 GUGAO Linear_V? trí_PC_45
+PLC/固高直线Y1轴_PC位置,固高直线Y1轴_PC位置_46,44692,固高直线Y1轴_PC位置_46,GUGAO Linear Y1 Axis_PC Position 46,Tr?c Y1 GUGAO Linear_V? trí_PC_46
+PLC/固高直线Y1轴_PC位置,固高直线Y1轴_PC位置_47,44694,固高直线Y1轴_PC位置_47,GUGAO Linear Y1 Axis_PC Position 47,Tr?c Y1 GUGAO Linear_V? trí_PC_47
+PLC/固高直线Y1轴_PC位置,固高直线Y1轴_PC位置_48,44696,固高直线Y1轴_PC位置_48,GUGAO Linear Y1 Axis_PC Position 48,Tr?c Y1 GUGAO Linear_V? trí_PC_48
+PLC/固高直线Y1轴_PC位置,固高直线Y1轴_PC位置_49,44698,固高直线Y1轴_PC位置_49,GUGAO Linear Y1 Axis_PC Position 49,Tr?c Y1 GUGAO Linear_V? trí_PC_49
+PLC/固高直线Y1轴_PC位置,固高直线Y1轴_PC位置_50,44700,固高直线Y1轴_PC位置_50,GUGAO Linear Y1 Axis_PC Position 50,Tr?c Y1 GUGAO Linear_V? trí_PC_50
+
+PLC/固高直线Y2轴_PC位置,固高直线Y2轴_PC位置_0,44800,固高直线Y2轴_PC位置_0,GUGAO Linear Y2 Axis_PC Position 0,Tr?c Y2 GUGAO Linear_V? trí_PC_0
+PLC/固高直线Y2轴_PC位置,固高直线Y2轴_PC位置_1,44802,固高直线Y2轴_PC位置_1,GUGAO Linear Y2 Axis_PC Position 1,Tr?c Y2 GUGAO Linear_V? trí_PC_1
+PLC/固高直线Y2轴_PC位置,固高直线Y2轴_PC位置_2,44804,固高直线Y2轴_PC位置_2,GUGAO Linear Y2 Axis_PC Position 2,Tr?c Y2 GUGAO Linear_V? trí_PC_2
+PLC/固高直线Y2轴_PC位置,固高直线Y2轴_PC位置_3,44806,固高直线Y2轴_PC位置_3,GUGAO Linear Y2 Axis_PC Position 3,Tr?c Y2 GUGAO Linear_V? trí_PC_3
+PLC/固高直线Y2轴_PC位置,固高直线Y2轴_PC位置_4,44808,固高直线Y2轴_PC位置_4,GUGAO Linear Y2 Axis_PC Position 4,Tr?c Y2 GUGAO Linear_V? trí_PC_4
+PLC/固高直线Y2轴_PC位置,固高直线Y2轴_PC位置_5,44810,固高直线Y2轴_PC位置_5,GUGAO Linear Y2 Axis_PC Position 5,Tr?c Y2 GUGAO Linear_V? trí_PC_5
+PLC/固高直线Y2轴_PC位置,固高直线Y2轴_PC位置_6,44812,固高直线Y2轴_PC位置_6,GUGAO Linear Y2 Axis_PC Position 6,Tr?c Y2 GUGAO Linear_V? trí_PC_6
+PLC/固高直线Y2轴_PC位置,固高直线Y2轴_PC位置_7,44814,固高直线Y2轴_PC位置_7,GUGAO Linear Y2 Axis_PC Position 7,Tr?c Y2 GUGAO Linear_V? trí_PC_7
+PLC/固高直线Y2轴_PC位置,固高直线Y2轴_PC位置_8,44816,固高直线Y2轴_PC位置_8,GUGAO Linear Y2 Axis_PC Position 8,Tr?c Y2 GUGAO Linear_V? trí_PC_8
+PLC/固高直线Y2轴_PC位置,固高直线Y2轴_PC位置_9,44818,固高直线Y2轴_PC位置_9,GUGAO Linear Y2 Axis_PC Position 9,Tr?c Y2 GUGAO Linear_V? trí_PC_9
+PLC/固高直线Y2轴_PC位置,固高直线Y2轴_PC位置_10,44820,固高直线Y2轴_PC位置_10,GUGAO Linear Y2 Axis_PC Position 10,Tr?c Y2 GUGAO Linear_V? trí_PC_10
+PLC/固高直线Y2轴_PC位置,固高直线Y2轴_PC位置_11,44822,固高直线Y2轴_PC位置_11,GUGAO Linear Y2 Axis_PC Position 11,Tr?c Y2 GUGAO Linear_V? trí_PC_11
+PLC/固高直线Y2轴_PC位置,固高直线Y2轴_PC位置_12,44824,固高直线Y2轴_PC位置_12,GUGAO Linear Y2 Axis_PC Position 12,Tr?c Y2 GUGAO Linear_V? trí_PC_12
+PLC/固高直线Y2轴_PC位置,固高直线Y2轴_PC位置_13,44826,固高直线Y2轴_PC位置_13,GUGAO Linear Y2 Axis_PC Position 13,Tr?c Y2 GUGAO Linear_V? trí_PC_13
+PLC/固高直线Y2轴_PC位置,固高直线Y2轴_PC位置_14,44828,固高直线Y2轴_PC位置_14,GUGAO Linear Y2 Axis_PC Position 14,Tr?c Y2 GUGAO Linear_V? trí_PC_14
+PLC/固高直线Y2轴_PC位置,固高直线Y2轴_PC位置_15,44830,固高直线Y2轴_PC位置_15,GUGAO Linear Y2 Axis_PC Position 15,Tr?c Y2 GUGAO Linear_V? trí_PC_15
+PLC/固高直线Y2轴_PC位置,固高直线Y2轴_PC位置_16,44832,固高直线Y2轴_PC位置_16,GUGAO Linear Y2 Axis_PC Position 16,Tr?c Y2 GUGAO Linear_V? trí_PC_16
+PLC/固高直线Y2轴_PC位置,固高直线Y2轴_PC位置_17,44834,固高直线Y2轴_PC位置_17,GUGAO Linear Y2 Axis_PC Position 17,Tr?c Y2 GUGAO Linear_V? trí_PC_17
+PLC/固高直线Y2轴_PC位置,固高直线Y2轴_PC位置_18,44836,固高直线Y2轴_PC位置_18,GUGAO Linear Y2 Axis_PC Position 18,Tr?c Y2 GUGAO Linear_V? trí_PC_18
+PLC/固高直线Y2轴_PC位置,固高直线Y2轴_PC位置_19,44838,固高直线Y2轴_PC位置_19,GUGAO Linear Y2 Axis_PC Position 19,Tr?c Y2 GUGAO Linear_V? trí_PC_19
+PLC/固高直线Y2轴_PC位置,固高直线Y2轴_PC位置_20,44840,固高直线Y2轴_PC位置_20,GUGAO Linear Y2 Axis_PC Position 20,Tr?c Y2 GUGAO Linear_V? trí_PC_20
+PLC/固高直线Y2轴_PC位置,固高直线Y2轴_PC位置_21,44842,固高直线Y2轴_PC位置_21,GUGAO Linear Y2 Axis_PC Position 21,Tr?c Y2 GUGAO Linear_V? trí_PC_21
+PLC/固高直线Y2轴_PC位置,固高直线Y2轴_PC位置_22,44844,固高直线Y2轴_PC位置_22,GUGAO Linear Y2 Axis_PC Position 22,Tr?c Y2 GUGAO Linear_V? trí_PC_22
+PLC/固高直线Y2轴_PC位置,固高直线Y2轴_PC位置_23,44846,固高直线Y2轴_PC位置_23,GUGAO Linear Y2 Axis_PC Position 23,Tr?c Y2 GUGAO Linear_V? trí_PC_23
+PLC/固高直线Y2轴_PC位置,固高直线Y2轴_PC位置_24,44848,固高直线Y2轴_PC位置_24,GUGAO Linear Y2 Axis_PC Position 24,Tr?c Y2 GUGAO Linear_V? trí_PC_24
+PLC/固高直线Y2轴_PC位置,固高直线Y2轴_PC位置_25,44850,固高直线Y2轴_PC位置_25,GUGAO Linear Y2 Axis_PC Position 25,Tr?c Y2 GUGAO Linear_V? trí_PC_25
+PLC/固高直线Y2轴_PC位置,固高直线Y2轴_PC位置_26,44852,固高直线Y2轴_PC位置_26,GUGAO Linear Y2 Axis_PC Position 26,Tr?c Y2 GUGAO Linear_V? trí_PC_26
+PLC/固高直线Y2轴_PC位置,固高直线Y2轴_PC位置_27,44854,固高直线Y2轴_PC位置_27,GUGAO Linear Y2 Axis_PC Position 27,Tr?c Y2 GUGAO Linear_V? trí_PC_27
+PLC/固高直线Y2轴_PC位置,固高直线Y2轴_PC位置_28,44856,固高直线Y2轴_PC位置_28,GUGAO Linear Y2 Axis_PC Position 28,Tr?c Y2 GUGAO Linear_V? trí_PC_28
+PLC/固高直线Y2轴_PC位置,固高直线Y2轴_PC位置_29,44858,固高直线Y2轴_PC位置_29,GUGAO Linear Y2 Axis_PC Position 29,Tr?c Y2 GUGAO Linear_V? trí_PC_29
+PLC/固高直线Y2轴_PC位置,固高直线Y2轴_PC位置_30,44860,固高直线Y2轴_PC位置_30,GUGAO Linear Y2 Axis_PC Position 30,Tr?c Y2 GUGAO Linear_V? trí_PC_30
+PLC/固高直线Y2轴_PC位置,固高直线Y2轴_PC位置_31,44862,固高直线Y2轴_PC位置_31,GUGAO Linear Y2 Axis_PC Position 31,Tr?c Y2 GUGAO Linear_V? trí_PC_31
+PLC/固高直线Y2轴_PC位置,固高直线Y2轴_PC位置_32,44864,固高直线Y2轴_PC位置_32,GUGAO Linear Y2 Axis_PC Position 32,Tr?c Y2 GUGAO Linear_V? trí_PC_32
+PLC/固高直线Y2轴_PC位置,固高直线Y2轴_PC位置_33,44866,固高直线Y2轴_PC位置_33,GUGAO Linear Y2 Axis_PC Position 33,Tr?c Y2 GUGAO Linear_V? trí_PC_33
+PLC/固高直线Y2轴_PC位置,固高直线Y2轴_PC位置_34,44868,固高直线Y2轴_PC位置_34,GUGAO Linear Y2 Axis_PC Position 34,Tr?c Y2 GUGAO Linear_V? trí_PC_34
+PLC/固高直线Y2轴_PC位置,固高直线Y2轴_PC位置_35,44870,固高直线Y2轴_PC位置_35,GUGAO Linear Y2 Axis_PC Position 35,Tr?c Y2 GUGAO Linear_V? trí_PC_35
+PLC/固高直线Y2轴_PC位置,固高直线Y2轴_PC位置_36,44872,固高直线Y2轴_PC位置_36,GUGAO Linear Y2 Axis_PC Position 36,Tr?c Y2 GUGAO Linear_V? trí_PC_36
+PLC/固高直线Y2轴_PC位置,固高直线Y2轴_PC位置_37,44874,固高直线Y2轴_PC位置_37,GUGAO Linear Y2 Axis_PC Position 37,Tr?c Y2 GUGAO Linear_V? trí_PC_37
+PLC/固高直线Y2轴_PC位置,固高直线Y2轴_PC位置_38,44876,固高直线Y2轴_PC位置_38,GUGAO Linear Y2 Axis_PC Position 38,Tr?c Y2 GUGAO Linear_V? trí_PC_38
+PLC/固高直线Y2轴_PC位置,固高直线Y2轴_PC位置_39,44878,固高直线Y2轴_PC位置_39,GUGAO Linear Y2 Axis_PC Position 39,Tr?c Y2 GUGAO Linear_V? trí_PC_39
+PLC/固高直线Y2轴_PC位置,固高直线Y2轴_PC位置_40,44880,固高直线Y2轴_PC位置_40,GUGAO Linear Y2 Axis_PC Position 40,Tr?c Y2 GUGAO Linear_V? trí_PC_40
+PLC/固高直线Y2轴_PC位置,固高直线Y2轴_PC位置_41,44882,固高直线Y2轴_PC位置_41,GUGAO Linear Y2 Axis_PC Position 41,Tr?c Y2 GUGAO Linear_V? trí_PC_41
+PLC/固高直线Y2轴_PC位置,固高直线Y2轴_PC位置_42,44884,固高直线Y2轴_PC位置_42,GUGAO Linear Y2 Axis_PC Position 42,Tr?c Y2 GUGAO Linear_V? trí_PC_42
+PLC/固高直线Y2轴_PC位置,固高直线Y2轴_PC位置_43,44886,固高直线Y2轴_PC位置_43,GUGAO Linear Y2 Axis_PC Position 43,Tr?c Y2 GUGAO Linear_V? trí_PC_43
+PLC/固高直线Y2轴_PC位置,固高直线Y2轴_PC位置_44,44888,固高直线Y2轴_PC位置_44,GUGAO Linear Y2 Axis_PC Position 44,Tr?c Y2 GUGAO Linear_V? trí_PC_44
+PLC/固高直线Y2轴_PC位置,固高直线Y2轴_PC位置_45,44890,固高直线Y2轴_PC位置_45,GUGAO Linear Y2 Axis_PC Position 45,Tr?c Y2 GUGAO Linear_V? trí_PC_45
+PLC/固高直线Y2轴_PC位置,固高直线Y2轴_PC位置_46,44892,固高直线Y2轴_PC位置_46,GUGAO Linear Y2 Axis_PC Position 46,Tr?c Y2 GUGAO Linear_V? trí_PC_46
+PLC/固高直线Y2轴_PC位置,固高直线Y2轴_PC位置_47,44894,固高直线Y2轴_PC位置_47,GUGAO Linear Y2 Axis_PC Position 47,Tr?c Y2 GUGAO Linear_V? trí_PC_47
+PLC/固高直线Y2轴_PC位置,固高直线Y2轴_PC位置_48,44896,固高直线Y2轴_PC位置_48,GUGAO Linear Y2 Axis_PC Position 48,Tr?c Y2 GUGAO Linear_V? trí_PC_48
+PLC/固高直线Y2轴_PC位置,固高直线Y2轴_PC位置_49,44898,固高直线Y2轴_PC位置_49,GUGAO Linear Y2 Axis_PC Position 49,Tr?c Y2 GUGAO Linear_V? trí_PC_49
+PLC/固高直线Y2轴_PC位置,固高直线Y2轴_PC位置_50,44900,固高直线Y2轴_PC位置_50,GUGAO Linear Y2 Axis_PC Position 50,Tr?c Y2 GUGAO Linear_V? trí_PC_50

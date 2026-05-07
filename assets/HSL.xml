@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DataTable Interval="200" SleepTime="0">
+  <DataTableItem Name="配方响应" Address="22011" DataTypeCode="short" />
+  <DataTableItem Name="配方请求" Address="21011" DataTypeCode="short" />
+  <DataTableItem Name="SCAN1" Address="22020" DataTypeCode="short" />
+  <DataTableItem Name="配方下发请求" Address="21012" DataTypeCode="short" />
+  <DataTableItem Name="配方下发响应" Address="22012" DataTypeCode="short" />
+  <DataTableItem Name="PLC配方ID" Address="22010" DataTypeCode="short" />
+  <DataTableItem Name="PC下发配方ID" Address="21010" DataTypeCode="short" />
+  <DataTableItem Name="换料1请求" Address="21209" DataTypeCode="short" />
+  <DataTableItem Name="换料1响应" Address="22209" DataTypeCode="short" />
+  <DataTableItem Name="出站1" Address="22015" DataTypeCode="short" />
+  <DataTableItem Name="出站响应1" Address="21015" DataTypeCode="short" />
+  <DataTableItem Name="SCAN2" Address="22021" DataTypeCode="short" />
+</DataTable>

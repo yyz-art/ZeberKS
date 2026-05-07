@@ -1,15 +1,56 @@
-using System.Globalization;
 using ZC.BinStructs;
-using ZC.CFG;
+using ZC.BinStructs.Ext;
 using ZC.MetaInfo;
-using ZC.Mvvm;
-using ZitApp.Attributes;
 using ZitApp.Models;
 
 namespace ZitApp.BinStructs;
 
 public partial class ProductRecipe : ProductRecipeBase
 {
+	public static ProductRecipe Default { get; } = new ProductRecipe();
+	private static bool _isGroupInit;
+	public ProductRecipe()
+	{
+		if (_isGroupInit == false)
+			InitGroupDefine();
+	}
+	static void InitGroupDefine()
+	{
+		lock (nameof(ProductRecipe))
+		{
+			if(_isGroupInit) return;
+			foreach (var grouping in ProductRecipeStructInfo.StructInfo.Members.Values.OfType<IBinaryPointInfo>()
+				         .Select(t =>
+					         (t, TypeMetaInfo<ProductRecipe>.Cache.Properties.FirstOrDefault(prop => prop.Name == t.Name)))
+				         .GroupBy(t => t.Item2.ValueInfo.Category))
+			{
+				var list = grouping.ToList();
+				var minPoint = list.MinBy(t => t.t.Offset);
+				var maxPoint = list.MaxBy(t => t.t.Offset);
+				var group = new BinaryPointGroupInfo
+				{
+					Name = grouping.Key!,
+					Start = minPoint.t.Offset,
+					End = maxPoint.t.Offset + (maxPoint.t.Length == 0 ? 2 : maxPoint.t.Length),
+				};
+				group.ByteLength = (group.End - group.Start) * 2;
+				group.Points = [];
+				group.Source = group.Start.ToString();
+				foreach (var item in list)
+				{
+					item.t.CustomData = group;
+					group.Points.Add(item.t);
+					// group.PointNames.Add(item.t.Name);
+				}
+
+				ProductRecipeStructInfo.StructInfo.Members.Add(group.Name, group);
+			}
+
+			_isGroupInit = true;
+		}
+
+	}
+
 	public static void CopyPropertyValues(ProductRecipe src, ProductRecipe dst)
 	{
 		var properties = TypeMetaInfo<ProductRecipe>.Cache.Properties;
@@ -21,61 +62,5 @@ public partial class ProductRecipe : ProductRecipeBase
 				propertyMetaInfo.Setter!.Invoke(dst, value);
 			}
 		}
-	}
-
-	public static string ToPlcSource(int offset) => $"PLC:{offset}";
-
-	public static string GetPointSource(ProductRecipe? recipe, IBinaryPointInfo pointInfo)
-	{
-		if (recipe?.点位数据源.TryGetValue(pointInfo.Name, out var source) == true &&
-		    TryParsePlcSource(source, out var offset))
-		{
-			return ToPlcSource(offset);
-		}
-
-		return ToPlcSource(pointInfo.Offset);
-	}
-
-	public static bool TryParsePlcSource(string? source, out int offset)
-	{
-		offset = 0;
-		if (string.IsNullOrWhiteSpace(source))
-			return false;
-
-		var text = source.Trim();
-		var colonIndex = text.IndexOf(':');
-		if (colonIndex >= 0)
-			text = text[(colonIndex + 1)..].Trim();
-
-		return int.TryParse(text, NumberStyles.Integer, CultureInfo.InvariantCulture, out offset);
-	}
-
-	public static IBinaryPointInfo GetEffectivePointInfo(ProductRecipe? recipe, IBinaryPointInfo pointInfo)
-	{
-		if (recipe?.点位数据源.TryGetValue(pointInfo.Name, out var source) != true ||
-		    TryParsePlcSource(source, out var offset) == false ||
-		    offset == pointInfo.Offset)
-		{
-			return pointInfo;
-		}
-
-		return new BinaryPointInfo()
-		{
-			Offset = offset,
-			Name = pointInfo.Name,
-			Type = pointInfo.Type,
-			ByteLength = pointInfo.ByteLength,
-			ByteFormat = pointInfo.ByteFormat,
-			Description = pointInfo.Description,
-			Id = pointInfo.Id,
-			RawType = pointInfo.RawType,
-			Source = offset.ToString(CultureInfo.InvariantCulture),
-			ToRaw = pointInfo.ToRaw,
-			RawTo = pointInfo.RawTo,
-			ReaderData = pointInfo.ReaderData,
-			WriterData = pointInfo.WriterData,
-			Tags = pointInfo.Tags,
-			CustomData = pointInfo.CustomData,
-		};
 	}
 }

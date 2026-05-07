@@ -25,7 +25,7 @@
 			<TabItem Header="Login">
 				<RelativePanel>
 					<DefaultDialog Name="AccountLoginDialog" 
-												Title="{StaticResource I18N.Common.账户登录}" MinWidth="400">
+												Title="{StaticResource I18N.G.账户登录}" MinWidth="400">
 						<LinearPanel Orientation="Vertical" Spacing="10" Padding="20">
 							<LinearPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="20">
 								<RadioButton GroupName="UserLogin" Content="管理员"
@@ -87,19 +87,19 @@
 						<Setter Property="CommandParameter" Value="{Binding ., RelativeSource={RelativeSource Self}}" />
 					</Style>
 				</Menu.Styles>
-				<MenuItem Header="{StaticResource I18N.Common.主页}" Tag="/主页" Classes="NavInstance" />
-				<MenuItem Header="{StaticResource I18N.Common.配方}" Tag="/配方" Classes="NavInstance" />
-				<MenuItem Header="{StaticResource I18N.Common.报警}" Tag="/报警" Classes="NavInstance" />
-				<MenuItem Header="{StaticResource I18N.Common.设置}" Tag="/设置" Classes="NavInstance" />
-				<MenuItem Header="{StaticResource I18N.Common.账户}">
-					<MenuItem Header="{StaticResource I18N.Common.管理}" Tag="/账户管理" Classes="NavInstance" />
-					<MenuItem Header="{StaticResource I18N.Common.登录}" Command="{Binding RequestLoginCommand}" />
+				<MenuItem Header="{StaticResource I18N.G.主页}" Tag="/主页" Classes="NavInstance" />
+				<MenuItem Header="{StaticResource I18N.G.配方}" Tag="/配方" Classes="NavInstance" />
+				<MenuItem Header="{StaticResource I18N.G.报警}" Tag="/报警" Classes="NavInstance" />
+				<MenuItem Header="{StaticResource I18N.G.设置}" Tag="/设置" Classes="NavInstance" />
+				<MenuItem Header="{StaticResource I18N.G.账户}">
+					<MenuItem Header="{StaticResource I18N.G.管理}" Tag="/账户管理" Classes="NavInstance" />
+					<MenuItem Header="{StaticResource I18N.G.登录}" Command="{Binding RequestLoginCommand}" />
 					<MenuItem Header="注销" Command="{Binding RequestLoginCommand}" />
 
 				</MenuItem>
-				<MenuItem Header="{StaticResource I18N.Common.视图}">
-					<MenuItem Header="{StaticResource I18N.Common.双轴轨道位置}" Tag="/测试" Classes="NavInstance" />
-					<MenuItem Header="{StaticResource I18N.Common.全部}" ItemsSource="{Binding Ui.MainView.NavManager.Root.Children}">
+				<MenuItem Header="{StaticResource I18N.G.视图}">
+					<MenuItem Header="{StaticResource I18N.G.双轴轨道位置}" Tag="/测试" Classes="NavInstance" />
+					<MenuItem Header="{StaticResource I18N.G.全部}" ItemsSource="{Binding Ui.MainView.NavManager.Root.Children}">
 						<MenuItem.ItemTemplate>
 							<DataTemplate>
 								<!-- ReSharper disable once Xaml.BindingWithContextNotResolved -->
@@ -108,7 +108,6 @@
 						</MenuItem.ItemTemplate>
 					</MenuItem>
 				</MenuItem>
-				<MenuItem Header="飞达物料" Tag="/飞达物料" Classes="NavInstance" />
 			</Menu>
 			<Label Content="V0.0.1" Margin="15 0 0 0" VerticalAlignment="Center" Foreground="{StaticResource Brush-Text3}"></Label>
 			<Control LinearPanel.Weight="1" />

@@ -20,18 +20,33 @@ public class SourceCodeBuilder : MutString
 
 public class BinStructSourceGenerator
 {
-	public void Generate(string xml)
+	public static void GenerateAndExit(string filePath)
+	{
+		var fullPath = Path.GetFullPath(filePath);
+		Console.WriteLine($"Generating BinStruct file... {fullPath}");
+		new BinStructSourceGenerator().Generate(File.ReadAllText(filePath),Path.GetDirectoryName(fullPath)!);
+		Console.WriteLine("EXIT...");
+		Environment.Exit(0);
+	}
+
+	public void GenerateFromFile(string filePath)
+	{
+		var fullPath = Path.GetFullPath(filePath);
+		var workPath = Path.GetDirectoryName(fullPath);
+		Generate(File.ReadAllText(fullPath), workPath!);
+	}
+	public void Generate(string xml,string workPath)
 	{
 		var doc = XDocument.Parse(xml, LoadOptions.SetLineInfo);
 		Debug.Assert(doc.Root?.Name.LocalName is "BinStructProject");
 
 		foreach (var structXml in doc.Root.Elements("Struct"))
 		{
-			GenerateStruct(structXml);
+			GenerateStruct(structXml, workPath);
 		}
 	}
 
-	private void GenerateStruct(XElement structXml)
+	private void GenerateStruct(XElement structXml,string workPath)
 	{
 		var code = new SourceCodeBuilder();
 		var structName = structXml.GetAttribute("Name").Value;
@@ -39,7 +54,7 @@ public class BinStructSourceGenerator
 			.Select(t => $"using {t};\n");
 
 		var @namespace = structXml.GetAttribute("Namespace").Value;
-		var outputFile = structXml.GetAttribute("OutputFile").Value;
+		var outputFile = Path.Combine(workPath, structXml.GetAttribute("OutputFile").Value);
 		var structLength = structXml.GetAttribute("Length").Value;
 		var structLengthUnit = structXml.GetAttribute("LengthUnit").Value;
 		var structByteFormat = structXml.GetAttribute("ByteFormat").Value;
@@ -68,7 +83,7 @@ public partial class {structName}
 ");
 		foreach (var csvIncludePointsXml in structXml.Elements("CsvIncludePoints"))
 		{
-			GenerateCsvIncludePoints(code, csvIncludePointsXml);
+			GenerateCsvIncludePoints(code, csvIncludePointsXml,workPath);
 		}
 
 		code.Append($@"
@@ -80,9 +95,12 @@ public partial class {structName}
 		}
 	}
 
-	private void GenerateCsvIncludePoints(SourceCodeBuilder code, XElement xml)
+	private void GenerateCsvIncludePoints(SourceCodeBuilder code, XElement xml,string workPath)
 	{
 		var properties = new Dictionary<string, ReadOnlyMemory<char>>();
+		var filePath = xml.GetAttribute("FilePath").Value;
+		filePath = Path.Combine(workPath, filePath);
+		var fileContent = File.ReadAllText(filePath);
 		code.Append($@"
 	#region CSV INCLUDE POINTS: {xml.GetAttribute("Name").Value}
 ");
@@ -97,9 +115,10 @@ public partial class {structName}
 			
 		}
 
-		var csvHeaders = xml.GetAttribute("CsvHeaders").Value.Split(',');
-		var csvContent = string.Concat(xml.Nodes().Where(n => n is XText || n is XCData).Select(n =>
-			n switch { XCData cdata => cdata.Value.Trim(), XText text => text.Value.Trim(), _ => string.Empty }));
+		var strings = fileContent.Split("\n",2);
+		var csvHeaders = strings[0].Split(',');// xml.GetAttribute("CsvHeaders").Value.Split(',');
+		var csvContent = strings[1]; //string.Concat(xml.Nodes().Where(n => n is XText || n is XCData).Select(n =>
+			//n switch { XCData cdata => cdata.Value.Trim(), XText text => text.Value.Trim(), _ => string.Empty }));
 		var attachDataNames = properties.GetValueOrDefault("AttachDataNames").ToString().Split(',');
 		var lineEnumerator = new MemorySplitEnumerator<char>(csvContent.AsMemory(), "\n".AsMemory());
 		var attachData = new MutString();
@@ -127,7 +146,6 @@ public partial class {structName}
 
 			var dataType = properties["DataType"];
 			var pointName = properties["Name"].ToString().Replace('-','_');
-
 			var beforeToken = properties.GetValueOrDefault("BeforeToken");
 			if (beforeToken.IsEmpty) beforeToken = "public".AsMemory();
 			var tags = properties.GetValueOrDefault("Tags");
@@ -135,6 +153,7 @@ public partial class {structName}
 			var description = properties.GetValueOrDefault("Description");
 			var readerData = properties.GetValueOrDefault("ReaderData");
 			var writerData = properties.GetValueOrDefault("WriterData");
+			var useValueInfo = properties.GetValueOrDefault("UseValueInfo");
 			var customData = properties.GetValueOrDefault("CustomData", "null".AsMemory());
 			var source = properties.GetValueOrDefault("Source", offset);
 			var unit = properties.GetValueOrDefault("Unit");

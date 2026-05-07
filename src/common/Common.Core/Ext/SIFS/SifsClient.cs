@@ -33,7 +33,6 @@ public class SifsClient
 		}
 
 		var openResult = Socket.Open();
-		Socket = null;
 		return openResult;
 	}
 
@@ -42,7 +41,6 @@ public class SifsClient
 		if (Socket is null || Socket is { IsOpen: false })
 			return Result.OK;
 		Socket?.Close();
-		Socket = null;
 		return Result.OK;
 	}
 

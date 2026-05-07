@@ -1,18 +1,18 @@
-﻿namespace ZitApp.Models;
+﻿using ZC.Mvvm;
 
-public class ProductRecipeBase
+namespace ZitApp.Models;
+
+public partial class ProductRecipeBase : ObservableObject
 {
-	public int Id { get; set; }
-	public string Name { get; set; } = "ProductRecipe";
+	public partial int Id { get; set; }
+	public partial string Name { get; set; } = "ProductRecipe";
+	public partial string ModelName { get; set; } = "";
 
-
-	public string 机种型号 { get; set; } = "";
-
-	public Dictionary<string, string> 点位数据源 { get; set; } = [];
+	// public Dictionary<string, string> 点位数据源 { get; set; } = [];
 
 	#region 上料
 
-	public List<产品上料信息> 产品上料信息 { get; set; } = [];
+	public partial List<MaterialConfig> MaterialConfigs { get; set; } = [];
 
 	#endregion
 }

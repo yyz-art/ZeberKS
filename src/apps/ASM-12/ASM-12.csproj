@@ -77,8 +77,6 @@
 	  <AdditionalFiles Include="UI\Views\AlarmManageView.axaml" />
 	  <AdditionalFiles Include="UI\Views\MainView.axaml" />
 	  <AdditionalFiles Include="UI\Views\RecipeView.axaml" />
-	  <AdditionalFiles Include="UI\Views\IoMonitorView.axaml" />
-	  <AdditionalFiles Include="UI\Views\FeederMaterialView.axaml" />
 	  <AdditionalFiles Include="UI\Views\SystemConfigView.axaml" />
 	</ItemGroup>
 

@@ -1,13 +1,14 @@
 using System.Text;
-using Avalonia.Media;
 using ZC;
 using ZC.BinStructs.Ext;
 using ZC.DP.Number;
 using ZC.EasyIO;
 using ZC.IO;
 using ZC.Mvvm;
-using ZC.Net.Sockets;
+using ZC.Utils;
 using ZitApp.BinStructs;
+using ZitApp.Contexts;
+using ZitApp.Models;
 
 namespace ZitApp.Services;
 
@@ -17,446 +18,463 @@ namespace ZitApp.Services;
 public partial class WorkRightService : WorkServiceBase
 {
 	private readonly byte[] _buffer = new byte[1024];
-	private short _pendingUploadResponse;
-	private int _flowStepIndex;
-	private static readonly string[] FlowSteps =
-	[
-		"等待扫码",
-		"扫码中",
-		"扫码完成",
-		"MSG7查工单/机种",
-		"配方检查/切换",
-		"MSG1入站",
-		"允许生产",
-		"等待过站",
-		"MSG2过站",
-		"完成"
-	];
-
-	public override string ServiceName => "WorkRight";
+	public partial WorkStep WorkStep { get; private set; } = WorkStep.COMPLETED;
+	public override string ServiceName => "WP-2";
 	public required PlcService Plc { get; init; }
 	public required CoreService Core { get; init; }
 	public required MesService Mes { get; init; }
 	public required AppConfig AppConfig { get; init; }
-	public IDataSocket CodeScanner2 { get; set; } = null!;
-	public partial string 机种型号 { get; set; } = "";
-	public partial string 扫码 { get; set; } = "";
-	public partial string FlowSn { get; set; } = "";
-	public partial string FlowModel { get; set; } = "";
-	public partial string FlowCurrentStep { get; set; } = FlowSteps[0];
-	public partial string FlowLastError { get; set; } = "无";
-	public partial string FlowStepLine { get; set; } = BuildFlowStepLine(0, false);
-	public partial ObservableList<WorkFlowStepItem> FlowStepItems { get; set; } = CreateFlowStepItems();
+	public IDataSocket CodeScanner { get; set; } = null!;
+	public partial string ModelName { get; set; } = "";
+	public partial string ScanCode { get; set; } = "";
+	public partial string? LastError { get; private set; }
+	public partial string? ImagePathRoot { get; set; }
+	public partial OkNgState OkNgState { get; set; }
+	public partial int InStationStatusCode { get; set; }
+	public partial OutStationStatusCode OutStationStatusCode { get; set; }
 
-	public override Task Initialize(object? ctx = null, object? args = null)
+	protected override Task OnInitialize(object? ctx, object? args)
 	{
-		InitCodeScanner();
-		AppConfig.PropertyChanged += (sender, e) =>
-		{
-			if (e.PropertyName == nameof(AppConfig.Scanner2ComPort) ||
-			    e.PropertyName == nameof(AppConfig.Scanner2BaudRate))
-			{
-				Logger.Warn("检测到扫码枪2配置发生改变，正在重新初始化串口...");
-				InitCodeScanner();
-			}
-		};
-
-		return base.Initialize(ctx, args);
+		CodeScanner = App.Current.IOC.Get<IDataSocket>("Scanner工位2");
+		Task.Run(() => CodeScanner.Open());
+		return base.OnInitialize(ctx, args);
 	}
 
-	private void InitCodeScanner()
+	protected override Task Main(CancellationToken ctk)
 	{
-		try { CodeScanner2?.Close(); } catch { }
-		CodeScanner2 = new SerialPortSocket(AppConfig.Scanner2ComPort, AppConfig.Scanner2BaudRate);
-		Logger.Info("扫码枪2实例已绑定至: {port} [{baudRate}]", AppConfig.Scanner2ComPort, AppConfig.Scanner2BaudRate);
-	}
-
-	private void ResetFlow()
-	{
-		FlowSn = "";
-		FlowModel = "";
-		FlowLastError = "无";
-		SetFlowStep(1);
-	}
-
-	private void SetFlowStep(int stepIndex)
-	{
-		_flowStepIndex = Math.Clamp(stepIndex, 0, FlowSteps.Length - 1);
-		FlowCurrentStep = FlowSteps[_flowStepIndex];
-		FlowStepLine = BuildFlowStepLine(_flowStepIndex, false);
-		UpdateFlowStepItems(false);
-	}
-
-	private void SetFlowError(int stepIndex, string error)
-	{
-		_flowStepIndex = Math.Clamp(stepIndex, 0, FlowSteps.Length - 1);
-		FlowCurrentStep = FlowSteps[_flowStepIndex];
-		FlowLastError = string.IsNullOrWhiteSpace(error) ? "未知错误" : error;
-		FlowStepLine = BuildFlowStepLine(_flowStepIndex, true);
-		UpdateFlowStepItems(true);
-	}
-
-	private static ObservableList<WorkFlowStepItem> CreateFlowStepItems()
-	{
-		var items = new ObservableList<WorkFlowStepItem>();
-		for (var i = 0; i < FlowSteps.Length; i++)
-		{
-			items.Add(new WorkFlowStepItem
-			{
-				Name = FlowSteps[i],
-				Background = i == 0 ? Brush.Parse("#1e88e5") : Brush.Parse("#555555")
-			});
-		}
-
-		return items;
-	}
-
-	private void UpdateFlowStepItems(bool isError)
-	{
-		for (var i = 0; i < FlowStepItems.Count && i < FlowSteps.Length; i++)
-		{
-			var item = FlowStepItems[i];
-			item.Background = i < _flowStepIndex
-				? Brush.Parse("#2e7d32")
-				: i == _flowStepIndex
-					? Brush.Parse(isError ? "#c62828" : "#1e88e5")
-					: Brush.Parse("#555555");
-		}
-	}
-
-	private static string BuildFlowStepLine(int currentStep, bool isError)
-	{
-		var parts = new string[FlowSteps.Length];
-		for (var i = 0; i < FlowSteps.Length; i++)
-		{
-			var prefix = i < currentStep ? "[OK]" : i == currentStep ? isError ? "[NG]" : "[>>]" : "[  ]";
-			parts[i] = $"{prefix}{FlowSteps[i]}";
-		}
-
-		return string.Join(" -> ", parts);
-	}
-
-	protected override async Task Main(CancellationToken ctk)
-	{
+		Thread.Sleep(2000);
 		var charBuffer = new char[1024];
 		while (ctk.IsCancellationRequested == false)
 		{
-			try
-			{
-				Plc.WaitNextCycle();
+			Plc.WaitNextCycle();
 
-				if (Plc.Read.扫码枪2触发 == 0 && Plc.Read.扫码枪2触发结果 != 0)
-				{
-					Plc.Write.扫码枪2触发结果 = 0;
-					Plc.Write.WritePoint(PlcStructInfo.扫码枪2触发结果).Unwarp("Clear right scanner result failed!");
-					continue;
-				}
-
-			if (Plc.Read.扫码枪2触发 == 1 && Plc.Read.扫码枪2触发结果 == 0)
+			if (Plc.Read.扫码枪2触发 == 0 && Plc.Read.扫码枪2触发结果 != 0)
 			{
-				扫码 = "";
-				机种型号 = "";
-				ResetFlow();
+				Plc.Write.扫码枪2触发结果 = 0;
+				Plc.Write.WritePoint(nameof(PlcStruct.扫码枪2触发结果)).Unwarp("clear code scanner signal failed!");
+				continue;
+			}
+
+			if (Plc.Read is { 扫码枪2触发: 1, 扫码枪2触发结果: 0 })
+			{
+				OkNgState = OkNgState.NA;
+				WorkStep = WorkStep.SCAN_CODE_DOING;
+				ScanCode = "";
+				ModelName = "";
 				try
 				{
-					if (CodeScanner2 is not { IsOpen: true })
+					Logger.Info("[SCAN-CODE] [DOING] ...");
+					if (CommonAppConfig.IsDevTestMode == false && CodeScanner is not { IsOpen: true })
 					{
-						var openResult = CodeScanner2?.Open() ?? Result.Err("CodeScanner2 instance is null");
+						var openResult = CodeScanner.Open();
 						if (openResult.IsError())
 						{
-							Logger.Error("扫码枪2打开失败: {msg}", openResult.Message);
-							Plc.Write.工位2允许生产 = 2;
-							SetFlowError(1, $"扫码枪2打开失败: {openResult.Message}");
-							goto SendCodeNG;
+							Logger.Error("Code scanner open failed: {msg}", openResult.Message);
+							LastError = "Code scanner open failed";
+							Plc.Write.工位2允许生产 = NOT_ALLOW_PRODUCTION_BY_SCAN_CODE;
+							Plc.Write.扫码枪2触发结果 = CodeOfNG;
+							goto SendResult;
 						}
 					}
 
-					CodeScanner2!.ReadToDiscard();
-
-					var writeResult = CodeScanner2!.Write(StartScanCommandBytes);
-					if (writeResult.IsError())
+					if (CommonAppConfig.IsDevTestMode == false)
 					{
-						Logger.Error("扫码枪2触发命令发送失败: {msg}", writeResult.Message);
-						Plc.Write.工位2允许生产 = 2;
-						SetFlowError(1, $"扫码枪2触发失败: {writeResult.Message}");
-						goto SendCodeNG;
+						CodeScanner.ReadToDiscard();
+
+						var writeResult = CodeScanner.Write(StartScanCommandBytes);
+						if (writeResult.IsError())
+						{
+							Logger.Error("Code scanner send command failed: {msg}", writeResult.Message);
+							LastError = "Code scanner send command failed";
+							Plc.Write.工位2允许生产 = NOT_ALLOW_PRODUCTION_BY_SCAN_CODE;
+							Plc.Write.扫码枪2触发结果 = CodeOfNG;
+							goto SendResult;
+						}
+
+						var readResult = CodeScanner.ReadContinuous(_buffer, 2000, 200);
+						if (readResult.IsError())
+						{
+							Logger.Error("Code scanner read failed: {msg}", readResult.Message);
+							Plc.Write.工位2允许生产 = NOT_ALLOW_PRODUCTION_BY_SCAN_CODE;
+							Plc.Write.扫码枪2触发结果 = CodeOfNG;
+							goto SendResult;
+						}
+
+						var readLength = readResult.Value;
+						if (false == _buffer.StartsWith(StartScanResponseBytes))
+						{
+							var responseHex = HexUtils.ToString(_buffer.AsSpan(0, readLength));
+							Logger.Error("Code scanner response format error: {hex}", responseHex);
+							Plc.Write.工位2允许生产 = NOT_ALLOW_PRODUCTION_BY_SCAN_CODE;
+							Plc.Write.扫码枪2触发结果 = CodeOfNG;
+							goto SendResult;
+						}
+
+						var codeBytes = _buffer.AsSpan(StartScanResponseBytes.Length,
+							readLength - StartScanResponseBytes.Length);
+						if (false == Encoding.UTF8.TryGetChars(codeBytes, charBuffer, out var codeLength))
+						{
+							var responseHex = HexUtils.ToString(_buffer.AsSpan(0, readLength));
+							Logger.Error("Code scanner response format error, raw data is '{hex}'", responseHex);
+							Plc.Write.工位2允许生产 = NOT_ALLOW_PRODUCTION_BY_SCAN_CODE;
+							Plc.Write.扫码枪2触发结果 = CodeOfNG;
+							goto SendResult;
+						}
+
+						ScanCode = new string(charBuffer, 0, codeLength).Trim();
+						if (string.IsNullOrWhiteSpace(ScanCode) || ScanCode.Length < AppConfig.SnCodeMinLength)
+						{
+							Logger.Error("Code length check failed, code = '{code}'，length = {length}，not allow production.",
+								ScanCode,
+								ScanCode.Length);
+							Plc.Write.工位2允许生产 = 2;
+							LastError = "code length check failed!";
+							Plc.Write.扫码枪2触发结果 = CodeOfNG;
+							goto SendResult;
+						}
+					}
+					else
+					{
+						ScanCode = $"DEBUG-TEST-{DateTime.Now:yyyyMMdd-HHmmss}";
 					}
 
-					var readResult = CodeScanner2!.ReadContinuous(_buffer, 2000, 200);
-					if (readResult.IsError())
-					{
-						Logger.Error("扫码枪2读取超时或失败: {msg}", readResult.Message);
-						Plc.Write.工位2允许生产 = 2;
-						SetFlowError(1, $"扫码枪2读取失败: {readResult.Message}");
-						goto SendCodeNG;
-					}
 
-					var readLength = readResult.Value;
-					if (false == _buffer.StartsWith(StartScanResponseBytes))
-					{
-						var responseHex = HexUtils.ToString(_buffer.AsSpan(0, readLength));
-						Logger.Error("扫码枪2响应格式错误: {hex}", responseHex);
-						Plc.Write.工位2允许生产 = 2;
-						SetFlowError(1, "扫码枪2响应格式错误");
-						goto SendCodeNG;
-					}
+					WorkStep = WorkStep.SCAN_CODE_COMPLETED;
+					Logger.Info("[SCAN-CODE] [OK] CONTENT='{code}'", ScanCode);
 
-					var codeBytes = _buffer.AsSpan(StartScanResponseBytes.Length, readLength - StartScanResponseBytes.Length);
-					if (false == Encoding.UTF8.TryGetChars(codeBytes, charBuffer, out var codeLength))
-					{
-						var responseHex = HexUtils.ToString(_buffer.AsSpan(0, readLength));
-						Logger.Error("扫码枪2条码解析失败: {hex}", responseHex);
-						Plc.Write.工位2允许生产 = 2;
-						SetFlowError(1, "扫码枪2条码解析失败");
-						goto SendCodeNG;
-					}
-
-					扫码 = new string(charBuffer, 0, codeLength).Trim();
-					if (string.IsNullOrWhiteSpace(扫码) || 扫码.Length < 20)
-					{
-						Logger.Error("扫码枪2未扫到有效二维码或二维码长度不足20位，当前码='{code}'，长度={length}，工位2不允许生产。", 扫码, 扫码.Length);
-						Plc.Write.工位2允许生产 = 2;
-						SetFlowError(1, $"扫码无效，长度={扫码.Length}");
-						goto SendCodeNG;
-					}
-
-					FlowSn = 扫码;
-					SetFlowStep(2);
-					Logger.Info("Scanned code is '{code}'", 扫码);
 
 					if (Core.MesSkipEnabled)
 					{
-						Logger.Warn("【MES跳过】工位2扫码完成，跳过 MSG7/配方切换/MSG1，直接允许生产。SN={sn}", 扫码);
-						Plc.Write.工位2允许生产 = 1;
-						SetFlowStep(6);
-						goto SendCodeOK;
+						Logger.Info("[MES IN-STA] [OK:Skip] SN={sn}", ScanCode);
+						Plc.Write.扫码枪2触发结果 = CodeOfOK;
+						Plc.Write.工位2允许生产 = ALLOW_PRODUCTION;
+						goto SendResult;
 					}
 
-					SetFlowStep(3);
-					Logger.Info("【第一步】请求查工单和机种(MSG7) -> 开始");
-					var mesMsg7Result = Mes.SendRawAsciiMessage7(扫码);
+					#region MES-QUERY
+
+					WorkStep = WorkStep.MES_QUERY_DOING;
+					var mes7 = $"ASM_QUERY,{ScanCode},7,,SMD,,OK,MO_NUMBER=??? MODEL_NAME=???";
+					Logger.Info($"[MES QUERY] [DOING] MES << '{mes7}'");
+					var mesMsg7Result = Mes.SendAndReadString(mes7);
+					// var mesMsg7Result = Mes.SendRawAsciiMessage7(扫码);
 					if (mesMsg7Result.IsError())
 					{
-						Logger.Error("第一步失败: 获取工单通讯异常: {msg}", mesMsg7Result.Message);
+						Logger.Error(LastError = $"[MES QUERY] [ERROR] MES connection error! {mesMsg7Result.Message}");
 						Plc.Write.工位2允许生产 = 2;
-						SetFlowError(3, $"MSG7通讯失败: {mesMsg7Result.Message}");
-						goto SendCodeNG;
+						Plc.Write.扫码枪2触发结果 = CodeOfNG;
+						goto SendResult;
+					}
+
+					if (mesMsg7Result.Value!.StartsWith("OK") is false)
+					{
+						Logger.Error(LastError = $"[MES QUERY] [ERROR] MES << '{mesMsg7Result.Value}'");
+						Plc.Write.工位2允许生产 = 2;
+						Plc.Write.扫码枪2触发结果 = CodeOfNG;
+						goto SendResult;
 					}
 
 					var rawAscii = mesMsg7Result.Value;
 					var parseResult = ParseMesModelInfo(rawAscii);
 					if (parseResult.WorkOrder is null || parseResult.ModelName is null)
 					{
-						Logger.Error("第一步失败: MES回传的报文中未找到 MO_NUMBER 或 MODEL_NAME");
+						Logger.Error(LastError =
+							$"[MES QUERY] [ERROR] (MO_NUMBER='{parseResult.WorkOrder}',MODEL_NAME='{parseResult.ModelName}')] has empty value!");
 						Plc.Write.工位2允许生产 = 2;
-						SetFlowError(3, "MES回传缺少 MO_NUMBER 或 MODEL_NAME");
-						goto SendCodeNG;
+						Plc.Write.扫码枪2触发结果 = CodeOfNG;
+						goto SendResult;
 					}
 
-					Core.工单号 = parseResult.WorkOrder;
-					机种型号 = parseResult.ModelName;
-					FlowModel = 机种型号;
-					Logger.Info("【第一步】通过，工单={workOrder}，机种={modelName}", Core.工单号, 机种型号);
 
-					SetFlowStep(4);
-					Logger.Info("【配方切换】工位2开始根据 MES MODEL_NAME 检查当前配方。");
-					var recipePrepareState = await Core.PrepareRecipeByMesModelNameAsync(机种型号);
-					if (recipePrepareState == MesRecipePrepareState.RecipeNotFound)
+					Core.WorkOrderNo = parseResult.WorkOrder;
+					ModelName = parseResult.ModelName;
+					Logger.Info($"[MES QUERY] [OK] MO_NUMBER='{Core.WorkOrderNo}' MODEL_NAME='{ModelName}'");
+
+					#endregion
+
+					#region RECIPE-CHECK
+
+					WorkStep = WorkStep.RECIPE_CHECK;
+					// Logger.Info($"[RECIPE CHECK] [DOING] SN='{ScanCode}' MODEL_NAME='{ModelName}'");
+					var recipeResult = Core.Recipe.GetRecipeByModelName(ModelName);
+					if (recipeResult.IsError())
 					{
-						Logger.Error("【配方切换】工位2未找到 MODEL_NAME={modelName} 对应配方，写入 工位2允许生产=3 并退出流程。", 机种型号);
-						Plc.Write.工位2允许生产 = 3;
-						SetFlowError(4, $"未找到配方: {机种型号}");
-						goto SendCodeRecipeHold;
+						Logger.Error($"[RECIPE CHECK] [ERROR] Recipe not found! SN='{ScanCode}' MODEL_NAME='{ModelName}'");
+						Plc.Write.工位2允许生产 = NOT_ALLOW_PRODUCTION_BY_RECIPE;
+						Plc.Write.扫码枪2触发结果 = CodeOfNG;
+						goto SendResult;
 					}
 
-					if (recipePrepareState == MesRecipePrepareState.PlcResponseTimeout)
+					var recipe = recipeResult.Value!;
+					if (Core.RecipeCheck == false)
+						Logger.Info($"[RECIPE CHECK] [OK:UnCheck] SN='{ScanCode}' MODEL_NAME='{ModelName}'");
+					else if (Plc.Read.上位机当前配方ID != Plc.Read.PLC当前配方ID || Plc.Read.PLC当前配方ID != recipeResult.Value!.Id)
 					{
-						Logger.Error("【配方切换】工位2等待 PLC读取配方ID切换成功响应(22414)=1 超过15秒，写入 工位2允许生产=3 并退出流程。");
-						Plc.Write.工位2允许生产 = 3;
-						SetFlowError(4, "配方切换等待 PLC 响应超时");
-						goto SendCodeRecipeHold;
-					}
+						Logger.Info($"[RECIPE CHANGE] [DOING]" +
+						            $" Old(PLC-ID={Plc.Read.PLC当前配方ID}', PC-ID={Plc.Read.上位机当前配方ID}) =>" +
+						            $" New(Id={recipe.Id}, Name={recipe.Name}, ModelName='{recipe.ModelName}')");
+						
+						
+						if (false == Core.RecipeSwitchLock.Wait(TimeSpan.FromSeconds(AppConfig.RecipeSwitchWaitTimeout)))
+						{
+							Logger.Error("[RECIPE CHANGE] [ERROR] Wait lock timeout! ");
+							Plc.Write.工位2允许生产 = NOT_ALLOW_PRODUCTION_BY_RECIPE;
+							Plc.Write.扫码枪2触发结果 = CodeOfNG;
+							goto SendResult;
+						}
+						try
+						{
+							
+							if (Plc.Read.上位机当前配方ID != Plc.Read.PLC当前配方ID || Plc.Read.PLC当前配方ID != recipeResult.Value!.Id)
+							{
+								if (Core.IsWorkPositionFree() == false)
+								{
+									Logger.Warn($"[RECIPE CHANGE] [FAILL] work position is doing ,can't change recipe!");
+									Plc.Write.工位2允许生产 = NOT_ALLOW_PRODUCTION_BY_RECIPE;
+									Plc.Write.扫码枪2触发结果 = CodeOfNG;
+									goto SendResult;
+								}
 
-					if (recipePrepareState == MesRecipePrepareState.UserCanceled)
+								WorkStep = WorkStep.RECIPE_SEND;
+								Logger.Info("[RECIPE CHANGE] Recipe data sending ...! ");
+								var distributeRecipeTask = Core.DistributeRecipeAsync(recipeResult.Value!);
+								distributeRecipeTask.Wait();
+								if (distributeRecipeTask.Result.IsError())
+								{
+									Logger.Error(
+										$"[RECIPE CHANGE] [ERROR] Recipe data send failed! {distributeRecipeTask.Exception?.Message ?? distributeRecipeTask.Result.Message} ");
+									Plc.Write.工位2允许生产 = NOT_ALLOW_PRODUCTION_BY_RECIPE;
+									Plc.Write.扫码枪2触发结果 = CodeOfNG;
+									goto SendResult;
+								}
+					
+								Logger.Info("[RECIPE CHANGE] Recipe data sended.");
+								WorkStep = WorkStep.RECIPE_WAIT;
+								var startWaitTime = DateTime.Now;
+								var endWaitTime = startWaitTime.AddMilliseconds(AppConfig.RecipeSwitchWaitTimeout);
+								if (CommonAppConfig.IsDevTestMode)
+								{
+									Plc.Write.PLC当前配方ID = (short)recipe.Id;
+									Plc.Write.WritePoint(nameof(PlcStruct.PLC当前配方ID));
+									Plc.Write.PLC读取配方ID切换成功响应 = 1;
+									Plc.Write.WritePoint(nameof(PlcStruct.PLC读取配方ID切换成功响应));
+								}
+
+								while (Plc.Read.PLC读取配方ID切换成功响应 != 1 &&
+								       DateTime.Now < endWaitTime)
+									Thread.Sleep(100);
+								if (Plc.Read.PLC读取配方ID切换成功响应 != 1)
+								{
+									Logger.Error("[RECIPE CHANGE] [ERROR] Wait plc change recipe timeout.");
+									Plc.Write.工位2允许生产 = NOT_ALLOW_PRODUCTION_BY_RECIPE;
+									Plc.Write.扫码枪2触发结果 = CodeOfNG;
+									goto SendResult;
+								}
+
+								Core.WorkRecipe = recipe;
+								Logger.Info("[RECIPE CHANGE] [OK] Recipe changed successfully!.");
+							}
+						}
+						finally
+						{
+							Core.RecipeSwitchLock.Release();
+						}
+					}
+					else
+						Logger.Info($"[RECIPE CHECK] [OK] SN='{ScanCode}' MODEL_NAME='{ModelName}'");
+
+					#endregion
+
+					#region MATERIAL-CHECK
+
+					if (Core.MaterialCheck)
 					{
-						Logger.Warn("【配方切换】工位2用户取消配方切换，写入 工位2允许生产=3 并退出流程。");
-						Plc.Write.工位2允许生产 = 3;
-						SetFlowError(4, "用户取消配方切换");
-						goto SendCodeRecipeHold;
-					}
+						var isMaterialStateOk = true;
+						MaterialSpaceContext? material = null;
+						foreach (var item in Core.MaterialContexts)
+						{
+							if (item.Config.IsUsed == false) continue;
+							item.CheckMaterialState();
+							if (item.MaterialState == MaterialState.OK)
+								continue;
+							isMaterialStateOk = false;
+							material = item;
+							break;
+						}
 
-					if (recipePrepareState == MesRecipePrepareState.Failed)
-					{
-						Logger.Error("【配方切换】工位2配方切换失败，写入 工位2允许生产=2 并退出流程。");
-						Plc.Write.工位2允许生产 = 2;
-						SetFlowError(4, "配方切换失败");
-						goto SendCodeNG;
+						if (isMaterialStateOk)
+							Logger.Info($"[MATERIAL CHECK] [OK] SN='{ScanCode}' MODEL_NAME='{ModelName}'");
+						else
+						{
+							Logger.Error(
+								$"[MATERIAL CHECK] [ERROR] at material {material?.Id} state is '{material?.MaterialState}' SN='{ScanCode}' MODEL_NAME='{ModelName}'");
+							Plc.Write.工位2允许生产 = NOT_ALLOW_PRODUCTION_BY_RECIPE;
+							Plc.Write.扫码枪2触发结果 = CodeOfNG;
+							LastError = "MATERIAL CHECK FAILED!";
+							goto SendResult;
+						}
 					}
+					else Logger.Info($"[MATERIAL CHECK] [OK:UnCheck] SN='{ScanCode}' MODEL_NAME='{ModelName}'");
 
-					SetFlowStep(5);
-					Logger.Info("【第二步】申请入站过站(MSG1) -> 开始");
-					var mesMsg1Result = Mes.SendRawAsciiMessage1(Core.工号, 扫码);
+					#endregion
+
+					#region MES-IN-STA
+
+					var msg1 =
+						$"{AppConfig.StationName.Trim()},{ScanCode.Trim()},1,{Core.WorkerNo.Trim()},{AppConfig.Line.Trim()},,OK,,,";
+					WorkStep = WorkStep.MES_IN_STATION_DOING;
+					Logger.Info($"[MES IN-STA] [DOING] MES << '{msg1}'");
+					var mesMsg1Result = Mes.SendAndReadString(msg1);
+					WorkStep = WorkStep.MES_IN_STATION_COMPLETED;
 					if (mesMsg1Result.IsError())
 					{
-						Logger.Error("第二步失败: 入站请求通讯异常: {msg}", mesMsg1Result.Message);
-						Plc.Write.工位2允许生产 = 2;
-						SetFlowError(5, $"MSG1通讯失败: {mesMsg1Result.Message}");
-						goto SendCodeNG;
+						Logger.Error(LastError = $"[MES IN-STA] [ERROR] MES connection error!");
+						Plc.Write.工位2允许生产 = NOT_ALLOW_PRODUCTION_BY_MES;
+						Plc.Write.扫码枪2触发结果 = CodeOfNG;
+						goto SendResult;
 					}
 
-					var response1Ascii = mesMsg1Result.Value!.Trim().ToUpperInvariant();
-					if (response1Ascii.StartsWith("OK") == false)
+					if (mesMsg1Result.Value!.StartsWith("OK") is false)
 					{
-						Logger.Error("第三步失败: MES 拒绝入站，原始回复内容为: {response}", response1Ascii);
-						Plc.Write.工位2允许生产 = 2;
-						SetFlowError(5, $"MES拒绝入站: {response1Ascii}");
-						goto SendCodeNG;
+						Logger.Error($"[MES IN-STA] [ERROR] MES >> '{mesMsg1Result.Value}'");
+						Plc.Write.工位2允许生产 = NOT_ALLOW_PRODUCTION_BY_MES;
+						Plc.Write.扫码枪2触发结果 = CodeOfNG;
+						goto SendResult;
 					}
 
-					Logger.Info("【第三步】收到 MES 回复 OK，准许进站加工。");
-					Plc.Write.工位2允许生产 = 1;
-					SetFlowStep(6);
-					goto SendCodeOK;
+					Logger.Info($"[MES IN-STA] [OK] MES >> '{mesMsg1Result.Value}'");
+
+					#endregion
+
+					Plc.Write.工位2允许生产 = ALLOW_PRODUCTION;
+					Plc.Write.扫码枪2触发结果 = CodeOfOK;
 				}
 				catch (Exception ex)
 				{
 					Logger.Error(ex, "入站扫码工作站发生致命异常: {msg}", ex.Message);
 					Plc.Write.工位2允许生产 = 2;
-					SetFlowError(_flowStepIndex, $"入站扫码异常: {ex.Message}");
-					goto SendCodeNG;
+					Plc.Write.扫码枪2触发结果 = CodeOfNG;
+					goto SendResult;
 				}
 
-				SendCodeOK:
-				Plc.Write.WritePoint(PlcStructInfo.工位2允许生产).Unwarp("write right allow produce OK failed!");
-				Plc.Write.扫码枪2触发结果 = CodeOfOK;
-				Plc.Write.WritePoint(PlcStructInfo.扫码枪2触发结果).Unwarp("write right scanner scan result failed!");
-				SetFlowStep(7);
-				continue;
+				SendResult:
+				if (DayProductionId == 0)
+					DayProductionId = Core.GetDayProductionId();
+				var now = DateTime.Now;
+				ImagePathRoot = Path.Combine(AppConfig.VisionImagePath,
+					now.ToString("yyyy-MM"), now.ToString("dd"), $"{DayProductionId}_{ScanCode}");
+				// Logger.Info($"[VISION FILE] image path is '{ImagePathRoot}'");
+				Logger.Info(
+					$"[MES IN-STA] [DONE] SCAN=({Plc.Write.扫码枪2触发结果},'{ScanCode}') EN={Plc.Write.工位2允许生产}");
+				Plc.Write.TryWritePoint(nameof(PlcStruct.工位2允许生产), this, static ctx =>
+				{
+					ctx.Context.Logger.Error(
+						$"[MES IN-STA] [ERROR] write plc allow production result failed by plc connection error! {ctx.Result.Message}");
+					Thread.Sleep(5000);
+					return true;
+				});
+				Plc.Write.工位2生产序号 = (short)DayProductionId;
+				Plc.Write.WritePoint(nameof(PlcStruct.工位2生产序号));
+				Plc.Plc.Write($"{PlcStructInfo.扫码枪2扫码内容.Offset}", ScanCode, 80);
+				Plc.Write.TryWritePoint(nameof(PlcStruct.扫码枪2触发结果), this, static ctx =>
+				{
+					ctx.Context.Logger.Error(
+						$"[MES IN-STA] [ERROR] write plc code scan signal failed by plc connection error! {ctx.Result.Message}");
+					Thread.Sleep(5000);
+					return true;
+				});
 
-				SendCodeRecipeHold:
-				扫码 = "";
-				Plc.Write.WritePoint(PlcStructInfo.工位2允许生产).Unwarp("write right allow produce recipe hold failed!");
-				Plc.Write.扫码枪2触发结果 = CodeOfRecipeHold;
-				Plc.Write.WritePoint(PlcStructInfo.扫码枪2触发结果).Unwarp("write right scanner recipe hold result failed!");
-				continue;
+				if (CommonAppConfig.IsDevTestMode)
+				{
+					Plc.Write.扫码枪2触发 = 0;
+					Plc.Write.TryWritePoint(nameof(PlcStruct.扫码枪2触发), this, static ctx =>
+					{
+						ctx.Context.Logger.Error(
+							$"[MES IN-STA] [ERROR] write plc code scan result failed by plc connection error! {ctx.Result.Message}");
+						Thread.Sleep(5000);
+						return true;
+					});
+				}
 
-				SendCodeNG:
-				扫码 = "";
-				if (FlowLastError == "无")
-					SetFlowError(_flowStepIndex, "扫码或入站流程失败");
-				Plc.Write.WritePoint(PlcStructInfo.工位2允许生产).Unwarp("write right allow produce NG failed!");
-				Plc.Write.扫码枪2触发结果 = CodeOfNG;
-				Plc.Write.WritePoint(PlcStructInfo.扫码枪2触发结果).Unwarp("write right scanner scan result failed!");
+				WorkStep = WorkStep.MES_OUT_STATION_WAITING;
 				continue;
 			}
 
-			if (_pendingUploadResponse != 0)
-			{
-				if (TryWritePendingUploadResponse())
-					continue;
-			}
 
 			if (Plc.Read.工位2数据上报请求 is 0 && Plc.Read.工位2数据上报响应 is not 0)
 			{
 				Plc.Write.工位2数据上报响应 = 0;
-				Plc.Write.WritePoint(PlcStructInfo.工位2数据上报响应).Unwarp("clear work right upload result!");
+				Plc.Write.WritePoint(nameof(PlcStruct.工位2数据上报响应)).Unwarp("clear work left upload result!");
 				continue;
 			}
 
-			if (Plc.Read.工位2数据上报请求 == 1 && Plc.Read.工位2数据上报响应 == 0)
+			if (Plc.Read is { 工位2数据上报请求: 1, 工位2数据上报响应: 0 })
 			{
-				SetFlowStep(8);
-				try
+				WorkStep = WorkStep.MES_OUT_STATION_DOING;
+				if (string.IsNullOrEmpty(ScanCode))
 				{
-					if (string.IsNullOrEmpty(扫码))
-					{
-						Logger.Error("plc upload result must scan code, current code is null!");
-						SetFlowError(8, "过站请求到达，但当前 SN 为空");
-						_pendingUploadResponse = 2;
-						goto WritePendingResponse;
-					}
-
-					if (Core.MesSkipEnabled)
-					{
-						Logger.Warn("【MES跳过】收到 工位2数据上报请求(22016)=1，跳过 MSG2，直接响应 OK。SN={sn}", 扫码);
-						SetFlowStep(9);
-						_pendingUploadResponse = 1;
-						goto WritePendingResponse;
-					}
-
-					Logger.Info("【过站】收到 工位2数据上报请求(22016)=1，开始发送 MES MSG2 过站请求。");
-					var respMsg2Result = Mes.SendRawAsciiMessage2(Core.工号, 扫码);
-					if (respMsg2Result.IsError())
-					{
-						Logger.Error(respMsg2Result.Exception, "【过站】MES MSG2 通讯失败: {msg}", respMsg2Result.Message);
-						SetFlowError(8, $"MSG2通讯失败: {respMsg2Result.Message}");
-						_pendingUploadResponse = 2;
-						goto WritePendingResponse;
-					}
-
-					var responseAscii = respMsg2Result.Value?.Trim() ?? "";
-					var firstThree = responseAscii.Length > 3 ? responseAscii[..3] : responseAscii;
-					var isMesOk = string.Equals(responseAscii, "OK", StringComparison.OrdinalIgnoreCase) ||
-					              responseAscii.StartsWith("OK,", StringComparison.OrdinalIgnoreCase) ||
-					              responseAscii.StartsWith("OK2", StringComparison.OrdinalIgnoreCase);
-					if (isMesOk == false)
-					{
-						Logger.Error("【过站】MES MSG2 返回非 OK/OK2，前三位={firstThree}，原始回复={response}", firstThree, responseAscii);
-						SetFlowError(8, $"MSG2返回NG: {responseAscii}");
-						_pendingUploadResponse = 2;
-						goto WritePendingResponse;
-					}
-
-					Logger.Info("【过站】MES MSG2 返回 OK/OK2，前三位={firstThree}。", firstThree);
-					SetFlowStep(9);
-					_pendingUploadResponse = 1;
-				}
-				catch (Exception ex)
-				{
-					Logger.Error(ex, "数据上报发生致命异常: {msg}", ex.Message);
-					SetFlowError(8, $"过站异常: {ex.Message}");
-					_pendingUploadResponse = 2;
+					OutStationStatusCode = OutStationStatusCode.SN_IS_EMPTY;
+					Logger.Error("[MES OUT-STA] [ERROR] Plc upload result must scan code, current code is null!");
+					goto SendOutStationResult;
 				}
 
-				WritePendingResponse:
-				TryWritePendingUploadResponse();
-				continue;
-			}
-			}
-			catch (Exception ex)
-			{
-				Logger.Error(ex, "WorkRight main loop error, will retry.");
-				Thread.Sleep(1000);
+				if (Core.MesSkipEnabled)
+				{
+					OutStationStatusCode = OutStationStatusCode.Success;
+					Logger.Info("[MES OUT-STA] [OK:Skip] SN='{sn}'", ScanCode);
+					goto SendOutStationResult;
+				}
+
+				var msg2 = $"{AppConfig.StationName},{ScanCode},2,{Core.WorkerNo},{AppConfig.Line},,OK,,,";
+				Logger.Info($"[MES OUT-STA] [DOING] MES << '{msg2}'");
+				var respMsg2Result = Mes.SendAndReadString(msg2);
+				if (respMsg2Result.IsError())
+				{
+					OutStationStatusCode = OutStationStatusCode.MES_RESPONSE_ERROR;
+					Logger.Error(respMsg2Result.Exception, $"[MES OUT-STA] [ERROR] {respMsg2Result.Message}");
+					goto SendOutStationResult;
+				}
+
+				if (respMsg2Result.Value!.StartsWith("OK") is false)
+				{
+					OutStationStatusCode = OutStationStatusCode.MES_RESPONSE_ERROR;
+					Logger.Error($"[MES OUT-STA] [ERROR] MES >> '{respMsg2Result.Value}'");
+					goto SendOutStationResult;
+				}
+
+				OutStationStatusCode = OutStationStatusCode.Success;
+				Logger.Info($"[MES OUT-STA] [OK] MES >> '{respMsg2Result.Value}'");
+
+				SendOutStationResult:
+				if (CommonAppConfig.IsDevTestMode)
+				{
+					Plc.Write.工位2数据上报请求 = 0;
+					Plc.Write.WritePoint(nameof(PlcStruct.工位2数据上报请求));
+				}
+
+				Plc.Write.工位2数据上报响应 = (short)OutStationStatusCode;
+				Plc.Write.TryWritePoint(nameof(PlcStruct.工位2数据上报响应), this, static ctx =>
+				{
+					ctx.Context.Logger.Error(
+						$"[MES OUT-STA] [ERROR] write plc upload response failed by plc connection error! {ctx.Result.Message}");
+					Thread.Sleep(5000);
+					return true;
+				});
+				OkNgState = OkNgState.OK;
+				WorkStep = WorkStep.COMPLETED;
+				DayProductionId = 0;
+				// ScanCode = null!;
 			}
 		}
+
+		return Task.CompletedTask;
 	}
 
-	private bool TryWritePendingUploadResponse()
+	protected override Task<bool> OnMainException(Exception exception)
 	{
-		if (_pendingUploadResponse == 0)
-			return true;
-
-		try
-		{
-			var response = _pendingUploadResponse;
-			Plc.Write.工位2数据上报请求 = 0;
-			Plc.Write.WritePoint(PlcStructInfo.工位2数据上报请求).Unwarp("reset work right upload request failed!");
-			Plc.Write.工位2数据上报响应 = response;
-			Plc.Write.WritePoint(PlcStructInfo.工位2数据上报响应).Unwarp("write work right upload response failed!");
-			_pendingUploadResponse = 0;
-			if (response == 1)
-				SetFlowStep(9);
-			else
-				SetFlowError(8, "PLC 已收到过站 NG 响应");
-			Logger.Info("【过站】工位2数据上报PLC响应写入完成，响应={response}。", response);
-			return true;
-		}
-		catch (Exception ex)
-		{
-			SetFlowError(8, $"PLC过站响应写入失败，等待重试: {ex.Message}");
-			Logger.Error(ex, "【过站】工位2数据上报PLC响应写入失败，将在下一轮重试，不重复发送MES。");
-			return false;
-		}
+		Logger.Error("Right work position is error, will retry.");
+		Thread.Sleep(5000);
+		return TaskUtils.ConstValues.TaskTrue;
 	}
 
 	private static (string? WorkOrder, string? ModelName) ParseMesModelInfo(string? rawAscii)

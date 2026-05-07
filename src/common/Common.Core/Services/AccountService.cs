@@ -28,9 +28,9 @@ public partial class AccountService : INamedObject
 			Logger.Info("添加初始账户中...");
 			DbClient.Insertable(new ZitAccount[]
 			{
-				new() { IdentityName = "管理员", SecurityKey = "12345", RoleFlags = 5 },
-				new() { IdentityName = "技术员", SecurityKey = "12345", RoleFlags = 3 },
-				new() { IdentityName = "操作员", SecurityKey = "12345", RoleFlags = 1 },
+				new() { IdentityName = "管理员", SecurityKey = "1", RoleFlags = 5 },
+				new() { IdentityName = "技术员", SecurityKey = "1", RoleFlags = 3 },
+				new() { IdentityName = "操作员", SecurityKey = "1", RoleFlags = 1 },
 			}).ExecuteCommand();
 		}
 	}
@@ -48,7 +48,7 @@ public partial class AccountService : INamedObject
 				return Result.Err<ZitAccount>("Not Found!");
 			}
 
-			if (AvaloniaApplication.Current.TryGetResource($"I18N.Common.{identityAccount.IdentityName}",
+			if (AvaloniaApplication.Current.TryGetResource($"I18N.G.{identityAccount.IdentityName}",
 				    out var displayName))
 				identityAccount.DisplayName = displayName?.ToString();
 			identityAccount.DisplayName ??= identityAccount.IdentityName;
@@ -72,7 +72,7 @@ public partial class AccountService : INamedObject
 			var accounts = await DbClient.Queryable<ZitAccount>().ToListAsync();
 			foreach (var account in accounts)
 			{
-				if (AvaloniaApplication.Current.TryGetResource($"I18N.Common.{account.IdentityName}", out var displayName))
+				if (AvaloniaApplication.Current.TryGetResource($"I18N.G.{account.IdentityName}", out var displayName))
 					account.DisplayName = displayName?.ToString();
 				account.DisplayName ??= account.IdentityName;
 			}

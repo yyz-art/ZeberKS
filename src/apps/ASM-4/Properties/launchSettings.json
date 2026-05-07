@@ -7,7 +7,7 @@
     },
     "App:Roslyn": {
       "commandName": "DebugRoslynComponent",
-      "targetProject": "SCREW.csproj"
+      "targetProject": "ASM-4.csproj"
     },
     "UiTheme:Roslyn": {
       "commandName": "DebugRoslynComponent",

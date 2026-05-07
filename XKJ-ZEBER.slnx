@@ -57,6 +57,7 @@
 <!--    <Project Path="src/framework/UI/UI.csproj" />-->
   </Folder>
   <Folder Name="/tests/">
+    <Project Path="src/tests/Test1/Test1.csproj" />
     <Project Path="src/tests/TestConsole/TestConsole.csproj" />
   </Folder>
   <Project Path=".sln/Solution.csproj" />

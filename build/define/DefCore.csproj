@@ -10,6 +10,7 @@
 	<!-- Nuget引用	-->
 	<ItemGroup>
 		<Reference Include="$(CommonAssemblyPath)HslCommunication.dll"/>
+		<Reference Include="$(CommonAssemblyPath)Accessibility.dll"/>
 		<PackageReference Include="NLog" Version="$(NLogVersion)"/>
 		<PackageReference Include="NLog.Database" Version="$(NLogVersion)"/>
 		<PackageReference Include="SqlSugarCoreNoDrive" Version="$(SqlSugarVersion)"/>

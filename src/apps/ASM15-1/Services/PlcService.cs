@@ -20,23 +20,25 @@ public partial class PlcService : PlcServiceBase
 {
 	public required AlarmService AlarmService { get; init; }
 	public PlcStruct Read { get; } = new();
-	public PlcAlarmStruct ReadAlarm { get; } = new();
 	public PlcStruct Write { get; } = new();
+	public PlcStruct RealWrite { get; } = new() { IsRealWriteMode = true};
+	public PlcAlarmStruct ReadAlarm { get; } = new();
 
 	protected override Task OnInitialize(object? ctx, object? args)
 	{
 		Read.Connection = Plc;
 		Write.Connection = Plc;
 		ReadAlarm.PropertyChanged += OnPlcAlarmChanged;
+		RealWrite.Connection = Plc;
+		RealWrite.IsRealWriteMode = true;
 		return base.OnInitialize(ctx, args);
 	}
 
 	private void OnPlcAlarmChanged(object? sender, PropertyChangedEventArgs e)
 	{
-		if (e.PropertyName is null || false ==
-		                           PlcAlarmStructInfo.StructInfo.Members.TryGetValue(e.PropertyName.AsMemory(),
-			                           out var memberInfo)
-		                           || memberInfo is not IBinaryPointInfo pointInfo)
+		if (e.PropertyName is null ||
+		    false == ReadAlarm.GetStructInfo().Members.TryGetValue(e.PropertyName.AsMemory(), out var memberInfo)
+		    || memberInfo is not IBinaryPointInfo pointInfo)
 			return;
 		var property = TypeMetaInfo<PlcAlarmStruct>.Cache.GetProperty(e.PropertyName);
 		if (property?.ValueInfo is null || property.CanRead == false)
@@ -48,7 +50,6 @@ public partial class PlcService : PlcServiceBase
 		AlarmService.PushAlarm(this, alarmInfo, sender);
 	}
 
-	public partial String StatusColor { get; set; }= "Red";
 
 	protected override Task Main(CancellationToken ctk)
 	{
@@ -71,7 +72,6 @@ public partial class PlcService : PlcServiceBase
 					{
 						Status = "连接异常";
 						IsConnected = false;
-						StatusColor = "Red";
 						Logger.Error(write心跳Result.Exception, "Heartbeat write falied! {}", write心跳Result.Message);
 						Thread.Sleep(10000);
 						continue;
@@ -79,15 +79,14 @@ public partial class PlcService : PlcServiceBase
 
 					HeartbeatTime = DateTime.Now;
 				}
-
-				Read.ReadPointGroup(PlcStructInfo.交互toPC_Part1).Unwarp("Read to pc part1 failed!");
-				Read.ReadPointGroup(PlcStructInfo.交互toPLC_Part1).Unwarp("Read to plc part1 failed!");
+				
+				Read.ReadPointGroup(PlcStructInfo.PlcToPc).Unwarp("Read PlcToPc failed!");
+				Read.ReadPointGroup(PlcStructInfo.PcToPlc).Unwarp("Read PcToPlc failed!");
 				ReadAlarm.ReadPointGroup(PlcAlarmStructInfo.Part1, Plc).Unwarp("Read alarm failed!");
 
 				InternalCycleTaskCompletionSource?.TrySetResult();
 				unchecked
 				{
-					StatusColor = "LimeGreen";
 					IsConnected = true;
 					CycleId++;
 					Status = "连接正常";
@@ -98,7 +97,6 @@ public partial class PlcService : PlcServiceBase
 			catch (Exception ex)
 			{
 				Status = "连接异常";
-				StatusColor = "Red";
 				IsConnected = false;
 				Logger.Error(ex, "PLC main loop error, will retry.");
 				Thread.Sleep(1000);

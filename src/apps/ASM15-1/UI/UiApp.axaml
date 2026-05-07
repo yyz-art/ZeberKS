@@ -3,6 +3,7 @@
 	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 	xmlns:system="using:System"
 	xmlns:role="using:ZC.UI.Role"
+	xmlns:ext="clr-namespace:ZitApp.UI.Ext"
 	x:Class="ZitApp.UI.UiApp"
 	RequestedThemeVariant="Dark">
 	<Application.Resources>
@@ -13,6 +14,8 @@
 				<ResourceInclude Source="avares://ZitApp.Core/UI/_index.axaml" />
 			</ResourceDictionary.MergedDictionaries>
 			<role:UiRoleChecker x:Key="RoleChecker" />
+			<ext:StateColorConverter x:Key="StateColorCvt"/>
+			<ext:StateColorConverter x:Key="MaterialStateColorCvt"/>
 			<EnumEqualsConverter x:Key="EnumEqualsConverter" />
 		</ResourceDictionary>
 	</Application.Resources>

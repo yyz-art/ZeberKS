@@ -1,28 +1,25 @@
-﻿using System.Runtime.CompilerServices;
+﻿using System.IO.Ports;
+using System.Reflection;
+using System.Text;
 using System.Text.Json;
 using ZC;
 using ZC.DB;
 using ZC.Development;
-using ZC.DP.Number;
 using ZC.EnhanceApp;
 using ZC.IO;
 using ZC.KvStorage.DB;
-using ZC.Web.Server;
-using ZC.Net;
 using ZC.Net.Sockets;
 using ZC.Shared.DefaultJson;
-using ZC.Text;
 using SqlSugar;
-using ZC.BinStructs.Ext;
-using ZitApp.BinStructs;
 using ZitApp.Devices.Plc;
 using ZitApp.Devices.Screw;
 using ZitApp.Models;
 using ZitApp.Services;
-using ZitApp.SIFS;
 
-Result.EnableCollectErrorStackTrace = Debugger.IsAttached;
-DevUtils.DebugMode = DevDebugMode.LocalDebug;
+// CodePrintService.SendContentToMesPrintProgram("PROG INIT");
+Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
+CommonAppConfig.IsDevTestMode = Debugger.IsAttached;
+DevUtils.DebugMode = Debugger.IsAttached ? DevDebugMode.LocalDebug : 0;
 EnhanceAppCore.InitializeEnvironment();
 ObjectContainerOptions.Default.EnableCyclicDependencyCheck = true;
 var config = new AppConfig
@@ -30,7 +27,6 @@ var config = new AppConfig
 	TaskServiceHostOptions = TaskServiceHostOptions.CreateDefault(),
 	Databases = [new DatabaseConnectionConfig(null, DatabaseType.Sqlite, @"Data Source=data/app.db")],
 };
-// config = Debugger.IsAttached ? config : AppCore.LoadConfig<AppConfig>();
 config = AppCore.LoadConfig<AppConfig>();
 if (DevUtils.IsLocalDebugMode && Debugger.IsAttached)
 	config.Plc.IpAddress = "127.0.0.1";
@@ -40,7 +36,6 @@ var app = new App(config).UseLogger().UseUi(UiApp.StartAsync)
 	.AddToIOC(typeof(CommonAppCore).Assembly.GetTypes(), RegistrationMode.Override)
 	.AddToIOC(typeof(CommonUiAppCore).Assembly.GetTypes(), RegistrationMode.Override)
 	.UseDatabase(config.Databases).UseDbKeyValueStorage().UseWebServer();
-//app.IOC.AddSingleton(app.Config);
 await app.Initialize();
 await app.Start();
 while (true) await Task.Delay(1000);
@@ -57,8 +52,30 @@ public sealed class App(AppConfig config) : CommonUiAppCore(config)
 		// IOC.GetOrNull<IAppStartUpVM>()?.SetProgress(40, 500);
 		using var dbClient = IOC.Get<ISqlSugarClient>();
 		dbClient.CodeFirst.InitTables<DbKeyValueItem, AlarmRecord>();
-		IOC.AddSingleton<IDataSocket>(specialName: "Scanner-L", creator: _ => new SerialPortSocket(Config.Scanner1));
-		IOC.AddSingleton<IDataSocket>(specialName: "Scanner-R", creator: _ => new SerialPortSocket(Config.Scanner2));
+		IOC.AddSingleton<IDataSocket>(specialName: "Scanner工位1", creator: _ => new SerialPortSocket(Config.Scanner1)
+		{
+			Parity = Parity.None,
+			DataBits = 8,
+			StopBits = StopBits.One
+		});
+		IOC.AddSingleton<IDataSocket>(specialName: "Scanner工位2", creator: _ => new SerialPortSocket(Config.Scanner2)
+		{
+			Parity = Parity.None,
+			DataBits = 8,
+			StopBits = StopBits.One
+		});
+#if ASM15_1
+		IOC.AddSingleton<ScrewMachineConnection>(specialName: "Screw工位1",
+			creator: _ => new ScrewMachineConnection(Config.Screw1) { Name = "Screw工位1" });
+		IOC.AddSingleton<ScrewMachineConnection>(specialName: "Screw工位2",
+			creator: _ => new ScrewMachineConnection(Config.Screw2) { Name = "Screw工位2" });
+		// IOC.AddSingleton<ScrewService>(specialName: "Screw工位1", oc => oc.Get<ScrewService>(null,
+		// 	InjectArgument.Create(IOC.Get<ScrewMachineConnection>(specialName: "Screw工位1"))));
+		// IOC.AddSingleton<ScrewService>(specialName: "Screw工位2", oc => oc.Get<ScrewService>(null,
+		// 	InjectArgument.Create(IOC.Get<ScrewMachineConnection>(specialName: "Screw工位2"))));
+		// TaskServiceManager.AddService(IOC.Get<ScrewService>(specialName: "Screw工位1"));
+		// TaskServiceManager.AddService(IOC.Get<ScrewService>(specialName: "Screw工位2"));
+#endif
 		IOC.AddSingleton<XinJEPlcClient>(creator: oc => oc.Get<XinJEPlcClient>(
 			InjectArgument.Create<INetworkSocketConfig>(Config.Plc)));
 		await StartUi();
@@ -67,6 +84,9 @@ public sealed class App(AppConfig config) : CommonUiAppCore(config)
 
 	protected override async Task OnStart(object? ctx, object? args)
 	{
+#if ASM15_1
+
+#endif
 		await StartTaskServices();
 		var recipeService = IOC.Get<RecipeService>();
 		recipeService.LoadRecipes().Unwarp("Recipes load failed!");
