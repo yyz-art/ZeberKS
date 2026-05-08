@@ -1,6 +1,9 @@
-﻿using ZC.CFG;
+﻿using System.Net.Sockets;
+using ZC.CFG;
+using ZC.DB;
 using ZC.DP;
 using ZC.Mvvm;
+using ZC.Net.Sockets;
 
 namespace ZitApp;
 
@@ -13,11 +16,25 @@ public partial class NozzleConfig : ObservableObject
 	public partial double PressureMinValue { get; set; }
 	public partial string Comment { get; set; } = "";
 }
+public partial class ScrewMachineConfig : ObservableObject, INetworkSocketConfig
+{
+	public partial string IpAddress { get; set; } = "127.0.0.1";
+	public partial int Port { get; set; } = 502;
+	ProtocolType INetworkSocketConfig.Protocol => ProtocolType.Tcp;
+}
 
+public partial class PlcConfig : ObservableObject, INetworkSocketConfig
+{
+	public partial string IpAddress { get; set; } = "127.0.0.1";
+	public partial int Port { get; set; } = 502;
+	ProtocolType INetworkSocketConfig.Protocol => ProtocolType.Tcp;
+}
 [ObservableObject]
 public abstract partial class CommonAppConfig : ConfigBase
 {
-	public string VisionImagePath { get; set; } = "D:/Vision Images";
+	public static string ApplicationName { get; set; } = "APP";
+	public List<DatabaseConnectionConfig> Databases { get; set; } = null!;
+	public TaskServiceHostOptions TaskServiceHostOptions { get; set; } = null!;
 	public static bool IsDevTestMode { get; set; }
 	public const string NameByCN = "NameByCN";
 	public const string NameByVI = "NameByVI";
@@ -31,6 +48,24 @@ public abstract partial class CommonAppConfig : ConfigBase
 
 	public string WorkPosition1ImageRootPath { get; set; } = "";
 	public string WorkPosition2ImageRootPath { get; set; } = "";
+	
+	[ValueInfo(Category = "IMAGE SAVE", InitAttachData =
+	[
+		DataDefine.KeyValue, NameByCN, "IMAGE SAVE",
+		DataDefine.KeyValue, NameByEN, "IMAGE SAVE",
+		DataDefine.KeyValue, NameByVI, "IMAGE SAVE",
+	], DefaultValue = "true", Description = "IMAGE SAVE")]
+	public string VisionImagePath { get; set; } = "D:\\图像保存";
+	
+	
+	
+	[ValueInfo(Category = "生产配置", InitAttachData =
+	[
+		DataDefine.KeyValue, NameByCN, "工号",
+		DataDefine.KeyValue, NameByEN, "Work No",
+		DataDefine.KeyValue, NameByVI, "Work No",
+	], DefaultValue = "M000086", Description = "工号")]
+	public string WorkerNo { get; set; } = "M000086";
 
 	[ValueInfo(Category = "SIFS", InitAttachData =
 	[
@@ -166,6 +201,58 @@ public abstract partial class CommonAppConfig : ConfigBase
 	public partial string MaterialPositionCode6 { get; set; } = "Material-Position-6";
 
 
+
+	#endregion
+	
+		#region 连接配置
+
+		[ValueInfo(Category = "连接配置",  InitAttachData =
+		[
+			DataDefine.KeyValue, NameByCN, "Plc IP",
+			DataDefine.KeyValue, NameByEN, "Plc IP",
+			DataDefine.KeyValue, NameByVI, "Plc IP",
+		], DefaultValue = "192.168.1.20", Description = "Plc IPAddress")]
+		public string PlcIpAddress { get; set; } = "192.168.1.20";
+
+		[ValueInfo(Category = "连接配置", InitAttachData =
+	[
+		DataDefine.KeyValue, NameByCN, "Plc Port",
+		DataDefine.KeyValue, NameByEN, "Plc Port",
+		DataDefine.KeyValue, NameByVI, "Plc Port",
+	], DefaultValue = 502, Description = "Plc Port")]
+	public int PlcPort { get; set; }= 502;
+
+	[ValueInfo(Category = "连接配置", InitAttachData =
+	[
+		DataDefine.KeyValue, NameByCN, "扫码枪1 串口",
+		DataDefine.KeyValue, NameByEN, "Scanner1 COM",
+		DataDefine.KeyValue, NameByVI, "Scanner1 COM",
+	], Description = "Scanner 1 COM", DefaultValue = "COM5")]
+	public string Scanner1ComPort { get; set; } = "COM5";
+
+	[ValueInfo(Category = "连接配置", InitAttachData =
+	[
+		DataDefine.KeyValue, NameByCN, "扫码枪1 Port",
+		DataDefine.KeyValue, NameByEN, "Scanner1 Port",
+		DataDefine.KeyValue, NameByVI, "Scanner1 Port",
+	], DefaultValue = 9600, Description = "Scanner 1 Port")]
+	public int Scanner1BaudRate { get; set; } = 9600;
+
+	[ValueInfo(Category = "连接配置",  InitAttachData =
+	[
+		DataDefine.KeyValue, NameByCN, "扫码枪2 串口",
+		DataDefine.KeyValue, NameByEN, "Scanner2 COM",
+		DataDefine.KeyValue, NameByVI, "Scanner2 COM",
+	], DefaultValue = "COM5", Description = "Scanner 2 COM")]
+	public string Scanner2ComPort { get; set; } = "COM5";
+
+	[ValueInfo(Category = "连接配置", InitAttachData =
+	[
+		DataDefine.KeyValue, NameByCN, "扫码枪2 Port",
+		DataDefine.KeyValue, NameByEN, "Scanner2 Port",
+		DataDefine.KeyValue, NameByVI, "Scanner2 Port",
+	], DefaultValue = 9600, Description = "Scanner 2 Port")]
+	public int Scanner2BaudRate { get; set; } = 9600;
 
 	#endregion
 

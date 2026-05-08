@@ -91,6 +91,9 @@ public partial class {structName}
 		if (false == string.IsNullOrEmpty(outputFile))
 		{
 			var finalCode = code.BuildFinalCode();
+			var directoryName = Path.GetDirectoryName(outputFile);
+			if(Directory.Exists(directoryName) == false)
+				Directory.CreateDirectory(directoryName!);
 			File.WriteAllText(outputFile, finalCode);
 		}
 	}

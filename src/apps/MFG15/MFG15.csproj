@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<RootNamespace>$(ProjectApplicationBaseName)</RootNamespace>
+		<AssemblyName>$(ProjectApplicationBaseName)</AssemblyName>
+		<OutputType>Exe</OutputType>
+		<DefineConstants>$(DefineConstants);MFG15;DEFINE_MODEL_INCLUDE</DefineConstants>
+		<ApplicationManifest>$(SolutionDir)src/apps/App/Assets/app.manifest</ApplicationManifest>
+		<IsUiProject>true</IsUiProject>
+		<ProjectName>MFG15</ProjectName>
+	</PropertyGroup>
+	<Import Project="$(SolutionDir)build/define/DefApp.csproj"/>
+</Project>

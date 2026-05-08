@@ -55,6 +55,7 @@
 	<sys:String x:Key="I18N.G.视图">视图</sys:String>
 	<sys:String x:Key="I18N.G.全部">全部</sys:String>
 	<sys:String x:Key="I18N.G.新建配方">新建配方</sys:String>
+	<sys:String x:Key="I18N.G.请选择映射表Sheet">请选择映射表Sheet</sys:String>
 	<sys:String x:Key="I18N.G.复制">复制</sys:String>
 	<sys:String x:Key="I18N.G.保存">保存</sys:String>
 	<sys:String x:Key="I18N.G.应用">应用</sys:String>
@@ -89,6 +90,8 @@
 	<sys:String x:Key="I18N.G.移动选中到保存值">移动选中到保存值</sys:String>
 	<sys:String x:Key="I18N.G.写入选中">写入选中</sys:String>
 	<sys:String x:Key="I18N.G.读取选中">读取选中</sys:String>
+	<sys:String x:Key="I18N.G.导入物料位置映射表">导入物料位置映射表</sys:String>
+	<sys:String x:Key="I18N.G.Sheet">Sheet</sys:String>
 	<sys:String x:Key="I18N.G.读取全部">读取全部</sys:String>
 	<sys:String x:Key="I18N.G.数据名称">数据名称</sys:String>
 	<sys:String x:Key="I18N.G.账户管理">账户管理</sys:String>
@@ -97,6 +100,8 @@
 	<sys:String x:Key="I18N.G.剩余量_">剩余量:</sys:String>
 	<sys:String x:Key="I18N.G.抛料率_">抛料率:</sys:String>
 	<sys:String x:Key="I18N.G.配方_">配方:</sys:String>
+	<sys:String x:Key="I18N.G.配方类型_">配方类型:</sys:String>
+	<sys:String x:Key="I18N.G.过滤_">过滤:</sys:String>
 	<sys:String x:Key="I18N.G.配方Id_">配方Id:</sys:String>
 	<sys:String x:Key="I18N.G.配方名称_">配方名称:</sys:String>
 	<sys:String x:Key="I18N.G.复制当前配方值">复制当前配方值</sys:String>
@@ -109,6 +114,7 @@
 	<sys:String x:Key="I18N.G.工号_">工号:</sys:String>
 	<sys:String x:Key="I18N.G.当前配方_">机种号:</sys:String>
 	<sys:String x:Key="I18N.G.机种型号_">机种型号:</sys:String>
+	<sys:String x:Key="I18N.G.点位配方引用_">点位配方引用:</sys:String>
 	<sys:String x:Key="I18N.G.导入点位值">导入点位值</sys:String>
 	<sys:String x:Key="I18N.G.导出点位值">导出点位值</sys:String>
 	<sys:String x:Key="I18N.G.基础配置">基础配置</sys:String>

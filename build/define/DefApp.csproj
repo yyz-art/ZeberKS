@@ -1,22 +1,31 @@
 <Project>
+	<Import Project="$(SolutionDir)build/define/DefBase.csproj"/>
+	<Import Project="$(SolutionDir)build/define/DefCore.csproj"/>
+	<Import Project="$(SolutionDir)build/define/DefUiApp.csproj"/>
+	<Import Project="$(SolutionDir)build/define/DefHotAvaloniaApp.csproj"/>
+	<Import Project="$(SolutionDir)build/define/DefWebApp.csproj"/>
 	<ItemGroup>
-<!--		<Compile Link="$(ProjectDir)/Services/%(RecursiveDir)%(Filename)%(Extension)"-->
-<!--						 Include="$(SolutionDir)/src/common/Common.Shared/Services/**/*.cs"-->
-<!--						 Exclude=""/>-->
+		<ProjectReference Include="$(CommonProjectPath)Common.Base/Common.Base.csproj"/>
+		<ProjectReference Include="$(CommonProjectPath)Common.Core/Common.Core.csproj"/>
+	</ItemGroup>
+	<ItemGroup>
 
-<!--		<Compile Link="$(ProjectDir)/UI/%(RecursiveDir)%(Filename)%(Extension)"-->
-<!--						 Include="$(SolutionDir)/src/common/Common.Shared/UI/**/*.cs"-->
-<!--						 Exclude="$(SolutionDir)/src/common/Common.Shared/UI/**/*.axaml.cs;$(SolutionDir)/src/common/Common.Shared/UI/**/*.axaml"/>-->
-
-<!--		<Compile Link="$(ProjectDir)/Ext/%(RecursiveDir)%(Filename)%(Extension)"-->
-<!--						 Include="$(SolutionDir)/src/common/Common.Shared/Ext/**/*.cs"-->
-<!--						 Exclude="-->
-<!--						 	$(SolutionDir)/src/common/Common.Shared/Ext/BinStructs/**/*.*;-->
-<!--							$(SolutionDir)/src/common/Common.Shared/Ext/AppConfig.cs;"/>-->
-		
-<!--		<AvaloniaXaml Link="$(ProjectDir)/UI/Assets/%(RecursiveDir)%(Filename)%(Extension)"-->
-<!--									Include="$(SolutionDir)/src/common/Common.Shared/UI/Assets/I18N.*.axaml"/>-->
-<!--		<AvaloniaXaml Link="$(ProjectDir)/UI/Assets/%(RecursiveDir)%(Filename)%(Extension)"-->
-<!--									Include="$(SolutionDir)/src/common/Common.Shared/UI/Assets/I18N.axaml"/>-->
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="System.IO.Ports" Version="10.0.3"/>
+		<Compile Link="$(ProjectDir)/%(RecursiveDir)%(Filename)%(Extension)"
+		         Include="$(SolutionDir)/src/apps/App/**/*.cs"
+		         Exclude="
+		         $(SolutionDir)/src/apps/App/obj/**/*.cs;
+		         $(SolutionDir)/src/apps/App/**/*.gen.cs;
+						 $(SolutionDir)/src/apps/App/Assets/@structs/**/*.cs;
+		         $(SolutionDir)/src/apps/App/Assets/.generated/**/*.cs"/>
+		<AvaloniaXaml Link="$(ProjectDir)/UI/%(RecursiveDir)%(Filename)%(Extension)"
+		              Include="$(SolutionDir)/src/apps/App/UI/**/*.axaml"/>
+		<Compile Link="$(ProjectDir)/Assets/%(RecursiveDir)%(Filename)%(Extension)"
+		         Include="$(SolutionDir)/src/apps/App/@projects-assets/$(ProjectName)/**/*.cs"/>
+		<None Link="$(ProjectDir)/Assets/%(RecursiveDir)%(Filename)%(Extension)"
+		      Include="$(SolutionDir)/src/apps/App/@projects-assets/$(ProjectName)/**/*.*"
+					Exclude="$(SolutionDir)/src/apps/App/@projects-assets/$(ProjectName)/**/*.cs"/>
 	</ItemGroup>
 </Project>

@@ -38,6 +38,7 @@
 		<LinearPanel Grid.Row="1" Orientation="Vertical" Background="#423e3e" Spacing="10" Padding="20">
 			<LinearPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="20">
 				<RadioButton GroupName="UserLogin" Content="管理员"
+										IsChecked="True"
 										Command="{Binding OnSelectedAccountChangedCommand}"
 										CommandParameter="{Binding Content, RelativeSource={RelativeSource Self}}"
 										Foreground="White">

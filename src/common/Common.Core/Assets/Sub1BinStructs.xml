@@ -398,7 +398,7 @@
 	<Struct
 		Usings="ZC.BinStructs;"
 		Namespace="ZitApp.BinStructs"
-		Name="ProductRecipe"
+		Name="PointRecipeStruct"
 		Length="20" LengthUnit="2" ByteFormat="ByteFormat.CDAB"
 		OutputFile="E:\XKJ-ZEBER\src\apps\SUB1\Ext\BinStructs\RecipeStruct.gen.cs">
 

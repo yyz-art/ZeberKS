@@ -25,7 +25,7 @@ public abstract partial class WorkServiceBase : MainTaskService
 	public const int NOT_ALLOW_PRODUCTION_BY_MATERIAL = 4;
 
 	public required ILogger Logger { get; init; }
-	public partial int DayProductionId { get; set; }
+	// public partial int DayProductionId { get; set; }
 
 	public override IMainTaskServiceOptions GetServiceOptions() => DefaultThreadMainTaskServiceOptions;
 
@@ -250,5 +250,31 @@ public abstract partial class WorkServiceBase : MainTaskService
 				}
 			}
 		}
+	}
+	
+	protected static (string? WorkOrder, string? ModelName) ParseMesModelInfo(string? rawAscii)
+	{
+		if (string.IsNullOrEmpty(rawAscii))
+			return (null, null);
+
+		string? workOrder = null;
+		string? modelName = null;
+		var parts = rawAscii.Split([',', ' ', '\r', '\n'], StringSplitOptions.RemoveEmptyEntries);
+		foreach (var part in parts)
+		{
+			var cleanPart = part.Trim();
+			var upper = cleanPart.ToUpperInvariant();
+			var equalsIndex = cleanPart.IndexOf('=');
+			if (equalsIndex < 0)
+				continue;
+
+			var value = cleanPart[(equalsIndex + 1)..].Trim();
+			if (upper.StartsWith("MO_NUMBER="))
+				workOrder = value;
+			else if (upper.StartsWith("MODEL_NAME="))
+				modelName = value;
+		}
+
+		return (workOrder, modelName);
 	}
 }

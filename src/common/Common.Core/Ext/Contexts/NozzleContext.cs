@@ -7,7 +7,7 @@ public partial class NozzleContext : ObservableObject
 {
 	public NozzleConfig Config { get; set; } = null!;
 	public partial double Value { get; set; }
-	public partial OkNgState OkNgState { get; set; } = OkNgState.NA;
+	public partial ProductionState ProductionState { get; set; } = ProductionState.NA;
 
 	public static void CreateList(ObservableList<NozzleContext> list,int count)
 	{

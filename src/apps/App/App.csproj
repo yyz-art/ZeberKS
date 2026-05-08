@@ -1,0 +1,91 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<RootNamespace>$(ProjectApplicationBaseName)</RootNamespace>
+		<AssemblyName>$(ProjectApplicationBaseName)</AssemblyName>
+		<OutputType>Exe</OutputType>
+		<DefineConstants>$(DefineConstants);APP_TEMPLATE;DEFINE_MODEL_INCLUDE</DefineConstants>
+		<ApplicationManifest>Assets/app.manifest</ApplicationManifest>
+		<IsUiProject>true</IsUiProject>
+		<IsAppSourceTemplate>true</IsAppSourceTemplate>
+	</PropertyGroup>
+<!--	<Import Project="$(SolutionDir)build/define/DefApp.csproj"/>-->
+	<Import Project="$(SolutionDir)build/define/DefBase.csproj"/>
+	<Import Project="$(SolutionDir)build/define/DefCore.csproj"/>
+	<Import Project="$(SolutionDir)build/define/DefUiApp.csproj"/>
+	<Import Project="$(SolutionDir)build/define/DefHotAvaloniaApp.csproj"/>
+	<Import Project="$(SolutionDir)build/define/DefWebApp.csproj"/>
+	<ItemGroup>
+		<ProjectReference Include="$(CommonProjectPath)Common.Base/Common.Base.csproj"/>
+		<ProjectReference Include="$(CommonProjectPath)Common.Core/Common.Core.csproj"/>
+	</ItemGroup>
+	<ItemGroup>
+	  <PackageReference Include="System.IO.Ports" Version="10.0.3" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Compile Update="UI\Views\AlarmManageView.axaml.cs">
+	    <DependentUpon>AlarmManageView.axaml</DependentUpon>
+	    <SubType>Code</SubType>
+	  </Compile>
+	  <Compile Update="UI\Views\MainView.axaml.cs">
+	    <DependentUpon>MainView.axaml</DependentUpon>
+	    <SubType>Code</SubType>
+	  </Compile>
+	  <Compile Update="UI\Views\RecipeView.axaml.cs">
+	    <DependentUpon>RecipeView.axaml</DependentUpon>
+	    <SubType>Code</SubType>
+	  </Compile>
+	  <Compile Update="UI\Views\IoMonitorView.axaml.cs">
+	    <DependentUpon>IoMonitorView.axaml</DependentUpon>
+	    <SubType>Code</SubType>
+	  </Compile>
+	  <Compile Update="UI\Views\FeederMaterialView.axaml.cs">
+	    <DependentUpon>FeederMaterialView.axaml</DependentUpon>
+	    <SubType>Code</SubType>
+	  </Compile>
+	  <Compile Update="UI\Views\SystemConfigView.axaml.cs">
+	    <DependentUpon>SystemConfigView.axaml</DependentUpon>
+	    <SubType>Code</SubType>
+	  </Compile>
+	  <Compile Update="UI\Views\AlarmManageView.axaml.cs">
+	    <DependentUpon>AlarmManageView.axaml</DependentUpon>
+	    <SubType>Code</SubType>
+	  </Compile>
+	  <Compile Update="UI\Views\MainView.axaml.cs">
+	    <DependentUpon>MainView.axaml</DependentUpon>
+	    <SubType>Code</SubType>
+	  </Compile>
+	  <Compile Update="UI\Views\RecipeView.axaml.cs">
+	    <DependentUpon>RecipeView.axaml</DependentUpon>
+	    <SubType>Code</SubType>
+	  </Compile>
+	  <Compile Update="UI\Views\SystemConfigView.axaml.cs">
+	    <DependentUpon>SystemConfigView.axaml</DependentUpon>
+	    <SubType>Code</SubType>
+	  </Compile>
+	  <Compile Update="UI\UiApp.cs">
+	    <SubType>Code</SubType>
+	    <DependentUpon>AppVM.cs</DependentUpon>
+	  </Compile>
+	  <Compile Update="UI\MainWindow.axaml.cs">
+	    <DependentUpon>MainWindow.axaml</DependentUpon>
+	    <SubType>Code</SubType>
+	  </Compile>
+	</ItemGroup>
+	<ItemGroup>
+	  <AdditionalFiles Include="UI\Views\AlarmManageView.axaml" />
+	  <AdditionalFiles Include="UI\Views\MainView.axaml" />
+	  <AdditionalFiles Include="UI\Views\RecipeView.axaml" />
+	  <AdditionalFiles Include="UI\Views\SystemConfigView.axaml" />
+	</ItemGroup>
+	<ItemGroup>
+		<None Include="@projects-assets/**/*.*"/>
+		<Compile Remove="@projects-assets/**/*.cs"/>
+
+		<Compile Link="$(ProjectDir)/Assets/%(RecursiveDir)%(Filename)%(Extension)"
+		         Include="$(SolutionDir)/src/apps/App/@projects-assets/ASM4/**/*.cs"/>
+		<None Link="$(ProjectDir)/Assets/%(RecursiveDir)%(Filename)%(Extension)"
+		      Include="$(SolutionDir)/src/apps/App/@projects-assets/ASM4/**/*.*"
+		      Exclude="$(SolutionDir)/src/apps/App/@projects-assets/ASM4/**/*.cs"/>
+	</ItemGroup>
+	
+</Project>

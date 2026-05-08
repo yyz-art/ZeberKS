@@ -1,8 +1,9 @@
 namespace ZitApp.Models;
 
-public enum OkNgState
+public enum ProductionState
 {
 	NA,
+	DOING,
 	OK,
 	NG
 }
