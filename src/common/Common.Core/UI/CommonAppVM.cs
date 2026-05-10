@@ -62,7 +62,7 @@ public abstract partial class CommonAppVM : ApplicationViewModel, INamedObject
 		var navigationInfo = navManager.Root.GetChild(uri.AsSpan());
 		if (navigationInfo?.CustomData is int roleLevel && AccountService.Account?.RoleFlags < roleLevel)
 		{
-			await ShowMessageBox("No Access", "Navigate Tip", MessageBoxIcon.Error);
+			await ShowMessageBox("current account is not access, please switch account", "navigate tip", MessageBoxIcon.Error);
 			return;
 		}
 		navManager.Navigate(finalNavData).Unwarp();

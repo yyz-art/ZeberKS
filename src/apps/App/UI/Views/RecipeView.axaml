@@ -114,14 +114,39 @@
 						<TextBox Grid.Row="0" Grid.Column="3" IsReadOnly="True" Text="{Binding EditRecipe.Id}" />
 
 						<TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" Text="{StaticResource I18N.G.点位配方引用_}" />
-						<ComboBox Grid.Row="1" Grid.Column="1" ItemsSource="{Binding PointRecipeNames}"
+						<ComboBox Grid.Row="1" Grid.Column="1" ItemsSource="{Binding FullRecipeNames}"
 											Padding="4 0 0 0"
-											SelectedValue="{Binding EditRecipe.RefPointRecipeName}" HorizontalAlignment="Stretch" />
+											SelectedValue="{Binding EditRecipe.RefFullRecipeName}" HorizontalAlignment="Stretch" />
 					</Grid>
 				</ScrollViewer>
 			</TabItem>
-
-			<TabItem IsVisible="{Binding EditRecipe.IsPointRecipe}" Header="{StaticResource I18N.G.点位参数}">
+			<TabItem IsSelected="True"  Header="{StaticResource I18N.G.产品上料}">
+				<Grid RowDefinitions="Auto,*" Margin="20" RowSpacing="10">
+					<LinearPanel Grid.Row="0" Orientation="Horizontal" Spacing="10">
+						<Control LinearPanel.Weight="1" />
+						<Button Content="{StaticResource I18N.G.导入物料位置映射表}"
+										Command="{Binding ImportMaterialMapTableCommand}" Classes="Success" />
+					</LinearPanel>
+					<DataGrid Grid.Row="1" ItemsSource="{Binding EditRecipe.MaterialConfigs}"
+										GridLinesVisibility="All" CanUserResizeColumns="True"  BorderBrush="{DynamicResource Brush-Border}"
+										BorderThickness="1">
+						<DataGrid.Columns>
+							<DataGridTextColumn Header="Id" Binding="{Binding Id}" IsReadOnly="True" />
+							<DataGridCheckBoxColumn Header="启用" Binding="{Binding IsUsed}" />
+							<DataGridTextColumn Header="上料位置码" MinWidth="100" Binding="{Binding PositionCode}" IsReadOnly="True" />
+							<DataGridTextColumn Header="上料位置名称" MinWidth="140" Binding="{Binding PositionName}" />
+							<DataGridTextColumn Header="默认数量" Width="100" Binding="{Binding DefaultReplaceCount}" />
+							<DataGridTextColumn Header="报警数量" Width="100" Binding="{Binding AlarmRemainCount}"  />
+							<DataGridTextColumn Header="上料码1" Width="140" IsReadOnly="False" Binding="{Binding MaterialCodes[0]}" />
+							<DataGridTextColumn Header="上料码2" Width="140" IsReadOnly="False" Binding="{Binding MaterialCodes[1]}" />
+							<DataGridTextColumn Header="上料码3" Width="140" IsReadOnly="False" Binding="{Binding MaterialCodes[2]}" />
+							<DataGridTextColumn Header="上料码4" Width="140" IsReadOnly="False" Binding="{Binding MaterialCodes[3]}" />
+							<DataGridTextColumn Header="备注" Width="*" IsReadOnly="False" Binding="{Binding Description}" />
+						</DataGrid.Columns>
+					</DataGrid>
+				</Grid>
+			</TabItem>
+			<TabItem IsVisible="{Binding IsEditFullRecipe}" Header="{StaticResource I18N.G.点位参数}">
 				<Grid RowDefinitions="Auto,*" Margin="20" RowSpacing="10">
 					<LinearPanel Grid.Row="0" Orientation="Horizontal" Spacing="10">
 						<TextBlock Text="{StaticResource I18N.G.列表筛选_}" VerticalAlignment="Center" />
@@ -186,34 +211,6 @@
 					</DataGrid>
 				</Grid>
 
-			</TabItem>
-			<TabItem IsSelected="True" IsVisible="{Binding !EditRecipe.IsPointRecipe}" Header="{StaticResource I18N.G.产品上料}">
-				<Grid RowDefinitions="Auto,*" Margin="20" RowSpacing="10">
-					<LinearPanel Grid.Row="0" Orientation="Horizontal" Spacing="10">
-						<Control LinearPanel.Weight="1" />
-						<Button Content="{StaticResource I18N.G.导入物料位置映射表}"
-										Command="{Binding ImportMaterialMapTableCommand}" Classes="Success" />
-					</LinearPanel>
-					<DataGrid Grid.Row="1" ItemsSource="{Binding EditRecipe.MaterialConfigs}"
-										GridLinesVisibility="All" CanUserResizeColumns="True"  BorderBrush="{DynamicResource Brush-Border}"
-										BorderThickness="1">
-						<DataGrid.Columns>
-							
-
-							<DataGridTextColumn Header="Id" Binding="{Binding Id}" IsReadOnly="True" />
-							<DataGridCheckBoxColumn Header="启用" Binding="{Binding IsUsed}" />
-							<DataGridTextColumn Header="上料位置码" MinWidth="100" Binding="{Binding PositionCode}" IsReadOnly="True" />
-							<DataGridTextColumn Header="上料位置名称" MinWidth="140" Binding="{Binding PositionName}" />
-							<DataGridTextColumn Header="默认数量" Width="100" Binding="{Binding DefaultReplaceCount}" />
-							<DataGridTextColumn Header="报警数量" Width="100" Binding="{Binding AlarmRemainCount}"  />
-							<DataGridTextColumn Header="上料码1" Width="100" IsReadOnly="False" Binding="{Binding MaterialCodes[0]}" />
-							<DataGridTextColumn Header="上料码2" Width="100" IsReadOnly="False" Binding="{Binding MaterialCodes[1]}" />
-							<DataGridTextColumn Header="上料码3" Width="100" IsReadOnly="False" Binding="{Binding MaterialCodes[2]}" />
-							<DataGridTextColumn Header="上料码4" Width="100" IsReadOnly="False" Binding="{Binding MaterialCodes[3]}" />
-							<DataGridTextColumn Header="备注" Width="*" IsReadOnly="False" Binding="{Binding Description}" />
-						</DataGrid.Columns>
-					</DataGrid>
-				</Grid>
 			</TabItem>
 		</TabControl>
 	</Grid>

@@ -16,7 +16,7 @@ var generator = new BinStructSourceGenerator();
 var projectNames = new String[] { "ASM-15" };
 
 var slnPath = Path.GetFullPath("../../../../");
-var templatePath = slnPath + "apps\\App\\@projects-assets\\{0}\\@structs\\BinStructs.xml";
+var templatePath = slnPath + "apps\\App\\@structs\\{0}\\BinStructs.xml";
 generator.GenerateFromFile(string.Format(templatePath, "ASM15-1"));
 generator.GenerateFromFile(string.Format(templatePath, "ASM15-2"));
 generator.GenerateFromFile(string.Format(templatePath, "MFG15"));

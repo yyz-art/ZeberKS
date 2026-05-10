@@ -110,7 +110,8 @@
 														</DataTemplate>
 													</ComboBox.ItemTemplate>
 												</ComboBox>
-												<Button Content="{StaticResource I18N.G.打开图片文件夹}" Classes="Secondary" />
+												<Button Content="{StaticResource I18N.G.打开图片文件夹}" Classes="Secondary"
+																Command="{Binding OpenImageFileFolderCommand}"/>
 											</LinearPanel>
 											<libs:ImageViewer Grid.Row="1" Source="{Binding Image}" />
 										</Grid>
@@ -172,7 +173,7 @@
 												</StackPanel>
 											</Label>
 											<TextBlock Grid.Row="1" Grid.Column="0" Classes="Label" Text="{StaticResource I18N.G.压力}" />
-											<Label Grid.Row="1" Grid.Column="1" Classes="Value" Content="{Binding Value}"
+											<Label Grid.Row="1" Grid.Column="1" Classes="Value" Content="{Binding Value, StringFormat=F2}"
 														VerticalContentAlignment="Center" />
 											<Button Grid.Row="1" Grid.Column="2" Content="{StaticResource I18N.G.点检}"
 															Margin="0" Padding="2"
@@ -209,7 +210,7 @@
 					</ItemsControl.Styles>
 					<ItemsControl.ItemTemplate>
 						<DataTemplate>
-							<ViewContainer IsVisible="{Binding Config.IsUsed}" MinWidth="240">
+							<ViewContainer MinWidth="240">
 								<ViewContainer.Header>
 									<LinearPanel Orientation="Horizontal" Spacing="10" HorizontalAlignment="Stretch" Padding="2 2 6 2"
 															Background="{Binding MaterialState, Converter={x:Static contexts1:MaterialSpaceContext.DefaultStateColorConverter}}">
@@ -321,11 +322,11 @@
 							<Label Classes="Label" Grid.Row="1" Grid.Column="0" Content="IP:" VerticalAlignment="Center" />
 							<TextBox Grid.Row="1" Grid.Column="1" Text="{Binding DisplayPlcIp}" IsReadOnly="True" />
 						</Grid>
-						<Button Content="打开 PLC IO 监控"
-										Command="{Binding OpenIoMonitor}"
-										Background="#277679" Foreground="White"
-										HorizontalAlignment="Stretch" HorizontalContentAlignment="Center"
-										Margin="0,10,0,0" Padding="5" />
+						<!-- <Button Content="打开 PLC IO 监控" -->
+						<!-- 				Command="{Binding OpenIoMonitor}" -->
+						<!-- 				Background="#277679" Foreground="White" -->
+						<!-- 				HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" -->
+						<!-- 				Margin="0,10,0,0" Padding="5" /> -->
 					</StackPanel>
 				</StackPanel>
 			</StackPanel>
@@ -372,7 +373,7 @@
 								</DataTemplate>
 							</DataGridTemplateColumn.CellTemplate>
 						</DataGridTemplateColumn>
-						<DataGridTemplateColumn Header="信息" Width="800">
+						<DataGridTemplateColumn Header="信息" Width="*">
 							<DataGridTemplateColumn.CellTemplate>
 								<DataTemplate>
 									<SelectableTextBlock
@@ -381,7 +382,7 @@
 								</DataTemplate>
 							</DataGridTemplateColumn.CellTemplate>
 						</DataGridTemplateColumn>
-						<DataGridTextColumn Header="异常" Binding="{Binding Exception}" Foreground="OrangeRed" MinWidth="50" />
+						<!-- <DataGridTextColumn Header="异常" Binding="{Binding Exception}" Foreground="OrangeRed" MinWidth="50" /> -->
 					</DataGrid.Columns>
 				</DataGrid>
 			</ViewContainer>
@@ -390,7 +391,7 @@
 
 		<LayoutDockPanel.BottomRightContent>
 			<LinearPanel Orientation="Vertical" Spacing="10">
-				<ViewContainer Header="{StaticResource I18N.G.设备状态}" Padding="10">
+				<ViewContainer Header="{StaticResource I18N.G.设备状态}" Padding="10" Background="#262626">
 					<ItemsControl ItemsSource="{Binding DeviceStatusContexts}">
 						<ItemsControl.ItemTemplate>
 							<DataTemplate>

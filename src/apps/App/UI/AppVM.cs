@@ -4,6 +4,7 @@ using ZitApp.Services;
 using ZitApp.UI.Account;
 using ZitApp.UI.Alarm;
 using ZitApp.UI.Config;
+using ZitApp.UI.Dialogs;
 using RecipeVM = ZitApp.UI.Recipe.RecipeVM;
 
 namespace ZitApp.UI;
@@ -54,6 +55,13 @@ public partial class AppVM : CommonAppVM
 	public partial string AccountLoginInputAccountName { get; set; } = "管理员";
 	public partial string AccountLoginInputPassword { get; set; }
 	public partial string AccountLoginInputWorkNo { get; set; }
+	
+
+	public Task @QuickCreateMaterialRecipe()
+	{
+		var createMaterialRecipeVM = App.Current.IOC.Get<CreateMaterialRecipeVM>();
+		return createMaterialRecipeVM.Show();
+	}
 
 	public async Task @AccountLoginConfirm()
 	{

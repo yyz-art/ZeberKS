@@ -1,4 +1,4 @@
-#if MFG_15
+#if MFG15
 using System.Runtime.InteropServices;
 using FlaUI.Core.AutomationElements;
 using FlaUI.UIA3;

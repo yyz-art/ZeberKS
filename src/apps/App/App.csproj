@@ -70,6 +70,9 @@
 	    <DependentUpon>MainWindow.axaml</DependentUpon>
 	    <SubType>Code</SubType>
 	  </Compile>
+	  <Compile Update="UI\Dialogs\CreateMaterialRecipeDialog.axaml.cs">
+	    <DependentUpon>CreateMaterialRecipeDialog.axaml</DependentUpon>
+	  </Compile>
 	</ItemGroup>
 	<ItemGroup>
 	  <AdditionalFiles Include="UI\Views\AlarmManageView.axaml" />
@@ -78,14 +81,14 @@
 	  <AdditionalFiles Include="UI\Views\SystemConfigView.axaml" />
 	</ItemGroup>
 	<ItemGroup>
-		<None Include="@projects-assets/**/*.*"/>
-		<Compile Remove="@projects-assets/**/*.cs"/>
+		<None Include="@structs/**/*.*"/>
+		<Compile Remove="@structs/**/*.cs"/>
 
-		<Compile Link="$(ProjectDir)/Assets/%(RecursiveDir)%(Filename)%(Extension)"
-		         Include="$(SolutionDir)/src/apps/App/@projects-assets/ASM4/**/*.cs"/>
-		<None Link="$(ProjectDir)/Assets/%(RecursiveDir)%(Filename)%(Extension)"
-		      Include="$(SolutionDir)/src/apps/App/@projects-assets/ASM4/**/*.*"
-		      Exclude="$(SolutionDir)/src/apps/App/@projects-assets/ASM4/**/*.cs"/>
+		<Compile Link="$(ProjectDir)/Assets/@structs/%(RecursiveDir)%(Filename)%(Extension)"
+		         Include="$(SolutionDir)/src/apps/App/@structs/ASM4/**/*.cs"/>
+		<None Link="$(ProjectDir)/Assets/@structs/%(RecursiveDir)%(Filename)%(Extension)"
+		      Include="$(SolutionDir)/src/apps/App/@structs/ASM4/**/*.*"
+		      Exclude="$(SolutionDir)/src/apps/App/@structs/ASM4/**/*.cs"/>
 	</ItemGroup>
 	
 </Project>

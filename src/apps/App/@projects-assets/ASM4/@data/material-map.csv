@@ -1,5 +1,0 @@
-﻿Id,IsUsed,PositionCode,PositionName,DefaultReplaceCount,AlarmRemainCount,MaterialCode1,MaterialCode2,MaterialCode3,MaterialCode4,Description
-1,false,位置1,物料1A,5000,100,测试物料码1,测试物料码2,测试物料码3,测试物料码4,测试备注
-1,false,位置1,物料1B,5000,100,测试物料码1,测试物料码2,测试物料码3,测试物料码4,测试备注
-2,false,位置2,物料2A,5000,100,测试物料码1,测试物料码2,测试物料码3,测试物料码4,测试备注
-2,false,位置2,物料2B,5000,100,测试物料码1,测试物料码2,测试物料码3,测试物料码4,测试备注

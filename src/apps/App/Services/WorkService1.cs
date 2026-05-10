@@ -6,11 +6,13 @@ using ZC.EasyIO;
 using ZC.IO;
 using ZC.Mvvm;
 using ZC.Text;
+using ZC.UI.Utils;
 using ZC.Utils;
 using ZitApp.BinStructs;
 using ZitApp.Contexts;
 using ZitApp.Devices.Screw;
 using ZitApp.Models;
+using ZitApp.UI.Dialogs;
 
 namespace ZitApp.Services;
 
@@ -34,6 +36,7 @@ public partial class WorkService1 : WorkServiceBase
 	public required CoreService Core { get; init; }
 	public required MesService Mes { get; init; }
 	public required AppConfig AppConfig { get; init; }
+	public required CreateMaterialRecipeVM CreateMaterialRecipeVM { get; init; }
 	public IDataSocket CodeScanner { get; set; } = null!;
 	public WorkPositionContext Context { get; set; } = null!;
 
@@ -48,6 +51,7 @@ public partial class WorkService1 : WorkServiceBase
 	protected override Task Main(CancellationToken ctk)
 	{
 		Thread.Sleep(5000);
+
 		while (ctk.IsCancellationRequested == false)
 		{
 			Plc.WaitNextCycle();
@@ -172,11 +176,17 @@ public partial class WorkService1 : WorkServiceBase
 				{
 					Context.WorkStep = WorkStep.RECIPE_CHECK;
 					// Logger.Info($"[RECIPE CHECK] [DOING] SN='{ScanCode}' MODEL_NAME='{Context.ModelName}'");
-					var recipeResult = Core.Recipe.GetRecipe(Context.ModelName);
+					var recipeResult = Core.RecipeService.GetRecipe(Context.ModelName);
+					if (recipeResult.IsError())
+					{
+						var wait = Core.TryCreateMaterialRecipe(Context.ModelName);
+						wait.Wait(TimeSpan.FromSeconds(60));
+						recipeResult = Core.RecipeService.GetRecipe(Context.ModelName);
+					}
 					if (recipeResult.IsError())
 					{
 						Logger.Error(
-							$"[RECIPE CHECK] [ERROR] Recipe not found! SN='{Context.ScanSnCode}' MODEL_NAME='{Context.ModelName}'");
+							$"[RECIPE CHECK] [ERROR] recipe not found! SN='{Context.ScanSnCode}' MODEL_NAME='{Context.ModelName}'");
 						Context.LastError = "recipe check failed, recipe not found!";
 						Plc.Write.工位1允许生产 = NOT_ALLOW_PRODUCTION_BY_RECIPE;
 						Plc.Write.扫码枪1触发结果 = CodeOfNG;
@@ -184,8 +194,19 @@ public partial class WorkService1 : WorkServiceBase
 					}
 
 					var recipe = recipeResult.Value!;
+					if (recipe.RefFullRecipe is not { Points: not null })
+					{
+						Logger.Error(
+							$"[RECIPE CHECK] [ERROR] recipe ref tcx recipe not found! (recipe='{recipe.Name}', ref tcx ='{recipe.RefFullRecipeName}')");
+						Context.LastError = "recipe check failed, recipe ref tcx recipe not found!";
+						Plc.Write.工位1允许生产 = NOT_ALLOW_PRODUCTION_BY_RECIPE;
+						Plc.Write.扫码枪1触发结果 = CodeOfNG;
+						goto SendResult;
+					}
+
 					if (Plc.Read.上位机当前配方ID == Plc.Read.PLC当前配方ID &&
-					    Plc.Read.PLC当前配方ID == recipeResult.Value!.RefPointRecipe?.Id)
+					    Core.WorkRecipe?.Id == recipe.Id ||
+					    Core.WorkRecipe?.RefFullRecipe?.Id == Plc.Read.上位机当前配方ID)
 					{
 						Logger.Info($"[RECIPE CHECK] [OK] SN='{Context.ScanSnCode}' MODEL_NAME='{Context.ModelName}'");
 						goto MaterialCheckPoint;
@@ -206,19 +227,27 @@ public partial class WorkService1 : WorkServiceBase
 
 					try
 					{
-						if (Plc.Read.上位机当前配方ID != Plc.Read.PLC当前配方ID || Plc.Read.PLC当前配方ID != recipeResult.Value!.Id)
+						if (Plc.Read.上位机当前配方ID == Plc.Read.PLC当前配方ID &&
+						    Core.WorkRecipe?.Id == recipe.Id ||
+						    Core.WorkRecipe?.RefFullRecipe?.Id == Plc.Read.上位机当前配方ID)
 						{
-							if (Core.IsWorkPositionFree() == false)
-							{
-								Logger.Warn($"[RECIPE CHANGE] [FAILL] work position is doing ,can't change recipe!");
-								Context.LastError = "recipe change failed, work position is doing!";
-								Plc.Write.工位1允许生产 = NOT_ALLOW_PRODUCTION_BY_RECIPE;
-								Plc.Write.扫码枪1触发结果 = CodeOfNG;
-								goto SendResult;
-							}
+							Logger.Info($"[RECIPE CHECK] [OK] SN='{Context.ScanSnCode}' MODEL_NAME='{Context.ModelName}'");
+							goto MaterialCheckPoint;
+						}
+						
+						if (Core.IsWorkPositionFree() == false)
+						{
+							Logger.Warn($"[RECIPE CHANGE] [FAILL] work position is doing ,can't change recipe!");
+							Context.LastError = "recipe change failed, work position is doing!";
+							Plc.Write.工位1允许生产 = NOT_ALLOW_PRODUCTION_BY_RECIPE;
+							Plc.Write.扫码枪1触发结果 = CodeOfNG;
+							goto SendResult;
+						}
 
+						if (recipe.RefFullRecipe!.Id != Plc.Read.上位机当前配方ID)
+						{
 							Context.WorkStep = WorkStep.RECIPE_SEND;
-							Logger.Info("[RECIPE CHANGE] Recipe data sending ...! ");
+							Logger.Info("[RECIPE CHANGE] recipe data sending ...! ");
 							var distributeRecipeTask = Core.DistributeRecipeAsync(recipeResult.Value!);
 							distributeRecipeTask.Wait();
 							if (distributeRecipeTask.Result.IsError())
@@ -254,10 +283,9 @@ public partial class WorkService1 : WorkServiceBase
 								Plc.Write.扫码枪1触发结果 = CodeOfNG;
 								goto SendResult;
 							}
-
-							Core.WorkRecipe = recipe;
-							Logger.Info("[RECIPE CHANGE] [OK] Recipe changed successfully!.");
 						}
+						Core.WorkRecipe = recipe;
+						Logger.Info("[RECIPE CHANGE] [OK] Recipe changed successfully!.");
 					}
 					finally
 					{
@@ -279,7 +307,7 @@ public partial class WorkService1 : WorkServiceBase
 					{
 						if (item.Config.IsUsed == false) continue;
 						item.CheckMaterialState();
-						if (item.MaterialState == MaterialState.OK)
+						if (item.MaterialState is MaterialState.OK or MaterialState.UnUsed)
 							continue;
 						isMaterialStateOk = false;
 						material = item;
@@ -424,7 +452,7 @@ public partial class WorkService1 : WorkServiceBase
 					DataBuilder.Append(
 						$"\"[VR]TURN{screwNo}(Lap)={ScrewTurns[i]:F2};{AppConfig.ScrewTurnsLowLimit};{AppConfig.ScrewTurnsUpperLimit}\"");
 				}
-#elif ASM_12
+#elif ASM12
 				var uuid = Guid.NewGuid().ToString().ToUpper();
 				DataBuilder.Append($"[VR]UUID='{uuid}'\"");
 #endif
@@ -447,7 +475,7 @@ public partial class WorkService1 : WorkServiceBase
 
 				Logger.Info($"[MES OUT-STA] [OK] MES >> '{respMsg2Result.Value}'");
 #endif
-#if ASM_12
+#if ASM12
 				var mes7 = $"SMD_QUERY,{Context.ScanSnCode},7,,SMD,,OK,GET_PN=??? ZEBRA_DTG=??? SN_NOW_GROUP=???";
 				Logger.Info($"[MES OUT-STA] [DOING] MES7 << '{mes7}'");
 				var mesMsg7Result = Mes.SendAndReadString(mes7);
@@ -523,7 +551,7 @@ public partial class WorkService1 : WorkServiceBase
 
 			#region 工站本地代码
 
-#if MFG_15
+#if MFG15
 			if (Plc.Read.打印机1触发 is 1 && Plc.Read.打印机1触发结果 is 0)
 			{
 				if (string.IsNullOrEmpty(Context.ScanSnCode))
@@ -533,22 +561,31 @@ public partial class WorkService1 : WorkServiceBase
 					goto SendResult;
 				}
 
-				if (Plc.Read.工位1允许生产 == 1)
-				{
-					Logger.Error($"[CODE-PRINT] [ERROR] SN='{Context.ScanSnCode}' is not allow production!");
-					Plc.Write.打印机1触发结果 = 2;
-					goto SendResult;
-				}
+				
 
 				Logger.Info($"[CODE-PRINT] [DOING] SN='{Context.ScanSnCode}'");
-				var error = CodePrintService.SendContentToMesPrintProgram(Context.ScanSnCode);
-				if (error is not null)
+				Core.PrinterLock.Wait();
+				try
 				{
-					Logger.Error($"[CODE-PRINT] [ERROR] SN='{Context.ScanSnCode}' {error}");
-					Plc.Write.打印机1触发结果 = 2;
-					goto SendResult;
+					if (Plc.Read.工位1允许生产 != 1)
+					{
+						Logger.Error($"[CODE-PRINT] [ERROR] SN='{Context.ScanSnCode}' is not allow production!");
+						Plc.Write.打印机1触发结果 = 2;
+						goto SendResult;
+					}
+					var error = CodePrintService.SendContentToMesPrintProgram(Context.ScanSnCode);
+					if (error is not null)
+					{
+						Logger.Error($"[CODE-PRINT] [ERROR] SN='{Context.ScanSnCode}' {error}");
+						Plc.Write.打印机1触发结果 = 2;
+						goto SendResult;
+					}
+					Thread.Sleep(5000);
 				}
-				Thread.Sleep(5000);
+				finally
+				{
+					Core.PrinterLock.Release();
+				}
 				Logger.Info($"[CODE-PRINT] [OK] SN='{Context.ScanSnCode}'");
 				Plc.Write.打印机1触发结果 = 1;
 				SendResult:

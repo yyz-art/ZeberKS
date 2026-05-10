@@ -22,10 +22,10 @@
 		         $(SolutionDir)/src/apps/App/Assets/.generated/**/*.cs"/>
 		<AvaloniaXaml Link="$(ProjectDir)/UI/%(RecursiveDir)%(Filename)%(Extension)"
 		              Include="$(SolutionDir)/src/apps/App/UI/**/*.axaml"/>
-		<Compile Link="$(ProjectDir)/Assets/%(RecursiveDir)%(Filename)%(Extension)"
-		         Include="$(SolutionDir)/src/apps/App/@projects-assets/$(ProjectName)/**/*.cs"/>
-		<None Link="$(ProjectDir)/Assets/%(RecursiveDir)%(Filename)%(Extension)"
-		      Include="$(SolutionDir)/src/apps/App/@projects-assets/$(ProjectName)/**/*.*"
-					Exclude="$(SolutionDir)/src/apps/App/@projects-assets/$(ProjectName)/**/*.cs"/>
+		<Compile Link="$(ProjectDir)/Assets/@structs/%(RecursiveDir)%(Filename)%(Extension)"
+		         Include="$(SolutionDir)/src/apps/App/@structs/$(ProjectName)/**/*.cs"/>
+		<None Link="$(ProjectDir)/Assets/@structs/%(RecursiveDir)%(Filename)%(Extension)"
+		      Include="$(SolutionDir)/src/apps/App/@structs/$(ProjectName)/**/*.*"
+					Exclude="$(SolutionDir)/src/apps/App/@structs/$(ProjectName)/**/*.cs"/>
 	</ItemGroup>
 </Project>

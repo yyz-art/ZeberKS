@@ -1,0 +1,55 @@
+﻿<UiWindow xmlns="https://github.com/avaloniaui"
+					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+					xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+					xmlns:dialogs="clr-namespace:ZitApp.UI.Dialogs"
+					mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+					x:Class="ZitApp.UI.Dialogs.CreateMaterialRecipeDialog"
+					Title="创建物料配方"
+					SystemDecorations="BorderOnly"
+					ExtendClientAreaChromeHints="NoChrome"
+					ExtendClientAreaToDecorationsHint="True"
+					ExtendClientAreaTitleBarHeightHint="30"
+					WindowStartupLocation="CenterOwner">
+	<Design.DataContext>
+		<dialogs:CreateMaterialRecipeVM />
+	</Design.DataContext>
+	<Grid RowDefinitions="Auto,*">
+		<LinearPanel Grid.Row="0" Orientation="Horizontal">
+			<Label Content="快速创建机种配方" Theme="{DynamicResource Label-Tag}" Margin="10 4" Padding="5"/>
+		</LinearPanel>
+		<Grid Grid.Row="1" RowDefinitions="Auto,*" Margin="20" RowSpacing="10">
+			<LinearPanel Grid.Row="0" Orientation="Horizontal" Spacing="10">
+				<TextBlock Text="配方名称:" VerticalAlignment="Center" />
+				<TextBox Text="{Binding InputRecipeName}" MinWidth="200" />
+				<TextBlock Text="模板配方:" VerticalAlignment="Center" Margin="20 0 0 0" />
+				<ComboBox ItemsSource="{Binding FullRecipeNames}" MinWidth="200" SelectedValue="{Binding SelectedPointRecipeName}" />
+
+
+				<Control LinearPanel.Weight="1" />
+				<Button Content="{StaticResource I18N.G.取消}"
+								Command="{Binding CancelCommand}" Classes="Secondary" />
+				<Button Content="{StaticResource I18N.G.保存}"
+								Command="{Binding SaveCommand}" Classes="Success" />
+			</LinearPanel>
+			<DataGrid Grid.Row="1" ItemsSource="{Binding EditRecipe.MaterialConfigs}"
+								GridLinesVisibility="All" CanUserResizeColumns="True" BorderBrush="{DynamicResource Brush-Border}"
+								BorderThickness="1">
+				<DataGrid.Columns>
+					<DataGridTextColumn Header="Id" Binding="{Binding Id}" IsReadOnly="True" />
+					<DataGridCheckBoxColumn Header="启用" Binding="{Binding IsUsed}" />
+					<DataGridTextColumn Header="上料位置码" MinWidth="100" Binding="{Binding PositionCode}" IsReadOnly="True" />
+					<DataGridTextColumn Header="上料位置名称" MinWidth="140" Binding="{Binding PositionName}" />
+					<DataGridTextColumn Header="默认数量" Width="100" Binding="{Binding DefaultReplaceCount}" />
+					<DataGridTextColumn Header="报警数量" Width="100" Binding="{Binding AlarmRemainCount}" />
+					<DataGridTextColumn Header="上料码1" Width="140" IsReadOnly="False" Binding="{Binding MaterialCodes[0]}" />
+					<DataGridTextColumn Header="上料码2" Width="140" IsReadOnly="False" Binding="{Binding MaterialCodes[1]}" />
+					<DataGridTextColumn Header="上料码3" Width="140" IsReadOnly="False" Binding="{Binding MaterialCodes[2]}" />
+					<DataGridTextColumn Header="上料码4" Width="140" IsReadOnly="False" Binding="{Binding MaterialCodes[3]}" />
+					<DataGridTextColumn Header="备注" Width="*" IsReadOnly="False" Binding="{Binding Description}" />
+				</DataGrid.Columns>
+			</DataGrid>
+		</Grid>
+	</Grid>
+
+</UiWindow>

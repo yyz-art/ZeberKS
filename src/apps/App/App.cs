@@ -25,7 +25,7 @@ var config = new AppConfig
 	TaskServiceHostOptions = TaskServiceHostOptions.CreateDefault(),
 	Databases = [new DatabaseConnectionConfig(null, DatabaseType.Sqlite, @"Data Source=data/app.db")],
 };
-config = AppCore.LoadConfig<AppConfig>();
+config = AppCore.LoadConfig(defaultValue: config);
 if (DevUtils.IsLocalDebugMode && Debugger.IsAttached)
 	config.PlcIpAddress = "127.0.0.1";
 Console.WriteLine($"Use Config: {JsonSerializer.Serialize(config, Global.Json.DefaultIndentOptions)}");
@@ -84,7 +84,6 @@ public sealed class App(AppConfig config) : CommonUiAppCore(config)
 	protected override async Task OnStart(object? ctx, object? args)
 	{
 #if ASM15_1
-
 #endif
 		await StartTaskServices();
 		var recipeService = IOC.Get<RecipeService>();

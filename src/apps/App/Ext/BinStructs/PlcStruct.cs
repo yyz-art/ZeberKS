@@ -23,11 +23,7 @@ public partial class PlcStruct : ObservableObject
 		base.OnDataChanged(args);
 	}
 	
-	partial void OnPropertyNoChanged(object args)
-	{
-		if (IsRealWriteMode)
-			PriWritePoint(args);
-	}
+
 
 	private void PriWritePoint(object args)
 	{

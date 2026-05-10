@@ -67,14 +67,17 @@ public partial class RecipeVM : UiVM<RecipeView>
 	public partial int CreateNewRecipeInputId { get; set; }
 	public partial bool CreateNewRecipeIsCopyCurrentRecipeValue { get; set; }
 	public partial string RecipeNameFilterInput { get; set; } = "";
-	public partial string[] RecipeTypeOptions { get; set; } = ["物料配方", "点位配方"];
+	public partial string[] RecipeTypeOptions { get; set; } = ["MODEL", "TCX"];
 	public partial string SelectedRecipeType { get; set; } = "";
-	public partial ObservableList<string> PointRecipeNames { get; set; } = [];
+
+	public partial bool IsEditFullRecipe { get; set; }
+	public partial ObservableList<string> FullRecipeNames { get; set; } = [];
 	public partial ObservableList<string> ImportMaterialMapTableSheetNames { get; set; } = [];
 	public partial string SelectedImportMaterialMapTableSheetName { get; set; }
 
 	partial void OnSelectedRecipeTypeChanged(string oldValue, string newValue)
 	{
+		IsEditFullRecipe = newValue == "TCX";
 		LoadRecipeNames();
 	}
 
@@ -305,6 +308,7 @@ public partial class RecipeVM : UiVM<RecipeView>
 			ShowToast("please select a recipe!", UiMessageType.Error);
 			return;
 		}
+
 		var files = await this.GetTopLevel()!.StorageProvider.OpenFilePickerAsync(new FilePickerOpenOptions()
 		{
 			SuggestedFileType = new FilePickerFileType("xlsx"),
@@ -318,15 +322,15 @@ public partial class RecipeVM : UiVM<RecipeView>
 
 		using var workbook = new XLWorkbook(files[0].Path.LocalPath);
 		ImportMaterialMapTableSheetNames.Clear();
-		ImportMaterialMapTableSheetNames.AddRange(workbook.Worksheets.Select(t=>t.Name));
+		ImportMaterialMapTableSheetNames.AddRange(workbook.Worksheets.Select(t => t.Name));
 		SelectedImportMaterialMapTableSheetName = "";
 		await ShowModalDialog(View.ImportMaterialMapTableSheetSelectDialog);
 		if (string.IsNullOrEmpty(SelectedImportMaterialMapTableSheetName))
 		{
-			await ShowMessageBoxOverlay("select sheet is null, cancel", "import material map table", MessageBoxIcon.Error );
+			await ShowMessageBoxOverlay("select sheet is null, cancel", "import material map table", MessageBoxIcon.Error);
 			return;
 		}
-		
+
 		var worksheet = workbook.Worksheet(SelectedImportMaterialMapTableSheetName);
 		var rows = worksheet.RangeUsed()!.RowsUsed().Skip(1); // 跳过表头
 		var list = new List<MaterialConfig>();
@@ -346,6 +350,7 @@ public partial class RecipeVM : UiVM<RecipeView>
 			material.Description = row.Cell(11).GetValue<string>();
 			list.Add(material);
 		}
+
 		EditRecipe.MaterialConfigs = list;
 		ShowToast("import material map table success!", UiMessageType.Success);
 		// await using var fs = await files[0].OpenReadAsync();
@@ -360,7 +365,7 @@ public partial class RecipeVM : UiVM<RecipeView>
 		// 	return;
 		// }
 		//
-		
+
 		// string? line;
 		// while (null != (line =await reader.ReadLineAsync()))
 		// {
@@ -467,16 +472,17 @@ public partial class RecipeVM : UiVM<RecipeView>
 
 		var recipe = new ProductRecipe();
 		if (EditRecipe is not null && CreateNewRecipeIsCopyCurrentRecipeValue)
-			PointRecipeStruct.CopyPropertyValues(EditRecipe.Points, recipe.Points);
+			ProductRecipe.CopyPropertyValues(EditRecipe, recipe);
 		recipe.Name = recipeName;
-		recipe.RecipeType = SelectedRecipeType;
-		if (recipe.RecipeType == "点位配方")
+		// recipe.RecipeType = SelectedRecipeType;
+		if (recipe.IsFullRecipe)
 		{
 			recipe.Points = new PointRecipeStruct();
 		}
 
 		Debug.Assert(SelectedRecipeType != null);
 		recipe.Id = 0;
+		recipe.IsFullRecipe = IsEditFullRecipe;
 		var result = RecipeService.CreateRecipe(recipe);
 		if (result.IsError())
 		{
@@ -497,13 +503,15 @@ public partial class RecipeVM : UiVM<RecipeView>
 
 	private void LoadRecipeNames()
 	{
-		var names = RecipeService.GetRecipes().Where(t => t.RecipeType == SelectedRecipeType).Select(t => t.Name);
+		var names = IsEditFullRecipe
+			? RecipeService.GetRecipes().Where(t => t.IsFullRecipe).Select(t => t.Name)
+			: RecipeService.GetRecipes().Where(t => !t.IsFullRecipe).Select(t => t.Name);
 		RecipeNames.Clear();
 		RecipeNames.Add("");
 		RecipeNames.AddRange(names);
 
-		PointRecipeNames.Clear();
-		PointRecipeNames.AddRange(RecipeService.GetRecipes().Where(t => t.RecipeType == "点位配方").Select(t => t.Name));
+		FullRecipeNames.Clear();
+		FullRecipeNames.AddRange(RecipeService.GetRecipes().Where(t => t.IsFullRecipe).Select(t => t.Name));
 	}
 
 	public override Task Initialize(object? ctx, object? args)
@@ -605,7 +613,7 @@ public partial class RecipeVM : UiVM<RecipeView>
 				var propInstance = PropertyInstances.FirstOrDefault(t => t.Define.Name == point.Name);
 				if (propInstance is null)
 					continue;
-				propInstance.TempValue1 = propInstance.Define.Getter!.Invoke(TempRecipe);
+				propInstance.TempValue1 = propInstance.Define.Getter!.Invoke(TempRecipe.Points);
 			}
 		}
 
@@ -667,7 +675,7 @@ public partial class RecipeVM : UiVM<RecipeView>
 			return;
 		}
 
-		var value = property.Define.Getter!.Invoke(TempRecipe);
+		var value = property.Define.Getter!.Invoke(TempRecipe.Points);
 		property.TempValue1 = value;
 		if (ReadSelectedPointsCommand.IsRunning == false)
 			ShowToast("Read Success!", UiMessageType.Success);

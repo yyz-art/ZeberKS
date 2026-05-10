@@ -8,6 +8,7 @@ namespace ZitApp.Contexts;
 
 public enum MaterialState
 {
+	UnUsed,
 	OK,
 	RemainAlarm,
 	NotMatched,
@@ -35,6 +36,11 @@ public partial class MaterialSpaceContext : ObservableObject
 	{
 		config ??= Config;
 		code ??= MaterialCode;
+		if (config.IsUsed == false)
+		{
+			MaterialState = MaterialState.UnUsed;
+			return;
+		}
 		var state = (config?.MaterialCodes.Contains(code) ?? false) && !string.IsNullOrWhiteSpace(code)
 			? MaterialState.OK
 			: MaterialState.NotMatched;
@@ -48,6 +54,7 @@ public partial class MaterialSpaceContext : ObservableObject
 	{
 		return v switch
 		{
+			MaterialState.UnUsed => Brushes.Gray,
 			MaterialState.OK => Brushes.Green,
 			MaterialState.RemainAlarm => Brushes.Orange,
 			MaterialState.NotMatched => Brushes.OrangeRed,
@@ -66,9 +73,8 @@ public partial class MaterialSpaceContext : ObservableObject
 			{
 				Id = i + 1,
 				Config = new MaterialConfig
-					{ Id = i + 1, IsUsed = true, PositionName = $"Material{i + 1}" },
+					{ Id = i + 1, IsUsed = false, PositionName = $"Material{i + 1}" },
 				MaterialCode = "",
-				PositionCode = $"P_CODE_{i + 1}",
 			});
 		}
 	}

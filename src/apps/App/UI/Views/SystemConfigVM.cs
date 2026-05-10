@@ -19,7 +19,7 @@ namespace ZitApp.UI.Config;
 public partial class SystemConfigVM : CommonUiVM<SystemConfigView>, INamedObject
 {
 	public static string AppConfigBackupPath = $"{Environment.CurrentDirectory}/data/backup/app-configs/";
-
+	public string GetObjectName() => "SYSTEM-CONFIG";
 	public SystemConfigVM()
 	{
 		var nameLanguageKey = $"NameBy{App.Current.Language}";
@@ -30,7 +30,7 @@ public partial class SystemConfigVM : CommonUiVM<SystemConfigView>, INamedObject
 					.Value?.ToString() ?? propertyInstance.Define.Name;
 		}
 
-		FilteredPropertyInstances = new ObservableList<IPropertyInstance>(PropertyInstances);
+		// FilteredPropertyInstances = new ObservableList<IPropertyInstance>(PropertyInstances);
 		ConfigGroupNames = PropertyInstances.Select(t => t.ValueInfo?.Category).Distinct().ToArray()!;
 		GroupedPropertyInstances = new DataGridCollectionView(PropertyInstances);
 		GroupedPropertyInstances.GroupDescriptions.Add(new DataGridPathGroupDescription("ValueInfo.Category"));
@@ -52,7 +52,7 @@ public partial class SystemConfigVM : CommonUiVM<SystemConfigView>, INamedObject
 	public required IConfigManager ConfigManager { get; init; }
 	public string[] ConfigGroupNames { get; set; } = ["连接配置", "提示信息配置"];
 	public partial string SelectedConfigGroup { get; set; } = "";
-	public ObservableList<IPropertyInstance> FilteredPropertyInstances { get; }
+	// public ObservableList<IPropertyInstance> FilteredPropertyInstances { get; }
 	public DataGridCollectionView GroupedPropertyInstances { get; set; }
 
 
@@ -226,16 +226,16 @@ public partial class SystemConfigVM : CommonUiVM<SystemConfigView>, INamedObject
 		return Convert.ChangeType(input, actualType, CultureInfo.InvariantCulture);
 	}
 
-	partial void OnSelectedConfigGroupChanged(string value)
-	{
-		FilteredPropertyInstances.Clear();
-		foreach (var propertyInstance in PropertyInstances)
-		{
-			propertyInstance.Flag = false;
-			if (propertyInstance.ValueInfo?.Category == value || value == "全部")
-				FilteredPropertyInstances.Add(propertyInstance);
-		}
-	}
+	// partial void OnSelectedConfigGroupChanged(string value)
+	// {
+	// 	FilteredPropertyInstances.Clear();
+	// 	foreach (var propertyInstance in PropertyInstances)
+	// 	{
+	// 		propertyInstance.Flag = false;
+	// 		if (propertyInstance.ValueInfo?.Category == value || value == "全部")
+	// 			FilteredPropertyInstances.Add(propertyInstance);
+	// 	}
+	// }
 
 	partial void OnEditConfigChanged(AppConfig oldValue, AppConfig newValue)
 	{
@@ -261,5 +261,5 @@ public partial class SystemConfigVM : CommonUiVM<SystemConfigView>, INamedObject
 		OnSelectedConfigGroupChanged(SelectedConfigGroup);
 	}
 
-	public string GetObjectName() => "SYSTEM-CONFIG";
+
 }

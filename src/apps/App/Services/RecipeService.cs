@@ -38,22 +38,32 @@ public class RecipeService
 		return Result.OK;
 	}
 
-	public Result<ProductRecipe> GetRecipe(string name)
+	public Result<ProductRecipe> GetRecipe(string name, bool newInstance = false)
 	{
-		foreach (var recipe in Recipes)
+		ProductRecipe? recipe = null;
+		if (newInstance)
 		{
-			if (recipe.Name == name)
+			var ret = KvStorage.GetValue<ProductRecipe>(RecipesKvStorageName, name);
+			if (ret.IsOk())
+				recipe = ret;
+		}
+		else
+		{
+			foreach (var item in Recipes)
 			{
-				if (recipe.IsFullRecipe == false)
+				if (item.Name == name)
 				{
-					recipe.RefPointRecipe = GetRecipe(recipe.RefPointRecipeName!).Value;
+					recipe = item;
+					break;
 				}
-
-				return Result.Ok(recipe);
 			}
 		}
-
-		return Result.Err<ProductRecipe>("Recipe not found!");
+		
+		if (recipe is null)
+			return Result.Err<ProductRecipe>("recipe not found!");
+		if (recipe.IsFullRecipe == false)
+			recipe.RefFullRecipe = GetRecipe(recipe.RefFullRecipeName!).Value;
+		return Result.Ok(recipe);
 	}
 
 	public Result<ProductRecipe> GetRecipeByModelName(string name)
@@ -79,18 +89,30 @@ public class RecipeService
 
 	public void TryFixRecipe(ProductRecipe recipe)
 	{
-		if(ReferenceEquals(recipe.MaterialConfigs, null) == false)
-			return;
-		// return;
-		var 产品上料信息 = recipe.MaterialConfigs ??= [];
-		if (产品上料信息.Count >= 6) return;
-		for (var i = 产品上料信息.Count; i <= 5; i++)
+		if (recipe.IsFullRecipe)
+			recipe.Points ??= new PointRecipeStruct();
+		if (ReferenceEquals(recipe.MaterialConfigs, null))
 		{
-			产品上料信息.Add(new MaterialConfig { Id = i + 1, PositionName = $"上料位置{i + 1}" });
+			var 产品上料信息 = recipe.MaterialConfigs ??= [];
+			if (产品上料信息.Count >= 6) return;
+			for (var i = 产品上料信息.Count; i <= 5; i++)
+			{
+				产品上料信息.Add(new MaterialConfig { Id = i + 1, PositionName = $"上料位置{i + 1}" });
+			}
+
+			recipe.MaterialConfigs = 产品上料信息;
 		}
 
-		recipe.MaterialConfigs = null!;
-		recipe.MaterialConfigs = 产品上料信息;
+		foreach (var recipeMaterialConfig in recipe.MaterialConfigs)
+		{
+			for (var i = 0; i < recipeMaterialConfig.MaterialCodes.Length; i++)
+			{
+				var item = recipeMaterialConfig.MaterialCodes[i];
+				recipeMaterialConfig.MaterialCodes[i] = item.Trim();
+			}
+
+			recipeMaterialConfig.PositionName = recipeMaterialConfig.PositionName.Trim();
+		}
 	}
 
 	public Result CreateRecipe(ProductRecipe recipe)

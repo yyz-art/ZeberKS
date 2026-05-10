@@ -9,4 +9,7 @@
 		<ProjectName>MFG15</ProjectName>
 	</PropertyGroup>
 	<Import Project="$(SolutionDir)build/define/DefApp.csproj"/>
+	<ItemGroup>
+	  <PackageReference Include="FlaUI.UIA3" Version="5.0.0" />
+	</ItemGroup>
 </Project>

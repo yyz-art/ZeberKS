@@ -6,6 +6,7 @@ using ZC.KvStorage;
 using ZC.Mvvm;
 using ZitApp.BinStructs;
 using ZitApp.Contexts;
+using ZitApp.UI.Dialogs;
 
 namespace ZitApp.Services;
 
@@ -15,11 +16,12 @@ namespace ZitApp.Services;
 public partial class CoreService : CoreServiceBase
 {
 	public SemaphoreSlim RecipeSwitchLock { get; private set; } = new(1, 1);
+	public SemaphoreSlim PrinterLock { get; private set; } = new(1, 1);
 	public required ConnectionManageService ConnectionManageService { get; init; }
 	public required ILogger Logger { get; init; }
 	public required IKeyValueStorage KeyValueStorage { get; init; }
 	public required PlcService Plc { get; init; }
-	public required RecipeService Recipe { get; init; }
+	public required RecipeService RecipeService { get; init; }
 
 	public required AppConfig AppConfig { get; init; }
 	public partial ObservableList<NozzleContext> NozzleContexts { get; set; } = [];
@@ -436,9 +438,9 @@ public partial class CoreService : CoreServiceBase
 
 	public async Task<Result> DistributeRecipeAsync(ProductRecipe recipe)
 	{
-		if (recipe.IsPointRecipe == false)
-			recipe.RefPointRecipe = Recipe.GetRecipe(recipe.RefPointRecipeName!).Value;
-		var points = recipe.Points ?? recipe.RefPointRecipe?.Points;
+		if (recipe.IsFullRecipe == false)
+			recipe.RefFullRecipe = RecipeService.GetRecipe(recipe.RefFullRecipeName!).Value;
+		var points = recipe.Points ?? recipe.RefFullRecipe?.Points;
 		if (points is null)
 		{
 			return Result.Err("recipe points not found!");
@@ -513,6 +515,13 @@ public partial class CoreService : CoreServiceBase
 		}
 
 		return Result.OK;
+	}
+
+	public Task TryCreateMaterialRecipe(string name)
+	{
+		var createMaterialRecipeVM = App.Current.IOC.Get<CreateMaterialRecipeVM>();
+		createMaterialRecipeVM.InputRecipeName = name;
+		return createMaterialRecipeVM.Show();
 	}
 
 	public class DayProductionIdContext

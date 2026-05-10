@@ -1,4 +1,5 @@
 ﻿using Avalonia.Media;
+using Avalonia.Media.Imaging;
 using ZC.Mvvm;
 using ZitApp.Models;
 using ScrewInstallData = ZitApp.Models.ScrewInstallData;
@@ -21,8 +22,16 @@ public partial class WorkPositionContext : ObservableObject
 	public partial double AxisPercent { get; set; } = 0.5;
 	public partial string? ImagePathRoot { get; set; }
 	public partial DateTime ImagePathCollectInfoTime { get; set; }
-	public partial ObservableList<ImageInfo> ImageInfos { get; set; } = [];
+	public partial ObservableList<ImageInfo> ImageInfos { get; set; } = [ new ImageInfo("TEST", "C:\\Users\\AINO\\Pictures\\d.png")];
 	public partial ImageInfo? SelectedImageInfo { get; set; }
+
+	partial void OnSelectedImageInfoChanged(ImageInfo? oldValue, ImageInfo? newValue)
+	{
+		if (newValue != null)
+		{
+			Image = new Bitmap(newValue.Path);
+		}
+	}
 
 
 	public WorkPositionContext()
@@ -58,6 +67,14 @@ public partial class WorkPositionContext : ObservableObject
 	public partial ObservableList<String> ImageNames { get; set; } = ["A_OK", "B_OK", "C_NG", "D_OK", "E_NG", "F_NG"];
 	public partial bool IsUsedScrewInstallDataGrid { get; set; } = CommonAppConfig.IsUsedScrewInstallDataGrid;
 	public partial int DayProductionId { get; set; }
+
+	public void @OpenImageFileFolder()
+	{
+		if (SelectedImageInfo is not null)
+		{
+			Process.Start("explorer.exe", "/select," + SelectedImageInfo.Path!);
+		}
+	}
 
 	public static void CreateList(ObservableList<WorkPositionContext> workPositionContexts, int i)
 	{

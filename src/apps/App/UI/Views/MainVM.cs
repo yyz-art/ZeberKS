@@ -133,6 +133,7 @@ public partial class MainVM : UiVM<MainView>
 		{
 			if (item.Id == 1)
 			{
+				item.UpdateImageInfo();
 				// item.AxisPercent = Plc.Read.工位1轨道百分比位置;
 				// item.SN = WorkLeft.ScanSnCode;
 				// item.WorkStep = WorkLeft.WorkStep;
@@ -140,6 +141,7 @@ public partial class MainVM : UiVM<MainView>
 			}
 			else if (item.Id == 2)
 			{
+				item.UpdateImageInfo();
 				// item.AxisPercent = Plc.Read.工位2轨道百分比位置;
 				// item.SN = WorkRight.ScanSnCode;
 				// item.WorkStep = WorkRight.WorkStep;
