@@ -40,6 +40,8 @@ public partial class WorkService2 : WorkServiceBase
 	public IDataSocket CodeScanner { get; set; } = null!;
 	public WorkPositionContext Context { get; set; } = null!;
 
+	public int 料座感应状态 { get; set; }
+
 	protected override Task OnInitialize(object? ctx, object? args)
 	{
 		Context = Core.WorkPositionContexts.First(t => t.Name == ServiceName);
@@ -70,9 +72,9 @@ public partial class WorkService2 : WorkServiceBase
 #else
 				Context.ScanSnCode = "";
 #endif
-				Context.LastError = null;
+				Context.ErrorMessage = null;
 				Context.ProductionState = ProductionState.NA;
-				Context.WorkStep = WorkStep.SCAN_SN_CODE_DOING;
+				Context.WorkStep = WorkStep.SCAN_SN;
 				Context.ModelName = "";
 				string scanCode;
 
@@ -83,7 +85,7 @@ public partial class WorkService2 : WorkServiceBase
 					if (scanCodeResult.IsError())
 					{
 						Logger.Error($"[SCAN-CODE-{Plc.Read.扫码枪2触发}] [ERROR] {scanCodeResult.Message}");
-						Context.LastError = "scan code failed, code scanner connection error!";
+						Context.ErrorMessage = "scan code failed, code scanner connection error!";
 						Plc.Write.扫码枪2触发结果 = CodeOfNG;
 						Plc.Write.工位2允许生产 = NOT_ALLOW_PRODUCTION_BY_SCAN_CODE;
 						goto SendResult;
@@ -102,7 +104,7 @@ public partial class WorkService2 : WorkServiceBase
 					{
 						Logger.Error(
 							$"[SCAN CODE-{Plc.Read.扫码枪2触发}] [ERROR] CONTENT =  '{scanCode}' code length check failed, length = {scanCode.Length}，not allow production.");
-						Context.LastError = "scan code check failed, length out of range!";
+						Context.ErrorMessage = "scan code check failed, length out of range!";
 						Plc.Write.工位2允许生产 = NOT_ALLOW_PRODUCTION_BY_SCAN_CODE;
 						Plc.Write.扫码枪2触发结果 = CodeOfNG;
 						goto SendResult;
@@ -114,15 +116,14 @@ public partial class WorkService2 : WorkServiceBase
 				}
 
 
-				Context.WorkStep = WorkStep.SCAN_SN_CODE_COMPLETED;
 				Logger.Info($"[SCAN-CODE-{Plc.Read.扫码枪2触发}] [OK] CONTENT='{scanCode}'");
 
 				MesQueryPoint:
-				if (Core.MesSkipEnabled == false)
+				if (Context.MesEnabled)
 				{
 					#region MES-QUERY
 
-					Context.WorkStep = WorkStep.MES_QUERY_DOING;
+					Context.WorkStep = WorkStep.MES_QUERY;
 					var mes7 = $"ASM_QUERY,{Context.ScanSnCode},7,,SMD,,OK,MO_NUMBER=??? MODEL_NAME=???";
 					Logger.Info($"[MES QUERY] [DOING] MES << '{mes7}'");
 					var mesMsg7Result = Mes.SendAndReadString(mes7);
@@ -134,7 +135,7 @@ public partial class WorkService2 : WorkServiceBase
 								? $"[MES QUERY] [ERROR] MES connection error! {mesMsg7Result.Message}"
 								: $"[MES QUERY] [ERROR] MES << '{mesMsg7Result.Value}'");
 
-						Context.LastError = mesMsg7Result.IsError()
+						Context.ErrorMessage = mesMsg7Result.IsError()
 							? "mes query failed, mes connection error!"
 							: $"mes query failed, mes return >> '{mesMsg7Result.Value}'";
 						Plc.Write.工位2允许生产 = 2;
@@ -148,7 +149,7 @@ public partial class WorkService2 : WorkServiceBase
 					{
 						Logger.Error(
 							$"[MES QUERY] [ERROR] (MO_NUMBER='{parseResult.WorkOrder}',MODEL_NAME='{parseResult.ModelName}')] has empty value!");
-						Context.LastError =
+						Context.ErrorMessage =
 							$"mes query error (MO_NUMBER='{parseResult.WorkOrder}',MODEL_NAME='{parseResult.ModelName}') has empty value!";
 						Plc.Write.工位2允许生产 = 2;
 						Plc.Write.扫码枪2触发结果 = CodeOfNG;
@@ -172,7 +173,7 @@ public partial class WorkService2 : WorkServiceBase
 
 
 				RecipeCheckPoint:
-				if (Core.RecipeCheck)
+				if (Context.RecipeCheck)
 				{
 					Context.WorkStep = WorkStep.RECIPE_CHECK;
 					// Logger.Info($"[RECIPE CHECK] [DOING] SN='{ScanCode}' MODEL_NAME='{Context.ModelName}'");
@@ -183,11 +184,12 @@ public partial class WorkService2 : WorkServiceBase
 						wait.Wait(TimeSpan.FromSeconds(60));
 						recipeResult = Core.RecipeService.GetRecipe(Context.ModelName);
 					}
+
 					if (recipeResult.IsError())
 					{
 						Logger.Error(
 							$"[RECIPE CHECK] [ERROR] recipe not found! SN='{Context.ScanSnCode}' MODEL_NAME='{Context.ModelName}'");
-						Context.LastError = "recipe check failed, recipe not found!";
+						Context.ErrorMessage = "recipe check failed, recipe not found!";
 						Plc.Write.工位2允许生产 = NOT_ALLOW_PRODUCTION_BY_RECIPE;
 						Plc.Write.扫码枪2触发结果 = CodeOfNG;
 						goto SendResult;
@@ -198,7 +200,7 @@ public partial class WorkService2 : WorkServiceBase
 					{
 						Logger.Error(
 							$"[RECIPE CHECK] [ERROR] recipe ref tcx recipe not found! (recipe='{recipe.Name}', ref tcx ='{recipe.RefFullRecipeName}')");
-						Context.LastError = "recipe check failed, recipe ref tcx recipe not found!";
+						Context.ErrorMessage = "recipe check failed, recipe ref tcx recipe not found!";
 						Plc.Write.工位2允许生产 = NOT_ALLOW_PRODUCTION_BY_RECIPE;
 						Plc.Write.扫码枪2触发结果 = CodeOfNG;
 						goto SendResult;
@@ -219,7 +221,7 @@ public partial class WorkService2 : WorkServiceBase
 					if (false == Core.RecipeSwitchLock.Wait(TimeSpan.FromSeconds(AppConfig.RecipeSwitchWaitTimeout)))
 					{
 						Logger.Error("[RECIPE CHANGE] [ERROR] Wait lock timeout! ");
-						Context.LastError = "recipe change failed, wait lock timeout!";
+						Context.ErrorMessage = "recipe change failed, wait lock timeout!";
 						Plc.Write.工位2允许生产 = NOT_ALLOW_PRODUCTION_BY_RECIPE;
 						Plc.Write.扫码枪2触发结果 = CodeOfNG;
 						goto SendResult;
@@ -234,11 +236,11 @@ public partial class WorkService2 : WorkServiceBase
 							Logger.Info($"[RECIPE CHECK] [OK] SN='{Context.ScanSnCode}' MODEL_NAME='{Context.ModelName}'");
 							goto MaterialCheckPoint;
 						}
-						
+
 						if (Core.IsWorkPositionFree() == false)
 						{
 							Logger.Warn($"[RECIPE CHANGE] [FAILL] work position is doing ,can't change recipe!");
-							Context.LastError = "recipe change failed, work position is doing!";
+							Context.ErrorMessage = "recipe change failed, work position is doing!";
 							Plc.Write.工位2允许生产 = NOT_ALLOW_PRODUCTION_BY_RECIPE;
 							Plc.Write.扫码枪2触发结果 = CodeOfNG;
 							goto SendResult;
@@ -254,7 +256,7 @@ public partial class WorkService2 : WorkServiceBase
 							{
 								Logger.Error(
 									$"[RECIPE CHANGE] [ERROR] Recipe data send failed! {distributeRecipeTask.Exception?.Message ?? distributeRecipeTask.Result.Message} ");
-								Context.LastError = "recipe change failed, recipe data send failed!";
+								Context.ErrorMessage = "recipe change failed, recipe data send failed!";
 								Plc.Write.工位2允许生产 = NOT_ALLOW_PRODUCTION_BY_RECIPE;
 								Plc.Write.扫码枪2触发结果 = CodeOfNG;
 								goto SendResult;
@@ -268,22 +270,23 @@ public partial class WorkService2 : WorkServiceBase
 							{
 								Plc.Write.PLC当前配方ID = (short)recipe.Id;
 								Plc.Write.WritePoint(nameof(PlcStruct.PLC当前配方ID));
-								Plc.Write.PLC读取配方ID切换成功响应 = 1;
-								Plc.Write.WritePoint(nameof(PlcStruct.PLC读取配方ID切换成功响应));
+								Plc.Write.配方下发响应 = 1;
+								Plc.Write.WritePoint(nameof(PlcStruct.配方下发响应));
 							}
 
-							while (Plc.Read.PLC读取配方ID切换成功响应 != 1 &&
+							while (Plc.Read.配方下发响应 != 1 &&
 							       DateTime.Now < endWaitTime)
 								Thread.Sleep(100);
-							if (Plc.Read.PLC读取配方ID切换成功响应 != 1)
+							if (Plc.Read.配方下发响应 != 1)
 							{
 								Logger.Error("[RECIPE CHANGE] [ERROR] Wait plc change recipe timeout.");
-								Context.LastError = "recipe change failed, wait plc change recipe timeout!";
+								Context.ErrorMessage = "recipe change failed, wait plc change recipe timeout!";
 								Plc.Write.工位2允许生产 = NOT_ALLOW_PRODUCTION_BY_RECIPE;
 								Plc.Write.扫码枪2触发结果 = CodeOfNG;
 								goto SendResult;
 							}
 						}
+
 						Core.WorkRecipe = recipe;
 						Logger.Info("[RECIPE CHANGE] [OK] Recipe changed successfully!.");
 					}
@@ -299,7 +302,7 @@ public partial class WorkService2 : WorkServiceBase
 
 
 				MaterialCheckPoint:
-				if (Core.MaterialCheck)
+				if (Context.MaterialCheck)
 				{
 					var isMaterialStateOk = true;
 					MaterialSpaceContext? material = null;
@@ -320,10 +323,10 @@ public partial class WorkService2 : WorkServiceBase
 					{
 						Logger.Error(
 							$"[MATERIAL CHECK] [ERROR] at material {material?.Id} state is '{material?.MaterialState}' SN='{Context.ScanSnCode}' MODEL_NAME='{Context.ModelName}'");
-						Context.LastError = $"material {material?.Id} check failed!";
+						Context.ErrorMessage = $"material {material?.Id} check failed!";
 						Plc.Write.工位2允许生产 = NOT_ALLOW_PRODUCTION_BY_MATERIAL;
 						Plc.Write.扫码枪2触发结果 = CodeOfNG;
-						Context.LastError = "MATERIAL CHECK FAILED!";
+						Context.ErrorMessage = "MATERIAL CHECK FAILED!";
 						goto SendResult;
 					}
 				}
@@ -336,16 +339,15 @@ public partial class WorkService2 : WorkServiceBase
 				InStationExecutePoint:
 				var msg1 =
 					$"{AppConfig.StationName.Trim()},{Context.ScanSnCode.Trim()},1,{Core.WorkerNo.Trim()},{AppConfig.Line.Trim()},,OK,,,";
-				Context.WorkStep = WorkStep.MES_IN_STATION_DOING;
+				Context.WorkStep = WorkStep.IN_STATION;
 				Logger.Info($"[MES IN-STA] [DOING] MES1 << '{msg1}'");
 				var mesMsg1Result = Mes.SendAndReadString(msg1);
-				Context.WorkStep = WorkStep.MES_IN_STATION_COMPLETED;
 				if (mesMsg1Result.IsError() || mesMsg1Result.Value!.StartsWith("OK") is false)
 				{
-					Logger.Error(Context.LastError = mesMsg1Result.IsError()
+					Logger.Error(Context.ErrorMessage = mesMsg1Result.IsError()
 						? $"[MES IN-STA] [ERROR] MES1 connection error!"
 						: $"[MES IN-STA] [ERROR] MES1 >> '{mesMsg1Result.Value}'");
-					Context.LastError = $"in-station failed, mes return >> '{mesMsg1Result.Value}'";
+					Context.ErrorMessage = $"in-station failed, mes return >> '{mesMsg1Result.Value}'";
 					Plc.Write.工位2允许生产 = NOT_ALLOW_PRODUCTION_BY_MES;
 					Plc.Write.扫码枪2触发结果 = CodeOfNG;
 					goto SendResult;
@@ -376,6 +378,7 @@ public partial class WorkService2 : WorkServiceBase
 				Plc.Write.扫码枪2触发结果 = CodeOfOK;
 
 				SendResult:
+				Context.WorkStep = Plc.Write.工位2允许生产 == 1 ? WorkStep.ALLOW_PRODUCTION : WorkStep.NOT_ALLOW_PRODUCTION;
 				if (Context.DayProductionId == 0)
 					Context.DayProductionId = Core.GetDayProductionId();
 				var now = DateTime.Now;
@@ -415,7 +418,6 @@ public partial class WorkService2 : WorkServiceBase
 					});
 				}
 
-				Context.WorkStep = WorkStep.MES_OUT_STATION_WAITING;
 				continue;
 			}
 
@@ -425,20 +427,29 @@ public partial class WorkService2 : WorkServiceBase
 
 			if (Plc.Read is { 工位2数据上报请求: 1, 工位2数据上报响应: 0 })
 			{
-				Context.LastError = null;
-				Context.WorkStep = WorkStep.MES_OUT_STATION_DOING;
+				var uploadResultCode = Plc.Read.工位2数据上报结果;
+				if (uploadResultCode == 0) // 防止PLC未加此信号
+				{
+					uploadResultCode = 1; 
+					Logger.Warn("plc need to add 工位数据上报结果 point");
+				}
+				Context.ErrorMessage = null;
+				Context.WorkStep = WorkStep.OUT_STATION;
+				Context.ProductionState = ProductionState.NA;
 				if (string.IsNullOrEmpty(Context.ScanSnCode))
 				{
-					Context.LastError = "out-station failed, sn code is null!";
+					Context.ErrorMessage = "out-station failed, sn code is null!";
 					Logger.Error("[MES OUT-STA] [ERROR] plc call out-station, but sn code is null!");
 					Plc.Write.工位2数据上报响应 = 2;
+					uploadResultCode = 2;
 					goto SendOutStationResult;
 				}
 
-				if (Core.MesSkipEnabled)
+				if (Context.MesEnabled == false)
 				{
 					Logger.Info("[MES OUT-STA] [OK:Skip] SN='{sn}'", Context.ScanSnCode);
 					Plc.Write.工位2数据上报响应 = 2;
+					uploadResultCode = 2;
 					goto SendOutStationResult;
 				}
 
@@ -456,26 +467,34 @@ public partial class WorkService2 : WorkServiceBase
 				var uuid = Guid.NewGuid().ToString().ToUpper();
 				DataBuilder.Append($"[VR]UUID='{uuid}'\"");
 #endif
-#if !MFG_15
-				var msg2 =
-					$"{AppConfig.StationName},{Context.ScanSnCode},2,{Core.WorkerNo},{AppConfig.Line},,OK,,,{DataBuilder}";
-				Logger.Info($"[MES OUT-STA] [DOING] MES << '{msg2}'");
-				var respMsg2Result = Mes.SendAndReadString(msg2);
-				if (respMsg2Result.IsError() || respMsg2Result.Value!.StartsWith("OK") is false)
+#if !MFG15
+				if (uploadResultCode == 1)
 				{
-					Context.LastError = respMsg2Result.IsError()
-						? "out-station failed, mes connection error!"
-						: $"out-station failed, mes return error '{respMsg2Result.Value}'";
-					Logger.Error(respMsg2Result.IsError()
-						? $"[MES OUT-STA] [ERROR] {respMsg2Result.Message}"
-						: $"[MES OUT-STA] [ERROR] MES >> '{respMsg2Result.Value}'");
-					Plc.Write.工位2数据上报响应 = 2;
-					goto SendOutStationResult;
-				}
+					var msg2 =
+						$"{AppConfig.StationName},{Context.ScanSnCode},2,{Core.WorkerNo},{AppConfig.Line},,OK,,,{DataBuilder}";
+					Logger.Info($"[MES OUT-STA] [DOING] RESULT={Plc.Read.工位2数据上报结果} MES << '{msg2}'");
+					var respMsg2Result = Mes.SendAndReadString(msg2);
+					if (respMsg2Result.IsError() || respMsg2Result.Value!.StartsWith("OK") is false)
+					{
+						Context.ErrorMessage = respMsg2Result.IsError()
+							? "out-station failed, mes connection error!"
+							: $"out-station failed, mes return error '{respMsg2Result.Value}'";
+						Logger.Error(respMsg2Result.IsError()
+							? $"[MES OUT-STA] [ERROR] {respMsg2Result.Message}"
+							: $"[MES OUT-STA] [ERROR] RESULT={Plc.Read.工位2数据上报结果} MES >> '{respMsg2Result.Value}'");
+						Plc.Write.工位2数据上报响应 = 2;
+						goto SendOutStationResult;
+					}
 
-				Logger.Info($"[MES OUT-STA] [OK] MES >> '{respMsg2Result.Value}'");
+					Logger.Info($"[MES OUT-STA] [OK] RESULT={Plc.Read.工位2数据上报结果} MES >> '{respMsg2Result.Value}'");
+				}
+				else
+				{
+					Logger.Info($"[MES OUT-STA] [OK] RESULT={Plc.Read.工位2数据上报结果} SKIP-MES");
+				}
 #endif
-#if ASM_12
+
+#if ASM12 // ASM12 上传图片	
 				var mes7 = $"SMD_QUERY,{Context.ScanSnCode},7,,SMD,,OK,GET_PN=??? ZEBRA_DTG=??? SN_NOW_GROUP=???";
 				Logger.Info($"[MES OUT-STA] [DOING] MES7 << '{mes7}'");
 				var mesMsg7Result = Mes.SendAndReadString(mes7);
@@ -494,9 +513,9 @@ public partial class WorkService2 : WorkServiceBase
 				Logger.Info($"TOPIC = {topic}");
 				try
 				{
-					Debug.Assert(string.IsNullOrEmpty(ImagePathRoot) == false);
-					var images = Directory.Exists(ImagePathRoot) ? 
-						Directory.GetFiles(ImagePathRoot).Where(t=>t.Contains("_NG") ==false).ToArray()
+					Debug.Assert(string.IsNullOrEmpty(Context.ImagePathRoot) == false);
+					var images = Directory.Exists(Context.ImagePathRoot) ? 
+						Directory.GetFiles(Context.ImagePathRoot).Where(t=>t.Contains("_NG") ==false).ToArray()
 						: [];
 					CreateImagePackageZip("D:/Vision Files", images, Context.ScanSnCode, topic, uuid,
 						t => Logger.Debug(t));
@@ -508,6 +527,13 @@ public partial class WorkService2 : WorkServiceBase
 #endif
 				Plc.Write.工位2数据上报响应 = 1;
 				SendOutStationResult:
+				if (uploadResultCode != 1) // NG
+				{
+					Context.ProductionState = ProductionState.NG;
+					ReadNgItems();
+					Context.ShowNgDetailDialog();
+				}
+				else Context.ProductionState = ProductionState.OK;
 
 				Plc.Write.TryWritePoint(nameof(PlcStruct.工位2数据上报响应), this, static ctx =>
 				{
@@ -523,8 +549,7 @@ public partial class WorkService2 : WorkServiceBase
 					Plc.Write.WritePoint(nameof(PlcStruct.工位2数据上报请求));
 				}
 
-				Context.ProductionState = ProductionState.OK;
-				Context.WorkStep = WorkStep.WORK_POSITION_IS_FREE;
+				Context.WorkStep = WorkStep.FREE;
 				Context.DayProductionId = 0;
 				// ScanCode = null!;
 			}
@@ -561,7 +586,7 @@ public partial class WorkService2 : WorkServiceBase
 					goto SendResult;
 				}
 
-		
+				
 
 				Logger.Info($"[CODE-PRINT] [DOING] SN='{Context.ScanSnCode}'");
 				Core.PrinterLock.Wait();
@@ -623,7 +648,7 @@ public partial class WorkService2 : WorkServiceBase
 				{
 					Logger.Error(
 						$"[SCAN CODE-1] [ERROR] CONTENT =  '{scanCode}' code length check failed, length = {scanCode.Length}，not allow production.");
-					Context.LastError = "code length check failed!";
+					Context.ErrorMessage = "code length check failed!";
 					Plc.Write.工位2允许生产 = NOT_ALLOW_PRODUCTION_BY_SCAN_CODE;
 					Plc.Write.扫码枪2触发结果 = CodeOfNG;
 					goto SendResult;
@@ -646,8 +671,8 @@ public partial class WorkService2 : WorkServiceBase
 				螺丝拧紧完成信号 = Plc.Read.工位2螺丝拧紧完成信号;
 				if (螺丝拧紧完成信号 == 0)
 					break;
-				var readResult1 = Screw.ReadInt16("60626");
-				var readResult2 = Screw.ReadInt16("60628");
+				var readResult1 = Screw.ReadInt16("60653"); // 60653 turns
+				var readResult2 = Screw.ReadInt16("60650"); // 60650 maxTorque
 				if (readResult1.IsSuccess == false || readResult2.IsSuccess == false)
 				{
 					Logger.Error(
@@ -665,6 +690,13 @@ public partial class WorkService2 : WorkServiceBase
 #endif
 
 			#endregion
+
+			if (Plc.Read.工位2料座感应状态 == 0 && 料座感应状态 != 0)
+			{
+				料座感应状态 = Plc.Read.工位2料座感应状态;
+				Context.HideNgDetailDialog();
+			}
+			料座感应状态 = Plc.Read.工位2料座感应状态;
 		}
 
 		return Task.CompletedTask;
@@ -675,5 +707,36 @@ public partial class WorkService2 : WorkServiceBase
 		Logger.Fatal(exception, "work position is error, will retry.");
 		Thread.Sleep(5000);
 		return TaskUtils.ConstValues.TaskTrue;
+	}
+
+
+	public void ReadNgItems()
+	{
+		var result = Plc.Plc.ReadBool(PlcStructInfo.工位2NG原因.Source!.ToString(), 200);
+		if (result.IsSuccess == false)
+		{
+			Logger.Error("read ng items failed!");
+		}
+
+		Plc.Plc.Write(PlcStructInfo.工位2NG原因.Source!.ToString(), EmptyBoolX200);
+
+		var items = result.Content!;
+		UiUtils.InvokeOnUiThread(() =>
+		{
+			Context.NgItems.Clear();
+			for (var i = 0; i < items.Length; i++)
+			{
+				var isOn = items[i];
+				if (isOn == false) continue;
+				var define = AppConfig.NgDefines.FirstOrDefault(t => t.Id == i + 1);
+				if (define is null)
+				{
+					Logger.Warn($"ng define [{i + 1}] not found!");
+					continue;
+				}
+
+				Context.NgItems.Add(define);
+			}
+		});
 	}
 }

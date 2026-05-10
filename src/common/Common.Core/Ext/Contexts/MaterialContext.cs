@@ -36,6 +36,11 @@ public partial class MaterialSpaceContext : ObservableObject
 	{
 		config ??= Config;
 		code ??= MaterialCode;
+		if (ReferenceEquals(config, null))
+		{
+			MaterialState = MaterialState.UnUsed;
+			return;
+		}
 		if (config.IsUsed == false)
 		{
 			MaterialState = MaterialState.UnUsed;

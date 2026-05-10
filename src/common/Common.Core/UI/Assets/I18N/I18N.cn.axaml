@@ -58,6 +58,11 @@
 	<sys:String x:Key="I18N.G.请选择映射表Sheet">请选择映射表Sheet</sys:String>
 	<sys:String x:Key="I18N.G.复制">复制</sys:String>
 	<sys:String x:Key="I18N.G.保存">保存</sys:String>
+	<sys:String x:Key="I18N.G.NG定义">NG定义</sys:String>
+	<sys:String x:Key="I18N.G.导入NG定义表">导入NG定义表</sys:String>
+	<sys:String x:Key="I18N.G.发送者">发送者</sys:String>
+	<sys:String x:Key="I18N.G.原因">原因</sys:String>
+	<sys:String x:Key="I18N.G.解决方法">解决方法</sys:String>
 	<sys:String x:Key="I18N.G.应用">应用</sys:String>
 	<sys:String x:Key="I18N.G.导入">导入</sys:String>
 	<sys:String x:Key="I18N.G.导出">导出</sys:String>
@@ -131,9 +136,11 @@
 	<sys:String x:Key="I18N.G.PLC_网络连接">PLC 网络连接</sys:String>
 	<sys:String x:Key="I18N.G.确认">确认</sys:String>
 	<sys:String x:Key="I18N.G.打开图片文件夹">打开图片文件夹</sys:String>
+	<sys:String x:Key="I18N.G.查看NG信息">查看NG信息</sys:String>
 	<sys:String x:Key="I18N.G.MES跳过">MES跳过</sys:String>
 	<sys:String x:Key="I18N.G.物料检查">物料检查</sys:String>
 	<sys:String x:Key="I18N.G.配方检查">配方检查</sys:String>
+	<sys:String x:Key="I18N.G.扫码测试">扫码测试</sys:String>
 	<sys:String x:Key="I18N.G.扭矩">扭矩</sys:String>
 	<sys:String x:Key="I18N.G.圈数">圈数</sys:String>
 	<sys:String x:Key="I18N.G.时间">时间</sys:String>
@@ -143,4 +150,5 @@
 	<sys:String x:Key="I18N.G.数量">数量</sys:String>
 	<sys:String x:Key="I18N.G.清空">清空</sys:String>
 	<sys:String x:Key="I18N.G.点检">点检</sys:String>
+	<sys:String x:Key="I18N.G.关闭">关闭</sys:String>
 </ResourceDictionary>

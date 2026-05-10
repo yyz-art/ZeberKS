@@ -4,8 +4,11 @@ using ZC.BinStructs;
 using ZC.BinStructs.Ext;
 using ZC.KvStorage;
 using ZC.Mvvm;
+using ZC.UI.ControlLibs;
+using ZC.UI.Utils;
 using ZitApp.BinStructs;
 using ZitApp.Contexts;
+using ZitApp.Models;
 using ZitApp.UI.Dialogs;
 
 namespace ZitApp.Services;
@@ -29,11 +32,16 @@ public partial class CoreService : CoreServiceBase
 	public partial ObservableList<DeviceStatusContext> DeviceStatusContexts { get; set; } = [];
 	public partial ObservableList<WorkPositionContext> WorkPositionContexts { get; set; } = [];
 	public partial string WorkerNo { get; set; } = "M000086";
+
 	public partial string WorkOrderNo { get; set; } = "";
-	public partial bool MesSkipEnabled { get; set; }
-	public partial bool MaterialCheck { get; set; } = true;
-	public partial bool RecipeCheck { get; set; } = true;
+
+	// public partial bool MesSkipEnabled { get; set; }
+	// public partial bool MaterialCheck { get; set; } = true;
+	// public partial bool RecipeCheck { get; set; } = true;
 	public partial ProductRecipe? WorkRecipe { get; set; }
+	public partial bool NozzleCheck { get; set; } = true;
+	public partial DateTime NozzleSpotCheckCompleteTime { get; set; } = DateTime.MaxValue;
+	public partial bool IsNozzleSpotCheckOk { get; set; }
 
 	public CoreService()
 	{
@@ -56,6 +64,10 @@ public partial class CoreService : CoreServiceBase
 			}
 		}
 
+		foreach (var nozzleContext in NozzleContexts)
+		{
+			nozzleContext.Config = AppConfig.NozzleConfigs.First(t => t.Id == nozzleContext.Id);
+		}
 
 		return base.OnInitialize(ctx, args);
 	}
@@ -70,10 +82,10 @@ public partial class CoreService : CoreServiceBase
 			UpdateMaterialSpaceContexts();
 			UpdateNozzleContexts();
 
-			if (Plc.Read.PLC读取配方ID切换成功响应 == 1 && Plc.Read.PC配方写入完成信号 == 1)
+			if (Plc.Read.配方下发响应 == 1 && Plc.Read.配方下发请求 == 1)
 			{
-				Plc.Write.PC配方写入完成信号 = 0;
-				Plc.Write.WritePoint(nameof(PlcStruct.PC配方写入完成信号)).Unwarp();
+				Plc.Write.配方下发请求 = 0;
+				Plc.Write.WritePoint(nameof(PlcStruct.配方下发请求)).Unwarp();
 			}
 		}
 
@@ -82,11 +94,68 @@ public partial class CoreService : CoreServiceBase
 
 	private void UpdateWorkPositionContexts()
 	{
-	
+	}
+
+	public Result NozzleSpotCheck()
+	{
+		foreach (var nozzleContext in NozzleContexts)
+		{
+			if (nozzleContext.ProductionState != ProductionState.OK)
+			{
+				return Result.Err($"nozzle '{nozzleContext.Config.Id}:{nozzleContext.Config.Name}' check failed!");
+			}
+		}
+
+		return Result.OK;
+	}
+
+	public void ResetNozzleSpotCheck()
+	{
+		Plc.Write.吸头1压力 = 0;
+		Plc.Write.WritePoint(nameof(PlcStruct.吸头1压力));
+		Plc.Write.吸头2压力 = 0;
+		Plc.Write.WritePoint(nameof(PlcStruct.吸头2压力));
+		Plc.Write.吸头3压力 = 0;
+		Plc.Write.WritePoint(nameof(PlcStruct.吸头3压力));
+		Plc.Write.吸头4压力 = 0;
+		Plc.Write.WritePoint(nameof(PlcStruct.吸头4压力));
+		Plc.Write.吸头5压力 = 0;
+		Plc.Write.WritePoint(nameof(PlcStruct.吸头5压力));
+		Plc.Write.吸头6压力 = 0;
+		Plc.Write.WritePoint(nameof(PlcStruct.吸头6压力));
+		Plc.Write.吸头7压力 = 0;
+		Plc.Write.WritePoint(nameof(PlcStruct.吸头7压力));
+		Plc.Write.吸头8压力 = 0;
+		Plc.Write.WritePoint(nameof(PlcStruct.吸头8压力));
+		Plc.Write.吸头9压力 = 0;
+		Plc.Write.WritePoint(nameof(PlcStruct.吸头9压力));
+		Plc.Write.吸头10压力 = 0;
+		Plc.Write.WritePoint(nameof(PlcStruct.吸头10压力));
 	}
 
 	private void UpdateNozzleContexts()
 	{
+		var now = DateTime.Now;
+		var 吸头点检完成时间 = DateTime.FromBinary(Plc.Read.吸头点检完成时间);
+		if (吸头点检完成时间 > now) // 防止时间错误
+		{
+			Plc.Write.吸头点检完成时间 = DateTime.MinValue.Ticks;
+			Plc.Write.WritePoint(nameof(PlcStruct.吸头点检完成时间));
+		}
+		else if (NozzleSpotCheckCompleteTime != 吸头点检完成时间 &&
+		         now - 吸头点检完成时间 > TimeSpan.FromHours(AppConfig.NozzleSpotCheckTimeoutHours))
+			// 点检超时重置
+		{
+			ResetNozzleSpotCheck();
+			NozzleSpotCheckCompleteTime = 吸头点检完成时间;
+			UiUtils.InvokeOnUiThread(() =>
+			{
+				MessageBox.ShowOverlay("nozzle spot check result is timeout, please do nozzle spot check!",
+					"nozzle spot check tip", MessageBoxIcon.Warning, host: AvaloniaApplication.Current.MainView);
+			});
+		}
+
+		var isAllOk = true;
 		foreach (var nozzleContext in NozzleContexts)
 		{
 			nozzleContext.Value = nozzleContext.Config.Id switch
@@ -103,6 +172,26 @@ public partial class CoreService : CoreServiceBase
 				10 => Plc.Read.吸头10压力,
 				_ => 0
 			};
+			if (nozzleContext.Value >= nozzleContext.Config.PressureMinValue &&
+			    nozzleContext.Value <= nozzleContext.Config.PressureMaxValue)
+				nozzleContext.ProductionState = ProductionState.OK;
+			else
+			{
+				nozzleContext.ProductionState = ProductionState.NG;
+				isAllOk = false;
+			}
+		}
+
+		if (isAllOk != IsNozzleSpotCheckOk)
+		{
+			if (isAllOk)
+			{
+				NozzleSpotCheckCompleteTime = DateTime.Now;
+				Plc.Write.吸头点检完成时间 = NozzleSpotCheckCompleteTime.Ticks;
+				Plc.Write.WritePoint(nameof(PlcStruct.吸头点检完成时间));
+			}
+
+			IsNozzleSpotCheckOk = isAllOk;
 		}
 	}
 
@@ -232,6 +321,7 @@ public partial class CoreService : CoreServiceBase
 			context.CheckMaterialState();
 		}
 	}
+
 
 	public Result SetMaterialCount(int id, int count)
 	{
@@ -377,34 +467,34 @@ public partial class CoreService : CoreServiceBase
 
 	public async Task<Result> RequestPlcWriteRecipeAsync()
 	{
-		Logger.Info("【PLC配方写入PC地址握手】开始，使用 PLC配方写入PC地址请求(21011) / PLC配方写入PC地址响应(22011)。");
+		Logger.Info("【PLC配方写入PC地址握手】开始，使用 配方上报请求(21011) / 配方上报响应(22011)。");
 
-		Plc.Write.PLC配方写入PC地址请求 = 0;
-		var result = await Plc.Write.WritePointAsync(nameof(PlcStruct.PLC配方写入PC地址响应));
+		Plc.Write.配方上报请求 = 0;
+		var result = await Plc.Write.WritePointAsync(nameof(PlcStruct.配方上报响应));
 		if (result.IsError()) return result;
 
-		Plc.Write.PLC配方写入PC地址响应 = 0;
-		result = await Plc.Write.WritePointAsync(nameof(PlcStruct.PLC配方写入PC地址响应));
+		Plc.Write.配方上报响应 = 0;
+		result = await Plc.Write.WritePointAsync(nameof(PlcStruct.配方上报响应));
 		if (result.IsError()) return result;
 
 		var resetTimeoutAt = DateTime.Now.AddSeconds(15);
 		while (DateTime.Now < resetTimeoutAt)
 		{
 			await Task.Delay(200);
-			result = await Plc.Read.ReadPointAsync(nameof(PlcStruct.PLC配方写入PC地址响应));
+			result = await Plc.Read.ReadPointAsync(nameof(PlcStruct.配方上报响应));
 			if (result.IsError()) return result;
 
-			Logger.Info("【PLC配方写入PC地址握手】等待 PLC配方写入PC地址响应(22011)=0，当前响应={response}", Plc.Read.PLC配方写入PC地址响应);
-			if (Plc.Read.PLC配方写入PC地址响应 == 0)
+			Logger.Info("【PLC配方写入PC地址握手】等待 配方上报响应(22011)=0，当前响应={response}", Plc.Read.配方上报响应);
+			if (Plc.Read.配方上报响应 == 0)
 				break;
 		}
 
-		if (Plc.Read.PLC配方写入PC地址响应 != 0)
-			return Result.Err("等待 PLC配方写入PC地址响应(22011)=0 超过15秒。");
+		if (Plc.Read.配方上报响应 != 0)
+			return Result.Err("等待 配方上报响应(22011)=0 超过15秒。");
 
-		Logger.Info("【PLC配方写入PC地址握手】写入 PLC配方写入PC地址请求(21011)=1。");
-		Plc.Write.PLC配方写入PC地址请求 = 1;
-		result = await Plc.Write.WritePointAsync(nameof(PlcStruct.PLC配方写入PC地址请求));
+		Logger.Info("【PLC配方写入PC地址握手】写入 配方上报请求(21011)=1。");
+		Plc.Write.配方上报请求 = 1;
+		result = await Plc.Write.WritePointAsync(nameof(PlcStruct.配方上报请求));
 		if (result.IsError())
 			return result;
 
@@ -412,28 +502,28 @@ public partial class CoreService : CoreServiceBase
 		while (DateTime.Now < timeoutAt)
 		{
 			await Task.Delay(200);
-			result = await Plc.Read.ReadPointAsync(nameof(PlcStruct.PLC配方写入PC地址响应));
+			result = await Plc.Read.ReadPointAsync(nameof(PlcStruct.配方上报响应));
 			if (result.IsError())
 				return result;
 
-			Logger.Info("【PLC配方写入PC地址握手】读取 PLC配方写入PC地址响应(22011)={response}", Plc.Read.PLC配方写入PC地址响应);
-			if (Plc.Read.PLC配方写入PC地址响应 == 1)
+			Logger.Info("【PLC配方写入PC地址握手】读取 配方上报响应(22011)={response}", Plc.Read.配方上报响应);
+			if (Plc.Read.配方上报响应 == 1)
 			{
 				Logger.Info("【PLC配方写入PC地址握手】收到响应=1，复位 21011 和 22011。");
-				Plc.Write.PLC配方写入PC地址请求 = 0;
-				result = await Plc.Write.WritePointAsync(nameof(PlcStruct.PLC配方写入PC地址请求));
+				Plc.Write.配方上报请求 = 0;
+				result = await Plc.Write.WritePointAsync(nameof(PlcStruct.配方上报请求));
 				if (result.IsError())
 					return result;
 
-				Plc.Write.PLC配方写入PC地址响应 = 0;
-				result = await Plc.Write.WritePointAsync(nameof(PlcStruct.PLC配方写入PC地址响应));
+				Plc.Write.配方上报响应 = 0;
+				result = await Plc.Write.WritePointAsync(nameof(PlcStruct.配方上报响应));
 				return result;
 			}
 		}
 
-		Plc.Write.PLC配方写入PC地址请求 = 0;
-		_ = await Plc.Write.WritePointAsync(nameof(PlcStruct.PLC配方写入PC地址请求));
-		return Result.Err("等待 PLC配方写入PC地址响应(22011)=1 超过15秒。");
+		Plc.Write.配方上报请求 = 0;
+		_ = await Plc.Write.WritePointAsync(nameof(PlcStruct.配方上报请求));
+		return Result.Err("等待 配方上报响应(22011)=1 超过15秒。");
 	}
 
 	public async Task<Result> DistributeRecipeAsync(ProductRecipe recipe)
@@ -450,10 +540,10 @@ public partial class CoreService : CoreServiceBase
 		Logger.Info("[RECIPE CHANGE] start distribute recipe '{recipeName}'", recipe.Name);
 		try
 		{
-			Plc.Write.PC配方写入完成信号 = 0;
-			Plc.Write.WritePoint(nameof(PlcStruct.PC配方写入完成信号)).Unwarp();
-			Plc.Write.PLC读取配方ID切换成功响应 = 0;
-			Plc.Write.WritePoint(nameof(PlcStruct.PLC读取配方ID切换成功响应)).Unwarp();
+			Plc.Write.配方下发请求 = 0;
+			Plc.Write.WritePoint(nameof(PlcStruct.配方下发请求)).Unwarp();
+			Plc.Write.配方下发响应 = 0;
+			Plc.Write.WritePoint(nameof(PlcStruct.配方下发响应)).Unwarp();
 			foreach (var group in structInfo.Members.Values.OfType<IBinaryPointGroupInfo>())
 			{
 				if (group.Points.FirstOrDefault()?.ReaderData is not string readerName)
@@ -475,8 +565,8 @@ public partial class CoreService : CoreServiceBase
 
 			Plc.Write.上位机当前配方ID = (short)recipe.Id;
 			Plc.Write.WritePoint(nameof(PlcStruct.上位机当前配方ID)).Unwarp();
-			Plc.Write.PC配方写入完成信号 = 1;
-			Plc.Write.WritePoint(nameof(PlcStruct.PC配方写入完成信号)).Unwarp();
+			Plc.Write.配方下发请求 = 1;
+			Plc.Write.WritePoint(nameof(PlcStruct.配方下发请求)).Unwarp();
 		}
 		finally
 		{

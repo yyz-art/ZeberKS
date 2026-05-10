@@ -84,23 +84,58 @@
 						<ItemsControl.ItemTemplate>
 							<DataTemplate>
 								<Border Background="#1f1f1f" BorderBrush="#3f3f3f" BorderThickness="1" Padding="5">
-									<Grid RowDefinitions="Auto,Auto,*,40,Auto" RowSpacing="8">
-										<LinearPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" Spacing="10">
-											<TextBlock Text="SN" Foreground="#c8c8c8" VerticalAlignment="Center" FontSize="16" FontWeight="Bold" />
-											<Label Content="{Binding ScanSnCode}" Classes="Value" FontSize="16" Padding="5" MinWidth="240" />
-											<Control LinearPanel.Weight="1" />
-											<TextBlock Text="{Binding WorkStep}" FontSize="16" FontWeight="Bold" Foreground="#ffffff"
-																VerticalAlignment="Center" />
-											<Label Content="{Binding ProductionState}"
-														Background="{Binding ProductionState, Converter= {StaticResource StateColorCvt}}"
-														VerticalAlignment="Center" Padding="20 2" FontSize="20" />
-										</LinearPanel>
-										<LinearPanel Grid.Row="1" Orientation="Horizontal">
-											<TextBlock Text="{Binding LastError}" Foreground="OrangeRed" />
-											<Control LinearPanel.Weight="1" />
+									<Grid RowDefinitions="Auto,*,40,Auto" RowSpacing="8">
+										<LinearPanel Grid.Row="0" Orientation="Vertical" Spacing="4">
+											<LinearPanel Orientation="Horizontal" Spacing="10">
+												<Label Theme="{DynamicResource Label-Tag}" FontSize="16" Padding="5" HorizontalAlignment="Stretch"
+															LinearPanel.Weight="1">
+													<StackPanel Orientation="Horizontal">
+														<TextBlock Text="SN:" Foreground="#c8c8c8" VerticalAlignment="Center" FontSize="16" FontWeight="Bold" />
+														<SelectableTextBlock Text="{Binding ScanSnCode}" FontSize="16" VerticalAlignment="Center" />
+													</StackPanel>
+												</Label>
+												<!-- <Label Theme="{DynamicResource Label-Tag}" FontSize="16" Padding="5" HorizontalAlignment="Stretch" -->
+												<!-- 			LinearPanel.Weight="1"> -->
+												<!-- 	<StackPanel Orientation="Horizontal"> -->
+												<!-- 		<TextBlock Text="KEY PART:" Foreground="#c8c8c8" VerticalAlignment="Center" FontSize="16" -->
+												<!-- 							FontWeight="Bold" /> -->
+												<!-- 		<SelectableTextBlock Text="{Binding ScanSnCode}" FontSize="16" VerticalAlignment="Center" /> -->
+												<!-- 	</StackPanel> -->
+												<!-- </Label> -->
 
+												<Label Content="{Binding ProductionState}"
+															Background="{Binding ProductionState, Converter= {StaticResource StateColorCvt}}"
+															VerticalAlignment="Center" Padding="20 2" FontSize="20" />
+											</LinearPanel>
+											<LinearPanel Orientation="Horizontal" Spacing="10">
+												<CheckBox Content="MES"
+																	IsChecked="{Binding MesEnabled, Mode=TwoWay}"
+																	VerticalAlignment="Center"
+																	Foreground="White" />
+
+												<CheckBox Content="{StaticResource I18N.G.物料检查}"
+																	IsChecked="{Binding MaterialCheck, Mode=TwoWay}"
+																	VerticalAlignment="Center"
+																	Foreground="White" />
+
+												<CheckBox Content="{StaticResource I18N.G.配方检查}"
+																	IsChecked="{Binding RecipeCheck, Mode=TwoWay}"
+																	VerticalAlignment="Center"
+																	Foreground="White" />
+												<CheckBox Content="{StaticResource I18N.G.扫码测试}"
+																	IsChecked="{Binding TestScanner, Mode=TwoWay}"
+																	VerticalAlignment="Center"
+																	Foreground="White" />
+												<Control LinearPanel.Weight="1" />
+												<TextBlock Text="{Binding WorkStep}" FontSize="16" FontWeight="Bold" Foreground="#ffffff"
+																	VerticalAlignment="Center" />
+												<!-- <Button Content="{StaticResource I18N.G.查看NG信息}" Theme="{StaticResource Button-Outline}" /> -->
+											</LinearPanel>
+											<SelectableTextBlock Text="{Binding ErrorMessage}" Foreground="OrangeRed" TextWrapping="Wrap" Height="40" />
 										</LinearPanel>
-										<Grid Grid.Row="2" RowDefinitions="Auto,*" RowSpacing="10">
+
+
+										<Grid Grid.Row="1" RowDefinitions="Auto,*" RowSpacing="10">
 											<LinearPanel Grid.Row="0" Orientation="Horizontal" Spacing="10">
 												<ComboBox ItemsSource="{Binding ImageInfos}" SelectedValue="{Binding SelectedImageInfo}"
 																	HorizontalAlignment="Stretch" LinearPanel.Weight="1">
@@ -111,19 +146,19 @@
 													</ComboBox.ItemTemplate>
 												</ComboBox>
 												<Button Content="{StaticResource I18N.G.打开图片文件夹}" Classes="Secondary"
-																Command="{Binding OpenImageFileFolderCommand}"/>
+																Command="{Binding OpenImageFileFolderCommand}" />
 											</LinearPanel>
 											<libs:ImageViewer Grid.Row="1" Source="{Binding Image}" />
 										</Grid>
 
-										<PercentCanvas Grid.Row="3" Margin="0 0">
+										<PercentCanvas Grid.Row="2" Margin="0 0">
 											<Rectangle Fill="DodgerBlue" RadiusX="5" RadiusY="5" Height="15" PercentCanvas.Anchor="Center"
 																PercentCanvas.HStretch="1"
 																PercentCanvas.XPercent="0.5" PercentCanvas.YPercent="0.5" />
 											<Rectangle Fill="LightSeaGreen" Width="20" Height="30" PercentCanvas.Anchor="Center"
 																PercentCanvas.XPercent="{Binding AxisPercent, Mode=TwoWay}" PercentCanvas.YPercent="0.5" />
 										</PercentCanvas>
-										<Grid Grid.Row="4" IsVisible="{Binding IsUsedScrewInstallDataGrid}" Height="148">
+										<Grid Grid.Row="3" IsVisible="{Binding IsUsedScrewInstallDataGrid}" Height="148">
 											<DataGrid ItemsSource="{Binding ScrewInstallDataList}" VerticalScrollBarVisibility="Visible"
 																GridLinesVisibility="All"
 																BorderBrush="{DynamicResource Brush-Border}" BorderThickness="1">
@@ -161,11 +196,11 @@
 													BorderBrush="White"
 													BorderThickness="0 0 0 1" FontSize="18"
 													Background="{Binding ProductionState, Converter={StaticResource StateColorCvt}}" />
-										<Grid Grid.Row="1" RowDefinitions="Auto,Auto,Auto" ColumnDefinitions="Auto,*,Auto" ColumnSpacing="5"
+										<Grid Grid.Row="1" RowDefinitions="Auto,Auto,Auto" ColumnDefinitions="Auto,*" ColumnSpacing="5"
 													RowSpacing="5"
 													Margin="5">
 											<TextBlock Grid.Row="0" Grid.Column="0" Classes="Label" Text="{StaticResource I18N.G.范围}" />
-											<Label Grid.Row="0" Grid.Column="1" Classes="Value" Grid.ColumnSpan="2">
+											<Label Grid.Row="0" Grid.Column="1" Classes="Value">
 												<StackPanel Orientation="Horizontal">
 													<TextBlock Text="{Binding Config.PressureMinValue}" />
 													<TextBlock Text="~" />
@@ -175,10 +210,6 @@
 											<TextBlock Grid.Row="1" Grid.Column="0" Classes="Label" Text="{StaticResource I18N.G.压力}" />
 											<Label Grid.Row="1" Grid.Column="1" Classes="Value" Content="{Binding Value, StringFormat=F2}"
 														VerticalContentAlignment="Center" />
-											<Button Grid.Row="1" Grid.Column="2" Content="{StaticResource I18N.G.点检}"
-															Margin="0" Padding="2"
-															Command="{Binding #RootView.DataContext.NozzleInspectionCommand}"
-															CommandParameter="{Binding .}" />
 										</Grid>
 									</Grid>
 								</Border>
@@ -296,31 +327,34 @@
 						</LinearPanel>
 						<LinearPanel Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" Spacing="15"
 												HorizontalAlignment="Center">
-							<CheckBox Content="{StaticResource I18N.G.MES跳过}"
-												IsChecked="{Binding CoreService.MesSkipEnabled, Mode=TwoWay}"
-												VerticalAlignment="Center"
-												Foreground="White" />
-							<CheckBox Content="{StaticResource I18N.G.物料检查}"
-												IsChecked="{Binding CoreService.MaterialCheck, Mode=TwoWay}"
-												VerticalAlignment="Center"
-												Foreground="White" />
-
-							<CheckBox Content="{StaticResource I18N.G.配方检查}"
-												IsChecked="{Binding CoreService.RecipeCheck, Mode=TwoWay}"
-												VerticalAlignment="Center"
-												Foreground="White" />
+			
 						</LinearPanel>
 					</Grid>
 				</ViewContainer>
 				<StackPanel Orientation="Vertical" Spacing="5">
-					<StackPanel Orientation="Vertical">
-						<Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto" ColumnSpacing="5" RowSpacing="5">
-							<Label FontWeight="Bold" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
+					<StackPanel Orientation="Vertical" Spacing="20">
+						<Grid ColumnDefinitions="Auto,*,Auto" RowDefinitions="Auto,Auto" ColumnSpacing="5" RowSpacing="5">
+							<Label FontWeight="Bold" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3"
 										Content="{StaticResource I18N.G.PLC_网络连接}" Background="#277679" Foreground="White"
 										HorizontalAlignment="Stretch" />
 
 							<Label Classes="Label" Grid.Row="1" Grid.Column="0" Content="IP:" VerticalAlignment="Center" />
 							<TextBox Grid.Row="1" Grid.Column="1" Text="{Binding DisplayPlcIp}" IsReadOnly="True" />
+							<Button Grid.Row="1" Grid.Column="2" Content="打开监视" Command="{Binding OpenIoMonitorCommand}"/>
+						</Grid>
+						<Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto,Auto" ColumnSpacing="5" RowSpacing="5">
+							<Label FontWeight="Bold" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
+										Content="{StaticResource I18N.G.吸嘴压力点检}" Background="#277679" Foreground="White"
+										HorizontalAlignment="Stretch" />
+							<Label Classes="Label" Grid.Row="1" Grid.Column="0" Content="点检完成时间" VerticalAlignment="Center" />
+							<TextBox Grid.Row="1" Grid.Column="1" Text="{Binding CoreService.NozzleSpotCheckCompleteTime}" IsReadOnly="True" />
+							<StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" Spacing="10" HorizontalAlignment="Center">
+								<CheckBox Content="{StaticResource I18N.G.吸嘴压力点检}"
+													IsChecked="{Binding CoreService.NozzleCheck, Mode=TwoWay}"
+													VerticalAlignment="Center"
+													Foreground="White" />
+								<Button Content="复位吸嘴点检" HorizontalAlignment="Center" Command="{Binding ResetNozzleSpotCheckCommand}"></Button>
+							</StackPanel>
 						</Grid>
 						<!-- <Button Content="打开 PLC IO 监控" -->
 						<!-- 				Command="{Binding OpenIoMonitor}" -->

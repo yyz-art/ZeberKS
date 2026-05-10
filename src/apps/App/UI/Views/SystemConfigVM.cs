@@ -3,6 +3,7 @@ using System.Globalization;
 using System.Text.Json;
 using Avalonia.Collections;
 using Avalonia.Platform.Storage;
+using ClosedXML.Excel;
 using ZC;
 using ZC.CFG;
 using ZC.IFS.Objects;
@@ -12,6 +13,7 @@ using ZC.MetaInfo.Utils;
 using ZC.Mvvm;
 using ZC.Shared.DefaultJson;
 using ZC.UI.ControlLibs;
+using ZitApp.Models;
 
 namespace ZitApp.UI.Config;
 
@@ -40,7 +42,8 @@ public partial class SystemConfigVM : CommonUiVM<SystemConfigView>, INamedObject
 				{ Id = i + 1, Name = $"Nozzle{i + 1}", PressureMinValue = 0, PressureMaxValue = 4096 }))
 		};
 	}
-
+	public partial ObservableList<string> ImportSheetNames { get; set; } = [];
+	public partial string SelectedSheetName { get; set; }
 	public List<IPropertyInstance> PropertyInstances { get; } =
 		TypeMetaInfo<AppConfig>.Cache.Properties.Where(t => t.Attributes
 				.Any(attr => attr is ValueInfoAttribute))
@@ -259,6 +262,48 @@ public partial class SystemConfigVM : CommonUiVM<SystemConfigView>, INamedObject
 		}
 
 		OnSelectedConfigGroupChanged(SelectedConfigGroup);
+	}
+
+	public async Task @ImportNgDefineTable()
+	{
+		var files = await this.GetTopLevel()!.StorageProvider.OpenFilePickerAsync(new FilePickerOpenOptions
+		{
+			FileTypeFilter = [new FilePickerFileType(".xlsx")]
+		});
+
+		if (files.Count <= 0)
+		{
+			ShowToast("cancel");
+			return;
+		}
+		using var workbook = new XLWorkbook(files[0].Path.LocalPath);
+		ImportSheetNames.Clear();
+		ImportSheetNames.AddRange(workbook.Worksheets.Select(t => t.Name));
+		SelectedSheetName = "";
+		await ShowModalDialog(View.ImportTableSheetSelectDialog);
+		if (string.IsNullOrEmpty(SelectedSheetName))
+		{
+			await ShowMessageBoxOverlay("select sheet is null, cancel", "import ng define table", MessageBoxIcon.Error);
+			return;
+		}
+
+		var worksheet = workbook.Worksheet(SelectedSheetName);
+		var rows = worksheet.RangeUsed()!.RowsUsed().Skip(1); // 跳过表头
+		var list = new List<NgDefine>();
+		foreach (var row in rows)
+		{
+			var item = new NgDefine();
+			item.Id = row.Cell(1).GetValue<int>();
+			item.Sender = row.Cell(2).GetValue<string>();
+			item.Name = row.Cell(3).GetValue<string>();
+			item.Reason = row.Cell(4).GetValue<string>();
+			item.Description = row.Cell(5).GetValue<string>();
+			list.Add(item);
+		}
+
+		EditConfig.NgDefines = list;
+		ShowToast("import ng define table success!", UiMessageType.Success);
+		
 	}
 
 

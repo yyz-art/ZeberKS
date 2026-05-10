@@ -343,11 +343,11 @@ public partial class RecipeVM : UiVM<RecipeView>
 			material.PositionName = row.Cell(4).GetValue<string>();
 			material.DefaultReplaceCount = row.Cell(5).GetValue<int>();
 			material.AlarmRemainCount = row.Cell(6).GetValue<int>();
-			material.MaterialCodes[0] = row.Cell(7).GetValue<string>();
-			material.MaterialCodes[1] = row.Cell(8).GetValue<string>();
-			material.MaterialCodes[2] = row.Cell(9).GetValue<string>();
-			material.MaterialCodes[3] = row.Cell(10).GetValue<string>();
-			material.Description = row.Cell(11).GetValue<string>();
+			material.Description = row.Cell(7).GetValue<string>();
+			material.MaterialCodes[0] = row.Cell(8).GetValue<string>();
+			material.MaterialCodes[1] = row.Cell(9).GetValue<string>();
+			material.MaterialCodes[2] = row.Cell(10).GetValue<string>();
+			material.MaterialCodes[3] = row.Cell(11).GetValue<string>();
 			list.Add(material);
 		}
 
@@ -493,6 +493,7 @@ public partial class RecipeVM : UiVM<RecipeView>
 		ShowToast("recipe created!", UiMessageType.Success);
 		View.CreateNewRecipeDialog.Close();
 		LoadRecipeNames();
+		SelectedRecipeName = RecipeNames.FirstOrDefault(t => t == recipe.Name);
 	}
 
 	public Task @CreateNewRecipe()
@@ -520,6 +521,13 @@ public partial class RecipeVM : UiVM<RecipeView>
 		LoadRecipeNames();
 
 		return base.Initialize(ctx, args);
+	}
+
+	protected override Task OnViewAttachedToVisualTree(object sender, object? args)
+	{
+		LoadRecipeNames();
+		SelectedRecipeName = RecipeNames.FirstOrDefault(t=>t == SelectedRecipeName);
+		return base.OnViewAttachedToVisualTree(sender, args);
 	}
 
 	partial void OnSelectedPropertyCategoryChanged(string value)

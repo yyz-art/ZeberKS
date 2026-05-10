@@ -1,0 +1,55 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+				xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+				xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+				xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+				xmlns:contexts="clr-namespace:ZitApp.Contexts;assembly=ZitApp.Core"
+				mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+				x:Class="ZitApp.UI.Dialogs.NgDetailDialog"
+				Title="DgDetailDialog"
+				SystemDecorations="BorderOnly"
+				ExtendClientAreaChromeHints="NoChrome"
+				ExtendClientAreaToDecorationsHint="True"
+				ExtendClientAreaTitleBarHeightHint="30"
+				Padding="10"
+				WindowStartupLocation="CenterOwner">
+	<Design.DataContext>
+		<contexts:WorkPositionContext/>
+	</Design.DataContext>
+	<Grid RowDefinitions="Auto,Auto,*,Auto" RowSpacing="10">
+		<LinearPanel Grid.Row="0" Orientation="Horizontal" Padding="5" Spacing="10">
+			<Label Content="NG 信息" Theme="{StaticResource Label-Tag}" Classes="Ghost Red" FontWeight="Bold" FontSize="20" Padding="5"/>
+			<TextBlock Text="{Binding Name}" VerticalAlignment="Center" FontSize="20"></TextBlock>
+			<Label MinWidth="300" Padding="5" Theme="{StaticResource Label-Tag}" FontSize="20" >
+				<StackPanel Orientation="Horizontal">
+					<TextBlock Text="SN: " VerticalAlignment="Center"/>
+					<SelectableTextBlock Text="{Binding ScanSnCode}"/>
+				</StackPanel>
+			</Label>
+			<Label MinWidth="300" Padding="5" Theme="{StaticResource Label-Tag}" FontSize="20" >
+				<StackPanel Orientation="Horizontal">
+					<TextBlock Text="Key Part: " VerticalAlignment="Center"/>
+					<SelectableTextBlock Text="{Binding ScanKeyPartCode}"/>
+				</StackPanel>
+			</Label>
+		</LinearPanel>
+		
+		<SelectableTextBlock Grid.Row="1" Text="{Binding ErrorMessage}" Foreground="OrangeRed"
+												FontSize="18" TextWrapping="Wrap" MinHeight="80"/>
+		
+		<DataGrid Grid.Row="2" CanUserSortColumns="False" CanUserResizeColumns="True"
+							ItemsSource="{Binding NgItems}"
+							GridLinesVisibility="All" BorderBrush="{DynamicResource Brush-Border}" BorderThickness="1">
+			<DataGrid.Columns>
+				<DataGridTextColumn Header="Id" Width="60" Binding="{Binding Id}"/>
+				<DataGridTextColumn Header="{StaticResource I18N.G.发送者}" Binding="{Binding Sender}" MinWidth="100"/>
+				<DataGridTextColumn Header="{StaticResource I18N.G.名称}" Binding="{Binding Name}" MinWidth="100"/>
+				<DataGridTextColumn Header="{StaticResource I18N.G.原因}" Binding="{Binding Reason}" MinWidth="100"/>
+				<DataGridTextColumn Header="{StaticResource I18N.G.备注}" Binding="{Binding Description}" Width="*"/>
+			</DataGrid.Columns>
+		</DataGrid>
+		
+		<LinearPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Right" Spacing="10" Margin=" 0 0 0 0">
+			<Button Content="{StaticResource I18N.G.关闭}" Click="HideClick" />
+		</LinearPanel>
+	</Grid>
+</Window>

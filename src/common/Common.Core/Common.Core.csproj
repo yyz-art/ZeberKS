@@ -23,5 +23,12 @@
 	  <PackageReference Include="ICSharpCode.SharpZipLib.dll" Version="0.85.4.369" />
 	  <PackageReference Include="System.IO.Ports" Version="10.0.3" />
 	</ItemGroup>
+	
+	<ItemGroup>
+	  <Compile Update="UI\Dialogs\NgDetailDialog.axaml.cs">
+	    <DependentUpon>NgDetailDialog.axaml</DependentUpon>
+	    <SubType>Code</SubType>
+	  </Compile>
+	</ItemGroup>
 
 </Project>

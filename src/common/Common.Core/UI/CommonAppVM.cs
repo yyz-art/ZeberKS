@@ -28,7 +28,7 @@ public abstract partial class CommonAppVM : ApplicationViewModel, INamedObject
 
 	protected override async Task OnInitialize(object? ctx, object? args)
 	{
-		if (Design.IsDesignMode) return ;
+		if (Design.IsDesignMode) return;
 		var navManager = Ui.MainView.NavManager!;
 		Ui.MainView.Toast?.Position = UiMessagePosition.BottomCenter;
 		Ui.MainView.Notification?.Position = UiMessagePosition.BottomRight;
@@ -62,9 +62,11 @@ public abstract partial class CommonAppVM : ApplicationViewModel, INamedObject
 		var navigationInfo = navManager.Root.GetChild(uri.AsSpan());
 		if (navigationInfo?.CustomData is int roleLevel && AccountService.Account?.RoleFlags < roleLevel)
 		{
-			await ShowMessageBox("current account is not access, please switch account", "navigate tip", MessageBoxIcon.Error);
+			await ShowMessageBox("current account is not access, please switch account", "navigate tip",
+				MessageBoxIcon.Error);
 			return;
 		}
+
 		navManager.Navigate(finalNavData).Unwarp();
 		(SelectedNavData as MenuItem)?.Classes.Remove("NavActive");
 		SelectedNavData = data;
@@ -94,8 +96,10 @@ public abstract partial class CommonAppVM : ApplicationViewModel, INamedObject
 		popVM.View.Height = 600;
 		popVM.View.Width = 800;
 		var uiVM = sender as UiViewModel;
-		if (uiVM?.View is Window senderTopLevelWindow)
-			return popVM.GetWindow()!.ShowDialog(senderTopLevelWindow);
+		var window = uiVM?.GetTopLevelView() as Window ?? AvaloniaApplication.Current.MainView as Window;
+		if (window is not null)
+			return popVM.GetWindow()?.ShowDialog(window) ?? Task.CompletedTask;
+		popVM.GetWindow()?.Show();
 		return Task.CompletedTask;
 	}
 

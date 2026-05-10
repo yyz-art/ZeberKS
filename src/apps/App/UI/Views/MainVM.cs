@@ -29,7 +29,7 @@ public partial class MainVM : UiVM<MainView>
 	// [Inject(SpecialName = "R")] public required ScrewService ScrewService2 { get; init; }
 	// public ScrewMachineData ScrewData => field ??= (Design.IsDesignMode ? new ScrewMachineData() : ScrewService.Data)!;
 #endif
-
+	public required PlcPointMonitorVM PlcPointMonitorVM { get; init; }
 	public required WorkService1 WorkLeft { get; init; }
 
 	public required WorkService2 WorkRight { get; init; }
@@ -305,8 +305,22 @@ public partial class MainVM : UiVM<MainView>
 	public partial IBrush InputMaterialCodeBorderBrush { get; set; }
 	public partial int InputMaterialCount { get; set; }
 	public partial string ReplaceMaterialTipMessage { get; set; } = "";
-	
+
 	public bool HasNozzleContexts => CommonAppConfig.NozzleCount > 0;
+
+	public async Task @ResetNozzleSpotCheck()
+	{
+		var option = await ShowMessageBoxOverlay("confirm reset nozzle spot check value?", "nozzle spot check",
+			MessageBoxIcon.Question, MessageBoxButton.YesNo);
+		if (option is not MessageBoxResult.Yes)
+		{
+			ShowToast("cancel");
+			return;
+		}
+
+		await Task.Run(() => CoreService.ResetNozzleSpotCheck());
+		ShowToast("success", UiMessageType.Success);
+	}
 
 	partial void OnInputMaterialPositionCodeChanged(string value) =>
 		InputMaterialPositionCodeBorderBrush =
@@ -324,6 +338,8 @@ public partial class MainVM : UiVM<MainView>
 
 	public Task @OpenIoMonitor()
 	{
+		PlcPointMonitorVM.SetPlcStructs(Plc.Read, Plc.Write);
+		PlcPointMonitorVM.View.Show();
 		// IoMonitorVM.Show();
 		return Task.CompletedTask;
 	}

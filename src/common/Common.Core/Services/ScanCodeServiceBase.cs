@@ -6,12 +6,14 @@ using ZC.EasyIO;
 using ZC.IO;
 using ZC.LOG;
 using ZC.Mvvm;
+using ZitApp.Devices.Plc;
 
 namespace ZitApp.Services;
 
 [ObservableObject]
 public abstract partial class WorkServiceBase : MainTaskService
 {
+	public static bool[] EmptyBoolX200 = new bool[200];
 	public static readonly byte[] StartScanCommandBytes = HexUtils.Parse("04 E4 04 00 FF 14");
 	public static readonly byte[] StartScanResponseBytes = HexUtils.Parse("04 D0 00 00 FF 2C");
 	public static readonly byte[] StopScanCommandBytes = HexUtils.Parse("04 E5 04 00 FF 13");
@@ -26,7 +28,7 @@ public abstract partial class WorkServiceBase : MainTaskService
 
 	public required ILogger Logger { get; init; }
 	// public partial int DayProductionId { get; set; }
-
+	
 	public override IMainTaskServiceOptions GetServiceOptions() => DefaultThreadMainTaskServiceOptions;
 
 	protected Result<string> DoScanCode(IDataSocket codeScanner)
@@ -36,7 +38,7 @@ public abstract partial class WorkServiceBase : MainTaskService
 		var writeResult = codeScanner.Write(StartScanCommandBytes);
 		if (writeResult.IsError())
 			return Result.Err<string>("send scanner command failed, connection error!");
-		var readResult = codeScanner.ReadContinuous(byteBuffer, 2000, 200);
+		var readResult = codeScanner.ReadContinuous(byteBuffer, 1000, 200);
 		if (readResult.IsError())
 		{
 			// Logger.Error("code scanner read timeout! {msg}", readResult.Message);

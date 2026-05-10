@@ -73,6 +73,10 @@
 	  <Compile Update="UI\Dialogs\CreateMaterialRecipeDialog.axaml.cs">
 	    <DependentUpon>CreateMaterialRecipeDialog.axaml</DependentUpon>
 	  </Compile>
+	  <Compile Update="UI\Views\PlcPointMonitorWindow.axaml.cs">
+	    <DependentUpon>PlcPointMonitorWindow.axaml</DependentUpon>
+	    <SubType>Code</SubType>
+	  </Compile>
 	</ItemGroup>
 	<ItemGroup>
 	  <AdditionalFiles Include="UI\Views\AlarmManageView.axaml" />

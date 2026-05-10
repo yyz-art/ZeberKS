@@ -1,0 +1,46 @@
+﻿<UiWindow xmlns="https://github.com/avaloniaui"
+				xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+				xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+				xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+				xmlns:account="clr-namespace:ZitApp.UI.Account"
+				mc:Ignorable="d" d:DesignWidth="1000" d:DesignHeight="450"
+				x:Class="ZitApp.UI.PlcPointMonitorWindow"
+				Title="PLC 交互数据监控"
+				SystemDecorations="BorderOnly"
+				ExtendClientAreaChromeHints="NoChrome"
+				ExtendClientAreaToDecorationsHint="True"
+				ExtendClientAreaTitleBarHeightHint="30"
+				WindowStartupLocation="CenterOwner">
+				
+	<Design.DataContext>
+		<PlcPointMonitorVM/>
+	</Design.DataContext>
+	<Grid RowDefinitions="Auto,*" ColumnDefinitions="*,*" RowSpacing="10" ColumnSpacing="10" Margin="10">
+		<LinearPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
+			<Label Content="PLC 交互数据监控" Theme="{DynamicResource Label-Tag}" Classes="Ghost Green" FontSize="16"/>
+			<Control LinearPanel.Weight="1"/>
+			<Button Content="关闭" Command="{Binding HideCommand}"/>
+		</LinearPanel>
+		<DataGrid Grid.Row="1" Grid.Column="0" ItemsSource="{Binding ToPcPropertyInstances}" GridLinesVisibility="All"
+							BorderBrush="{DynamicResource Brush-Border}" BorderThickness="1" CanUserSortColumns="False">
+			<DataGrid.Columns>
+				<DataGridTextColumn Header="名称" Binding="{Binding Define.Name}"/>
+				<DataGridTextColumn Header="数据源" Binding="{Binding Define.ValueInfo.Source}"/>
+				<DataGridTextColumn Header="读取值" Binding="{Binding Value}"/>
+				<!-- <DataGridTextColumn Header="写入值" Binding="{Binding TempValue1}"/> -->
+				<DataGridTextColumn Header="描述" Binding="{Binding Define.ValueInfo.Description}" Width="*"/>
+			</DataGrid.Columns>
+		</DataGrid>
+		
+		<DataGrid Grid.Row="1" Grid.Column="1" ItemsSource="{Binding ToPlcPropertyInstances}" GridLinesVisibility="All"
+							BorderBrush="{DynamicResource Brush-Border}" BorderThickness="1" CanUserSortColumns="False">
+			<DataGrid.Columns>
+				<DataGridTextColumn Header="名称" Binding="{Binding Define.Name}"/>
+				<DataGridTextColumn Header="数据源" Binding="{Binding Define.ValueInfo.Source}"/>
+				<DataGridTextColumn Header="读取值" Binding="{Binding Value}"/>
+				<!-- <DataGridTextColumn Header="写入值" Binding="{Binding TempValue1}"/> -->
+				<DataGridTextColumn Header="描述" Binding="{Binding Define.ValueInfo.Description}" Width="*"/>
+			</DataGrid.Columns>
+		</DataGrid>
+	</Grid>
+</UiWindow>

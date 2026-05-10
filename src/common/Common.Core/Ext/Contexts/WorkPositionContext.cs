@@ -1,7 +1,10 @@
 ﻿using Avalonia.Media;
 using Avalonia.Media.Imaging;
+using Avalonia.Threading;
 using ZC.Mvvm;
+using ZC.UI.Utils;
 using ZitApp.Models;
+using ZitApp.UI.Dialogs;
 using ScrewInstallData = ZitApp.Models.ScrewInstallData;
 
 namespace ZitApp.Contexts;
@@ -15,14 +18,17 @@ public partial class WorkPositionContext : ObservableObject
 	public partial string ScanSnCode { get; set; } = "";
 	public partial string ScanKeyPartCode { get; set; } = "";
 	public partial string ModelName { get; set; } = "";
-	public partial string? LastError { get; set; }
-	public partial WorkStep WorkStep { get; set; } = WorkStep.WORK_POSITION_IS_FREE;
+	public partial string? ErrorMessage { get; set; }
+	public partial WorkStep WorkStep { get; set; } = WorkStep.FREE;
 	public partial ProductionState ProductionState { get; set; } = ProductionState.NA;
 	public partial IImage Image { get; set; } = null!;
 	public partial double AxisPercent { get; set; } = 0.5;
 	public partial string? ImagePathRoot { get; set; }
 	public partial DateTime ImagePathCollectInfoTime { get; set; }
-	public partial ObservableList<ImageInfo> ImageInfos { get; set; } = [ new ImageInfo("TEST", "C:\\Users\\AINO\\Pictures\\d.png")];
+
+	public partial ObservableList<ImageInfo> ImageInfos { get; set; } =
+		[new("TEST", "C:\\Users\\AINO\\Pictures\\d.png")];
+
 	public partial ImageInfo? SelectedImageInfo { get; set; }
 
 	partial void OnSelectedImageInfoChanged(ImageInfo? oldValue, ImageInfo? newValue)
@@ -33,11 +39,36 @@ public partial class WorkPositionContext : ObservableObject
 		}
 	}
 
+	public NgDetailDialog? NgDetailDialog { get; set; }
 
 	public WorkPositionContext()
 	{
 		ScrewInstallDataList =
 			new ObservableList<ScrewInstallData>(Enumerable.Range(0, 12).Select(t => new ScrewInstallData()));
+	}
+
+	public Task ShowNgDetailDialog()
+	{
+		if (false == Dispatcher.UIThread.CheckAccess())
+		{
+			return Dispatcher.UIThread.InvokeAsync(ShowNgDetailDialog);
+		}
+
+		NgDetailDialog ??= new NgDetailDialog();
+		NgDetailDialog.DataContext = this;
+		NgDetailDialog.ShowInTaskbar = false;
+		return NgDetailDialog.ShowDialog((Window)AvaloniaApplication.Current.MainView);
+	}
+
+	public Task HideNgDetailDialog()
+	{
+		if (false == Dispatcher.UIThread.CheckAccess())
+		{
+			return Dispatcher.UIThread.InvokeAsync(HideNgDetailDialog);
+		}
+
+		NgDetailDialog?.Hide();
+		return Task.CompletedTask;
 	}
 
 	public void UpdateImageInfo()
@@ -67,6 +98,11 @@ public partial class WorkPositionContext : ObservableObject
 	public partial ObservableList<String> ImageNames { get; set; } = ["A_OK", "B_OK", "C_NG", "D_OK", "E_NG", "F_NG"];
 	public partial bool IsUsedScrewInstallDataGrid { get; set; } = CommonAppConfig.IsUsedScrewInstallDataGrid;
 	public partial int DayProductionId { get; set; }
+	public partial bool MaterialCheck { get; set; } = true;
+	public partial bool RecipeCheck { get; set; } = true;
+	public partial bool MesEnabled { get; set; } = true;
+	public partial bool TestScanner { get; set; } 
+	public partial ObservableList<NgDefine> NgItems { get; set; } = [];
 
 	public void @OpenImageFileFolder()
 	{

@@ -9,6 +9,26 @@
 	<Design.DataContext>
 		<config:SystemConfigVM />
 	</Design.DataContext>
+	<UiView.DialogsContent>
+		<TabControl>
+			<TabItem Header="ImportTableSheetSelect">
+				<RelativePanel>
+					<DefaultDialog RelativePanel.AlignHorizontalCenterWithPanel="True" Name="ImportTableSheetSelectDialog"
+												Title="{StaticResource I18N.G.请选择映射表Sheet}" MinWidth="300" MinHeight="160">
+						<Grid RowDefinitions="Auto,Auto,Auto,Auto" ColumnDefinitions="Auto,*,Auto" ColumnSpacing="5" RowSpacing="10"
+									VerticalAlignment="Center">
+							<Label Grid.Row="0" Grid.Column="0" Content="{StaticResource I18N.G.Sheet}" VerticalAlignment="Center" />
+							<ComboBox  Grid.Row="0" Grid.Column="1" ItemsSource="{Binding ImportSheetNames}"
+												SelectedValue="{Binding SelectedSheetName}" HorizontalAlignment="Stretch" MinWidth="100"/>
+							<Button Grid.Row="0" Grid.Column="2" Content="{DynamicResource I18N.G.确定}"
+											Theme="{DynamicResource Button-Solid}"
+											Command="{Binding #ImportTableSheetSelectDialog.CloseCommand}" />
+						</Grid>
+					</DefaultDialog>
+				</RelativePanel>
+			</TabItem>
+		</TabControl>
+	</UiView.DialogsContent>
 	<Grid RowDefinitions="Auto,*">
 		<Border Grid.Row="0" BorderBrush="#454548"
 						BorderThickness="0 0 0 1">
@@ -28,7 +48,7 @@
 		</Border>
 
 		<TabControl Grid.Row="1" TabStripPlacement="Left" Theme="{DynamicResource TabControl-Line}">
-			<TabItem Header="{StaticResource I18N.G.基础配置}">
+			<TabItem Header="{StaticResource I18N.G.基础配置}" MinWidth="120">
 				<Grid RowDefinitions="Auto,*">
 					<DataGrid Grid.Row="1" ItemsSource="{Binding GroupedPropertyInstances}">
 						<DataGrid.Styles>
@@ -82,6 +102,26 @@
 						<DataGridTextColumn Header="{StaticResource I18N.G.备注}" MinWidth="400" Binding="{Binding Comment}" />
 					</DataGrid.Columns>
 				</DataGrid>
+			</TabItem>
+			<TabItem Header="{StaticResource I18N.G.NG定义}" IsSelected="False">
+				<Grid RowDefinitions="Auto,*">
+					<LinearPanel Grid.Row="0" Orientation="Horizontal" Margin="4 4">
+						<Control LinearPanel.Weight="1"/>
+						<Button Content="{StaticResource I18N.G.导入NG定义表}" Command="{Binding ImportNgDefineTableCommand}"/>
+					</LinearPanel>
+					<DataGrid Grid.Row="1" CanUserSortColumns="False" CanUserResizeColumns="True"
+										ItemsSource="{Binding EditConfig.NgDefines}"
+										GridLinesVisibility="All" BorderBrush="{DynamicResource Brush-Border}" BorderThickness="1">
+						<DataGrid.Columns>
+							<DataGridTextColumn Header="Id" Width="60" Binding="{Binding Id}"/>
+							<DataGridTextColumn Header="{StaticResource I18N.G.发送者}" Binding="{Binding Sender}" MinWidth="100"/>
+							<DataGridTextColumn Header="{StaticResource I18N.G.名称}" Binding="{Binding Name}" MinWidth="100"/>
+							<DataGridTextColumn Header="{StaticResource I18N.G.原因}" Binding="{Binding Reason}" MinWidth="100"/>
+							<DataGridTextColumn Header="{StaticResource I18N.G.备注}" Binding="{Binding Description}" Width="*"/>
+						</DataGrid.Columns>
+					</DataGrid>
+				</Grid>
+
 			</TabItem>
 		</TabControl>
 	</Grid>

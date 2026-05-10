@@ -6,6 +6,7 @@ using ZC.DP;
 using ZC.IO;
 using ZC.Mvvm;
 using ZC.Net.Sockets;
+using ZitApp.Models;
 
 namespace ZitApp;
 
@@ -41,6 +42,9 @@ public partial class AppConfig : CommonAppConfig
 		NozzleCount = 1;
 #endif
 	}
+
+	public partial List<NgDefine> NgDefines { get; set; }
+
 
 #if ASM15_1
 	[ValueInfo(Category = "连接配置", InitAttachData =

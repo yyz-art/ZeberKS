@@ -42,11 +42,11 @@
 					<DataGridTextColumn Header="上料位置名称" MinWidth="140" Binding="{Binding PositionName}" />
 					<DataGridTextColumn Header="默认数量" Width="100" Binding="{Binding DefaultReplaceCount}" />
 					<DataGridTextColumn Header="报警数量" Width="100" Binding="{Binding AlarmRemainCount}" />
+					<DataGridTextColumn Header="备注" Width="Auto" IsReadOnly="False" Binding="{Binding Description}" />
 					<DataGridTextColumn Header="上料码1" Width="140" IsReadOnly="False" Binding="{Binding MaterialCodes[0]}" />
 					<DataGridTextColumn Header="上料码2" Width="140" IsReadOnly="False" Binding="{Binding MaterialCodes[1]}" />
 					<DataGridTextColumn Header="上料码3" Width="140" IsReadOnly="False" Binding="{Binding MaterialCodes[2]}" />
 					<DataGridTextColumn Header="上料码4" Width="140" IsReadOnly="False" Binding="{Binding MaterialCodes[3]}" />
-					<DataGridTextColumn Header="备注" Width="*" IsReadOnly="False" Binding="{Binding Description}" />
 				</DataGrid.Columns>
 			</DataGrid>
 		</Grid>
