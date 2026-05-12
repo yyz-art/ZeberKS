@@ -149,7 +149,7 @@ public abstract partial class CommonAppConfig : ConfigBase
 
 	#endregion
 
-	public partial ObservableList<NozzleConfig> NozzleConfigs { get; set; } = [];
+	public partial ObservableList<NozzleConfig> NozzleConfigs { get; set; } = null!;
 
 	#region 上料配置
 

@@ -66,7 +66,7 @@ public partial class CoreService : CoreServiceBase
 
 		foreach (var nozzleContext in NozzleContexts)
 		{
-			nozzleContext.Config = AppConfig.NozzleConfigs.First(t => t.Id == nozzleContext.Id);
+			nozzleContext.Config = AppConfig.NozzleConfigs.FirstOrDefault(t => t.Id == nozzleContext.Id)!;
 		}
 
 		return base.OnInitialize(ctx, args);

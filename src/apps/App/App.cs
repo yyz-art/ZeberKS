@@ -28,6 +28,9 @@ var config = new AppConfig
 config = AppCore.LoadConfig(defaultValue: config);
 if (DevUtils.IsLocalDebugMode && Debugger.IsAttached)
 	config.PlcIpAddress = "127.0.0.1";
+if (config.NozzleConfigs is not { Count: > 0 })
+	config.NozzleConfigs = new(Enumerable.Range(0, 10).Select(i => new NozzleConfig()
+		{ Id = i + 1, Name = $"Nozzle{i + 1}", PressureMinValue = 0, PressureMaxValue = 4096 }));
 Console.WriteLine($"Use Config: {JsonSerializer.Serialize(config, Global.Json.DefaultIndentOptions)}");
 var app = new App(config).UseLogger().UseUi(UiApp.StartAsync)
 	.AddToIOC(typeof(App).Assembly.GetTypes(), RegistrationMode.Override)
