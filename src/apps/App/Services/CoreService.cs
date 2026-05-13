@@ -59,7 +59,7 @@ public partial class CoreService : CoreServiceBase
 			foreach (var materialContext in MaterialContexts)
 			{
 				materialContext.MaterialCode = materialCodesRet.Value!.Length >= materialContext.Id
-					? materialCodesRet.Value![materialContext.Id]
+					? materialCodesRet.Value![materialContext.Id-1]
 					: "";
 			}
 		}

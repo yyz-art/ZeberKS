@@ -298,7 +298,8 @@ public partial class WorkService2 : WorkServiceBase
 					Logger.Info($"[RECIPE CHECK] [OK] SN='{Context.ScanSnCode}' MODEL_NAME='{Context.ModelName}'");
 				}
 				else
-					Logger.Warn($"[RECIPE CHECK] [OK:UnCheck] SN='{Context.ScanSnCode}'  MODEL_NAME='{Context.ModelName}'");
+					Logger.Warn(
+						$"[RECIPE CHECK] [OK:UnCheck] SN='{Context.ScanSnCode}'  MODEL_NAME='{Context.ModelName}'");
 
 
 				MaterialCheckPoint:
@@ -331,7 +332,8 @@ public partial class WorkService2 : WorkServiceBase
 					}
 				}
 				else
-					Logger.Warn($"[MATERIAL CHECK] [OK:UnCheck] SN='{Context.ScanSnCode}' MODEL_NAME='{Context.ModelName}'");
+					Logger.Warn(
+						$"[MATERIAL CHECK] [OK:UnCheck] SN='{Context.ScanSnCode}' MODEL_NAME='{Context.ModelName}'");
 
 
 				#region MES-IN-STA
@@ -430,9 +432,10 @@ public partial class WorkService2 : WorkServiceBase
 				var uploadResultCode = Plc.Read.工位2数据上报结果;
 				if (uploadResultCode == 0) // 防止PLC未加此信号
 				{
-					uploadResultCode = 1; 
+					uploadResultCode = 1;
 					Logger.Warn("plc need to add 工位数据上报结果 point");
 				}
+
 				Context.ErrorMessage = null;
 				Context.WorkStep = WorkStep.OUT_STATION;
 				Context.ProductionState = ProductionState.NA;
@@ -577,57 +580,59 @@ public partial class WorkService2 : WorkServiceBase
 			#region 工站本地代码
 
 #if MFG15
-			if (Plc.Read.打印机2触发 is 1 && Plc.Read.打印机2触发结果 is 0)
-			{
-				if (string.IsNullOrEmpty(Context.ScanSnCode))
+				if (Plc.Read.打印机2触发 is 1 && Plc.Read.打印机2触发结果 is 0)
 				{
-					Logger.Error("[CODE-PRINT] [ERROR] SN code is null or empty!");
-					Plc.Write.打印机2触发结果 = 2;
-					goto SendResult;
-				}
-
-				
-
-				Logger.Info($"[CODE-PRINT] [DOING] SN='{Context.ScanSnCode}'");
-				Core.PrinterLock.Wait();
-				try
-				{
-					if (Plc.Read.工位2允许生产 != 1)
+					if (string.IsNullOrEmpty(Context.ScanSnCode))
 					{
-						Logger.Error($"[CODE-PRINT] [ERROR] SN='{Context.ScanSnCode}' is not allow production!");
+						Logger.Error("[CODE-PRINT] [ERROR] SN code is null or empty!");
 						Plc.Write.打印机2触发结果 = 2;
 						goto SendResult;
 					}
-					var error = CodePrintService.SendContentToMesPrintProgram(Context.ScanSnCode);
-					if (error is not null)
-					{
-						Logger.Error($"[CODE-PRINT] [ERROR] SN='{Context.ScanSnCode}' {error}");
-						Plc.Write.打印机2触发结果 = 2;
-						goto SendResult;
-					}
-					Thread.Sleep(5000);
-				}
-				finally
-				{
-					Core.PrinterLock.Release();
-				}
-				Logger.Info($"[CODE-PRINT] [OK] SN='{Context.ScanSnCode}'");
-				Plc.Write.打印机2触发结果 = 1;
-				SendResult:
-				Plc.Write.TryWritePoint(nameof(PlcStruct.打印机2触发结果), this, static ctx =>
-				{
-					ctx.Context.Logger.Error(
-						$"[CODE-PRINT] [ERROR] write plc code print result failed by plc connection error! {ctx.Result.Message}");
-					Thread.Sleep(5000);
-					return true;
-				});
-			}
 
-			if (Plc.Read.打印机2触发 is 0 && Plc.Read.打印机2触发结果 is not 0)
-			{
-				Plc.Write.打印机2触发结果 = 0;
-				Plc.Write.WritePoint(nameof(PlcStruct.打印机2触发结果));
-			}
+
+					Logger.Info($"[CODE-PRINT] [DOING] SN='{Context.ScanSnCode}'");
+					Core.PrinterLock.Wait();
+					try
+					{
+						if (Plc.Read.工位2允许生产 != 1)
+						{
+							Logger.Error($"[CODE-PRINT] [ERROR] SN='{Context.ScanSnCode}' is not allow production!");
+							Plc.Write.打印机2触发结果 = 2;
+							goto SendResult;
+						}
+
+						var error = CodePrintService.SendContentToMesPrintProgram(Context.ScanSnCode);
+						if (error is not null)
+						{
+							Logger.Error($"[CODE-PRINT] [ERROR] SN='{Context.ScanSnCode}' {error}");
+							Plc.Write.打印机2触发结果 = 2;
+							goto SendResult;
+						}
+
+						Thread.Sleep(5000);
+					}
+					finally
+					{
+						Core.PrinterLock.Release();
+					}
+
+					Logger.Info($"[CODE-PRINT] [OK] SN='{Context.ScanSnCode}'");
+					Plc.Write.打印机2触发结果 = 1;
+					SendResult:
+					Plc.Write.TryWritePoint(nameof(PlcStruct.打印机2触发结果), this, static ctx =>
+					{
+						ctx.Context.Logger.Error(
+							$"[CODE-PRINT] [ERROR] write plc code print result failed by plc connection error! {ctx.Result.Message}");
+						Thread.Sleep(5000);
+						return true;
+					});
+				}
+
+				if (Plc.Read.打印机2触发 is 0 && Plc.Read.打印机2触发结果 is not 0)
+				{
+					Plc.Write.打印机2触发结果 = 0;
+					Plc.Write.WritePoint(nameof(PlcStruct.打印机2触发结果));
+				}
 #endif
 
 #if ASM15_1
@@ -696,7 +701,22 @@ public partial class WorkService2 : WorkServiceBase
 				料座感应状态 = Plc.Read.工位2料座感应状态;
 				Context.HideNgDetailDialog();
 			}
+
 			料座感应状态 = Plc.Read.工位2料座感应状态;
+				
+			if (Context.TestScanner && Plc.Read.工位2生产状态 != 1)
+			{
+				var testScanResult = DoScanCode(CodeScanner);
+				if (testScanResult.IsError())
+				{
+					Logger.Error($"test scaner error! {testScanResult.Message}");
+					Thread.Sleep(5000);
+				}
+				else
+				{
+					Context.ScanSnCode = testScanResult.Value!;
+				}
+			}
 		}
 
 		return Task.CompletedTask;
