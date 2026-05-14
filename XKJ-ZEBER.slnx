@@ -59,6 +59,7 @@
   </Folder>
   <Folder Name="/tests/">
     <Project Path="src/tests/TestConsole/TestConsole.csproj" />
+    <Project Path="src/Tests/TestInput/TestInput/TestInput.csproj" />
   </Folder>
   <Project Path=".sln/Solution.csproj" />
 </Solution>

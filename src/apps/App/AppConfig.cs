@@ -13,6 +13,10 @@ namespace ZitApp;
 [ObservableObject(RequiredGenerate = true)]
 public partial class AppConfig : CommonAppConfig
 {
+	public int PrintClearDelay { get; set; } = 3000;
+	public int PrintEndWithMode { get; set; } = 1;
+	public int PrintDelay { get; set; } = 1000;
+	public int PrintInputMode { get; set; } = 1;
 	public AppConfig()
 	{
 #if ASM4

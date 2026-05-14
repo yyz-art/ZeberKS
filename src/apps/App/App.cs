@@ -14,7 +14,7 @@ using ZitApp.Devices.Plc;
 using ZitApp.Devices.Screw;
 using ZitApp.Models;
 using ZitApp.Services;
-
+//参数+ line  / 线体
 Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
 CommonAppConfig.IsDevTestMode = Debugger.IsAttached;
 DevUtils.DebugMode = Debugger.IsAttached ? DevDebugMode.LocalDebug : 0;
