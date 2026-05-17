@@ -24,11 +24,6 @@ public partial class MainVM : UiVM<MainView>
 {
 	private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
 
-#if ASM15_1
-	// [Inject(SpecialName = "L")] public required ScrewService ScrewService1 { get; init; }
-	// [Inject(SpecialName = "R")] public required ScrewService ScrewService2 { get; init; }
-	// public ScrewMachineData ScrewData => field ??= (Design.IsDesignMode ? new ScrewMachineData() : ScrewService.Data)!;
-#endif
 	public required PlcPointMonitorVM PlcPointMonitorVM { get; init; }
 	public required WorkService1 WorkLeft { get; init; }
 
@@ -73,6 +68,7 @@ public partial class MainVM : UiVM<MainView>
 		PlcRead = Plc.Read;
 		WorkNoInput = AppConfig.WorkerNo;
 		StationNameInput = AppConfig.StationName;
+		LineNameInput = AppConfig.Line;
 		return base.Initialize(ctx, args);
 	}
 
@@ -84,7 +80,6 @@ public partial class MainVM : UiVM<MainView>
 		NozzleContexts = CoreService.NozzleContexts;
 		WorkPositionContexts = CoreService.WorkPositionContexts;
 	}
-
 	private void @UiTick()
 	{
 		if (ReferenceEquals(CoreService, null) || ReferenceEquals(WorkLeft, null) || ReferenceEquals(WorkRight, null))
@@ -307,6 +302,7 @@ public partial class MainVM : UiVM<MainView>
 	public partial string ReplaceMaterialTipMessage { get; set; } = "";
 
 	public bool HasNozzleContexts => CommonAppConfig.NozzleCount > 0;
+	public partial string LineNameInput { get; set; }
 
 	public async Task @ResetNozzleSpotCheck()
 	{
@@ -344,6 +340,46 @@ public partial class MainVM : UiVM<MainView>
 		return Task.CompletedTask;
 	}
 
+	public async Task @ConfirmLineNameChange()
+	{
+		var newStationName = LineNameInput.Trim();
+		if (string.IsNullOrWhiteSpace(newStationName))
+		{
+			await ShowMessageBox("线别不能为空。", "修改线别", MessageBoxIcon.Error);
+			LineNameInput = AppConfig.Line;
+			return;
+		}
+
+		if (string.Equals(AppConfig.Line, newStationName, StringComparison.Ordinal))
+		{
+			ShowToast("线别未变化。");
+			return;
+		}
+
+		var option = await ShowMessageBox(
+			$"确认将线别从 '{AppConfig.Line}' 修改为 '{newStationName}' 吗？",
+			"确认修改线别",
+			MessageBoxIcon.Question,
+			MessageBoxButton.YesNo);
+		if (option is not MessageBoxResult.Yes)
+		{
+			LineNameInput = AppConfig.Line;
+			ShowToast("已取消修改线别。");
+			return;
+		}
+
+		AppConfig.Line = newStationName;
+		var saveResult = await SaveAppConfigAsync();
+		if (saveResult.IsError())
+		{
+			ShowNotification($"线别保存失败，重启后可能不会生效：{saveResult.Message}", UiMessageType.Error);
+			return;
+		}
+
+		LineNameInput = AppConfig.Line;
+		ShowToast("线别已修改。", UiMessageType.Success);
+	}
+	
 	public async Task @ConfirmWorkNoChange()
 	{
 		var newWorkNo = WorkNoInput.Trim();

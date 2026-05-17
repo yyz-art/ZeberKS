@@ -506,6 +506,46 @@ public partial class WorkService1 : WorkServiceBase
 				}
 				else
 				{
+#if !ASM15_1
+					var msg2 =
+						$"{AppConfig.StationName},{Context.ScanSnCode},2,{Core.WorkerNo},{AppConfig.Line},,FAIL,,,{DataBuilder}";	
+#endif
+					
+#if ASM15_1
+					var failCode = "";
+					var alarmResult = Screw.ReadInt16("60638");
+					if (alarmResult.IsSuccess)
+					{
+						failCode = alarmResult.Content switch
+						{
+							1 => "L043",
+							2 => "L044",
+							_ => ""
+						};
+						if (failCode != "")
+							Logger.Info($"[SCREW ALARM] 60638={alarmResult.Content} -> {failCode}");
+					}
+					else
+						Logger.Error($"[SCREW ALARM] read 60638 failed! {alarmResult.Message}");
+
+					var msg2 =
+						$"{AppConfig.StationName},{Context.ScanSnCode},2,{Core.WorkerNo},{AppConfig.Line},,FAIL,{failCode},,{DataBuilder}";
+#endif
+						
+					Logger.Info($"[MES OUT-STA] [DOING] RESULT={Plc.Read.工位1数据上报结果} MES << '{msg2}'");
+					var respMsg2Result = Mes.SendAndReadString(msg2);
+					if (respMsg2Result.IsError() || respMsg2Result.Value!.StartsWith("OK") is false)
+					{
+						Context.ErrorMessage = respMsg2Result.IsError()
+							? "out-station failed, mes connection error!"
+							: $"out-station failed, mes return error '{respMsg2Result.Value}'";
+						Logger.Error(respMsg2Result.IsError()
+							? $"[MES OUT-STA] [ERROR] {respMsg2Result.Message}"
+							: $"[MES OUT-STA] [ERROR] RESULT={Plc.Read.工位1数据上报结果} MES >> '{respMsg2Result.Value}'");
+						Plc.Write.工位1数据上报响应 = 2;
+						goto SendOutStationResult;
+					}
+					
 					Logger.Info($"[MES OUT-STA] [OK] RESULT={Plc.Read.工位1数据上报结果} SKIP-MES");
 				}
 #endif

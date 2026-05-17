@@ -27,13 +27,13 @@ public partial class CreateMaterialRecipeVM : UiVM<CreateMaterialRecipeDialog>
 			return Dispatcher.UIThread.Invoke(Show);
 		}
 		View.Hide();
+		EditRecipe = new ProductRecipe();
 		SelectedPointRecipeName = null;
 		FullRecipeNames.Clear();
 		FullRecipeNames.AddRange(
 			RecipeService.GetRecipes().Where(t => t.IsFullRecipe).Select(t => t.Name));
-		EditRecipe = new ProductRecipe();
+		
 		var mainWindow = (Window)App.Current.IOC.Get<AppVM>().View!;
-	
 		return View.ShowDialog(mainWindow);
 	}
 

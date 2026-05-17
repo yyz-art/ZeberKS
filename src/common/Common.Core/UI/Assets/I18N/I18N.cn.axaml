@@ -112,6 +112,7 @@
 	<sys:String x:Key="I18N.G.复制当前配方值">复制当前配方值</sys:String>
 	<sys:String x:Key="I18N.G.列表筛选_">列表筛选:</sys:String>
 	<sys:String x:Key="I18N.G.工单号_">工单号:</sys:String>
+	<sys:String x:Key="I18N.G.线别">线别:</sys:String>
 	<sys:String x:Key="I18N.G.工站名_">工站名:</sys:String>
 	<sys:String x:Key="I18N.G.已生产数量_">已生产数量:</sys:String>
 	<sys:String x:Key="I18N.G.良率_">良率:</sys:String>

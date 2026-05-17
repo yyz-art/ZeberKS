@@ -74,6 +74,8 @@ public partial class RecipeVM : UiVM<RecipeView>
 	public partial ObservableList<string> FullRecipeNames { get; set; } = [];
 	public partial ObservableList<string> ImportMaterialMapTableSheetNames { get; set; } = [];
 	public partial string SelectedImportMaterialMapTableSheetName { get; set; }
+	public partial string SelectedFullRecipeName { get; set; }
+
 
 	partial void OnSelectedRecipeTypeChanged(string oldValue, string newValue)
 	{
@@ -470,7 +472,9 @@ public partial class RecipeVM : UiVM<RecipeView>
 			return;
 		}
 
-		var recipe = new ProductRecipe();
+		var recipe = new ProductRecipe(); 
+		
+		
 		if (EditRecipe is not null && CreateNewRecipeIsCopyCurrentRecipeValue)
 			ProductRecipe.CopyPropertyValues(EditRecipe, recipe);
 		recipe.Name = recipeName;
@@ -480,6 +484,9 @@ public partial class RecipeVM : UiVM<RecipeView>
 			recipe.Points = new PointRecipeStruct();
 		}
 
+		recipe.MaterialConfigs = RecipeService.GetRecipe(SelectedFullRecipeName ?? "",true).Value?.MaterialConfigs ?? [];
+		recipe.RefFullRecipeName = SelectedFullRecipeName;
+		
 		Debug.Assert(SelectedRecipeType != null);
 		recipe.Id = 0;
 		recipe.IsFullRecipe = IsEditFullRecipe;
@@ -498,6 +505,7 @@ public partial class RecipeVM : UiVM<RecipeView>
 
 	public Task @CreateNewRecipe()
 	{
+		
 		return ShowModalDialog(View.CreateNewRecipeDialog);
 	}
 

@@ -26,7 +26,11 @@
 													HorizontalAlignment="Center">
 								<CheckBox Content="{StaticResource I18N.G.复制当前配方值}"
 													IsChecked="{Binding CreateNewRecipeIsCopyCurrentRecipeValue}">
+									
 								</CheckBox>
+								<ComboBox SelectedValue="{Binding SelectedFullRecipeName}" ItemsSource="{Binding FullRecipeNames}">
+									
+								</ComboBox>
 							</StackPanel>
 
 							<StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Margin="0 20 0 0" Orientation="Horizontal"

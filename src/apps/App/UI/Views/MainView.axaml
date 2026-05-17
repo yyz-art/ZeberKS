@@ -329,6 +329,13 @@
 												HorizontalAlignment="Center">
 			
 						</LinearPanel>
+						<Label Classes="Label" Grid.Row="6" Grid.Column="0" Content="{StaticResource I18N.G.线别}" />
+						<LinearPanel Grid.Row="6" Grid.Column="1" Orientation="Horizontal" Spacing="5">
+							<TextBox Text="{Binding LineNameInput, Mode=TwoWay}" MinHeight="30" LinearPanel.Weight="1"
+							         HorizontalAlignment="Stretch" />
+							<Button Content="{StaticResource I18N.G.确认}" Command="{Binding ConfirmLineNameChangeCommand}"
+							        MinHeight="30" Padding="10 0" />
+						</LinearPanel>
 					</Grid>
 				</ViewContainer>
 				<StackPanel Orientation="Vertical" Spacing="5">
