@@ -540,7 +540,7 @@ public partial class CoreService : CoreServiceBase
 		Logger.Info("【PLC配方写入PC地址握手】开始，使用 配方上报请求(21011) / 配方上报响应(22011)。");
 
 		Plc.Write.配方上报请求 = 0;
-		var result = await Plc.Write.WritePointAsync(nameof(PlcStruct.配方上报响应));
+		var result = await Plc.Write.WritePointAsync(nameof(PlcStruct.配方上报请求));
 		if (result.IsError()) return result;
 
 		Plc.Write.配方上报响应 = 0;

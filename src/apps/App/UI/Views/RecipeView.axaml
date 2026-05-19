@@ -158,9 +158,9 @@
 						<ComboBox ItemsSource="{Binding PropertyCategories}" SelectedItem="{Binding SelectedPropertyCategory}"
 											MinWidth="200" />
 						<Control LinearPanel.Weight="1" />
-						<Button Content="{StaticResource I18N.G.请求设备准备配方}" Classes="Primary"
+						<!--<Button Content="{StaticResource I18N.G.请求设备准备配方}" Classes="Primary"
 										Theme="{DynamicResource Button-Solid}"
-										Command="{Binding RequestDevicePrepareRecipeCommand}" />
+										Command="{Binding RequestDevicePrepareRecipeCommand}" />-->
 						<Button Content="{StaticResource I18N.G.读取全部}"
 										Command="{Binding ReadAllPointsCommand}" Classes="Success" />
 						<!-- <Button Content="{StaticResource I18N.G.导入点位值}" -->

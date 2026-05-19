@@ -1,4 +1,4 @@
-﻿using ZC;
+using ZC;
 using ZC.BinStructs;
 using ZC.BinStructs.Ext;
 using ZC.CFG;
@@ -61,6 +61,7 @@ public class RecipeService
 		
 		if (recipe is null)
 			return Result.Err<ProductRecipe>("recipe not found!");
+		TryFixRecipe(recipe);
 		if (recipe.IsFullRecipe == false)
 			recipe.RefFullRecipe = GetRecipe(recipe.RefFullRecipeName!).Value;
 		return Result.Ok(recipe);

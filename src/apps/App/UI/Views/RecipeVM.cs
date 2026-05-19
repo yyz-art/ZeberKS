@@ -1,4 +1,4 @@
-﻿using System.Text.Json;
+using System.Text.Json;
 using Avalonia.Platform.Storage;
 using ClosedXML.Excel;
 using ZC;
@@ -538,14 +538,28 @@ public partial class RecipeVM : UiVM<RecipeView>
 		return base.OnViewAttachedToVisualTree(sender, args);
 	}
 
-	partial void OnSelectedPropertyCategoryChanged(string value)
+	partial void OnSelectedPropertyCategoryChanged(string value) => RefreshFilteredPropertyInstances();
+
+	void RefreshFilteredPropertyInstances()
 	{
 		FilteredPropertyInstances.Clear();
 		foreach (var propertyInstance in PropertyInstances)
 		{
 			propertyInstance.Flag = false;
-			if (propertyInstance.ValueInfo?.Category == value || value == "全部")
+			if (propertyInstance.ValueInfo?.Category == SelectedPropertyCategory || SelectedPropertyCategory == "全部")
 				FilteredPropertyInstances.Add(propertyInstance);
+		}
+	}
+
+	void SyncPointPropertyInstances(PointRecipeStruct? points)
+	{
+		foreach (var propertyInstance in PropertyInstances)
+		{
+			propertyInstance.Reset(points);
+			propertyInstance.CanWrite = true;
+			propertyInstance.CanRead = true;
+			if (points is not null && propertyInstance.Define.CanRead)
+				propertyInstance.Value = propertyInstance.Define.Getter!.Invoke(points);
 		}
 	}
 
@@ -558,12 +572,8 @@ public partial class RecipeVM : UiVM<RecipeView>
 
 	partial void OnEditRecipeChanged(ProductRecipe? oldValue, ProductRecipe? newValue)
 	{
-		foreach (var propertyInstance in PropertyInstances)
-		{
-			propertyInstance.Reset(newValue?.Points);
-			propertyInstance.CanWrite = true;
-			propertyInstance.CanRead = true;
-		}
+		SyncPointPropertyInstances(newValue?.Points);
+		RefreshFilteredPropertyInstances();
 
 		if (newValue is not null)
 		{
@@ -639,17 +649,38 @@ public partial class RecipeVM : UiVM<RecipeView>
 	public async Task @WriteSelectedPoints()
 	{
 		ShowToast("Start write selected points");
+		if (await EnsurePlcRecipeWriteHandshakeAsync() == false)
+			return;
+
+		var hasWritten = false;
 		foreach (var propertyInstance in FilteredPropertyInstances)
 		{
 			if (propertyInstance.Flag == false)
 				continue;
 
-			await WritePoint(propertyInstance);
+			hasWritten = true;
+			await WritePointCore(propertyInstance);
 			if (WritePointCommand.CustomData != null)
 				break;
 		}
 
-		ShowToast("End write selected points");
+		if (WritePointCommand.CustomData is null)
+			ShowToast(hasWritten ? "End write selected points" : "No point selected", UiMessageType.Success);
+	}
+
+	async Task<bool> EnsurePlcRecipeWriteHandshakeAsync()
+	{
+		var reqResult = await CoreService.RequestPlcWriteRecipeAsync();
+		if (reqResult.IsError())
+		{
+			var errorMessage = $"Request device prepare recipe failed! {reqResult.Message}";
+			WritePointCommand.CustomData = errorMessage;
+			ShowNotification(errorMessage, UiMessageType.Error);
+			return false;
+		}
+
+		WritePointCommand.CustomData = null;
+		return true;
 	}
 
 	public async Task @ReadPoint(IPropertyInstance property)
@@ -699,6 +730,14 @@ public partial class RecipeVM : UiVM<RecipeView>
 	}
 
 	public async Task @WritePoint(IPropertyInstance property)
+	{
+		if (await EnsurePlcRecipeWriteHandshakeAsync() == false)
+			return;
+
+		await WritePointCore(property);
+	}
+
+	async Task WritePointCore(IPropertyInstance property)
 	{
 		var binaryStruct = property.Instance as IBinaryStruct;
 		if (binaryStruct is null)
