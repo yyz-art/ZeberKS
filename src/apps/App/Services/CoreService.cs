@@ -39,6 +39,73 @@ public partial class CoreService : CoreServiceBase
 	// public partial bool MaterialCheck { get; set; } = true;
 	// public partial bool RecipeCheck { get; set; } = true;
 	public partial ProductRecipe? WorkRecipe { get; set; }
+
+	private readonly object _materialSyncLock = new();
+
+	/// <summary>
+	/// 将工单配方中各 Id 的启用行同步到料位（界面颜色与扫码校验一致）。
+	/// </summary>
+	public void ApplyWorkRecipeToMaterialContexts()
+	{
+		lock (_materialSyncLock)
+			ApplyWorkRecipeToMaterialContextsCore();
+	}
+
+	public void SyncMaterialContextFromWorkRecipe(MaterialSpaceContext context)
+	{
+		lock (_materialSyncLock)
+			context.SyncFromWorkRecipe(WorkRecipe);
+	}
+
+	/// <summary>
+	/// 扫码物料校验：同 Id 有启用行则与界面料号比对；无启用行则跳过。
+	/// </summary>
+	public bool TryValidateMaterialsForProduction(out MaterialSpaceContext? failed, out string detail)
+	{
+		failed = null;
+		detail = "";
+		lock (_materialSyncLock)
+		{
+			if (WorkRecipe is null) return true;
+
+			ApplyWorkRecipeToMaterialContextsCore();
+			foreach (var item in MaterialContexts)
+			{
+				if (!WorkRecipe.HasEnabledMaterialConfig(item.Id))
+					continue;
+
+				var active = WorkRecipe.GetActiveMaterialConfig(item.Id)!;
+				if (item.MaterialState is MaterialState.OK)
+					continue;
+
+				failed = item;
+				var allowed = WorkRecipe.GetAllowedMaterialCodes(item.Id);
+				detail =
+					$"material {item.Id} ({active.PositionName}) state={item.MaterialState} " +
+					$"uiCode='{item.MaterialCode}' allowed=[{string.Join(", ", allowed)}]";
+				return false;
+			}
+
+			return true;
+		}
+	}
+
+	void ApplyWorkRecipeToMaterialContextsCore()
+	{
+		if (WorkRecipe is null) return;
+		foreach (var context in MaterialContexts)
+			context.SyncFromWorkRecipe(WorkRecipe);
+	}
+
+	public static string BuildMaterialMismatchMessage(MaterialSpaceContext failed, ProductRecipeBase? recipe) =>
+		MaterialMismatchMessages.Build(failed, recipe);
+
+	public static void ShowMaterialMismatchMessageBox(string message, string title = "物料校验失败") =>
+		MaterialMismatchDialogService.Show(message, title);
+
+	public void NotifyMaterialCheckFailed(MaterialSpaceContext failed) =>
+		MaterialMismatchDialogService.Show(failed, WorkRecipe);
+
 	public partial bool NozzleCheck { get; set; } = true;
 	public partial DateTime NozzleSpotCheckCompleteTime { get; set; } = DateTime.MaxValue;
 	public partial bool IsNozzleSpotCheckOk { get; set; }
@@ -282,43 +349,46 @@ public partial class CoreService : CoreServiceBase
 			Logger.Info("Reset material 6 request");
 		}
 
-		foreach (var context in MaterialContexts)
+		lock (_materialSyncLock)
 		{
-			switch (context.Id)
+			foreach (var context in MaterialContexts)
 			{
-				case 1:
-					context.IsUnlocked = Plc.Read.Feeder1解锁响应 == 1;
-					context.ScrapRate = Plc.Read.Feeder1抛料率;
-					context.RemainCount = Plc.Read.Feeder1物料剩余数量;
-					break;
-				case 2:
-					context.IsUnlocked = Plc.Read.Feeder2解锁响应 == 1;
-					context.ScrapRate = Plc.Read.Feeder2抛料率;
-					context.RemainCount = Plc.Read.Feeder2物料剩余数量;
-					break;
-				case 3:
-					context.IsUnlocked = Plc.Read.Feeder3解锁响应 == 1;
-					context.ScrapRate = Plc.Read.Feeder3抛料率;
-					context.RemainCount = Plc.Read.Feeder3物料剩余数量;
-					break;
-				case 4:
-					context.IsUnlocked = Plc.Read.Feeder4解锁响应 == 1;
-					context.ScrapRate = Plc.Read.Feeder4抛料率;
-					context.RemainCount = Plc.Read.Feeder4物料剩余数量;
-					break;
-				case 5:
-					context.IsUnlocked = Plc.Read.Feeder5解锁响应 == 1;
-					context.ScrapRate = Plc.Read.Feeder5抛料率;
-					context.RemainCount = Plc.Read.Feeder5物料剩余数量;
-					break;
-				case 6:
-					context.IsUnlocked = Plc.Read.Feeder6解锁响应 == 1;
-					context.ScrapRate = Plc.Read.Feeder6抛料率;
-					context.RemainCount = Plc.Read.Feeder6物料剩余数量;
-					break;
-			}
+				switch (context.Id)
+				{
+					case 1:
+						context.IsUnlocked = Plc.Read.Feeder1解锁响应 == 1;
+						context.ScrapRate = Plc.Read.Feeder1抛料率;
+						context.RemainCount = Plc.Read.Feeder1物料剩余数量;
+						break;
+					case 2:
+						context.IsUnlocked = Plc.Read.Feeder2解锁响应 == 1;
+						context.ScrapRate = Plc.Read.Feeder2抛料率;
+						context.RemainCount = Plc.Read.Feeder2物料剩余数量;
+						break;
+					case 3:
+						context.IsUnlocked = Plc.Read.Feeder3解锁响应 == 1;
+						context.ScrapRate = Plc.Read.Feeder3抛料率;
+						context.RemainCount = Plc.Read.Feeder3物料剩余数量;
+						break;
+					case 4:
+						context.IsUnlocked = Plc.Read.Feeder4解锁响应 == 1;
+						context.ScrapRate = Plc.Read.Feeder4抛料率;
+						context.RemainCount = Plc.Read.Feeder4物料剩余数量;
+						break;
+					case 5:
+						context.IsUnlocked = Plc.Read.Feeder5解锁响应 == 1;
+						context.ScrapRate = Plc.Read.Feeder5抛料率;
+						context.RemainCount = Plc.Read.Feeder5物料剩余数量;
+						break;
+					case 6:
+						context.IsUnlocked = Plc.Read.Feeder6解锁响应 == 1;
+						context.ScrapRate = Plc.Read.Feeder6抛料率;
+						context.RemainCount = Plc.Read.Feeder6物料剩余数量;
+						break;
+				}
 
-			context.CheckMaterialState();
+				context.CheckMaterialState();
+			}
 		}
 	}
 

@@ -318,25 +318,14 @@ public partial class WorkService1 : WorkServiceBase
 				MaterialCheckPoint:
 				if (Context.MaterialCheck)
 				{
-					var isMaterialStateOk = true;
-					MaterialSpaceContext? material = null;
-					foreach (var item in Core.MaterialContexts)
-					{
-						if (item.Config.IsUsed == false) continue;
-						item.CheckMaterialState();
-						if (item.MaterialState is MaterialState.OK or MaterialState.UnUsed)
-							continue;
-						isMaterialStateOk = false;
-						material = item;
-						break;
-					}
-
-					if (isMaterialStateOk)
+					if (Core.TryValidateMaterialsForProduction(out var material, out var materialDetail))
 						Logger.Info($"[MATERIAL CHECK] [OK] SN='{Context.ScanSnCode}' MODEL_NAME='{Context.ModelName}'");
 					else
 					{
 						Logger.Error(
-							$"[MATERIAL CHECK] [ERROR] at material {material?.Id} state is '{material?.MaterialState}' SN='{Context.ScanSnCode}' MODEL_NAME='{Context.ModelName}'");
+							$"[MATERIAL CHECK] [ERROR] {materialDetail} SN='{Context.ScanSnCode}' MODEL_NAME='{Context.ModelName}'");
+						if (material is not null)
+							Core.NotifyMaterialCheckFailed(material);
 						Context.ErrorMessage = $"material {material?.Id} check failed!";
 						Plc.Write.工位1允许生产 = NOT_ALLOW_PRODUCTION_BY_MATERIAL;
 						Plc.Write.扫码枪1触发结果 = CodeOfNG;

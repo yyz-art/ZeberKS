@@ -11,4 +11,14 @@ public class MaterialConfig
 	public string Description { get; set; } = "";
 	public int AlarmRemainCount { get; set; }
 	public int DefaultReplaceCount { get; set; }
+
+	public IEnumerable<string> EnumerateAllowedMaterialCodes() =>
+		MaterialCodes.Where(c => !string.IsNullOrWhiteSpace(c)).Select(c => c.Trim());
+
+	public bool AllowsMaterialCode(string? code)
+	{
+		if (string.IsNullOrWhiteSpace(code)) return false;
+		var trimmed = code.Trim();
+		return EnumerateAllowedMaterialCodes().Contains(trimmed, StringComparer.Ordinal);
+	}
 }

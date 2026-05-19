@@ -46,12 +46,35 @@ public partial class MaterialSpaceContext : ObservableObject
 			MaterialState = MaterialState.UnUsed;
 			return;
 		}
-		var state = (config?.MaterialCodes.Contains(code) ?? false) && !string.IsNullOrWhiteSpace(code)
+		var state = config.AllowsMaterialCode(code)
 			? MaterialState.OK
 			: MaterialState.NotMatched;
-		if (state is MaterialState.OK && RemainCount <= Config?.AlarmRemainCount)
+		if (state is MaterialState.OK && RemainCount <= config.AlarmRemainCount)
 			state = MaterialState.RemainAlarm;
 		MaterialState = state;
+	}
+
+	/// <summary>
+	/// 按工单配方同步：同 Id 无启用行 → 未启用；有启用行 → 与界面 <see cref="MaterialCode"/> 比对。
+	/// </summary>
+	public void SyncFromWorkRecipe(ProductRecipeBase? recipe)
+	{
+		if (recipe is null) return;
+		var active = recipe.GetActiveMaterialConfig(Id);
+		if (active is null)
+		{
+			Config = new MaterialConfig
+			{
+				Id = Id,
+				IsUsed = false,
+				PositionName = Config?.PositionName ?? $"Material{Id}",
+			};
+			MaterialState = MaterialState.UnUsed;
+			return;
+		}
+
+		Config = active;
+		CheckMaterialState();
 	}
 
 

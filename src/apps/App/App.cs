@@ -71,12 +71,12 @@ public sealed class App(AppConfig config) : CommonUiAppCore(config)
 			creator: _ => new ScrewMachineConnection(Config.Screw1IpAddress, Config.Screw1Port) { Name = "Screw工位1" });
 		IOC.AddSingleton<ScrewMachineConnection>(specialName: "Screw工位2",
 			creator: _ => new ScrewMachineConnection(Config.Screw2IpAddress, Config.Screw2Port) { Name = "Screw工位2" });
-		// IOC.AddSingleton<ScrewService>(specialName: "Screw工位1", oc => oc.Get<ScrewService>(null,
-		// 	InjectArgument.Create(IOC.Get<ScrewMachineConnection>(specialName: "Screw工位1"))));
-		// IOC.AddSingleton<ScrewService>(specialName: "Screw工位2", oc => oc.Get<ScrewService>(null,
-		// 	InjectArgument.Create(IOC.Get<ScrewMachineConnection>(specialName: "Screw工位2"))));
-		// TaskServiceManager.AddService(IOC.Get<ScrewService>(specialName: "Screw工位1"));
-		// TaskServiceManager.AddService(IOC.Get<ScrewService>(specialName: "Screw工位2"));
+		/*IOC.AddSingleton<ScrewService>(specialName: "Screw工位1", oc => oc.Get<ScrewService>(null,
+			InjectArgument.Create(IOC.Get<ScrewMachineConnection>(specialName: "Screw工位1"))));
+		IOC.AddSingleton<ScrewService>(specialName: "Screw工位2", oc => oc.Get<ScrewService>(null,
+		 	InjectArgument.Create(IOC.Get<ScrewMachineConnection>(specialName: "Screw工位2"))));
+		TaskServiceManager.AddService(IOC.Get<ScrewService>(specialName: "Screw工位1"));
+		TaskServiceManager.AddService(IOC.Get<ScrewService>(specialName: "Screw工位2"));*/
 #endif
 		IOC.AddSingleton<XinJEPlcClient>(creator: oc => oc.Get<XinJEPlcClient>(
 			InjectArgument.Create<INetworkSocketConfig>(new NetworkSocketConfig(Config.PlcIpAddress, Config.PlcPort))));

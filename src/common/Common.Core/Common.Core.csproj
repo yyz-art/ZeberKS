@@ -29,6 +29,10 @@
 	    <DependentUpon>NgDetailDialog.axaml</DependentUpon>
 	    <SubType>Code</SubType>
 	  </Compile>
+	  <Compile Update="UI\Dialogs\MaterialMismatchDialog.axaml.cs">
+	    <DependentUpon>MaterialMismatchDialog.axaml</DependentUpon>
+	    <SubType>Code</SubType>
+	  </Compile>
 	</ItemGroup>
 
 </Project>

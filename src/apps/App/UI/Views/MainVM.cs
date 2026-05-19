@@ -16,6 +16,7 @@ using ZitApp.Devices.Screw;
 using ZitApp.Models;
 using ZitApp.Services;
 using ZitApp.UI.Account;
+using ZitApp.UI.Dialogs;
 
 namespace ZitApp.UI;
 
@@ -80,6 +81,7 @@ public partial class MainVM : UiVM<MainView>
 		NozzleContexts = CoreService.NozzleContexts;
 		WorkPositionContexts = CoreService.WorkPositionContexts;
 	}
+
 	private void @UiTick()
 	{
 		if (ReferenceEquals(CoreService, null) || ReferenceEquals(WorkLeft, null) || ReferenceEquals(WorkRight, null))
@@ -148,11 +150,10 @@ public partial class MainVM : UiVM<MainView>
 	partial void OnWorkRecipeChanged(ProductRecipe? value)
 	{
 		if (value is null) return;
+		CoreService.ApplyWorkRecipeToMaterialContexts();
 		for (var i = 0; i < CommonAppConfig.MaterialSpaceCount; i++)
 		{
 			var item = MaterialSpaceContexts[i];
-			item.Config = value.MaterialConfigs.FirstOrDefault(t => t.Id == i + 1)!;
-			Debug.Assert(item.Config != null);
 			item.PositionCode = (1 + i) switch
 			{
 				1 => AppConfig.MaterialPositionCode1,
@@ -233,6 +234,16 @@ public partial class MainVM : UiVM<MainView>
 			return;
 		}
 
+		if (WorkRecipe?.HasEnabledMaterialConfig(spaceContext.Id) != true)
+		{
+			await ShowMessageBoxOverlay(
+				$"feeder {spaceContext.Id} has no enabled material row in recipe '{WorkRecipe?.Name ?? ""}'",
+				"material replace",
+				MessageBoxIcon.Warning);
+			return;
+		}
+
+		CoreService.SyncMaterialContextFromWorkRecipe(spaceContext);
 		InputMaterialCode = "";
 		InputMaterialPositionCode = "";
 		InputMaterialCount = spaceContext.Config.DefaultReplaceCount;
@@ -245,24 +256,32 @@ public partial class MainVM : UiVM<MainView>
 		if (EditMaterialSpaceContext is null)
 			return;
 		spaceContext = EditMaterialSpaceContext;
-		if (EditMaterialSpaceContext.PositionCode != InputMaterialPositionCode)
+		CoreService.SyncMaterialContextFromWorkRecipe(spaceContext);
+
+		if (WorkRecipe?.HasEnabledMaterialConfig(spaceContext.Id) != true)
 		{
-			// ReplaceMaterialTipMessage = "Position code not matched";
+			await ShowMessageBoxOverlay("no enabled material config for this feeder", "replace material",
+				MessageBoxIcon.Error);
+			return;
+		}
+
+		var positionCode = InputMaterialPositionCode.Trim();
+		if (EditMaterialSpaceContext.PositionCode != positionCode)
+		{
 			await ShowMessageBoxOverlay(
-				$"position code not matched! current is '{InputMaterialPositionCode}', need '{EditMaterialSpaceContext.PositionCode}'",
+				$"position code not matched! current is '{positionCode}', need '{EditMaterialSpaceContext.PositionCode}'",
 				"replace material",
 				MessageBoxIcon.Error);
 			return;
 		}
 
-		if (EditMaterialSpaceContext.Config.MaterialCodes.Contains(InputMaterialCode) == false)
+		var materialCode = InputMaterialCode.Trim();
+		if (!WorkRecipe!.IsAllowedMaterialCode(spaceContext.Id, materialCode))
 		{
-			// ReplaceMaterialTipMessage = "Material code not matched";
-			await ShowMessageBoxOverlay(
-				$"material code not matched! please replace in " +
-				$"{ArrayUtils.ToString(EditMaterialSpaceContext.Config.MaterialCodes.Where(t => string.IsNullOrEmpty(t) == false).ToArray())}",
-				"replace material",
-				MessageBoxIcon.Error);
+			CoreService.SyncMaterialContextFromWorkRecipe(spaceContext);
+			await MaterialMismatchDialogService.ShowAsync(
+				MaterialMismatchMessages.Build(spaceContext, WorkRecipe),
+				"物料校验失败");
 			return;
 		}
 
@@ -284,8 +303,8 @@ public partial class MainVM : UiVM<MainView>
 
 		ShowToast("replace material success", UiMessageType.Success);
 		await ShowMessageBoxOverlay("replace material success ", "replace material", MessageBoxIcon.Success);
-		spaceContext.MaterialCode = InputMaterialCode;
-		spaceContext.CheckMaterialState();
+		spaceContext.MaterialCode = materialCode;
+		CoreService.SyncMaterialContextFromWorkRecipe(spaceContext);
 		CoreService.SaveMaterialSpaceCodes();
 		View.ReplaceMaterialDialog.Close();
 	}
@@ -322,10 +341,14 @@ public partial class MainVM : UiVM<MainView>
 		InputMaterialPositionCodeBorderBrush =
 			value == EditMaterialSpaceContext?.PositionCode ? Brushes.Green : Brushes.Orange;
 
-	partial void OnInputMaterialCodeChanged(string value) =>
-		InputMaterialCodeBorderBrush = EditMaterialSpaceContext?.Config.MaterialCodes.Contains(value) ?? false
-			? Brushes.Green
-			: Brushes.Orange;
+	partial void OnInputMaterialCodeChanged(string value)
+	{
+		var feederId = EditMaterialSpaceContext?.Id;
+		var ok = feederId is not null
+		         && WorkRecipe?.HasEnabledMaterialConfig(feederId.Value) == true
+		         && WorkRecipe.IsAllowedMaterialCode(feederId.Value, value);
+		InputMaterialCodeBorderBrush = ok ? Brushes.Green : Brushes.Orange;
+	}
 
 	#endregion
 

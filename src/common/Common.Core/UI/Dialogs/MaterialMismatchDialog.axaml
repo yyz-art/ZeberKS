@@ -1,0 +1,51 @@
+<Window xmlns="https://github.com/avaloniaui"
+				xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+				xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+				xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+				mc:Ignorable="d"
+				d:DesignWidth="520"
+				d:DesignHeight="300"
+				x:Class="ZitApp.UI.Dialogs.MaterialMismatchDialog"
+				Title="物料校验失败"
+				Width="520"
+				Height="300"
+				MinWidth="480"
+				MinHeight="240"
+				RequestedThemeVariant="Dark"
+				WindowStartupLocation="CenterOwner"
+				CanResize="True">
+	<Grid RowDefinitions="Auto,*" Margin="0">
+		<TextBlock
+			Grid.Row="0"
+			Name="TitleTextBlock"
+			Margin="20,16,20,8"
+			FontSize="18"
+			FontWeight="Bold"
+			Foreground="White"
+			Text="物料校验失败" />
+
+		<LinearPanel
+			Grid.Row="1"
+			Orientation="Vertical"
+			Background="#423e3e"
+			Spacing="16"
+			Padding="20">
+			<ScrollViewer MaxHeight="160" VerticalScrollBarVisibility="Auto">
+				<TextBlock
+					Name="MessageTextBlock"
+					Foreground="White"
+					FontSize="14"
+					LineHeight="22"
+					TextWrapping="Wrap" />
+			</ScrollViewer>
+
+			<Button
+				Name="ConfirmButton"
+				Content="确定"
+				HorizontalAlignment="Right"
+				MinWidth="100"
+				Padding="40,10"
+				Click="ConfirmClick" />
+		</LinearPanel>
+	</Grid>
+</Window>
