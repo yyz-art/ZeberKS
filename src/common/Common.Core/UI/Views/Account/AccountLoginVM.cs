@@ -8,8 +8,9 @@ namespace ZitApp.UI.Account;
 public partial class AccountLoginVM : CommonUiVM<AccountLoginWindow>
 {
 	public required AccountService AccountService { get; init; }
-	public partial string Account { get; set; } = "";
+	public partial string Account { get; set; } = "管理员";
 	public partial string Password { get; set; } = "";
+	public bool IsLoggedIn { get; set; }
 
 	public void @OnSelectedAccountChanged(string account) => Account = account;
 
@@ -23,6 +24,7 @@ public partial class AccountLoginVM : CommonUiVM<AccountLoginWindow>
 				$"登录失败！{loginResult.Message} {loginResult.Exception}","登录失败", MessageBoxIcon.Error);
 			return;
 		}
+		IsLoggedIn = true;
 		View.Hide();
 		AvaloniaApplication.Current.MainView.Toast!.Show("登录成功！", UiMessageType.Success);
 	}

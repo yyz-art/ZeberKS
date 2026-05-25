@@ -6,7 +6,7 @@
 									xmlns:account1="clr-namespace:ZitApp.UI.Account"
 									mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="260"
 									x:Class="ZitApp.UI.Views.Account.AccountLoginWindow"
-									Title="用户登录"
+									Title="{DynamicResource I18N.G.账户登录}"
 									Icon="/UI/Assets/Images/logo.ico"
 									WindowStartupLocation="CenterScreen"
 									Width="400" Height="260"
@@ -22,7 +22,7 @@
 	<Grid Name="MainContentGrid" RowDefinitions="Auto,*">
 		<LinearPanel Name="WindowTitleBarPanel" Spacing="5" Grid.Row="0" Orientation="Horizontal" Background="#007acc">
 			<Image Source="/UI/Assets/Images/logo.ico" Width="20" Margin="5 0 0 0" Height="20" />
-			<TextBlock Text="账户登录" VerticalAlignment="Center" Foreground="White"></TextBlock>
+			<TextBlock Text="{DynamicResource I18N.G.账户登录}" VerticalAlignment="Center" Foreground="White"></TextBlock>
 
 			<Control LinearPanel.Weight="1" />
 			<Button Name="WindowCloseButton"
@@ -37,30 +37,30 @@
 		</LinearPanel>
 		<LinearPanel Grid.Row="1" Orientation="Vertical" Background="#423e3e" Spacing="10" Padding="20">
 			<LinearPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="20">
-				<RadioButton GroupName="UserLogin" Content="管理员"
+				<RadioButton GroupName="UserLogin" Content="{DynamicResource I18N.G.管理员}" Tag="管理员"
 										IsChecked="True"
 										Command="{Binding OnSelectedAccountChangedCommand}"
-										CommandParameter="{Binding Content, RelativeSource={RelativeSource Self}}"
+										CommandParameter="{Binding Tag, RelativeSource={RelativeSource Self}}"
 										Foreground="White">
 				</RadioButton>
-				<RadioButton GroupName="UserLogin" Content="技术员"
+				<RadioButton GroupName="UserLogin" Content="{DynamicResource I18N.G.技术员}" Tag="技术员"
 										Command="{Binding OnSelectedAccountChangedCommand}"
-										CommandParameter="{Binding Content, RelativeSource={RelativeSource Self}}"
+										CommandParameter="{Binding Tag, RelativeSource={RelativeSource Self}}"
 										Foreground="White">
 				</RadioButton>
-				<RadioButton GroupName="UserLogin" Content="操作员"
+				<RadioButton GroupName="UserLogin" Content="{DynamicResource I18N.G.操作员}" Tag="操作员"
 										Command="{Binding OnSelectedAccountChangedCommand}"
-										CommandParameter="{Binding Content, RelativeSource={RelativeSource Self}}"
+										CommandParameter="{Binding Tag, RelativeSource={RelativeSource Self}}"
 										Foreground="White">
 				</RadioButton>
 			</LinearPanel>
 
 			<LinearPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="5" Margin="0 40">
-				<TextBlock Text="密码:" VerticalAlignment="Center" />
+				<TextBlock Text="{DynamicResource I18N.G.密码}" VerticalAlignment="Center" />
 				<TextBox Text="{Binding Password}" MinWidth="160" PasswordChar="●" Padding="4" VerticalContentAlignment="Center"></TextBox>
 			</LinearPanel>
 
-			<Button Content="登陆" Command="{Binding LoginCommand}" Padding="60 10" Theme="{DynamicResource Button-Solid}"></Button>
+			<Button Content="{DynamicResource I18N.G.登录}" Command="{Binding LoginCommand}" Padding="60 10" Theme="{DynamicResource Button-Solid}"></Button>
 		</LinearPanel>
 
 	</Grid>

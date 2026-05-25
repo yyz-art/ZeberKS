@@ -14,6 +14,7 @@ using ZC.Mvvm;
 using ZC.Shared.DefaultJson;
 using ZC.UI.ControlLibs;
 using ZitApp.Models;
+using ZitApp.UI;
 
 namespace ZitApp.UI.Config;
 
@@ -55,12 +56,34 @@ public partial class SystemConfigVM : CommonUiVM<SystemConfigView>, INamedObject
 	public required IConfigManager ConfigManager { get; init; }
 	public string[] ConfigGroupNames { get; set; } = ["连接配置", "提示信息配置"];
 	public partial string SelectedConfigGroup { get; set; } = "";
+
+	// Language selector
+	public string[] Languages { get; } = ["中文", "English"];
+
+	[ObservableProperty]
+	public partial string SelectedLanguage { get; set; } = "中文";
+
+	partial void OnSelectedLanguageChanged(string value)
+	{
+		var langCode = value == "English" ? "en" : "cn";
+		if (CurrentConfig is CommonAppConfig config)
+		{
+			config.Language = langCode;
+		}
+		CommonUiApp.ReloadI18N(langCode);
+	}
 	// public ObservableList<IPropertyInstance> FilteredPropertyInstances { get; }
 	public DataGridCollectionView GroupedPropertyInstances { get; set; }
 
 
 	protected override async Task OnInitialize(object? ctx, object? args)
 	{
+		// Initialize language selector from config (AppCore.Current not safe in property initializer)
+		if (CurrentConfig is CommonAppConfig appConfig)
+		{
+			SelectedLanguage = appConfig.Language == "en" ? "English" : "中文";
+		}
+
 		using var memoryStream = new MemoryStream();
 		JsonSerializer.Serialize(memoryStream, CurrentConfig, Global.Json.DefaultIndentOptions);
 		memoryStream.Position = 0;
@@ -197,7 +220,7 @@ public partial class SystemConfigVM : CommonUiVM<SystemConfigView>, INamedObject
 			var property = typeof(AppConfig).GetProperty(propertyInstance.Define.Name);
 			if (property is null || property.CanWrite == false)
 			{
-				await ShowMessageBox("当前配置项不可修改。", "系统配置", MessageBoxIcon.Warning);
+				await ShowMessageBox(CommonUiApp.L("I18N.G.当前配置项不可修改"), CommonUiApp.L("I18N.G.系统配置"), MessageBoxIcon.Warning);
 				return;
 			}
 
@@ -208,11 +231,11 @@ public partial class SystemConfigVM : CommonUiVM<SystemConfigView>, INamedObject
 			propertyInstance.TempValue1 = value;
 
 			var displayName = propertyInstance.ValueInfo?.DisplayName ?? propertyInstance.Define.Name;
-			ShowToast($"{displayName} 修改成功", UiMessageType.Success);
+			ShowToast(string.Format(CommonUiApp.L("I18N.G.配置项修改成功"), displayName), UiMessageType.Success);
 		}
 		catch (Exception ex)
 		{
-			await ShowMessageBox($"配置修改失败: {ex.Message}", "系统配置", MessageBoxIcon.Error);
+			await ShowMessageBox(string.Format(CommonUiApp.L("I18N.G.配置修改失败"), ex.Message), CommonUiApp.L("I18N.G.系统配置"), MessageBoxIcon.Error);
 		}
 	}
 

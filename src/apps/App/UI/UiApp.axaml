@@ -16,6 +16,8 @@
 			<role:UiRoleChecker x:Key="RoleChecker" />
 			<ext:StateColorConverter x:Key="StateColorCvt"/>
 			<ext:StateColorConverter x:Key="MaterialStateColorCvt"/>
+			<ext:CalibrationBorderColorCvt x:Key="CalibrationBorderColorCvt"/>
+			<ext:CalibrationTimeDisplayCvt x:Key="CalibrationTimeDisplayCvt"/>
 			<EnumEqualsConverter x:Key="EnumEqualsConverter" />
 		</ResourceDictionary>
 	</Application.Resources>

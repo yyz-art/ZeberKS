@@ -33,22 +33,22 @@
 		<TabControl>
 			<TabItem Header="ReplaceMaterialDialog">
 				<RelativePanel>
-					<DefaultDialog Name="ReplaceMaterialDialog" Height="340" Width="600" Title="{StaticResource I18N.G.替换物料}">
+					<DefaultDialog Name="ReplaceMaterialDialog" Height="340" Width="600" Title="{DynamicResource I18N.G.替换物料}">
 						<Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto" ColumnDefinitions="Auto,*" ColumnSpacing="10"
 									RowSpacing="10">
-							<TextBlock Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" Text="{StaticResource I18N.G.名称}" />
+							<TextBlock Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" Text="{DynamicResource I18N.G.名称}" />
 							<Label Grid.Row="0" Grid.Column="1" MinHeight="28" VerticalContentAlignment="Center"
 										Content="{Binding EditMaterialSpaceContext.Config.PositionName}" />
 
-							<TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" Text="{StaticResource I18N.G.位置码}" />
+							<TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" Text="{DynamicResource I18N.G.位置码}" />
 							<TextBox Grid.Row="1" Grid.Column="1" BorderBrush="{Binding InputMaterialPositionCodeBorderBrush}"
 											Text="{Binding InputMaterialPositionCode}" />
 
-							<TextBlock Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" Text="{StaticResource I18N.G.物料码}" />
+							<TextBlock Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" Text="{DynamicResource I18N.G.物料码}" />
 							<TextBox Grid.Row="2" Grid.Column="1" BorderBrush="{Binding InputMaterialCodeBorderBrush}"
 											Text="{Binding InputMaterialCode}" />
 
-							<TextBlock Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" Text="{StaticResource I18N.G.数量}" />
+							<TextBlock Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" Text="{DynamicResource I18N.G.数量}" />
 							<TextBox Grid.Row="3" Grid.Column="1" Text="{Binding InputMaterialCount}" />
 
 							<TextBlock Grid.Row="4" Grid.Column="1" MinHeight="30" HorizontalAlignment="Center"
@@ -57,10 +57,10 @@
 							<StackPanel Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal"
 													HorizontalAlignment="Center" Spacing="10">
 
-								<Button Content="{StaticResource I18N.G.取消}" Command="{Binding #ReplaceMaterialDialog.CloseCommand}" />
-								<Button Content="{StaticResource I18N.G.清空}" Classes="Secondary" Theme="{DynamicResource Button-Outline}"
+								<Button Content="{DynamicResource I18N.G.取消}" Command="{Binding #ReplaceMaterialDialog.CloseCommand}" />
+								<Button Content="{DynamicResource I18N.G.清空}" Classes="Secondary" Theme="{DynamicResource Button-Outline}"
 												Command="{Binding #ReplaceMaterialDialog.CloseCommand}" />
-								<Button Content="{StaticResource I18N.G.确定}" Theme="{StaticResource Button-Solid}"
+								<Button Content="{DynamicResource I18N.G.确定}" Theme="{StaticResource Button-Solid}"
 												Command="{Binding MaterialReplaceConfirmCommand}" />
 							</StackPanel>
 						</Grid>
@@ -113,23 +113,23 @@
 																	VerticalAlignment="Center"
 																	Foreground="White" />
 
-												<CheckBox Content="{StaticResource I18N.G.物料检查}"
+												<CheckBox Content="{DynamicResource I18N.G.物料检查}"
 																	IsChecked="{Binding MaterialCheck, Mode=TwoWay}"
 																	VerticalAlignment="Center"
 																	Foreground="White" />
 
-												<CheckBox Content="{StaticResource I18N.G.配方检查}"
+												<CheckBox Content="{DynamicResource I18N.G.配方检查}"
 																	IsChecked="{Binding RecipeCheck, Mode=TwoWay}"
 																	VerticalAlignment="Center"
 																	Foreground="White" />
-												<CheckBox Content="{StaticResource I18N.G.扫码测试}"
+												<CheckBox Content="{DynamicResource I18N.G.扫码测试}"
 																	IsChecked="{Binding TestScanner, Mode=TwoWay}"
 																	VerticalAlignment="Center"
 																	Foreground="White" />
 												<Control LinearPanel.Weight="1" />
 												<TextBlock Text="{Binding WorkStep}" FontSize="16" FontWeight="Bold" Foreground="#ffffff"
 																	VerticalAlignment="Center" />
-												<!-- <Button Content="{StaticResource I18N.G.查看NG信息}" Theme="{StaticResource Button-Outline}" /> -->
+												<!-- <Button Content="{DynamicResource I18N.G.查看NG信息}" Theme="{StaticResource Button-Outline}" /> -->
 											</LinearPanel>
 											<SelectableTextBlock Text="{Binding ErrorMessage}" Foreground="OrangeRed" TextWrapping="Wrap" Height="40" />
 										</LinearPanel>
@@ -145,7 +145,7 @@
 														</DataTemplate>
 													</ComboBox.ItemTemplate>
 												</ComboBox>
-												<Button Content="{StaticResource I18N.G.打开图片文件夹}" Classes="Secondary"
+												<Button Content="{DynamicResource I18N.G.打开图片文件夹}" Classes="Secondary"
 																Command="{Binding OpenImageFileFolderCommand}" />
 											</LinearPanel>
 											<libs:ImageViewer Grid.Row="1" Source="{Binding Image}" />
@@ -164,11 +164,11 @@
 																BorderBrush="{DynamicResource Brush-Border}" BorderThickness="1">
 												<DataGrid.Columns>
 													<DataGridTextColumn Header="ID" Binding="{Binding Id}" />
-													<DataGridTextColumn Header="SN" Binding="{Binding Sn1}" />
+													<DataGridTextColumn Header="SN" Binding="{Binding Sn1}" IsVisible="False" />
 													<DataGridTextColumn Header="No" Binding="{Binding ScrewNo}" />
-													<DataGridTextColumn Header="{StaticResource I18N.G.扭矩}" Binding="{Binding MaxTorque}" />
-													<DataGridTextColumn Header="{StaticResource I18N.G.圈数}" Binding="{Binding Turns}" />
-													<DataGridTextColumn Header="{StaticResource I18N.G.时间}" Binding="{Binding CollectedAt}" />
+													<DataGridTextColumn Header="{DynamicResource I18N.G.扭矩}" Binding="{Binding MaxTorque}" />
+													<DataGridTextColumn Header="{DynamicResource I18N.G.圈数}" Binding="{Binding Turns}" />
+													<DataGridTextColumn Header="{DynamicResource I18N.G.时间}" Binding="{Binding CollectedAt}" />
 												</DataGrid.Columns>
 											</DataGrid>
 										</Grid>
@@ -180,7 +180,7 @@
 				</Border>
 				<GridSplitter Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" />
 				<!-- 吸头 -->
-				<ViewContainer Grid.Row="2" Grid.Column="1" Header="{StaticResource I18N.G.吸嘴压力点检}"
+				<ViewContainer Grid.Row="2" Grid.Column="1" Header="{DynamicResource I18N.G.吸嘴压力点检}"
 											IsVisible="{Binding HasNozzleContexts}" MinHeight="110">
 					<ItemsControl ItemsSource="{Binding NozzleContexts}">
 						<ItemsControl.ItemsPanel>
@@ -199,7 +199,7 @@
 										<Grid Grid.Row="1" RowDefinitions="Auto,Auto,Auto" ColumnDefinitions="Auto,*" ColumnSpacing="5"
 													RowSpacing="5"
 													Margin="5">
-											<TextBlock Grid.Row="0" Grid.Column="0" Classes="Label" Text="{StaticResource I18N.G.范围}" />
+											<TextBlock Grid.Row="0" Grid.Column="0" Classes="Label" Text="{DynamicResource I18N.G.范围}" />
 											<Label Grid.Row="0" Grid.Column="1" Classes="Value">
 												<StackPanel Orientation="Horizontal">
 													<TextBlock Text="{Binding Config.PressureMinValue}" />
@@ -207,7 +207,7 @@
 													<TextBlock Text="{Binding Config.PressureMaxValue}" />
 												</StackPanel>
 											</Label>
-											<TextBlock Grid.Row="1" Grid.Column="0" Classes="Label" Text="{StaticResource I18N.G.压力}" />
+											<TextBlock Grid.Row="1" Grid.Column="0" Classes="Label" Text="{DynamicResource I18N.G.压力}" />
 											<Label Grid.Row="1" Grid.Column="1" Classes="Value" Content="{Binding Value, StringFormat=F2}"
 														VerticalContentAlignment="Center" />
 										</Grid>
@@ -220,7 +220,7 @@
 			</Grid>
 		</LayoutDockPanel.CenterContent>
 		<LayoutDockPanel.RightTopContent>
-			<ViewContainer Header="物料" Padding="0">
+			<ViewContainer Header="{DynamicResource I18N.G.物料}" Padding="0">
 				<ItemsControl ItemsSource="{Binding MaterialSpaceContexts}">
 					<ItemsControl.Styles>
 						<Style Selector="ViewContainer">
@@ -248,29 +248,29 @@
 										<TextBlock Text="{Binding Config.PositionName}" />
 										<Control LinearPanel.Weight="1" />
 										<Panel>
-											<Button Content="{StaticResource I18N.G.解锁}" IsVisible="{Binding !IsUnlocked}" Classes="Primary"
+											<Button Content="{DynamicResource I18N.G.解锁}" IsVisible="{Binding !IsUnlocked}" Classes="Primary"
 															Theme="{DynamicResource Button-Solid}"
 															Padding="10 2" Command="{Binding ToggleLockCommand}" CommandParameter="{Binding .}" />
-											<Button Content="{StaticResource I18N.G.锁定}" IsVisible="{Binding IsUnlocked}" Classes="Danger"
+											<Button Content="{DynamicResource I18N.G.锁定}" IsVisible="{Binding IsUnlocked}" Classes="Danger"
 															Theme="{DynamicResource Button-Solid}"
 															Padding="10 2" Command="{Binding ToggleLockCommand}" CommandParameter="{Binding .}" />
 										</Panel>
 
-										<Button Content="{StaticResource I18N.G.换料}" Classes="Success" Theme="{DynamicResource Button-Solid}"
+										<Button Content="{DynamicResource I18N.G.换料}" Classes="Success" Theme="{DynamicResource Button-Solid}"
 														Padding="10 2 "
 														Command="{Binding MaterialReplaceCommand}" CommandParameter="{Binding .}" />
 									</LinearPanel>
 								</ViewContainer.Header>
 								<Grid ColumnDefinitions="Auto,*,Auto,*" RowDefinitions="Auto,Auto,Auto,Auto" RowSpacing="2" ColumnSpacing="5"
 											Margin="3">
-									<TextBlock Grid.Row="0" Grid.Column="0" Classes="Label" Text="{StaticResource I18N.G.位置码_}" />
+									<TextBlock Grid.Row="0" Grid.Column="0" Classes="Label" Text="{DynamicResource I18N.G.位置码_}" />
 									<Label Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" Classes="Value"
 												Content="{Binding PositionCode}" />
-									<TextBlock Grid.Row="1" Grid.Column="0" Classes="Label" Text="{StaticResource I18N.G.物料码_}" />
+									<TextBlock Grid.Row="1" Grid.Column="0" Classes="Label" Text="{DynamicResource I18N.G.物料码_}" />
 									<Label Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" Classes="Value" Content="{Binding MaterialCode}" />
-									<TextBlock Grid.Row="2" Grid.Column="0" Classes="Label" Text="{StaticResource I18N.G.抛料率_}" />
+									<TextBlock Grid.Row="2" Grid.Column="0" Classes="Label" Text="{DynamicResource I18N.G.抛料率_}" />
 									<Label Grid.Row="2" Grid.Column="1" Classes="Value" Content="{Binding ScrapRate,StringFormat='{}{0:F2}%'}" />
-									<TextBlock Grid.Row="2" Grid.Column="2" Classes="Label" Text="{StaticResource I18N.G.剩余量_}" />
+									<TextBlock Grid.Row="2" Grid.Column="2" Classes="Label" Text="{DynamicResource I18N.G.剩余量_}" />
 									<!-- <ProgressBar Grid.Row="2" Grid.Column="3" Maximum="100" Minimum="0" ShowProgressText="True" Value="20"></ProgressBar> -->
 									<Label Grid.Row="2" Grid.Column="3" Classes="Value" Content="{Binding RemainCount}" />
 								</Grid>
@@ -287,8 +287,8 @@
 		</LayoutDockPanel.RightBottomContent>
 		<LayoutDockPanel.LeftTopContent>
 			<StackPanel Orientation="Vertical">
-				<ViewContainer Header="{StaticResource I18N.G.生产信息}" Padding="5">
-					<Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto" ColumnSpacing="5"
+				<ViewContainer Header="{DynamicResource I18N.G.生产信息}" Padding="5">
+					<Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto" ColumnSpacing="5"
 								RowSpacing="5">
 						<Grid.Styles>
 							<Style Selector="Label.Value">
@@ -303,38 +303,45 @@
 								<Setter Property="VerticalAlignment" Value="Center"></Setter>
 							</Style>
 						</Grid.Styles>
-						<Label Classes="Label" Grid.Row="0" Grid.Column="0" Content="{StaticResource I18N.G.机种型号_}" />
-						<Label Classes="Value" Grid.Row="0" Grid.Column="1" Content="{Binding WorkRecipeName}" />
-						<Label Classes="Label" Grid.Row="1" Grid.Column="0" Content="{StaticResource I18N.G.工单号_}" />
-						<Label Classes="Value" Grid.Row="1" Grid.Column="1" Content="{Binding WorkOrderNo}" />
-						<Label Classes="Label" Grid.Row="2" Grid.Column="0" Content="{StaticResource I18N.G.已生产数量_}" />
+						<Label Classes="Label" Grid.Row="0" Grid.Column="0" Content="{DynamicResource I18N.G.机种型号_}" />
+						<LinearPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal" Spacing="5">
+							<TextBox Text="{Binding ModelNameInput, Mode=TwoWay}" MinHeight="30" LinearPanel.Weight="1"
+									HorizontalAlignment="Stretch" />
+							<Button Content="{DynamicResource I18N.G.加载}" Command="{Binding LoadRecipeCommand}"
+									MinHeight="30" Padding="10 0" />
+						</LinearPanel>
+						<Label Classes="Label" Grid.Row="1" Grid.Column="0" Content="{DynamicResource I18N.G.工单号_}" />
+						<TextBox Grid.Row="1" Grid.Column="1" Text="{Binding WorkOrderNoInput, Mode=TwoWay}" MinHeight="30" />
+						<Label Classes="Label" Grid.Row="2" Grid.Column="0" Content="{DynamicResource I18N.G.已生产数量_}" />
 						<Label Classes="Value" Grid.Row="2" Grid.Column="1" Content="{Binding PlcRead.已生产数量}" />
-						<Label Classes="Label" Grid.Row="3" Grid.Column="0" Content="{StaticResource I18N.G.工站名_}" />
-						<LinearPanel Grid.Row="3" Grid.Column="1" Orientation="Horizontal" Spacing="5">
+						<Label Classes="Label" Grid.Row="3" Grid.Column="0" Content="{DynamicResource I18N.G.良率_}" />
+						<Label Classes="Value" Grid.Row="3" Grid.Column="1" Content="{Binding PlcRead.良率, StringFormat='{}{0:F2}%'}" />
+						<Label Classes="Label" Grid.Row="4" Grid.Column="0" Content="{DynamicResource I18N.G.工站名_}" />
+						<LinearPanel Grid.Row="4" Grid.Column="1" Orientation="Horizontal" Spacing="5">
 							<TextBox Text="{Binding StationNameInput, Mode=TwoWay}" MinHeight="30" LinearPanel.Weight="1"
 											HorizontalAlignment="Stretch" />
-							<Button Content="{StaticResource I18N.G.确认}" Command="{Binding ConfirmStationNameChangeCommand}"
+							<Button Content="{DynamicResource I18N.G.确认}" Command="{Binding ConfirmStationNameChangeCommand}"
 											MinHeight="30" Padding="10 0" />
 						</LinearPanel>
-						<Label Classes="Label" Grid.Row="4" Grid.Column="0" Content="{StaticResource I18N.G.CT_}" />
-						<Label Classes="Value" Grid.Row="4" Grid.Column="1" Content="{Binding CTSeconds, StringFormat='{}{0:F2} S'}" />
-						<Label Classes="Label" Grid.Row="5" Grid.Column="0" Content="{StaticResource I18N.G.工号_}" />
-						<LinearPanel Grid.Row="5" Grid.Column="1" Orientation="Horizontal" Spacing="5">
+						<Label Classes="Label" Grid.Row="5" Grid.Column="0" Content="{DynamicResource I18N.G.CT_}" />
+						<Label Classes="Value" Grid.Row="5" Grid.Column="1" Content="{Binding CTSeconds, StringFormat='{}{0:F2} S'}" />
+						<Label Classes="Label" Grid.Row="6" Grid.Column="0" Content="{DynamicResource I18N.G.工号_}" />
+						<LinearPanel Grid.Row="6" Grid.Column="1" Orientation="Horizontal" Spacing="5">
 							<TextBox Text="{Binding WorkNoInput, Mode=TwoWay}" LinearPanel.Weight="1" MinHeight="30"
 											HorizontalAlignment="Stretch" />
-							<Button Content="{StaticResource I18N.G.确认}" Command="{Binding ConfirmWorkNoChangeCommand}" MinHeight="30"
+							<Button Content="{DynamicResource I18N.G.确认}" Command="{Binding ConfirmWorkNoChangeCommand}" MinHeight="30"
 											Padding="10 0" />
 						</LinearPanel>
-						<LinearPanel Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" Spacing="15"
+						<LinearPanel Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" Spacing="15"
 												HorizontalAlignment="Center">
-			
+
 						</LinearPanel>
-						<Label Classes="Label" Grid.Row="6" Grid.Column="0" Content="{StaticResource I18N.G.线别}" />
-						<LinearPanel Grid.Row="6" Grid.Column="1" Orientation="Horizontal" Spacing="5">
+						<Label Classes="Label" Grid.Row="7" Grid.Column="0" Content="{DynamicResource I18N.G.线别}" />
+						<LinearPanel Grid.Row="7" Grid.Column="1" Orientation="Horizontal" Spacing="5">
 							<TextBox Text="{Binding LineNameInput, Mode=TwoWay}" MinHeight="30" LinearPanel.Weight="1"
 							         HorizontalAlignment="Stretch" />
-							<Button Content="{StaticResource I18N.G.确认}" Command="{Binding ConfirmLineNameChangeCommand}"
-							        MinHeight="30" Padding="10 0" />
+							<!-- <Button Content="{DynamicResource I18N.G.确认}" Command="{Binding ConfirmLineNameChangeCommand}" -->
+							<!--         MinHeight="30" Padding="10 0" /> -->
 						</LinearPanel>
 					</Grid>
 				</ViewContainer>
@@ -342,26 +349,53 @@
 					<StackPanel Orientation="Vertical" Spacing="20">
 						<Grid ColumnDefinitions="Auto,*,Auto" RowDefinitions="Auto,Auto" ColumnSpacing="5" RowSpacing="5">
 							<Label FontWeight="Bold" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3"
-										Content="{StaticResource I18N.G.PLC_网络连接}" Background="#277679" Foreground="White"
+										Content="{DynamicResource I18N.G.PLC_网络连接}" Background="#277679" Foreground="White"
 										HorizontalAlignment="Stretch" />
 
 							<Label Classes="Label" Grid.Row="1" Grid.Column="0" Content="IP:" VerticalAlignment="Center" />
 							<TextBox Grid.Row="1" Grid.Column="1" Text="{Binding DisplayPlcIp}" IsReadOnly="True" />
-							<Button Grid.Row="1" Grid.Column="2" Content="打开监视" Command="{Binding OpenIoMonitorCommand}"/>
+							<Button Grid.Row="1" Grid.Column="2" Content="{DynamicResource I18N.G.打开监视}" Command="{Binding OpenIoMonitorCommand}"/>
 						</Grid>
 						<Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto,Auto" ColumnSpacing="5" RowSpacing="5">
 							<Label FontWeight="Bold" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
-										Content="{StaticResource I18N.G.吸嘴压力点检}" Background="#277679" Foreground="White"
+										Content="{DynamicResource I18N.G.吸嘴压力点检}" Background="#277679" Foreground="White"
 										HorizontalAlignment="Stretch" />
-							<Label Classes="Label" Grid.Row="1" Grid.Column="0" Content="点检完成时间" VerticalAlignment="Center" />
+							<Label Classes="Label" Grid.Row="1" Grid.Column="0" Content="{DynamicResource I18N.G.点检完成时间}" VerticalAlignment="Center" />
 							<TextBox Grid.Row="1" Grid.Column="1" Text="{Binding CoreService.NozzleSpotCheckCompleteTime}" IsReadOnly="True" />
 							<StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" Spacing="10" HorizontalAlignment="Center">
-								<CheckBox Content="{StaticResource I18N.G.吸嘴压力点检}"
+								<CheckBox Content="{DynamicResource I18N.G.吸嘴压力点检}"
 													IsChecked="{Binding CoreService.NozzleCheck, Mode=TwoWay}"
 													VerticalAlignment="Center"
 													Foreground="White" />
-								<Button Content="复位吸嘴点检" HorizontalAlignment="Center" Command="{Binding ResetNozzleSpotCheckCommand}"></Button>
+								<Button Content="{DynamicResource I18N.G.复位吸嘴点检}" HorizontalAlignment="Center" Command="{Binding ResetNozzleSpotCheckCommand}"></Button>
 							</StackPanel>
+						</Grid>
+						<!-- ASM15 校准检查 -->
+						<Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto,Auto" ColumnSpacing="5" RowSpacing="5"
+									IsVisible="{Binding HasCalibrationService}">
+							<Label FontWeight="Bold" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
+									Content="{DynamicResource I18N.G.ASM15校准检查}" Background="#277679" Foreground="White"
+									HorizontalAlignment="Stretch" />
+
+							<Label Classes="Label" Grid.Row="1" Grid.Column="0"
+									Content="{DynamicResource I18N.G.校准完成时间}" VerticalAlignment="Center" />
+							<Border Grid.Row="1" Grid.Column="1" BorderThickness="1" CornerRadius="3" Padding="4 2"
+										BorderBrush="{Binding CalibrationService.IsCalibrationOk, Converter={StaticResource CalibrationBorderColorCvt}}">
+								<TextBlock VerticalAlignment="Center">
+									<TextBlock.Text>
+										<MultiBinding Converter="{StaticResource CalibrationTimeDisplayCvt}">
+											<Binding Path="CalibrationService.IsCalibrationOk" />
+											<Binding Path="CalibrationService.CalibrationCompleteTime" />
+										</MultiBinding>
+									</TextBlock.Text>
+								</TextBlock>
+							</Border>
+
+							<CheckBox Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"
+												Content="{DynamicResource I18N.G.启用校准检查}"
+												IsChecked="{Binding CalibrationService.CalibrationCheckEnabled, Mode=TwoWay}"
+												VerticalAlignment="Center" Foreground="White"
+												Margin="0,5,0,0" />
 						</Grid>
 						<!-- <Button Content="打开 PLC IO 监控" -->
 						<!-- 				Command="{Binding OpenIoMonitor}" -->
@@ -398,14 +432,14 @@
 		</LayoutDockPanel.LeftBottomContent>
 
 		<LayoutDockPanel.BottomLeftContent>
-			<ViewContainer Header="{StaticResource I18N.G.日志栏}" Padding="2">
+			<ViewContainer Header="{DynamicResource I18N.G.日志栏}" Padding="2">
 				<DataGrid Name="LogsDataGrid" ItemsSource="{Binding Logs}" GridLinesVisibility="All"
 									BorderBrush="{DynamicResource Brush-Border}" BorderThickness="1"
 									CanUserResizeColumns="True" FrozenColumnCount="3">
 					<DataGrid.Columns>
-						<DataGridTextColumn Header="时间" Binding="{Binding TimeStamp}" MinWidth="50" />
-						<DataGridTextColumn Header="记录器" Binding="{Binding LoggerName}" MinWidth="50" />
-						<DataGridTemplateColumn Header="等级">
+						<DataGridTextColumn Header="{DynamicResource I18N.G.时间}" Binding="{Binding TimeStamp}" MinWidth="50" />
+						<DataGridTextColumn Header="{DynamicResource I18N.G.记录器}" Binding="{Binding LoggerName}" MinWidth="50" />
+						<DataGridTemplateColumn Header="{DynamicResource I18N.G.等级}">
 							<DataGridTemplateColumn.CellTemplate>
 								<DataTemplate>
 									<SelectableTextBlock
@@ -414,7 +448,7 @@
 								</DataTemplate>
 							</DataGridTemplateColumn.CellTemplate>
 						</DataGridTemplateColumn>
-						<DataGridTemplateColumn Header="信息" Width="*">
+						<DataGridTemplateColumn Header="{DynamicResource I18N.G.信息}" Width="*">
 							<DataGridTemplateColumn.CellTemplate>
 								<DataTemplate>
 									<SelectableTextBlock
@@ -432,7 +466,7 @@
 
 		<LayoutDockPanel.BottomRightContent>
 			<LinearPanel Orientation="Vertical" Spacing="10">
-				<ViewContainer Header="{StaticResource I18N.G.设备状态}" Padding="10" Background="#262626">
+				<ViewContainer Header="{DynamicResource I18N.G.设备状态}" Padding="10" Background="#262626">
 					<ItemsControl ItemsSource="{Binding DeviceStatusContexts}">
 						<ItemsControl.ItemTemplate>
 							<DataTemplate>
@@ -450,7 +484,7 @@
 				</ViewContainer>
 				<Control LinearPanel.Weight="1" />
 				<LinearPanel Orientation="Horizontal" Spacing="10" Margin="2 4" Padding="5">
-					<Label Content="联系方式:" FontWeight="Bold" />
+					<Label Content="{DynamicResource I18N.G.联系方式_}" FontWeight="Bold" />
 					<TextBlock Text="{Binding AppConfig.联系方式}"></TextBlock>
 				</LinearPanel>
 			</LinearPanel>

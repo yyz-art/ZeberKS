@@ -19,27 +19,27 @@
 		<LinearPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
 			<Label Content="PLC 交互数据监控" Theme="{DynamicResource Label-Tag}" Classes="Ghost Green" FontSize="16"/>
 			<Control LinearPanel.Weight="1"/>
-			<Button Content="关闭" Command="{Binding HideCommand}"/>
+			<Button Content="{DynamicResource I18N.G.关闭}" Command="{Binding HideCommand}"/>
 		</LinearPanel>
 		<DataGrid Grid.Row="1" Grid.Column="0" ItemsSource="{Binding ToPcPropertyInstances}" GridLinesVisibility="All"
 							BorderBrush="{DynamicResource Brush-Border}" BorderThickness="1" CanUserSortColumns="False">
 			<DataGrid.Columns>
-				<DataGridTextColumn Header="名称" Binding="{Binding Define.Name}"/>
-				<DataGridTextColumn Header="数据源" Binding="{Binding Define.ValueInfo.Source}"/>
-				<DataGridTextColumn Header="读取值" Binding="{Binding Value}"/>
+				<DataGridTextColumn Header="{DynamicResource I18N.G.名称}" Binding="{Binding Define.Name}"/>
+				<DataGridTextColumn Header="{DynamicResource I18N.G.数据源}" Binding="{Binding Define.ValueInfo.Source}"/>
+				<DataGridTextColumn Header="{DynamicResource I18N.G.读取值}" Binding="{Binding Value}"/>
 				<!-- <DataGridTextColumn Header="写入值" Binding="{Binding TempValue1}"/> -->
-				<DataGridTextColumn Header="描述" Binding="{Binding Define.ValueInfo.Description}" Width="*"/>
+				<DataGridTextColumn Header="{DynamicResource I18N.G.描述}" Binding="{Binding Define.ValueInfo.Description}" Width="*"/>
 			</DataGrid.Columns>
 		</DataGrid>
-		
+
 		<DataGrid Grid.Row="1" Grid.Column="1" ItemsSource="{Binding ToPlcPropertyInstances}" GridLinesVisibility="All"
 							BorderBrush="{DynamicResource Brush-Border}" BorderThickness="1" CanUserSortColumns="False">
 			<DataGrid.Columns>
-				<DataGridTextColumn Header="名称" Binding="{Binding Define.Name}"/>
-				<DataGridTextColumn Header="数据源" Binding="{Binding Define.ValueInfo.Source}"/>
-				<DataGridTextColumn Header="读取值" Binding="{Binding Value}"/>
+				<DataGridTextColumn Header="{DynamicResource I18N.G.名称}" Binding="{Binding Define.Name}"/>
+				<DataGridTextColumn Header="{DynamicResource I18N.G.数据源}" Binding="{Binding Define.ValueInfo.Source}"/>
+				<DataGridTextColumn Header="{DynamicResource I18N.G.读取值}" Binding="{Binding Value}"/>
 				<!-- <DataGridTextColumn Header="写入值" Binding="{Binding TempValue1}"/> -->
-				<DataGridTextColumn Header="描述" Binding="{Binding Define.ValueInfo.Description}" Width="*"/>
+				<DataGridTextColumn Header="{DynamicResource I18N.G.描述}" Binding="{Binding Define.ValueInfo.Description}" Width="*"/>
 			</DataGrid.Columns>
 		</DataGrid>
 	</Grid>

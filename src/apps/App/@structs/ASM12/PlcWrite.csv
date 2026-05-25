@@ -20,6 +20,7 @@
 工号PC下发,PC->PLC,21140,short,,new(40)
 扫码枪1扫码内容,PC->PLC,21300,short,40字 视觉用,new(80)
 扫码枪2扫码内容,PC->PLC,21340,short,40字 视觉用,new(80)
+PC当前配方名称,PC->PLC,23000,short,20字节 配方名称,new(20)
 Feeder1PC下发料号,PLC->PC,21200,int,
 Feeder1PC下发物料上料数量,PLC->PC,21202,int,
 Feeder1解锁请求,PC->PLC,21208,short,预留

@@ -1,4 +1,5 @@
 using System.Text;
+using System.Text.Json;
 using ZC;
 using ZC.BinStructs.Ext;
 using ZC.DP.Number;
@@ -37,6 +38,7 @@ public partial class WorkService2 : WorkServiceBase
 	public required MesService Mes { get; init; }
 	public required AppConfig AppConfig { get; init; }
 	public required CreateMaterialRecipeVM CreateMaterialRecipeVM { get; init; }
+	public required NgService NgService { get; init; }
 	public IDataSocket CodeScanner { get; set; } = null!;
 	public WorkPositionContext Context { get; set; } = null!;
 
@@ -69,6 +71,24 @@ public partial class WorkService2 : WorkServiceBase
 			{
 #if ASM15_1
 				Context.ScanKeyPartCode = "";
+				螺丝拧紧完成信号 = 0;
+				Plc.Write.工位2螺丝拧紧完成信号 = 0;
+				Plc.Write.WritePoint(nameof(PlcStruct.工位2螺丝拧紧完成信号));
+				Array.Clear(ScrewTurns);
+				Array.Clear(ScrewMaxTorque);
+				if (Plc.Read.工位2螺丝拧紧完成信号 > 1)
+					Plc.Read.工位2螺丝拧紧完成信号 = 0;
+				UiUtils.InvokeOnUiThread(() =>
+				{
+					foreach (var item in Context.ScrewInstallDataList)
+					{
+						item.ScrewNo = 0;
+						item.MaxTorque = 0;
+						item.Turns = 0;
+						item.CollectedAt = default;
+						item.HasValue = false;
+					}
+				});
 #else
 				Context.ScanSnCode = "";
 #endif
@@ -117,6 +137,17 @@ public partial class WorkService2 : WorkServiceBase
 
 
 				Logger.Info($"[SCAN-CODE-{Plc.Read.扫码枪2触发}] [OK] CONTENT='{scanCode}'");
+
+#if ASM15_1
+				if (Core.CalibrationService?.CalibrationCheckEnabled == true && !Core.IsCalibrationOk)
+				{
+					Logger.Error("[CALIBRATION CHECK] calibration check failed — production blocked!");
+					Context.ErrorMessage = "calibration check failed!";
+					Plc.Write.扫码枪2触发结果 = CodeOfNG;
+					Plc.Write.工位2允许生产 = NOT_ALLOW_PRODUCTION_BY_SCAN_CODE;
+					goto SendResult;
+				}
+#endif
 
 				MesQueryPoint:
 				if (Context.MesEnabled)
@@ -288,6 +319,10 @@ public partial class WorkService2 : WorkServiceBase
 						}
 
 						Core.WorkRecipe = recipe;
+#if ASM12
+						Plc.Plc.Write("23000", recipe.Name ?? "", 20);              // 写入PC当前配方名称到PLC
+						Logger.Info($"[RECIPE CHANGE] [OK] Write recipe name to PLC: '{recipe.Name}'");
+#endif
 						Logger.Info("[RECIPE CHANGE] [OK] Recipe changed successfully!.");
 					}
 					finally
@@ -416,15 +451,17 @@ public partial class WorkService2 : WorkServiceBase
 
 			#region 过站
 
-			if (Plc.Read is { 工位2数据上报请求: 1, 工位2数据上报响应: 0 })
+			if (Plc.Read is { 工位2数据上报请求: 1, 工位2数据上报响应: 0})
 			{
+				Logger.Info($"[MES OUT-STA] [TRIGGER] PLC数据上报请求=1, 上报结果={Plc.Read.工位2数据上报结果}, SN='{Context.ScanSnCode}'");
 				var uploadResultCode = Plc.Read.工位2数据上报结果;
+#if !ASM15_1		
 				if (uploadResultCode == 0) // 防止PLC未加此信号
 				{
 					uploadResultCode = 1;
-					Logger.Warn("plc need to add 工位数据上报结果 point");
+					Logger.Info("plc need to add 工位数据上报结果 point");
 				}
-
+#endif
 				Context.ErrorMessage = null;
 				Context.WorkStep = WorkStep.OUT_STATION;
 				Context.ProductionState = ProductionState.NA;
@@ -482,8 +519,46 @@ public partial class WorkService2 : WorkServiceBase
 				}
 				else
 				{
+#if ASM15_1
+					var failCode = "";
+					var alarmResult = Screw.ReadInt16("60638");
+					if (alarmResult.IsSuccess)
+					{
+						failCode = alarmResult.Content switch
+						{
+							2 => "L043",
+							3 => "L044",
+							_ => "L043"
+						};
+						if (failCode != "")
+							Logger.Info($"[SCREW ALARM] 60638={alarmResult.Content} -> {failCode}");
+					}
+					else
+						Logger.Error($"[SCREW ALARM] read 60638 failed! {alarmResult.Message}");
+
+					var msg2 =
+						$"{AppConfig.StationName},{Context.ScanSnCode},2,{Core.WorkerNo},{AppConfig.Line},,FAIL,{failCode},";
+#else
+					var msg2 =
+						$"{AppConfig.StationName},{Context.ScanSnCode},2,{Core.WorkerNo},{AppConfig.Line},,FAIL,,,{DataBuilder}";
+#endif
+					Logger.Info($"[MES OUT-STA] [DOING] RESULT={Plc.Read.工位2数据上报结果} MES << '{msg2}'");
+					var respMsg2Result = Mes.SendAndReadString(msg2);
+					if (respMsg2Result.IsError() || respMsg2Result.Value!.StartsWith("OK") is false)
+					{
+						Context.ErrorMessage = respMsg2Result.IsError()
+							? "out-station failed, mes connection error!"
+							: $"out-station failed, mes return error '{respMsg2Result.Value}'";
+						Logger.Error(respMsg2Result.IsError()
+							? $"[MES OUT-STA] [ERROR] {respMsg2Result.Message}"
+							: $"[MES OUT-STA] [ERROR] RESULT={Plc.Read.工位2数据上报结果} MES >> '{respMsg2Result.Value}'");
+						Plc.Write.工位2数据上报响应 = 2;
+						goto SendOutStationResult;
+					}
+
 					Logger.Info($"[MES OUT-STA] [OK] RESULT={Plc.Read.工位2数据上报结果} SKIP-MES");
 				}
+				
 #endif
 
 #if ASM12 // ASM12 上传图片	
@@ -519,6 +594,13 @@ public partial class WorkService2 : WorkServiceBase
 #endif
 				Plc.Write.工位2数据上报响应 = 1;
 				SendOutStationResult:
+#if ASM15_1
+				uploadResultCode = Plc.Read.工位2数据上报结果;
+				if (uploadResultCode == 2)                                           
+				{
+					Plc.Write.工位2数据上报响应 = 2;
+				}
+#endif
 				if (uploadResultCode != 1) // NG
 				{
 					Context.ProductionState = ProductionState.NG;
@@ -552,6 +634,7 @@ public partial class WorkService2 : WorkServiceBase
 
 			if (Plc.Read.扫码枪2触发 == 0 && Plc.Read.扫码枪2触发结果 != 0)
 			{
+				Logger.Debug($"[SIGNAL RESET] 扫码枪2触发={Plc.Read.扫码枪2触发}, 扫码枪2触发结果={Plc.Read.扫码枪2触发结果} => 复位PC响应");
 				Plc.Write.扫码枪2触发结果 = 0;
 				Plc.Write.WritePoint(nameof(PlcStruct.扫码枪2触发结果)).Unwarp("clear code scanner signal failed!");
 				continue;
@@ -559,6 +642,7 @@ public partial class WorkService2 : WorkServiceBase
 
 			if (Plc.Read.工位2数据上报请求 is 0 && Plc.Read.工位2数据上报响应 is not 0)
 			{
+				Logger.Debug($"[SIGNAL RESET] 数据上报请求={Plc.Read.工位2数据上报请求}, 数据上报响应={Plc.Read.工位2数据上报响应} => 复位PC响应");
 				Plc.Write.工位2数据上报响应 = 0;
 				Plc.Write.WritePoint(nameof(PlcStruct.工位2数据上报响应)).Unwarp("clear work left upload result!");
 				continue;
@@ -567,6 +651,10 @@ public partial class WorkService2 : WorkServiceBase
 			#endregion
 
 			#region 工站本地代码
+
+#if ASM15_1
+			
+#endif
 
 #if MFG15
 				if (Plc.Read.打印机2触发 is 1 && Plc.Read.打印机2触发结果 is 0)
@@ -679,8 +767,32 @@ public partial class WorkService2 : WorkServiceBase
 				Logger.Info($"[SCREW COMPLETE] AT [{螺丝拧紧完成信号}] Turns:{turns}  MaxTorque:{maxTorque}");
 				ScrewTurns[螺丝拧紧完成信号 - 1] = turns;
 				ScrewMaxTorque[螺丝拧紧完成信号 - 1] = maxTorque;
+				if (螺丝拧紧完成信号 == ScrewCount)
+				{
+					Logger.Info($"[SCREW ALL DONE] All {ScrewCount} screws completed, waiting for PLC data upload request...");
+					Logger.Info($"[SCREW ALL DONE] Current PLC state: 数据上报请求={Plc.Read.工位2数据上报请求}, 数据上报响应={Plc.Read.工位2数据上报响应}");
+				}
+				var screwIndex = 螺丝拧紧完成信号 - 1;
+				if (screwIndex >= 0 && screwIndex < Context.ScrewInstallDataList.Count)
+				{
+					var idx = screwIndex;
+					var no = 螺丝拧紧完成信号;
+					UiUtils.InvokeOnUiThread(() =>
+					{
+						var item = Context.ScrewInstallDataList[idx];
+						item.ScrewNo = no;
+						item.MaxTorque = maxTorque;
+						item.Turns = turns;
+						item.CollectedAt = DateTime.Now;
+						item.HasValue = true;
+					});
+				}
 				break;
 			}
+#endif
+
+#if ASM15_1
+			
 #endif
 
 			#endregion
@@ -746,6 +858,18 @@ public partial class WorkService2 : WorkServiceBase
 
 				Context.NgItems.Add(define);
 			}
+		});
+
+		NgService.PushNg(new NgRecord
+		{
+			StationId = 2,
+			StationName = AppConfig.StationName,
+			SnCode = Context.ScanSnCode,
+			KeyPartCode = Context.ScanKeyPartCode,
+			ModelName = Context.ModelName,
+			ErrorMessage = Context.ErrorMessage,
+			NgItems = JsonSerializer.Serialize(Context.NgItems.Select(t => new { t.Id, t.Sender, t.Name, t.Reason })),
+			CreateTime = DateTime.Now
 		});
 	}
 }

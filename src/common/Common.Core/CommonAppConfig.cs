@@ -263,6 +263,14 @@ public abstract partial class CommonAppConfig : ConfigBase
 	], DefaultValue = 12, Description = "nozzle spot check timeout hours")]
 	public double NozzleSpotCheckTimeoutHours { get; set; } = 12;
 
+	[ValueInfo(Category = "点检配置 / SPOT CHECK", InitAttachData =
+	[
+		DataDefine.KeyValue, NameByCN, "校准超时时间(小时)",
+		DataDefine.KeyValue, NameByEN, "calibration timeout hours",
+		DataDefine.KeyValue, NameByVI, "calibration timeout hours",
+	], DefaultValue = 12, Description = "calibration timeout hours")]
+	public double CalibrationTimeoutHours { get; set; } = 12;
+
 	public static int MaterialSpaceCount { get; set; } = 5;
 	public static int NozzleCount { get; set; } = 7;
 

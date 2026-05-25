@@ -9,6 +9,8 @@ Name,DataDir,Offset,DataType,Description,InitExpress
 配方下发请求,PC->PLC,4012,short,"1=请求,0=无请求",
 工位1数据上报响应,PC->PLC,4015,short,"1=OK,2=NG",
 工位2数据上报响应,PC->PLC,4016,short,"1=OK,2=NG",
+工位1给plc响应,PC->PLC,4017,short,"1=OK,2=NG",
+工位2给plc响应,PC->PLC,4018,short,"1=OK,2=NG",
 扫码枪1触发结果,PC->PLC,4020,short,"1=OK,2=扫码枪连接错误,3=MES返回错误",
 扫码枪2触发结果,PC->PLC,4021,short,"1=OK,2=扫码枪连接错误,3=MES返回错误",
 工位1生产序号,PC->PLC,4024,int,PLC不用，视觉用,

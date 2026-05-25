@@ -13,9 +13,5 @@ public partial class DeviceStatusContext : ObservableObject
 		deviceStatusContexts.Add(new DeviceStatusContext { Name = "PLC" });
 		deviceStatusContexts.Add(new DeviceStatusContext { Name = "Scanner1" });
 		deviceStatusContexts.Add(new DeviceStatusContext { Name = "Scanner2" });
-#if ASM15_1
-		deviceStatusContexts.Add(new DeviceStatusViewModel { Name = "Screw1" });
-		deviceStatusContexts.Add(new DeviceStatusViewModel { Name = "Screw2" });
-#endif
 	}
 }

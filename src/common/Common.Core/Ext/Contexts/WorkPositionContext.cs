@@ -35,7 +35,14 @@ public partial class WorkPositionContext : ObservableObject
 	{
 		if (newValue != null)
 		{
-			Image = new Bitmap(newValue.Path);
+			try
+			{
+				Image = new Bitmap(newValue.Path);
+			}
+			catch (IOException)
+			{
+				// File is locked by another process (e.g. camera writing), skip this frame
+			}
 		}
 	}
 
@@ -44,7 +51,7 @@ public partial class WorkPositionContext : ObservableObject
 	public WorkPositionContext()
 	{
 		ScrewInstallDataList =
-			new ObservableList<ScrewInstallData>(Enumerable.Range(0, 12).Select(t => new ScrewInstallData()));
+			new ObservableList<ScrewInstallData>(Enumerable.Range(0, 16).Select(t => new ScrewInstallData()));
 	}
 
 	public Task ShowNgDetailDialog()

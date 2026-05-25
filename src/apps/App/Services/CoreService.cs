@@ -1,3 +1,4 @@
+using Avalonia.Threading;
 using NLog;
 using ZC;
 using ZC.BinStructs;
@@ -40,21 +41,29 @@ public partial class CoreService : CoreServiceBase
 	// public partial bool RecipeCheck { get; set; } = true;
 	public partial ProductRecipe? WorkRecipe { get; set; }
 
-	private readonly object _materialSyncLock = new();
+	/// <summary>
+	/// 确保操作在 UI 线程执行。
+	/// 若当前已在 UI 线程则同步执行，否则调度到 UI 线程并阻塞等待完成。
+	/// </summary>
+	private void InvokeOnUI(Action action)
+	{
+		if (Dispatcher.UIThread.CheckAccess())
+			action();
+		else
+			Dispatcher.UIThread.Invoke(action);
+	}
 
 	/// <summary>
 	/// 将工单配方中各 Id 的启用行同步到料位（界面颜色与扫码校验一致）。
 	/// </summary>
 	public void ApplyWorkRecipeToMaterialContexts()
 	{
-		lock (_materialSyncLock)
-			ApplyWorkRecipeToMaterialContextsCore();
+		InvokeOnUI(() => ApplyWorkRecipeToMaterialContextsCore());
 	}
 
 	public void SyncMaterialContextFromWorkRecipe(MaterialSpaceContext context)
 	{
-		lock (_materialSyncLock)
-			context.SyncFromWorkRecipe(WorkRecipe);
+		InvokeOnUI(() => context.SyncFromWorkRecipe(WorkRecipe));
 	}
 
 	/// <summary>
@@ -62,11 +71,13 @@ public partial class CoreService : CoreServiceBase
 	/// </summary>
 	public bool TryValidateMaterialsForProduction(out MaterialSpaceContext? failed, out string detail)
 	{
-		failed = null;
-		detail = "";
-		lock (_materialSyncLock)
+		MaterialSpaceContext? failedResult = null;
+		string detailResult = "";
+		bool finalResult = false;
+
+		InvokeOnUI(() =>
 		{
-			if (WorkRecipe is null) return true;
+			if (WorkRecipe is null) { finalResult = true; return; }
 
 			ApplyWorkRecipeToMaterialContextsCore();
 			foreach (var item in MaterialContexts)
@@ -78,16 +89,21 @@ public partial class CoreService : CoreServiceBase
 				if (item.MaterialState is MaterialState.OK)
 					continue;
 
-				failed = item;
+				failedResult = item;
 				var allowed = WorkRecipe.GetAllowedMaterialCodes(item.Id);
-				detail =
+				detailResult =
 					$"material {item.Id} ({active.PositionName}) state={item.MaterialState} " +
 					$"uiCode='{item.MaterialCode}' allowed=[{string.Join(", ", allowed)}]";
-				return false;
+				finalResult = false;
+				return;
 			}
 
-			return true;
-		}
+			finalResult = true;
+		});
+
+		failed = failedResult;
+		detail = detailResult;
+		return finalResult;
 	}
 
 	void ApplyWorkRecipeToMaterialContextsCore()
@@ -110,12 +126,34 @@ public partial class CoreService : CoreServiceBase
 	public partial DateTime NozzleSpotCheckCompleteTime { get; set; } = DateTime.MaxValue;
 	public partial bool IsNozzleSpotCheckOk { get; set; }
 
+#if ASM15_1
+	public required Asm15CalibrationService CalibrationService { get; init; }
+#endif
+
+	public bool IsCalibrationOk
+	{
+		get
+		{
+#if ASM15_1
+			if (!CalibrationService.CalibrationCheckEnabled) return true;
+			if (!CalibrationService.IsCalibrationOk) return false;
+			if (CalibrationService.CalibrationCompleteTime == DateTime.MinValue) return false;
+			if (DateTime.Now - CalibrationService.CalibrationCompleteTime >
+			    TimeSpan.FromHours(AppConfig.CalibrationTimeoutHours)) return false;
+#endif
+			return true;
+		}
+	}
+
 	public CoreService()
 	{
 		NozzleContext.CreateList(NozzleContexts, CommonAppConfig.NozzleCount);
 		MaterialSpaceContext.CreateList(MaterialContexts, CommonAppConfig.MaterialSpaceCount);
 		WorkPositionContext.CreateList(WorkPositionContexts, 2);
 		DeviceStatusContext.CreateList(DeviceStatusContexts);
+#if ASM15_1
+		DeviceStatusContexts.Add(new DeviceStatusContext { Name = "Calibration" });
+#endif
 	}
 
 	protected override Task OnInitialize(object? ctx, object? args)
@@ -165,15 +203,19 @@ public partial class CoreService : CoreServiceBase
 
 	public Result NozzleSpotCheck()
 	{
-		foreach (var nozzleContext in NozzleContexts)
+		Result result = Result.OK;
+		InvokeOnUI(() =>
 		{
-			if (nozzleContext.ProductionState != ProductionState.OK)
+			foreach (var nozzleContext in NozzleContexts)
 			{
-				return Result.Err($"nozzle '{nozzleContext.Config.Id}:{nozzleContext.Config.Name}' check failed!");
+				if (nozzleContext.ProductionState != ProductionState.OK)
+				{
+					result = Result.Err($"nozzle '{nozzleContext.Config.Id}:{nozzleContext.Config.Name}' check failed!");
+					return;
+				}
 			}
-		}
-
-		return Result.OK;
+		});
+		return result;
 	}
 
 	public void ResetNozzleSpotCheck()
@@ -222,44 +264,47 @@ public partial class CoreService : CoreServiceBase
 			});
 		}
 
-		var isAllOk = true;
-		foreach (var nozzleContext in NozzleContexts)
+		InvokeOnUI(() =>
 		{
-			nozzleContext.Value = nozzleContext.Config.Id switch
+			var isAllOk = true;
+			foreach (var nozzleContext in NozzleContexts)
 			{
-				1 => Plc.Read.吸头1压力,
-				2 => Plc.Read.吸头2压力,
-				3 => Plc.Read.吸头3压力,
-				4 => Plc.Read.吸头4压力,
-				5 => Plc.Read.吸头5压力,
-				6 => Plc.Read.吸头6压力,
-				7 => Plc.Read.吸头7压力,
-				8 => Plc.Read.吸头8压力,
-				9 => Plc.Read.吸头9压力,
-				10 => Plc.Read.吸头10压力,
-				_ => 0
-			};
-			if (nozzleContext.Value >= nozzleContext.Config.PressureMinValue &&
-			    nozzleContext.Value <= nozzleContext.Config.PressureMaxValue)
-				nozzleContext.ProductionState = ProductionState.OK;
-			else
-			{
-				nozzleContext.ProductionState = ProductionState.NG;
-				isAllOk = false;
-			}
-		}
-
-		if (isAllOk != IsNozzleSpotCheckOk)
-		{
-			if (isAllOk)
-			{
-				NozzleSpotCheckCompleteTime = DateTime.Now;
-				Plc.Write.吸头点检完成时间 = NozzleSpotCheckCompleteTime.Ticks;
-				Plc.Write.WritePoint(nameof(PlcStruct.吸头点检完成时间));
+				nozzleContext.Value = nozzleContext.Config.Id switch
+				{
+					1 => Plc.Read.吸头1压力,
+					2 => Plc.Read.吸头2压力,
+					3 => Plc.Read.吸头3压力,
+					4 => Plc.Read.吸头4压力,
+					5 => Plc.Read.吸头5压力,
+					6 => Plc.Read.吸头6压力,
+					7 => Plc.Read.吸头7压力,
+					8 => Plc.Read.吸头8压力,
+					9 => Plc.Read.吸头9压力,
+					10 => Plc.Read.吸头10压力,
+					_ => 0
+				};
+				if (nozzleContext.Value >= nozzleContext.Config.PressureMinValue &&
+				    nozzleContext.Value <= nozzleContext.Config.PressureMaxValue)
+					nozzleContext.ProductionState = ProductionState.OK;
+				else
+				{
+					nozzleContext.ProductionState = ProductionState.NG;
+					isAllOk = false;
+				}
 			}
 
-			IsNozzleSpotCheckOk = isAllOk;
-		}
+			if (isAllOk != IsNozzleSpotCheckOk)
+			{
+				if (isAllOk)
+				{
+					NozzleSpotCheckCompleteTime = DateTime.Now;
+					Plc.Write.吸头点检完成时间 = NozzleSpotCheckCompleteTime.Ticks;
+					Plc.Write.WritePoint(nameof(PlcStruct.吸头点检完成时间));
+				}
+
+				IsNozzleSpotCheckOk = isAllOk;
+			}
+		});
 	}
 
 	private void UpdateMaterialSpaceContexts()
@@ -349,7 +394,7 @@ public partial class CoreService : CoreServiceBase
 			Logger.Info("Reset material 6 request");
 		}
 
-		lock (_materialSyncLock)
+		InvokeOnUI(() =>
 		{
 			foreach (var context in MaterialContexts)
 			{
@@ -389,7 +434,7 @@ public partial class CoreService : CoreServiceBase
 
 				context.CheckMaterialState();
 			}
-		}
+		});
 	}
 
 
@@ -715,7 +760,8 @@ public partial class CoreService : CoreServiceBase
 
 	public void SaveMaterialSpaceCodes()
 	{
-		var array = MaterialContexts.Select(t => t.MaterialCode).ToArray();
+		string[] array = [];
+		InvokeOnUI(() => array = MaterialContexts.Select(t => t.MaterialCode).ToArray());
 		KeyValueStorage.SetValue("MaterialSpaceCodes", array);
 	}
 }

@@ -20,7 +20,7 @@ public partial class AppConfig : CommonAppConfig
 	public AppConfig()
 	{
 #if ASM4
-		ApplicationName = StationName = "ASM-4-AUTO";
+		ApplicationName = StationName = "ASM4-AUTO";
 		MaterialSpaceCount = 4;
 		NozzleCount = 6;
 #elif SUB1
@@ -28,12 +28,12 @@ public partial class AppConfig : CommonAppConfig
 		MaterialSpaceCount = 4;
 		NozzleCount = 6;
 #elif ASM12
-		ApplicationName = StationName = "ASM-12-AUTO";
+		ApplicationName = StationName = "ASM12-AUTO";
 		MaterialSpaceCount = 6;
 		NozzleCount = 10;
 #elif ASM15_1
 		ApplicationName = StationName = "ASM15-1-AUTO";
-		MaterialSpaceCount = 0;
+		MaterialSpaceCount = 2;
 		NozzleCount = 0;
 		IsUsedScrewInstallDataGrid = true;
 #elif ASM15_2
@@ -51,7 +51,7 @@ public partial class AppConfig : CommonAppConfig
 
 
 #if ASM15_1
-	[ValueInfo(Category = "连接配置", InitAttachData =
+	[ValueInfo(Category = "连接配置/Connection Configuration", InitAttachData =
 	[
 		DataDefine.KeyValue, NameByCN, "螺丝枪1 IP",
 		DataDefine.KeyValue, NameByEN, "Screw1 IP",
@@ -59,7 +59,7 @@ public partial class AppConfig : CommonAppConfig
 	], DefaultValue = "192.168.1.65", Description = "SCREW 1 IPAddress")]
 	public string Screw1IpAddress { get; set; } = "192.168.1.65";
 
-	[ValueInfo(Category = "连接配置", InitAttachData =
+	[ValueInfo(Category = "连接配置/Connection Configuration", InitAttachData =
 	[
 		DataDefine.KeyValue, NameByCN, "螺丝枪1 Port",
 		DataDefine.KeyValue, NameByEN, "Screw1 Port",
@@ -67,7 +67,7 @@ public partial class AppConfig : CommonAppConfig
 	], DefaultValue = 502, Description = "SCREW 1 Port")]
 	public int Screw1Port { get; set; } = 502;
 
-	[ValueInfo(Category = "连接配置", InitAttachData =
+	[ValueInfo(Category = "连接配置/Connection Configuration", InitAttachData =
 	[
 		DataDefine.KeyValue, NameByCN, "螺丝枪2 IP",
 		DataDefine.KeyValue, NameByEN, "Screw2 IP",
@@ -75,15 +75,29 @@ public partial class AppConfig : CommonAppConfig
 	], DefaultValue = "192.168.1.66", Description = "SCREW 2 IPAddress")]
 	public string Screw2IpAddress { get; set; } = "192.168.1.66";
 
-	[ValueInfo(Category = "连接配置", InitAttachData =
+	[ValueInfo(Category = "连接配置/Connection Configuration", InitAttachData =
 	[
 		DataDefine.KeyValue, NameByCN, "螺丝枪2 Port",
 		DataDefine.KeyValue, NameByEN, "Screw2 Port",
 		DataDefine.KeyValue, NameByVI, "Screw2 Port",
 	], DefaultValue = 502, Description = "SCREW 2 Port")]
 	public int Screw2Port { get; set; } = 502;
-	
-	
+
+	[ValueInfo(Category = "连接配置/Connection Configuration", InitAttachData =
+	[
+		DataDefine.KeyValue, NameByCN, "ASM15校准设备 IP",
+		DataDefine.KeyValue, NameByEN, "ASM15 Calibration IP",
+	], DefaultValue = "192.168.1.210", Description = "ASM15 Calibration Device IP")]
+	public string Asm15CalibrationIpAddress { get; set; } = "192.168.1.210";
+
+	[ValueInfo(Category = "连接配置/Connection Configuration", InitAttachData =
+	[
+		DataDefine.KeyValue, NameByCN, "ASM15校准设备 Port",
+		DataDefine.KeyValue, NameByEN, "ASM15 Calibration Port",
+	], DefaultValue = 502, Description = "ASM15 Calibration Device Port")]
+	public int Asm15CalibrationPort { get; set; } = 502;
+
+
 	[ValueInfo(Category = "UPPER/LOW LIMIT", InitAttachData =
 	[
 		DataDefine.KeyValue, NameByCN, "ScrewTorqueLowLimit",

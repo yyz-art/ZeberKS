@@ -51,7 +51,7 @@ public sealed class App(AppConfig config) : CommonUiAppCore(config)
 	{
 		// IOC.GetOrNull<IAppStartUpVM>()?.SetProgress(40, 500);
 		using var dbClient = IOC.Get<ISqlSugarClient>();
-		dbClient.CodeFirst.InitTables<DbKeyValueItem, AlarmRecord>();
+		dbClient.CodeFirst.InitTables<DbKeyValueItem, AlarmRecord, NgRecord>();
 		IOC.AddSingleton<IDataSocket>(specialName: "Scanner工位1", creator: _ =>
 			new SerialPortSocket(Config.Scanner1ComPort, Config.Scanner1BaudRate)
 			{

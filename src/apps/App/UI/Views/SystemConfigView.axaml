@@ -14,10 +14,10 @@
 			<TabItem Header="ImportTableSheetSelect">
 				<RelativePanel>
 					<DefaultDialog RelativePanel.AlignHorizontalCenterWithPanel="True" Name="ImportTableSheetSelectDialog"
-												Title="{StaticResource I18N.G.请选择映射表Sheet}" MinWidth="300" MinHeight="160">
+												Title="{DynamicResource I18N.G.请选择映射表Sheet}" MinWidth="300" MinHeight="160">
 						<Grid RowDefinitions="Auto,Auto,Auto,Auto" ColumnDefinitions="Auto,*,Auto" ColumnSpacing="5" RowSpacing="10"
 									VerticalAlignment="Center">
-							<Label Grid.Row="0" Grid.Column="0" Content="{StaticResource I18N.G.Sheet}" VerticalAlignment="Center" />
+							<Label Grid.Row="0" Grid.Column="0" Content="{DynamicResource I18N.G.Sheet}" VerticalAlignment="Center" />
 							<ComboBox  Grid.Row="0" Grid.Column="1" ItemsSource="{Binding ImportSheetNames}"
 												SelectedValue="{Binding SelectedSheetName}" HorizontalAlignment="Stretch" MinWidth="100"/>
 							<Button Grid.Row="0" Grid.Column="2" Content="{DynamicResource I18N.G.确定}"
@@ -34,21 +34,25 @@
 						BorderThickness="0 0 0 1">
 			<LinearPanel Orientation="Horizontal" Spacing="10" Padding="5">
 				<Label Content="系统配置" Theme="{StaticResource Label-Tag}" Classes="Ghost Green" Padding="5" />
+				<TextBlock Text="{DynamicResource I18N.G.语言}" VerticalAlignment="Center" Margin="8,0,0,0" />
+				<ComboBox ItemsSource="{Binding Languages}"
+									SelectedItem="{Binding SelectedLanguage}"
+									Width="120" VerticalAlignment="Center" />
 				<Control LinearPanel.Weight="1" />
-				<Button Name="BtnApply" Classes="Primary" Content="{StaticResource I18N.G.应用}"
+				<Button Name="BtnApply" Classes="Primary" Content="{DynamicResource I18N.G.应用}"
 								Theme="{StaticResource Button-Outline}"
 								Command="{Binding ApplyCommand}" />
-				<Button Classes="Warning" Content="{StaticResource I18N.G.导入}"
+				<Button Classes="Warning" Content="{DynamicResource I18N.G.导入}"
 								Command="{Binding ImportCommand}" />
-				<Button Classes="Success" Content="{StaticResource I18N.G.导出}"
+				<Button Classes="Success" Content="{DynamicResource I18N.G.导出}"
 								Command="{Binding ExportCommand}" />
-				<Button Classes="Primary" Content="{StaticResource I18N.G.保存}"
+				<Button Classes="Primary" Content="{DynamicResource I18N.G.保存}"
 								Command="{Binding SaveCommand}" />
 			</LinearPanel>
 		</Border>
 
 		<TabControl Grid.Row="1" TabStripPlacement="Left" Theme="{DynamicResource TabControl-Line}">
-			<TabItem Header="{StaticResource I18N.G.基础配置}" MinWidth="120">
+			<TabItem Header="{DynamicResource I18N.G.基础配置}" MinWidth="120">
 				<Grid RowDefinitions="Auto,*">
 					<DataGrid Grid.Row="1" ItemsSource="{Binding GroupedPropertyInstances}">
 						<DataGrid.Styles>
@@ -60,11 +64,11 @@
 							</Style>
 						</DataGrid.Styles>
 						<DataGrid.Columns>
-							<DataGridTextColumn Header="{StaticResource I18N.G.名称}"
+							<DataGridTextColumn Header="{DynamicResource I18N.G.名称}"
 																	x:DataType="mvvm:IPropertyInstance"
 																	Binding="{Binding ValueInfo.DisplayName }"
 																	Width="200" />
-							<DataGridTemplateColumn Header="{StaticResource I18N.G.设定值}" Width="200">
+							<DataGridTemplateColumn Header="{DynamicResource I18N.G.设定值}" Width="200">
 								<DataGridTemplateColumn.CellTemplate>
 									<DataTemplate>
 										<TextBox VerticalContentAlignment="Center"
@@ -74,7 +78,7 @@
 									</DataTemplate>
 								</DataGridTemplateColumn.CellTemplate>
 							</DataGridTemplateColumn>
-							<DataGridTemplateColumn Header="{StaticResource I18N.G.当前运行值}" Width="200">
+							<DataGridTemplateColumn Header="{DynamicResource I18N.G.当前运行值}" Width="200">
 								<DataGridTemplateColumn.CellTemplate>
 									<DataTemplate>
 										<SelectableTextBlock VerticalAlignment="Center"
@@ -83,7 +87,7 @@
 									</DataTemplate>
 								</DataGridTemplateColumn.CellTemplate>
 							</DataGridTemplateColumn>
-							<DataGridTextColumn Header="{StaticResource I18N.G.描述}"
+							<DataGridTextColumn Header="{DynamicResource I18N.G.描述}"
 																	x:DataType="mvvm:IPropertyInstance"
 																	Binding="{Binding ValueInfo.Description}"
 																	Width="400" />
@@ -91,33 +95,33 @@
 					</DataGrid>
 				</Grid>
 			</TabItem>
-			<TabItem Header="{StaticResource I18N.G.吸嘴压力}" IsSelected="False">
+			<TabItem Header="{DynamicResource I18N.G.吸嘴压力}" IsSelected="False">
 				<DataGrid ItemsSource="{Binding EditConfig.NozzleConfigs}">
 					<DataGrid.Columns>
-						<DataGridCheckBoxColumn Header="{StaticResource I18N.G.启用}" Binding="{Binding IsEnabled}"/>
+						<DataGridCheckBoxColumn Header="{DynamicResource I18N.G.启用}" Binding="{Binding IsEnabled}"/>
 						<DataGridTextColumn Header="ID" Binding="{Binding Id}" IsReadOnly="True" />
-						<DataGridTextColumn Header="{StaticResource I18N.G.名称}" MinWidth="200" Binding="{Binding Name}" />
-						<DataGridTextColumn Header="{StaticResource I18N.G.最小压力}" MinWidth="100" Binding="{Binding PressureMinValue}" />
-						<DataGridTextColumn Header="{StaticResource I18N.G.最大压力}" MinWidth="100" Binding="{Binding PressureMaxValue}" />
-						<DataGridTextColumn Header="{StaticResource I18N.G.备注}" MinWidth="400" Binding="{Binding Comment}" />
+						<DataGridTextColumn Header="{DynamicResource I18N.G.名称}" MinWidth="200" Binding="{Binding Name}" />
+						<DataGridTextColumn Header="{DynamicResource I18N.G.最小压力}" MinWidth="100" Binding="{Binding PressureMinValue}" />
+						<DataGridTextColumn Header="{DynamicResource I18N.G.最大压力}" MinWidth="100" Binding="{Binding PressureMaxValue}" />
+						<DataGridTextColumn Header="{DynamicResource I18N.G.备注}" MinWidth="400" Binding="{Binding Comment}" />
 					</DataGrid.Columns>
 				</DataGrid>
 			</TabItem>
-			<TabItem Header="{StaticResource I18N.G.NG定义}" IsSelected="False">
+			<TabItem Header="{DynamicResource I18N.G.NG定义}" IsSelected="False">
 				<Grid RowDefinitions="Auto,*">
 					<LinearPanel Grid.Row="0" Orientation="Horizontal" Margin="4 4">
 						<Control LinearPanel.Weight="1"/>
-						<Button Content="{StaticResource I18N.G.导入NG定义表}" Command="{Binding ImportNgDefineTableCommand}"/>
+						<Button Content="{DynamicResource I18N.G.导入NG定义表}" Command="{Binding ImportNgDefineTableCommand}"/>
 					</LinearPanel>
 					<DataGrid Grid.Row="1" CanUserSortColumns="False" CanUserResizeColumns="True"
 										ItemsSource="{Binding EditConfig.NgDefines}"
 										GridLinesVisibility="All" BorderBrush="{DynamicResource Brush-Border}" BorderThickness="1">
 						<DataGrid.Columns>
 							<DataGridTextColumn Header="Id" Width="60" Binding="{Binding Id}"/>
-							<DataGridTextColumn Header="{StaticResource I18N.G.发送者}" Binding="{Binding Sender}" MinWidth="100"/>
-							<DataGridTextColumn Header="{StaticResource I18N.G.名称}" Binding="{Binding Name}" MinWidth="100"/>
-							<DataGridTextColumn Header="{StaticResource I18N.G.原因}" Binding="{Binding Reason}" MinWidth="100"/>
-							<DataGridTextColumn Header="{StaticResource I18N.G.备注}" Binding="{Binding Description}" Width="*"/>
+							<DataGridTextColumn Header="{DynamicResource I18N.G.发送者}" Binding="{Binding Sender}" MinWidth="100"/>
+							<DataGridTextColumn Header="{DynamicResource I18N.G.名称}" Binding="{Binding Name}" MinWidth="100"/>
+							<DataGridTextColumn Header="{DynamicResource I18N.G.原因}" Binding="{Binding Reason}" MinWidth="100"/>
+							<DataGridTextColumn Header="{DynamicResource I18N.G.备注}" Binding="{Binding Description}" Width="*"/>
 						</DataGrid.Columns>
 					</DataGrid>
 				</Grid>

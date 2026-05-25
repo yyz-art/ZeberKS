@@ -5,7 +5,7 @@
 					xmlns:dialogs="clr-namespace:ZitApp.UI.Dialogs"
 					mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
 					x:Class="ZitApp.UI.Dialogs.CreateMaterialRecipeDialog"
-					Title="创建物料配方"
+					Title="{DynamicResource I18N.G.创建物料配方}"
 					SystemDecorations="BorderOnly"
 					ExtendClientAreaChromeHints="NoChrome"
 					ExtendClientAreaToDecorationsHint="True"
@@ -16,20 +16,20 @@
 	</Design.DataContext>
 	<Grid RowDefinitions="Auto,*">
 		<LinearPanel Grid.Row="0" Orientation="Horizontal">
-			<Label Content="快速创建机种配方" Theme="{DynamicResource Label-Tag}" Margin="10 4" Padding="5"/>
+			<Label Content="{DynamicResource I18N.G.快速创建机种配方}" Theme="{DynamicResource Label-Tag}" Margin="10 4" Padding="5"/>
 		</LinearPanel>
 		<Grid Grid.Row="1" RowDefinitions="Auto,*" Margin="20" RowSpacing="10">
 			<LinearPanel Grid.Row="0" Orientation="Horizontal" Spacing="10">
-				<TextBlock Text="配方名称:" VerticalAlignment="Center" />
+				<TextBlock Text="{DynamicResource I18N.G.配方名称_}" VerticalAlignment="Center" />
 				<TextBox Text="{Binding InputRecipeName}" MinWidth="200" />
-				<TextBlock Text="模板配方:" VerticalAlignment="Center" Margin="20 0 0 0" />
+				<TextBlock Text="{DynamicResource I18N.G.模板配方_}" VerticalAlignment="Center" Margin="20 0 0 0" />
 				<ComboBox ItemsSource="{Binding FullRecipeNames}" MinWidth="200" SelectedValue="{Binding SelectedPointRecipeName}" />
 
 
 				<Control LinearPanel.Weight="1" />
-				<Button Content="{StaticResource I18N.G.取消}"
+				<Button Content="{DynamicResource I18N.G.取消}"
 								Command="{Binding CancelCommand}" Classes="Secondary" />
-				<Button Content="{StaticResource I18N.G.保存}"
+				<Button Content="{DynamicResource I18N.G.保存}"
 								Command="{Binding SaveCommand}" Classes="Success" />
 			</LinearPanel>
 			<DataGrid Grid.Row="1" ItemsSource="{Binding EditRecipe.MaterialConfigs}"
@@ -37,16 +37,16 @@
 								BorderThickness="1">
 				<DataGrid.Columns>
 					<DataGridTextColumn Header="Id" Binding="{Binding Id}" IsReadOnly="True" />
-					<DataGridCheckBoxColumn Header="启用" Binding="{Binding IsUsed}" />
-					<DataGridTextColumn Header="上料位置码" MinWidth="100" Binding="{Binding PositionCode}" IsReadOnly="True" />
-					<DataGridTextColumn Header="上料位置名称" MinWidth="140" Binding="{Binding PositionName}" />
-					<DataGridTextColumn Header="默认数量" Width="100" Binding="{Binding DefaultReplaceCount}" />
-					<DataGridTextColumn Header="报警数量" Width="100" Binding="{Binding AlarmRemainCount}" />
-					<DataGridTextColumn Header="备注" Width="Auto" IsReadOnly="False" Binding="{Binding Description}" />
-					<DataGridTextColumn Header="上料码1" Width="140" IsReadOnly="False" Binding="{Binding MaterialCodes[0]}" />
-					<DataGridTextColumn Header="上料码2" Width="140" IsReadOnly="False" Binding="{Binding MaterialCodes[1]}" />
-					<DataGridTextColumn Header="上料码3" Width="140" IsReadOnly="False" Binding="{Binding MaterialCodes[2]}" />
-					<DataGridTextColumn Header="上料码4" Width="140" IsReadOnly="False" Binding="{Binding MaterialCodes[3]}" />
+					<DataGridCheckBoxColumn Header="{DynamicResource I18N.G.启用}" Binding="{Binding IsUsed}" />
+					<DataGridTextColumn Header="{DynamicResource I18N.G.上料位置码}" MinWidth="100" Binding="{Binding PositionCode}" IsReadOnly="True" />
+					<DataGridTextColumn Header="{DynamicResource I18N.G.上料位置名称}" MinWidth="140" Binding="{Binding PositionName}" />
+					<DataGridTextColumn Header="{DynamicResource I18N.G.默认数量}" Width="100" Binding="{Binding DefaultReplaceCount}" />
+					<DataGridTextColumn Header="{DynamicResource I18N.G.报警数量}" Width="100" Binding="{Binding AlarmRemainCount}" />
+					<DataGridTextColumn Header="{DynamicResource I18N.G.备注}" Width="Auto" IsReadOnly="False" Binding="{Binding Description}" />
+					<DataGridTextColumn Header="{DynamicResource I18N.G.上料码1}" Width="140" IsReadOnly="False" Binding="{Binding MaterialCodes[0]}" />
+					<DataGridTextColumn Header="{DynamicResource I18N.G.上料码2}" Width="140" IsReadOnly="False" Binding="{Binding MaterialCodes[1]}" />
+					<DataGridTextColumn Header="{DynamicResource I18N.G.上料码3}" Width="140" IsReadOnly="False" Binding="{Binding MaterialCodes[2]}" />
+					<DataGridTextColumn Header="{DynamicResource I18N.G.上料码4}" Width="140" IsReadOnly="False" Binding="{Binding MaterialCodes[3]}" />
 				</DataGrid.Columns>
 			</DataGrid>
 		</Grid>

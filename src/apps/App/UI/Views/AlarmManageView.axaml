@@ -10,13 +10,13 @@
 		<alarm:AlarmManageVM />
 	</Design.DataContext>
 	<TabControl>
-		<TabItem Header="{StaticResource I18N.G.报警监控}">
+		<TabItem Header="{DynamicResource I18N.G.报警监控}">
 			<DataGrid ItemsSource="{Binding PropertyInstances}" CanUserResizeColumns="True" CanUserSortColumns="True">
 				<DataGrid.Columns>
 					<DataGridTextColumn Header="Id" Binding="{Binding TempData1}" />
-					<DataGridTextColumn Header="{StaticResource I18N.G.报警名称}" Binding="{Binding ValueInfo.DisplayName}" Width="300" />
-					<DataGridTextColumn Header="{StaticResource I18N.G.地址}" Binding="{Binding ValueInfo.Source}" MinWidth="100" />
-					<DataGridTemplateColumn Header="{StaticResource I18N.G.状态}">
+					<DataGridTextColumn Header="{DynamicResource I18N.G.报警名称}" Binding="{Binding ValueInfo.DisplayName}" Width="300" />
+					<DataGridTextColumn Header="{DynamicResource I18N.G.地址}" Binding="{Binding ValueInfo.Source}" MinWidth="100" />
+					<DataGridTemplateColumn Header="{DynamicResource I18N.G.状态}">
 						<DataGridTemplateColumn.CellTemplate>
 							<DataTemplate>
 								<MatchShow MatchValue="{Binding Value}">
@@ -27,24 +27,45 @@
 							</DataTemplate>
 						</DataGridTemplateColumn.CellTemplate>
 					</DataGridTemplateColumn>
-					<DataGridTextColumn Header="{StaticResource I18N.G.描述}" Binding="{Binding ValueInfo.Description}" Width="500" />
+					<DataGridTextColumn Header="{DynamicResource I18N.G.描述}" Binding="{Binding ValueInfo.Description}" Width="500" />
 				</DataGrid.Columns>
 			</DataGrid>
 		</TabItem>
-		<TabItem Header="{StaticResource I18N.G.报警历史查询}">
+		<TabItem Header="{DynamicResource I18N.G.报警历史查询}">
 			<Grid RowDefinitions="Auto,*">
 				<LinearPanel Grid.Row="0">
-					<Button Content="{StaticResource I18N.G.加载}" Command="{Binding ReloadRecordsCommand}" />
+					<Button Content="{DynamicResource I18N.G.加载}" Command="{Binding ReloadRecordsCommand}" />
 				</LinearPanel>
 				<DataGrid Grid.Row="1" ItemsSource="{Binding Records}">
 					<DataGrid.Columns>
 						<DataGridTextColumn Header="Id" Binding="{Binding Id}" />
-						<DataGridTextColumn Header="{StaticResource I18N.G.报警Id}" Binding="{Binding AlarmId}" />
-						<DataGridTextColumn Header="{StaticResource I18N.G.报警名称}" Binding="{Binding Name}" />
-						<DataGridTextColumn Header="{StaticResource I18N.G.状态}" Binding="{Binding Status}" />
-						<DataGridTextColumn Header="{StaticResource I18N.G.开始时间}" Binding="{Binding StartTime}" />
-						<DataGridTextColumn Header="{StaticResource I18N.G.结束时间}" Binding="{Binding EndTime}" />
+						<DataGridTextColumn Header="{DynamicResource I18N.G.报警Id}" Binding="{Binding AlarmId}" />
+						<DataGridTextColumn Header="{DynamicResource I18N.G.报警名称}" Binding="{Binding Name}" />
+						<DataGridTextColumn Header="{DynamicResource I18N.G.状态}" Binding="{Binding Status}" />
+						<DataGridTextColumn Header="{DynamicResource I18N.G.开始时间}" Binding="{Binding StartTime}" />
+						<DataGridTextColumn Header="{DynamicResource I18N.G.结束时间}" Binding="{Binding EndTime}" />
 
+					</DataGrid.Columns>
+				</DataGrid>
+			</Grid>
+		</TabItem>
+		<TabItem Header="{DynamicResource I18N.G.NG历史查询}">
+			<Grid RowDefinitions="Auto,*">
+				<LinearPanel Grid.Row="0" Spacing="10" Margin="0,5">
+					<ComboBox ItemsSource="{Binding NgStationOptions}" SelectedIndex="{Binding NgQueryStationIndex}" MinWidth="100" />
+					<TextBox Watermark="SN" Text="{Binding NgQuerySnCode}" MinWidth="150" />
+					<Button Content="{DynamicResource I18N.G.查询}" Command="{Binding ReloadNgRecordsCommand}" />
+				</LinearPanel>
+				<DataGrid Grid.Row="1" ItemsSource="{Binding NgRecords}" CanUserResizeColumns="True">
+					<DataGrid.Columns>
+						<DataGridTextColumn Header="Id" Binding="{Binding Id}" Width="60" />
+						<DataGridTextColumn Header="{DynamicResource I18N.G.时间}" Binding="{Binding CreateTime}" Width="160" />
+						<DataGridTextColumn Header="{DynamicResource I18N.G.工位}" Binding="{Binding StationName}" Width="120" />
+						<DataGridTextColumn Header="SN" Binding="{Binding SnCode}" Width="150" />
+						<DataGridTextColumn Header="KeyPart" Binding="{Binding KeyPartCode}" Width="150" />
+						<DataGridTextColumn Header="{DynamicResource I18N.G.机种}" Binding="{Binding ModelName}" Width="120" />
+						<DataGridTextColumn Header="{DynamicResource I18N.G.错误信息}" Binding="{Binding ErrorMessage}" Width="200" />
+						<DataGridTextColumn Header="{DynamicResource I18N.G.NG原因}" Binding="{Binding NgItems}" Width="*" />
 					</DataGrid.Columns>
 				</DataGrid>
 			</Grid>

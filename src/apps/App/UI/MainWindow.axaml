@@ -25,22 +25,22 @@
 			<TabItem Header="Login">
 				<RelativePanel>
 					<DefaultDialog Name="AccountLoginDialog"
-												Title="{StaticResource I18N.G.账户登录}" MinWidth="400">
+												Title="{DynamicResource I18N.G.账户登录}" MinWidth="400">
 						<LinearPanel Orientation="Vertical" Spacing="10" Padding="20">
 							<LinearPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="20">
-								<RadioButton GroupName="UserLogin" Content="管理员" IsChecked="True"
-														Command="{Binding OnSelectedAccountChangedCommand}"
-														CommandParameter="{Binding Content, RelativeSource={RelativeSource Self}}"
+								<RadioButton GroupName="UserLogin" Content="{DynamicResource I18N.G.管理员}" Tag="管理员" IsChecked="True"
+												Command="{Binding OnSelectedAccountChangedCommand}"
+												CommandParameter="{Binding Tag, RelativeSource={RelativeSource Self}}"
 														Foreground="White">
 								</RadioButton>
-								<RadioButton GroupName="UserLogin" Content="技术员"
-														Command="{Binding OnSelectedAccountChangedCommand}"
-														CommandParameter="{Binding Content, RelativeSource={RelativeSource Self}}"
+								<RadioButton GroupName="UserLogin" Content="{DynamicResource I18N.G.技术员}" Tag="技术员"
+												Command="{Binding OnSelectedAccountChangedCommand}"
+												CommandParameter="{Binding Tag, RelativeSource={RelativeSource Self}}"
 														Foreground="White">
 								</RadioButton>
-								<RadioButton GroupName="UserLogin" Content="操作员"
-														Command="{Binding OnSelectedAccountChangedCommand}"
-														CommandParameter="{Binding Content, RelativeSource={RelativeSource Self}}"
+								<RadioButton GroupName="UserLogin" Content="{DynamicResource I18N.G.操作员}" Tag="操作员"
+												Command="{Binding OnSelectedAccountChangedCommand}"
+												CommandParameter="{Binding Tag, RelativeSource={RelativeSource Self}}"
 														Foreground="White">
 								</RadioButton>
 							</LinearPanel>
@@ -52,13 +52,13 @@
 							<!-- 	</TextBox> -->
 							<!-- </LinearPanel> -->
 							<LinearPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="5" Margin="0 10">
-								<TextBlock Text="密码:" VerticalAlignment="Center" />
+								<TextBlock Text="{DynamicResource I18N.G.密码}" VerticalAlignment="Center" />
 								<TextBox Text="{Binding AccountLoginInputPassword}" MinWidth="160" PasswordChar="●" Padding="4"
 												VerticalContentAlignment="Center">
 								</TextBox>
 							</LinearPanel>
 
-							<Button Content="登陆" Command="{Binding AccountLoginConfirmCommand}" Padding="60 5"
+							<Button Content="{DynamicResource I18N.G.登录}" Command="{Binding AccountLoginConfirmCommand}" Padding="60 5"
 											Theme="{DynamicResource Button-Solid}">
 							</Button>
 						</LinearPanel>
@@ -90,20 +90,20 @@
 						<Setter Property="CommandParameter" Value="{Binding ., RelativeSource={RelativeSource Self}}" />
 					</Style>
 				</Menu.Styles>
-				<MenuItem Header="{StaticResource I18N.G.主页}" Tag="/主页" Classes="NavInstance" />
-				<MenuItem Header="{StaticResource I18N.G.配方}" Tag="/配方" Classes="NavInstance" />
-				<MenuItem Header="{StaticResource I18N.G.报警}" Tag="/报警" Classes="NavInstance" />
-				<MenuItem Header="{StaticResource I18N.G.设置}" Tag="/设置" Classes="NavInstance" />
-				<MenuItem Header="{StaticResource I18N.G.账户}">
-					<MenuItem Header="{StaticResource I18N.G.管理}" Tag="/账户管理" Classes="NavInstance" />
-					<MenuItem Header="{StaticResource I18N.G.登录}" Command="{Binding RequestLoginCommand}" />
-					<MenuItem Header="注销" Command="{Binding RequestLoginCommand}" />
+				<MenuItem Header="{DynamicResource I18N.G.主页}" Tag="/主页" Classes="NavInstance" />
+				<MenuItem Header="{DynamicResource I18N.G.配方}" Tag="/配方" Classes="NavInstance" />
+				<MenuItem Header="{DynamicResource I18N.G.报警}" Tag="/报警" Classes="NavInstance" />
+				<MenuItem Header="{DynamicResource I18N.G.设置}" Tag="/设置" Classes="NavInstance" />
+				<MenuItem Header="{DynamicResource I18N.G.账户}">
+					<MenuItem Header="{DynamicResource I18N.G.管理}" Tag="/账户管理" Classes="NavInstance" />
+					<MenuItem Header="{DynamicResource I18N.G.登录}" Command="{Binding RequestLoginCommand}" />
+					<MenuItem Header="{DynamicResource I18N.G.注销}" Command="{Binding RequestLoginCommand}" />
 
 				</MenuItem>
-				<MenuItem Header="{StaticResource I18N.G.视图}">
-					<MenuItem Header="快速创建物料配方"  Command="{Binding QuickCreateMaterialRecipeCommand}" />
-					<MenuItem Header="{StaticResource I18N.G.双轴轨道位置}" Tag="/测试" Classes="NavInstance" />
-					<MenuItem Header="{StaticResource I18N.G.全部}" ItemsSource="{Binding Ui.MainView.NavManager.Root.Children}">
+				<MenuItem Header="{DynamicResource I18N.G.视图}">
+					<MenuItem Header="{DynamicResource I18N.G.快速创建物料配方}"  Command="{Binding QuickCreateMaterialRecipeCommand}" />
+					<MenuItem Header="{DynamicResource I18N.G.双轴轨道位置}" Tag="/测试" Classes="NavInstance" />
+					<MenuItem Header="{DynamicResource I18N.G.全部}" ItemsSource="{Binding Ui.MainView.NavManager.Root.Children}">
 						<MenuItem.ItemTemplate>
 							<DataTemplate>
 								<!-- ReSharper disable once Xaml.BindingWithContextNotResolved -->

@@ -39,3 +39,36 @@ public class StateColorConverter : IValueConverter
 		throw new NotSupportedException();
 	}
 }
+
+public class CalibrationBorderColorCvt : IValueConverter
+{
+	public object Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
+	{
+		return value is true
+			? new SolidColorBrush(Colors.Green)
+			: new SolidColorBrush(Colors.Orange);
+	}
+
+	public object ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture)
+	{
+		throw new NotSupportedException();
+	}
+}
+
+public class CalibrationTimeDisplayCvt : IMultiValueConverter
+{
+	public object? Convert(IList<object?> values, Type targetType, object? parameter, CultureInfo culture)
+	{
+		if (values.Count < 2) return "—";
+
+		bool isOk = values[0] is true;
+		if (!isOk)
+		{
+			return culture.TwoLetterISOLanguageName == "zh" ? "未校准成功" : "Calibration Failed";
+		}
+
+		return values[1] is DateTime dt && dt != default
+			? dt.ToString("yyyy-MM-dd HH:mm:ss")
+			: "—";
+	}
+}

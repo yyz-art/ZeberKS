@@ -5,6 +5,7 @@ using ZitApp.UI.Account;
 using ZitApp.UI.Alarm;
 using ZitApp.UI.Config;
 using ZitApp.UI.Dialogs;
+using ZitApp.UI.Views.Account;
 using RecipeVM = ZitApp.UI.Recipe.RecipeVM;
 
 namespace ZitApp.UI;
@@ -40,6 +41,27 @@ public partial class AppVM : CommonAppVM
 
 	public partial int UiTickInterval { get; set; } = 200;
 
+	/// <summary>
+	/// 是否已通过启动登录
+	/// </summary>
+	public bool IsLoggedIn { get; set; }
+
+	/// <summary>
+	/// 启动时调用 — 模态登录，未登录则退出程序
+	/// </summary>
+	public async Task RequireLoginOnStartup()
+	{
+		var loginVM = IOC.Get<AccountLoginVM>();
+		loginVM.IsLoggedIn = false;
+		await loginVM.View.ShowDialog((Window)View!);
+		IsLoggedIn = loginVM.IsLoggedIn;
+		if (!IsLoggedIn)
+			((Window)View!).Close();
+	}
+
+	/// <summary>
+	/// 菜单调用 — 非模态登录
+	/// </summary>
 	public Task @SwitchAccount()
 	{
 		var mainWindow = View as MainWindow;
@@ -69,13 +91,13 @@ public partial class AppVM : CommonAppVM
 		if (loginResult.IsError())
 		{
 			await ShowMessageBox(
-				$"登录失败！{loginResult.Message} {loginResult.Exception}", "登录失败", MessageBoxIcon.Error);
+				string.Format(CommonUiApp.L("I18N.G.登录失败提示"), loginResult.Message, loginResult.Exception), CommonUiApp.L("I18N.G.登录失败"), MessageBoxIcon.Error);
 			return;
 		}
 
 		var mainWindow = View as MainWindow;
 		mainWindow!.AccountLoginDialog.Close();
-		ShowToast("登录成功！", UiMessageType.Success);
+		ShowToast(CommonUiApp.L("I18N.G.登录成功"), UiMessageType.Success);
 	}
 
 	public void @OnSelectedAccountChanged(string account) => AccountLoginInputAccountName = account;

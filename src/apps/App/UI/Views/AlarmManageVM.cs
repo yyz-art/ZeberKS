@@ -42,6 +42,7 @@ public partial class AlarmManageVM : CommonUiVM<AlarmManageView>
 		return base.OnInitialize(ctx, args);
 	}
 
+	// ==================== 报警历史查询 ====================
 	public required AlarmService AlarmService { get; init; }
 	public partial List<AlarmRecord> Records { get; private set; } = [];
 
@@ -55,5 +56,25 @@ public partial class AlarmManageVM : CommonUiVM<AlarmManageView>
 		}
 
 		Records = getRecordsResult.Value!;
+	}
+
+	// ==================== NG 历史查询 ====================
+	public required NgService NgService { get; init; }
+	public partial List<NgRecord> NgRecords { get; private set; } = [];
+	public partial int NgQueryStationIndex { get; set; }
+	public partial string? NgQuerySnCode { get; set; }
+	public string[] NgStationOptions { get; } = ["全部", "WP-1", "WP-2"];
+
+	public async Task @ReloadNgRecords()
+	{
+		int? stationId = NgQueryStationIndex > 0 ? NgQueryStationIndex : null;
+		var result = await NgService.QueryAsync(null, null, stationId, NgQuerySnCode);
+		if (result.IsError())
+		{
+			ShowNotification($"load ng records failed! \n{result}", UiMessageType.Error);
+			return;
+		}
+
+		NgRecords = result.Value!;
 	}
 }
