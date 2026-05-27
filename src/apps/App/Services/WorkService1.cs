@@ -619,7 +619,7 @@ public partial class WorkService1 : WorkServiceBase
 				SendOutStationResult:
 #if ASM15_1
 				uploadResultCode = Plc.Read.工位1数据上报结果;
-				if (uploadResultCode == 2)                                           
+				if (uploadResultCode != 1)                                           
 				{
 					Plc.Write.工位1数据上报响应 = 2;
 				}

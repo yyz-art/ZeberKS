@@ -22,7 +22,7 @@ public partial class AppConfig : CommonAppConfig
 #if ASM4
 		ApplicationName = StationName = "ASM4-AUTO";
 		MaterialSpaceCount = 4;
-		NozzleCount = 6;
+		NozzleCount = 8;
 #elif SUB1
 		ApplicationName = StationName = "SUB1-AUTO";
 		MaterialSpaceCount = 4;

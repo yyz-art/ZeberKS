@@ -209,5 +209,4 @@
 	<sys:String x:Key="I18N.G.工位">Station</sys:String>
 	<sys:String x:Key="I18N.G.机种">Model</sys:String>
 	<sys:String x:Key="I18N.G.查询">Query</sys:String>
-	<sys:String x:Key="I18N.G.全部">All</sys:String>
 </ResourceDictionary>

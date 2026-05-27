@@ -46,7 +46,8 @@
 
 							<TextBlock Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" Text="{DynamicResource I18N.G.物料码}" />
 							<TextBox Grid.Row="2" Grid.Column="1" BorderBrush="{Binding InputMaterialCodeBorderBrush}"
-											Text="{Binding InputMaterialCode}" />
+											Text="{Binding InputMaterialCode}" 
+											MaxLength="12" />
 
 							<TextBlock Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" Text="{DynamicResource I18N.G.数量}" />
 							<TextBox Grid.Row="3" Grid.Column="1" Text="{Binding InputMaterialCount}" />

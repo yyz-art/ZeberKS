@@ -309,47 +309,47 @@ public partial class CoreService : CoreServiceBase
 
 	private void UpdateMaterialSpaceContexts()
 	{
-		if (Plc.Read.Feeder1解锁请求 != 0 && Plc.Read.Feeder1解锁请求 == Plc.Read.Feeder1换料响应)
-		{
-			Plc.Write.Feeder1解锁请求 = 0;
-			Plc.Write.WritePoint(nameof(PlcStruct.Feeder1解锁请求));
-			Logger.Info("Reset material 1 request");
-		}
-
-		if (Plc.Read.Feeder2解锁请求 != 0 && Plc.Read.Feeder2解锁请求 == Plc.Read.Feeder1换料响应)
-		{
-			Plc.Write.Feeder2解锁请求 = 0;
-			Plc.Write.WritePoint(nameof(PlcStruct.Feeder2解锁请求));
-			Logger.Info("Reset material 2 request");
-		}
-
-		if (Plc.Read.Feeder3解锁请求 != 0 && Plc.Read.Feeder3解锁请求 == Plc.Read.Feeder1换料响应)
-		{
-			Plc.Write.Feeder3解锁请求 = 0;
-			Plc.Write.WritePoint(nameof(PlcStruct.Feeder3解锁请求));
-			Logger.Info("Reset material 3 request");
-		}
-
-		if (Plc.Read.Feeder4解锁请求 != 0 && Plc.Read.Feeder4解锁请求 == Plc.Read.Feeder1换料响应)
-		{
-			Plc.Write.Feeder4解锁请求 = 0;
-			Plc.Write.WritePoint(nameof(PlcStruct.Feeder4解锁请求));
-			Logger.Info("Reset material 4 request");
-		}
-
-		if (Plc.Read.Feeder5解锁请求 != 0 && Plc.Read.Feeder5解锁请求 == Plc.Read.Feeder1换料响应)
-		{
-			Plc.Write.Feeder5解锁请求 = 0;
-			Plc.Write.WritePoint(nameof(PlcStruct.Feeder5解锁请求));
-			Logger.Info("Reset material 5 request");
-		}
-
-		if (Plc.Read.Feeder6解锁请求 != 0 && Plc.Read.Feeder6解锁请求 == Plc.Read.Feeder6换料响应)
-		{
-			Plc.Write.Feeder6解锁请求 = 0;
-			Plc.Write.WritePoint(nameof(PlcStruct.Feeder6解锁请求));
-			Logger.Info("Reset material 6 request");
-		}
+		// if (Plc.Read.Feeder1解锁请求 != 0 && Plc.Read.Feeder1解锁请求 == Plc.Read.Feeder1解锁响应)
+		// {
+		// 	Plc.Write.Feeder1解锁请求 = 0;
+		// 	Plc.Write.WritePoint(nameof(PlcStruct.Feeder1解锁请求));
+		// 	Logger.Info("Reset material 1 request");
+		// }
+		//
+		// if (Plc.Read.Feeder2解锁请求 != 0 && Plc.Read.Feeder2解锁请求 == Plc.Read.Feeder2解锁响应)
+		// {
+		// 	Plc.Write.Feeder2解锁请求 = 0;
+		// 	Plc.Write.WritePoint(nameof(PlcStruct.Feeder2解锁请求));
+		// 	Logger.Info("Reset material 2 request");
+		// }
+		//
+		// if (Plc.Read.Feeder3解锁请求 != 0 && Plc.Read.Feeder3解锁请求 == Plc.Read.Feeder3解锁响应)
+		// {
+		// 	Plc.Write.Feeder3解锁请求 = 0;
+		// 	Plc.Write.WritePoint(nameof(PlcStruct.Feeder3解锁请求));
+		// 	Logger.Info("Reset material 3 request");
+		// }
+		//
+		// if (Plc.Read.Feeder4解锁请求 != 0 && Plc.Read.Feeder4解锁请求 == Plc.Read.Feeder4解锁响应)
+		// {
+		// 	Plc.Write.Feeder4解锁请求 = 0;
+		// 	Plc.Write.WritePoint(nameof(PlcStruct.Feeder4解锁请求));
+		// 	Logger.Info("Reset material 4 request");
+		// }
+		//
+		// if (Plc.Read.Feeder5解锁请求 != 0 && Plc.Read.Feeder5解锁请求 == Plc.Read.Feeder5解锁响应)
+		// {
+		// 	Plc.Write.Feeder5解锁请求 = 0;
+		// 	Plc.Write.WritePoint(nameof(PlcStruct.Feeder5解锁请求));
+		// 	Logger.Info("Reset material 5 request");
+		// }
+		//
+		// if (Plc.Read.Feeder6解锁请求 != 0 && Plc.Read.Feeder6解锁请求 == Plc.Read.Feeder6解锁响应)
+		// {
+		// 	Plc.Write.Feeder6解锁请求 = 0;
+		// 	Plc.Write.WritePoint(nameof(PlcStruct.Feeder6解锁请求));
+		// 	Logger.Info("Reset material 6 request");
+		// }
 
 		// 
 		if (Plc.Read.Feeder1换料请求 != 0 && Plc.Read.Feeder1换料请求 == Plc.Read.Feeder1换料响应)
@@ -359,28 +359,28 @@ public partial class CoreService : CoreServiceBase
 			Logger.Info("Reset material 1 request");
 		}
 
-		if (Plc.Read.Feeder2换料请求 != 0 && Plc.Read.Feeder2换料请求 == Plc.Read.Feeder1换料响应)
+		if (Plc.Read.Feeder2换料请求 != 0 && Plc.Read.Feeder2换料请求 == Plc.Read.Feeder2换料响应)
 		{
 			Plc.Write.Feeder2换料请求 = 0;
 			Plc.Write.WritePoint(nameof(PlcStruct.Feeder2换料请求));
 			Logger.Info("Reset material 2 request");
 		}
 
-		if (Plc.Read.Feeder3换料请求 != 0 && Plc.Read.Feeder3换料请求 == Plc.Read.Feeder1换料响应)
+		if (Plc.Read.Feeder3换料请求 != 0 && Plc.Read.Feeder3换料请求 == Plc.Read.Feeder3换料响应)
 		{
 			Plc.Write.Feeder3换料请求 = 0;
 			Plc.Write.WritePoint(nameof(PlcStruct.Feeder3换料请求));
 			Logger.Info("Reset material 3 request");
 		}
 
-		if (Plc.Read.Feeder4换料请求 != 0 && Plc.Read.Feeder4换料请求 == Plc.Read.Feeder1换料响应)
+		if (Plc.Read.Feeder4换料请求 != 0 && Plc.Read.Feeder4换料请求 == Plc.Read.Feeder4换料响应)
 		{
 			Plc.Write.Feeder4换料请求 = 0;
 			Plc.Write.WritePoint(nameof(PlcStruct.Feeder4换料请求));
 			Logger.Info("Reset material 4 request");
 		}
 
-		if (Plc.Read.Feeder5换料请求 != 0 && Plc.Read.Feeder5换料请求 == Plc.Read.Feeder1换料响应)
+		if (Plc.Read.Feeder5换料请求 != 0 && Plc.Read.Feeder5换料请求 == Plc.Read.Feeder5换料响应)
 		{
 			Plc.Write.Feeder5换料请求 = 0;
 			Plc.Write.WritePoint(nameof(PlcStruct.Feeder5换料请求));

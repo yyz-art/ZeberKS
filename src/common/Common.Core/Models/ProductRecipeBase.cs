@@ -11,6 +11,7 @@ public partial class ProductRecipeBase : ObservableObject
 	public partial DateTime CreateTime { get; set; }
 	public partial bool IsFullRecipe { get; set; }
 	public partial string? RefFullRecipeName { get; set; }
+	public partial string LineName { get; set; } = "";
 	public partial List<MaterialConfig> MaterialConfigs { get; set; } = [];
 
 	/// <summary>

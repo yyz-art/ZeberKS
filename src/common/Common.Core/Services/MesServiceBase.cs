@@ -39,32 +39,34 @@ public class MesServiceBase<T> : INamedObject where T : CommonAppConfig
 
 	public Result<string> SendAndReadString(string msg)
 	{
-		if (CommonAppConfig.IsDevTestMode)
+		lock (_syncLock)
 		{
-			Thread.Sleep(1000);
-			return Result.Ok("OK7,MO_NUMBER=9001812-UG MODEL_NAME=1005-042301-Z0");
-		}
-		
-		var openResult = Client.Open();
-		if (openResult.IsError())
-			return Result.Err<string>(openResult);
-		try
-		{
-			Client.Socket!.WriteUtf8(msg);
-			Span<byte> buffer = stackalloc byte[4096];
-			var readResult = Client.Socket!.ReadContinuous(buffer, 3000, 200);
-			if (readResult.IsError())
-				return Result.Err<string>(readResult);
-			Span<char> charBuffer = stackalloc char[4096];
-			if (false == Encoding.UTF8.TryGetChars(buffer[..readResult.Value], charBuffer, out var len))
-				return Result.Err<string>(
-					$"response format error! hex raw data = '{HexUtils.ToString(buffer[..readResult.Value])}'");
-			var result = charBuffer[..len].Trim().ToString();
-			return Result.Ok(result);
-		}
-		finally
-		{
-			Client.Close();
+			if (CommonAppConfig.IsDevTestMode)
+			{
+				return Result.Ok("OK7,MO_NUMBER=9001812-UG MODEL_NAME=1005-042301-Z0");
+			}
+
+			var openResult = Client.Open();
+			if (openResult.IsError())
+				return Result.Err<string>(openResult);
+			try
+			{
+				Client.Socket!.WriteUtf8(msg);
+				Span<byte> buffer = stackalloc byte[4096];
+				var readResult = Client.Socket!.ReadContinuous(buffer, 3000, 200);
+				if (readResult.IsError())
+					return Result.Err<string>(readResult);
+				Span<char> charBuffer = stackalloc char[4096];
+				if (false == Encoding.UTF8.TryGetChars(buffer[..readResult.Value], charBuffer, out var len))
+					return Result.Err<string>(
+						$"response format error! hex raw data = '{HexUtils.ToString(buffer[..readResult.Value])}'");
+				var result = charBuffer[..len].Trim().ToString();
+				return Result.Ok(result);
+			}
+			finally
+			{
+				Client.Close();
+			}
 		}
 	}
 

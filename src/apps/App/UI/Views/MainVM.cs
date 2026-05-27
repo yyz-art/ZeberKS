@@ -250,6 +250,7 @@ public partial class MainVM : UiVM<MainView>
 		if (value is null) return;
 		ModelNameInput = value.Name ?? "";                                                 // 同步机种型号到输入框
 		WorkOrderNoInput = CoreService.WorkOrderNo;                                        // 同步工单号到输入框
+		LineNameInput = value.LineName ?? "";                                              // 同步线别到输入框
 		CoreService.ApplyWorkRecipeToMaterialContexts();                                    // 将配方配置同步到所有料位
 		// 更新各料位的位置编码（从 AppConfig 读取）
 		for (var i = 0; i < CommonAppConfig.MaterialSpaceCount; i++)

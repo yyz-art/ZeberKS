@@ -121,6 +121,9 @@
 						<ComboBox Grid.Row="1" Grid.Column="1" ItemsSource="{Binding FullRecipeNames}"
 											Padding="4 0 0 0"
 											SelectedValue="{Binding EditRecipe.RefFullRecipeName}" HorizontalAlignment="Stretch" />
+
+						<TextBlock Grid.Row="1" Grid.Column="2" VerticalAlignment="Center" Text="{DynamicResource I18N.G.线别}" />
+						<TextBox Grid.Row="1" Grid.Column="3" Text="{Binding EditRecipe.LineName}" />
 					</Grid>
 				</ScrollViewer>
 			</TabItem>
