@@ -158,8 +158,6 @@
 	<sys:String x:Key="I18N.G.快速创建物料配方">快速创建物料配方</sys:String>
 	<sys:String x:Key="I18N.G.物料">物料</sys:String>
 	<sys:String x:Key="I18N.G.打开监视">打开监视</sys:String>
-	<sys:String x:Key="I18N.G.点检完成时间">点检完成时间</sys:String>
-	<sys:String x:Key="I18N.G.复位吸嘴点检">复位吸嘴点检</sys:String>
 	<sys:String x:Key="I18N.G.记录器">记录器</sys:String>
 	<sys:String x:Key="I18N.G.等级">等级</sys:String>
 	<sys:String x:Key="I18N.G.信息">信息</sys:String>

@@ -107,7 +107,7 @@ public abstract partial class CommonAppConfig : ConfigBase
 		DataDefine.KeyValue, NameByEN, "EAP HOST ADDRESS",
 		DataDefine.KeyValue, NameByVI, "EAP HOST ADDRESS",
 	], DefaultValue = "10.5.1.160", Description = "EAP IP ADDRESS")]
-	public string EapHostIp { get; set; } = "10.5.1.160";
+	public string EapHostIp { get; set; } = "127.0.0.1";
 
 	[ValueInfo(Category = "EAP", InitAttachData =
 	[
@@ -115,7 +115,7 @@ public abstract partial class CommonAppConfig : ConfigBase
 		DataDefine.KeyValue, NameByEN, "EAP HOST PORT",
 		DataDefine.KeyValue, NameByVI, "EAP HOST PORT",
 	], DefaultValue = "21347", Description = "EAP HOST PORT")]
-	public int EapHostPort { get; set; } = 21347;
+	public int EapHostPort { get; set; } = 5000;
 
 	#region 生产配置
 
@@ -254,14 +254,6 @@ public abstract partial class CommonAppConfig : ConfigBase
 	public int Scanner2BaudRate { get; set; } = 9600;
 
 	#endregion
-
-	[ValueInfo(Category = "点检配置 / SPOT CHECK", InitAttachData =
-	[
-		DataDefine.KeyValue, NameByCN, "nozzle spot check timeout hours",
-		DataDefine.KeyValue, NameByEN, "nozzle spot check timeout hours",
-		DataDefine.KeyValue, NameByVI, "nozzle spot check timeout hours",
-	], DefaultValue = 12, Description = "nozzle spot check timeout hours")]
-	public double NozzleSpotCheckTimeoutHours { get; set; } = 12;
 
 	[ValueInfo(Category = "点检配置 / SPOT CHECK", InitAttachData =
 	[

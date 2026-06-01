@@ -9,6 +9,7 @@ using ZC.Mvvm;
 using ZC.Utils;
 using ZitApp.BinStructs;
 using ZitApp.Devices.Plc;
+using ZitApp.Ext.EapClient;
 using ZitApp.Models;
 
 namespace ZitApp.Services;
@@ -19,6 +20,7 @@ namespace ZitApp.Services;
 public partial class PlcService : PlcServiceBase
 {
 	public required AlarmService AlarmService { get; init; }
+	public required EquipmentStatusSnapshot StatusSnapshot { get; init; }
 	public PlcStruct Read { get; } = new();
 	public PlcStruct Write { get; } = new();
 	public PlcStruct RealWrite { get; } = new() { IsRealWriteMode = true};
@@ -83,6 +85,7 @@ public partial class PlcService : PlcServiceBase
 				Read.ReadPointGroup(PlcStructInfo.PlcToPc).Unwarp("Read PlcToPc failed!");
 				Read.ReadPointGroup(PlcStructInfo.PcToPlc).Unwarp("Read PcToPlc failed!");
 				ReadAlarm.ReadPointGroup(PlcAlarmStructInfo.Part1, Plc).Unwarp("Read alarm failed!");
+				StatusSnapshot.UpdateWorkPosition(Read.工位1生产状态, Read.工位2生产状态);
 
 				InternalCycleTaskCompletionSource?.TrySetResult();
 				unchecked

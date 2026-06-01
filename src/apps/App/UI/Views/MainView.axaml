@@ -357,20 +357,6 @@
 							<TextBox Grid.Row="1" Grid.Column="1" Text="{Binding DisplayPlcIp}" IsReadOnly="True" />
 							<Button Grid.Row="1" Grid.Column="2" Content="{DynamicResource I18N.G.打开监视}" Command="{Binding OpenIoMonitorCommand}"/>
 						</Grid>
-						<Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto,Auto" ColumnSpacing="5" RowSpacing="5">
-							<Label FontWeight="Bold" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
-										Content="{DynamicResource I18N.G.吸嘴压力点检}" Background="#277679" Foreground="White"
-										HorizontalAlignment="Stretch" />
-							<Label Classes="Label" Grid.Row="1" Grid.Column="0" Content="{DynamicResource I18N.G.点检完成时间}" VerticalAlignment="Center" />
-							<TextBox Grid.Row="1" Grid.Column="1" Text="{Binding CoreService.NozzleSpotCheckCompleteTime}" IsReadOnly="True" />
-							<StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" Spacing="10" HorizontalAlignment="Center">
-								<CheckBox Content="{DynamicResource I18N.G.吸嘴压力点检}"
-													IsChecked="{Binding CoreService.NozzleCheck, Mode=TwoWay}"
-													VerticalAlignment="Center"
-													Foreground="White" />
-								<Button Content="{DynamicResource I18N.G.复位吸嘴点检}" HorizontalAlignment="Center" Command="{Binding ResetNozzleSpotCheckCommand}"></Button>
-							</StackPanel>
-						</Grid>
 						<!-- ASM15 校准检查 -->
 						<Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto,Auto" ColumnSpacing="5" RowSpacing="5"
 									IsVisible="{Binding HasCalibrationService}">
@@ -398,11 +384,35 @@
 												VerticalAlignment="Center" Foreground="White"
 												Margin="0,5,0,0" />
 						</Grid>
-						<!-- <Button Content="打开 PLC IO 监控" -->
+						<!-- NG 弹窗测试 -->
+						<!-- <Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto" ColumnSpacing="5" RowSpacing="5"> -->
+						<!-- 	<Label FontWeight="Bold" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" -->
+						<!-- 			Content="NG弹窗测试" Background="#277679" Foreground="White" -->
+						<!-- 			HorizontalAlignment="Stretch" /> -->
+						<!-- 	<Button Grid.Row="1" Grid.Column="0" Content="工位1 NG测试" -->
+						<!-- 					Command="{Binding TestNgDialogStation1Command}" /> -->
+						<!-- 	<Button Grid.Row="1" Grid.Column="1" Content="工位2 NG测试" -->
+						<!-- 					Command="{Binding TestNgDialogStation2Command}" /> -->
+						<!-- </Grid> -->
+					<!-- <Button Content="打开 PLC IO 监控" -->
 						<!-- 				Command="{Binding OpenIoMonitor}" -->
 						<!-- 				Background="#277679" Foreground="White" -->
 						<!-- 				HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" -->
 						<!-- 				Margin="0,10,0,0" Padding="5" /> -->
+						<!-- <Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto,Auto,Auto" ColumnSpacing="5" RowSpacing="5"> -->
+						<!-- 	<Label FontWeight="Bold" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" -->
+						<!-- 				Content="EAP 测试" Background="#277679" Foreground="White" -->
+						<!-- 				HorizontalAlignment="Stretch" /> -->
+						<!-- 	<Button Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" -->
+						<!-- 				Content="S5F1 测试报警" HorizontalAlignment="Center" -->
+						<!-- 				Command="{Binding TestEapAlarmCommand}" /> -->
+						<!-- 	<Button Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" -->
+						<!-- 				Content="S6F11/6001 设备状态变更" HorizontalAlignment="Center" -->
+						<!-- 				Command="{Binding TestEapStatusChangeCommand}" /> -->
+						<!-- 	<Button Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" -->
+						<!-- 				Content="S6F11/6002 产品过站" HorizontalAlignment="Center" -->
+						<!-- 				Command="{Binding TestEapProductFinishCommand}" /> -->
+						<!-- </Grid> -->
 					</StackPanel>
 				</StackPanel>
 			</StackPanel>

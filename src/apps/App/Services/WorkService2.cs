@@ -537,7 +537,7 @@ public partial class WorkService2 : WorkServiceBase
 						Logger.Error($"[SCREW ALARM] read 60638 failed! {alarmResult.Message}");
 
 					var msg2 =
-						$"{AppConfig.StationName},{Context.ScanSnCode},2,{Core.WorkerNo},{AppConfig.Line},,FAIL,{failCode},";
+						$"{AppConfig.StationName},{Context.ScanSnCode},2,{Core.WorkerNo},{AppConfig.Line},,FAIL,1,{failCode},,";
 #else
 					var msg2 =
 						$"{AppConfig.StationName},{Context.ScanSnCode},2,{Core.WorkerNo},{AppConfig.Line},,FAIL,,,{DataBuilder}";
@@ -837,6 +837,7 @@ public partial class WorkService2 : WorkServiceBase
 		if (result.IsSuccess == false)
 		{
 			Logger.Error("read ng items failed!");
+			return;
 		}
 
 		Plc.Plc.Write(PlcStructInfo.工位2NG原因.Source!.ToString(), EmptyBoolX200);

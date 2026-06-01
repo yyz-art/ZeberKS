@@ -29,7 +29,7 @@ public partial class RecipeVM : UiVM<RecipeView>
 		PropertyCategories = TypeMetaInfo<PointRecipeStruct>.Cache.Properties
 			.Select(t => t.GetAttribute<ValueInfoAttribute>()?.Category)
 			.Where(t => t != null).Distinct().ToList()!;
-		PropertyCategories.Insert(0, CommonUiApp.L("I18N.G.全部"));
+		PropertyCategories.Insert(0, "ALL");
 		if (Design.IsDesignMode)
 		{
 			EditRecipe.MaterialConfigs = Enumerable.Range(0, 5)
@@ -546,7 +546,7 @@ public partial class RecipeVM : UiVM<RecipeView>
 		foreach (var propertyInstance in PropertyInstances)
 		{
 			propertyInstance.Flag = false;
-			if (propertyInstance.ValueInfo?.Category == SelectedPropertyCategory || SelectedPropertyCategory == CommonUiApp.L("I18N.G.全部"))
+			if (propertyInstance.ValueInfo?.Category == SelectedPropertyCategory || SelectedPropertyCategory == "ALL")
 				FilteredPropertyInstances.Add(propertyInstance);
 		}
 	}

@@ -122,9 +122,8 @@ public partial class CoreService : CoreServiceBase
 	public void NotifyMaterialCheckFailed(MaterialSpaceContext failed) =>
 		MaterialMismatchDialogService.Show(failed, WorkRecipe);
 
-	public partial bool NozzleCheck { get; set; } = true;
-	public partial DateTime NozzleSpotCheckCompleteTime { get; set; } = DateTime.MaxValue;
-	public partial bool IsNozzleSpotCheckOk { get; set; }
+	/// <summary>所有已启用吸嘴压力是否均大于0（即已完成点检）</summary>
+	public partial bool IsNozzlePressureOk { get; set; }
 
 #if ASM15_1
 	public required Asm15CalibrationService CalibrationService { get; init; }
@@ -201,69 +200,9 @@ public partial class CoreService : CoreServiceBase
 	{
 	}
 
-	public Result NozzleSpotCheck()
-	{
-		Result result = Result.OK;
-		InvokeOnUI(() =>
-		{
-			foreach (var nozzleContext in NozzleContexts)
-			{
-				if (nozzleContext.ProductionState != ProductionState.OK)
-				{
-					result = Result.Err($"nozzle '{nozzleContext.Config.Id}:{nozzleContext.Config.Name}' check failed!");
-					return;
-				}
-			}
-		});
-		return result;
-	}
-
-	public void ResetNozzleSpotCheck()
-	{
-		Plc.Write.吸头1压力 = 0;
-		Plc.Write.WritePoint(nameof(PlcStruct.吸头1压力));
-		Plc.Write.吸头2压力 = 0;
-		Plc.Write.WritePoint(nameof(PlcStruct.吸头2压力));
-		Plc.Write.吸头3压力 = 0;
-		Plc.Write.WritePoint(nameof(PlcStruct.吸头3压力));
-		Plc.Write.吸头4压力 = 0;
-		Plc.Write.WritePoint(nameof(PlcStruct.吸头4压力));
-		Plc.Write.吸头5压力 = 0;
-		Plc.Write.WritePoint(nameof(PlcStruct.吸头5压力));
-		Plc.Write.吸头6压力 = 0;
-		Plc.Write.WritePoint(nameof(PlcStruct.吸头6压力));
-		Plc.Write.吸头7压力 = 0;
-		Plc.Write.WritePoint(nameof(PlcStruct.吸头7压力));
-		Plc.Write.吸头8压力 = 0;
-		Plc.Write.WritePoint(nameof(PlcStruct.吸头8压力));
-		Plc.Write.吸头9压力 = 0;
-		Plc.Write.WritePoint(nameof(PlcStruct.吸头9压力));
-		Plc.Write.吸头10压力 = 0;
-		Plc.Write.WritePoint(nameof(PlcStruct.吸头10压力));
-	}
 
 	private void UpdateNozzleContexts()
 	{
-		var now = DateTime.Now;
-		var 吸头点检完成时间 = DateTime.FromBinary(Plc.Read.吸头点检完成时间);
-		if (吸头点检完成时间 > now) // 防止时间错误
-		{
-			Plc.Write.吸头点检完成时间 = DateTime.MinValue.Ticks;
-			Plc.Write.WritePoint(nameof(PlcStruct.吸头点检完成时间));
-		}
-		else if (NozzleSpotCheckCompleteTime != 吸头点检完成时间 &&
-		         now - 吸头点检完成时间 > TimeSpan.FromHours(AppConfig.NozzleSpotCheckTimeoutHours))
-			// 点检超时重置
-		{
-			ResetNozzleSpotCheck();
-			NozzleSpotCheckCompleteTime = 吸头点检完成时间;
-			UiUtils.InvokeOnUiThread(() =>
-			{
-				MessageBox.ShowOverlay("nozzle spot check result is timeout, please do nozzle spot check!",
-					"nozzle spot check tip", MessageBoxIcon.Warning, host: AvaloniaApplication.Current.MainView);
-			});
-		}
-
 		InvokeOnUI(() =>
 		{
 			var isAllOk = true;
@@ -283,7 +222,10 @@ public partial class CoreService : CoreServiceBase
 					10 => Plc.Read.吸头10压力,
 					_ => 0
 				};
-				if (nozzleContext.Value >= nozzleContext.Config.PressureMinValue &&
+				if (nozzleContext.Config.IsEnabled is false)
+					continue;
+				if (nozzleContext.Value > 0 &&
+				    nozzleContext.Value >= nozzleContext.Config.PressureMinValue &&
 				    nozzleContext.Value <= nozzleContext.Config.PressureMaxValue)
 					nozzleContext.ProductionState = ProductionState.OK;
 				else
@@ -293,16 +235,17 @@ public partial class CoreService : CoreServiceBase
 				}
 			}
 
-			if (isAllOk != IsNozzleSpotCheckOk)
+			if (isAllOk != IsNozzlePressureOk)
 			{
-				if (isAllOk)
-				{
-					NozzleSpotCheckCompleteTime = DateTime.Now;
-					Plc.Write.吸头点检完成时间 = NozzleSpotCheckCompleteTime.Ticks;
-					Plc.Write.WritePoint(nameof(PlcStruct.吸头点检完成时间));
-				}
-
-				IsNozzleSpotCheckOk = isAllOk;
+				IsNozzlePressureOk = isAllOk;
+				if (!isAllOk)
+					UiUtils.InvokeOnUiThread(() =>
+					{
+						MessageBox.ShowOverlay(
+							"请先完成吸嘴点检 / Please complete nozzle spot check first!",
+							"nozzle spot check", MessageBoxIcon.Warning,
+							host: AvaloniaApplication.Current.MainView);
+					});
 			}
 		});
 	}
@@ -398,39 +341,41 @@ public partial class CoreService : CoreServiceBase
 		{
 			foreach (var context in MaterialContexts)
 			{
-				switch (context.Id)
+				var newRemainCount = context.Id switch
 				{
-					case 1:
-						context.IsUnlocked = Plc.Read.Feeder1解锁响应 == 1;
-						context.ScrapRate = Plc.Read.Feeder1抛料率;
-						context.RemainCount = Plc.Read.Feeder1物料剩余数量;
-						break;
-					case 2:
-						context.IsUnlocked = Plc.Read.Feeder2解锁响应 == 1;
-						context.ScrapRate = Plc.Read.Feeder2抛料率;
-						context.RemainCount = Plc.Read.Feeder2物料剩余数量;
-						break;
-					case 3:
-						context.IsUnlocked = Plc.Read.Feeder3解锁响应 == 1;
-						context.ScrapRate = Plc.Read.Feeder3抛料率;
-						context.RemainCount = Plc.Read.Feeder3物料剩余数量;
-						break;
-					case 4:
-						context.IsUnlocked = Plc.Read.Feeder4解锁响应 == 1;
-						context.ScrapRate = Plc.Read.Feeder4抛料率;
-						context.RemainCount = Plc.Read.Feeder4物料剩余数量;
-						break;
-					case 5:
-						context.IsUnlocked = Plc.Read.Feeder5解锁响应 == 1;
-						context.ScrapRate = Plc.Read.Feeder5抛料率;
-						context.RemainCount = Plc.Read.Feeder5物料剩余数量;
-						break;
-					case 6:
-						context.IsUnlocked = Plc.Read.Feeder6解锁响应 == 1;
-						context.ScrapRate = Plc.Read.Feeder6抛料率;
-						context.RemainCount = Plc.Read.Feeder6物料剩余数量;
-						break;
-				}
+					1 => Plc.Read.Feeder1物料剩余数量,
+					2 => Plc.Read.Feeder2物料剩余数量,
+					3 => Plc.Read.Feeder3物料剩余数量,
+					4 => Plc.Read.Feeder4物料剩余数量,
+					5 => Plc.Read.Feeder5物料剩余数量,
+					6 => Plc.Read.Feeder6物料剩余数量,
+					_ => context.RemainCount,
+				};
+
+				if (context.RemainCount > 0 && newRemainCount == 0)
+					Logger.Warn($"[MATERIAL ZERO] Feeder{context.Id} RemainCount: {context.RemainCount} → 0");
+
+				context.IsUnlocked = context.Id switch
+				{
+					1 => Plc.Read.Feeder1解锁响应 == 1,
+					2 => Plc.Read.Feeder2解锁响应 == 1,
+					3 => Plc.Read.Feeder3解锁响应 == 1,
+					4 => Plc.Read.Feeder4解锁响应 == 1,
+					5 => Plc.Read.Feeder5解锁响应 == 1,
+					6 => Plc.Read.Feeder6解锁响应 == 1,
+					_ => context.IsUnlocked,
+				};
+				context.ScrapRate = context.Id switch
+				{
+					1 => Plc.Read.Feeder1抛料率,
+					2 => Plc.Read.Feeder2抛料率,
+					3 => Plc.Read.Feeder3抛料率,
+					4 => Plc.Read.Feeder4抛料率,
+					5 => Plc.Read.Feeder5抛料率,
+					6 => Plc.Read.Feeder6抛料率,
+					_ => context.ScrapRate,
+				};
+				context.RemainCount = newRemainCount;
 
 				context.CheckMaterialState();
 			}

@@ -17,6 +17,7 @@ using ZitApp.Models;
 using ZitApp.Services;
 using ZitApp.UI.Account;
 using ZitApp.UI.Dialogs;
+using ZitApp.Ext.EapClient;
 
 namespace ZitApp.UI;
 
@@ -72,6 +73,15 @@ public partial class MainVM : UiVM<MainView>
 
 	/// <summary>PLC 通信服务</summary>
 	public required PlcService Plc { get; init; }
+
+	/// <summary>报警服务</summary>
+	public required AlarmService AlarmService { get; init; }
+
+	/// <summary>EAP 客户端服务</summary>
+	public required EapClientService EapClient { get; init; }
+
+	/// <summary>设备状态提供者</summary>
+	public required IEquipmentStatusProvider StatusProvider { get; init; }
 
 	/// <summary>应用配置（工站名、产线、工号等）</summary>
 	public required AppConfig AppConfig { get; init; } = new();
@@ -298,52 +308,7 @@ public partial class MainVM : UiVM<MainView>
 
 	#endregion
 
-	#region ==================== 吸头点检 ====================
-
-	/// <summary>
-	/// 执行单个吸头的点检操作。弹窗确认后，根据当前压力值判断 OK/NG。
-	/// </summary>
-	/// <param name="nozzleContext">要点检的吸头上下文</param>
-	public async Task @NozzleInspection(NozzleContext nozzleContext)
-	{
-		if (ReferenceEquals(nozzleContext, null))
-			return;
-
-		// 弹窗确认是否执行点检
-		var option = await ShowMessageBoxOverlay(
-			$"confirm inspection nozzle {nozzleContext.Config.Id}:{nozzleContext.Config.Name}?",
-			"inspection nozzle", MessageBoxIcon.Question, MessageBoxButton.OKCancel);
-		if (option is not MessageBoxResult.OK)
-		{
-			ShowToast("cancel");
-			return;
-		}
-
-		// 根据压力值判断点检结果
-		nozzleContext.ProductionState =
-			nozzleContext.Value >= nozzleContext.Config.PressureMinValue &&
-			nozzleContext.Value <= nozzleContext.Config.PressureMaxValue
-				? ProductionState.OK                                                       // 压力在范围内，点检合格
-				: ProductionState.NG;                                                      // 压力超出范围，点检不合格
-		ShowToast("inspection completed!", UiMessageType.Success);
-	}
-
-	/// <summary>
-	/// 重置所有吸头点检值。弹窗确认后调用 CoreService 重置 PLC 中的吸头压力值。
-	/// </summary>
-	public async Task @ResetNozzleSpotCheck()
-	{
-		var option = await ShowMessageBoxOverlay("confirm reset nozzle spot check value?", "nozzle spot check",
-			MessageBoxIcon.Question, MessageBoxButton.YesNo);
-		if (option is not MessageBoxResult.Yes)
-		{
-			ShowToast("cancel");
-			return;
-		}
-
-		await Task.Run(() => CoreService.ResetNozzleSpotCheck());                          // 异步重置吸头压力值
-		ShowToast("success", UiMessageType.Success);
-	}
+	#region ==================== 吸头 ====================
 
 	/// <summary>是否有吸头配置（>0 个吸头时显示吸头面板）</summary>
 	public bool HasNozzleContexts => CommonAppConfig.NozzleCount > 0;
@@ -737,6 +702,119 @@ public partial class MainVM : UiVM<MainView>
 		CoreService.WorkOrderNo = WorkOrderNoInput.Trim();
 
 		ShowToast($"配方 '{modelName}' 加载成功", UiMessageType.Success);
+	}
+
+	#endregion
+
+	#region ==================== NG 弹窗测试 ====================
+
+	/// <summary>
+	/// 测试工位1 NG弹窗：手动读取PLC NG地址，解析后弹出NG详情弹窗。
+	/// 注意：会清零PLC中的NG原因区域，停线时测试。
+	/// </summary>
+	public async Task @TestNgDialogStation1()
+	{
+		WorkLeft.ReadNgItems();
+		await CoreService.WorkPositionContexts[0].ShowNgDetailDialog();
+	}
+
+	/// <summary>
+	/// 测试工位2 NG弹窗：手动读取PLC NG地址，解析后弹出NG详情弹窗。
+	/// 注意：会清零PLC中的NG原因区域，停线时测试。
+	/// </summary>
+	public async Task @TestNgDialogStation2()
+	{
+		WorkRight.ReadNgItems();
+		await CoreService.WorkPositionContexts[1].ShowNgDetailDialog();
+	}
+
+	#endregion
+
+	#region ==================== EAP 测试 ====================
+
+	/// <summary>
+	/// 测试 EAP S5F1 报警上报。推送一个测试报警到 AlarmService，由 EAP 客户端上报。
+	/// </summary>
+	public async Task @TestEapAlarm()
+	{
+		if (!EapClient.IsConnected)
+		{
+			ShowToast("EAP 未连接", UiMessageType.Warning);
+			return;
+		}
+
+		var alarmInfo = new AlarmInfo
+		{
+			Id = 1,
+			Name = "上料轴1_正极限",
+			Value = 1,
+			Time = DateTime.Now
+		};
+
+		AlarmService.PushAlarm(this, alarmInfo, null);
+		ShowToast("EAP S5F1 测试报警已推送", UiMessageType.Success);
+	}
+
+	/// <summary>
+	/// 测试 EAP S6F11/6001 设备状态变更上报。
+	/// </summary>
+	public async Task @TestEapStatusChange()
+	{
+		if (!EapClient.IsConnected)
+		{
+			ShowToast("EAP 未连接", UiMessageType.Warning);
+			return;
+		}
+
+		var status = StatusProvider.GetCurrentStatus();
+		var result = await EapClient.TrySendStatusChangeReportAsync(status);
+		ShowToast(result
+			? $"EAP S6F11/6001 状态变更已上报: {status}"
+			: "EAP S6F11/6001 上报失败",
+			result ? UiMessageType.Success : UiMessageType.Error);
+	}
+
+	/// <summary>
+	/// 测试 EAP S6F11/6002 产品过站上报。
+	/// </summary>
+	public async Task @TestEapProductFinish()
+	{
+		if (!EapClient.IsConnected)
+		{
+			ShowToast("EAP 未连接", UiMessageType.Warning);
+			return;
+		}
+
+		var data = new Dictionary<string, string>
+		{
+			[EapReportIds.EquipmentStatusId] = StatusProvider.GetCurrentStatus().ToString().ToLowerInvariant(),
+			[EapReportIds.ProductionCount] = Plc.Read.已生产数量.ToString(),
+			[EapReportIds.YieldRate] = Plc.Read.良率.ToString("F2"),
+			[EapReportIds.CycleTime] = "0",
+			[EapReportIds.OkNg] = "OK",
+			[EapReportIds.WorkOrderNo] = CoreService.WorkOrderNo ?? "",
+			[EapReportIds.SnCode] = "TEST-SN-001",
+			[EapReportIds.KeyPartCode] = "TEST-KP-001",
+			[EapReportIds.ModelName] = "TEST-MODEL",
+			[EapReportIds.WorkerNo] = CoreService.WorkerNo ?? "",
+			[EapReportIds.StationName] = AppConfig.StationName ?? "",
+			[EapReportIds.Line] = AppConfig.Line ?? "",
+			[EapReportIds.RecipeName] = "TEST-RECIPE",
+			[EapReportIds.ErrorMessage] = "",
+		};
+
+		// 螺丝数据 1015~1046
+		for (var i = 0; i < 16; i++)
+		{
+			data[EapReportIds.ScrewTorqueId(i)] = "0";
+			data[EapReportIds.ScrewTurnsId(i)] = "0";
+		}
+
+		var result = await EapClient.TrySendProductFinishReportAsync(data);
+		ShowToast(result
+			? "EAP S6F11/6002 产品过站已上报"
+			: "EAP S6F11/6002 上报失败",
+			result ? UiMessageType.Success : UiMessageType.Error);
 	}
 
 	#endregion

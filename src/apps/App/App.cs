@@ -12,6 +12,7 @@ using ZC.Shared.DefaultJson;
 using SqlSugar;
 using ZitApp.Devices.Plc;
 using ZitApp.Devices.Screw;
+using ZitApp.Ext.EapClient;
 using ZitApp.Models;
 using ZitApp.Services;
 //参数+ line  / 线体
@@ -80,6 +81,16 @@ public sealed class App(AppConfig config) : CommonUiAppCore(config)
 #endif
 		IOC.AddSingleton<XinJEPlcClient>(creator: oc => oc.Get<XinJEPlcClient>(
 			InjectArgument.Create<INetworkSocketConfig>(new NetworkSocketConfig(Config.PlcIpAddress, Config.PlcPort))));
+		IOC.AddSingleton<EapConnectionConfig>(creator: _ => new EapConnectionConfig
+		{
+			Enabled = Config.EapEnable,
+			Host = Config.EapHostIp,
+			Port = Config.EapHostPort
+		});
+		IOC.AddSingleton<EquipmentStatusSnapshot>();
+		IOC.AddSingleton<IEquipmentStatusProvider, EquipmentStatusProvider>();
+		IOC.AddSingleton<PlcAlarmTextCatalog>();
+		IOC.AddSingleton<EapClientService>();
 		await StartUi();
 		await base.OnInitialize(ctx, args);
 	}
@@ -89,6 +100,8 @@ public sealed class App(AppConfig config) : CommonUiAppCore(config)
 #if ASM15_1
 #endif
 		await StartTaskServices();
+		var eapClient = IOC.Get<EapClientService>();
+		_ = eapClient.StartAsync(CancellationToken.None);
 		var recipeService = IOC.Get<RecipeService>();
 		recipeService.LoadRecipes().Unwarp("Recipes load failed!");
 		var connectionManageService = IOC.Get<ConnectionManageService>();

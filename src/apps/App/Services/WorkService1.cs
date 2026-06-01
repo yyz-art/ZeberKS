@@ -12,6 +12,7 @@ using ZC.Utils;
 using ZitApp.BinStructs;
 using ZitApp.Contexts;
 using ZitApp.Devices.Screw;
+using ZitApp.Ext.EapClient;
 using ZitApp.Models;
 using ZitApp.UI.Dialogs;
 
@@ -44,6 +45,8 @@ public partial class WorkService1 : WorkServiceBase
 	public required AppConfig AppConfig { get; init; }                        // 应用配置（站点名、线体、端口等）
 	public required CreateMaterialRecipeVM CreateMaterialRecipeVM { get; init; } // 创建物料配方弹窗VM
 	public required NgService NgService { get; init; }                        // NG记录持久化服务
+	public required EapClientService EapClient { get; init; }                 // EAP客户端服务
+	public required IEquipmentStatusProvider StatusProvider { get; init; }     // 设备状态提供者
 	public IDataSocket CodeScanner { get; set; } = null!;                     // 扫码枪串口连接
 	public WorkPositionContext Context { get; set; } = null!;                 // 工位1上下文（扫码结果、生产状态等）
 
@@ -113,13 +116,13 @@ public partial class WorkService1 : WorkServiceBase
 				Context.ModelName = "";                           // 清空机种型号
 				Context.ProductionState = ProductionState.NA;     // 重置生产状态为NA
 
-				if (Core.NozzleCheck && Core.IsNozzleSpotCheckOk == false) // 吸头点检开关开启且点检未通过
+				if (Core.IsNozzlePressureOk == false) // 吸嘴压力未就绪（未点检）
 				{
-					Logger.Error("[NOZZLE CHECK] [ERROR] nozzle check failed!");
-					Context.ErrorMessage = "nozzle check failed!";
-					Plc.Write.扫码枪1触发结果 = CodeOfNG;                          // 告知PLC扫码结果NG
-					Plc.Write.工位1允许生产 = NOT_ALLOW_PRODUCTION_BY_SCAN_CODE;   // 禁止生产
-					goto SendResult;                                              // 跳到发送结果
+					Logger.Error("[NOZZLE CHECK] [ERROR] nozzle pressure not ready!");
+					Context.ErrorMessage = "nozzle pressure not ready!";
+					Plc.Write.扫码枪1触发结果 = CodeOfNG;
+					Plc.Write.工位1允许生产 = NOT_ALLOW_PRODUCTION_BY_SCAN_CODE;
+					goto SendResult;
 				}
 
 #if ASM15_1
@@ -561,7 +564,7 @@ public partial class WorkService1 : WorkServiceBase
 						Logger.Error($"[SCREW ALARM] read 60638 failed! {alarmResult.Message}");
 
 					var msg2 =
-						$"{AppConfig.StationName},{Context.ScanSnCode},2,{Core.WorkerNo},{AppConfig.Line},,FAIL,{failCode},"; // 携带故障码
+						$"{AppConfig.StationName},{Context.ScanSnCode},2,{Core.WorkerNo},{AppConfig.Line},,FAIL,1,{failCode},,"; // 携带故障码
 #endif
 						
 					Logger.Info($"[MES OUT-STA] [DOING] RESULT={Plc.Read.工位1数据上报结果} MES << '{msg2}'");
@@ -631,6 +634,33 @@ public partial class WorkService1 : WorkServiceBase
 					Context.ShowNgDetailDialog();                                    // 弹窗显示NG详情
 				}
 				else Context.ProductionState = ProductionState.OK;                   // 生产结果OK
+
+				// EAP S6F11/6002 产品过站上报
+				var eapData = new Dictionary<string, string>
+				{
+					[EapReportIds.EquipmentStatusId] = StatusProvider.GetCurrentStatus().ToString().ToLowerInvariant(),
+					[EapReportIds.ProductionCount] = Plc.Read.已生产数量.ToString(),
+					[EapReportIds.YieldRate] = Plc.Read.良率.ToString("F2"),
+					[EapReportIds.CycleTime] = "0",
+					[EapReportIds.OkNg] = uploadResultCode == 1 ? "OK" : "NG",
+					[EapReportIds.WorkOrderNo] = Core.WorkOrderNo ?? "",
+					[EapReportIds.SnCode] = Context.ScanSnCode,
+					[EapReportIds.KeyPartCode] = Context.ScanKeyPartCode,
+					[EapReportIds.ModelName] = Context.ModelName,
+					[EapReportIds.WorkerNo] = Core.WorkerNo ?? "",
+					[EapReportIds.StationName] = AppConfig.StationName ?? "",
+					[EapReportIds.Line] = AppConfig.Line ?? "",
+					[EapReportIds.RecipeName] = Core.RecipeService.GetRecipe(Context.ModelName).Value?.Name ?? "",
+					[EapReportIds.ErrorMessage] = Context.ErrorMessage ?? "",
+				};
+#if ASM15_1
+				for (var i = 0; i < ScrewCount; i++)
+				{
+					eapData[EapReportIds.ScrewTorqueId(i)] = ScrewMaxTorque[i].ToString("F2");
+					eapData[EapReportIds.ScrewTurnsId(i)] = ScrewTurns[i].ToString("F2");
+				}
+#endif
+				_ = EapClient.TrySendProductFinishReportAsync(eapData);
 
 				Plc.Write.TryWritePoint(nameof(PlcStruct.工位1数据上报响应), this, static ctx => // 写入PLC上报响应（带重试）
 				{
@@ -866,6 +896,7 @@ public partial class WorkService1 : WorkServiceBase
 		if (result.IsSuccess == false)
 		{
 			Logger.Error("read ng items failed!");
+			return;
 		}
 
 		Plc.Plc.Write(PlcStructInfo.工位1NG原因.Source!.ToString(), EmptyBoolX200);  // 清零PLC NG原因区域

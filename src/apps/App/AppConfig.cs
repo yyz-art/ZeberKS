@@ -20,13 +20,13 @@ public partial class AppConfig : CommonAppConfig
 	public AppConfig()
 	{
 #if ASM4
-		ApplicationName = StationName = "ASM4-AUTO";
+		ApplicationName = StationName = "ASM3-AUTO";
 		MaterialSpaceCount = 4;
 		NozzleCount = 8;
 #elif SUB1
 		ApplicationName = StationName = "SUB1-AUTO";
 		MaterialSpaceCount = 4;
-		NozzleCount = 6;
+		NozzleCount = 4;
 #elif ASM12
 		ApplicationName = StationName = "ASM12-AUTO";
 		MaterialSpaceCount = 6;

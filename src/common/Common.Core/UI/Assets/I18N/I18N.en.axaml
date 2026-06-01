@@ -158,8 +158,6 @@
 	<sys:String x:Key="I18N.G.快速创建物料配方">Quick Create Material Recipe</sys:String>
 	<sys:String x:Key="I18N.G.物料">Material</sys:String>
 	<sys:String x:Key="I18N.G.打开监视">Open Monitor</sys:String>
-	<sys:String x:Key="I18N.G.点检完成时间">Spot Check Completion Time</sys:String>
-	<sys:String x:Key="I18N.G.复位吸嘴点检">Reset Nozzle Spot Check</sys:String>
 	<sys:String x:Key="I18N.G.记录器">Logger</sys:String>
 	<sys:String x:Key="I18N.G.等级">Level</sys:String>
 	<sys:String x:Key="I18N.G.信息">Information</sys:String>
