@@ -313,8 +313,8 @@
 						</LinearPanel>
 						<Label Classes="Label" Grid.Row="1" Grid.Column="0" Content="{DynamicResource I18N.G.工单号_}" />
 						<TextBox Grid.Row="1" Grid.Column="1" Text="{Binding WorkOrderNoInput, Mode=TwoWay}" MinHeight="30" />
-						<Label Classes="Label" Grid.Row="2" Grid.Column="0" Content="{DynamicResource I18N.G.已生产数量_}" />
-						<Label Classes="Value" Grid.Row="2" Grid.Column="1" Content="{Binding PlcRead.已生产数量}" />
+						<!-- <Label Classes="Label" Grid.Row="2" Grid.Column="0" Content="{DynamicResource I18N.G.已生产数量_}" /> -->
+						<!-- <Label Classes="Value" Grid.Row="2" Grid.Column="1" Content="{Binding PlcRead.已生产数量}" /> -->
 						<Label Classes="Label" Grid.Row="3" Grid.Column="0" Content="{DynamicResource I18N.G.良率_}" />
 						<Label Classes="Value" Grid.Row="3" Grid.Column="1" Content="{Binding PlcRead.良率, StringFormat='{}{0:F2}%'}" />
 						<Label Classes="Label" Grid.Row="4" Grid.Column="0" Content="{DynamicResource I18N.G.工站名_}" />
@@ -399,20 +399,18 @@
 						<!-- 				Background="#277679" Foreground="White" -->
 						<!-- 				HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" -->
 						<!-- 				Margin="0,10,0,0" Padding="5" /> -->
-						<!-- <Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto,Auto,Auto" ColumnSpacing="5" RowSpacing="5"> -->
-						<!-- 	<Label FontWeight="Bold" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" -->
-						<!-- 				Content="EAP 测试" Background="#277679" Foreground="White" -->
-						<!-- 				HorizontalAlignment="Stretch" /> -->
-						<!-- 	<Button Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" -->
-						<!-- 				Content="S5F1 测试报警" HorizontalAlignment="Center" -->
-						<!-- 				Command="{Binding TestEapAlarmCommand}" /> -->
-						<!-- 	<Button Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" -->
-						<!-- 				Content="S6F11/6001 设备状态变更" HorizontalAlignment="Center" -->
-						<!-- 				Command="{Binding TestEapStatusChangeCommand}" /> -->
-						<!-- 	<Button Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" -->
-						<!-- 				Content="S6F11/6002 产品过站" HorizontalAlignment="Center" -->
-						<!-- 				Command="{Binding TestEapProductFinishCommand}" /> -->
-						<!-- </Grid> -->
+						
+					</StackPanel>
+					<!-- EAP 测试按钮组 -->
+					<StackPanel Orientation="Vertical" Spacing="5">
+						<Label FontWeight="Bold" Content="EAP 测试" Background="#8B6914" Foreground="White"
+							HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Padding="3" />
+						<Button Content="S5F1 报警上报" Command="{Binding TestEapAlarmCommand}"
+							HorizontalAlignment="Stretch" Padding="5" />
+						<Button Content="S6F11 状态变更(6001)" Command="{Binding TestEapStatusChangeCommand}"
+							HorizontalAlignment="Stretch" Padding="5" />
+						<Button Content="S6F11 产品过站(6002)" Command="{Binding TestEapProductFinishCommand}"
+							HorizontalAlignment="Stretch" Padding="5" />
 					</StackPanel>
 				</StackPanel>
 			</StackPanel>

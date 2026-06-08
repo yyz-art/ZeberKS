@@ -268,6 +268,7 @@ public partial class WorkService1 : WorkServiceBase
 					    Core.WorkRecipe?.RefFullRecipe?.Id == Plc.Read.上位机当前配方ID) // 或完整配方ID匹配
 					{
 						Logger.Info($"[RECIPE CHECK] [OK] SN='{Context.ScanSnCode}' MODEL_NAME='{Context.ModelName}'");
+						Core.WriteMaterialEnableStatus();                            // 同种配方也同步物料位状态到PLC
 						goto MaterialCheckPoint;                                    // 配方一致，跳到物料校验
 					}
 
@@ -291,6 +292,7 @@ public partial class WorkService1 : WorkServiceBase
 						    Core.WorkRecipe?.RefFullRecipe?.Id == Plc.Read.上位机当前配方ID)
 						{
 							Logger.Info($"[RECIPE CHECK] [OK] SN='{Context.ScanSnCode}' MODEL_NAME='{Context.ModelName}'");
+							Core.WriteMaterialEnableStatus();                        // 同种配方也同步物料位状态到PLC
 							goto MaterialCheckPoint;
 						}
 
@@ -638,29 +640,18 @@ public partial class WorkService1 : WorkServiceBase
 				// EAP S6F11/6002 产品过站上报
 				var eapData = new Dictionary<string, string>
 				{
-					[EapReportIds.EquipmentStatusId] = StatusProvider.GetCurrentStatus().ToString().ToLowerInvariant(),
-					[EapReportIds.ProductionCount] = Plc.Read.已生产数量.ToString(),
-					[EapReportIds.YieldRate] = Plc.Read.良率.ToString("F2"),
-					[EapReportIds.CycleTime] = "0",
-					[EapReportIds.OkNg] = uploadResultCode == 1 ? "OK" : "NG",
-					[EapReportIds.WorkOrderNo] = Core.WorkOrderNo ?? "",
-					[EapReportIds.SnCode] = Context.ScanSnCode,
-					[EapReportIds.KeyPartCode] = Context.ScanKeyPartCode,
+					[EapReportIds.EquipmentStatus] = StatusProvider.GetCurrentStatus().ToString(),
+					[EapReportIds.Input] = Plc.Read.已生产数量.ToString(),
+					[EapReportIds.Output] = Plc.Read.已生产数量.ToString(),
+					[EapReportIds.CT] = "0",
+					[EapReportIds.WorkOrder] = Core.WorkOrderNo ?? "",
 					[EapReportIds.ModelName] = Context.ModelName,
-					[EapReportIds.WorkerNo] = Core.WorkerNo ?? "",
-					[EapReportIds.StationName] = AppConfig.StationName ?? "",
-					[EapReportIds.Line] = AppConfig.Line ?? "",
-					[EapReportIds.RecipeName] = Core.RecipeService.GetRecipe(Context.ModelName).Value?.Name ?? "",
-					[EapReportIds.ErrorMessage] = Context.ErrorMessage ?? "",
+					[EapReportIds.ProductSN] = Context.ScanSnCode,
+					[EapReportIds.LaneNo] = AppConfig.Line ?? "",
+					[EapReportIds.Yield] = Plc.Read.良率.ToString("F2"),
 				};
-#if ASM15_1
-				for (var i = 0; i < ScrewCount; i++)
-				{
-					eapData[EapReportIds.ScrewTorqueId(i)] = ScrewMaxTorque[i].ToString("F2");
-					eapData[EapReportIds.ScrewTurnsId(i)] = ScrewTurns[i].ToString("F2");
-				}
-#endif
-				_ = EapClient.TrySendProductFinishReportAsync(eapData);
+				EapClient.UpdateReportValues(eapData);
+					_ = EapClient.TrySendProductFinishReportAsync(eapData);
 
 				Plc.Write.TryWritePoint(nameof(PlcStruct.工位1数据上报响应), this, static ctx => // 写入PLC上报响应（带重试）
 				{

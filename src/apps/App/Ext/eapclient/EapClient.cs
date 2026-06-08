@@ -40,10 +40,23 @@ public class EapClientService : IDisposable
 
     public bool IsConnected => _client?.Connected ?? false;
     public bool Enabled => _config.Enabled;
-    public EquipmentStatus EquipmentStatus { get; set; } = EquipmentStatus.Idle;
+    public EquipmentStatus EquipmentStatus { get; set; } = EquipmentStatus.E4001;
     public string CarrierId { get; set; } = "";
     public string SubstrateId { get; set; } = "";
     public string EventName { get; set; } = "";
+
+    /// <summary>当前上报数据快照，供 S1F4 按 SVID 动态返回。</summary>
+    private readonly Dictionary<string, string> _reportValues = new();
+
+    /// <summary>更新上报数据快照（产品过站时调用）。</summary>
+    public void UpdateReportValues(Dictionary<string, string> values)
+    {
+        lock (_reportValues)
+        {
+            foreach (var (k, v) in values)
+                _reportValues[k] = v;
+        }
+    }
 
     /// <summary>
     /// 日志：特性注入（新版结构）
@@ -69,14 +82,27 @@ public class EapClientService : IDisposable
             await Task.CompletedTask;
             EquipmentStatus = _equipmentStatusProvider.GetCurrentStatus();
 
+            var responseList = new JsonObject();
+            var requestedIds = request["List"]?.AsArray();
+            if (requestedIds != null)
+            {
+                foreach (var item in requestedIds)
+                {
+                    var svid = item?.ToString();
+                    if (string.IsNullOrEmpty(svid)) continue;
+                    responseList[svid] = svid switch
+                    {
+                        EapReportIds.EquipmentStatus => EquipmentStatus.ToString(),
+                        _ => GetReportValue(svid),
+                    };
+                }
+            }
+
             return new JsonObject
             {
                 ["Stream"] = "1",
                 ["Function"] = "4",
-                ["List"] = new JsonObject
-                {
-                    [EapReportIds.EquipmentStatusId] = EquipmentStatus.ToString()
-                }
+                ["List"] = responseList
             };
         });
 
@@ -85,26 +111,16 @@ public class EapClientService : IDisposable
             await Task.CompletedTask;
             var list = new JsonObject
             {
-                [EapReportIds.EquipmentStatusId] = "设备状态",
-                [EapReportIds.ProductionCount] = "生产数量",
-                [EapReportIds.YieldRate] = "良率",
-                [EapReportIds.CycleTime] = "CT",
-                [EapReportIds.OkNg] = "OK/NG",
-                [EapReportIds.WorkOrderNo] = "工单号",
-                [EapReportIds.SnCode] = "SN码",
-                [EapReportIds.KeyPartCode] = "KeyPart码",
+                [EapReportIds.EquipmentStatus] = "设备状态",
+                [EapReportIds.Input] = "输入",
+                [EapReportIds.Output] = "输出",
+                [EapReportIds.CT] = "CT",
+                [EapReportIds.WorkOrder] = "工单号",
                 [EapReportIds.ModelName] = "机种型号",
-                [EapReportIds.WorkerNo] = "工号",
-                [EapReportIds.StationName] = "站点名",
-                [EapReportIds.Line] = "线别",
-                [EapReportIds.RecipeName] = "配方名",
-                [EapReportIds.ErrorMessage] = "错误信息"
+                [EapReportIds.ProductSN] = "产品SN",
+                [EapReportIds.LaneNo] = "轨道编号",
+                [EapReportIds.Yield] = "良率"
             };
-            for (var i = 0; i < 16; i++)
-            {
-                list[EapReportIds.ScrewTorqueId(i)] = $"螺丝{i + 1}扭矩";
-                list[EapReportIds.ScrewTurnsId(i)] = $"螺丝{i + 1}圈数";
-            }
             return new JsonObject
             {
                 ["Stream"] = "1",
@@ -139,6 +155,15 @@ public class EapClientService : IDisposable
     {
         EquipmentStatus = _equipmentStatusProvider.GetCurrentStatus();
         return Task.CompletedTask;
+    }
+
+    /// <summary>按 SVID 读取当前上报值（供 S1F4 使用，线程安全）。</summary>
+    private string GetReportValue(string svid)
+    {
+        lock (_reportValues)
+        {
+            return _reportValues.GetValueOrDefault(svid, "");
+        }
     }
     #endregion
 
@@ -445,31 +470,28 @@ public class EapClientService : IDisposable
 
         if (!IsConnected || _stream == null)
         {
-            Logger.Warn("EAP 未连接，产品过站上报失败 SN={Sn}", data.GetValueOrDefault(EapReportIds.SnCode, ""));
+            Logger.Warn("EAP 未连接，产品过站上报失败 SN={Sn}", data.GetValueOrDefault(EapReportIds.ProductSN, ""));
             return false;
         }
 
         try
         {
             await SendProductFinishReportAsync(data, cancellationToken);
-            Logger.Info("EAP 产品过站已上报(6002) SN={Sn} Result={Result}",
-                data.GetValueOrDefault(EapReportIds.SnCode, ""),
-                data.GetValueOrDefault(EapReportIds.OkNg, ""));
+            Logger.Info("EAP 产品过站已上报(6002) SN={Sn}",
+                data.GetValueOrDefault(EapReportIds.ProductSN, ""));
             return true;
         }
         catch (Exception ex)
         {
-            Logger.Error(ex, "EAP 产品过站上报失败 SN={Sn}", data.GetValueOrDefault(EapReportIds.SnCode, ""));
+            Logger.Error(ex, "EAP 产品过站上报失败 SN={Sn}", data.GetValueOrDefault(EapReportIds.ProductSN, ""));
             return false;
         }
     }
 
     public async Task SendStatusChangeReportAsync(
         EquipmentStatus status,
-        string productionCount = "0",
-        string yieldRate = "0",
-        string cycleTime = "0",
-        string okNg = "0",
+        string ct = "0",
+        string yield = "0",
         CancellationToken cancellationToken = default)
     {
         var request = new JsonObject
@@ -479,11 +501,9 @@ public class EapClientService : IDisposable
             ["EventID"] = "6001",
             ["Reports"] = new JsonObject
             {
-                [EapReportIds.CycleTime] = cycleTime,
-                [EapReportIds.EquipmentStatusId] = status.ToString().ToLowerInvariant(),
-                [EapReportIds.ProductionCount] = productionCount,
-                [EapReportIds.YieldRate] = yieldRate,
-                [EapReportIds.OkNg] = okNg
+                [EapReportIds.EquipmentStatus] = status.ToString(),
+                [EapReportIds.CT] = ct,
+                [EapReportIds.Yield] = yield
             }
         };
 
@@ -493,30 +513,28 @@ public class EapClientService : IDisposable
 
     public async Task<bool> TrySendStatusChangeReportAsync(
         EquipmentStatus status,
-        string productionCount = "0",
-        string yieldRate = "0",
-        string cycleTime = "0",
-        string okNg = "0",
+        string ct = "0",
+        string yield = "0",
         CancellationToken cancellationToken = default)
     {
         if (!_config.Enabled)
         {
             Logger.Debug("EAP 未启用(Enabled=false)，跳过设备状态变更上报 Status={Status}",
-                status.ToString().ToLowerInvariant());
+                status.ToString());
             return false;
         }
 
         if (!IsConnected || _stream == null)
         {
             Logger.Warn("EAP 未连接，设备状态变更上报失败 Status={Status}",
-                status.ToString().ToLowerInvariant());
+                status.ToString());
             return false;
         }
 
         try
         {
-            await SendStatusChangeReportAsync(status, productionCount, yieldRate, cycleTime, okNg, cancellationToken);
-            Logger.Info("EAP 设备状态变更已上报(6001): Status={Status}", status.ToString().ToLowerInvariant());
+            await SendStatusChangeReportAsync(status, ct, yield, cancellationToken);
+            Logger.Info("EAP 设备状态变更已上报(6001): Status={Status}", status.ToString());
             return true;
         }
         catch (Exception ex)

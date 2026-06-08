@@ -1,5 +1,5 @@
 
-// GENERATE AT 2026/5/10 18:03:29
+// GENERATE AT 2026/6/6 14:09:29
 using ZC.Annotations;
 using ZC.DP.Memory;
 using ZC.DP;
@@ -388,6 +388,30 @@ public partial class PlcStruct
 	[ValueInfo(Source = "PLC:21030", Category = "PLC/PC->PLC", Unit = "",MinValue = 0, MaxValue = 4096, Description = "PLC不用，PC记录用", InitAttachData = null)]
 	public partial long 吸头点检完成时间 { get; set; }
 
+	[BinaryPoint(Offset = 21040, Source = "21040", Tags = "PC->PLC", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:21040", Category = "PLC/PC->PLC", Unit = "",MinValue = 0, MaxValue = 4096, Description = "0不用，1启用", InitAttachData = null)]
+	public partial short 物料1启用状态 { get; set; }
+
+	[BinaryPoint(Offset = 21041, Source = "21041", Tags = "PC->PLC", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:21041", Category = "PLC/PC->PLC", Unit = "",MinValue = 0, MaxValue = 4096, Description = "0不用，2启用", InitAttachData = null)]
+	public partial short 物料2启用状态 { get; set; }
+
+	[BinaryPoint(Offset = 21042, Source = "21042", Tags = "PC->PLC", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:21042", Category = "PLC/PC->PLC", Unit = "",MinValue = 0, MaxValue = 4096, Description = "0不用，3启用", InitAttachData = null)]
+	public partial short 物料3启用状态 { get; set; }
+
+	[BinaryPoint(Offset = 21043, Source = "21043", Tags = "PC->PLC", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:21043", Category = "PLC/PC->PLC", Unit = "",MinValue = 0, MaxValue = 4096, Description = "0不用，4启用", InitAttachData = null)]
+	public partial short 物料4启用状态 { get; set; }
+
+	[BinaryPoint(Offset = 21044, Source = "21044", Tags = "PC->PLC", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:21044", Category = "PLC/PC->PLC", Unit = "",MinValue = 0, MaxValue = 4096, Description = "0不用，5启用", InitAttachData = null)]
+	public partial short 物料5启用状态 { get; set; }
+
+	[BinaryPoint(Offset = 21045, Source = "21045", Tags = "PC->PLC", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:21045", Category = "PLC/PC->PLC", Unit = "",MinValue = 0, MaxValue = 4096, Description = "0不用，6启用", InitAttachData = null)]
+	public partial short 物料6启用状态 { get; set; }
+
 	[BinaryPoint(Offset = 21100, Source = "21100", Tags = "PC->PLC", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:21100", Category = "PLC/PC->PLC", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData = null)]
 	public partial short 工单号PC下发 { get; set; }
@@ -396,8 +420,8 @@ public partial class PlcStruct
 	[ValueInfo(Source = "PLC:21140", Category = "PLC/PC->PLC", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData = null)]
 	public partial short 工号PC下发 { get; set; }
 
-	[BinaryPoint(Offset = 21300, Source = "21300", Tags = "PC->PLC", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
-	[ValueInfo(Source = "PLC:21300", Category = "PLC/PC->PLC", Unit = "",MinValue = 0, MaxValue = 4096, Description = "40字 视觉用", InitAttachData = null)]
+	[BinaryPoint(Offset = 21380, Source = "21380", Tags = "PC->PLC", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:21380", Category = "PLC/PC->PLC", Unit = "",MinValue = 0, MaxValue = 4096, Description = "40字 视觉用", InitAttachData = null)]
 	public partial short 扫码枪1扫码内容 { get; set; }
 
 	[BinaryPoint(Offset = 21340, Source = "21340", Tags = "PC->PLC", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]

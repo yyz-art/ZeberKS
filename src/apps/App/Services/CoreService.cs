@@ -709,4 +709,50 @@ public partial class CoreService : CoreServiceBase
 		InvokeOnUI(() => array = MaterialContexts.Select(t => t.MaterialCode).ToArray());
 		KeyValueStorage.SetValue("MaterialSpaceCodes", array);
 	}
+
+	/// <summary>
+	/// 将当前工单配方中各物料位的启用状态写入 PLC。
+	/// 启用=1，禁用=0。
+	/// </summary>
+	public Result WriteMaterialEnableStatus()
+	{
+		if (WorkRecipe is null)
+			return Result.OK;
+
+		for (var i = 1; i <= CommonAppConfig.MaterialSpaceCount; i++)
+		{
+			var enabled = WorkRecipe.HasEnabledMaterialConfig(i);
+			var value = (short)(enabled ? 1 : 0);
+			switch (i)
+			{
+				case 1:
+					Plc.Write.物料1启用状态 = value;
+					Plc.Write.WritePoint(nameof(PlcStruct.物料1启用状态)).Unwarp();
+					break;
+				case 2:
+					Plc.Write.物料2启用状态 = value;
+					Plc.Write.WritePoint(nameof(PlcStruct.物料2启用状态)).Unwarp();
+					break;
+				case 3:
+					Plc.Write.物料3启用状态 = value;
+					Plc.Write.WritePoint(nameof(PlcStruct.物料3启用状态)).Unwarp();
+					break;
+				case 4:
+					Plc.Write.物料4启用状态 = value;
+					Plc.Write.WritePoint(nameof(PlcStruct.物料4启用状态)).Unwarp();
+					break;
+				case 5:
+					Plc.Write.物料5启用状态 = value;
+					Plc.Write.WritePoint(nameof(PlcStruct.物料5启用状态)).Unwarp();
+					break;
+				case 6:
+					Plc.Write.物料6启用状态 = value;
+					Plc.Write.WritePoint(nameof(PlcStruct.物料6启用状态)).Unwarp();
+					break;
+			}
+			Logger.Info("[MATERIAL ENABLE] Feeder{Id} enable={Enabled}", i, enabled);
+		}
+
+		return Result.OK;
+	}
 }

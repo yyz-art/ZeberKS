@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Text.Json;
 using ZC;
 using ZC.BinStructs.Ext;
@@ -12,6 +12,7 @@ using ZC.Utils;
 using ZitApp.BinStructs;
 using ZitApp.Contexts;
 using ZitApp.Devices.Screw;
+using ZitApp.Ext.EapClient;
 using ZitApp.Models;
 using ZitApp.UI.Dialogs;
 
@@ -39,6 +40,8 @@ public partial class WorkService2 : WorkServiceBase
 	public required AppConfig AppConfig { get; init; }
 	public required CreateMaterialRecipeVM CreateMaterialRecipeVM { get; init; }
 	public required NgService NgService { get; init; }
+	public required EapClientService EapClient { get; init; }
+	public required IEquipmentStatusProvider StatusProvider { get; init; }
 	public IDataSocket CodeScanner { get; set; } = null!;
 	public WorkPositionContext Context { get; set; } = null!;
 
@@ -242,6 +245,7 @@ public partial class WorkService2 : WorkServiceBase
 					    Core.WorkRecipe?.RefFullRecipe?.Id == Plc.Read.上位机当前配方ID)
 					{
 						Logger.Info($"[RECIPE CHECK] [OK] SN='{Context.ScanSnCode}' MODEL_NAME='{Context.ModelName}'");
+						Core.WriteMaterialEnableStatus();                            // 同种配方也同步物料位状态到PLC
 						goto MaterialCheckPoint;
 					}
 
@@ -265,6 +269,7 @@ public partial class WorkService2 : WorkServiceBase
 						    Core.WorkRecipe?.RefFullRecipe?.Id == Plc.Read.上位机当前配方ID)
 						{
 							Logger.Info($"[RECIPE CHECK] [OK] SN='{Context.ScanSnCode}' MODEL_NAME='{Context.ModelName}'");
+							Core.WriteMaterialEnableStatus();                        // 同种配方也同步物料位状态到PLC
 							goto MaterialCheckPoint;
 						}
 
@@ -608,6 +613,22 @@ public partial class WorkService2 : WorkServiceBase
 					Context.ShowNgDetailDialog();
 				}
 				else Context.ProductionState = ProductionState.OK;
+
+				// EAP S6F11/6002 产品过站上报
+				var eapData = new Dictionary<string, string>
+				{
+					[EapReportIds.EquipmentStatus] = StatusProvider.GetCurrentStatus().ToString(),
+					[EapReportIds.Input] = Plc.Read.已生产数量.ToString(),
+					[EapReportIds.Output] = Plc.Read.已生产数量.ToString(),
+					[EapReportIds.CT] = "0",
+					[EapReportIds.WorkOrder] = Core.WorkOrderNo ?? "",
+					[EapReportIds.ModelName] = Context.ModelName,
+					[EapReportIds.ProductSN] = Context.ScanSnCode,
+					[EapReportIds.LaneNo] = AppConfig.Line ?? "",
+					[EapReportIds.Yield] = Plc.Read.良率.ToString("F2"),
+				};
+				EapClient.UpdateReportValues(eapData);
+				_ = EapClient.TrySendProductFinishReportAsync(eapData);
 
 				Plc.Write.TryWritePoint(nameof(PlcStruct.工位2数据上报响应), this, static ctx =>
 				{

@@ -33,3 +33,7 @@ libs/framework/**/*.*
 !*.csproj
 /global.json
 
+/.trae/documents
+
+*.zip
+

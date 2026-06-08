@@ -15,11 +15,14 @@ public class EquipmentStatusProvider : IEquipmentStatusProvider
     public EquipmentStatus GetCurrentStatus()
     {
         if (_snapshot.HasActiveAlarm)
-            return EquipmentStatus.Alarm;
+            return EquipmentStatus.E4002;
+
+        if (_snapshot.IsPlannedStop)
+            return EquipmentStatus.E5001;
 
         if (_snapshot.WorkPosition1Status == 1 || _snapshot.WorkPosition2Status == 1)
-            return EquipmentStatus.Run;
+            return EquipmentStatus.E0001;
 
-        return EquipmentStatus.Idle;
+        return EquipmentStatus.E4001;
     }
 }

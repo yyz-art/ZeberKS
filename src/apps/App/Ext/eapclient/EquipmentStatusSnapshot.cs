@@ -10,6 +10,7 @@ public class EquipmentStatusSnapshot
     public int WorkPosition1Status { get; private set; }
     public int WorkPosition2Status { get; private set; }
     public bool HasActiveAlarm { get; private set; }
+    public bool IsPlannedStop { get; private set; }
 
     public void UpdateWorkPosition(int pos1, int pos2)
     {
@@ -25,6 +26,14 @@ public class EquipmentStatusSnapshot
         lock (_lock)
         {
             HasActiveAlarm = hasActiveAlarm;
+        }
+    }
+
+    public void SetPlannedStop(bool isPlannedStop)
+    {
+        lock (_lock)
+        {
+            IsPlannedStop = isPlannedStop;
         }
     }
 }

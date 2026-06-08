@@ -1,4 +1,4 @@
-using System.Collections.Specialized;
+﻿using System.Collections.Specialized;
 using System.Globalization;
 using Avalonia.Media;
 using Avalonia.Threading;
@@ -277,6 +277,7 @@ public partial class MainVM : UiVM<MainView>
 				_ => "UNKNOWN"
 			};
 		}
+		CoreService.WriteMaterialEnableStatus();                                           // 将物料位启用状态写入PLC
 	}
 
 	#endregion
@@ -787,30 +788,20 @@ public partial class MainVM : UiVM<MainView>
 
 		var data = new Dictionary<string, string>
 		{
-			[EapReportIds.EquipmentStatusId] = StatusProvider.GetCurrentStatus().ToString().ToLowerInvariant(),
-			[EapReportIds.ProductionCount] = Plc.Read.已生产数量.ToString(),
-			[EapReportIds.YieldRate] = Plc.Read.良率.ToString("F2"),
-			[EapReportIds.CycleTime] = "0",
-			[EapReportIds.OkNg] = "OK",
-			[EapReportIds.WorkOrderNo] = CoreService.WorkOrderNo ?? "",
-			[EapReportIds.SnCode] = "TEST-SN-001",
-			[EapReportIds.KeyPartCode] = "TEST-KP-001",
+			[EapReportIds.EquipmentStatus] = StatusProvider.GetCurrentStatus().ToString(),
+			[EapReportIds.Input] = Plc.Read.已生产数量.ToString(),
+			[EapReportIds.Output] = Plc.Read.已生产数量.ToString(),
+			[EapReportIds.CT] = "0",
+			[EapReportIds.WorkOrder] = CoreService.WorkOrderNo ?? "",
+			[EapReportIds.ProductSN] = "TEST-SN-001",
 			[EapReportIds.ModelName] = "TEST-MODEL",
-			[EapReportIds.WorkerNo] = CoreService.WorkerNo ?? "",
-			[EapReportIds.StationName] = AppConfig.StationName ?? "",
-			[EapReportIds.Line] = AppConfig.Line ?? "",
-			[EapReportIds.RecipeName] = "TEST-RECIPE",
-			[EapReportIds.ErrorMessage] = "",
+			[EapReportIds.LaneNo] = AppConfig.Line ?? "",
+			[EapReportIds.Yield] = Plc.Read.良率.ToString("F2"),
 		};
 
-		// 螺丝数据 1015~1046
-		for (var i = 0; i < 16; i++)
-		{
-			data[EapReportIds.ScrewTorqueId(i)] = "0";
-			data[EapReportIds.ScrewTurnsId(i)] = "0";
-		}
+		EapClient.UpdateReportValues(data);
 
-		var result = await EapClient.TrySendProductFinishReportAsync(data);
+			var result = await EapClient.TrySendProductFinishReportAsync(data);
 		ShowToast(result
 			? "EAP S6F11/6002 产品过站已上报"
 			: "EAP S6F11/6002 上报失败",

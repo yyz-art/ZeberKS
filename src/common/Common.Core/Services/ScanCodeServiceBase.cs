@@ -38,7 +38,7 @@ public abstract partial class WorkServiceBase : MainTaskService
 		var writeResult = codeScanner.Write(StartScanCommandBytes);
 		if (writeResult.IsError())
 			return Result.Err<string>("send scanner command failed, connection error!");
-		var readResult = codeScanner.ReadContinuous(byteBuffer, 1000, 200);
+		var readResult = codeScanner.ReadContinuous(byteBuffer, 2000, 400);
 		if (readResult.IsError())
 		{
 			// Logger.Error("code scanner read timeout! {msg}", readResult.Message);

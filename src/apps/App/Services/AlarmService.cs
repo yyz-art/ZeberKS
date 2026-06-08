@@ -13,7 +13,7 @@ public class AlarmService : AlarmServiceBase
 
     private ConcurrentQueue<AlarmRecord> EapAlarmQueue { get; } = new();
     private int _activeAlarmCount;
-    private EquipmentStatus _lastReportedStatus = EquipmentStatus.Idle;
+    private EquipmentStatus _lastReportedStatus = EquipmentStatus.E4001;
 
     /// <summary>
     /// 隐藏基类 PushAlarm，在报警处理链路中增加 EAP 客户端上报 + 状态快照更新。
