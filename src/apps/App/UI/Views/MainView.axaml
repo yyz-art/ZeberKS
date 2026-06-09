@@ -412,6 +412,25 @@
 						<Button Content="S6F11 产品过站(6002)" Command="{Binding TestEapProductFinishCommand}"
 							HorizontalAlignment="Stretch" Padding="5" />
 					</StackPanel>
+					<!-- 排停控制 -->
+					<StackPanel Orientation="Vertical" Spacing="5">
+						<Label FontWeight="Bold" Content="排停控制" Background="#8B4513" Foreground="White"
+							HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Padding="3" />
+						<Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="5">
+							<TextBlock Grid.Column="0" Text="时长(分):" VerticalAlignment="Center" Foreground="White" />
+							<TextBox Grid.Column="1" Text="{Binding PlannedStopMinutes}" MinHeight="28" />
+							<Button Grid.Column="2" Content="触发排停" Command="{Binding TriggerPlannedStopCommand}"
+								Padding="8 2" Theme="{DynamicResource Button-Solid}"
+								IsVisible="{Binding !IsPlannedStopActive}" />
+						</Grid>
+						<StackPanel Orientation="Horizontal" Spacing="10"
+							IsVisible="{Binding IsPlannedStopActive}">
+							<TextBlock Text="{Binding PlannedStopRemaining}" FontSize="18" FontWeight="Bold"
+								Foreground="OrangeRed" VerticalAlignment="Center" />
+							<Button Content="取消排停" Command="{Binding CancelPlannedStopCommand}"
+								Padding="8 2" Theme="{DynamicResource Button-Danger}" />
+						</StackPanel>
+					</StackPanel>
 				</StackPanel>
 			</StackPanel>
 		</LayoutDockPanel.LeftTopContent>

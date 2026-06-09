@@ -83,6 +83,9 @@ public partial class MainVM : UiVM<MainView>
 	/// <summary>设备状态提供者</summary>
 	public required IEquipmentStatusProvider StatusProvider { get; init; }
 
+	/// <summary>设备状态快照（排停控制用）</summary>
+	public required EquipmentStatusSnapshot StatusSnapshot { get; init; }
+
 	/// <summary>应用配置（工站名、产线、工号等）</summary>
 	public required AppConfig AppConfig { get; init; } = new();
 
@@ -112,6 +115,18 @@ public partial class MainVM : UiVM<MainView>
 
 	/// <summary>当前正在编辑的料位上下文（换料弹窗用）</summary>
 	public partial MaterialSpaceContext? EditMaterialSpaceContext { get; set; }
+
+	/// <summary>排停时长（分钟）</summary>
+	public partial int PlannedStopMinutes { get; set; } = 30;
+
+	/// <summary>是否正在排停</summary>
+	public partial bool IsPlannedStopActive { get; set; }
+
+	/// <summary>排停剩余时间（MM:SS）</summary>
+	public partial string PlannedStopRemaining { get; set; } = "";
+
+	private CancellationTokenSource? _plannedStopCts;
+	private DateTime _plannedStopEndTime;
 
 	#endregion
 
@@ -187,6 +202,26 @@ public partial class MainVM : UiVM<MainView>
 		WorkOrderNo = CoreService.WorkOrderNo;                                             // 更新工单号显示
 		DisplayPlcIp = AppConfig.PlcIpAddress;                                             // 更新 PLC IP 显示
 		CTSeconds = PlcRead.CT / 1000;                                                     // CT 毫秒转秒
+
+		// 排停倒计时更新
+		if (IsPlannedStopActive && _plannedStopEndTime > DateTime.MinValue)
+		{
+			var remaining = _plannedStopEndTime - DateTime.Now;
+			if (remaining.TotalSeconds <= 0)
+			{
+				// 时间到，自动恢复
+				StatusSnapshot.SetPlannedStop(false);
+				IsPlannedStopActive = false;
+				PlannedStopRemaining = "";
+				_plannedStopCts?.Dispose();
+				_plannedStopCts = null;
+				ShowToast("机台排停已结束，设备状态已恢复", UiMessageType.Success);
+			}
+			else
+			{
+				PlannedStopRemaining = $"{remaining.Minutes:D2}:{remaining.Seconds:D2}";
+			}
+		}
 
 		// 绑定料位的锁定/换料命令（首次绑定，后续跳过）
 		foreach (var item in MaterialSpaceContexts)
@@ -807,6 +842,79 @@ public partial class MainVM : UiVM<MainView>
 			: "EAP S6F11/6002 上报失败",
 			result ? UiMessageType.Success : UiMessageType.Error);
 	}
+
+	#endregion
+
+	#region ==================== 机台排停 ====================
+
+		/// <summary>
+		/// 触发机台排停，设置时长后状态变为 E5001，到时自动恢复。
+		/// </summary>
+		public async Task @TriggerPlannedStop()
+		{
+			if (IsPlannedStopActive)
+			{
+				ShowToast("机台排停已在进行中", UiMessageType.Warning);
+				return;
+			}
+
+			if (PlannedStopMinutes <= 0)
+			{
+				ShowToast("排停时长必须大于 0 分钟", UiMessageType.Warning);
+				return;
+			}
+
+			_plannedStopCts?.Dispose();
+			_plannedStopCts = new CancellationTokenSource();
+			var duration = TimeSpan.FromMinutes(PlannedStopMinutes);
+			_plannedStopEndTime = DateTime.Now + duration;
+
+			StatusSnapshot.SetPlannedStop(true);
+			IsPlannedStopActive = true;
+			PlannedStopRemaining = $"{duration.Minutes:D2}:{duration.Seconds:D2}";
+
+			ShowToast($"机台排停已触发，{PlannedStopMinutes} 分钟后自动恢复", UiMessageType.Success);
+
+			// 后台定时任务，到时间自动恢复（UiTick 做兜底）
+			var ctk = _plannedStopCts.Token;
+			_ = Task.Run(async () =>
+			{
+				try
+				{
+					await Task.Delay(duration, ctk);
+					if (!ctk.IsCancellationRequested)
+					{
+						StatusSnapshot.SetPlannedStop(false);
+						IsPlannedStopActive = false;
+						PlannedStopRemaining = "";
+						ShowToast("机台排停已结束，设备状态已恢复", UiMessageType.Success);
+					}
+				}
+				catch (TaskCanceledException) { }
+			}, ctk);
+			await Task.CompletedTask;
+		}
+
+		/// <summary>
+		/// 取消当前排停，立即恢复设备状态。
+		/// </summary>
+		public async Task @CancelPlannedStop()
+		{
+			if (!IsPlannedStopActive)
+			{
+				ShowToast("当前没有进行中的排停", UiMessageType.Warning);
+				return;
+			}
+
+			_plannedStopCts?.Cancel();
+			_plannedStopCts?.Dispose();
+			_plannedStopCts = null;
+			StatusSnapshot.SetPlannedStop(false);
+			IsPlannedStopActive = false;
+			PlannedStopRemaining = "";
+			ShowToast("机台排停已取消，设备状态已恢复", UiMessageType.Success);
+			await Task.CompletedTask;
+		}
 
 	#endregion
 }

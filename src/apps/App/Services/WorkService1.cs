@@ -622,15 +622,10 @@ public partial class WorkService1 : WorkServiceBase
 #endif
 				Plc.Write.工位1数据上报响应 = 1;                                  // MES出站成功，响应=1
 				SendOutStationResult:
-#if ASM15_1
 				uploadResultCode = Plc.Read.工位1数据上报结果;
-				if (uploadResultCode != 1)                                           
-				{
-					Plc.Write.工位1数据上报响应 = 2;
-				}
-#endif
 				if (uploadResultCode != 1)                                           // 生产结果NG
 				{
+					Plc.Write.工位1数据上报响应 = 2;
 					Context.ProductionState = ProductionState.NG;
 					ReadNgItems();                                                   // 从PLC读取NG原因列表
 					Context.ShowNgDetailDialog();                                    // 弹窗显示NG详情

@@ -599,15 +599,10 @@ public partial class WorkService2 : WorkServiceBase
 #endif
 				Plc.Write.工位2数据上报响应 = 1;
 				SendOutStationResult:
-#if ASM15_1
 				uploadResultCode = Plc.Read.工位2数据上报结果;
-				if (uploadResultCode != 1)                                           
-				{
-					Plc.Write.工位2数据上报响应 = 2;
-				}
-#endif
 				if (uploadResultCode != 1) // NG
 				{
+					Plc.Write.工位2数据上报响应 = 2;
 					Context.ProductionState = ProductionState.NG;
 					ReadNgItems();
 					Context.ShowNgDetailDialog();
