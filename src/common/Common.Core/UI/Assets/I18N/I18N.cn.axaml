@@ -207,4 +207,16 @@
 	<sys:String x:Key="I18N.G.工位">工位</sys:String>
 	<sys:String x:Key="I18N.G.机种">机种</sys:String>
 	<sys:String x:Key="I18N.G.查询">查询</sys:String>
+	<sys:String x:Key="I18N.G.排停控制">排停控制</sys:String>
+	<sys:String x:Key="I18N.G.排停时长">时长(分):</sys:String>
+	<sys:String x:Key="I18N.G.触发排停">触发排停</sys:String>
+	<sys:String x:Key="I18N.G.取消排停">取消排停</sys:String>
+	<sys:String x:Key="I18N.G.排停无权">无管理员权限，无法操作排停</sys:String>
+	<sys:String x:Key="I18N.G.排停已进行">机台排停已在进行中</sys:String>
+	<sys:String x:Key="I18N.G.排停时长无效">排停时长必须大于 0 分钟</sys:String>
+	<sys:String x:Key="I18N.G.排停已触发">机台排停已触发</sys:String>
+	<sys:String x:Key="I18N.G.排停分钟恢复">分钟后自动恢复</sys:String>
+	<sys:String x:Key="I18N.G.排停已结束">机台排停已结束，设备状态已恢复</sys:String>
+	<sys:String x:Key="I18N.G.排停已取消">机台排停已取消，设备状态已恢复</sys:String>
+	<sys:String x:Key="I18N.G.排停无进行">当前没有进行中的排停</sys:String>
 </ResourceDictionary>

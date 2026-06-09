@@ -128,6 +128,9 @@ public partial class MainVM : UiVM<MainView>
 	private CancellationTokenSource? _plannedStopCts;
 	private DateTime _plannedStopEndTime;
 
+	/// <summary>当前用户是否为管理员（RoleFlags >= 5）</summary>
+	public partial bool IsAdmin { get; set; }
+
 	#endregion
 
 	#region ==================== 构造 & 初始化 ====================
@@ -203,6 +206,9 @@ public partial class MainVM : UiVM<MainView>
 		DisplayPlcIp = AppConfig.PlcIpAddress;                                             // 更新 PLC IP 显示
 		CTSeconds = PlcRead.CT / 1000;                                                     // CT 毫秒转秒
 
+		// 权限刷新
+		IsAdmin = (App.Current.IOC.Get<ZitApp.Services.AccountService>().Account?.RoleFlags ?? 0) >= 5;
+
 		// 排停倒计时更新
 		if (IsPlannedStopActive && _plannedStopEndTime > DateTime.MinValue)
 		{
@@ -215,11 +221,14 @@ public partial class MainVM : UiVM<MainView>
 				PlannedStopRemaining = "";
 				_plannedStopCts?.Dispose();
 				_plannedStopCts = null;
-				ShowToast("机台排停已结束，设备状态已恢复", UiMessageType.Success);
+				ShowToast(CommonUiApp.L("I18N.G.排停已结束").ToString(), UiMessageType.Success);
 			}
 			else
 			{
-				PlannedStopRemaining = $"{remaining.Minutes:D2}:{remaining.Seconds:D2}";
+				if (remaining.TotalHours >= 1)
+					PlannedStopRemaining = $"{(int)remaining.TotalHours:D2}:{remaining.Minutes:D2}:{remaining.Seconds:D2}";
+				else
+					PlannedStopRemaining = $"{remaining.Minutes:D2}:{remaining.Seconds:D2}";
 			}
 		}
 
@@ -852,15 +861,21 @@ public partial class MainVM : UiVM<MainView>
 		/// </summary>
 		public async Task @TriggerPlannedStop()
 		{
+			if (!IsAdmin)
+			{
+				ShowToast(CommonUiApp.L("I18N.G.排停无权").ToString(), UiMessageType.Warning);
+				return;
+			}
+
 			if (IsPlannedStopActive)
 			{
-				ShowToast("机台排停已在进行中", UiMessageType.Warning);
+				ShowToast(CommonUiApp.L("I18N.G.排停已进行").ToString(), UiMessageType.Warning);
 				return;
 			}
 
 			if (PlannedStopMinutes <= 0)
 			{
-				ShowToast("排停时长必须大于 0 分钟", UiMessageType.Warning);
+				ShowToast(CommonUiApp.L("I18N.G.排停时长无效").ToString(), UiMessageType.Warning);
 				return;
 			}
 
@@ -871,9 +886,12 @@ public partial class MainVM : UiVM<MainView>
 
 			StatusSnapshot.SetPlannedStop(true);
 			IsPlannedStopActive = true;
-			PlannedStopRemaining = $"{duration.Minutes:D2}:{duration.Seconds:D2}";
+			if (duration.TotalHours >= 1)
+				PlannedStopRemaining = $"{(int)duration.TotalHours:D2}:{duration.Minutes:D2}:{duration.Seconds:D2}";
+			else
+				PlannedStopRemaining = $"{duration.Minutes:D2}:{duration.Seconds:D2}";
 
-			ShowToast($"机台排停已触发，{PlannedStopMinutes} 分钟后自动恢复", UiMessageType.Success);
+			ShowToast($"{CommonUiApp.L("I18N.G.排停已触发")}，{PlannedStopMinutes} {CommonUiApp.L("I18N.G.排停分钟恢复")}", UiMessageType.Success);
 
 			// 后台定时任务，到时间自动恢复（UiTick 做兜底）
 			var ctk = _plannedStopCts.Token;
@@ -887,7 +905,7 @@ public partial class MainVM : UiVM<MainView>
 						StatusSnapshot.SetPlannedStop(false);
 						IsPlannedStopActive = false;
 						PlannedStopRemaining = "";
-						ShowToast("机台排停已结束，设备状态已恢复", UiMessageType.Success);
+						ShowToast(CommonUiApp.L("I18N.G.排停已结束").ToString(), UiMessageType.Success);
 					}
 				}
 				catch (TaskCanceledException) { }
@@ -900,9 +918,15 @@ public partial class MainVM : UiVM<MainView>
 		/// </summary>
 		public async Task @CancelPlannedStop()
 		{
+			if (!IsAdmin)
+			{
+				ShowToast(CommonUiApp.L("I18N.G.排停无权").ToString(), UiMessageType.Warning);
+				return;
+			}
+
 			if (!IsPlannedStopActive)
 			{
-				ShowToast("当前没有进行中的排停", UiMessageType.Warning);
+				ShowToast(CommonUiApp.L("I18N.G.排停无进行").ToString(), UiMessageType.Warning);
 				return;
 			}
 
@@ -912,7 +936,7 @@ public partial class MainVM : UiVM<MainView>
 			StatusSnapshot.SetPlannedStop(false);
 			IsPlannedStopActive = false;
 			PlannedStopRemaining = "";
-			ShowToast("机台排停已取消，设备状态已恢复", UiMessageType.Success);
+			ShowToast(CommonUiApp.L("I18N.G.排停已取消").ToString(), UiMessageType.Success);
 			await Task.CompletedTask;
 		}
 

@@ -207,4 +207,16 @@
 	<sys:String x:Key="I18N.G.工位">Station</sys:String>
 	<sys:String x:Key="I18N.G.机种">Model</sys:String>
 	<sys:String x:Key="I18N.G.查询">Query</sys:String>
+	<sys:String x:Key="I18N.G.排停控制">Planned Stop</sys:String>
+	<sys:String x:Key="I18N.G.排停时长">Duration (min):</sys:String>
+	<sys:String x:Key="I18N.G.触发排停">Trigger Stop</sys:String>
+	<sys:String x:Key="I18N.G.取消排停">Cancel Stop</sys:String>
+	<sys:String x:Key="I18N.G.排停无权">Admin permission required</sys:String>
+	<sys:String x:Key="I18N.G.排停已进行">Planned stop already in progress</sys:String>
+	<sys:String x:Key="I18N.G.排停时长无效">Duration must be greater than 0 min</sys:String>
+	<sys:String x:Key="I18N.G.排停已触发">Planned stop triggered</sys:String>
+	<sys:String x:Key="I18N.G.排停分钟恢复">min auto-recovery</sys:String>
+	<sys:String x:Key="I18N.G.排停已结束">Planned stop ended, status restored</sys:String>
+	<sys:String x:Key="I18N.G.排停已取消">Planned stop cancelled, status restored</sys:String>
+	<sys:String x:Key="I18N.G.排停无进行">No planned stop in progress</sys:String>
 </ResourceDictionary>
