@@ -1,4 +1,4 @@
-﻿using System.Text;
+using System.Text;
 using System.Text.Json;
 using ZC;
 using ZC.BinStructs.Ext;
@@ -409,16 +409,25 @@ public partial class WorkService2 : WorkServiceBase
 				Plc.Write.扫码枪2触发结果 = CodeOfOK;
 
 				SendResult:
+				var tid = Environment.CurrentManagedThreadId;
+				var swSend = System.Diagnostics.Stopwatch.StartNew();
+				Logger.Debug("[SEND-RESULT] TID={Tid} Enter SendResult, SN={Sn}", tid, Context.ScanSnCode);
 				Context.WorkStep = Plc.Write.工位2允许生产 == 1 ? WorkStep.ALLOW_PRODUCTION : WorkStep.NOT_ALLOW_PRODUCTION;
 				if (Context.DayProductionId == 0)
-					Context.DayProductionId = Core.GetDayProductionId();
+					{
+						Logger.Debug("[SEND-RESULT] TID={Tid} Before GetDayProductionId, DayProductionId={Id}, {Elapsed}ms", tid, Context.DayProductionId, swSend.ElapsedMilliseconds);
+						Context.DayProductionId = Core.GetDayProductionId();
+						Logger.Debug("[SEND-RESULT] TID={Tid} After GetDayProductionId, DayProductionId={Id}, {Elapsed}ms", tid, Context.DayProductionId, swSend.ElapsedMilliseconds);
+					}
 				var now = DateTime.Now;
 				Context.ImagePathRoot = Path.Combine(AppConfig.VisionImagePath,
 					now.ToString("yyyy-MM"), now.ToString("dd"), $"{Context.DayProductionId}_{Context.ScanSnCode}");
 				// Logger.Info($"[VISION FILE] image path is '{ImagePathRoot}'");
 				Plc.Write.扫码枪2触发 = 0;
+				Logger.Debug("[SEND-RESULT] TID={Tid} Before DONE log, {Elapsed}ms", tid, swSend.ElapsedMilliseconds);
 				Logger.Info(
 					$"[MES IN-STA] [DONE] SCAN=({Plc.Write.扫码枪2触发结果},'{Context.ScanSnCode}') EN={Plc.Write.工位2允许生产}");
+				var tWp2 = swSend.ElapsedMilliseconds;
 				Plc.Write.TryWritePoint(nameof(PlcStruct.工位2允许生产), this, static ctx =>
 				{
 					ctx.Context.Logger.Error(
@@ -426,9 +435,15 @@ public partial class WorkService2 : WorkServiceBase
 					Thread.Sleep(5000);
 					return true;
 				});
+				Logger.Debug("[SEND-RESULT] TID={Tid} TryWritePoint(allow) done, +{Elapsed}ms", tid, swSend.ElapsedMilliseconds - tWp2);
+				tWp2 = swSend.ElapsedMilliseconds;
 				Plc.Write.工位2生产序号 = Context.DayProductionId;
 				Plc.Write.WritePoint(nameof(PlcStruct.工位2生产序号));
+				Logger.Debug("[SEND-RESULT] TID={Tid} WritePoint(seq) done, +{Elapsed}ms", tid, swSend.ElapsedMilliseconds - tWp2);
+				tWp2 = swSend.ElapsedMilliseconds;
 				Plc.Plc.Write($"{PlcStructInfo.扫码枪2扫码内容.Offset}", Context.ScanSnCode, 80);
+				Logger.Debug("[SEND-RESULT] TID={Tid} PlcWrite(scanContent) done, +{Elapsed}ms", tid, swSend.ElapsedMilliseconds - tWp2);
+				tWp2 = swSend.ElapsedMilliseconds;
 				Plc.Write.TryWritePoint(nameof(PlcStruct.扫码枪2触发结果), this, static ctx =>
 				{
 					ctx.Context.Logger.Error(
@@ -436,6 +451,8 @@ public partial class WorkService2 : WorkServiceBase
 					Thread.Sleep(5000);
 					return true;
 				});
+				Logger.Debug("[SEND-RESULT] TID={Tid} TryWritePoint(result) done, +{Elapsed}ms", tid, swSend.ElapsedMilliseconds - tWp2);
+				Logger.Debug("[SEND-RESULT] TID={Tid} Exit SendResult, total {Elapsed}ms", tid, swSend.ElapsedMilliseconds);
 
 				if (CommonAppConfig.IsDevTestMode)
 				{
@@ -527,6 +544,7 @@ public partial class WorkService2 : WorkServiceBase
 #if ASM15_1
 					var failCode = "";
 					var alarmResult = Screw.ReadInt16("60638");
+					Logger.Info($"[SCREW ALARM] 60638 raw value = {(alarmResult.IsSuccess ? alarmResult.Content.ToString() : $"read failed: {alarmResult.Message}")}");
 					if (alarmResult.IsSuccess)
 					{
 						failCode = alarmResult.Content switch
@@ -702,7 +720,7 @@ public partial class WorkService2 : WorkServiceBase
 							goto SendResult;
 						}
 
-						Thread.Sleep(5000);
+						Thread.Sleep(7000);
 					}
 					finally
 					{

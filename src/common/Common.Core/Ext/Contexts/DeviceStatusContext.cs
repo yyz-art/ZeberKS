@@ -13,5 +13,6 @@ public partial class DeviceStatusContext : ObservableObject
 		deviceStatusContexts.Add(new DeviceStatusContext { Name = "PLC" });
 		deviceStatusContexts.Add(new DeviceStatusContext { Name = "Scanner1" });
 		deviceStatusContexts.Add(new DeviceStatusContext { Name = "Scanner2" });
+		deviceStatusContexts.Add(new DeviceStatusContext { Name = "NozzlePress" });
 	}
 }

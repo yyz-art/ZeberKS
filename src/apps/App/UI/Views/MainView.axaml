@@ -402,16 +402,16 @@
 						
 					</StackPanel>
 					<!-- EAP 测试按钮组 -->
-					<StackPanel Orientation="Vertical" Spacing="5">
-						<Label FontWeight="Bold" Content="EAP 测试" Background="#8B6914" Foreground="White"
-							HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Padding="3" />
-						<Button Content="S5F1 报警上报" Command="{Binding TestEapAlarmCommand}"
-							HorizontalAlignment="Stretch" Padding="5" />
-						<Button Content="S6F11 状态变更(6001)" Command="{Binding TestEapStatusChangeCommand}"
-							HorizontalAlignment="Stretch" Padding="5" />
-						<Button Content="S6F11 产品过站(6002)" Command="{Binding TestEapProductFinishCommand}"
-							HorizontalAlignment="Stretch" Padding="5" />
-					</StackPanel>
+					<!-- <StackPanel Orientation="Vertical" Spacing="5"> -->
+					<!-- 	<Label FontWeight="Bold" Content="EAP 测试" Background="#8B6914" Foreground="White" -->
+					<!-- 		HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Padding="3" /> -->
+					<!-- 	<Button Content="S5F1 报警上报" Command="{Binding TestEapAlarmCommand}" -->
+					<!-- 		HorizontalAlignment="Stretch" Padding="5" /> -->
+					<!-- 	<Button Content="S6F11 状态变更(6001)" Command="{Binding TestEapStatusChangeCommand}" -->
+					<!-- 		HorizontalAlignment="Stretch" Padding="5" /> -->
+					<!-- 	<Button Content="S6F11 产品过站(6002)" Command="{Binding TestEapProductFinishCommand}" -->
+					<!-- 		HorizontalAlignment="Stretch" Padding="5" /> -->
+					<!-- </StackPanel> -->
 					<!-- 排停控制 -->
 					<StackPanel Orientation="Vertical" Spacing="5">
 						<Label FontWeight="Bold" Content="{DynamicResource I18N.G.排停控制}" Background="#8B4513" Foreground="White"
@@ -502,6 +502,8 @@
 									<MatchShow MatchValue="{Binding Status}">
 										<Ellipse MatchShow.Option="Disconnected" Fill="Red" Width="10" Height="10" />
 										<Ellipse MatchShow.Option="Connected" Fill="LimeGreen" Width="10" Height="10" />
+										<Ellipse MatchShow.Option="Failed" Fill="Red" Width="10" Height="10" />
+										<Ellipse MatchShow.Option="Passed" Fill="LimeGreen" Width="10" Height="10" />
 									</MatchShow>
 									<TextBlock Text="{Binding Name}" VerticalAlignment="Center" Foreground="White" />
 									<TextBlock Text="{Binding Message}" VerticalAlignment="Center" Foreground="#AAAAAA" />

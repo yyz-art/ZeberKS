@@ -250,6 +250,7 @@ public partial class MainVM : UiVM<MainView>
 #if ASM15_1
 				"Calibration" => CalibrationService?.IsConnected == true ? "Connected" : "Disconnected",
 #endif
+				"NozzlePress" => CoreService.IsNozzlePressureOk ? "Passed" : "Failed",         // 吸嘴压力点检状态
 				_ => ""
 			};
 		}

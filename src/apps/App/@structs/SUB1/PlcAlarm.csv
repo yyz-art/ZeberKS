@@ -5,193 +5,181 @@
 4,22503,上料轴1_负极限,,,上料轴1_负极限,Load_Axis1_Neg_Limit,Loading Axis 1_Giới hạn âm
 5,22504,上料轴1_JOG安全条件报警,,,上料轴1_JOG安全条件报警,Load_Axis1_JOG_Safety_Alarm,Loading Axis 1_Cảnh báo điều kiện an toàn JOG
 6,22505,上料轴1_PTP安全条件报警,,,上料轴1_PTP安全条件报警,Load_Axis1_PTP_Safety_Alarm,Loading Axis 1_Cảnh báo điều kiện an toàn PTP
-7,22506,上料轴1_手自动不一致,,,上料轴1_手自动不一致,Load_Axis1_Manual_Auto_Mismatch,Loading Axis 1_Không đồng bộ tay-tự động
+7,22506,上料轴1_手自动不一致,,,上料轴1_手自动不一致,Load_Axis1_Manual_Auto_Mismatch,Loading Axis 1_Không đồng bộ taytự động
 8,22507,上料轴2_未使能提示,,,上料轴2_未使能提示,Load_Axis2_Not_Enabled,Loading Axis 2_Chưa cho phép hoạt động
 9,22508,上料轴2_指令报错,,,上料轴2_指令报错,Load_Axis2_Command_Error,Loading Axis 2_Lỗi lệnh
 10,22509,上料轴2_正极限,,,上料轴2_正极限,Load_Axis2_Pos_Limit,Loading Axis 2_Giới hạn dương
 11,22510,上料轴2_负极限,,,上料轴2_负极限,Load_Axis2_Neg_Limit,Loading Axis 2_Giới hạn âm
 12,22511,上料轴2_JOG安全条件报警,,,上料轴2_JOG安全条件报警,Load_Axis2_JOG_Safety_Alarm,Loading Axis 2_Cảnh báo điều kiện an toàn JOG
 13,22512,上料轴2_PTP安全条件报警,,,上料轴2_PTP安全条件报警,Load_Axis2_PTP_Safety_Alarm,Loading Axis 2_Cảnh báo điều kiện an toàn PTP
-14,22513,上料轴2_手自动不一致,,,上料轴2_手自动不一致,Load_Axis2_Manual_Auto_Mismatch,Loading Axis 2_Không đồng bộ tay-tự động
+14,22513,上料轴2_手自动不一致,,,上料轴2_手自动不一致,Load_Axis2_Manual_Auto_Mismatch,Loading Axis 2_Không đồng bộ taytự động
 15,22514,X轴_未使能提示,,,X轴_未使能提示,X_Axis_Not_Enabled,Trục X_Chưa cho phép hoạt động
 16,22515,X轴_指令报错,,,X轴_指令报错,X_Axis_Command_Error,Trục X_Lỗi lệnh
 17,22516,X轴_正极限,,,X轴_正极限,X_Axis_Pos_Limit,Trục X_Giới hạn dương
 18,22517,X轴_负极限,,,X轴_负极限,X_Axis_Neg_Limit,Trục X_Giới hạn âm
 19,22518,X轴_JOG安全条件报警,,,X轴_JOG安全条件报警,X_Axis_JOG_Safety_Alarm,Trục X_Cảnh báo điều kiện an toàn JOG
 20,22519,X轴_PTP安全条件报警,,,X轴_PTP安全条件报警,X_Axis_PTP_Safety_Alarm,Trục X_Cảnh báo điều kiện an toàn PTP
-21,22520,X轴_手自动不一致,,,X轴_手自动不一致,X_Axis_Manual_Auto_Mismatch,Trục X_Không đồng bộ tay-tự động
+21,22520,X轴_手自动不一致,,,X轴_手自动不一致,X_Axis_Manual_Auto_Mismatch,Trục X_Không đồng bộ taytự động
 22,22521,Y轴_未使能提示,,,Y轴_未使能提示,Y_Axis_Not_Enabled,Trục Y_Chưa cho phép hoạt động
 23,22522,Y轴_指令报错,,,Y轴_指令报错,Y_Axis_Command_Error,Trục Y_Lỗi lệnh
 24,22523,Y轴_正极限,,,Y轴_正极限,Y_Axis_Pos_Limit,Trục Y_Giới hạn dương
 25,22524,Y轴_负极限,,,Y轴_负极限,Y_Axis_Neg_Limit,Trục Y_Giới hạn âm
 26,22525,Y轴_JOG安全条件报警,,,Y轴_JOG安全条件报警,Y_Axis_JOG_Safety_Alarm,Trục Y_Cảnh báo điều kiện an toàn JOG
 27,22526,Y轴_PTP安全条件报警,,,Y轴_PTP安全条件报警,Y_Axis_PTP_Safety_Alarm,Trục Y_Cảnh báo điều kiện an toàn PTP
-28,22527,Y轴_手自动不一致,,,Y轴_手自动不一致,Y_Axis_Manual_Auto_Mismatch,Trục Y_Không đồng bộ tay-tự động
+28,22527,Y轴_手自动不一致,,,Y轴_手自动不一致,Y_Axis_Manual_Auto_Mismatch,Trục Y_Không đồng bộ taytự động
 29,22528,相机调节步进轴_未使能提示,,,相机调节步进轴_未使能提示,Cam_Adj_Step_Axis_Not_Enabled,Trục bước điều chỉnh camera_Chưa cho phép hoạt động
 30,22529,相机调节步进轴_指令报错,,,相机调节步进轴_指令报错,Cam_Adj_Step_Axis_Command_Error,Trục bước điều chỉnh camera_Lỗi lệnh
 31,22530,相机调节步进轴_正极限,,,相机调节步进轴_正极限,Cam_Adj_Step_Axis_Pos_Limit,Trục bước điều chỉnh camera_Giới hạn dương
 32,22531,相机调节步进轴_负极限,,,相机调节步进轴_负极限,Cam_Adj_Step_Axis_Neg_Limit,Trục bước điều chỉnh camera_Giới hạn âm
 33,22532,相机调节步进轴_JOG安全条件报警,,,相机调节步进轴_JOG安全条件报警,Cam_Adj_Step_Axis_JOG_Safety_Alarm,Trục bước điều chỉnh camera_Cảnh báo điều kiện an toàn JOG
 34,22533,相机调节步进轴_PTP安全条件报警,,,相机调节步进轴_PTP安全条件报警,Cam_Adj_Step_Axis_PTP_Safety_Alarm,Trục bước điều chỉnh camera_Cảnh báo điều kiện an toàn PTP
-35,22534,相机调节步进轴_手自动不一致,,,相机调节步进轴_手自动不一致,Cam_Adj_Step_Axis_Manual_Auto_Mismatch,Trục bước điều chỉnh camera_Không đồng bộ tay-tự động
+35,22534,相机调节步进轴_手自动不一致,,,相机调节步进轴_手自动不一致,Cam_Adj_Step_Axis_Manual_Auto_Mismatch,Trục bước điều chỉnh camera_Không đồng bộ taytự động
 36,22535,吸料轴Z1_未使能提示,,,吸料轴Z1_未使能提示,Pick_Axis_Z1_Not_Enabled,Feeding Axis Z1_Chưa cho phép hoạt động
 37,22536,吸料轴Z1_指令报错,,,吸料轴Z1_指令报错,Pick_Axis_Z1_Command_Error,Feeding Axis Z1_Lỗi lệnh
 38,22537,吸料轴Z1_正极限,,,吸料轴Z1_正极限,Pick_Axis_Z1_Pos_Limit,Feeding Axis Z1_Giới hạn dương
 39,22538,吸料轴Z1_负极限,,,吸料轴Z1_负极限,Pick_Axis_Z1_Neg_Limit,Feeding Axis Z1_Giới hạn âm
 40,22539,吸料轴Z1_JOG安全条件报警,,,吸料轴Z1_JOG安全条件报警,Pick_Axis_Z1_JOG_Safety_Alarm,Feeding Axis Z1_Cảnh báo điều kiện an toàn JOG
 41,22540,吸料轴Z1_PTP安全条件报警,,,吸料轴Z1_PTP安全条件报警,Pick_Axis_Z1_PTP_Safety_Alarm,Feeding Axis Z1_Cảnh báo điều kiện an toàn PTP
-42,22541,吸料轴Z1_手自动不一致,,,吸料轴Z1_手自动不一致,Pick_Axis_Z1_Manual_Auto_Mismatch,Feeding Axis Z1_Không đồng bộ tay-tự động
+42,22541,吸料轴Z1_手自动不一致,,,吸料轴Z1_手自动不一致,Pick_Axis_Z1_Manual_Auto_Mismatch,Feeding Axis Z1_Không đồng bộ taytự động
 43,22542,吸料轴R1_未使能提示,,,吸料轴R1_未使能提示,Pick_Axis_R1_Not_Enabled,Feeding Axis R1_Chưa cho phép hoạt động
 44,22543,吸料轴R1_指令报错,,,吸料轴R1_指令报错,Pick_Axis_R1_Command_Error,Feeding Axis R1_Lỗi lệnh
 45,22544,吸料轴R1_正极限,,,吸料轴R1_正极限,Pick_Axis_R1_Pos_Limit,Feeding Axis R1_Giới hạn dương
 46,22545,吸料轴R1_负极限,,,吸料轴R1_负极限,Pick_Axis_R1_Neg_Limit,Feeding Axis R1_Giới hạn âm
 47,22546,吸料轴R1_JOG安全条件报警,,,吸料轴R1_JOG安全条件报警,Pick_Axis_R1_JOG_Safety_Alarm,Feeding Axis R1_Cảnh báo điều kiện an toàn JOG
 48,22547,吸料轴R1_PTP安全条件报警,,,吸料轴R1_PTP安全条件报警,Pick_Axis_R1_PTP_Safety_Alarm,Feeding Axis R1_Cảnh báo điều kiện an toàn PTP
-49,22548,吸料轴R1_手自动不一致,,,吸料轴R1_手自动不一致,Pick_Axis_R1_Manual_Auto_Mismatch,Feeding Axis R1_Không đồng bộ tay-tự động
+49,22548,吸料轴R1_手自动不一致,,,吸料轴R1_手自动不一致,Pick_Axis_R1_Manual_Auto_Mismatch,Feeding Axis R1_Không đồng bộ taytự động
 50,22549,吸料轴Z2_未使能提示,,,吸料轴Z2_未使能提示,Pick_Axis_Z2_Not_Enabled,Feeding Axis Z2_Chưa cho phép hoạt động
 51,22550,吸料轴Z2_指令报错,,,吸料轴Z2_指令报错,Pick_Axis_Z2_Command_Error,Feeding Axis Z2_Lỗi lệnh
 52,22551,吸料轴Z2_正极限,,,吸料轴Z2_正极限,Pick_Axis_Z2_Pos_Limit,Feeding Axis Z2_Giới hạn dương
 53,22552,吸料轴Z2_负极限,,,吸料轴Z2_负极限,Pick_Axis_Z2_Neg_Limit,Feeding Axis Z2_Giới hạn âm
 54,22553,吸料轴Z2_JOG安全条件报警,,,吸料轴Z2_JOG安全条件报警,Pick_Axis_Z2_JOG_Safety_Alarm,Feeding Axis Z2_Cảnh báo điều kiện an toàn JOG
 55,22554,吸料轴Z2_PTP安全条件报警,,,吸料轴Z2_PTP安全条件报警,Pick_Axis_Z2_PTP_Safety_Alarm,Feeding Axis Z2_Cảnh báo điều kiện an toàn PTP
-56,22555,吸料轴Z2_手自动不一致,,,吸料轴Z2_手自动不一致,Pick_Axis_Z2_Manual_Auto_Mismatch,Feeding Axis Z2_Không đồng bộ tay-tự động
+56,22555,吸料轴Z2_手自动不一致,,,吸料轴Z2_手自动不一致,Pick_Axis_Z2_Manual_Auto_Mismatch,Feeding Axis Z2_Không đồng bộ taytự động
 57,22556,吸料轴R2_未使能提示,,,吸料轴R2_未使能提示,Pick_Axis_R2_Not_Enabled,Feeding Axis R2_Chưa cho phép hoạt động
 58,22557,吸料轴R2_指令报错,,,吸料轴R2_指令报错,Pick_Axis_R2_Command_Error,Feeding Axis R2_Lỗi lệnh
 59,22558,吸料轴R2_正极限,,,吸料轴R2_正极限,Pick_Axis_R2_Pos_Limit,Feeding Axis R2_Giới hạn dương
 60,22559,吸料轴R2_负极限,,,吸料轴R2_负极限,Pick_Axis_R2_Neg_Limit,Feeding Axis R2_Giới hạn âm
 61,22560,吸料轴R2_JOG安全条件报警,,,吸料轴R2_JOG安全条件报警,Pick_Axis_R2_JOG_Safety_Alarm,Feeding Axis R2_Cảnh báo điều kiện an toàn JOG
 62,22561,吸料轴R2_PTP安全条件报警,,,吸料轴R2_PTP安全条件报警,Pick_Axis_R2_PTP_Safety_Alarm,Feeding Axis R2_Cảnh báo điều kiện an toàn PTP
-63,22562,吸料轴R2_手自动不一致,,,吸料轴R2_手自动不一致,Pick_Axis_R2_Manual_Auto_Mismatch,Feeding Axis R2_Không đồng bộ tay-tự động
+63,22562,吸料轴R2_手自动不一致,,,吸料轴R2_手自动不一致,Pick_Axis_R2_Manual_Auto_Mismatch,Feeding Axis R2_Không đồng bộ taytự động
 64,22563,吸料轴Z3_未使能提示,,,吸料轴Z3_未使能提示,Pick_Axis_Z3_Not_Enabled,Feeding Axis Z3_Chưa cho phép hoạt động
 65,22564,吸料轴Z3_指令报错,,,吸料轴Z3_指令报错,Pick_Axis_Z3_Command_Error,Feeding Axis Z3_Lỗi lệnh
 66,22565,吸料轴Z3_正极限,,,吸料轴Z3_正极限,Pick_Axis_Z3_Pos_Limit,Feeding Axis Z3_Giới hạn dương
 67,22566,吸料轴Z3_负极限,,,吸料轴Z3_负极限,Pick_Axis_Z3_Neg_Limit,Feeding Axis Z3_Giới hạn âm
 68,22567,吸料轴Z3_JOG安全条件报警,,,吸料轴Z3_JOG安全条件报警,Pick_Axis_Z3_JOG_Safety_Alarm,Feeding Axis Z3_Cảnh báo điều kiện an toàn JOG
 69,22568,吸料轴Z3_PTP安全条件报警,,,吸料轴Z3_PTP安全条件报警,Pick_Axis_Z3_PTP_Safety_Alarm,Feeding Axis Z3_Cảnh báo điều kiện an toàn PTP
-70,22569,吸料轴Z3_手自动不一致,,,吸料轴Z3_手自动不一致,Pick_Axis_Z3_Manual_Auto_Mismatch,Feeding Axis Z3_Không đồng bộ tay-tự động
+70,22569,吸料轴Z3_手自动不一致,,,吸料轴Z3_手自动不一致,Pick_Axis_Z3_Manual_Auto_Mismatch,Feeding Axis Z3_Không đồng bộ taytự động
 71,22570,吸料轴R3_未使能提示,,,吸料轴R3_未使能提示,Pick_Axis_R3_Not_Enabled,Feeding Axis R3_Chưa cho phép hoạt động
 72,22571,吸料轴R3_指令报错,,,吸料轴R3_指令报错,Pick_Axis_R3_Command_Error,Feeding Axis R3_Lỗi lệnh
 73,22572,吸料轴R3_正极限,,,吸料轴R3_正极限,Pick_Axis_R3_Pos_Limit,Feeding Axis R3_Giới hạn dương
 74,22573,吸料轴R3_负极限,,,吸料轴R3_负极限,Pick_Axis_R3_Neg_Limit,Feeding Axis R3_Giới hạn âm
 75,22574,吸料轴R3_JOG安全条件报警,,,吸料轴R3_JOG安全条件报警,Pick_Axis_R3_JOG_Safety_Alarm,Feeding Axis R3_Cảnh báo điều kiện an toàn JOG
 76,22575,吸料轴R3_PTP安全条件报警,,,吸料轴R3_PTP安全条件报警,Pick_Axis_R3_PTP_Safety_Alarm,Feeding Axis R3_Cảnh báo điều kiện an toàn PTP
-77,22576,吸料轴R3_手自动不一致,,,吸料轴R3_手自动不一致,Pick_Axis_R3_Manual_Auto_Mismatch,Feeding Axis R3_Không đồng bộ tay-tự động
+77,22576,吸料轴R3_手自动不一致,,,吸料轴R3_手自动不一致,Pick_Axis_R3_Manual_Auto_Mismatch,Feeding Axis R3_Không đồng bộ taytự động
 78,22577,吸料轴Z4_未使能提示,,,吸料轴Z4_未使能提示,Pick_Axis_Z4_Not_Enabled,Feeding Axis Z4_Chưa cho phép hoạt động
 79,22578,吸料轴Z4_指令报错,,,吸料轴Z4_指令报错,Pick_Axis_Z4_Command_Error,Feeding Axis Z4_Lỗi lệnh
 80,22579,吸料轴Z4_正极限,,,吸料轴Z4_正极限,Pick_Axis_Z4_Pos_Limit,Feeding Axis Z4_Giới hạn dương
 81,22580,吸料轴Z4_负极限,,,吸料轴Z4_负极限,Pick_Axis_Z4_Neg_Limit,Feeding Axis Z4_Giới hạn âm
 82,22581,吸料轴Z4_JOG安全条件报警,,,吸料轴Z4_JOG安全条件报警,Pick_Axis_Z4_JOG_Safety_Alarm,Feeding Axis Z4_Cảnh báo điều kiện an toàn JOG
 83,22582,吸料轴Z4_PTP安全条件报警,,,吸料轴Z4_PTP安全条件报警,Pick_Axis_Z4_PTP_Safety_Alarm,Feeding Axis Z4_Cảnh báo điều kiện an toàn PTP
-84,22583,吸料轴Z4_手自动不一致,,,吸料轴Z4_手自动不一致,Pick_Axis_Z4_Manual_Auto_Mismatch,Feeding Axis Z4_Không đồng bộ tay-tự động
+84,22583,吸料轴Z4_手自动不一致,,,吸料轴Z4_手自动不一致,Pick_Axis_Z4_Manual_Auto_Mismatch,Feeding Axis Z4_Không đồng bộ taytự động
 85,22584,吸料轴R4_未使能提示,,,吸料轴R4_未使能提示,Pick_Axis_R4_Not_Enabled,Feeding Axis R4_Chưa cho phép hoạt động
 86,22585,吸料轴R4_指令报错,,,吸料轴R4_指令报错,Pick_Axis_R4_Command_Error,Feeding Axis R4_Lỗi lệnh
 87,22586,吸料轴R4_正极限,,,吸料轴R4_正极限,Pick_Axis_R4_Pos_Limit,Feeding Axis R4_Giới hạn dương
 88,22587,吸料轴R4_负极限,,,吸料轴R4_负极限,Pick_Axis_R4_Neg_Limit,Feeding Axis R4_Giới hạn âm
 89,22588,吸料轴R4_JOG安全条件报警,,,吸料轴R4_JOG安全条件报警,Pick_Axis_R4_JOG_Safety_Alarm,Feeding Axis R4_Cảnh báo điều kiện an toàn JOG
 90,22589,吸料轴R4_PTP安全条件报警,,,吸料轴R4_PTP安全条件报警,Pick_Axis_R4_PTP_Safety_Alarm,Feeding Axis R4_Cảnh báo điều kiện an toàn PTP
-91,22590,吸料轴R4_手自动不一致,,,吸料轴R4_手自动不一致,Pick_Axis_R4_Manual_Auto_Mismatch,Feeding Axis R4_Không đồng bộ tay-tự động
-92,22591,吸料轴Z5_未使能提示,,,吸料轴Z5_未使能提示,Pick_Axis_Z5_Not_Enabled,Feeding Axis Z5_Chưa cho phép hoạt động
-93,22592,吸料轴Z5_指令报错,,,吸料轴Z5_指令报错,Pick_Axis_Z5_Command_Error,Feeding Axis Z5_Lỗi lệnh
-94,22593,吸料轴Z5_正极限,,,吸料轴Z5_正极限,Pick_Axis_Z5_Pos_Limit,Feeding Axis Z5_Giới hạn dương
-95,22594,吸料轴Z5_负极限,,,吸料轴Z5_负极限,Pick_Axis_Z5_Neg_Limit,Feeding Axis Z5_Giới hạn âm
-96,22595,吸料轴Z5_JOG安全条件报警,,,吸料轴Z5_JOG安全条件报警,Pick_Axis_Z5_JOG_Safety_Alarm,Feeding Axis Z5_Cảnh báo điều kiện an toàn JOG
-97,22596,吸料轴Z5_PTP安全条件报警,,,吸料轴Z5_PTP安全条件报警,Pick_Axis_Z5_PTP_Safety_Alarm,Feeding Axis Z5_Cảnh báo điều kiện an toàn PTP
-98,22597,吸料轴Z5_手自动不一致,,,吸料轴Z5_手自动不一致,Pick_Axis_Z5_Manual_Auto_Mismatch,Feeding Axis Z5_Không đồng bộ tay-tự động
-99,22598,吸料轴R5_未使能提示,,,吸料轴R5_未使能提示,Pick_Axis_R5_Not_Enabled,Feeding Axis R5_Chưa cho phép hoạt động
-100,22599,吸料轴R5_指令报错,,,吸料轴R5_指令报错,Pick_Axis_R5_Command_Error,Feeding Axis R5_Lỗi lệnh
-101,22600,吸料轴R5_正极限,,,吸料轴R5_正极限,Pick_Axis_R5_Pos_Limit,Feeding Axis R5_Giới hạn dương
-102,22601,吸料轴R5_负极限,,,吸料轴R5_负极限,Pick_Axis_R5_Neg_Limit,Feeding Axis R5_Giới hạn âm
-103,22602,吸料轴R5_JOG安全条件报警,,,吸料轴R5_JOG安全条件报警,Pick_Axis_R5_JOG_Safety_Alarm,Feeding Axis R5_Cảnh báo điều kiện an toàn JOG
-104,22603,吸料轴R5_PTP安全条件报警,,,吸料轴R5_PTP安全条件报警,Pick_Axis_R5_PTP_Safety_Alarm,Feeding Axis R5_Cảnh báo điều kiện an toàn PTP
-105,22604,吸料轴R5_手自动不一致,,,吸料轴R5_手自动不一致,Pick_Axis_R5_Manual_Auto_Mismatch,Feeding Axis R5_Không đồng bộ tay-tự động
-106,22605,吸料轴Z6_未使能提示,,,吸料轴Z6_未使能提示,Pick_Axis_Z6_Not_Enabled,Feeding Axis Z6_Chưa cho phép hoạt động
-107,22606,吸料轴Z6_指令报错,,,吸料轴Z6_指令报错,Pick_Axis_Z6_Command_Error,Feeding Axis Z6_Lỗi lệnh
-108,22607,吸料轴Z6_正极限,,,吸料轴Z6_正极限,Pick_Axis_Z6_Pos_Limit,Feeding Axis Z6_Giới hạn dương
-109,22608,吸料轴Z6_负极限,,,吸料轴Z6_负极限,Pick_Axis_Z6_Neg_Limit,Feeding Axis Z6_Giới hạn âm
-110,22609,吸料轴Z6_JOG安全条件报警,,,吸料轴Z6_JOG安全条件报警,Pick_Axis_Z6_JOG_Safety_Alarm,Feeding Axis Z6_Cảnh báo điều kiện an toàn JOG
-111,22610,吸料轴Z6_PTP安全条件报警,,,吸料轴Z6_PTP安全条件报警,Pick_Axis_Z6_PTP_Safety_Alarm,Feeding Axis Z6_Cảnh báo điều kiện an toàn PTP
-112,22611,吸料轴Z6_手自动不一致,,,吸料轴Z6_手自动不一致,Pick_Axis_Z6_Manual_Auto_Mismatch,Feeding Axis Z6_Không đồng bộ tay-tự động
-113,22612,吸料轴R6_未使能提示,,,吸料轴R6_未使能提示,Pick_Axis_R6_Not_Enabled,Feeding Axis R6_Chưa cho phép hoạt động
-114,22613,吸料轴R6_指令报错,,,吸料轴R6_指令报错,Pick_Axis_R6_Command_Error,Feeding Axis R6_Lỗi lệnh
-115,22614,吸料轴R6_正极限,,,吸料轴R6_正极限,Pick_Axis_R6_Pos_Limit,Feeding Axis R6_Giới hạn dương
-116,22615,吸料轴R6_负极限,,,吸料轴R6_负极限,Pick_Axis_R6_Neg_Limit,Feeding Axis R6_Giới hạn âm
-117,22616,吸料轴R6_JOG安全条件报警,,,吸料轴R6_JOG安全条件报警,Pick_Axis_R6_JOG_Safety_Alarm,Feeding Axis R6_Cảnh báo điều kiện an toàn JOG
-118,22617,吸料轴R6_PTP安全条件报警,,,吸料轴R6_PTP安全条件报警,Pick_Axis_R6_PTP_Safety_Alarm,Feeding Axis R6_Cảnh báo điều kiện an toàn PTP
-119,22618,吸料轴R6_手自动不一致,,,吸料轴R6_手自动不一致,Pick_Axis_R6_Manual_Auto_Mismatch,Feeding Axis R6_Không đồng bộ tay-tự động
-120,22619,吸料轴Z7_未使能提示,,,吸料轴Z7_未使能提示,Pick_Axis_Z7_Not_Enabled,Feeding Axis Z7_Chưa cho phép hoạt động
-121,22620,吸料轴Z7_指令报错,,,吸料轴Z7_指令报错,Pick_Axis_Z7_Command_Error,Feeding Axis Z7_Lỗi lệnh
-122,22621,吸料轴Z7_正极限,,,吸料轴Z7_正极限,Pick_Axis_Z7_Pos_Limit,Feeding Axis Z7_Giới hạn dương
-123,22622,吸料轴Z7_负极限,,,吸料轴Z7_负极限,Pick_Axis_Z7_Neg_Limit,Feeding Axis Z7_Giới hạn âm
-124,22623,吸料轴Z7_JOG安全条件报警,,,吸料轴Z7_JOG安全条件报警,Pick_Axis_Z7_JOG_Safety_Alarm,Feeding Axis Z7_Cảnh báo điều kiện an toàn JOG
-125,22624,吸料轴Z7_PTP安全条件报警,,,吸料轴Z7_PTP安全条件报警,Pick_Axis_Z7_PTP_Safety_Alarm,Feeding Axis Z7_Cảnh báo điều kiện an toàn PTP
-126,22625,吸料轴Z7_手自动不一致,,,吸料轴Z7_手自动不一致,Pick_Axis_Z7_Manual_Auto_Mismatch,Feeding Axis Z7_Không đồng bộ tay-tự động
-127,22626,吸料轴R7_未使能提示,,,吸料轴R7_未使能提示,Pick_Axis_R7_Not_Enabled,Feeding Axis R7_Chưa cho phép hoạt động
-128,22627,吸料轴R7_指令报错,,,吸料轴R7_指令报错,Pick_Axis_R7_Command_Error,Feeding Axis R7_Lỗi lệnh
-129,22628,吸料轴R7_正极限,,,吸料轴R7_正极限,Pick_Axis_R7_Pos_Limit,Feeding Axis R7_Giới hạn dương
-130,22629,吸料轴R7_负极限,,,吸料轴R7_负极限,Pick_Axis_R7_Neg_Limit,Feeding Axis R7_Giới hạn âm
-131,22630,吸料轴R7_JOG安全条件报警,,,吸料轴R7_JOG安全条件报警,Pick_Axis_R7_JOG_Safety_Alarm,Feeding Axis R7_Cảnh báo điều kiện an toàn JOG
-132,22631,吸料轴R7_PTP安全条件报警,,,吸料轴R7_PTP安全条件报警,Pick_Axis_R7_PTP_Safety_Alarm,Feeding Axis R7_Cảnh báo điều kiện an toàn PTP
-133,22632,吸料轴R7_手自动不一致,,,吸料轴R7_手自动不一致,Pick_Axis_R7_Manual_Auto_Mismatch,Feeding Axis R7_Không đồng bộ tay-tự động
-134,22633,轴1_定位气缸1-原位报警,,,轴1_定位气缸1-原位报警,Axis1_PosCyl1_Home_Alarm,Trục 1_Xylanh định vị 1-Cảnh báo vị trí gốc
-135,22634,轴1_定位气缸1-工作位报警,,,轴1_定位气缸1-工作位报警,Axis1_PosCyl1_WorkPos_Alarm,Trục 1_Xylanh định vị 1-Cảnh báo vị trí làm việc
-136,22635,轴1_定位气缸1-原点安全条件触发异常,,,轴1_定位气缸1-原点安全条件触发异常,Axis1_PosCyl1_Home_Safety_Cond_Error,Trục 1_Xylanh định vị 1-Bất thường kích hoạt điều kiện an toàn gốc
-137,22636,轴1_定位气缸1-工作位安全条件触发异常,,,轴1_定位气缸1-工作位安全条件触发异常,Axis1_PosCyl1_WorkPos_Safety_Cond_Error,Trục 1_Xylanh định vị 1-Bất thường kích hoạt điều kiện an toàn vị trí làm việc
-138,22637,轴1_定位气缸1-手自动联锁中,,,轴1_定位气缸1-手自动联锁中,Axis1_PosCyl1_Manual_Auto_Interlock,Trục 1_Xylanh định vị 1_Đang khóa liên động tay-tự động
-139,22638,轴1_定位气缸2-原位报警,,,轴1_定位气缸2-原位报警,Axis1_PosCyl2_Home_Alarm,Trục 1_Xylanh định vị 2-Cảnh báo vị trí gốc
-140,22639,轴1_定位气缸2-工作位报警,,,轴1_定位气缸2-工作位报警,Axis1_PosCyl2_WorkPos_Alarm,Trục 1_Xylanh định vị 2-Cảnh báo vị trí làm việc
-141,22640,轴1_定位气缸2-原点安全条件触发异常,,,轴1_定位气缸2-原点安全条件触发异常,Axis1_PosCyl2_Home_Safety_Cond_Error,Trục 1_Xylanh định vị 2-Bất thường kích hoạt điều kiện an toàn gốc
-142,22641,轴1_定位气缸2-工作位安全条件触发异常,,,轴1_定位气缸2-工作位安全条件触发异常,Axis1_PosCyl2_WorkPos_Safety_Cond_Error,Trục 1_Xylanh định vị 2-Bất thường kích hoạt điều kiện an toàn vị trí làm việc
-143,22642,轴1_定位气缸2-手自动联锁中,,,轴1_定位气缸2-手自动联锁中,Axis1_PosCyl2_Manual_Auto_Interlock,Trục 1_Xylanh định vị 2_Đang khóa liên động tay-tự động
-144,22643,轴1_定位气缸3-原位报警,,,轴1_定位气缸3-原位报警,Axis1_PosCyl3_Home_Alarm,Trục 1_Xylanh định vị 3-Cảnh báo vị trí gốc
-145,22644,轴1_定位气缸3-工作位报警,,,轴1_定位气缸3-工作位报警,Axis1_PosCyl3_WorkPos_Alarm,Trục 1_Xylanh định vị 3-Cảnh báo vị trí làm việc
-146,22645,轴1_定位气缸3-原点安全条件触发异常,,,轴1_定位气缸3-原点安全条件触发异常,Axis1_PosCyl3_Home_Safety_Cond_Error,Trục 1_Xylanh định vị 3-Bất thường kích hoạt điều kiện an toàn gốc
-147,22646,轴1_定位气缸3-工作位安全条件触发异常,,,轴1_定位气缸3-工作位安全条件触发异常,Axis1_PosCyl3_WorkPos_Safety_Cond_Error,Trục 1_Xylanh định vị 3-Bất thường kích hoạt điều kiện an toàn vị trí làm việc
-148,22647,轴1_定位气缸3-手自动联锁中,,,轴1_定位气缸3-手自动联锁中,Axis1_PosCyl3_Manual_Auto_Interlock,Trục 1_Xylanh định vị 3_Đang khóa liên động tay-tự động
-149,22648,轴2_定位气缸1-原位报警,,,轴2_定位气缸1-原位报警,Axis2_PosCyl1_Home_Alarm,Trục 2_Xylanh định vị 1-Cảnh báo vị trí gốc
-150,22649,轴2_定位气缸1-工作位报警,,,轴2_定位气缸1-工作位报警,Axis2_PosCyl1_WorkPos_Alarm,Trục 2_Xylanh định vị 1-Cảnh báo vị trí làm việc
-151,22650,轴2_定位气缸1-原点安全条件触发异常,,,轴2_定位气缸1-原点安全条件触发异常,Axis2_PosCyl1_Home_Safety_Cond_Error,Trục 2_Xylanh định vị 1-Bất thường kích hoạt điều kiện an toàn gốc
-152,22651,轴2_定位气缸1-工作位安全条件触发异常,,,轴2_定位气缸1-工作位安全条件触发异常,Axis2_PosCyl1_WorkPos_Safety_Cond_Error,Trục 2_Xylanh định vị 1-Bất thường kích hoạt điều kiện an toàn vị trí làm việc
-153,22652,轴2_定位气缸1-手自动联锁中,,,轴2_定位气缸1-手自动联锁中,Axis2_PosCyl1_Manual_Auto_Interlock,Trục 2_Xylanh định vị 1_Đang khóa liên động tay-tự động
-154,22653,轴2_定位气缸2-原位报警,,,轴2_定位气缸2-原位报警,Axis2_PosCyl2_Home_Alarm,Trục 2_Xylanh định vị 2-Cảnh báo vị trí gốc
-155,22654,轴2_定位气缸2-工作位报警,,,轴2_定位气缸2-工作位报警,Axis2_PosCyl2_WorkPos_Alarm,Trục 2_Xylanh định vị 2-Cảnh báo vị trí làm việc
-156,22655,轴2_定位气缸2-原点安全条件触发异常,,,轴2_定位气缸2-原点安全条件触发异常,Axis2_PosCyl2_Home_Safety_Cond_Error,Trục 2_Xylanh định vị 2-Bất thường kích hoạt điều kiện an toàn gốc
-157,22656,轴2_定位气缸2-工作位安全条件触发异常,,,轴2_定位气缸2-工作位安全条件触发异常,Axis2_PosCyl2_WorkPos_Safety_Cond_Error,Trục 2_Xylanh định vị 2-Bất thường kích hoạt điều kiện an toàn vị trí làm việc
-158,22657,轴2_定位气缸2-手自动联锁中,,,轴2_定位气缸2-手自动联锁中,Axis2_PosCyl2_Manual_Auto_Interlock,Trục 2_Xylanh định vị 2_Đang khóa liên động tay-tự động
-159,22658,轴2_定位气缸3-原位报警,,,轴2_定位气缸3-原位报警,Axis2_PosCyl3_Home_Alarm,Trục 2_Xylanh định vị 3-Cảnh báo vị trí gốc
-160,22659,轴2_定位气缸3-工作位报警,,,轴2_定位气缸3-工作位报警,Axis2_PosCyl3_WorkPos_Alarm,Trục 2_Xylanh định vị 3-Cảnh báo vị trí làm việc
-161,22660,轴2_定位气缸3-原点安全条件触发异常,,,轴2_定位气缸3-原点安全条件触发异常,Axis2_PosCyl3_Home_Safety_Cond_Error,Trục 2_Xylanh định vị 3-Bất thường kích hoạt điều kiện an toàn gốc
-162,22661,轴2_定位气缸3-工作位安全条件触发异常,,,轴2_定位气缸3-工作位安全条件触发异常,Axis2_PosCyl3_WorkPos_Safety_Cond_Error,Trục 2_Xylanh định vị 3-Bất thường kích hoạt điều kiện an toàn vị trí làm việc
-163,22662,轴2_定位气缸3-手自动联锁中,,,轴2_定位气缸3-手自动联锁中,Axis2_PosCyl3_Manual_Auto_Interlock,Trục 2_Xylanh định vị 3_Đang khóa liên động tay-tự động
-164,22663,载具1后底模_真空-负压报警,,,载具1后底模_真空 -负压报警,Load1_Bottom_Vacuum_Negative_Pressure_Alarm,Mặt khuôn sau xe tải 1_Chân không - Cảnh báo áp suất âm
-165,22664,载具1后底模_真空-禁止破真空报警-提示,,,载具1后底模_真空-禁止破真空报警-提示,Load1_Bottom_Vacuum_Forbid_Vacuum_Break_Alarm,"Mặt khuôn sau xe tải 1_Chân không - Cảnh báo cấm phá chân không, thông báo"
-166,22665,载具1后底模_真空-手自动联锁中,,,载具1后底模_真空-手自动联锁中,Load1_Bottom_Vacuum_Manual_Auto_Interlock,Mặt khuôn sau xe tải 1_Chân không - Đang khóa liên động tay-tự động
-167,22666,载具1前底模_真空-负压报警,,,载具1前底模_真空-负压报警,Load1_Bottom_Vacuum_Negative_Pressure_Alarm,Mặt khuôn trước xe tải 1_Chân không - Cảnh báo áp suất âm
-168,22667,载具1前底模_真空-禁止破真空报警-提示,,,载具1前底模_真空-禁止破真空报警-提示,Load1_Bottom_Vacuum_Forbid_Vacuum_Break_Alarm,"Mặt khuôn trước xe tải 1_Chân không - Cảnh báo cấm phá chân không, thông báo"
-169,22668,载具1前底模_真空-手自动联锁中,,,载具1前底模_真空-手自动联锁中,Load1_Bottom_Vacuum_Manual_Auto_Interlock,Mặt khuôn trước xe tải 1_Chân không - Đang khóa liên động tay-tự động
-170,22669,载具2前底模_真空-负压报警,,,载具2前底模_真空-负压报警,Load2_Bottom_Vacuum_Negative_Pressure_Alarm,Mặt khuôn trước xe tải 2_Chân không - Cảnh báo áp suất âm
-171,22670,载具2前底模_真空-禁止破真空报警-提示,,,载具2前底模_真空-禁止破真空报警-提示,Load2_Bottom_Vacuum_Forbid_Vacuum_Break_Alarm,"Mặt khuôn trước xe tải 2_Chân không - Cảnh báo cấm phá chân không, thông báo"
-172,22671,载具2前底模_真空-手自动联锁中,,,载具2前底模_真空-手自动联锁中,Load2_Bottom_Vacuum_Manual_Auto_Interlock,Mặt khuôn trước xe tải 2_Chân không - Đang khóa liên động tay-tự động
-173,22672,载具2后底模_真空-负压报警,,,载具2后底模_真空-负压报警,Load2_Bottom_Vacuum_Negative_Pressure_Alarm,Mặt khuôn sau xe tải 2_Chân không - Cảnh báo áp suất âm
-174,22673,载具2后底模_真空-禁止破真空报警-提示,,,载具2后底模_真空-禁止破真空报警-提示,Load2_Bottom_Vacuum_Forbid_Vacuum_Break_Alarm,"Mặt khuôn sau xe tải 2_Chân không - Cảnh báo cấm phá chân không, thông báo"
-175,22674,载具2后底模_真空-手自动联锁中,,,载具2后底模_真空-手自动联锁中,Load2_Bottom_Vacuum_Manual_Auto_Interlock,Mặt khuôn sau xe tải 2_Chân không - Đang khóa liên động tay-tự động
-176,22675,ZR1_真空-负压报警,,,ZR1_真空-负压报警,ZR1_Vacuum_Negative_Pressure_Alarm,ZR1_Chân không - Cảnh báo áp suất âm
-177,22676,ZR1_真空-禁止破真空报警-提示,,,ZR1_真空-禁止破真空报警-提示,ZR1_Vacuum_Forbid_Vacuum_Break_Alarm,"ZR1_Chân không - Cảnh báo cấm phá chân không, thông báo"
-178,22677,ZR1_真空-手自动联锁中,,,ZR1_真空-手自动联锁中,ZR1_Vacuum_Manual_Auto_Interlock,ZR1_Chân không - Đang khóa liên động tay-tự động
-179,22678,ZR2_真空-负压报警,,,ZR2_真空-负压报警,ZR2_Vacuum_Negative_Pressure_Alarm,ZR2_Chân không - Cảnh báo áp suất âm
-180,22679,ZR2_真空-禁止破真空报警-提示,,,ZR2_真空-禁止破真空报警-提示,ZR2_Vacuum_Forbid_Vacuum_Break_Alarm,"ZR2_Chân không - Cảnh báo cấm phá chân không, thông báo"
-181,22680,ZR2_真空-手自动联锁中,,,ZR2_真空-手自动联锁中,ZR2_Vacuum_Manual_Auto_Interlock,ZR2_Chân không - Đang khóa liên động tay-tự động
-182,22681,ZR3_真空-负压报警,,,ZR3_真空-负压报警,ZR3_Vacuum_Negative_Pressure_Alarm,ZR3_Chân không - Cảnh báo áp suất âm
-183,22682,ZR3_真空-禁止破真空报警-提示,,,ZR3_真空-禁止破真空报警-提示,ZR3_Vacuum_Forbid_Vacuum_Break_Alarm,"ZR3_Chân không - Cảnh báo cấm phá chân không, thông báo"
-184,22683,ZR3_真空-手自动联锁中,,,ZR3_真空-手自动联锁中,ZR3_Vacuum_Manual_Auto_Interlock,ZR3_Chân không - Đang khóa liên động tay-tự động
-185,22684,ZR4_真空-负压报警,,,ZR4_真空-负压报警,ZR4_Vacuum_Negative_Pressure_Alarm,ZR4_Chân không - Cảnh báo áp suất âm
-186,22685,ZR4_真空-禁止破真空报警-提示,,,ZR4_真空-禁止破真空报警-提示,ZR4_Vacuum_Forbid_Vacuum_Break_Alarm,"ZR4_Chân không - Cảnh báo cấm phá chân không, thông báo"
-187,22686,ZR4_真空-手自动联锁中,,,ZR4_真空-手自动联锁中,ZR4_Vacuum_Manual_Auto_Interlock,ZR4_Chân không - Đang khóa liên động tay-tự động
-188,22687,ZR5_真空-负压报警,,,ZR5_真空-负压报警,ZR5_Vacuum_Negative_Pressure_Alarm,ZR5_Chân không - Cảnh báo áp suất âm
-189,22688,ZR5_真空-禁止破真空报警-提示,,,ZR5_真空-禁止破真空报警-提示,ZR5_Vacuum_Forbid_Vacuum_Break_Alarm,"ZR5_Chân không - Cảnh báo cấm phá chân không, thông báo"
-190,22689,ZR5_真空-手自动联锁中,,,ZR5_真空-手自动联锁中,ZR5_Vacuum_Manual_Auto_Interlock,ZR5_Chân không - Đang khóa liên động tay-tự động
-191,22690,ZR6_真空-负压报警,,,ZR6_真空-负压报警,ZR6_Vacuum_Negative_Pressure_Alarm,ZR6_Chân không - Cảnh báo áp suất âm
-192,22691,ZR6_真空-禁止破真空报警-提示,,,ZR6_真空-禁止破真空报警-提示,ZR6_Vacuum_Forbid_Vacuum_Break_Alarm,"ZR6_Chân không - Cảnh báo cấm phá chân không, thông báo"
-193,22692,ZR6_真空-手自动联锁中,,,ZR6_真空-手自动联锁中,ZR6_Vacuum_Manual_Auto_Interlock,ZR6_Chân không - Đang khóa liên động tay-tự động
-194,22693,ZR7_真空-负压报警,,,ZR7_真空-负压报警,ZR7_Vacuum_Negative_Pressure_Alarm,ZR7_Chân không - Cảnh báo áp suất âm
-195,22694,ZR7_真空-禁止破真空报警-提示,,,ZR7_真空-禁止破真空报警-提示,ZR7_Vacuum_Forbid_Vacuum_Break_Alarm,"ZR7_Chân không - Cảnh báo cấm phá chân không, thông báo"
-196,22695,ZR7_真空-手自动联锁中,,,ZR7_真空-手自动联锁中,ZR7_Vacuum_Manual_Auto_Interlock,ZR7_Chân không - Đang khóa liên động tay-tự động
+91,22590,吸料轴R4_手自动不一致,,,吸料轴R4_手自动不一致,Pick_Axis_R4_Manual_Auto_Mismatch,Feeding Axis R4_Không đồng bộ taytự động
+92,22591,轴1_定位气缸1原位报警,,,轴1_定位气缸1原位报警,Pick_Axis_Z5_Not_Enabled,Feeding Axis Z5_Chưa cho phép hoạt động
+93,22592,轴1_定位气缸1工作位报警,,,轴1_定位气缸1工作位报警,Pick_Axis_Z5_Command_Error,Feeding Axis Z5_Lỗi lệnh
+94,22593,轴1_定位气缸1原点安全条件触发异常,,,轴1_定位气缸1原点安全条件触发异常,Pick_Axis_Z5_Pos_Limit,Feeding Axis Z5_Giới hạn dương
+95,22594,轴1_定位气缸1工作位安全条件触发异常,,,轴1_定位气缸1工作位安全条件触发异常,Pick_Axis_Z5_Neg_Limit,Feeding Axis Z5_Giới hạn âm
+96,22595,轴1_定位气缸1手自动联锁中,,,轴1_定位气缸1手自动联锁中,Pick_Axis_Z5_JOG_Safety_Alarm,Feeding Axis Z5_Cảnh báo điều kiện an toàn JOG
+97,22596,轴1_定位气缸2原位报警,,,轴1_定位气缸2原位报警,Pick_Axis_Z5_PTP_Safety_Alarm,Feeding Axis Z5_Cảnh báo điều kiện an toàn PTP
+98,22597,轴1_定位气缸2工作位报警,,,轴1_定位气缸2工作位报警,Pick_Axis_Z5_Manual_Auto_Mismatch,Feeding Axis Z5_Không đồng bộ taytự động
+99,22598,轴1_定位气缸2原点安全条件触发异常,,,轴1_定位气缸2原点安全条件触发异常,Pick_Axis_R5_Not_Enabled,Feeding Axis R5_Chưa cho phép hoạt động
+100,22599,轴1_定位气缸2工作位安全条件触发异常,,,轴1_定位气缸2工作位安全条件触发异常,Pick_Axis_R5_Command_Error,Feeding Axis R5_Lỗi lệnh
+101,22600,轴1_定位气缸2手自动联锁中,,,轴1_定位气缸2手自动联锁中,Pick_Axis_R5_Pos_Limit,Feeding Axis R5_Giới hạn dương
+102,22601,轴1_定位气缸3原位报警,,,轴1_定位气缸3原位报警,Pick_Axis_R5_Neg_Limit,Feeding Axis R5_Giới hạn âm
+103,22602,轴1_定位气缸3工作位报警,,,轴1_定位气缸3工作位报警,Pick_Axis_R5_JOG_Safety_Alarm,Feeding Axis R5_Cảnh báo điều kiện an toàn JOG
+104,22603,轴1_定位气缸3原点安全条件触发异常,,,轴1_定位气缸3原点安全条件触发异常,Pick_Axis_R5_PTP_Safety_Alarm,Feeding Axis R5_Cảnh báo điều kiện an toàn PTP
+105,22604,轴1_定位气缸3工作位安全条件触发异常,,,轴1_定位气缸3工作位安全条件触发异常,Pick_Axis_R5_Manual_Auto_Mismatch,Feeding Axis R5_Không đồng bộ taytự động
+106,22605,轴1_定位气缸3手自动联锁中,,,轴1_定位气缸3手自动联锁中,Pick_Axis_Z6_Not_Enabled,Feeding Axis Z6_Chưa cho phép hoạt động
+107,22606,轴2_定位气缸1原位报警,,,轴2_定位气缸1原位报警,Pick_Axis_Z6_Command_Error,Feeding Axis Z6_Lỗi lệnh
+108,22607,轴2_定位气缸1工作位报警,,,轴2_定位气缸1工作位报警,Pick_Axis_Z6_Pos_Limit,Feeding Axis Z6_Giới hạn dương
+109,22608,轴2_定位气缸1原点安全条件触发异常,,,轴2_定位气缸1原点安全条件触发异常,Pick_Axis_Z6_Neg_Limit,Feeding Axis Z6_Giới hạn âm
+110,22609,轴2_定位气缸1工作位安全条件触发异常,,,轴2_定位气缸1工作位安全条件触发异常,Pick_Axis_Z6_JOG_Safety_Alarm,Feeding Axis Z6_Cảnh báo điều kiện an toàn JOG
+111,22610,轴2_定位气缸1手自动联锁中,,,轴2_定位气缸1手自动联锁中,Pick_Axis_Z6_PTP_Safety_Alarm,Feeding Axis Z6_Cảnh báo điều kiện an toàn PTP
+112,22611,轴2_定位气缸2原位报警,,,轴2_定位气缸2原位报警,Pick_Axis_Z6_Manual_Auto_Mismatch,Feeding Axis Z6_Không đồng bộ taytự động
+113,22612,轴2_定位气缸2工作位报警,,,轴2_定位气缸2工作位报警,Pick_Axis_R6_Not_Enabled,Feeding Axis R6_Chưa cho phép hoạt động
+114,22613,轴2_定位气缸2原点安全条件触发异常,,,轴2_定位气缸2原点安全条件触发异常,Pick_Axis_R6_Command_Error,Feeding Axis R6_Lỗi lệnh
+115,22614,轴2_定位气缸2工作位安全条件触发异常,,,轴2_定位气缸2工作位安全条件触发异常,Pick_Axis_R6_Pos_Limit,Feeding Axis R6_Giới hạn dương
+116,22615,轴2_定位气缸2手自动联锁中,,,轴2_定位气缸2手自动联锁中,Pick_Axis_R6_Neg_Limit,Feeding Axis R6_Giới hạn âm
+117,22616,轴2_定位气缸3原位报警,,,轴2_定位气缸3原位报警,Pick_Axis_R6_JOG_Safety_Alarm,Feeding Axis R6_Cảnh báo điều kiện an toàn JOG
+118,22617,轴2_定位气缸3工作位报警,,,轴2_定位气缸3工作位报警,Pick_Axis_R6_PTP_Safety_Alarm,Feeding Axis R6_Cảnh báo điều kiện an toàn PTP
+119,22618,轴2_定位气缸3原点安全条件触发异常,,,轴2_定位气缸3原点安全条件触发异常,Pick_Axis_R6_Manual_Auto_Mismatch,Feeding Axis R6_Không đồng bộ taytự động
+120,22619,轴2_定位气缸3工作位安全条件触发异常,,,轴2_定位气缸3工作位安全条件触发异常,Pick_Axis_Z7_Not_Enabled,Feeding Axis Z7_Chưa cho phép hoạt động
+121,22620,轴2_定位气缸3手自动联锁中,,,轴2_定位气缸3手自动联锁中,Pick_Axis_Z7_Command_Error,Feeding Axis Z7_Lỗi lệnh
+122,22621,顶升气缸1原位报警,,,顶升气缸1原位报警,Pick_Axis_Z7_Pos_Limit,Feeding Axis Z7_Giới hạn dương
+123,22622,顶升气缸1工作位报警,,,顶升气缸1工作位报警,Pick_Axis_Z7_Neg_Limit,Feeding Axis Z7_Giới hạn âm
+124,22623,顶升气缸1原点安全条件触发异常,,,顶升气缸1原点安全条件触发异常,Pick_Axis_Z7_JOG_Safety_Alarm,Feeding Axis Z7_Cảnh báo điều kiện an toàn JOG
+125,22624,顶升气缸1工作位安全条件触发异常,,,顶升气缸1工作位安全条件触发异常,Pick_Axis_Z7_PTP_Safety_Alarm,Feeding Axis Z7_Cảnh báo điều kiện an toàn PTP
+126,22625,顶升气缸1手自动联锁中,,,顶升气缸1手自动联锁中,Pick_Axis_Z7_Manual_Auto_Mismatch,Feeding Axis Z7_Không đồng bộ taytự động
+127,22626,顶升气缸2原位报警,,,顶升气缸2原位报警,Pick_Axis_R7_Not_Enabled,Feeding Axis R7_Chưa cho phép hoạt động
+128,22627,顶升气缸2工作位报警,,,顶升气缸2工作位报警,Pick_Axis_R7_Command_Error,Feeding Axis R7_Lỗi lệnh
+129,22628,顶升气缸2原点安全条件触发异常,,,顶升气缸2原点安全条件触发异常,Pick_Axis_R7_Pos_Limit,Feeding Axis R7_Giới hạn dương
+130,22629,顶升气缸2工作位安全条件触发异常,,,顶升气缸2工作位安全条件触发异常,Pick_Axis_R7_Neg_Limit,Feeding Axis R7_Giới hạn âm
+131,22630,顶升气缸2手自动联锁中,,,顶升气缸2手自动联锁中,Pick_Axis_R7_JOG_Safety_Alarm,Feeding Axis R7_Cảnh báo điều kiện an toàn JOG
+132,22631,上料轴1载具吸真空1负压报警,,,上料轴1载具吸真空1负压报警,Pick_Axis_R7_PTP_Safety_Alarm,Feeding Axis R7_Cảnh báo điều kiện an toàn PTP
+133,22632,上料轴1载具吸真空1禁止破真空报警,,,上料轴1载具吸真空1禁止破真空报警,Pick_Axis_R7_Manual_Auto_Mismatch,Feeding Axis R7_Không đồng bộ taytự động
+134,22633,上料轴1载具吸真空1手自动联锁中,,,上料轴1载具吸真空1手自动联锁中,Axis1_PosCyl1_Home_Alarm,Trục 1_Xylanh định vị 1Cảnh báo vị trí gốc
+135,22634,上料轴1载具吸真空2负压报警,,,上料轴1载具吸真空2负压报警,Axis1_PosCyl1_WorkPos_Alarm,Trục 1_Xylanh định vị 1Cảnh báo vị trí làm việc
+136,22635,上料轴1载具吸真空2禁止破真空报警,,,上料轴1载具吸真空2禁止破真空报警,Axis1_PosCyl1_Home_Safety_Cond_Error,Trục 1_Xylanh định vị 1Bất thường kích hoạt điều kiện an toàn gốc
+137,22636,上料轴1载具吸真空2手自动联锁中,,,上料轴1载具吸真空2手自动联锁中,Axis1_PosCyl1_WorkPos_Safety_Cond_Error,Trục 1_Xylanh định vị 1Bất thường kích hoạt điều kiện an toàn vị trí làm việc
+138,22637,上料轴2载具吸真空1负压报警,,,上料轴2载具吸真空1负压报警,Axis1_PosCyl1_Manual_Auto_Interlock,Trục 1_Xylanh định vị 1_Đang khóa liên động taytự động
+139,22638,上料轴2载具吸真空1禁止破真空报警,,,上料轴2载具吸真空1禁止破真空报警,Axis1_PosCyl2_Home_Alarm,Trục 1_Xylanh định vị 2Cảnh báo vị trí gốc
+140,22639,上料轴2载具吸真空1手自动联锁中,,,上料轴2载具吸真空1手自动联锁中,Axis1_PosCyl2_WorkPos_Alarm,Trục 1_Xylanh định vị 2Cảnh báo vị trí làm việc
+141,22640,上料轴2载具吸真空2负压报警,,,上料轴2载具吸真空2负压报警,Axis1_PosCyl2_Home_Safety_Cond_Error,Trục 1_Xylanh định vị 2Bất thường kích hoạt điều kiện an toàn gốc
+142,22641,上料轴2载具吸真空2禁止破真空报警,,,上料轴2载具吸真空2禁止破真空报警,Axis1_PosCyl2_WorkPos_Safety_Cond_Error,Trục 1_Xylanh định vị 2Bất thường kích hoạt điều kiện an toàn vị trí làm việc
+143,22642,上料轴2载具吸真空2手自动联锁中,,,上料轴2载具吸真空2手自动联锁中,Axis1_PosCyl2_Manual_Auto_Interlock,Trục 1_Xylanh định vị 2_Đang khóa liên động taytự động
+144,22643,ZR1_真空负压报警,,,ZR1_真空负压报警,Axis1_PosCyl3_Home_Alarm,Trục 1_Xylanh định vị 3Cảnh báo vị trí gốc
+145,22644,ZR1_真空禁止破真空报警,,,ZR1_真空禁止破真空报警,Axis1_PosCyl3_WorkPos_Alarm,Trục 1_Xylanh định vị 3Cảnh báo vị trí làm việc
+146,22645,ZR1_真空手自动联锁中,,,ZR1_真空手自动联锁中,Axis1_PosCyl3_Home_Safety_Cond_Error,Trục 1_Xylanh định vị 3Bất thường kích hoạt điều kiện an toàn gốc
+147,22646,ZR2_真空负压报警,,,ZR2_真空负压报警,Axis1_PosCyl3_WorkPos_Safety_Cond_Error,Trục 1_Xylanh định vị 3Bất thường kích hoạt điều kiện an toàn vị trí làm việc
+148,22647,ZR2_真空禁止破真空报警,,,ZR2_真空禁止破真空报警,Axis1_PosCyl3_Manual_Auto_Interlock,Trục 1_Xylanh định vị 3_Đang khóa liên động taytự động
+149,22648,ZR2_真空手自动联锁中,,,ZR2_真空手自动联锁中,Axis2_PosCyl1_Home_Alarm,Trục 2_Xylanh định vị 1Cảnh báo vị trí gốc
+150,22649,ZR3_真空负压报警,,,ZR3_真空负压报警,Axis2_PosCyl1_WorkPos_Alarm,Trục 2_Xylanh định vị 1Cảnh báo vị trí làm việc
+151,22650,ZR3_真空禁止破真空报警,,,ZR3_真空禁止破真空报警,Axis2_PosCyl1_Home_Safety_Cond_Error,Trục 2_Xylanh định vị 1Bất thường kích hoạt điều kiện an toàn gốc
+152,22651,ZR3_真空手自动联锁中,,,ZR3_真空手自动联锁中,Axis2_PosCyl1_WorkPos_Safety_Cond_Error,Trục 2_Xylanh định vị 1Bất thường kích hoạt điều kiện an toàn vị trí làm việc
+153,22652,ZR4_真空负压报警,,,ZR4_真空负压报警,Axis2_PosCyl1_Manual_Auto_Interlock,Trục 2_Xylanh định vị 1_Đang khóa liên động taytự động
+154,22653,ZR4_真空禁止破真空报警,,,ZR4_真空禁止破真空报警,Axis2_PosCyl2_Home_Alarm,Trục 2_Xylanh định vị 2Cảnh báo vị trí gốc
+155,22654,ZR4_真空手自动联锁中,,,ZR4_真空手自动联锁中,Axis2_PosCyl2_WorkPos_Alarm,Trục 2_Xylanh định vị 2Cảnh báo vị trí làm việc
+156,22655,飞达1异常,,,飞达1异常,Axis2_PosCyl2_Home_Safety_Cond_Error,Trục 2_Xylanh định vị 2Bất thường kích hoạt điều kiện an toàn gốc
+157,22656,飞达2异常,,,飞达2异常,Axis2_PosCyl2_WorkPos_Safety_Cond_Error,Trục 2_Xylanh định vị 2Bất thường kích hoạt điều kiện an toàn vị trí làm việc
+158,22657,飞达3异常,,,飞达3异常,Axis2_PosCyl2_Manual_Auto_Interlock,Trục 2_Xylanh định vị 2_Đang khóa liên động taytự động
+159,22658,门禁1被打开,,,门禁1被打开,Axis2_PosCyl3_Home_Alarm,Trục 2_Xylanh định vị 3Cảnh báo vị trí gốc
+160,22659,门禁2被打开,,,门禁2被打开,Axis2_PosCyl3_WorkPos_Alarm,Trục 2_Xylanh định vị 3Cảnh báo vị trí làm việc
+161,22660,达到拍散热泥NG次数,,,达到拍散热泥NG次数,Axis2_PosCyl3_Home_Safety_Cond_Error,Trục 2_Xylanh định vị 3Bất thường kích hoạt điều kiện an toàn gốc
+162,22661,贴料NG报警,,,贴料NG报警,Axis2_PosCyl3_WorkPos_Safety_Cond_Error,Trục 2_Xylanh định vị 3Bất thường kích hoạt điều kiện an toàn vị trí làm việc
+163,22662,取料拍照NG,,,取料拍照NG,Axis2_PosCyl3_Manual_Auto_Interlock,Trục 2_Xylanh định vị 3_Đang khóa liên động taytự động
+164,22663,扫码1失败报警,,,扫码1失败报警,Load1_Bottom_Vacuum_Negative_Pressure_Alarm,Mặt khuôn sau xe tải 1_Chân không  Cảnh báo áp suất âm
+165,22664,扫码2失败报警,,,扫码2失败报警,Load1_Bottom_Vacuum_Forbid_Vacuum_Break_Alarm,Mặt khuôn sau xe tải 1_Chân không  Cảnh báo cấm phá chân không thông báo
+166,22665,上位机未连接,,,上位机未连接,Load1_Bottom_Vacuum_Manual_Auto_Interlock,Mặt khuôn sau xe tải 1_Chân không  Đang khóa liên động taytự động
+167,22666,工位1产品没放到位,,,工位1产品没放到位,Load1_Bottom_Vacuum_Negative_Pressure_Alarm,Mặt khuôn trước xe tải 1_Chân không  Cảnh báo áp suất âm
+168,22667,工位2产品没放到位,,,工位2产品没放到位,Load1_Bottom_Vacuum_Forbid_Vacuum_Break_Alarm,Mặt khuôn trước xe tải 1_Chân không  Cảnh báo cấm phá chân không thông báo
+169,22668,上相机拍物料1反馈超时,,,上相机拍物料1反馈超时,Load1_Bottom_Vacuum_Manual_Auto_Interlock,Mặt khuôn trước xe tải 1_Chân không  Đang khóa liên động taytự động
+170,22669,下相机拍物料1反馈超时,,,下相机拍物料1反馈超时,Load2_Bottom_Vacuum_Negative_Pressure_Alarm,Mặt khuôn trước xe tải 2_Chân không  Cảnh báo áp suất âm
+171,22670,上相机拍物料2反馈超时,,,上相机拍物料2反馈超时,Load2_Bottom_Vacuum_Forbid_Vacuum_Break_Alarm,Mặt khuôn trước xe tải 2_Chân không  Cảnh báo cấm phá chân không thông báo
+172,22671,下相机拍物料2反馈超时,,,下相机拍物料2反馈超时,Load2_Bottom_Vacuum_Manual_Auto_Interlock,Mặt khuôn trước xe tải 2_Chân không  Đang khóa liên động taytự động
+173,22672,上相机拍产品位置1反馈超时,,,上相机拍产品位置1反馈超时,Load2_Bottom_Vacuum_Negative_Pressure_Alarm,Mặt khuôn sau xe tải 2_Chân không  Cảnh báo áp suất âm
+174,22673,上相机拍产品位置2反馈超时,,,上相机拍产品位置2反馈超时,Load2_Bottom_Vacuum_Forbid_Vacuum_Break_Alarm,Mặt khuôn sau xe tải 2_Chân không  Cảnh báo cấm phá chân không thông báo
+175,22674,上相机拍物料3反馈超时,,,上相机拍物料3反馈超时,Load2_Bottom_Vacuum_Manual_Auto_Interlock,Mặt khuôn sau xe tải 2_Chân không  Đang khóa liên động taytự động
+176,22675,下相机拍物料3反馈超时,,,下相机拍物料3反馈超时,ZR1_Vacuum_Negative_Pressure_Alarm,ZR1_Chân không  Cảnh báo áp suất âm
+177,22676,上相机拍物料4反馈超时,,,上相机拍物料4反馈超时,ZR1_Vacuum_Forbid_Vacuum_Break_Alarm,ZR1_Chân không  Cảnh báo cấm phá chân không thông báo
+178,22677,下相机拍物料4反馈超时,,,下相机拍物料4反馈超时,ZR1_Vacuum_Manual_Auto_Interlock,ZR1_Chân không  Đang khóa liên động taytự động
+179,22678,上相机拍产品位置3反馈超时,,,上相机拍产品位置3反馈超时,ZR2_Vacuum_Negative_Pressure_Alarm,ZR2_Chân không  Cảnh báo áp suất âm
+180,22679,上相机拍产品位置4反馈超时,,,上相机拍产品位置4反馈超时,ZR2_Vacuum_Forbid_Vacuum_Break_Alarm,ZR2_Chân không  Cảnh báo cấm phá chân không thông báo
+181,22680,上相机复检产品位置1反馈超时,,,上相机复检产品位置1反馈超时,ZR2_Vacuum_Manual_Auto_Interlock,ZR2_Chân không  Đang khóa liên động taytự động
+182,22681,上相机复检产品位置2反馈超时,,,上相机复检产品位置2反馈超时,ZR3_Vacuum_Negative_Pressure_Alarm,ZR3_Chân không  Cảnh báo áp suất âm
+183,22682,上相机复检产品位置3反馈超时,,,上相机复检产品位置3反馈超时,ZR3_Vacuum_Forbid_Vacuum_Break_Alarm,ZR3_Chân không  Cảnh báo cấm phá chân không thông báo
+184,22683,上相机复检产品位置4反馈超时,,,上相机复检产品位置4反馈超时,ZR3_Vacuum_Manual_Auto_Interlock,ZR3_Chân không  Đang khóa liên động taytự động

@@ -10,6 +10,11 @@ public partial class PlcPointMonitorWindow : UiWindow
 	public PlcPointMonitorWindow()
 	{
 		InitializeComponent();
+		Closing += (_, e) =>
+		{
+			e.Cancel = true;
+			Hide();
+		};
 	}
 
 	protected override void OnAttachedToVisualTree(VisualTreeAttachmentEventArgs e)

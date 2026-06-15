@@ -28,6 +28,7 @@ public partial class CoreService : CoreServiceBase
 	public required RecipeService RecipeService { get; init; }
 
 	public required AppConfig AppConfig { get; init; }
+	private DateTime _lastFeederRateLogDate = DateTime.MinValue;
 	public partial ObservableList<NozzleContext> NozzleContexts { get; set; } = [];
 	public partial ObservableList<MaterialSpaceContext> MaterialContexts { get; set; } = [];
 	public partial ObservableList<DeviceStatusContext> DeviceStatusContexts { get; set; } = [];
@@ -48,9 +49,17 @@ public partial class CoreService : CoreServiceBase
 	private void InvokeOnUI(Action action)
 	{
 		if (Dispatcher.UIThread.CheckAccess())
+		{
 			action();
+		}
 		else
+		{
+			var sw = System.Diagnostics.Stopwatch.StartNew();
 			Dispatcher.UIThread.Invoke(action);
+			var ms = sw.ElapsedMilliseconds;
+			if (ms > 50)
+				Logger.Debug("[UI-DISPATCH] TID={Tid} Dispatch took {Elapsed}ms", Environment.CurrentManagedThreadId, ms);
+		}
 	}
 
 	/// <summary>
@@ -185,6 +194,7 @@ public partial class CoreService : CoreServiceBase
 			UpdateWorkPositionContexts();
 			UpdateMaterialSpaceContexts();
 			UpdateNozzleContexts();
+			LogFeederRejectRateIfNeeded();
 
 			if (Plc.Read.配方下发响应 == 1 && Plc.Read.配方下发请求 == 1)
 			{
@@ -200,6 +210,28 @@ public partial class CoreService : CoreServiceBase
 	{
 	}
 
+	private void LogFeederRejectRateIfNeeded()
+	{
+		var now = DateTime.Now;
+		if (now.Hour == 7 && now.Minute == 50 && _lastFeederRateLogDate.Date != now.Date)
+		{
+			_lastFeederRateLogDate = now;
+			for (var i = 1; i <= CommonAppConfig.MaterialSpaceCount; i++)
+			{
+				var rate = i switch
+				{
+					1 => Plc.Read.Feeder1抛料率,
+					2 => Plc.Read.Feeder2抛料率,
+					3 => Plc.Read.Feeder3抛料率,
+					4 => Plc.Read.Feeder4抛料率,
+					5 => Plc.Read.Feeder5抛料率,
+					6 => Plc.Read.Feeder6抛料率,
+					_ => 0f
+				};
+				Logger.Info($"[FEEDER] Feeder{i}抛料率: {rate:F2}%");
+			}
+		}
+	}
 
 	private void UpdateNozzleContexts()
 	{
@@ -685,17 +717,28 @@ public partial class CoreService : CoreServiceBase
 
 	public int GetDayProductionId()
 	{
+		var tid = Environment.CurrentManagedThreadId;
+		var sw = System.Diagnostics.Stopwatch.StartNew();
+		Logger.Debug("[DAY-ID] TID={Tid} Enter GetDayProductionId", tid);
+		DayProductionIdContext ctx;
+		Logger.Debug("[DAY-ID] TID={Tid} Before lock, {Elapsed}ms", tid, sw.ElapsedMilliseconds);
 		lock (this)
 		{
-			var ctx = KeyValueStorage.GetValue("DayProductionIdContext", DayProductionIdContext.Default).Unwarp();
+			Logger.Debug("[DAY-ID] TID={Tid} Lock acquired, {Elapsed}ms", tid, sw.ElapsedMilliseconds);
+			var t0 = sw.ElapsedMilliseconds;
+			ctx = KeyValueStorage.GetValue("DayProductionIdContext", DayProductionIdContext.Default).Unwarp();
+			Logger.Debug("[DAY-ID] TID={Tid} KV GetValue done, +{Elapsed}ms (total {Total}ms)", tid, sw.ElapsedMilliseconds - t0, sw.ElapsedMilliseconds);
 			var now = DateTime.Now;
 			if (ctx.Time.Date != now.Date)
 				ctx.Value = 1;
 			else ctx.Value += 1;
 			ctx.Time = now;
+			t0 = sw.ElapsedMilliseconds;
 			KeyValueStorage.SetValue("DayProductionIdContext", ctx).Unwarp();
-			return ctx.Value;
+			Logger.Debug("[DAY-ID] TID={Tid} KV SetValue done, +{Elapsed}ms (total {Total}ms)", tid, sw.ElapsedMilliseconds - t0, sw.ElapsedMilliseconds);
 		}
+		Logger.Debug("[DAY-ID] TID={Tid} Exit lock, total {Elapsed}ms, newId={Id}", tid, sw.ElapsedMilliseconds, ctx.Value);
+		return ctx.Value;
 	}
 
 	public string GetImageZipID()

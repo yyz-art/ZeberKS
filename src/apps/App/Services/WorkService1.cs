@@ -430,15 +430,24 @@ public partial class WorkService1 : WorkServiceBase
 				Plc.Write.扫码枪1触发结果 = CodeOfOK;                              // 扫码结果OK
 
 				SendResult:
+				var tid = Environment.CurrentManagedThreadId;
+				var swSend = System.Diagnostics.Stopwatch.StartNew();
+				Logger.Debug("[SEND-RESULT] TID={Tid} Enter SendResult, SN={Sn}", tid, Context.ScanSnCode);
 				Context.WorkStep = Plc.Write.工位1允许生产 == 1 ? WorkStep.ALLOW_PRODUCTION : WorkStep.NOT_ALLOW_PRODUCTION; // 设置工作步骤
 				if (Context.DayProductionId == 0)
-					Context.DayProductionId = Core.GetDayProductionId();            // 获取当日生产序号（每天从1开始）
+					{
+						Logger.Debug("[SEND-RESULT] TID={Tid} Before GetDayProductionId, DayProductionId={Id}, {Elapsed}ms", tid, Context.DayProductionId, swSend.ElapsedMilliseconds);
+						Context.DayProductionId = Core.GetDayProductionId();            // 获取当日生产序号（每天从1开始）
+						Logger.Debug("[SEND-RESULT] TID={Tid} After GetDayProductionId, DayProductionId={Id}, {Elapsed}ms", tid, Context.DayProductionId, swSend.ElapsedMilliseconds);
+					}
 				var now = DateTime.Now;
 				Context.ImagePathRoot = Path.Combine(AppConfig.VisionImagePath,     // 构建图像保存路径：根目录/年月/日/序号_SN
 					now.ToString("yyyy-MM"), now.ToString("dd"), $"{Context.DayProductionId}_{Context.ScanSnCode}");
 				Plc.Write.扫码枪1触发 = 0;                                          // 复位PLC扫码触发信号
+				Logger.Debug("[SEND-RESULT] TID={Tid} Before DONE log, {Elapsed}ms", tid, swSend.ElapsedMilliseconds);
 				Logger.Info(
 					$"[MES IN-STA] [DONE] SCAN=({Plc.Write.扫码枪1触发结果},'{Context.ScanSnCode}') EN={Plc.Write.工位1允许生产}");
+				var tWp1 = swSend.ElapsedMilliseconds;
 				Plc.Write.TryWritePoint(nameof(PlcStruct.工位1允许生产), this, static ctx => // 写入PLC允许生产信号（带重试）
 				{
 					ctx.Context.Logger.Error(
@@ -446,9 +455,15 @@ public partial class WorkService1 : WorkServiceBase
 					Thread.Sleep(5000);                                              // 写入失败时等待5秒后重试
 					return true;
 				});
+				Logger.Debug("[SEND-RESULT] TID={Tid} TryWritePoint(allow) done, +{Elapsed}ms", tid, swSend.ElapsedMilliseconds - tWp1);
+				tWp1 = swSend.ElapsedMilliseconds;
 				Plc.Write.工位1生产序号 = Context.DayProductionId;                  // 写入当日生产序号到PLC
 				Plc.Write.WritePoint(nameof(PlcStruct.工位1生产序号));
+				Logger.Debug("[SEND-RESULT] TID={Tid} WritePoint(seq) done, +{Elapsed}ms", tid, swSend.ElapsedMilliseconds - tWp1);
+				tWp1 = swSend.ElapsedMilliseconds;
 				Plc.Plc.Write($"{PlcStructInfo.扫码枪1扫码内容.Offset}", Context.ScanSnCode, 80); // 写入扫码内容到PLC（80字符）
+				Logger.Debug("[SEND-RESULT] TID={Tid} PlcWrite(scanContent) done, +{Elapsed}ms", tid, swSend.ElapsedMilliseconds - tWp1);
+				tWp1 = swSend.ElapsedMilliseconds;
 				Plc.Write.TryWritePoint(nameof(PlcStruct.扫码枪1触发结果), this, static ctx => // 写入扫码结果信号（带重试）
 				{
 					ctx.Context.Logger.Error(
@@ -456,6 +471,8 @@ public partial class WorkService1 : WorkServiceBase
 					Thread.Sleep(5000);
 					return true;
 				});
+				Logger.Debug("[SEND-RESULT] TID={Tid} TryWritePoint(result) done, +{Elapsed}ms", tid, swSend.ElapsedMilliseconds - tWp1);
+				Logger.Debug("[SEND-RESULT] TID={Tid} Exit SendResult, total {Elapsed}ms", tid, swSend.ElapsedMilliseconds);
 
 				if (CommonAppConfig.IsDevTestMode)                                   // 调试模式：手动复位扫码触发信号
 				{
@@ -551,6 +568,7 @@ public partial class WorkService1 : WorkServiceBase
 #if ASM15_1
 					var failCode = "";                                               // ASM15_1: 读取螺丝枪故障码
 					var alarmResult = Screw.ReadInt16("60638");                      // 读取螺丝枪报警寄存器
+					Logger.Info($"[SCREW ALARM] 60638 raw value = {(alarmResult.IsSuccess ? alarmResult.Content.ToString() : $"read failed: {alarmResult.Message}")}");
 					if (alarmResult.IsSuccess)
 					{
 						failCode = alarmResult.Content switch                        // 映射故障码到MES编码
@@ -722,7 +740,7 @@ public partial class WorkService1 : WorkServiceBase
 							goto SendResult;
 						}
 
-						Thread.Sleep(5000);                                            // 等待打印完成
+						Thread.Sleep(7000);                                            // 等待打印完成
 					}
 					finally
 					{

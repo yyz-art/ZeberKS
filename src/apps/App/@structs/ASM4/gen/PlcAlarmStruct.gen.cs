@@ -1,5 +1,5 @@
 
-// GENERATE AT 2026/6/6 14:09:28
+// GENERATE AT 2026/6/12 13:26:21
 using ZC.Annotations;
 using ZC.DP.Memory;
 using ZC.DP;
@@ -17,11 +17,11 @@ public partial class PlcAlarmStruct
 	[BinaryPoint(Offset = 22500, Source = "22500", Tags = "WordBool", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:22500", Category = "Alarm", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
 		DataDefine.KeyValue,"Id", "1",
-		DataDefine.KeyValue,"NameByCN", "上料轴1_未使能提示",
+		DataDefine.KeyValue,"NameByCN", "上料轴1_未使能",
 		DataDefine.KeyValue,"NameByEN", "Load_Axis1_Not_Enabled",
 		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
-	public partial WordBool 上料轴1_未使能提示 { get; set; }= new WordBool();
+	public partial WordBool 上料轴1_未使能 { get; set; }= new WordBool();
 
 	[BinaryPoint(Offset = 22501, Source = "22501", Tags = "WordBool", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:22501", Category = "Alarm", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
@@ -80,11 +80,11 @@ public partial class PlcAlarmStruct
 	[BinaryPoint(Offset = 22507, Source = "22507", Tags = "WordBool", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:22507", Category = "Alarm", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
 		DataDefine.KeyValue,"Id", "8",
-		DataDefine.KeyValue,"NameByCN", "上料轴2_未使能提示",
+		DataDefine.KeyValue,"NameByCN", "上料轴2_未使能",
 		DataDefine.KeyValue,"NameByEN", "Load_Axis2_Not_Enabled",
 		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
-	public partial WordBool 上料轴2_未使能提示 { get; set; }= new WordBool();
+	public partial WordBool 上料轴2_未使能 { get; set; }= new WordBool();
 
 	[BinaryPoint(Offset = 22508, Source = "22508", Tags = "WordBool", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:22508", Category = "Alarm", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
@@ -143,11 +143,11 @@ public partial class PlcAlarmStruct
 	[BinaryPoint(Offset = 22514, Source = "22514", Tags = "WordBool", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:22514", Category = "Alarm", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
 		DataDefine.KeyValue,"Id", "15",
-		DataDefine.KeyValue,"NameByCN", "X轴_未使能提示",
+		DataDefine.KeyValue,"NameByCN", "X轴_未使能",
 		DataDefine.KeyValue,"NameByEN", "X_Axis_Not_Enabled",
 		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
-	public partial WordBool X轴_未使能提示 { get; set; }= new WordBool();
+	public partial WordBool X轴_未使能 { get; set; }= new WordBool();
 
 	[BinaryPoint(Offset = 22515, Source = "22515", Tags = "WordBool", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:22515", Category = "Alarm", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
@@ -206,11 +206,11 @@ public partial class PlcAlarmStruct
 	[BinaryPoint(Offset = 22521, Source = "22521", Tags = "WordBool", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:22521", Category = "Alarm", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
 		DataDefine.KeyValue,"Id", "22",
-		DataDefine.KeyValue,"NameByCN", "Y轴_未使能提示",
+		DataDefine.KeyValue,"NameByCN", "Y轴_未使能",
 		DataDefine.KeyValue,"NameByEN", "Y_Axis_Not_Enabled",
 		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
-	public partial WordBool Y轴_未使能提示 { get; set; }= new WordBool();
+	public partial WordBool Y轴_未使能 { get; set; }= new WordBool();
 
 	[BinaryPoint(Offset = 22522, Source = "22522", Tags = "WordBool", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:22522", Category = "Alarm", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
@@ -269,11 +269,11 @@ public partial class PlcAlarmStruct
 	[BinaryPoint(Offset = 22528, Source = "22528", Tags = "WordBool", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:22528", Category = "Alarm", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
 		DataDefine.KeyValue,"Id", "29",
-		DataDefine.KeyValue,"NameByCN", "相机调节步进轴_未使能提示",
+		DataDefine.KeyValue,"NameByCN", "相机调节步进轴_未使能",
 		DataDefine.KeyValue,"NameByEN", "Cam_Adj_Step_Axis_Not_Enabled",
 		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
-	public partial WordBool 相机调节步进轴_未使能提示 { get; set; }= new WordBool();
+	public partial WordBool 相机调节步进轴_未使能 { get; set; }= new WordBool();
 
 	[BinaryPoint(Offset = 22529, Source = "22529", Tags = "WordBool", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:22529", Category = "Alarm", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
@@ -332,11 +332,11 @@ public partial class PlcAlarmStruct
 	[BinaryPoint(Offset = 22535, Source = "22535", Tags = "WordBool", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:22535", Category = "Alarm", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
 		DataDefine.KeyValue,"Id", "36",
-		DataDefine.KeyValue,"NameByCN", "吸料轴Z1_未使能提示",
+		DataDefine.KeyValue,"NameByCN", "吸料轴Z1_未使能",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_Z1_Not_Enabled",
 		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
-	public partial WordBool 吸料轴Z1_未使能提示 { get; set; }= new WordBool();
+	public partial WordBool 吸料轴Z1_未使能 { get; set; }= new WordBool();
 
 	[BinaryPoint(Offset = 22536, Source = "22536", Tags = "WordBool", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:22536", Category = "Alarm", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
@@ -395,11 +395,11 @@ public partial class PlcAlarmStruct
 	[BinaryPoint(Offset = 22542, Source = "22542", Tags = "WordBool", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:22542", Category = "Alarm", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
 		DataDefine.KeyValue,"Id", "43",
-		DataDefine.KeyValue,"NameByCN", "吸料轴R1_未使能提示",
+		DataDefine.KeyValue,"NameByCN", "吸料轴R1_未使能",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_R1_Not_Enabled",
 		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
-	public partial WordBool 吸料轴R1_未使能提示 { get; set; }= new WordBool();
+	public partial WordBool 吸料轴R1_未使能 { get; set; }= new WordBool();
 
 	[BinaryPoint(Offset = 22543, Source = "22543", Tags = "WordBool", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:22543", Category = "Alarm", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
@@ -458,11 +458,11 @@ public partial class PlcAlarmStruct
 	[BinaryPoint(Offset = 22549, Source = "22549", Tags = "WordBool", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:22549", Category = "Alarm", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
 		DataDefine.KeyValue,"Id", "50",
-		DataDefine.KeyValue,"NameByCN", "吸料轴Z2_未使能提示",
+		DataDefine.KeyValue,"NameByCN", "吸料轴Z2_未使能",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_Z2_Not_Enabled",
 		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
-	public partial WordBool 吸料轴Z2_未使能提示 { get; set; }= new WordBool();
+	public partial WordBool 吸料轴Z2_未使能 { get; set; }= new WordBool();
 
 	[BinaryPoint(Offset = 22550, Source = "22550", Tags = "WordBool", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:22550", Category = "Alarm", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
@@ -521,11 +521,11 @@ public partial class PlcAlarmStruct
 	[BinaryPoint(Offset = 22556, Source = "22556", Tags = "WordBool", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:22556", Category = "Alarm", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
 		DataDefine.KeyValue,"Id", "57",
-		DataDefine.KeyValue,"NameByCN", "吸料轴R2_未使能提示",
+		DataDefine.KeyValue,"NameByCN", "吸料轴R2_未使能",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_R2_Not_Enabled",
 		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
-	public partial WordBool 吸料轴R2_未使能提示 { get; set; }= new WordBool();
+	public partial WordBool 吸料轴R2_未使能 { get; set; }= new WordBool();
 
 	[BinaryPoint(Offset = 22557, Source = "22557", Tags = "WordBool", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:22557", Category = "Alarm", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
@@ -584,11 +584,11 @@ public partial class PlcAlarmStruct
 	[BinaryPoint(Offset = 22563, Source = "22563", Tags = "WordBool", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:22563", Category = "Alarm", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
 		DataDefine.KeyValue,"Id", "64",
-		DataDefine.KeyValue,"NameByCN", "吸料轴Z3_未使能提示",
+		DataDefine.KeyValue,"NameByCN", "吸料轴Z3_未使能",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_Z3_Not_Enabled",
 		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
-	public partial WordBool 吸料轴Z3_未使能提示 { get; set; }= new WordBool();
+	public partial WordBool 吸料轴Z3_未使能 { get; set; }= new WordBool();
 
 	[BinaryPoint(Offset = 22564, Source = "22564", Tags = "WordBool", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:22564", Category = "Alarm", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
@@ -647,11 +647,11 @@ public partial class PlcAlarmStruct
 	[BinaryPoint(Offset = 22570, Source = "22570", Tags = "WordBool", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:22570", Category = "Alarm", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
 		DataDefine.KeyValue,"Id", "71",
-		DataDefine.KeyValue,"NameByCN", "吸料轴R3_未使能提示",
+		DataDefine.KeyValue,"NameByCN", "吸料轴R3_未使能",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_R3_Not_Enabled",
 		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
-	public partial WordBool 吸料轴R3_未使能提示 { get; set; }= new WordBool();
+	public partial WordBool 吸料轴R3_未使能 { get; set; }= new WordBool();
 
 	[BinaryPoint(Offset = 22571, Source = "22571", Tags = "WordBool", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:22571", Category = "Alarm", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
@@ -710,11 +710,11 @@ public partial class PlcAlarmStruct
 	[BinaryPoint(Offset = 22577, Source = "22577", Tags = "WordBool", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:22577", Category = "Alarm", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
 		DataDefine.KeyValue,"Id", "78",
-		DataDefine.KeyValue,"NameByCN", "吸料轴Z4_未使能提示",
+		DataDefine.KeyValue,"NameByCN", "吸料轴Z4_未使能",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_Z4_Not_Enabled",
 		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
-	public partial WordBool 吸料轴Z4_未使能提示 { get; set; }= new WordBool();
+	public partial WordBool 吸料轴Z4_未使能 { get; set; }= new WordBool();
 
 	[BinaryPoint(Offset = 22578, Source = "22578", Tags = "WordBool", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:22578", Category = "Alarm", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
@@ -773,11 +773,11 @@ public partial class PlcAlarmStruct
 	[BinaryPoint(Offset = 22584, Source = "22584", Tags = "WordBool", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:22584", Category = "Alarm", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
 		DataDefine.KeyValue,"Id", "85",
-		DataDefine.KeyValue,"NameByCN", "吸料轴R4_未使能提示",
+		DataDefine.KeyValue,"NameByCN", "吸料轴R4_未使能",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_R4_Not_Enabled",
 		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
-	public partial WordBool 吸料轴R4_未使能提示 { get; set; }= new WordBool();
+	public partial WordBool 吸料轴R4_未使能 { get; set; }= new WordBool();
 
 	[BinaryPoint(Offset = 22585, Source = "22585", Tags = "WordBool", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:22585", Category = "Alarm", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
@@ -836,11 +836,11 @@ public partial class PlcAlarmStruct
 	[BinaryPoint(Offset = 22591, Source = "22591", Tags = "WordBool", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:22591", Category = "Alarm", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
 		DataDefine.KeyValue,"Id", "92",
-		DataDefine.KeyValue,"NameByCN", "吸料轴Z5_未使能提示",
+		DataDefine.KeyValue,"NameByCN", "吸料轴Z5_未使能",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_Z5_Not_Enabled",
 		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
-	public partial WordBool 吸料轴Z5_未使能提示 { get; set; }= new WordBool();
+	public partial WordBool 吸料轴Z5_未使能 { get; set; }= new WordBool();
 
 	[BinaryPoint(Offset = 22592, Source = "22592", Tags = "WordBool", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:22592", Category = "Alarm", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
@@ -899,11 +899,11 @@ public partial class PlcAlarmStruct
 	[BinaryPoint(Offset = 22598, Source = "22598", Tags = "WordBool", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:22598", Category = "Alarm", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
 		DataDefine.KeyValue,"Id", "99",
-		DataDefine.KeyValue,"NameByCN", "吸料轴R5_未使能提示",
+		DataDefine.KeyValue,"NameByCN", "吸料轴R5_未使能",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_R5_Not_Enabled",
 		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
-	public partial WordBool 吸料轴R5_未使能提示 { get; set; }= new WordBool();
+	public partial WordBool 吸料轴R5_未使能 { get; set; }= new WordBool();
 
 	[BinaryPoint(Offset = 22599, Source = "22599", Tags = "WordBool", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:22599", Category = "Alarm", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
@@ -962,11 +962,11 @@ public partial class PlcAlarmStruct
 	[BinaryPoint(Offset = 22605, Source = "22605", Tags = "WordBool", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:22605", Category = "Alarm", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
 		DataDefine.KeyValue,"Id", "106",
-		DataDefine.KeyValue,"NameByCN", "吸料轴Z6_未使能提示",
+		DataDefine.KeyValue,"NameByCN", "吸料轴Z6_未使能",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_Z6_Not_Enabled",
 		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
-	public partial WordBool 吸料轴Z6_未使能提示 { get; set; }= new WordBool();
+	public partial WordBool 吸料轴Z6_未使能 { get; set; }= new WordBool();
 
 	[BinaryPoint(Offset = 22606, Source = "22606", Tags = "WordBool", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:22606", Category = "Alarm", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
@@ -1025,11 +1025,11 @@ public partial class PlcAlarmStruct
 	[BinaryPoint(Offset = 22612, Source = "22612", Tags = "WordBool", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:22612", Category = "Alarm", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
 		DataDefine.KeyValue,"Id", "113",
-		DataDefine.KeyValue,"NameByCN", "吸料轴R6_未使能提示",
+		DataDefine.KeyValue,"NameByCN", "吸料轴R6_未使能",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_R6_Not_Enabled",
 		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
-	public partial WordBool 吸料轴R6_未使能提示 { get; set; }= new WordBool();
+	public partial WordBool 吸料轴R6_未使能 { get; set; }= new WordBool();
 
 	[BinaryPoint(Offset = 22613, Source = "22613", Tags = "WordBool", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:22613", Category = "Alarm", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
@@ -1088,11 +1088,11 @@ public partial class PlcAlarmStruct
 	[BinaryPoint(Offset = 22619, Source = "22619", Tags = "WordBool", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:22619", Category = "Alarm", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
 		DataDefine.KeyValue,"Id", "120",
-		DataDefine.KeyValue,"NameByCN", "吸料轴Z7_未使能提示",
+		DataDefine.KeyValue,"NameByCN", "吸料轴Z7_未使能",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_Z7_Not_Enabled",
 		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
-	public partial WordBool 吸料轴Z7_未使能提示 { get; set; }= new WordBool();
+	public partial WordBool 吸料轴Z7_未使能 { get; set; }= new WordBool();
 
 	[BinaryPoint(Offset = 22620, Source = "22620", Tags = "WordBool", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:22620", Category = "Alarm", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
@@ -1151,11 +1151,11 @@ public partial class PlcAlarmStruct
 	[BinaryPoint(Offset = 22626, Source = "22626", Tags = "WordBool", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:22626", Category = "Alarm", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
 		DataDefine.KeyValue,"Id", "127",
-		DataDefine.KeyValue,"NameByCN", "吸料轴R7_未使能提示",
+		DataDefine.KeyValue,"NameByCN", "吸料轴R7_未使能",
 		DataDefine.KeyValue,"NameByEN", "Pick_Axis_R7_Not_Enabled",
 		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
-	public partial WordBool 吸料轴R7_未使能提示 { get; set; }= new WordBool();
+	public partial WordBool 吸料轴R7_未使能 { get; set; }= new WordBool();
 
 	[BinaryPoint(Offset = 22627, Source = "22627", Tags = "WordBool", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:22627", Category = "Alarm", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
@@ -1214,569 +1214,614 @@ public partial class PlcAlarmStruct
 	[BinaryPoint(Offset = 22633, Source = "22633", Tags = "WordBool", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:22633", Category = "Alarm", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
 		DataDefine.KeyValue,"Id", "134",
-		DataDefine.KeyValue,"NameByCN", "轴1_定位气缸1-原位报警",
+		DataDefine.KeyValue,"NameByCN", "轴1_定位气缸1原位报警",
 		DataDefine.KeyValue,"NameByEN", "Axis1_PosCyl1_Home_Alarm",
 		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
-	public partial WordBool 轴1_定位气缸1_原位报警 { get; set; }= new WordBool();
+	public partial WordBool 轴1_定位气缸1原位报警 { get; set; }= new WordBool();
 
 	[BinaryPoint(Offset = 22634, Source = "22634", Tags = "WordBool", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:22634", Category = "Alarm", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
 		DataDefine.KeyValue,"Id", "135",
-		DataDefine.KeyValue,"NameByCN", "轴1_定位气缸1-工作位报警",
+		DataDefine.KeyValue,"NameByCN", "轴1_定位气缸1工作位报警",
 		DataDefine.KeyValue,"NameByEN", "Axis1_PosCyl1_WorkPos_Alarm",
 		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
-	public partial WordBool 轴1_定位气缸1_工作位报警 { get; set; }= new WordBool();
+	public partial WordBool 轴1_定位气缸1工作位报警 { get; set; }= new WordBool();
 
 	[BinaryPoint(Offset = 22635, Source = "22635", Tags = "WordBool", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:22635", Category = "Alarm", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
 		DataDefine.KeyValue,"Id", "136",
-		DataDefine.KeyValue,"NameByCN", "轴1_定位气缸1-原点安全条件触发异常",
+		DataDefine.KeyValue,"NameByCN", "轴1_定位气缸1原点安全条件触发异常",
 		DataDefine.KeyValue,"NameByEN", "Axis1_PosCyl1_Home_Safety_Cond_Error",
 		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
-	public partial WordBool 轴1_定位气缸1_原点安全条件触发异常 { get; set; }= new WordBool();
+	public partial WordBool 轴1_定位气缸1原点安全条件触发异常 { get; set; }= new WordBool();
 
 	[BinaryPoint(Offset = 22636, Source = "22636", Tags = "WordBool", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:22636", Category = "Alarm", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
 		DataDefine.KeyValue,"Id", "137",
-		DataDefine.KeyValue,"NameByCN", "轴1_定位气缸1-工作位安全条件触发异常",
+		DataDefine.KeyValue,"NameByCN", "轴1_定位气缸1工作位安全条件触发异常",
 		DataDefine.KeyValue,"NameByEN", "Axis1_PosCyl1_WorkPos_Safety_Cond_Error",
 		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
-	public partial WordBool 轴1_定位气缸1_工作位安全条件触发异常 { get; set; }= new WordBool();
+	public partial WordBool 轴1_定位气缸1工作位安全条件触发异常 { get; set; }= new WordBool();
 
 	[BinaryPoint(Offset = 22637, Source = "22637", Tags = "WordBool", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:22637", Category = "Alarm", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
 		DataDefine.KeyValue,"Id", "138",
-		DataDefine.KeyValue,"NameByCN", "轴1_定位气缸1-手自动联锁中",
+		DataDefine.KeyValue,"NameByCN", "轴1_定位气缸1手自动联锁中",
 		DataDefine.KeyValue,"NameByEN", "Axis1_PosCyl1_Manual_Auto_Interlock",
 		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
-	public partial WordBool 轴1_定位气缸1_手自动联锁中 { get; set; }= new WordBool();
+	public partial WordBool 轴1_定位气缸1手自动联锁中 { get; set; }= new WordBool();
 
 	[BinaryPoint(Offset = 22638, Source = "22638", Tags = "WordBool", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:22638", Category = "Alarm", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
 		DataDefine.KeyValue,"Id", "139",
-		DataDefine.KeyValue,"NameByCN", "轴1_定位气缸2-原位报警",
+		DataDefine.KeyValue,"NameByCN", "轴1_定位气缸2原位报警",
 		DataDefine.KeyValue,"NameByEN", "Axis1_PosCyl2_Home_Alarm",
 		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
-	public partial WordBool 轴1_定位气缸2_原位报警 { get; set; }= new WordBool();
+	public partial WordBool 轴1_定位气缸2原位报警 { get; set; }= new WordBool();
 
 	[BinaryPoint(Offset = 22639, Source = "22639", Tags = "WordBool", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:22639", Category = "Alarm", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
 		DataDefine.KeyValue,"Id", "140",
-		DataDefine.KeyValue,"NameByCN", "轴1_定位气缸2-工作位报警",
+		DataDefine.KeyValue,"NameByCN", "轴1_定位气缸2工作位报警",
 		DataDefine.KeyValue,"NameByEN", "Axis1_PosCyl2_WorkPos_Alarm",
 		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
-	public partial WordBool 轴1_定位气缸2_工作位报警 { get; set; }= new WordBool();
+	public partial WordBool 轴1_定位气缸2工作位报警 { get; set; }= new WordBool();
 
 	[BinaryPoint(Offset = 22640, Source = "22640", Tags = "WordBool", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:22640", Category = "Alarm", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
 		DataDefine.KeyValue,"Id", "141",
-		DataDefine.KeyValue,"NameByCN", "轴1_定位气缸2-原点安全条件触发异常",
+		DataDefine.KeyValue,"NameByCN", "轴1_定位气缸2原点安全条件触发异常",
 		DataDefine.KeyValue,"NameByEN", "Axis1_PosCyl2_Home_Safety_Cond_Error",
 		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
-	public partial WordBool 轴1_定位气缸2_原点安全条件触发异常 { get; set; }= new WordBool();
+	public partial WordBool 轴1_定位气缸2原点安全条件触发异常 { get; set; }= new WordBool();
 
 	[BinaryPoint(Offset = 22641, Source = "22641", Tags = "WordBool", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:22641", Category = "Alarm", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
 		DataDefine.KeyValue,"Id", "142",
-		DataDefine.KeyValue,"NameByCN", "轴1_定位气缸2-工作位安全条件触发异常",
+		DataDefine.KeyValue,"NameByCN", "轴1_定位气缸2工作位安全条件触发异常",
 		DataDefine.KeyValue,"NameByEN", "Axis1_PosCyl2_WorkPos_Safety_Cond_Error",
 		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
-	public partial WordBool 轴1_定位气缸2_工作位安全条件触发异常 { get; set; }= new WordBool();
+	public partial WordBool 轴1_定位气缸2工作位安全条件触发异常 { get; set; }= new WordBool();
 
 	[BinaryPoint(Offset = 22642, Source = "22642", Tags = "WordBool", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:22642", Category = "Alarm", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
 		DataDefine.KeyValue,"Id", "143",
-		DataDefine.KeyValue,"NameByCN", "轴1_定位气缸2-手自动联锁中",
+		DataDefine.KeyValue,"NameByCN", "轴1_定位气缸2手自动联锁中",
 		DataDefine.KeyValue,"NameByEN", "Axis1_PosCyl2_Manual_Auto_Interlock",
 		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
-	public partial WordBool 轴1_定位气缸2_手自动联锁中 { get; set; }= new WordBool();
+	public partial WordBool 轴1_定位气缸2手自动联锁中 { get; set; }= new WordBool();
 
 	[BinaryPoint(Offset = 22643, Source = "22643", Tags = "WordBool", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:22643", Category = "Alarm", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
 		DataDefine.KeyValue,"Id", "144",
-		DataDefine.KeyValue,"NameByCN", "轴1_定位气缸3-原位报警",
+		DataDefine.KeyValue,"NameByCN", "轴1_定位气缸3原位报警",
 		DataDefine.KeyValue,"NameByEN", "Axis1_PosCyl3_Home_Alarm",
 		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
-	public partial WordBool 轴1_定位气缸3_原位报警 { get; set; }= new WordBool();
+	public partial WordBool 轴1_定位气缸3原位报警 { get; set; }= new WordBool();
 
 	[BinaryPoint(Offset = 22644, Source = "22644", Tags = "WordBool", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:22644", Category = "Alarm", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
 		DataDefine.KeyValue,"Id", "145",
-		DataDefine.KeyValue,"NameByCN", "轴1_定位气缸3-工作位报警",
+		DataDefine.KeyValue,"NameByCN", "轴1_定位气缸3工作位报警",
 		DataDefine.KeyValue,"NameByEN", "Axis1_PosCyl3_WorkPos_Alarm",
 		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
-	public partial WordBool 轴1_定位气缸3_工作位报警 { get; set; }= new WordBool();
+	public partial WordBool 轴1_定位气缸3工作位报警 { get; set; }= new WordBool();
 
 	[BinaryPoint(Offset = 22645, Source = "22645", Tags = "WordBool", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:22645", Category = "Alarm", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
 		DataDefine.KeyValue,"Id", "146",
-		DataDefine.KeyValue,"NameByCN", "轴1_定位气缸3-原点安全条件触发异常",
+		DataDefine.KeyValue,"NameByCN", "轴1_定位气缸3原点安全条件触发异常",
 		DataDefine.KeyValue,"NameByEN", "Axis1_PosCyl3_Home_Safety_Cond_Error",
 		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
-	public partial WordBool 轴1_定位气缸3_原点安全条件触发异常 { get; set; }= new WordBool();
+	public partial WordBool 轴1_定位气缸3原点安全条件触发异常 { get; set; }= new WordBool();
 
 	[BinaryPoint(Offset = 22646, Source = "22646", Tags = "WordBool", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:22646", Category = "Alarm", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
 		DataDefine.KeyValue,"Id", "147",
-		DataDefine.KeyValue,"NameByCN", "轴1_定位气缸3-工作位安全条件触发异常",
+		DataDefine.KeyValue,"NameByCN", "轴1_定位气缸3工作位安全条件触发异常",
 		DataDefine.KeyValue,"NameByEN", "Axis1_PosCyl3_WorkPos_Safety_Cond_Error",
 		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
-	public partial WordBool 轴1_定位气缸3_工作位安全条件触发异常 { get; set; }= new WordBool();
+	public partial WordBool 轴1_定位气缸3工作位安全条件触发异常 { get; set; }= new WordBool();
 
 	[BinaryPoint(Offset = 22647, Source = "22647", Tags = "WordBool", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:22647", Category = "Alarm", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
 		DataDefine.KeyValue,"Id", "148",
-		DataDefine.KeyValue,"NameByCN", "轴1_定位气缸3-手自动联锁中",
+		DataDefine.KeyValue,"NameByCN", "轴1_定位气缸3手自动联锁中",
 		DataDefine.KeyValue,"NameByEN", "Axis1_PosCyl3_Manual_Auto_Interlock",
 		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
-	public partial WordBool 轴1_定位气缸3_手自动联锁中 { get; set; }= new WordBool();
+	public partial WordBool 轴1_定位气缸3手自动联锁中 { get; set; }= new WordBool();
 
 	[BinaryPoint(Offset = 22648, Source = "22648", Tags = "WordBool", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:22648", Category = "Alarm", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
 		DataDefine.KeyValue,"Id", "149",
-		DataDefine.KeyValue,"NameByCN", "轴2_定位气缸1-原位报警",
+		DataDefine.KeyValue,"NameByCN", "轴2_定位气缸1原位报警",
 		DataDefine.KeyValue,"NameByEN", "Axis2_PosCyl1_Home_Alarm",
 		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
-	public partial WordBool 轴2_定位气缸1_原位报警 { get; set; }= new WordBool();
+	public partial WordBool 轴2_定位气缸1原位报警 { get; set; }= new WordBool();
 
 	[BinaryPoint(Offset = 22649, Source = "22649", Tags = "WordBool", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:22649", Category = "Alarm", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
 		DataDefine.KeyValue,"Id", "150",
-		DataDefine.KeyValue,"NameByCN", "轴2_定位气缸1-工作位报警",
+		DataDefine.KeyValue,"NameByCN", "轴2_定位气缸1工作位报警",
 		DataDefine.KeyValue,"NameByEN", "Axis2_PosCyl1_WorkPos_Alarm",
 		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
-	public partial WordBool 轴2_定位气缸1_工作位报警 { get; set; }= new WordBool();
+	public partial WordBool 轴2_定位气缸1工作位报警 { get; set; }= new WordBool();
 
 	[BinaryPoint(Offset = 22650, Source = "22650", Tags = "WordBool", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:22650", Category = "Alarm", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
 		DataDefine.KeyValue,"Id", "151",
-		DataDefine.KeyValue,"NameByCN", "轴2_定位气缸1-原点安全条件触发异常",
+		DataDefine.KeyValue,"NameByCN", "轴2_定位气缸1原点安全条件触发异常",
 		DataDefine.KeyValue,"NameByEN", "Axis2_PosCyl1_Home_Safety_Cond_Error",
 		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
-	public partial WordBool 轴2_定位气缸1_原点安全条件触发异常 { get; set; }= new WordBool();
+	public partial WordBool 轴2_定位气缸1原点安全条件触发异常 { get; set; }= new WordBool();
 
 	[BinaryPoint(Offset = 22651, Source = "22651", Tags = "WordBool", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:22651", Category = "Alarm", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
 		DataDefine.KeyValue,"Id", "152",
-		DataDefine.KeyValue,"NameByCN", "轴2_定位气缸1-工作位安全条件触发异常",
+		DataDefine.KeyValue,"NameByCN", "轴2_定位气缸1工作位安全条件触发异常",
 		DataDefine.KeyValue,"NameByEN", "Axis2_PosCyl1_WorkPos_Safety_Cond_Error",
 		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
-	public partial WordBool 轴2_定位气缸1_工作位安全条件触发异常 { get; set; }= new WordBool();
+	public partial WordBool 轴2_定位气缸1工作位安全条件触发异常 { get; set; }= new WordBool();
 
 	[BinaryPoint(Offset = 22652, Source = "22652", Tags = "WordBool", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:22652", Category = "Alarm", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
 		DataDefine.KeyValue,"Id", "153",
-		DataDefine.KeyValue,"NameByCN", "轴2_定位气缸1-手自动联锁中",
+		DataDefine.KeyValue,"NameByCN", "轴2_定位气缸1手自动联锁中",
 		DataDefine.KeyValue,"NameByEN", "Axis2_PosCyl1_Manual_Auto_Interlock",
 		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
-	public partial WordBool 轴2_定位气缸1_手自动联锁中 { get; set; }= new WordBool();
+	public partial WordBool 轴2_定位气缸1手自动联锁中 { get; set; }= new WordBool();
 
 	[BinaryPoint(Offset = 22653, Source = "22653", Tags = "WordBool", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:22653", Category = "Alarm", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
 		DataDefine.KeyValue,"Id", "154",
-		DataDefine.KeyValue,"NameByCN", "轴2_定位气缸2-原位报警",
+		DataDefine.KeyValue,"NameByCN", "轴2_定位气缸2原位报警",
 		DataDefine.KeyValue,"NameByEN", "Axis2_PosCyl2_Home_Alarm",
 		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
-	public partial WordBool 轴2_定位气缸2_原位报警 { get; set; }= new WordBool();
+	public partial WordBool 轴2_定位气缸2原位报警 { get; set; }= new WordBool();
 
 	[BinaryPoint(Offset = 22654, Source = "22654", Tags = "WordBool", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:22654", Category = "Alarm", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
 		DataDefine.KeyValue,"Id", "155",
-		DataDefine.KeyValue,"NameByCN", "轴2_定位气缸2-工作位报警",
+		DataDefine.KeyValue,"NameByCN", "轴2_定位气缸2工作位报警",
 		DataDefine.KeyValue,"NameByEN", "Axis2_PosCyl2_WorkPos_Alarm",
 		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
-	public partial WordBool 轴2_定位气缸2_工作位报警 { get; set; }= new WordBool();
+	public partial WordBool 轴2_定位气缸2工作位报警 { get; set; }= new WordBool();
 
 	[BinaryPoint(Offset = 22655, Source = "22655", Tags = "WordBool", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:22655", Category = "Alarm", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
 		DataDefine.KeyValue,"Id", "156",
-		DataDefine.KeyValue,"NameByCN", "轴2_定位气缸2-原点安全条件触发异常",
+		DataDefine.KeyValue,"NameByCN", "轴2_定位气缸2原点安全条件触发异常",
 		DataDefine.KeyValue,"NameByEN", "Axis2_PosCyl2_Home_Safety_Cond_Error",
 		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
-	public partial WordBool 轴2_定位气缸2_原点安全条件触发异常 { get; set; }= new WordBool();
+	public partial WordBool 轴2_定位气缸2原点安全条件触发异常 { get; set; }= new WordBool();
 
 	[BinaryPoint(Offset = 22656, Source = "22656", Tags = "WordBool", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:22656", Category = "Alarm", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
 		DataDefine.KeyValue,"Id", "157",
-		DataDefine.KeyValue,"NameByCN", "轴2_定位气缸2-工作位安全条件触发异常",
+		DataDefine.KeyValue,"NameByCN", "轴2_定位气缸2工作位安全条件触发异常",
 		DataDefine.KeyValue,"NameByEN", "Axis2_PosCyl2_WorkPos_Safety_Cond_Error",
 		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
-	public partial WordBool 轴2_定位气缸2_工作位安全条件触发异常 { get; set; }= new WordBool();
+	public partial WordBool 轴2_定位气缸2工作位安全条件触发异常 { get; set; }= new WordBool();
 
 	[BinaryPoint(Offset = 22657, Source = "22657", Tags = "WordBool", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:22657", Category = "Alarm", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
 		DataDefine.KeyValue,"Id", "158",
-		DataDefine.KeyValue,"NameByCN", "轴2_定位气缸2-手自动联锁中",
+		DataDefine.KeyValue,"NameByCN", "轴2_定位气缸2手自动联锁中",
 		DataDefine.KeyValue,"NameByEN", "Axis2_PosCyl2_Manual_Auto_Interlock",
 		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
-	public partial WordBool 轴2_定位气缸2_手自动联锁中 { get; set; }= new WordBool();
+	public partial WordBool 轴2_定位气缸2手自动联锁中 { get; set; }= new WordBool();
 
 	[BinaryPoint(Offset = 22658, Source = "22658", Tags = "WordBool", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:22658", Category = "Alarm", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
 		DataDefine.KeyValue,"Id", "159",
-		DataDefine.KeyValue,"NameByCN", "轴2_定位气缸3-原位报警",
+		DataDefine.KeyValue,"NameByCN", "轴2_定位气缸3原位报警",
 		DataDefine.KeyValue,"NameByEN", "Axis2_PosCyl3_Home_Alarm",
 		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
-	public partial WordBool 轴2_定位气缸3_原位报警 { get; set; }= new WordBool();
+	public partial WordBool 轴2_定位气缸3原位报警 { get; set; }= new WordBool();
 
 	[BinaryPoint(Offset = 22659, Source = "22659", Tags = "WordBool", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:22659", Category = "Alarm", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
 		DataDefine.KeyValue,"Id", "160",
-		DataDefine.KeyValue,"NameByCN", "轴2_定位气缸3-工作位报警",
+		DataDefine.KeyValue,"NameByCN", "轴2_定位气缸3工作位报警",
 		DataDefine.KeyValue,"NameByEN", "Axis2_PosCyl3_WorkPos_Alarm",
 		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
-	public partial WordBool 轴2_定位气缸3_工作位报警 { get; set; }= new WordBool();
+	public partial WordBool 轴2_定位气缸3工作位报警 { get; set; }= new WordBool();
 
 	[BinaryPoint(Offset = 22660, Source = "22660", Tags = "WordBool", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:22660", Category = "Alarm", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
 		DataDefine.KeyValue,"Id", "161",
-		DataDefine.KeyValue,"NameByCN", "轴2_定位气缸3-原点安全条件触发异常",
+		DataDefine.KeyValue,"NameByCN", "轴2_定位气缸3原点安全条件触发异常",
 		DataDefine.KeyValue,"NameByEN", "Axis2_PosCyl3_Home_Safety_Cond_Error",
 		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
-	public partial WordBool 轴2_定位气缸3_原点安全条件触发异常 { get; set; }= new WordBool();
+	public partial WordBool 轴2_定位气缸3原点安全条件触发异常 { get; set; }= new WordBool();
 
 	[BinaryPoint(Offset = 22661, Source = "22661", Tags = "WordBool", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:22661", Category = "Alarm", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
 		DataDefine.KeyValue,"Id", "162",
-		DataDefine.KeyValue,"NameByCN", "轴2_定位气缸3-工作位安全条件触发异常",
+		DataDefine.KeyValue,"NameByCN", "轴2_定位气缸3工作位安全条件触发异常",
 		DataDefine.KeyValue,"NameByEN", "Axis2_PosCyl3_WorkPos_Safety_Cond_Error",
 		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
-	public partial WordBool 轴2_定位气缸3_工作位安全条件触发异常 { get; set; }= new WordBool();
+	public partial WordBool 轴2_定位气缸3工作位安全条件触发异常 { get; set; }= new WordBool();
 
 	[BinaryPoint(Offset = 22662, Source = "22662", Tags = "WordBool", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:22662", Category = "Alarm", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
 		DataDefine.KeyValue,"Id", "163",
-		DataDefine.KeyValue,"NameByCN", "轴2_定位气缸3-手自动联锁中",
+		DataDefine.KeyValue,"NameByCN", "轴2_定位气缸3手自动联锁中",
 		DataDefine.KeyValue,"NameByEN", "Axis2_PosCyl3_Manual_Auto_Interlock",
 		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
-	public partial WordBool 轴2_定位气缸3_手自动联锁中 { get; set; }= new WordBool();
+	public partial WordBool 轴2_定位气缸3手自动联锁中 { get; set; }= new WordBool();
 
 	[BinaryPoint(Offset = 22663, Source = "22663", Tags = "WordBool", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:22663", Category = "Alarm", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
 		DataDefine.KeyValue,"Id", "164",
-		DataDefine.KeyValue,"NameByCN", "载具1后底模_真空 -负压报警",
+		DataDefine.KeyValue,"NameByCN", "载具1后底模_真空负压报警",
 		DataDefine.KeyValue,"NameByEN", "Load1_Bottom_Vacuum_Negative_Pressure_Alarm",
 		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
-	public partial WordBool 载具1后底模_真空_负压报警 { get; set; }= new WordBool();
+	public partial WordBool 载具1后底模_真空负压报警 { get; set; }= new WordBool();
 
 	[BinaryPoint(Offset = 22664, Source = "22664", Tags = "WordBool", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:22664", Category = "Alarm", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
 		DataDefine.KeyValue,"Id", "165",
-		DataDefine.KeyValue,"NameByCN", "载具1后底模_真空-禁止破真空报警-提示",
+		DataDefine.KeyValue,"NameByCN", "载具1后底模_真空禁止破真空报警",
 		DataDefine.KeyValue,"NameByEN", "Load1_Bottom_Vacuum_Forbid_Vacuum_Break_Alarm",
 		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
-	public partial WordBool 载具1后底模_真空_禁止破真空报警_提示 { get; set; }= new WordBool();
+	public partial WordBool 载具1后底模_真空禁止破真空报警 { get; set; }= new WordBool();
 
 	[BinaryPoint(Offset = 22665, Source = "22665", Tags = "WordBool", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:22665", Category = "Alarm", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
 		DataDefine.KeyValue,"Id", "166",
-		DataDefine.KeyValue,"NameByCN", "载具1后底模_真空-手自动联锁中",
+		DataDefine.KeyValue,"NameByCN", "载具1后底模_真空手自动联锁中",
 		DataDefine.KeyValue,"NameByEN", "Load1_Bottom_Vacuum_Manual_Auto_Interlock",
 		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
-	public partial WordBool 载具1后底模_真空_手自动联锁中 { get; set; }= new WordBool();
+	public partial WordBool 载具1后底模_真空手自动联锁中 { get; set; }= new WordBool();
 
 	[BinaryPoint(Offset = 22666, Source = "22666", Tags = "WordBool", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:22666", Category = "Alarm", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
 		DataDefine.KeyValue,"Id", "167",
-		DataDefine.KeyValue,"NameByCN", "载具1前底模_真空-负压报警",
+		DataDefine.KeyValue,"NameByCN", "载具1前底模_真空负压报警",
 		DataDefine.KeyValue,"NameByEN", "Load1_Bottom_Vacuum_Negative_Pressure_Alarm",
 		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
-	public partial WordBool 载具1前底模_真空_负压报警 { get; set; }= new WordBool();
+	public partial WordBool 载具1前底模_真空负压报警 { get; set; }= new WordBool();
 
 	[BinaryPoint(Offset = 22667, Source = "22667", Tags = "WordBool", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:22667", Category = "Alarm", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
 		DataDefine.KeyValue,"Id", "168",
-		DataDefine.KeyValue,"NameByCN", "载具1前底模_真空-禁止破真空报警-提示",
+		DataDefine.KeyValue,"NameByCN", "载具1前底模_真空禁止破真空报警",
 		DataDefine.KeyValue,"NameByEN", "Load1_Bottom_Vacuum_Forbid_Vacuum_Break_Alarm",
 		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
-	public partial WordBool 载具1前底模_真空_禁止破真空报警_提示 { get; set; }= new WordBool();
+	public partial WordBool 载具1前底模_真空禁止破真空报警 { get; set; }= new WordBool();
 
 	[BinaryPoint(Offset = 22668, Source = "22668", Tags = "WordBool", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:22668", Category = "Alarm", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
 		DataDefine.KeyValue,"Id", "169",
-		DataDefine.KeyValue,"NameByCN", "载具1前底模_真空-手自动联锁中",
+		DataDefine.KeyValue,"NameByCN", "载具1前底模_真空手自动联锁中",
 		DataDefine.KeyValue,"NameByEN", "Load1_Bottom_Vacuum_Manual_Auto_Interlock",
 		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
-	public partial WordBool 载具1前底模_真空_手自动联锁中 { get; set; }= new WordBool();
+	public partial WordBool 载具1前底模_真空手自动联锁中 { get; set; }= new WordBool();
 
 	[BinaryPoint(Offset = 22669, Source = "22669", Tags = "WordBool", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:22669", Category = "Alarm", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
 		DataDefine.KeyValue,"Id", "170",
-		DataDefine.KeyValue,"NameByCN", "载具2前底模_真空-负压报警",
+		DataDefine.KeyValue,"NameByCN", "载具2前底模_真空负压报警",
 		DataDefine.KeyValue,"NameByEN", "Load2_Bottom_Vacuum_Negative_Pressure_Alarm",
 		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
-	public partial WordBool 载具2前底模_真空_负压报警 { get; set; }= new WordBool();
+	public partial WordBool 载具2前底模_真空负压报警 { get; set; }= new WordBool();
 
 	[BinaryPoint(Offset = 22670, Source = "22670", Tags = "WordBool", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:22670", Category = "Alarm", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
 		DataDefine.KeyValue,"Id", "171",
-		DataDefine.KeyValue,"NameByCN", "载具2前底模_真空-禁止破真空报警-提示",
+		DataDefine.KeyValue,"NameByCN", "载具2前底模_真空禁止破真空报警",
 		DataDefine.KeyValue,"NameByEN", "Load2_Bottom_Vacuum_Forbid_Vacuum_Break_Alarm",
 		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
-	public partial WordBool 载具2前底模_真空_禁止破真空报警_提示 { get; set; }= new WordBool();
+	public partial WordBool 载具2前底模_真空禁止破真空报警 { get; set; }= new WordBool();
 
 	[BinaryPoint(Offset = 22671, Source = "22671", Tags = "WordBool", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:22671", Category = "Alarm", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
 		DataDefine.KeyValue,"Id", "172",
-		DataDefine.KeyValue,"NameByCN", "载具2前底模_真空-手自动联锁中",
+		DataDefine.KeyValue,"NameByCN", "载具2前底模_真空手自动联锁中",
 		DataDefine.KeyValue,"NameByEN", "Load2_Bottom_Vacuum_Manual_Auto_Interlock",
 		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
-	public partial WordBool 载具2前底模_真空_手自动联锁中 { get; set; }= new WordBool();
+	public partial WordBool 载具2前底模_真空手自动联锁中 { get; set; }= new WordBool();
 
 	[BinaryPoint(Offset = 22672, Source = "22672", Tags = "WordBool", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:22672", Category = "Alarm", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
 		DataDefine.KeyValue,"Id", "173",
-		DataDefine.KeyValue,"NameByCN", "载具2后底模_真空-负压报警",
+		DataDefine.KeyValue,"NameByCN", "载具2后底模_真空负压报警",
 		DataDefine.KeyValue,"NameByEN", "Load2_Bottom_Vacuum_Negative_Pressure_Alarm",
 		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
-	public partial WordBool 载具2后底模_真空_负压报警 { get; set; }= new WordBool();
+	public partial WordBool 载具2后底模_真空负压报警 { get; set; }= new WordBool();
 
 	[BinaryPoint(Offset = 22673, Source = "22673", Tags = "WordBool", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:22673", Category = "Alarm", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
 		DataDefine.KeyValue,"Id", "174",
-		DataDefine.KeyValue,"NameByCN", "载具2后底模_真空-禁止破真空报警-提示",
+		DataDefine.KeyValue,"NameByCN", "载具2后底模_真空禁止破真空报警",
 		DataDefine.KeyValue,"NameByEN", "Load2_Bottom_Vacuum_Forbid_Vacuum_Break_Alarm",
 		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
-	public partial WordBool 载具2后底模_真空_禁止破真空报警_提示 { get; set; }= new WordBool();
+	public partial WordBool 载具2后底模_真空禁止破真空报警 { get; set; }= new WordBool();
 
 	[BinaryPoint(Offset = 22674, Source = "22674", Tags = "WordBool", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:22674", Category = "Alarm", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
 		DataDefine.KeyValue,"Id", "175",
-		DataDefine.KeyValue,"NameByCN", "载具2后底模_真空-手自动联锁中",
+		DataDefine.KeyValue,"NameByCN", "载具2后底模_真空手自动联锁中",
 		DataDefine.KeyValue,"NameByEN", "Load2_Bottom_Vacuum_Manual_Auto_Interlock",
 		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
-	public partial WordBool 载具2后底模_真空_手自动联锁中 { get; set; }= new WordBool();
+	public partial WordBool 载具2后底模_真空手自动联锁中 { get; set; }= new WordBool();
 
 	[BinaryPoint(Offset = 22675, Source = "22675", Tags = "WordBool", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:22675", Category = "Alarm", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
 		DataDefine.KeyValue,"Id", "176",
-		DataDefine.KeyValue,"NameByCN", "ZR1_真空-负压报警",
+		DataDefine.KeyValue,"NameByCN", "ZR1_真空负压报警",
 		DataDefine.KeyValue,"NameByEN", "ZR1_Vacuum_Negative_Pressure_Alarm",
 		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
-	public partial WordBool ZR1_真空_负压报警 { get; set; }= new WordBool();
+	public partial WordBool ZR1_真空负压报警 { get; set; }= new WordBool();
 
 	[BinaryPoint(Offset = 22676, Source = "22676", Tags = "WordBool", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:22676", Category = "Alarm", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
 		DataDefine.KeyValue,"Id", "177",
-		DataDefine.KeyValue,"NameByCN", "ZR1_真空-禁止破真空报警-提示",
+		DataDefine.KeyValue,"NameByCN", "ZR1_真空禁止破真空报警",
 		DataDefine.KeyValue,"NameByEN", "ZR1_Vacuum_Forbid_Vacuum_Break_Alarm",
 		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
-	public partial WordBool ZR1_真空_禁止破真空报警_提示 { get; set; }= new WordBool();
+	public partial WordBool ZR1_真空禁止破真空报警 { get; set; }= new WordBool();
 
 	[BinaryPoint(Offset = 22677, Source = "22677", Tags = "WordBool", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:22677", Category = "Alarm", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
 		DataDefine.KeyValue,"Id", "178",
-		DataDefine.KeyValue,"NameByCN", "ZR1_真空-手自动联锁中",
+		DataDefine.KeyValue,"NameByCN", "ZR1_真空手自动联锁中",
 		DataDefine.KeyValue,"NameByEN", "ZR1_Vacuum_Manual_Auto_Interlock",
 		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
-	public partial WordBool ZR1_真空_手自动联锁中 { get; set; }= new WordBool();
+	public partial WordBool ZR1_真空手自动联锁中 { get; set; }= new WordBool();
 
 	[BinaryPoint(Offset = 22678, Source = "22678", Tags = "WordBool", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:22678", Category = "Alarm", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
 		DataDefine.KeyValue,"Id", "179",
-		DataDefine.KeyValue,"NameByCN", "ZR2_真空-负压报警",
+		DataDefine.KeyValue,"NameByCN", "ZR2_真空负压报警",
 		DataDefine.KeyValue,"NameByEN", "ZR2_Vacuum_Negative_Pressure_Alarm",
 		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
-	public partial WordBool ZR2_真空_负压报警 { get; set; }= new WordBool();
+	public partial WordBool ZR2_真空负压报警 { get; set; }= new WordBool();
 
 	[BinaryPoint(Offset = 22679, Source = "22679", Tags = "WordBool", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:22679", Category = "Alarm", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
 		DataDefine.KeyValue,"Id", "180",
-		DataDefine.KeyValue,"NameByCN", "ZR2_真空-禁止破真空报警-提示",
+		DataDefine.KeyValue,"NameByCN", "ZR2_真空禁止破真空报警",
 		DataDefine.KeyValue,"NameByEN", "ZR2_Vacuum_Forbid_Vacuum_Break_Alarm",
 		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
-	public partial WordBool ZR2_真空_禁止破真空报警_提示 { get; set; }= new WordBool();
+	public partial WordBool ZR2_真空禁止破真空报警 { get; set; }= new WordBool();
 
 	[BinaryPoint(Offset = 22680, Source = "22680", Tags = "WordBool", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:22680", Category = "Alarm", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
 		DataDefine.KeyValue,"Id", "181",
-		DataDefine.KeyValue,"NameByCN", "ZR2_真空-手自动联锁中",
+		DataDefine.KeyValue,"NameByCN", "ZR2_真空手自动联锁中",
 		DataDefine.KeyValue,"NameByEN", "ZR2_Vacuum_Manual_Auto_Interlock",
 		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
-	public partial WordBool ZR2_真空_手自动联锁中 { get; set; }= new WordBool();
+	public partial WordBool ZR2_真空手自动联锁中 { get; set; }= new WordBool();
 
 	[BinaryPoint(Offset = 22681, Source = "22681", Tags = "WordBool", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:22681", Category = "Alarm", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
 		DataDefine.KeyValue,"Id", "182",
-		DataDefine.KeyValue,"NameByCN", "ZR3_真空-负压报警",
+		DataDefine.KeyValue,"NameByCN", "ZR3_真空负压报警",
 		DataDefine.KeyValue,"NameByEN", "ZR3_Vacuum_Negative_Pressure_Alarm",
 		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
-	public partial WordBool ZR3_真空_负压报警 { get; set; }= new WordBool();
+	public partial WordBool ZR3_真空负压报警 { get; set; }= new WordBool();
 
 	[BinaryPoint(Offset = 22682, Source = "22682", Tags = "WordBool", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:22682", Category = "Alarm", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
 		DataDefine.KeyValue,"Id", "183",
-		DataDefine.KeyValue,"NameByCN", "ZR3_真空-禁止破真空报警-提示",
+		DataDefine.KeyValue,"NameByCN", "ZR3_真空禁止破真空报警",
 		DataDefine.KeyValue,"NameByEN", "ZR3_Vacuum_Forbid_Vacuum_Break_Alarm",
 		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
-	public partial WordBool ZR3_真空_禁止破真空报警_提示 { get; set; }= new WordBool();
+	public partial WordBool ZR3_真空禁止破真空报警 { get; set; }= new WordBool();
 
 	[BinaryPoint(Offset = 22683, Source = "22683", Tags = "WordBool", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:22683", Category = "Alarm", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
 		DataDefine.KeyValue,"Id", "184",
-		DataDefine.KeyValue,"NameByCN", "ZR3_真空-手自动联锁中",
+		DataDefine.KeyValue,"NameByCN", "ZR3_真空手自动联锁中",
 		DataDefine.KeyValue,"NameByEN", "ZR3_Vacuum_Manual_Auto_Interlock",
 		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
-	public partial WordBool ZR3_真空_手自动联锁中 { get; set; }= new WordBool();
+	public partial WordBool ZR3_真空手自动联锁中 { get; set; }= new WordBool();
 
 	[BinaryPoint(Offset = 22684, Source = "22684", Tags = "WordBool", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:22684", Category = "Alarm", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
 		DataDefine.KeyValue,"Id", "185",
-		DataDefine.KeyValue,"NameByCN", "ZR4_真空-负压报警",
+		DataDefine.KeyValue,"NameByCN", "ZR4_真空负压报警",
 		DataDefine.KeyValue,"NameByEN", "ZR4_Vacuum_Negative_Pressure_Alarm",
 		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
-	public partial WordBool ZR4_真空_负压报警 { get; set; }= new WordBool();
+	public partial WordBool ZR4_真空负压报警 { get; set; }= new WordBool();
 
 	[BinaryPoint(Offset = 22685, Source = "22685", Tags = "WordBool", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:22685", Category = "Alarm", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
 		DataDefine.KeyValue,"Id", "186",
-		DataDefine.KeyValue,"NameByCN", "ZR4_真空-禁止破真空报警-提示",
+		DataDefine.KeyValue,"NameByCN", "ZR4_真空禁止破真空报警",
 		DataDefine.KeyValue,"NameByEN", "ZR4_Vacuum_Forbid_Vacuum_Break_Alarm",
 		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
-	public partial WordBool ZR4_真空_禁止破真空报警_提示 { get; set; }= new WordBool();
+	public partial WordBool ZR4_真空禁止破真空报警 { get; set; }= new WordBool();
 
 	[BinaryPoint(Offset = 22686, Source = "22686", Tags = "WordBool", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:22686", Category = "Alarm", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
 		DataDefine.KeyValue,"Id", "187",
-		DataDefine.KeyValue,"NameByCN", "ZR4_真空-手自动联锁中",
+		DataDefine.KeyValue,"NameByCN", "ZR4_真空手自动联锁中",
 		DataDefine.KeyValue,"NameByEN", "ZR4_Vacuum_Manual_Auto_Interlock",
 		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
-	public partial WordBool ZR4_真空_手自动联锁中 { get; set; }= new WordBool();
+	public partial WordBool ZR4_真空手自动联锁中 { get; set; }= new WordBool();
 
 	[BinaryPoint(Offset = 22687, Source = "22687", Tags = "WordBool", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:22687", Category = "Alarm", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
 		DataDefine.KeyValue,"Id", "188",
-		DataDefine.KeyValue,"NameByCN", "ZR5_真空-负压报警",
+		DataDefine.KeyValue,"NameByCN", "ZR5_真空负压报警",
 		DataDefine.KeyValue,"NameByEN", "ZR5_Vacuum_Negative_Pressure_Alarm",
 		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
-	public partial WordBool ZR5_真空_负压报警 { get; set; }= new WordBool();
+	public partial WordBool ZR5_真空负压报警 { get; set; }= new WordBool();
 
 	[BinaryPoint(Offset = 22688, Source = "22688", Tags = "WordBool", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:22688", Category = "Alarm", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
 		DataDefine.KeyValue,"Id", "189",
-		DataDefine.KeyValue,"NameByCN", "ZR5_真空-禁止破真空报警-提示",
+		DataDefine.KeyValue,"NameByCN", "ZR5_真空禁止破真空报警",
 		DataDefine.KeyValue,"NameByEN", "ZR5_Vacuum_Forbid_Vacuum_Break_Alarm",
 		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
-	public partial WordBool ZR5_真空_禁止破真空报警_提示 { get; set; }= new WordBool();
+	public partial WordBool ZR5_真空禁止破真空报警 { get; set; }= new WordBool();
 
 	[BinaryPoint(Offset = 22689, Source = "22689", Tags = "WordBool", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:22689", Category = "Alarm", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
 		DataDefine.KeyValue,"Id", "190",
-		DataDefine.KeyValue,"NameByCN", "ZR5_真空-手自动联锁中",
+		DataDefine.KeyValue,"NameByCN", "ZR5_真空手自动联锁中",
 		DataDefine.KeyValue,"NameByEN", "ZR5_Vacuum_Manual_Auto_Interlock",
 		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
-	public partial WordBool ZR5_真空_手自动联锁中 { get; set; }= new WordBool();
+	public partial WordBool ZR5_真空手自动联锁中 { get; set; }= new WordBool();
 
 	[BinaryPoint(Offset = 22690, Source = "22690", Tags = "WordBool", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:22690", Category = "Alarm", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
 		DataDefine.KeyValue,"Id", "191",
-		DataDefine.KeyValue,"NameByCN", "ZR6_真空-负压报警",
+		DataDefine.KeyValue,"NameByCN", "ZR6_真空负压报警",
 		DataDefine.KeyValue,"NameByEN", "ZR6_Vacuum_Negative_Pressure_Alarm",
 		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
-	public partial WordBool ZR6_真空_负压报警 { get; set; }= new WordBool();
+	public partial WordBool ZR6_真空负压报警 { get; set; }= new WordBool();
 
 	[BinaryPoint(Offset = 22691, Source = "22691", Tags = "WordBool", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:22691", Category = "Alarm", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
 		DataDefine.KeyValue,"Id", "192",
-		DataDefine.KeyValue,"NameByCN", "ZR6_真空-禁止破真空报警-提示",
+		DataDefine.KeyValue,"NameByCN", "ZR6_真空禁止破真空报警",
 		DataDefine.KeyValue,"NameByEN", "ZR6_Vacuum_Forbid_Vacuum_Break_Alarm",
 		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
-	public partial WordBool ZR6_真空_禁止破真空报警_提示 { get; set; }= new WordBool();
+	public partial WordBool ZR6_真空禁止破真空报警 { get; set; }= new WordBool();
 
 	[BinaryPoint(Offset = 22692, Source = "22692", Tags = "WordBool", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:22692", Category = "Alarm", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
 		DataDefine.KeyValue,"Id", "193",
-		DataDefine.KeyValue,"NameByCN", "ZR6_真空-手自动联锁中",
+		DataDefine.KeyValue,"NameByCN", "ZR6_真空手自动联锁中",
 		DataDefine.KeyValue,"NameByEN", "ZR6_Vacuum_Manual_Auto_Interlock",
 		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
-	public partial WordBool ZR6_真空_手自动联锁中 { get; set; }= new WordBool();
+	public partial WordBool ZR6_真空手自动联锁中 { get; set; }= new WordBool();
 
 	[BinaryPoint(Offset = 22693, Source = "22693", Tags = "WordBool", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:22693", Category = "Alarm", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
 		DataDefine.KeyValue,"Id", "194",
-		DataDefine.KeyValue,"NameByCN", "ZR7_真空-负压报警",
+		DataDefine.KeyValue,"NameByCN", "ZR7_真空负压报警",
 		DataDefine.KeyValue,"NameByEN", "ZR7_Vacuum_Negative_Pressure_Alarm",
 		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
-	public partial WordBool ZR7_真空_负压报警 { get; set; }= new WordBool();
+	public partial WordBool ZR7_真空负压报警 { get; set; }= new WordBool();
 
 	[BinaryPoint(Offset = 22694, Source = "22694", Tags = "WordBool", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:22694", Category = "Alarm", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
 		DataDefine.KeyValue,"Id", "195",
-		DataDefine.KeyValue,"NameByCN", "ZR7_真空-禁止破真空报警-提示",
+		DataDefine.KeyValue,"NameByCN", "ZR7_真空禁止破真空报警",
 		DataDefine.KeyValue,"NameByEN", "ZR7_Vacuum_Forbid_Vacuum_Break_Alarm",
 		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
-	public partial WordBool ZR7_真空_禁止破真空报警_提示 { get; set; }= new WordBool();
+	public partial WordBool ZR7_真空禁止破真空报警 { get; set; }= new WordBool();
 
 	[BinaryPoint(Offset = 22695, Source = "22695", Tags = "WordBool", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:22695", Category = "Alarm", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
 		DataDefine.KeyValue,"Id", "196",
-		DataDefine.KeyValue,"NameByCN", "ZR7_真空-手自动联锁中",
+		DataDefine.KeyValue,"NameByCN", "ZR7_真空手自动联锁中",
 		DataDefine.KeyValue,"NameByEN", "ZR7_Vacuum_Manual_Auto_Interlock",
 		DataDefine.KeyValue,"NameByVI", "",
 		DataDefine.KeyValue,"TipMessage", "", ])]
-	public partial WordBool ZR7_真空_手自动联锁中 { get; set; }= new WordBool();
+	public partial WordBool ZR7_真空手自动联锁中 { get; set; }= new WordBool();
+
+	[BinaryPoint(Offset = 22696, Source = "22696", Tags = "WordBool", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:22696", Category = "Alarm", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"Id", "197",
+		DataDefine.KeyValue,"NameByCN", "飞达1号_异常报警中",
+		DataDefine.KeyValue,"NameByEN", "",
+		DataDefine.KeyValue,"NameByVI", "",
+		DataDefine.KeyValue,"TipMessage", "", ])]
+	public partial WordBool 飞达1号_异常报警中 { get; set; }= new WordBool();
+
+	[BinaryPoint(Offset = 22697, Source = "22697", Tags = "WordBool", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:22697", Category = "Alarm", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"Id", "198",
+		DataDefine.KeyValue,"NameByCN", "飞达2号_异常报警中",
+		DataDefine.KeyValue,"NameByEN", "",
+		DataDefine.KeyValue,"NameByVI", "",
+		DataDefine.KeyValue,"TipMessage", "", ])]
+	public partial WordBool 飞达2号_异常报警中 { get; set; }= new WordBool();
+
+	[BinaryPoint(Offset = 22698, Source = "22698", Tags = "WordBool", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:22698", Category = "Alarm", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"Id", "199",
+		DataDefine.KeyValue,"NameByCN", "飞达3号_异常报警中",
+		DataDefine.KeyValue,"NameByEN", "",
+		DataDefine.KeyValue,"NameByVI", "",
+		DataDefine.KeyValue,"TipMessage", "", ])]
+	public partial WordBool 飞达3号_异常报警中 { get; set; }= new WordBool();
+
+	[BinaryPoint(Offset = 22699, Source = "22699", Tags = "WordBool", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:22699", Category = "Alarm", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"Id", "200",
+		DataDefine.KeyValue,"NameByCN", "料盘4号_料盘锁止打开",
+		DataDefine.KeyValue,"NameByEN", "",
+		DataDefine.KeyValue,"NameByVI", "",
+		DataDefine.KeyValue,"TipMessage", "", ])]
+	public partial WordBool 料盘4号_料盘锁止打开 { get; set; }= new WordBool();
+
+	[BinaryPoint(Offset = 22700, Source = "22700", Tags = "WordBool", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:22700", Category = "Alarm", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"Id", "201",
+		DataDefine.KeyValue,"NameByCN", "急停中",
+		DataDefine.KeyValue,"NameByEN", "",
+		DataDefine.KeyValue,"NameByVI", "",
+		DataDefine.KeyValue,"TipMessage", "", ])]
+	public partial WordBool 急停中 { get; set; }= new WordBool();
 
 	#endregion
 

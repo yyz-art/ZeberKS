@@ -1,197 +1,103 @@
 ﻿Id,Offset,Name,TipMessage,Comment,NameByCN,NameByEN,NameByVI
-1,22500,上料轴1_未使能提示,,,上料轴1_未使能提示,Load_Axis1_Not_Enabled,Loading Axis 1_Ch?a cho phép ho?t ??ng
-2,22501,上料轴1_指令报错,,,上料轴1_指令报错,Load_Axis1_Command_Error,Loading Axis 1_L?i l?nh
-3,22502,上料轴1_正极限,,,上料轴1_正极限,Load_Axis1_Pos_Limit,Loading Axis 1_Gi?i h?n d??ng
-4,22503,上料轴1_负极限,,,上料轴1_负极限,Load_Axis1_Neg_Limit,Loading Axis 1_Gi?i h?n am
-5,22504,上料轴1_JOG安全条件报警,,,上料轴1_JOG安全条件报警,Load_Axis1_JOG_Safety_Alarm,Loading Axis 1_C?nh báo ?i?u ki?n an toàn JOG
-6,22505,上料轴1_PTP安全条件报警,,,上料轴1_PTP安全条件报警,Load_Axis1_PTP_Safety_Alarm,Loading Axis 1_C?nh báo ?i?u ki?n an toàn PTP
-7,22506,上料轴1_手自动不一致,,,上料轴1_手自动不一致,Load_Axis1_Manual_Auto_Mismatch,Loading Axis 1_Kh?ng ??ng b? tay-t? ??ng
-8,22507,上料轴2_未使能提示,,,上料轴2_未使能提示,Load_Axis2_Not_Enabled,Loading Axis 2_Ch?a cho phép ho?t ??ng
-9,22508,上料轴2_指令报错,,,上料轴2_指令报错,Load_Axis2_Command_Error,Loading Axis 2_L?i l?nh
-10,22509,上料轴2_正极限,,,上料轴2_正极限,Load_Axis2_Pos_Limit,Loading Axis 2_Gi?i h?n d??ng
-11,22510,上料轴2_负极限,,,上料轴2_负极限,Load_Axis2_Neg_Limit,Loading Axis 2_Gi?i h?n am
-12,22511,上料轴2_JOG安全条件报警,,,上料轴2_JOG安全条件报警,Load_Axis2_JOG_Safety_Alarm,Loading Axis 2_C?nh báo ?i?u ki?n an toàn JOG
-13,22512,上料轴2_PTP安全条件报警,,,上料轴2_PTP安全条件报警,Load_Axis2_PTP_Safety_Alarm,Loading Axis 2_C?nh báo ?i?u ki?n an toàn PTP
-14,22513,上料轴2_手自动不一致,,,上料轴2_手自动不一致,Load_Axis2_Manual_Auto_Mismatch,Loading Axis 2_Kh?ng ??ng b? tay-t? ??ng
-15,22514,X轴_未使能提示,,,X轴_未使能提示,X_Axis_Not_Enabled,Tr?c X_Ch?a cho phép ho?t ??ng
-16,22515,X轴_指令报错,,,X轴_指令报错,X_Axis_Command_Error,Tr?c X_L?i l?nh
-17,22516,X轴_正极限,,,X轴_正极限,X_Axis_Pos_Limit,Tr?c X_Gi?i h?n d??ng
-18,22517,X轴_负极限,,,X轴_负极限,X_Axis_Neg_Limit,Tr?c X_Gi?i h?n am
-19,22518,X轴_JOG安全条件报警,,,X轴_JOG安全条件报警,X_Axis_JOG_Safety_Alarm,Tr?c X_C?nh báo ?i?u ki?n an toàn JOG
-20,22519,X轴_PTP安全条件报警,,,X轴_PTP安全条件报警,X_Axis_PTP_Safety_Alarm,Tr?c X_C?nh báo ?i?u ki?n an toàn PTP
-21,22520,X轴_手自动不一致,,,X轴_手自动不一致,X_Axis_Manual_Auto_Mismatch,Tr?c X_Kh?ng ??ng b? tay-t? ??ng
-22,22521,Y轴_未使能提示,,,Y轴_未使能提示,Y_Axis_Not_Enabled,Tr?c Y_Ch?a cho phép ho?t ??ng
-23,22522,Y轴_指令报错,,,Y轴_指令报错,Y_Axis_Command_Error,Tr?c Y_L?i l?nh
-24,22523,Y轴_正极限,,,Y轴_正极限,Y_Axis_Pos_Limit,Tr?c Y_Gi?i h?n d??ng
-25,22524,Y轴_负极限,,,Y轴_负极限,Y_Axis_Neg_Limit,Tr?c Y_Gi?i h?n am
-26,22525,Y轴_JOG安全条件报警,,,Y轴_JOG安全条件报警,Y_Axis_JOG_Safety_Alarm,Tr?c Y_C?nh báo ?i?u ki?n an toàn JOG
-27,22526,Y轴_PTP安全条件报警,,,Y轴_PTP安全条件报警,Y_Axis_PTP_Safety_Alarm,Tr?c Y_C?nh báo ?i?u ki?n an toàn PTP
-28,22527,Y轴_手自动不一致,,,Y轴_手自动不一致,Y_Axis_Manual_Auto_Mismatch,Tr?c Y_Kh?ng ??ng b? tay-t? ??ng
-29,22528,相机调节步进轴_未使能提示,,,相机调节步进轴_未使能提示,Cam_Adj_Step_Axis_Not_Enabled,Tr?c b??c ?i?u ch?nh camera_Ch?a cho phép ho?t ??ng
-30,22529,相机调节步进轴_指令报错,,,相机调节步进轴_指令报错,Cam_Adj_Step_Axis_Command_Error,Tr?c b??c ?i?u ch?nh camera_L?i l?nh
-31,22530,相机调节步进轴_正极限,,,相机调节步进轴_正极限,Cam_Adj_Step_Axis_Pos_Limit,Tr?c b??c ?i?u ch?nh camera_Gi?i h?n d??ng
-32,22531,相机调节步进轴_负极限,,,相机调节步进轴_负极限,Cam_Adj_Step_Axis_Neg_Limit,Tr?c b??c ?i?u ch?nh camera_Gi?i h?n am
-33,22532,相机调节步进轴_JOG安全条件报警,,,相机调节步进轴_JOG安全条件报警,Cam_Adj_Step_Axis_JOG_Safety_Alarm,Tr?c b??c ?i?u ch?nh camera_C?nh báo ?i?u ki?n an toàn JOG
-34,22533,相机调节步进轴_PTP安全条件报警,,,相机调节步进轴_PTP安全条件报警,Cam_Adj_Step_Axis_PTP_Safety_Alarm,Tr?c b??c ?i?u ch?nh camera_C?nh báo ?i?u ki?n an toàn PTP
-35,22534,相机调节步进轴_手自动不一致,,,相机调节步进轴_手自动不一致,Cam_Adj_Step_Axis_Manual_Auto_Mismatch,Tr?c b??c ?i?u ch?nh camera_Kh?ng ??ng b? tay-t? ??ng
-36,22535,吸料轴Z1_未使能提示,,,吸料轴Z1_未使能提示,Pick_Axis_Z1_Not_Enabled,Feeding Axis Z1_Ch?a cho phép ho?t ??ng
-37,22536,吸料轴Z1_指令报错,,,吸料轴Z1_指令报错,Pick_Axis_Z1_Command_Error,Feeding Axis Z1_L?i l?nh
-38,22537,吸料轴Z1_正极限,,,吸料轴Z1_正极限,Pick_Axis_Z1_Pos_Limit,Feeding Axis Z1_Gi?i h?n d??ng
-39,22538,吸料轴Z1_负极限,,,吸料轴Z1_负极限,Pick_Axis_Z1_Neg_Limit,Feeding Axis Z1_Gi?i h?n am
-40,22539,吸料轴Z1_JOG安全条件报警,,,吸料轴Z1_JOG安全条件报警,Pick_Axis_Z1_JOG_Safety_Alarm,Feeding Axis Z1_C?nh báo ?i?u ki?n an toàn JOG
-41,22540,吸料轴Z1_PTP安全条件报警,,,吸料轴Z1_PTP安全条件报警,Pick_Axis_Z1_PTP_Safety_Alarm,Feeding Axis Z1_C?nh báo ?i?u ki?n an toàn PTP
-42,22541,吸料轴Z1_手自动不一致,,,吸料轴Z1_手自动不一致,Pick_Axis_Z1_Manual_Auto_Mismatch,Feeding Axis Z1_Kh?ng ??ng b? tay-t? ??ng
-43,22542,吸料轴R1_未使能提示,,,吸料轴R1_未使能提示,Pick_Axis_R1_Not_Enabled,Feeding Axis R1_Ch?a cho phép ho?t ??ng
-44,22543,吸料轴R1_指令报错,,,吸料轴R1_指令报错,Pick_Axis_R1_Command_Error,Feeding Axis R1_L?i l?nh
-45,22544,吸料轴R1_正极限,,,吸料轴R1_正极限,Pick_Axis_R1_Pos_Limit,Feeding Axis R1_Gi?i h?n d??ng
-46,22545,吸料轴R1_负极限,,,吸料轴R1_负极限,Pick_Axis_R1_Neg_Limit,Feeding Axis R1_Gi?i h?n am
-47,22546,吸料轴R1_JOG安全条件报警,,,吸料轴R1_JOG安全条件报警,Pick_Axis_R1_JOG_Safety_Alarm,Feeding Axis R1_C?nh báo ?i?u ki?n an toàn JOG
-48,22547,吸料轴R1_PTP安全条件报警,,,吸料轴R1_PTP安全条件报警,Pick_Axis_R1_PTP_Safety_Alarm,Feeding Axis R1_C?nh báo ?i?u ki?n an toàn PTP
-49,22548,吸料轴R1_手自动不一致,,,吸料轴R1_手自动不一致,Pick_Axis_R1_Manual_Auto_Mismatch,Feeding Axis R1_Kh?ng ??ng b? tay-t? ??ng
-50,22549,吸料轴Z2_未使能提示,,,吸料轴Z2_未使能提示,Pick_Axis_Z2_Not_Enabled,Feeding Axis Z2_Ch?a cho phép ho?t ??ng
-51,22550,吸料轴Z2_指令报错,,,吸料轴Z2_指令报错,Pick_Axis_Z2_Command_Error,Feeding Axis Z2_L?i l?nh
-52,22551,吸料轴Z2_正极限,,,吸料轴Z2_正极限,Pick_Axis_Z2_Pos_Limit,Feeding Axis Z2_Gi?i h?n d??ng
-53,22552,吸料轴Z2_负极限,,,吸料轴Z2_负极限,Pick_Axis_Z2_Neg_Limit,Feeding Axis Z2_Gi?i h?n am
-54,22553,吸料轴Z2_JOG安全条件报警,,,吸料轴Z2_JOG安全条件报警,Pick_Axis_Z2_JOG_Safety_Alarm,Feeding Axis Z2_C?nh báo ?i?u ki?n an toàn JOG
-55,22554,吸料轴Z2_PTP安全条件报警,,,吸料轴Z2_PTP安全条件报警,Pick_Axis_Z2_PTP_Safety_Alarm,Feeding Axis Z2_C?nh báo ?i?u ki?n an toàn PTP
-56,22555,吸料轴Z2_手自动不一致,,,吸料轴Z2_手自动不一致,Pick_Axis_Z2_Manual_Auto_Mismatch,Feeding Axis Z2_Kh?ng ??ng b? tay-t? ??ng
-57,22556,吸料轴R2_未使能提示,,,吸料轴R2_未使能提示,Pick_Axis_R2_Not_Enabled,Feeding Axis R2_Ch?a cho phép ho?t ??ng
-58,22557,吸料轴R2_指令报错,,,吸料轴R2_指令报错,Pick_Axis_R2_Command_Error,Feeding Axis R2_L?i l?nh
-59,22558,吸料轴R2_正极限,,,吸料轴R2_正极限,Pick_Axis_R2_Pos_Limit,Feeding Axis R2_Gi?i h?n d??ng
-60,22559,吸料轴R2_负极限,,,吸料轴R2_负极限,Pick_Axis_R2_Neg_Limit,Feeding Axis R2_Gi?i h?n am
-61,22560,吸料轴R2_JOG安全条件报警,,,吸料轴R2_JOG安全条件报警,Pick_Axis_R2_JOG_Safety_Alarm,Feeding Axis R2_C?nh báo ?i?u ki?n an toàn JOG
-62,22561,吸料轴R2_PTP安全条件报警,,,吸料轴R2_PTP安全条件报警,Pick_Axis_R2_PTP_Safety_Alarm,Feeding Axis R2_C?nh báo ?i?u ki?n an toàn PTP
-63,22562,吸料轴R2_手自动不一致,,,吸料轴R2_手自动不一致,Pick_Axis_R2_Manual_Auto_Mismatch,Feeding Axis R2_Kh?ng ??ng b? tay-t? ??ng
-64,22563,吸料轴Z3_未使能提示,,,吸料轴Z3_未使能提示,Pick_Axis_Z3_Not_Enabled,Feeding Axis Z3_Ch?a cho phép ho?t ??ng
-65,22564,吸料轴Z3_指令报错,,,吸料轴Z3_指令报错,Pick_Axis_Z3_Command_Error,Feeding Axis Z3_L?i l?nh
-66,22565,吸料轴Z3_正极限,,,吸料轴Z3_正极限,Pick_Axis_Z3_Pos_Limit,Feeding Axis Z3_Gi?i h?n d??ng
-67,22566,吸料轴Z3_负极限,,,吸料轴Z3_负极限,Pick_Axis_Z3_Neg_Limit,Feeding Axis Z3_Gi?i h?n am
-68,22567,吸料轴Z3_JOG安全条件报警,,,吸料轴Z3_JOG安全条件报警,Pick_Axis_Z3_JOG_Safety_Alarm,Feeding Axis Z3_C?nh báo ?i?u ki?n an toàn JOG
-69,22568,吸料轴Z3_PTP安全条件报警,,,吸料轴Z3_PTP安全条件报警,Pick_Axis_Z3_PTP_Safety_Alarm,Feeding Axis Z3_C?nh báo ?i?u ki?n an toàn PTP
-70,22569,吸料轴Z3_手自动不一致,,,吸料轴Z3_手自动不一致,Pick_Axis_Z3_Manual_Auto_Mismatch,Feeding Axis Z3_Kh?ng ??ng b? tay-t? ??ng
-71,22570,吸料轴R3_未使能提示,,,吸料轴R3_未使能提示,Pick_Axis_R3_Not_Enabled,Feeding Axis R3_Ch?a cho phép ho?t ??ng
-72,22571,吸料轴R3_指令报错,,,吸料轴R3_指令报错,Pick_Axis_R3_Command_Error,Feeding Axis R3_L?i l?nh
-73,22572,吸料轴R3_正极限,,,吸料轴R3_正极限,Pick_Axis_R3_Pos_Limit,Feeding Axis R3_Gi?i h?n d??ng
-74,22573,吸料轴R3_负极限,,,吸料轴R3_负极限,Pick_Axis_R3_Neg_Limit,Feeding Axis R3_Gi?i h?n am
-75,22574,吸料轴R3_JOG安全条件报警,,,吸料轴R3_JOG安全条件报警,Pick_Axis_R3_JOG_Safety_Alarm,Feeding Axis R3_C?nh báo ?i?u ki?n an toàn JOG
-76,22575,吸料轴R3_PTP安全条件报警,,,吸料轴R3_PTP安全条件报警,Pick_Axis_R3_PTP_Safety_Alarm,Feeding Axis R3_C?nh báo ?i?u ki?n an toàn PTP
-77,22576,吸料轴R3_手自动不一致,,,吸料轴R3_手自动不一致,Pick_Axis_R3_Manual_Auto_Mismatch,Feeding Axis R3_Kh?ng ??ng b? tay-t? ??ng
-78,22577,吸料轴Z4_未使能提示,,,吸料轴Z4_未使能提示,Pick_Axis_Z4_Not_Enabled,Feeding Axis Z4_Ch?a cho phép ho?t ??ng
-79,22578,吸料轴Z4_指令报错,,,吸料轴Z4_指令报错,Pick_Axis_Z4_Command_Error,Feeding Axis Z4_L?i l?nh
-80,22579,吸料轴Z4_正极限,,,吸料轴Z4_正极限,Pick_Axis_Z4_Pos_Limit,Feeding Axis Z4_Gi?i h?n d??ng
-81,22580,吸料轴Z4_负极限,,,吸料轴Z4_负极限,Pick_Axis_Z4_Neg_Limit,Feeding Axis Z4_Gi?i h?n am
-82,22581,吸料轴Z4_JOG安全条件报警,,,吸料轴Z4_JOG安全条件报警,Pick_Axis_Z4_JOG_Safety_Alarm,Feeding Axis Z4_C?nh báo ?i?u ki?n an toàn JOG
-83,22582,吸料轴Z4_PTP安全条件报警,,,吸料轴Z4_PTP安全条件报警,Pick_Axis_Z4_PTP_Safety_Alarm,Feeding Axis Z4_C?nh báo ?i?u ki?n an toàn PTP
-84,22583,吸料轴Z4_手自动不一致,,,吸料轴Z4_手自动不一致,Pick_Axis_Z4_Manual_Auto_Mismatch,Feeding Axis Z4_Kh?ng ??ng b? tay-t? ??ng
-85,22584,吸料轴R4_未使能提示,,,吸料轴R4_未使能提示,Pick_Axis_R4_Not_Enabled,Feeding Axis R4_Ch?a cho phép ho?t ??ng
-86,22585,吸料轴R4_指令报错,,,吸料轴R4_指令报错,Pick_Axis_R4_Command_Error,Feeding Axis R4_L?i l?nh
-87,22586,吸料轴R4_正极限,,,吸料轴R4_正极限,Pick_Axis_R4_Pos_Limit,Feeding Axis R4_Gi?i h?n d??ng
-88,22587,吸料轴R4_负极限,,,吸料轴R4_负极限,Pick_Axis_R4_Neg_Limit,Feeding Axis R4_Gi?i h?n am
-89,22588,吸料轴R4_JOG安全条件报警,,,吸料轴R4_JOG安全条件报警,Pick_Axis_R4_JOG_Safety_Alarm,Feeding Axis R4_C?nh báo ?i?u ki?n an toàn JOG
-90,22589,吸料轴R4_PTP安全条件报警,,,吸料轴R4_PTP安全条件报警,Pick_Axis_R4_PTP_Safety_Alarm,Feeding Axis R4_C?nh báo ?i?u ki?n an toàn PTP
-91,22590,吸料轴R4_手自动不一致,,,吸料轴R4_手自动不一致,Pick_Axis_R4_Manual_Auto_Mismatch,Feeding Axis R4_Kh?ng ??ng b? tay-t? ??ng
-92,22591,吸料轴Z5_未使能提示,,,吸料轴Z5_未使能提示,Pick_Axis_Z5_Not_Enabled,Feeding Axis Z5_Ch?a cho phép ho?t ??ng
-93,22592,吸料轴Z5_指令报错,,,吸料轴Z5_指令报错,Pick_Axis_Z5_Command_Error,Feeding Axis Z5_L?i l?nh
-94,22593,吸料轴Z5_正极限,,,吸料轴Z5_正极限,Pick_Axis_Z5_Pos_Limit,Feeding Axis Z5_Gi?i h?n d??ng
-95,22594,吸料轴Z5_负极限,,,吸料轴Z5_负极限,Pick_Axis_Z5_Neg_Limit,Feeding Axis Z5_Gi?i h?n am
-96,22595,吸料轴Z5_JOG安全条件报警,,,吸料轴Z5_JOG安全条件报警,Pick_Axis_Z5_JOG_Safety_Alarm,Feeding Axis Z5_C?nh báo ?i?u ki?n an toàn JOG
-97,22596,吸料轴Z5_PTP安全条件报警,,,吸料轴Z5_PTP安全条件报警,Pick_Axis_Z5_PTP_Safety_Alarm,Feeding Axis Z5_C?nh báo ?i?u ki?n an toàn PTP
-98,22597,吸料轴Z5_手自动不一致,,,吸料轴Z5_手自动不一致,Pick_Axis_Z5_Manual_Auto_Mismatch,Feeding Axis Z5_Kh?ng ??ng b? tay-t? ??ng
-99,22598,吸料轴R5_未使能提示,,,吸料轴R5_未使能提示,Pick_Axis_R5_Not_Enabled,Feeding Axis R5_Ch?a cho phép ho?t ??ng
-100,22599,吸料轴R5_指令报错,,,吸料轴R5_指令报错,Pick_Axis_R5_Command_Error,Feeding Axis R5_L?i l?nh
-101,22600,吸料轴R5_正极限,,,吸料轴R5_正极限,Pick_Axis_R5_Pos_Limit,Feeding Axis R5_Gi?i h?n d??ng
-102,22601,吸料轴R5_负极限,,,吸料轴R5_负极限,Pick_Axis_R5_Neg_Limit,Feeding Axis R5_Gi?i h?n am
-103,22602,吸料轴R5_JOG安全条件报警,,,吸料轴R5_JOG安全条件报警,Pick_Axis_R5_JOG_Safety_Alarm,Feeding Axis R5_C?nh báo ?i?u ki?n an toàn JOG
-104,22603,吸料轴R5_PTP安全条件报警,,,吸料轴R5_PTP安全条件报警,Pick_Axis_R5_PTP_Safety_Alarm,Feeding Axis R5_C?nh báo ?i?u ki?n an toàn PTP
-105,22604,吸料轴R5_手自动不一致,,,吸料轴R5_手自动不一致,Pick_Axis_R5_Manual_Auto_Mismatch,Feeding Axis R5_Kh?ng ??ng b? tay-t? ??ng
-106,22605,吸料轴Z6_未使能提示,,,吸料轴Z6_未使能提示,Pick_Axis_Z6_Not_Enabled,Feeding Axis Z6_Ch?a cho phép ho?t ??ng
-107,22606,吸料轴Z6_指令报错,,,吸料轴Z6_指令报错,Pick_Axis_Z6_Command_Error,Feeding Axis Z6_L?i l?nh
-108,22607,吸料轴Z6_正极限,,,吸料轴Z6_正极限,Pick_Axis_Z6_Pos_Limit,Feeding Axis Z6_Gi?i h?n d??ng
-109,22608,吸料轴Z6_负极限,,,吸料轴Z6_负极限,Pick_Axis_Z6_Neg_Limit,Feeding Axis Z6_Gi?i h?n am
-110,22609,吸料轴Z6_JOG安全条件报警,,,吸料轴Z6_JOG安全条件报警,Pick_Axis_Z6_JOG_Safety_Alarm,Feeding Axis Z6_C?nh báo ?i?u ki?n an toàn JOG
-111,22610,吸料轴Z6_PTP安全条件报警,,,吸料轴Z6_PTP安全条件报警,Pick_Axis_Z6_PTP_Safety_Alarm,Feeding Axis Z6_C?nh báo ?i?u ki?n an toàn PTP
-112,22611,吸料轴Z6_手自动不一致,,,吸料轴Z6_手自动不一致,Pick_Axis_Z6_Manual_Auto_Mismatch,Feeding Axis Z6_Kh?ng ??ng b? tay-t? ??ng
-113,22612,吸料轴R6_未使能提示,,,吸料轴R6_未使能提示,Pick_Axis_R6_Not_Enabled,Feeding Axis R6_Ch?a cho phép ho?t ??ng
-114,22613,吸料轴R6_指令报错,,,吸料轴R6_指令报错,Pick_Axis_R6_Command_Error,Feeding Axis R6_L?i l?nh
-115,22614,吸料轴R6_正极限,,,吸料轴R6_正极限,Pick_Axis_R6_Pos_Limit,Feeding Axis R6_Gi?i h?n d??ng
-116,22615,吸料轴R6_负极限,,,吸料轴R6_负极限,Pick_Axis_R6_Neg_Limit,Feeding Axis R6_Gi?i h?n am
-117,22616,吸料轴R6_JOG安全条件报警,,,吸料轴R6_JOG安全条件报警,Pick_Axis_R6_JOG_Safety_Alarm,Feeding Axis R6_C?nh báo ?i?u ki?n an toàn JOG
-118,22617,吸料轴R6_PTP安全条件报警,,,吸料轴R6_PTP安全条件报警,Pick_Axis_R6_PTP_Safety_Alarm,Feeding Axis R6_C?nh báo ?i?u ki?n an toàn PTP
-119,22618,吸料轴R6_手自动不一致,,,吸料轴R6_手自动不一致,Pick_Axis_R6_Manual_Auto_Mismatch,Feeding Axis R6_Kh?ng ??ng b? tay-t? ??ng
-120,22619,吸料轴Z7_未使能提示,,,吸料轴Z7_未使能提示,Pick_Axis_Z7_Not_Enabled,Feeding Axis Z7_Ch?a cho phép ho?t ??ng
-121,22620,吸料轴Z7_指令报错,,,吸料轴Z7_指令报错,Pick_Axis_Z7_Command_Error,Feeding Axis Z7_L?i l?nh
-122,22621,吸料轴Z7_正极限,,,吸料轴Z7_正极限,Pick_Axis_Z7_Pos_Limit,Feeding Axis Z7_Gi?i h?n d??ng
-123,22622,吸料轴Z7_负极限,,,吸料轴Z7_负极限,Pick_Axis_Z7_Neg_Limit,Feeding Axis Z7_Gi?i h?n am
-124,22623,吸料轴Z7_JOG安全条件报警,,,吸料轴Z7_JOG安全条件报警,Pick_Axis_Z7_JOG_Safety_Alarm,Feeding Axis Z7_C?nh báo ?i?u ki?n an toàn JOG
-125,22624,吸料轴Z7_PTP安全条件报警,,,吸料轴Z7_PTP安全条件报警,Pick_Axis_Z7_PTP_Safety_Alarm,Feeding Axis Z7_C?nh báo ?i?u ki?n an toàn PTP
-126,22625,吸料轴Z7_手自动不一致,,,吸料轴Z7_手自动不一致,Pick_Axis_Z7_Manual_Auto_Mismatch,Feeding Axis Z7_Kh?ng ??ng b? tay-t? ??ng
-127,22626,吸料轴R7_未使能提示,,,吸料轴R7_未使能提示,Pick_Axis_R7_Not_Enabled,Feeding Axis R7_Ch?a cho phép ho?t ??ng
-128,22627,吸料轴R7_指令报错,,,吸料轴R7_指令报错,Pick_Axis_R7_Command_Error,Feeding Axis R7_L?i l?nh
-129,22628,吸料轴R7_正极限,,,吸料轴R7_正极限,Pick_Axis_R7_Pos_Limit,Feeding Axis R7_Gi?i h?n d??ng
-130,22629,吸料轴R7_负极限,,,吸料轴R7_负极限,Pick_Axis_R7_Neg_Limit,Feeding Axis R7_Gi?i h?n am
-131,22630,吸料轴R7_JOG安全条件报警,,,吸料轴R7_JOG安全条件报警,Pick_Axis_R7_JOG_Safety_Alarm,Feeding Axis R7_C?nh báo ?i?u ki?n an toàn JOG
-132,22631,吸料轴R7_PTP安全条件报警,,,吸料轴R7_PTP安全条件报警,Pick_Axis_R7_PTP_Safety_Alarm,Feeding Axis R7_C?nh báo ?i?u ki?n an toàn PTP
-133,22632,吸料轴R7_手自动不一致,,,吸料轴R7_手自动不一致,Pick_Axis_R7_Manual_Auto_Mismatch,Feeding Axis R7_Kh?ng ??ng b? tay-t? ??ng
-134,22633,轴1_定位气缸1-原位报警,,,轴1_定位气缸1-原位报警,Axis1_PosCyl1_Home_Alarm,Tr?c 1_Xylanh ??nh v? 1-C?nh báo v? trí g?c
-135,22634,轴1_定位气缸1-工作位报警,,,轴1_定位气缸1-工作位报警,Axis1_PosCyl1_WorkPos_Alarm,Tr?c 1_Xylanh ??nh v? 1-C?nh báo v? trí làm vi?c
-136,22635,轴1_定位气缸1-原点安全条件触发异常,,,轴1_定位气缸1-原点安全条件触发异常,Axis1_PosCyl1_Home_Safety_Cond_Error,Tr?c 1_Xylanh ??nh v? 1-B?t th??ng kích ho?t ?i?u ki?n an toàn g?c
-137,22636,轴1_定位气缸1-工作位安全条件触发异常,,,轴1_定位气缸1-工作位安全条件触发异常,Axis1_PosCyl1_WorkPos_Safety_Cond_Error,Tr?c 1_Xylanh ??nh v? 1-B?t th??ng kích ho?t ?i?u ki?n an toàn v? trí làm vi?c
-138,22637,轴1_定位气缸1-手自动联锁中,,,轴1_定位气缸1-手自动联锁中,Axis1_PosCyl1_Manual_Auto_Interlock,Tr?c 1_Xylanh ??nh v? 1_?ang khóa liên ??ng tay-t? ??ng
-139,22638,轴1_定位气缸2-原位报警,,,轴1_定位气缸2-原位报警,Axis1_PosCyl2_Home_Alarm,Tr?c 1_Xylanh ??nh v? 2-C?nh báo v? trí g?c
-140,22639,轴1_定位气缸2-工作位报警,,,轴1_定位气缸2-工作位报警,Axis1_PosCyl2_WorkPos_Alarm,Tr?c 1_Xylanh ??nh v? 2-C?nh báo v? trí làm vi?c
-141,22640,轴1_定位气缸2-原点安全条件触发异常,,,轴1_定位气缸2-原点安全条件触发异常,Axis1_PosCyl2_Home_Safety_Cond_Error,Tr?c 1_Xylanh ??nh v? 2-B?t th??ng kích ho?t ?i?u ki?n an toàn g?c
-142,22641,轴1_定位气缸2-工作位安全条件触发异常,,,轴1_定位气缸2-工作位安全条件触发异常,Axis1_PosCyl2_WorkPos_Safety_Cond_Error,Tr?c 1_Xylanh ??nh v? 2-B?t th??ng kích ho?t ?i?u ki?n an toàn v? trí làm vi?c
-143,22642,轴1_定位气缸2-手自动联锁中,,,轴1_定位气缸2-手自动联锁中,Axis1_PosCyl2_Manual_Auto_Interlock,Tr?c 1_Xylanh ??nh v? 2_?ang khóa liên ??ng tay-t? ??ng
-144,22643,轴1_定位气缸3-原位报警,,,轴1_定位气缸3-原位报警,Axis1_PosCyl3_Home_Alarm,Tr?c 1_Xylanh ??nh v? 3-C?nh báo v? trí g?c
-145,22644,轴1_定位气缸3-工作位报警,,,轴1_定位气缸3-工作位报警,Axis1_PosCyl3_WorkPos_Alarm,Tr?c 1_Xylanh ??nh v? 3-C?nh báo v? trí làm vi?c
-146,22645,轴1_定位气缸3-原点安全条件触发异常,,,轴1_定位气缸3-原点安全条件触发异常,Axis1_PosCyl3_Home_Safety_Cond_Error,Tr?c 1_Xylanh ??nh v? 3-B?t th??ng kích ho?t ?i?u ki?n an toàn g?c
-147,22646,轴1_定位气缸3-工作位安全条件触发异常,,,轴1_定位气缸3-工作位安全条件触发异常,Axis1_PosCyl3_WorkPos_Safety_Cond_Error,Tr?c 1_Xylanh ??nh v? 3-B?t th??ng kích ho?t ?i?u ki?n an toàn v? trí làm vi?c
-148,22647,轴1_定位气缸3-手自动联锁中,,,轴1_定位气缸3-手自动联锁中,Axis1_PosCyl3_Manual_Auto_Interlock,Tr?c 1_Xylanh ??nh v? 3_?ang khóa liên ??ng tay-t? ??ng
-149,22648,轴2_定位气缸1-原位报警,,,轴2_定位气缸1-原位报警,Axis2_PosCyl1_Home_Alarm,Tr?c 2_Xylanh ??nh v? 1-C?nh báo v? trí g?c
-150,22649,轴2_定位气缸1-工作位报警,,,轴2_定位气缸1-工作位报警,Axis2_PosCyl1_WorkPos_Alarm,Tr?c 2_Xylanh ??nh v? 1-C?nh báo v? trí làm vi?c
-151,22650,轴2_定位气缸1-原点安全条件触发异常,,,轴2_定位气缸1-原点安全条件触发异常,Axis2_PosCyl1_Home_Safety_Cond_Error,Tr?c 2_Xylanh ??nh v? 1-B?t th??ng kích ho?t ?i?u ki?n an toàn g?c
-152,22651,轴2_定位气缸1-工作位安全条件触发异常,,,轴2_定位气缸1-工作位安全条件触发异常,Axis2_PosCyl1_WorkPos_Safety_Cond_Error,Tr?c 2_Xylanh ??nh v? 1-B?t th??ng kích ho?t ?i?u ki?n an toàn v? trí làm vi?c
-153,22652,轴2_定位气缸1-手自动联锁中,,,轴2_定位气缸1-手自动联锁中,Axis2_PosCyl1_Manual_Auto_Interlock,Tr?c 2_Xylanh ??nh v? 1_?ang khóa liên ??ng tay-t? ??ng
-154,22653,轴2_定位气缸2-原位报警,,,轴2_定位气缸2-原位报警,Axis2_PosCyl2_Home_Alarm,Tr?c 2_Xylanh ??nh v? 2-C?nh báo v? trí g?c
-155,22654,轴2_定位气缸2-工作位报警,,,轴2_定位气缸2-工作位报警,Axis2_PosCyl2_WorkPos_Alarm,Tr?c 2_Xylanh ??nh v? 2-C?nh báo v? trí làm vi?c
-156,22655,轴2_定位气缸2-原点安全条件触发异常,,,轴2_定位气缸2-原点安全条件触发异常,Axis2_PosCyl2_Home_Safety_Cond_Error,Tr?c 2_Xylanh ??nh v? 2-B?t th??ng kích ho?t ?i?u ki?n an toàn g?c
-157,22656,轴2_定位气缸2-工作位安全条件触发异常,,,轴2_定位气缸2-工作位安全条件触发异常,Axis2_PosCyl2_WorkPos_Safety_Cond_Error,Tr?c 2_Xylanh ??nh v? 2-B?t th??ng kích ho?t ?i?u ki?n an toàn v? trí làm vi?c
-158,22657,轴2_定位气缸2-手自动联锁中,,,轴2_定位气缸2-手自动联锁中,Axis2_PosCyl2_Manual_Auto_Interlock,Tr?c 2_Xylanh ??nh v? 2_?ang khóa liên ??ng tay-t? ??ng
-159,22658,轴2_定位气缸3-原位报警,,,轴2_定位气缸3-原位报警,Axis2_PosCyl3_Home_Alarm,Tr?c 2_Xylanh ??nh v? 3-C?nh báo v? trí g?c
-160,22659,轴2_定位气缸3-工作位报警,,,轴2_定位气缸3-工作位报警,Axis2_PosCyl3_WorkPos_Alarm,Tr?c 2_Xylanh ??nh v? 3-C?nh báo v? trí làm vi?c
-161,22660,轴2_定位气缸3-原点安全条件触发异常,,,轴2_定位气缸3-原点安全条件触发异常,Axis2_PosCyl3_Home_Safety_Cond_Error,Tr?c 2_Xylanh ??nh v? 3-B?t th??ng kích ho?t ?i?u ki?n an toàn g?c
-162,22661,轴2_定位气缸3-工作位安全条件触发异常,,,轴2_定位气缸3-工作位安全条件触发异常,Axis2_PosCyl3_WorkPos_Safety_Cond_Error,Tr?c 2_Xylanh ??nh v? 3-B?t th??ng kích ho?t ?i?u ki?n an toàn v? trí làm vi?c
-163,22662,轴2_定位气缸3-手自动联锁中,,,轴2_定位气缸3-手自动联锁中,Axis2_PosCyl3_Manual_Auto_Interlock,Tr?c 2_Xylanh ??nh v? 3_?ang khóa liên ??ng tay-t? ??ng
-164,22663,载具1后底模_真空-负压报警,,,载具1后底模_真空 -负压报警,Load1_Bottom_Vacuum_Negative_Pressure_Alarm,M?t khu?n sau xe t?i 1_Chan kh?ng - C?nh báo áp su?t am
-165,22664,载具1后底模_真空-禁止破真空报警-提示,,,载具1后底模_真空-禁止破真空报警-提示,Load1_Bottom_Vacuum_Forbid_Vacuum_Break_Alarm,"M?t khu?n sau xe t?i 1_Chan kh?ng - C?nh báo c?m phá chan kh?ng, th?ng báo"
-166,22665,载具1后底模_真空-手自动联锁中,,,载具1后底模_真空-手自动联锁中,Load1_Bottom_Vacuum_Manual_Auto_Interlock,M?t khu?n sau xe t?i 1_Chan kh?ng - ?ang khóa liên ??ng tay-t? ??ng
-167,22666,载具1前底模_真空-负压报警,,,载具1前底模_真空-负压报警,Load1_Bottom_Vacuum_Negative_Pressure_Alarm,M?t khu?n tr??c xe t?i 1_Chan kh?ng - C?nh báo áp su?t am
-168,22667,载具1前底模_真空-禁止破真空报警-提示,,,载具1前底模_真空-禁止破真空报警-提示,Load1_Bottom_Vacuum_Forbid_Vacuum_Break_Alarm,"M?t khu?n tr??c xe t?i 1_Chan kh?ng - C?nh báo c?m phá chan kh?ng, th?ng báo"
-169,22668,载具1前底模_真空-手自动联锁中,,,载具1前底模_真空-手自动联锁中,Load1_Bottom_Vacuum_Manual_Auto_Interlock,M?t khu?n tr??c xe t?i 1_Chan kh?ng - ?ang khóa liên ??ng tay-t? ??ng
-170,22669,载具2前底模_真空-负压报警,,,载具2前底模_真空-负压报警,Load2_Bottom_Vacuum_Negative_Pressure_Alarm,M?t khu?n tr??c xe t?i 2_Chan kh?ng - C?nh báo áp su?t am
-171,22670,载具2前底模_真空-禁止破真空报警-提示,,,载具2前底模_真空-禁止破真空报警-提示,Load2_Bottom_Vacuum_Forbid_Vacuum_Break_Alarm,"M?t khu?n tr??c xe t?i 2_Chan kh?ng - C?nh báo c?m phá chan kh?ng, th?ng báo"
-172,22671,载具2前底模_真空-手自动联锁中,,,载具2前底模_真空-手自动联锁中,Load2_Bottom_Vacuum_Manual_Auto_Interlock,M?t khu?n tr??c xe t?i 2_Chan kh?ng - ?ang khóa liên ??ng tay-t? ??ng
-173,22672,载具2后底模_真空-负压报警,,,载具2后底模_真空-负压报警,Load2_Bottom_Vacuum_Negative_Pressure_Alarm,M?t khu?n sau xe t?i 2_Chan kh?ng - C?nh báo áp su?t am
-174,22673,载具2后底模_真空-禁止破真空报警-提示,,,载具2后底模_真空-禁止破真空报警-提示,Load2_Bottom_Vacuum_Forbid_Vacuum_Break_Alarm,"M?t khu?n sau xe t?i 2_Chan kh?ng - C?nh báo c?m phá chan kh?ng, th?ng báo"
-175,22674,载具2后底模_真空-手自动联锁中,,,载具2后底模_真空-手自动联锁中,Load2_Bottom_Vacuum_Manual_Auto_Interlock,M?t khu?n sau xe t?i 2_Chan kh?ng - ?ang khóa liên ??ng tay-t? ??ng
-176,22675,ZR1_真空-负压报警,,,ZR1_真空-负压报警,ZR1_Vacuum_Negative_Pressure_Alarm,ZR1_Chan kh?ng - C?nh báo áp su?t am
-177,22676,ZR1_真空-禁止破真空报警-提示,,,ZR1_真空-禁止破真空报警-提示,ZR1_Vacuum_Forbid_Vacuum_Break_Alarm,"ZR1_Chan kh?ng - C?nh báo c?m phá chan kh?ng, th?ng báo"
-178,22677,ZR1_真空-手自动联锁中,,,ZR1_真空-手自动联锁中,ZR1_Vacuum_Manual_Auto_Interlock,ZR1_Chan kh?ng - ?ang khóa liên ??ng tay-t? ??ng
-179,22678,ZR2_真空-负压报警,,,ZR2_真空-负压报警,ZR2_Vacuum_Negative_Pressure_Alarm,ZR2_Chan kh?ng - C?nh báo áp su?t am
-180,22679,ZR2_真空-禁止破真空报警-提示,,,ZR2_真空-禁止破真空报警-提示,ZR2_Vacuum_Forbid_Vacuum_Break_Alarm,"ZR2_Chan kh?ng - C?nh báo c?m phá chan kh?ng, th?ng báo"
-181,22680,ZR2_真空-手自动联锁中,,,ZR2_真空-手自动联锁中,ZR2_Vacuum_Manual_Auto_Interlock,ZR2_Chan kh?ng - ?ang khóa liên ??ng tay-t? ??ng
-182,22681,ZR3_真空-负压报警,,,ZR3_真空-负压报警,ZR3_Vacuum_Negative_Pressure_Alarm,ZR3_Chan kh?ng - C?nh báo áp su?t am
-183,22682,ZR3_真空-禁止破真空报警-提示,,,ZR3_真空-禁止破真空报警-提示,ZR3_Vacuum_Forbid_Vacuum_Break_Alarm,"ZR3_Chan kh?ng - C?nh báo c?m phá chan kh?ng, th?ng báo"
-184,22683,ZR3_真空-手自动联锁中,,,ZR3_真空-手自动联锁中,ZR3_Vacuum_Manual_Auto_Interlock,ZR3_Chan kh?ng - ?ang khóa liên ??ng tay-t? ??ng
-185,22684,ZR4_真空-负压报警,,,ZR4_真空-负压报警,ZR4_Vacuum_Negative_Pressure_Alarm,ZR4_Chan kh?ng - C?nh báo áp su?t am
-186,22685,ZR4_真空-禁止破真空报警-提示,,,ZR4_真空-禁止破真空报警-提示,ZR4_Vacuum_Forbid_Vacuum_Break_Alarm,"ZR4_Chan kh?ng - C?nh báo c?m phá chan kh?ng, th?ng báo"
-187,22686,ZR4_真空-手自动联锁中,,,ZR4_真空-手自动联锁中,ZR4_Vacuum_Manual_Auto_Interlock,ZR4_Chan kh?ng - ?ang khóa liên ??ng tay-t? ??ng
-188,22687,ZR5_真空-负压报警,,,ZR5_真空-负压报警,ZR5_Vacuum_Negative_Pressure_Alarm,ZR5_Chan kh?ng - C?nh báo áp su?t am
-189,22688,ZR5_真空-禁止破真空报警-提示,,,ZR5_真空-禁止破真空报警-提示,ZR5_Vacuum_Forbid_Vacuum_Break_Alarm,"ZR5_Chan kh?ng - C?nh báo c?m phá chan kh?ng, th?ng báo"
-190,22689,ZR5_真空-手自动联锁中,,,ZR5_真空-手自动联锁中,ZR5_Vacuum_Manual_Auto_Interlock,ZR5_Chan kh?ng - ?ang khóa liên ??ng tay-t? ??ng
-191,22690,ZR6_真空-负压报警,,,ZR6_真空-负压报警,ZR6_Vacuum_Negative_Pressure_Alarm,ZR6_Chan kh?ng - C?nh báo áp su?t am
-192,22691,ZR6_真空-禁止破真空报警-提示,,,ZR6_真空-禁止破真空报警-提示,ZR6_Vacuum_Forbid_Vacuum_Break_Alarm,"ZR6_Chan kh?ng - C?nh báo c?m phá chan kh?ng, th?ng báo"
-193,22692,ZR6_真空-手自动联锁中,,,ZR6_真空-手自动联锁中,ZR6_Vacuum_Manual_Auto_Interlock,ZR6_Chan kh?ng - ?ang khóa liên ??ng tay-t? ??ng
-194,22693,ZR7_真空-负压报警,,,ZR7_真空-负压报警,ZR7_Vacuum_Negative_Pressure_Alarm,ZR7_Chan kh?ng - C?nh báo áp su?t am
-195,22694,ZR7_真空-禁止破真空报警-提示,,,ZR7_真空-禁止破真空报警-提示,ZR7_Vacuum_Forbid_Vacuum_Break_Alarm,"ZR7_Chan kh?ng - C?nh báo c?m phá chan kh?ng, th?ng báo"
-196,22695,ZR7_真空-手自动联锁中,,,ZR7_真空-手自动联锁中,ZR7_Vacuum_Manual_Auto_Interlock,ZR7_Chan kh?ng - ?ang khóa liên ??ng tay-t? ??ng
+1,22500,工位1Z轴M1指令报错,,,工位1Z轴M1指令报错,Load_Axis1_Not_Enabled,Loading Axis 1_Ch?a cho phép ho?t ??ng
+2,22501,工位2Z轴M2指令报错,,,工位2Z轴M2指令报错,Load_Axis1_Command_Error,Loading Axis 1_L?i l?nh
+3,22502,工位1X轴M3指令报错,,,工位1X轴M3指令报错,Load_Axis1_Pos_Limit,Loading Axis 1_Gi?i h?n d??ng
+4,22503,工位2X轴M4指令报错,,,工位2X轴M4指令报错,Load_Axis1_Neg_Limit,Loading Axis 1_Gi?i h?n am
+5,22504,工位1Y轴M5指令报错,,,工位1Y轴M5指令报错,Load_Axis1_JOG_Safety_Alarm,Loading Axis 1_C?nh báo ?i?u ki?n an toàn JOG
+6,22505,工位2Y轴M6指令报错,,,工位2Y轴M6指令报错,Load_Axis1_PTP_Safety_Alarm,Loading Axis 1_C?nh báo ?i?u ki?n an toàn PTP
+7,22506,工位1步进Z1轴M7指令报错,,,工位1步进Z1轴M7指令报错,Load_Axis1_Manual_Auto_Mismatch,Loading Axis 1_Kh?ng ??ng b? tay-t? ??ng
+8,22507,工位2步进Z2轴M8指令报错,,,工位2步进Z2轴M8指令报错,Load_Axis2_Not_Enabled,Loading Axis 2_Ch?a cho phép ho?t ??ng
+9,22508,工位1固高Y1轴M9指令报错,,,工位1固高Y1轴M9指令报错,Load_Axis2_Command_Error,Loading Axis 2_L?i l?nh
+10,22509,工位2固高Y2轴M10指令报错,,,工位2固高Y2轴M10指令报错,Load_Axis2_Pos_Limit,Loading Axis 2_Gi?i h?n d??ng
+11,22510,工位1升降Z轴未使能,,,工位1升降Z轴未使能,Load_Axis2_Neg_Limit,Loading Axis 2_Gi?i h?n am
+12,22511,工位1Z轴Jog安全报警,,,工位1Z轴Jog安全报警,Load_Axis2_JOG_Safety_Alarm,Loading Axis 2_C?nh báo ?i?u ki?n an toàn JOG
+13,22512,工位1Z轴PTP安全报警,,,工位1Z轴PTP安全报警,Load_Axis2_PTP_Safety_Alarm,Loading Axis 2_C?nh báo ?i?u ki?n an toàn PTP
+14,22513,工位1Z轴手自动不一致报警,,,工位1Z轴手自动不一致报警,Load_Axis2_Manual_Auto_Mismatch,Loading Axis 2_Kh?ng ??ng b? tay-t? ??ng
+15,22514,工位2Z轴Jog安全报警,,,工位2Z轴Jog安全报警,X_Axis_Not_Enabled,Tr?c X_Ch?a cho phép ho?t ??ng
+16,22515,工位2Z轴PTP安全报警,,,工位2Z轴PTP安全报警,X_Axis_Command_Error,Tr?c X_L?i l?nh
+17,22516,工位2Z轴手自动不一致报警,,,工位2Z轴手自动不一致报警,X_Axis_Pos_Limit,Tr?c X_Gi?i h?n d??ng
+18,22517,工位2升降Z轴未使能,,,工位2升降Z轴未使能,X_Axis_Neg_Limit,Tr?c X_Gi?i h?n am
+19,22518,工位1X轴Jog安全报警,,,工位1X轴Jog安全报警,X_Axis_JOG_Safety_Alarm,Tr?c X_C?nh báo ?i?u ki?n an toàn JOG
+20,22519,工位1X轴PTP安全报警,,,工位1X轴PTP安全报警,X_Axis_PTP_Safety_Alarm,Tr?c X_C?nh báo ?i?u ki?n an toàn PTP
+21,22520,工位1X轴手自动不一致报警,,,工位1X轴手自动不一致报警,X_Axis_Manual_Auto_Mismatch,Tr?c X_Kh?ng ??ng b? tay-t? ??ng
+22,22521,工位1X轴未使能,,,工位1X轴未使能,Y_Axis_Not_Enabled,Tr?c Y_Ch?a cho phép ho?t ??ng
+23,22522,工位2X轴Jog安全报警,,,工位2X轴Jog安全报警,Y_Axis_Command_Error,Tr?c Y_L?i l?nh
+24,22523,工位2X轴PTP安全报警,,,工位2X轴PTP安全报警,Y_Axis_Pos_Limit,Tr?c Y_Gi?i h?n d??ng
+25,22524,工位2X轴手自动不一致报警,,,工位2X轴手自动不一致报警,Y_Axis_Neg_Limit,Tr?c Y_Gi?i h?n am
+26,22525,工位2X轴未使能,,,工位2X轴未使能,Y_Axis_JOG_Safety_Alarm,Tr?c Y_C?nh báo ?i?u ki?n an toàn JOG
+27,22526,工位1Y轴Jog安全报警,,,工位1Y轴Jog安全报警,Y_Axis_PTP_Safety_Alarm,Tr?c Y_C?nh báo ?i?u ki?n an toàn PTP
+28,22527,工位1Y轴PTP安全报警,,,工位1Y轴PTP安全报警,Y_Axis_Manual_Auto_Mismatch,Tr?c Y_Kh?ng ??ng b? tay-t? ??ng
+29,22528,工位1Y轴手自动不一致报警,,,工位1Y轴手自动不一致报警,Cam_Adj_Step_Axis_Not_Enabled,Tr?c b??c ?i?u ch?nh camera_Ch?a cho phép ho?t ??ng
+30,22529,工位1Y轴未使能,,,工位1Y轴未使能,Cam_Adj_Step_Axis_Command_Error,Tr?c b??c ?i?u ch?nh camera_L?i l?nh
+31,22530,工位2Y轴Jog安全报警,,,工位2Y轴Jog安全报警,Cam_Adj_Step_Axis_Pos_Limit,Tr?c b??c ?i?u ch?nh camera_Gi?i h?n d??ng
+32,22531,工位2Y轴PTP安全报警,,,工位2Y轴PTP安全报警,Cam_Adj_Step_Axis_Neg_Limit,Tr?c b??c ?i?u ch?nh camera_Gi?i h?n am
+33,22532,工位2Y轴手自动不一致报警,,,工位2Y轴手自动不一致报警,Cam_Adj_Step_Axis_JOG_Safety_Alarm,Tr?c b??c ?i?u ch?nh camera_C?nh báo ?i?u ki?n an toàn JOG
+34,22533,工位2Y轴未使能,,,工位2Y轴未使能,Cam_Adj_Step_Axis_PTP_Safety_Alarm,Tr?c b??c ?i?u ch?nh camera_C?nh báo ?i?u ki?n an toàn PTP
+35,22534,工位1步进Z轴Jog安全报警,,,工位1步进Z轴Jog安全报警,Cam_Adj_Step_Axis_Manual_Auto_Mismatch,Tr?c b??c ?i?u ch?nh camera_Kh?ng ??ng b? tay-t? ??ng
+36,22535,工位1步进Z轴PTP安全报警,,,工位1步进Z轴PTP安全报警,Pick_Axis_Z1_Not_Enabled,Feeding Axis Z1_Ch?a cho phép ho?t ??ng
+37,22536,工位1步进Z轴手自动不一致报警,,,工位1步进Z轴手自动不一致报警,Pick_Axis_Z1_Command_Error,Feeding Axis Z1_L?i l?nh
+38,22537,工位1步进Z轴未使能,,,工位1步进Z轴未使能,Pick_Axis_Z1_Pos_Limit,Feeding Axis Z1_Gi?i h?n d??ng
+39,22538,工位2步进Z轴Jog安全报警,,,工位2步进Z轴Jog安全报警,Pick_Axis_Z1_Neg_Limit,Feeding Axis Z1_Gi?i h?n am
+40,22539,工位2步进Z轴PTP安全报警,,,工位2步进Z轴PTP安全报警,Pick_Axis_Z1_JOG_Safety_Alarm,Feeding Axis Z1_C?nh báo ?i?u ki?n an toàn JOG
+41,22540,工位2步进Z轴手自动不一致报警,,,工位2步进Z轴手自动不一致报警,Pick_Axis_Z1_PTP_Safety_Alarm,Feeding Axis Z1_C?nh báo ?i?u ki?n an toàn PTP
+42,22541,工位2步进Z轴未使能,,,工位2步进Z轴未使能,Pick_Axis_Z1_Manual_Auto_Mismatch,Feeding Axis Z1_Kh?ng ??ng b? tay-t? ??ng
+43,22542,工位1固高Y轴Jog安全报警,,,工位1固高Y轴Jog安全报警,Pick_Axis_R1_Not_Enabled,Feeding Axis R1_Ch?a cho phép ho?t ??ng
+44,22543,工位1固高Y轴PTP安全报警,,,工位1固高Y轴PTP安全报警,Pick_Axis_R1_Command_Error,Feeding Axis R1_L?i l?nh
+45,22544,工位1固高Y轴手自动不一致报警,,,工位1固高Y轴手自动不一致报警,Pick_Axis_R1_Pos_Limit,Feeding Axis R1_Gi?i h?n d??ng
+46,22545,工位1固高Y轴未使能,,,工位1固高Y轴未使能,Pick_Axis_R1_Neg_Limit,Feeding Axis R1_Gi?i h?n am
+47,22546,工位2固高Y轴Jog安全报警,,,工位2固高Y轴Jog安全报警,Pick_Axis_R1_JOG_Safety_Alarm,Feeding Axis R1_C?nh báo ?i?u ki?n an toàn JOG
+48,22547,工位2固高Y轴PTP安全报警,,,工位2固高Y轴PTP安全报警,Pick_Axis_R1_PTP_Safety_Alarm,Feeding Axis R1_C?nh báo ?i?u ki?n an toàn PTP
+49,22548,工位2固高Y轴手自动不一致报警,,,工位2固高Y轴手自动不一致报警,Pick_Axis_R1_Manual_Auto_Mismatch,Feeding Axis R1_Kh?ng ??ng b? tay-t? ??ng
+50,22549,工位2固高Y轴未使能,,,工位2固高Y轴未使能,Pick_Axis_Z2_Not_Enabled,Feeding Axis Z2_Ch?a cho phép ho?t ??ng
+51,22550,上料轴1_定位气缸1原位报警,,,上料轴1_定位气缸1原位报警,Pick_Axis_Z2_Command_Error,Feeding Axis Z2_L?i l?nh
+52,22551,上料轴1_定位气缸1工作位报警,,,上料轴1_定位气缸1工作位报警,Pick_Axis_Z2_Pos_Limit,Feeding Axis Z2_Gi?i h?n d??ng
+53,22552,上料轴1_定位气缸2原位报警,,,上料轴1_定位气缸2原位报警,Pick_Axis_Z2_Neg_Limit,Feeding Axis Z2_Gi?i h?n am
+54,22553,上料轴1_定位气缸2工作位报警,,,上料轴1_定位气缸2工作位报警,Pick_Axis_Z2_JOG_Safety_Alarm,Feeding Axis Z2_C?nh báo ?i?u ki?n an toàn JOG
+55,22554,上料轴1_定位气缸3原位报警,,,上料轴1_定位气缸3原位报警,Pick_Axis_Z2_PTP_Safety_Alarm,Feeding Axis Z2_C?nh báo ?i?u ki?n an toàn PTP
+56,22555,上料轴1_定位气缸3工作位报警,,,上料轴1_定位气缸3工作位报警,Pick_Axis_Z2_Manual_Auto_Mismatch,Feeding Axis Z2_Kh?ng ??ng b? tay-t? ??ng
+57,22556,上料轴1_定位气缸4原位报警,,,上料轴1_定位气缸4原位报警,Pick_Axis_R2_Not_Enabled,Feeding Axis R2_Ch?a cho phép ho?t ??ng
+58,22557,上料轴1_定位气缸4工作位报警,,,上料轴1_定位气缸4工作位报警,Pick_Axis_R2_Command_Error,Feeding Axis R2_L?i l?nh
+59,22558,上料轴2_定位气缸1原位报警,,,上料轴2_定位气缸1原位报警,Pick_Axis_R2_Pos_Limit,Feeding Axis R2_Gi?i h?n d??ng
+60,22559,上料轴2_定位气缸1工作位报警,,,上料轴2_定位气缸1工作位报警,Pick_Axis_R2_Neg_Limit,Feeding Axis R2_Gi?i h?n am
+61,22560,上料轴2_定位气缸2原位报警,,,上料轴2_定位气缸2原位报警,Pick_Axis_R2_JOG_Safety_Alarm,Feeding Axis R2_C?nh báo ?i?u ki?n an toàn JOG
+62,22561,上料轴2_定位气缸2工作位报警,,,上料轴2_定位气缸2工作位报警,Pick_Axis_R2_PTP_Safety_Alarm,Feeding Axis R2_C?nh báo ?i?u ki?n an toàn PTP
+63,22562,上料轴2_定位气缸3原位报警,,,上料轴2_定位气缸3原位报警,Pick_Axis_R2_Manual_Auto_Mismatch,Feeding Axis R2_Kh?ng ??ng b? tay-t? ??ng
+64,22563,上料轴2_定位气缸3工作位报警,,,上料轴2_定位气缸3工作位报警,Pick_Axis_Z3_Not_Enabled,Feeding Axis Z3_Ch?a cho phép ho?t ??ng
+65,22564,上料轴2_定位气缸4原位报警,,,上料轴2_定位气缸4原位报警,Pick_Axis_Z3_Command_Error,Feeding Axis Z3_L?i l?nh
+66,22565,上料轴2_定位气缸4工作位报警,,,上料轴2_定位气缸4工作位报警,Pick_Axis_Z3_Pos_Limit,Feeding Axis Z3_Gi?i h?n d??ng
+67,22566,电批升降气缸1原位报警,,,电批升降气缸1原位报警,Pick_Axis_Z3_Neg_Limit,Feeding Axis Z3_Gi?i h?n am
+68,22567,电批升降气缸1工作位报警,,,电批升降气缸1工作位报警,Pick_Axis_Z3_JOG_Safety_Alarm,Feeding Axis Z3_C?nh báo ?i?u ki?n an toàn JOG
+69,22568,电批升降气缸2原位报警,,,电批升降气缸2原位报警,Pick_Axis_Z3_PTP_Safety_Alarm,Feeding Axis Z3_C?nh báo ?i?u ki?n an toàn PTP
+70,22569,电批升降气缸2工作位报警,,,电批升降气缸2工作位报警,Pick_Axis_Z3_Manual_Auto_Mismatch,Feeding Axis Z3_Kh?ng ??ng b? tay-t? ??ng
+71,22570,螺丝机1_料盘定位气缸1原位报警,,,螺丝机1_料盘定位气缸1原位报警,Pick_Axis_R3_Not_Enabled,Feeding Axis R3_Ch?a cho phép ho?t ??ng
+72,22571,螺丝机1_料盘定位气缸1工作位报警,,,螺丝机1_料盘定位气缸1工作位报警,Pick_Axis_R3_Command_Error,Feeding Axis R3_L?i l?nh
+73,22572,螺丝机1_料盘定位气缸2原位报警,,,螺丝机1_料盘定位气缸2原位报警,Pick_Axis_R3_Pos_Limit,Feeding Axis R3_Gi?i h?n d??ng
+74,22573,螺丝机1_料盘定位气缸2工作位报警,,,螺丝机1_料盘定位气缸2工作位报警,Pick_Axis_R3_Neg_Limit,Feeding Axis R3_Gi?i h?n am
+75,22574,上料轴1_产品下压气缸原位报警,,,上料轴1_产品下压气缸原位报警,Pick_Axis_R3_JOG_Safety_Alarm,Feeding Axis R3_C?nh báo ?i?u ki?n an toàn JOG
+76,22575,上料轴1_产品下压气缸工作位报警,,,上料轴1_产品下压气缸工作位报警,Pick_Axis_R3_PTP_Safety_Alarm,Feeding Axis R3_C?nh báo ?i?u ki?n an toàn PTP
+77,22576,上料轴2_产品下压气缸原位报警,,,上料轴2_产品下压气缸原位报警,Pick_Axis_R3_Manual_Auto_Mismatch,Feeding Axis R3_Kh?ng ??ng b? tay-t? ??ng
+78,22577,上料轴2_产品下压气缸工作位报警,,,上料轴2_产品下压气缸工作位报警,Pick_Axis_Z4_Not_Enabled,Feeding Axis Z4_Ch?a cho phép ho?t ??ng
+79,22578,螺丝机吸螺丝真空报警,,,螺丝机吸螺丝真空报警,Pick_Axis_Z4_Command_Error,Feeding Axis Z4_L?i l?nh
+80,22579,待定1,,,待定1,Pick_Axis_Z4_Pos_Limit,Feeding Axis Z4_Gi?i h?n d??ng
+81,22580,载具1真空报警,,,载具1真空报警,Pick_Axis_Z4_Neg_Limit,Feeding Axis Z4_Gi?i h?n am
+82,22581,载具2真空报警,,,载具2真空报警,Pick_Axis_Z4_JOG_Safety_Alarm,Feeding Axis Z4_C?nh báo ?i?u ki?n an toàn JOG
+83,22582,工位1打螺丝失败报警,,,工位1打螺丝失败报警,Pick_Axis_Z4_PTP_Safety_Alarm,Feeding Axis Z4_C?nh báo ?i?u ki?n an toàn PTP
+84,22583,工位2打螺丝失败报警,,,工位2打螺丝失败报警,Pick_Axis_Z4_Manual_Auto_Mismatch,Feeding Axis Z4_Kh?ng ??ng b? tay-t? ??ng
+85,22584,工位1视觉引导拍照失败,,,工位1视觉引导拍照失败,Pick_Axis_R4_Not_Enabled,Feeding Axis R4_Ch?a cho phép ho?t ??ng
+86,22585,工位2视觉引导拍照失败,,,工位2视觉引导拍照失败,Pick_Axis_R4_Command_Error,Feeding Axis R4_L?i l?nh
+87,22586,急停中,,,急停中,Pick_Axis_R4_Pos_Limit,Feeding Axis R4_Gi?i h?n d??ng
+88,22587,工位1相机引导误差值过大,,,工位1相机引导误差值过大,Pick_Axis_R4_Neg_Limit,Feeding Axis R4_Gi?i h?n am
+89,22588,工位2相机引导误差值过大,,,工位2相机引导误差值过大,Pick_Axis_R4_JOG_Safety_Alarm,Feeding Axis R4_C?nh báo ?i?u ki?n an toàn JOG
+90,22589,工位1扫码多次NG,,,工位1扫码多次NG,Pick_Axis_R4_PTP_Safety_Alarm,Feeding Axis R4_C?nh báo ?i?u ki?n an toàn PTP
+91,22590,工位2扫码多次NG,,,工位2扫码多次NG,Pick_Axis_R4_Manual_Auto_Mismatch,Feeding Axis R4_Kh?ng ??ng b? tay-t? ??ng
+92,22591,工位1螺丝拍照多次NG,,,工位1螺丝拍照多次NG,Pick_Axis_Z5_Not_Enabled,Feeding Axis Z5_Ch?a cho phép ho?t ??ng
+93,22592,工位2螺丝拍照多次NG,,,工位2螺丝拍照多次NG,Pick_Axis_Z5_Command_Error,Feeding Axis Z5_L?i l?nh
+94,22593,安全门打开1,,,安全门打开1,Pick_Axis_Z5_Pos_Limit,Feeding Axis Z5_Gi?i h?n d??ng
+95,22594,安全门打开2,,,安全门打开2,Pick_Axis_Z5_Neg_Limit,Feeding Axis Z5_Gi?i h?n am
+96,22595,螺丝机1缺螺丝信号,,,螺丝机1缺螺丝信号,Pick_Axis_Z5_JOG_Safety_Alarm,Feeding Axis Z5_C?nh báo ?i?u ki?n an toàn JOG
+97,22596,螺丝机2缺螺丝信号,,,螺丝机2缺螺丝信号,Pick_Axis_Z5_PTP_Safety_Alarm,Feeding Axis Z5_C?nh báo ?i?u ki?n an toàn PTP
+98,22597,手伸入机台报警,,,手伸入机台报警,Pick_Axis_Z5_Manual_Auto_Mismatch,Feeding Axis Z5_Kh?ng ??ng b? tay-t? ??ng
+99,22598,等待工位1相机反馈,,,等待工位1相机反馈,Pick_Axis_R5_Not_Enabled,Feeding Axis R5_Ch?a cho phép ho?t ??ng
+100,22599,等待工位2相机反馈,,,等待工位2相机反馈,Pick_Axis_R5_Command_Error,Feeding Axis R5_L?i l?nh
+101,22600,工位1等待扫码器等待信息,,,工位1等待扫码器等待信息,Pick_Axis_R5_Pos_Limit,Feeding Axis R5_Gi?i h?n d??ng
+102,22601,工位2等待扫码器等待信息,,,工位2等待扫码器等待信息,Pick_Axis_R5_Neg_Limit,Feeding Axis R5_Gi?i h?n am
