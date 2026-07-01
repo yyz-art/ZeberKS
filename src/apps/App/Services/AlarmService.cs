@@ -1,4 +1,3 @@
-using System.Collections.Concurrent;
 using ZitApp.Ext.EapClient;
 using ZitApp.Models;
 
@@ -11,7 +10,6 @@ public class AlarmService : AlarmServiceBase
     public required EquipmentStatusSnapshot StatusSnapshot { get; init; }
     public required IEquipmentStatusProvider StatusProvider { get; init; }
 
-    private ConcurrentQueue<AlarmRecord> EapAlarmQueue { get; } = new();
     private int _activeAlarmCount;
     private EquipmentStatus _lastReportedStatus = EquipmentStatus.E4001;
 
@@ -33,16 +31,11 @@ public class AlarmService : AlarmServiceBase
             Interlocked.Decrement(ref _activeAlarmCount);
 
         StatusSnapshot.SetAlarmState(_activeAlarmCount > 0);
+    }
 
-        var record = new AlarmRecord
-        {
-            AlarmId = alarmInfo.Id,
-            Name = alarmInfo.Name,
-            StartTime = alarmInfo.Time,
-            Status = isOn ? AlarmStatus.ON : AlarmStatus.OFF
-        };
-
-        EapAlarmQueue.Enqueue(record);
+    protected override void OnAlarmReported(AlarmRecord record)
+    {
+        _ = EapClient.TrySendAlarmReportAsync(record);
     }
 
     protected override async Task Main(CancellationToken ctk)
@@ -61,12 +54,6 @@ public class AlarmService : AlarmServiceBase
 
         while (!ctk.IsCancellationRequested)
         {
-            // 处理报警上报队列
-            while (EapAlarmQueue.TryDequeue(out var record))
-            {
-                _ = EapClient.TrySendAlarmReportAsync(record, ctk);
-            }
-
             // 检测设备状态变化，触发 S6F11/6001
             var currentStatus = StatusProvider.GetCurrentStatus();
             if (currentStatus != _lastReportedStatus)

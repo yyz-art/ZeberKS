@@ -1,4 +1,4 @@
-﻿<UiView xmlns="https://github.com/avaloniaui"
+<UiView xmlns="https://github.com/avaloniaui"
 				xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 				xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
 				xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -109,22 +109,31 @@
 															VerticalAlignment="Center" Padding="20 2" FontSize="20" />
 											</LinearPanel>
 											<LinearPanel Orientation="Horizontal" Spacing="10">
-												<CheckBox Content="MES"
+											<CheckBox Content="MES"
 																	IsChecked="{Binding MesEnabled, Mode=TwoWay}"
+																	IsEnabled="{Binding !IsOperator}"
 																	VerticalAlignment="Center"
 																	Foreground="White" />
 
-												<CheckBox Content="{DynamicResource I18N.G.物料检查}"
+											<CheckBox Content="{DynamicResource I18N.G.物料检查}"
 																	IsChecked="{Binding MaterialCheck, Mode=TwoWay}"
+																	IsEnabled="{Binding !IsOperator}"
 																	VerticalAlignment="Center"
 																	Foreground="White" />
 
-												<CheckBox Content="{DynamicResource I18N.G.配方检查}"
+											<CheckBox Content="{DynamicResource I18N.G.配方检查}"
 																	IsChecked="{Binding RecipeCheck, Mode=TwoWay}"
+																	IsEnabled="{Binding !IsOperator}"
 																	VerticalAlignment="Center"
 																	Foreground="White" />
-												<CheckBox Content="{DynamicResource I18N.G.扫码测试}"
+											<CheckBox Content="{DynamicResource I18N.G.扫码测试}"
 																	IsChecked="{Binding TestScanner, Mode=TwoWay}"
+																	IsEnabled="{Binding !IsOperator}"
+																	VerticalAlignment="Center"
+																	Foreground="White" />
+											<CheckBox Content="{DynamicResource I18N.G.NG重复校验}"
+																	IsChecked="{Binding NgSnCheck, Mode=TwoWay}"
+																	IsEnabled="{Binding !IsOperator}"
 																	VerticalAlignment="Center"
 																	Foreground="White" />
 												<Control LinearPanel.Weight="1" />

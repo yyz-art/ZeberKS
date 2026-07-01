@@ -1,4 +1,4 @@
-﻿using System.Collections.Concurrent;
+using System.Collections.Concurrent;
 using ZC;
 using ZC.DB;
 using ZC.IFS.Objects;
@@ -39,6 +39,8 @@ public class AlarmServiceBase : AsyncMainTaskService, INamedObject
        }
     }
 
+    protected virtual void OnAlarmReported(AlarmRecord record) { }
+
     public string GetObjectName() => "ALARM-SERVICE";
 
     protected override async Task Main(CancellationToken ctk)
@@ -70,6 +72,7 @@ public class AlarmServiceBase : AsyncMainTaskService, INamedObject
              await DbClient.Insertable(record).ExecuteCommandAsync(ctk);
              
              EapServiceBase.ReportAlarm(record);
+             OnAlarmReported(record);
           }
           
           else if (lastRecord != null)
@@ -86,6 +89,7 @@ public class AlarmServiceBase : AsyncMainTaskService, INamedObject
              
              
              EapServiceBase.ReportAlarm(lastRecord);
+             OnAlarmReported(lastRecord);
           }
        }
     }

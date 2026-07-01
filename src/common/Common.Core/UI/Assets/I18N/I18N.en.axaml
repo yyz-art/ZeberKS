@@ -142,6 +142,7 @@
 	<sys:String x:Key="I18N.G.物料检查">Material Check</sys:String>
 	<sys:String x:Key="I18N.G.配方检查">Recipe Check</sys:String>
 	<sys:String x:Key="I18N.G.扫码测试">Scan Test</sys:String>
+	<sys:String x:Key="I18N.G.NG重复校验">NG Recheck</sys:String>
 	<sys:String x:Key="I18N.G.扭矩">Torque</sys:String>
 	<sys:String x:Key="I18N.G.圈数">Revolutions</sys:String>
 	<sys:String x:Key="I18N.G.时间">Time</sys:String>

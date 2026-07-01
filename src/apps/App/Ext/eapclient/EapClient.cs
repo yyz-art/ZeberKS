@@ -390,6 +390,9 @@ public class EapClientService : IDisposable
                     if (TryCompletePendingResponse(message))
                         continue;
 
+                    if (IsStatusChangeReportAck(message) || IsEventReportAck(message))
+                        continue;
+
                     var response = await HandleRequestAsync(message);
                     if (response != null)
                         await WriteMessageAsync(response, cancellationToken);
@@ -490,8 +493,6 @@ public class EapClientService : IDisposable
 
     public async Task SendStatusChangeReportAsync(
         EquipmentStatus status,
-        string ct = "0",
-        string yield = "0",
         CancellationToken cancellationToken = default)
     {
         var request = new JsonObject
@@ -501,9 +502,7 @@ public class EapClientService : IDisposable
             ["EventID"] = "6001",
             ["Reports"] = new JsonObject
             {
-                [EapReportIds.EquipmentStatus] = status.ToString(),
-                [EapReportIds.CT] = ct,
-                [EapReportIds.Yield] = yield
+                [EapReportIds.EquipmentStatus] = status.ToString()
             }
         };
 
@@ -513,8 +512,6 @@ public class EapClientService : IDisposable
 
     public async Task<bool> TrySendStatusChangeReportAsync(
         EquipmentStatus status,
-        string ct = "0",
-        string yield = "0",
         CancellationToken cancellationToken = default)
     {
         if (!_config.Enabled)
@@ -533,7 +530,7 @@ public class EapClientService : IDisposable
 
         try
         {
-            await SendStatusChangeReportAsync(status, ct, yield, cancellationToken);
+            await SendStatusChangeReportAsync(status, cancellationToken);
             Logger.Info("EAP 设备状态变更已上报(6001): Status={Status}", status.ToString());
             return true;
         }

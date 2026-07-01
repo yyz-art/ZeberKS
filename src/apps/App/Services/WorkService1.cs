@@ -1,4 +1,5 @@
 using System.Text;
+using System.Text.Encodings.Web;
 using System.Text.Json;
 using ZC;
 using ZC.BinStructs.Ext;
@@ -389,8 +390,25 @@ public partial class WorkService1 : WorkServiceBase
 						$"[MATERIAL CHECK] [OK:UnCheck] SN='{Context.ScanSnCode}' MODEL_NAME='{Context.ModelName}'"); // 物料校验关闭时跳过
 
 
-				// ==================== MES进站 ====================
-				InStationExecutePoint:
+			// ==================== NG SN码校验 ====================
+			NgSnCheckPoint:
+			if (Context.NgSnCheck)
+			{
+				if (NgService.ExistsBySnCodeAsync(Context.ScanSnCode).Result)
+				{
+					Logger.Error($"[NG SN CHECK] [ERROR] SN='{Context.ScanSnCode}' already exists in NG database, not allow production!");
+					Context.ErrorMessage = "NG SN check failed, product was already rejected!";
+					Plc.Write.工位1允许生产 = NOT_ALLOW_PRODUCTION_BY_SCAN_CODE;
+					Plc.Write.扫码枪1触发结果 = CodeOfNG;
+					goto SendResult;
+				}
+			}
+			else
+				Logger.Warn($"[NG SN CHECK] [OK:UnCheck] SN='{Context.ScanSnCode}'");
+
+
+			// ==================== MES进站 ====================
+			InStationExecutePoint:
 				var msg1 =
 					$"{AppConfig.StationName.Trim()},{Context.ScanSnCode.Trim()},1,{Core.WorkerNo.Trim()},{AppConfig.Line.Trim()},,OK,,,";
 				Context.WorkStep = WorkStep.IN_STATION;                              // 设置工作步骤为MES进站
@@ -573,8 +591,8 @@ public partial class WorkService1 : WorkServiceBase
 					{
 						failCode = alarmResult.Content switch                        // 映射故障码到MES编码
 						{
-							2 => "L043",                                             // 螺丝浮高
-							3 => "L044",                                             // 螺丝滑牙
+							1 => "L043",                                             // 螺丝浮高
+							2 => "L044",                                             // 螺丝滑牙
 							_ => "L043"
 						};
 						if (failCode != "")
@@ -656,7 +674,7 @@ public partial class WorkService1 : WorkServiceBase
 					[EapReportIds.EquipmentStatus] = StatusProvider.GetCurrentStatus().ToString(),
 					[EapReportIds.Input] = Plc.Read.已生产数量.ToString(),
 					[EapReportIds.Output] = Plc.Read.已生产数量.ToString(),
-					[EapReportIds.CT] = "0",
+					[EapReportIds.CT] = Plc.Read.CT.ToString(),
 					[EapReportIds.WorkOrder] = Core.WorkOrderNo ?? "",
 					[EapReportIds.ModelName] = Context.ModelName,
 					[EapReportIds.ProductSN] = Context.ScanSnCode,
@@ -932,7 +950,7 @@ public partial class WorkService1 : WorkServiceBase
 			KeyPartCode = Context.ScanKeyPartCode,
 			ModelName = Context.ModelName,
 			ErrorMessage = Context.ErrorMessage,
-			NgItems = JsonSerializer.Serialize(Context.NgItems.Select(t => new { t.Id, t.Sender, t.Name, t.Reason })),
+			NgItems = JsonSerializer.Serialize(Context.NgItems.Select(t => new { t.Id, t.Sender, t.Name, t.Reason }), new JsonSerializerOptions { Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping }),
 			CreateTime = DateTime.Now
 		});
 	}

@@ -1,4 +1,4 @@
-﻿using System.Collections.Specialized;
+using System.Collections.Specialized;
 using System.Globalization;
 using Avalonia.Media;
 using Avalonia.Threading;
@@ -207,7 +207,11 @@ public partial class MainVM : UiVM<MainView>
 		CTSeconds = PlcRead.CT / 1000;                                                     // CT 毫秒转秒
 
 		// 权限刷新
-		IsAdmin = (App.Current.IOC.Get<ZitApp.Services.AccountService>().Account?.RoleFlags ?? 0) >= 5;
+		var roleFlags = App.Current.IOC.Get<ZitApp.Services.AccountService>().Account?.RoleFlags ?? 0;
+		IsAdmin = roleFlags >= 5;
+		var isOp = roleFlags < 3;
+		foreach (var wp in WorkPositionContexts)
+			wp.IsOperator = isOp;
 
 		// 排停倒计时更新
 		if (IsPlannedStopActive && _plannedStopEndTime > DateTime.MinValue)

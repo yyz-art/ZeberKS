@@ -1,4 +1,4 @@
-﻿using Avalonia.Media;
+using Avalonia.Media;
 using Avalonia.Media.Imaging;
 using Avalonia.Threading;
 using ZC.Mvvm;
@@ -108,7 +108,9 @@ public partial class WorkPositionContext : ObservableObject
 	public partial bool MaterialCheck { get; set; } = true;
 	public partial bool RecipeCheck { get; set; } = true;
 	public partial bool MesEnabled { get; set; } = true;
-	public partial bool TestScanner { get; set; } 
+	public partial bool TestScanner { get; set; }
+	public partial bool NgSnCheck { get; set; } = true;
+	public partial bool IsOperator { get; set; }
 	public partial ObservableList<NgDefine> NgItems { get; set; } = [];
 
 	public void @OpenImageFileFolder()

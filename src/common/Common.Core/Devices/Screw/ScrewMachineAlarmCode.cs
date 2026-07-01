@@ -3,9 +3,9 @@
 public enum ScrewMachineAlarmCode : ushort
 {
 	无 = 0,
-	ALLErrorFlag = 1,
-	浮高 = 2,
-	滑牙 = 3,
+	ALLErrorFlag = 3,
+	浮高 = 1,
+	滑牙 = 2,
 
 	// 断电重启
 	过流 = 4,

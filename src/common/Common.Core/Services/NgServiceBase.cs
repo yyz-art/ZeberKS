@@ -45,6 +45,13 @@ public class NgServiceBase : AsyncMainTaskService, INamedObject
 		}
 	}
 
+	public async Task<bool> ExistsBySnCodeAsync(string snCode)
+	{
+		return await DbClient.Queryable<NgRecord>()
+			.Where(t => t.SnCode == snCode)
+			.AnyAsync();
+	}
+
 	public string GetObjectName() => "NG-SERVICE";
 
 	protected override async Task Main(CancellationToken ctk)
