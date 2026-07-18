@@ -1,5 +1,5 @@
 
-// GENERATE AT 2026/6/12 13:26:21
+// GENERATE AT 2026/7/9 11:59:06
 using ZC.Annotations;
 using ZC.DP.Memory;
 using ZC.DP;
@@ -19499,6 +19499,2694 @@ public partial class PointRecipeStruct
 		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 4_Axis_Vel_47",
 		DataDefine.KeyValue,"NameByVI", "", ])]
 	public float 取料2_R轴4_Axis_Vel_47 { get; set; }
+
+	[BinaryPoint(Offset = 29800, Source = "29800", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:29800", Category = "PLC/取料2_Z轴5_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴5_Axis_Pos_0",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 5_Axis_Pos_0",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴5_Axis_Pos_0 { get; set; }
+
+	[BinaryPoint(Offset = 29802, Source = "29802", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:29802", Category = "PLC/取料2_Z轴5_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴5_Axis_Pos_1",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 5_Axis_Pos_1",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴5_Axis_Pos_1 { get; set; }
+
+	[BinaryPoint(Offset = 29804, Source = "29804", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:29804", Category = "PLC/取料2_Z轴5_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴5_Axis_Pos_2",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 5_Axis_Pos_2",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴5_Axis_Pos_2 { get; set; }
+
+	[BinaryPoint(Offset = 29806, Source = "29806", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:29806", Category = "PLC/取料2_Z轴5_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴5_Axis_Pos_3",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 5_Axis_Pos_3",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴5_Axis_Pos_3 { get; set; }
+
+	[BinaryPoint(Offset = 29808, Source = "29808", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:29808", Category = "PLC/取料2_Z轴5_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴5_Axis_Pos_4",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 5_Axis_Pos_4",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴5_Axis_Pos_4 { get; set; }
+
+	[BinaryPoint(Offset = 29810, Source = "29810", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:29810", Category = "PLC/取料2_Z轴5_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴5_Axis_Pos_5",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 5_Axis_Pos_5",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴5_Axis_Pos_5 { get; set; }
+
+	[BinaryPoint(Offset = 29812, Source = "29812", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:29812", Category = "PLC/取料2_Z轴5_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴5_Axis_Pos_6",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 5_Axis_Pos_6",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴5_Axis_Pos_6 { get; set; }
+
+	[BinaryPoint(Offset = 29814, Source = "29814", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:29814", Category = "PLC/取料2_Z轴5_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴5_Axis_Pos_7",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 5_Axis_Pos_7",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴5_Axis_Pos_7 { get; set; }
+
+	[BinaryPoint(Offset = 29816, Source = "29816", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:29816", Category = "PLC/取料2_Z轴5_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴5_Axis_Pos_8",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 5_Axis_Pos_8",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴5_Axis_Pos_8 { get; set; }
+
+	[BinaryPoint(Offset = 29818, Source = "29818", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:29818", Category = "PLC/取料2_Z轴5_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴5_Axis_Pos_9",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 5_Axis_Pos_9",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴5_Axis_Pos_9 { get; set; }
+
+	[BinaryPoint(Offset = 29820, Source = "29820", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:29820", Category = "PLC/取料2_Z轴5_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴5_Axis_Pos_10",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 5_Axis_Pos_10",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴5_Axis_Pos_10 { get; set; }
+
+	[BinaryPoint(Offset = 29822, Source = "29822", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:29822", Category = "PLC/取料2_Z轴5_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴5_Axis_Pos_11",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 5_Axis_Pos_11",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴5_Axis_Pos_11 { get; set; }
+
+	[BinaryPoint(Offset = 29824, Source = "29824", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:29824", Category = "PLC/取料2_Z轴5_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴5_Axis_Pos_12",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 5_Axis_Pos_12",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴5_Axis_Pos_12 { get; set; }
+
+	[BinaryPoint(Offset = 29826, Source = "29826", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:29826", Category = "PLC/取料2_Z轴5_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴5_Axis_Pos_13",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 5_Axis_Pos_13",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴5_Axis_Pos_13 { get; set; }
+
+	[BinaryPoint(Offset = 29828, Source = "29828", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:29828", Category = "PLC/取料2_Z轴5_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴5_Axis_Pos_14",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 5_Axis_Pos_14",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴5_Axis_Pos_14 { get; set; }
+
+	[BinaryPoint(Offset = 29830, Source = "29830", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:29830", Category = "PLC/取料2_Z轴5_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴5_Axis_Pos_15",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 5_Axis_Pos_15",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴5_Axis_Pos_15 { get; set; }
+
+	[BinaryPoint(Offset = 29832, Source = "29832", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:29832", Category = "PLC/取料2_Z轴5_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴5_Axis_Pos_16",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 5_Axis_Pos_16",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴5_Axis_Pos_16 { get; set; }
+
+	[BinaryPoint(Offset = 29834, Source = "29834", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:29834", Category = "PLC/取料2_Z轴5_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴5_Axis_Pos_17",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 5_Axis_Pos_17",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴5_Axis_Pos_17 { get; set; }
+
+	[BinaryPoint(Offset = 29836, Source = "29836", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:29836", Category = "PLC/取料2_Z轴5_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴5_Axis_Pos_18",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 5_Axis_Pos_18",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴5_Axis_Pos_18 { get; set; }
+
+	[BinaryPoint(Offset = 29838, Source = "29838", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:29838", Category = "PLC/取料2_Z轴5_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴5_Axis_Pos_19",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 5_Axis_Pos_19",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴5_Axis_Pos_19 { get; set; }
+
+	[BinaryPoint(Offset = 29840, Source = "29840", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:29840", Category = "PLC/取料2_Z轴5_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴5_Axis_Pos_20",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 5_Axis_Pos_20",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴5_Axis_Pos_20 { get; set; }
+
+	[BinaryPoint(Offset = 29842, Source = "29842", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:29842", Category = "PLC/取料2_Z轴5_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴5_Axis_Pos_21",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 5_Axis_Pos_21",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴5_Axis_Pos_21 { get; set; }
+
+	[BinaryPoint(Offset = 29844, Source = "29844", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:29844", Category = "PLC/取料2_Z轴5_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴5_Axis_Pos_22",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 5_Axis_Pos_22",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴5_Axis_Pos_22 { get; set; }
+
+	[BinaryPoint(Offset = 29846, Source = "29846", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:29846", Category = "PLC/取料2_Z轴5_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴5_Axis_Pos_23",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 5_Axis_Pos_23",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴5_Axis_Pos_23 { get; set; }
+
+	[BinaryPoint(Offset = 29848, Source = "29848", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:29848", Category = "PLC/取料2_Z轴5_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴5_Axis_Pos_24",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 5_Axis_Pos_24",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴5_Axis_Pos_24 { get; set; }
+
+	[BinaryPoint(Offset = 29850, Source = "29850", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:29850", Category = "PLC/取料2_Z轴5_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴5_Axis_Pos_25",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 5_Axis_Pos_25",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴5_Axis_Pos_25 { get; set; }
+
+	[BinaryPoint(Offset = 29852, Source = "29852", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:29852", Category = "PLC/取料2_Z轴5_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴5_Axis_Pos_26",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 5_Axis_Pos_26",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴5_Axis_Pos_26 { get; set; }
+
+	[BinaryPoint(Offset = 29854, Source = "29854", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:29854", Category = "PLC/取料2_Z轴5_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴5_Axis_Pos_27",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 5_Axis_Pos_27",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴5_Axis_Pos_27 { get; set; }
+
+	[BinaryPoint(Offset = 29856, Source = "29856", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:29856", Category = "PLC/取料2_Z轴5_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴5_Axis_Pos_28",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 5_Axis_Pos_28",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴5_Axis_Pos_28 { get; set; }
+
+	[BinaryPoint(Offset = 29858, Source = "29858", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:29858", Category = "PLC/取料2_Z轴5_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴5_Axis_Pos_29",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 5_Axis_Pos_29",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴5_Axis_Pos_29 { get; set; }
+
+	[BinaryPoint(Offset = 29860, Source = "29860", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:29860", Category = "PLC/取料2_Z轴5_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴5_Axis_Pos_30",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 5_Axis_Pos_30",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴5_Axis_Pos_30 { get; set; }
+
+	[BinaryPoint(Offset = 29862, Source = "29862", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:29862", Category = "PLC/取料2_Z轴5_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴5_Axis_Pos_31",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 5_Axis_Pos_31",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴5_Axis_Pos_31 { get; set; }
+
+	[BinaryPoint(Offset = 29864, Source = "29864", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:29864", Category = "PLC/取料2_Z轴5_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴5_Axis_Pos_32",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 5_Axis_Pos_32",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴5_Axis_Pos_32 { get; set; }
+
+	[BinaryPoint(Offset = 29866, Source = "29866", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:29866", Category = "PLC/取料2_Z轴5_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴5_Axis_Pos_33",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 5_Axis_Pos_33",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴5_Axis_Pos_33 { get; set; }
+
+	[BinaryPoint(Offset = 29868, Source = "29868", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:29868", Category = "PLC/取料2_Z轴5_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴5_Axis_Pos_34",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 5_Axis_Pos_34",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴5_Axis_Pos_34 { get; set; }
+
+	[BinaryPoint(Offset = 29870, Source = "29870", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:29870", Category = "PLC/取料2_Z轴5_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴5_Axis_Pos_35",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 5_Axis_Pos_35",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴5_Axis_Pos_35 { get; set; }
+
+	[BinaryPoint(Offset = 29872, Source = "29872", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:29872", Category = "PLC/取料2_Z轴5_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴5_Axis_Pos_36",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 5_Axis_Pos_36",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴5_Axis_Pos_36 { get; set; }
+
+	[BinaryPoint(Offset = 29874, Source = "29874", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:29874", Category = "PLC/取料2_Z轴5_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴5_Axis_Pos_37",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 5_Axis_Pos_37",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴5_Axis_Pos_37 { get; set; }
+
+	[BinaryPoint(Offset = 29876, Source = "29876", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:29876", Category = "PLC/取料2_Z轴5_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴5_Axis_Pos_38",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 5_Axis_Pos_38",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴5_Axis_Pos_38 { get; set; }
+
+	[BinaryPoint(Offset = 29878, Source = "29878", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:29878", Category = "PLC/取料2_Z轴5_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴5_Axis_Pos_39",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 5_Axis_Pos_39",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴5_Axis_Pos_39 { get; set; }
+
+	[BinaryPoint(Offset = 29880, Source = "29880", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:29880", Category = "PLC/取料2_Z轴5_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴5_Axis_Pos_40",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 5_Axis_Pos_40",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴5_Axis_Pos_40 { get; set; }
+
+	[BinaryPoint(Offset = 29882, Source = "29882", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:29882", Category = "PLC/取料2_Z轴5_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴5_Axis_Pos_41",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 5_Axis_Pos_41",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴5_Axis_Pos_41 { get; set; }
+
+	[BinaryPoint(Offset = 29884, Source = "29884", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:29884", Category = "PLC/取料2_Z轴5_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴5_Axis_Pos_42",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 5_Axis_Pos_42",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴5_Axis_Pos_42 { get; set; }
+
+	[BinaryPoint(Offset = 29886, Source = "29886", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:29886", Category = "PLC/取料2_Z轴5_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴5_Axis_Pos_43",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 5_Axis_Pos_43",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴5_Axis_Pos_43 { get; set; }
+
+	[BinaryPoint(Offset = 29888, Source = "29888", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:29888", Category = "PLC/取料2_Z轴5_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴5_Axis_Pos_44",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 5_Axis_Pos_44",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴5_Axis_Pos_44 { get; set; }
+
+	[BinaryPoint(Offset = 29890, Source = "29890", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:29890", Category = "PLC/取料2_Z轴5_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴5_Axis_Pos_45",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 5_Axis_Pos_45",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴5_Axis_Pos_45 { get; set; }
+
+	[BinaryPoint(Offset = 29892, Source = "29892", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:29892", Category = "PLC/取料2_Z轴5_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴5_Axis_Pos_46",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 5_Axis_Pos_46",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴5_Axis_Pos_46 { get; set; }
+
+	[BinaryPoint(Offset = 29894, Source = "29894", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:29894", Category = "PLC/取料2_Z轴5_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴5_Axis_Pos_47",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 5_Axis_Pos_47",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴5_Axis_Pos_47 { get; set; }
+
+	[BinaryPoint(Offset = 29900, Source = "29900", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:29900", Category = "PLC/取料2_Z轴5_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴5_Axis_Vel_0",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 5_Axis_Vel_0",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴5_Axis_Vel_0 { get; set; }
+
+	[BinaryPoint(Offset = 29902, Source = "29902", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:29902", Category = "PLC/取料2_Z轴5_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴5_Axis_Vel_1",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 5_Axis_Vel_1",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴5_Axis_Vel_1 { get; set; }
+
+	[BinaryPoint(Offset = 29904, Source = "29904", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:29904", Category = "PLC/取料2_Z轴5_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴5_Axis_Vel_2",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 5_Axis_Vel_2",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴5_Axis_Vel_2 { get; set; }
+
+	[BinaryPoint(Offset = 29906, Source = "29906", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:29906", Category = "PLC/取料2_Z轴5_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴5_Axis_Vel_3",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 5_Axis_Vel_3",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴5_Axis_Vel_3 { get; set; }
+
+	[BinaryPoint(Offset = 29908, Source = "29908", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:29908", Category = "PLC/取料2_Z轴5_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴5_Axis_Vel_4",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 5_Axis_Vel_4",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴5_Axis_Vel_4 { get; set; }
+
+	[BinaryPoint(Offset = 29910, Source = "29910", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:29910", Category = "PLC/取料2_Z轴5_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴5_Axis_Vel_5",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 5_Axis_Vel_5",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴5_Axis_Vel_5 { get; set; }
+
+	[BinaryPoint(Offset = 29912, Source = "29912", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:29912", Category = "PLC/取料2_Z轴5_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴5_Axis_Vel_6",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 5_Axis_Vel_6",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴5_Axis_Vel_6 { get; set; }
+
+	[BinaryPoint(Offset = 29914, Source = "29914", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:29914", Category = "PLC/取料2_Z轴5_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴5_Axis_Vel_7",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 5_Axis_Vel_7",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴5_Axis_Vel_7 { get; set; }
+
+	[BinaryPoint(Offset = 29916, Source = "29916", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:29916", Category = "PLC/取料2_Z轴5_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴5_Axis_Vel_8",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 5_Axis_Vel_8",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴5_Axis_Vel_8 { get; set; }
+
+	[BinaryPoint(Offset = 29918, Source = "29918", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:29918", Category = "PLC/取料2_Z轴5_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴5_Axis_Vel_9",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 5_Axis_Vel_9",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴5_Axis_Vel_9 { get; set; }
+
+	[BinaryPoint(Offset = 29920, Source = "29920", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:29920", Category = "PLC/取料2_Z轴5_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴5_Axis_Vel_10",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 5_Axis_Vel_10",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴5_Axis_Vel_10 { get; set; }
+
+	[BinaryPoint(Offset = 29922, Source = "29922", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:29922", Category = "PLC/取料2_Z轴5_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴5_Axis_Vel_11",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 5_Axis_Vel_11",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴5_Axis_Vel_11 { get; set; }
+
+	[BinaryPoint(Offset = 29924, Source = "29924", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:29924", Category = "PLC/取料2_Z轴5_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴5_Axis_Vel_12",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 5_Axis_Vel_12",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴5_Axis_Vel_12 { get; set; }
+
+	[BinaryPoint(Offset = 29926, Source = "29926", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:29926", Category = "PLC/取料2_Z轴5_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴5_Axis_Vel_13",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 5_Axis_Vel_13",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴5_Axis_Vel_13 { get; set; }
+
+	[BinaryPoint(Offset = 29928, Source = "29928", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:29928", Category = "PLC/取料2_Z轴5_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴5_Axis_Vel_14",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 5_Axis_Vel_14",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴5_Axis_Vel_14 { get; set; }
+
+	[BinaryPoint(Offset = 29930, Source = "29930", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:29930", Category = "PLC/取料2_Z轴5_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴5_Axis_Vel_15",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 5_Axis_Vel_15",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴5_Axis_Vel_15 { get; set; }
+
+	[BinaryPoint(Offset = 29932, Source = "29932", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:29932", Category = "PLC/取料2_Z轴5_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴5_Axis_Vel_16",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 5_Axis_Vel_16",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴5_Axis_Vel_16 { get; set; }
+
+	[BinaryPoint(Offset = 29934, Source = "29934", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:29934", Category = "PLC/取料2_Z轴5_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴5_Axis_Vel_17",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 5_Axis_Vel_17",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴5_Axis_Vel_17 { get; set; }
+
+	[BinaryPoint(Offset = 29936, Source = "29936", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:29936", Category = "PLC/取料2_Z轴5_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴5_Axis_Vel_18",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 5_Axis_Vel_18",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴5_Axis_Vel_18 { get; set; }
+
+	[BinaryPoint(Offset = 29938, Source = "29938", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:29938", Category = "PLC/取料2_Z轴5_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴5_Axis_Vel_19",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 5_Axis_Vel_19",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴5_Axis_Vel_19 { get; set; }
+
+	[BinaryPoint(Offset = 29940, Source = "29940", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:29940", Category = "PLC/取料2_Z轴5_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴5_Axis_Vel_20",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 5_Axis_Vel_20",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴5_Axis_Vel_20 { get; set; }
+
+	[BinaryPoint(Offset = 29942, Source = "29942", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:29942", Category = "PLC/取料2_Z轴5_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴5_Axis_Vel_21",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 5_Axis_Vel_21",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴5_Axis_Vel_21 { get; set; }
+
+	[BinaryPoint(Offset = 29944, Source = "29944", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:29944", Category = "PLC/取料2_Z轴5_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴5_Axis_Vel_22",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 5_Axis_Vel_22",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴5_Axis_Vel_22 { get; set; }
+
+	[BinaryPoint(Offset = 29946, Source = "29946", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:29946", Category = "PLC/取料2_Z轴5_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴5_Axis_Vel_23",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 5_Axis_Vel_23",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴5_Axis_Vel_23 { get; set; }
+
+	[BinaryPoint(Offset = 29948, Source = "29948", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:29948", Category = "PLC/取料2_Z轴5_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴5_Axis_Vel_24",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 5_Axis_Vel_24",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴5_Axis_Vel_24 { get; set; }
+
+	[BinaryPoint(Offset = 29950, Source = "29950", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:29950", Category = "PLC/取料2_Z轴5_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴5_Axis_Vel_25",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 5_Axis_Vel_25",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴5_Axis_Vel_25 { get; set; }
+
+	[BinaryPoint(Offset = 29952, Source = "29952", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:29952", Category = "PLC/取料2_Z轴5_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴5_Axis_Vel_26",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 5_Axis_Vel_26",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴5_Axis_Vel_26 { get; set; }
+
+	[BinaryPoint(Offset = 29954, Source = "29954", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:29954", Category = "PLC/取料2_Z轴5_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴5_Axis_Vel_27",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 5_Axis_Vel_27",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴5_Axis_Vel_27 { get; set; }
+
+	[BinaryPoint(Offset = 29956, Source = "29956", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:29956", Category = "PLC/取料2_Z轴5_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴5_Axis_Vel_28",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 5_Axis_Vel_28",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴5_Axis_Vel_28 { get; set; }
+
+	[BinaryPoint(Offset = 29958, Source = "29958", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:29958", Category = "PLC/取料2_Z轴5_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴5_Axis_Vel_29",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 5_Axis_Vel_29",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴5_Axis_Vel_29 { get; set; }
+
+	[BinaryPoint(Offset = 29960, Source = "29960", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:29960", Category = "PLC/取料2_Z轴5_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴5_Axis_Vel_30",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 5_Axis_Vel_30",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴5_Axis_Vel_30 { get; set; }
+
+	[BinaryPoint(Offset = 29962, Source = "29962", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:29962", Category = "PLC/取料2_Z轴5_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴5_Axis_Vel_31",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 5_Axis_Vel_31",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴5_Axis_Vel_31 { get; set; }
+
+	[BinaryPoint(Offset = 29964, Source = "29964", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:29964", Category = "PLC/取料2_Z轴5_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴5_Axis_Vel_32",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 5_Axis_Vel_32",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴5_Axis_Vel_32 { get; set; }
+
+	[BinaryPoint(Offset = 29966, Source = "29966", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:29966", Category = "PLC/取料2_Z轴5_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴5_Axis_Vel_33",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 5_Axis_Vel_33",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴5_Axis_Vel_33 { get; set; }
+
+	[BinaryPoint(Offset = 29968, Source = "29968", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:29968", Category = "PLC/取料2_Z轴5_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴5_Axis_Vel_34",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 5_Axis_Vel_34",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴5_Axis_Vel_34 { get; set; }
+
+	[BinaryPoint(Offset = 29970, Source = "29970", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:29970", Category = "PLC/取料2_Z轴5_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴5_Axis_Vel_35",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 5_Axis_Vel_35",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴5_Axis_Vel_35 { get; set; }
+
+	[BinaryPoint(Offset = 29972, Source = "29972", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:29972", Category = "PLC/取料2_Z轴5_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴5_Axis_Vel_36",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 5_Axis_Vel_36",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴5_Axis_Vel_36 { get; set; }
+
+	[BinaryPoint(Offset = 29974, Source = "29974", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:29974", Category = "PLC/取料2_Z轴5_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴5_Axis_Vel_37",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 5_Axis_Vel_37",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴5_Axis_Vel_37 { get; set; }
+
+	[BinaryPoint(Offset = 29976, Source = "29976", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:29976", Category = "PLC/取料2_Z轴5_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴5_Axis_Vel_38",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 5_Axis_Vel_38",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴5_Axis_Vel_38 { get; set; }
+
+	[BinaryPoint(Offset = 29978, Source = "29978", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:29978", Category = "PLC/取料2_Z轴5_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴5_Axis_Vel_39",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 5_Axis_Vel_39",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴5_Axis_Vel_39 { get; set; }
+
+	[BinaryPoint(Offset = 29980, Source = "29980", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:29980", Category = "PLC/取料2_Z轴5_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴5_Axis_Vel_40",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 5_Axis_Vel_40",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴5_Axis_Vel_40 { get; set; }
+
+	[BinaryPoint(Offset = 29982, Source = "29982", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:29982", Category = "PLC/取料2_Z轴5_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴5_Axis_Vel_41",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 5_Axis_Vel_41",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴5_Axis_Vel_41 { get; set; }
+
+	[BinaryPoint(Offset = 29984, Source = "29984", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:29984", Category = "PLC/取料2_Z轴5_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴5_Axis_Vel_42",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 5_Axis_Vel_42",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴5_Axis_Vel_42 { get; set; }
+
+	[BinaryPoint(Offset = 29986, Source = "29986", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:29986", Category = "PLC/取料2_Z轴5_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴5_Axis_Vel_43",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 5_Axis_Vel_43",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴5_Axis_Vel_43 { get; set; }
+
+	[BinaryPoint(Offset = 29988, Source = "29988", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:29988", Category = "PLC/取料2_Z轴5_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴5_Axis_Vel_44",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 5_Axis_Vel_44",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴5_Axis_Vel_44 { get; set; }
+
+	[BinaryPoint(Offset = 29990, Source = "29990", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:29990", Category = "PLC/取料2_Z轴5_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴5_Axis_Vel_45",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 5_Axis_Vel_45",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴5_Axis_Vel_45 { get; set; }
+
+	[BinaryPoint(Offset = 29992, Source = "29992", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:29992", Category = "PLC/取料2_Z轴5_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴5_Axis_Vel_46",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 5_Axis_Vel_46",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴5_Axis_Vel_46 { get; set; }
+
+	[BinaryPoint(Offset = 29994, Source = "29994", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:29994", Category = "PLC/取料2_Z轴5_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴5_Axis_Vel_47",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 5_Axis_Vel_47",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴5_Axis_Vel_47 { get; set; }
+
+	[BinaryPoint(Offset = 30000, Source = "30000", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30000", Category = "PLC/取料2_R轴5_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴5_Axis_Pos_0",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 5_Axis_Pos_0",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴5_Axis_Pos_0 { get; set; }
+
+	[BinaryPoint(Offset = 30002, Source = "30002", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30002", Category = "PLC/取料2_R轴5_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴5_Axis_Pos_1",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 5_Axis_Pos_1",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴5_Axis_Pos_1 { get; set; }
+
+	[BinaryPoint(Offset = 30004, Source = "30004", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30004", Category = "PLC/取料2_R轴5_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴5_Axis_Pos_2",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 5_Axis_Pos_2",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴5_Axis_Pos_2 { get; set; }
+
+	[BinaryPoint(Offset = 30006, Source = "30006", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30006", Category = "PLC/取料2_R轴5_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴5_Axis_Pos_3",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 5_Axis_Pos_3",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴5_Axis_Pos_3 { get; set; }
+
+	[BinaryPoint(Offset = 30008, Source = "30008", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30008", Category = "PLC/取料2_R轴5_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴5_Axis_Pos_4",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 5_Axis_Pos_4",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴5_Axis_Pos_4 { get; set; }
+
+	[BinaryPoint(Offset = 30010, Source = "30010", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30010", Category = "PLC/取料2_R轴5_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴5_Axis_Pos_5",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 5_Axis_Pos_5",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴5_Axis_Pos_5 { get; set; }
+
+	[BinaryPoint(Offset = 30012, Source = "30012", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30012", Category = "PLC/取料2_R轴5_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴5_Axis_Pos_6",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 5_Axis_Pos_6",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴5_Axis_Pos_6 { get; set; }
+
+	[BinaryPoint(Offset = 30014, Source = "30014", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30014", Category = "PLC/取料2_R轴5_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴5_Axis_Pos_7",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 5_Axis_Pos_7",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴5_Axis_Pos_7 { get; set; }
+
+	[BinaryPoint(Offset = 30016, Source = "30016", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30016", Category = "PLC/取料2_R轴5_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴5_Axis_Pos_8",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 5_Axis_Pos_8",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴5_Axis_Pos_8 { get; set; }
+
+	[BinaryPoint(Offset = 30018, Source = "30018", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30018", Category = "PLC/取料2_R轴5_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴5_Axis_Pos_9",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 5_Axis_Pos_9",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴5_Axis_Pos_9 { get; set; }
+
+	[BinaryPoint(Offset = 30020, Source = "30020", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30020", Category = "PLC/取料2_R轴5_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴5_Axis_Pos_10",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 5_Axis_Pos_10",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴5_Axis_Pos_10 { get; set; }
+
+	[BinaryPoint(Offset = 30022, Source = "30022", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30022", Category = "PLC/取料2_R轴5_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴5_Axis_Pos_11",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 5_Axis_Pos_11",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴5_Axis_Pos_11 { get; set; }
+
+	[BinaryPoint(Offset = 30024, Source = "30024", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30024", Category = "PLC/取料2_R轴5_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴5_Axis_Pos_12",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 5_Axis_Pos_12",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴5_Axis_Pos_12 { get; set; }
+
+	[BinaryPoint(Offset = 30026, Source = "30026", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30026", Category = "PLC/取料2_R轴5_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴5_Axis_Pos_13",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 5_Axis_Pos_13",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴5_Axis_Pos_13 { get; set; }
+
+	[BinaryPoint(Offset = 30028, Source = "30028", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30028", Category = "PLC/取料2_R轴5_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴5_Axis_Pos_14",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 5_Axis_Pos_14",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴5_Axis_Pos_14 { get; set; }
+
+	[BinaryPoint(Offset = 30030, Source = "30030", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30030", Category = "PLC/取料2_R轴5_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴5_Axis_Pos_15",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 5_Axis_Pos_15",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴5_Axis_Pos_15 { get; set; }
+
+	[BinaryPoint(Offset = 30032, Source = "30032", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30032", Category = "PLC/取料2_R轴5_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴5_Axis_Pos_16",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 5_Axis_Pos_16",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴5_Axis_Pos_16 { get; set; }
+
+	[BinaryPoint(Offset = 30034, Source = "30034", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30034", Category = "PLC/取料2_R轴5_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴5_Axis_Pos_17",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 5_Axis_Pos_17",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴5_Axis_Pos_17 { get; set; }
+
+	[BinaryPoint(Offset = 30036, Source = "30036", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30036", Category = "PLC/取料2_R轴5_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴5_Axis_Pos_18",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 5_Axis_Pos_18",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴5_Axis_Pos_18 { get; set; }
+
+	[BinaryPoint(Offset = 30038, Source = "30038", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30038", Category = "PLC/取料2_R轴5_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴5_Axis_Pos_19",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 5_Axis_Pos_19",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴5_Axis_Pos_19 { get; set; }
+
+	[BinaryPoint(Offset = 30040, Source = "30040", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30040", Category = "PLC/取料2_R轴5_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴5_Axis_Pos_20",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 5_Axis_Pos_20",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴5_Axis_Pos_20 { get; set; }
+
+	[BinaryPoint(Offset = 30042, Source = "30042", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30042", Category = "PLC/取料2_R轴5_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴5_Axis_Pos_21",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 5_Axis_Pos_21",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴5_Axis_Pos_21 { get; set; }
+
+	[BinaryPoint(Offset = 30044, Source = "30044", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30044", Category = "PLC/取料2_R轴5_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴5_Axis_Pos_22",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 5_Axis_Pos_22",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴5_Axis_Pos_22 { get; set; }
+
+	[BinaryPoint(Offset = 30046, Source = "30046", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30046", Category = "PLC/取料2_R轴5_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴5_Axis_Pos_23",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 5_Axis_Pos_23",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴5_Axis_Pos_23 { get; set; }
+
+	[BinaryPoint(Offset = 30048, Source = "30048", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30048", Category = "PLC/取料2_R轴5_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴5_Axis_Pos_24",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 5_Axis_Pos_24",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴5_Axis_Pos_24 { get; set; }
+
+	[BinaryPoint(Offset = 30050, Source = "30050", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30050", Category = "PLC/取料2_R轴5_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴5_Axis_Pos_25",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 5_Axis_Pos_25",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴5_Axis_Pos_25 { get; set; }
+
+	[BinaryPoint(Offset = 30052, Source = "30052", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30052", Category = "PLC/取料2_R轴5_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴5_Axis_Pos_26",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 5_Axis_Pos_26",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴5_Axis_Pos_26 { get; set; }
+
+	[BinaryPoint(Offset = 30054, Source = "30054", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30054", Category = "PLC/取料2_R轴5_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴5_Axis_Pos_27",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 5_Axis_Pos_27",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴5_Axis_Pos_27 { get; set; }
+
+	[BinaryPoint(Offset = 30056, Source = "30056", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30056", Category = "PLC/取料2_R轴5_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴5_Axis_Pos_28",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 5_Axis_Pos_28",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴5_Axis_Pos_28 { get; set; }
+
+	[BinaryPoint(Offset = 30058, Source = "30058", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30058", Category = "PLC/取料2_R轴5_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴5_Axis_Pos_29",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 5_Axis_Pos_29",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴5_Axis_Pos_29 { get; set; }
+
+	[BinaryPoint(Offset = 30060, Source = "30060", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30060", Category = "PLC/取料2_R轴5_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴5_Axis_Pos_30",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 5_Axis_Pos_30",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴5_Axis_Pos_30 { get; set; }
+
+	[BinaryPoint(Offset = 30062, Source = "30062", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30062", Category = "PLC/取料2_R轴5_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴5_Axis_Pos_31",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 5_Axis_Pos_31",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴5_Axis_Pos_31 { get; set; }
+
+	[BinaryPoint(Offset = 30064, Source = "30064", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30064", Category = "PLC/取料2_R轴5_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴5_Axis_Pos_32",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 5_Axis_Pos_32",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴5_Axis_Pos_32 { get; set; }
+
+	[BinaryPoint(Offset = 30066, Source = "30066", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30066", Category = "PLC/取料2_R轴5_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴5_Axis_Pos_33",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 5_Axis_Pos_33",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴5_Axis_Pos_33 { get; set; }
+
+	[BinaryPoint(Offset = 30068, Source = "30068", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30068", Category = "PLC/取料2_R轴5_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴5_Axis_Pos_34",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 5_Axis_Pos_34",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴5_Axis_Pos_34 { get; set; }
+
+	[BinaryPoint(Offset = 30070, Source = "30070", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30070", Category = "PLC/取料2_R轴5_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴5_Axis_Pos_35",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 5_Axis_Pos_35",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴5_Axis_Pos_35 { get; set; }
+
+	[BinaryPoint(Offset = 30072, Source = "30072", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30072", Category = "PLC/取料2_R轴5_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴5_Axis_Pos_36",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 5_Axis_Pos_36",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴5_Axis_Pos_36 { get; set; }
+
+	[BinaryPoint(Offset = 30074, Source = "30074", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30074", Category = "PLC/取料2_R轴5_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴5_Axis_Pos_37",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 5_Axis_Pos_37",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴5_Axis_Pos_37 { get; set; }
+
+	[BinaryPoint(Offset = 30076, Source = "30076", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30076", Category = "PLC/取料2_R轴5_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴5_Axis_Pos_38",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 5_Axis_Pos_38",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴5_Axis_Pos_38 { get; set; }
+
+	[BinaryPoint(Offset = 30078, Source = "30078", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30078", Category = "PLC/取料2_R轴5_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴5_Axis_Pos_39",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 5_Axis_Pos_39",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴5_Axis_Pos_39 { get; set; }
+
+	[BinaryPoint(Offset = 30080, Source = "30080", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30080", Category = "PLC/取料2_R轴5_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴5_Axis_Pos_40",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 5_Axis_Pos_40",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴5_Axis_Pos_40 { get; set; }
+
+	[BinaryPoint(Offset = 30082, Source = "30082", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30082", Category = "PLC/取料2_R轴5_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴5_Axis_Pos_41",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 5_Axis_Pos_41",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴5_Axis_Pos_41 { get; set; }
+
+	[BinaryPoint(Offset = 30084, Source = "30084", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30084", Category = "PLC/取料2_R轴5_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴5_Axis_Pos_42",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 5_Axis_Pos_42",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴5_Axis_Pos_42 { get; set; }
+
+	[BinaryPoint(Offset = 30086, Source = "30086", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30086", Category = "PLC/取料2_R轴5_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴5_Axis_Pos_43",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 5_Axis_Pos_43",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴5_Axis_Pos_43 { get; set; }
+
+	[BinaryPoint(Offset = 30088, Source = "30088", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30088", Category = "PLC/取料2_R轴5_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴5_Axis_Pos_44",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 5_Axis_Pos_44",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴5_Axis_Pos_44 { get; set; }
+
+	[BinaryPoint(Offset = 30090, Source = "30090", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30090", Category = "PLC/取料2_R轴5_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴5_Axis_Pos_45",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 5_Axis_Pos_45",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴5_Axis_Pos_45 { get; set; }
+
+	[BinaryPoint(Offset = 30092, Source = "30092", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30092", Category = "PLC/取料2_R轴5_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴5_Axis_Pos_46",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 5_Axis_Pos_46",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴5_Axis_Pos_46 { get; set; }
+
+	[BinaryPoint(Offset = 30094, Source = "30094", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30094", Category = "PLC/取料2_R轴5_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴5_Axis_Pos_47",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 5_Axis_Pos_47",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴5_Axis_Pos_47 { get; set; }
+
+	[BinaryPoint(Offset = 30100, Source = "30100", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30100", Category = "PLC/取料2_R轴5_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴5_Axis_Vel_0",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 5_Axis_Vel_0",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴5_Axis_Vel_0 { get; set; }
+
+	[BinaryPoint(Offset = 30102, Source = "30102", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30102", Category = "PLC/取料2_R轴5_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴5_Axis_Vel_1",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 5_Axis_Vel_1",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴5_Axis_Vel_1 { get; set; }
+
+	[BinaryPoint(Offset = 30104, Source = "30104", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30104", Category = "PLC/取料2_R轴5_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴5_Axis_Vel_2",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 5_Axis_Vel_2",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴5_Axis_Vel_2 { get; set; }
+
+	[BinaryPoint(Offset = 30106, Source = "30106", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30106", Category = "PLC/取料2_R轴5_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴5_Axis_Vel_3",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 5_Axis_Vel_3",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴5_Axis_Vel_3 { get; set; }
+
+	[BinaryPoint(Offset = 30108, Source = "30108", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30108", Category = "PLC/取料2_R轴5_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴5_Axis_Vel_4",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 5_Axis_Vel_4",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴5_Axis_Vel_4 { get; set; }
+
+	[BinaryPoint(Offset = 30110, Source = "30110", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30110", Category = "PLC/取料2_R轴5_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴5_Axis_Vel_5",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 5_Axis_Vel_5",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴5_Axis_Vel_5 { get; set; }
+
+	[BinaryPoint(Offset = 30112, Source = "30112", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30112", Category = "PLC/取料2_R轴5_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴5_Axis_Vel_6",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 5_Axis_Vel_6",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴5_Axis_Vel_6 { get; set; }
+
+	[BinaryPoint(Offset = 30114, Source = "30114", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30114", Category = "PLC/取料2_R轴5_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴5_Axis_Vel_7",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 5_Axis_Vel_7",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴5_Axis_Vel_7 { get; set; }
+
+	[BinaryPoint(Offset = 30116, Source = "30116", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30116", Category = "PLC/取料2_R轴5_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴5_Axis_Vel_8",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 5_Axis_Vel_8",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴5_Axis_Vel_8 { get; set; }
+
+	[BinaryPoint(Offset = 30118, Source = "30118", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30118", Category = "PLC/取料2_R轴5_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴5_Axis_Vel_9",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 5_Axis_Vel_9",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴5_Axis_Vel_9 { get; set; }
+
+	[BinaryPoint(Offset = 30120, Source = "30120", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30120", Category = "PLC/取料2_R轴5_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴5_Axis_Vel_10",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 5_Axis_Vel_10",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴5_Axis_Vel_10 { get; set; }
+
+	[BinaryPoint(Offset = 30122, Source = "30122", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30122", Category = "PLC/取料2_R轴5_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴5_Axis_Vel_11",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 5_Axis_Vel_11",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴5_Axis_Vel_11 { get; set; }
+
+	[BinaryPoint(Offset = 30124, Source = "30124", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30124", Category = "PLC/取料2_R轴5_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴5_Axis_Vel_12",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 5_Axis_Vel_12",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴5_Axis_Vel_12 { get; set; }
+
+	[BinaryPoint(Offset = 30126, Source = "30126", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30126", Category = "PLC/取料2_R轴5_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴5_Axis_Vel_13",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 5_Axis_Vel_13",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴5_Axis_Vel_13 { get; set; }
+
+	[BinaryPoint(Offset = 30128, Source = "30128", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30128", Category = "PLC/取料2_R轴5_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴5_Axis_Vel_14",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 5_Axis_Vel_14",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴5_Axis_Vel_14 { get; set; }
+
+	[BinaryPoint(Offset = 30130, Source = "30130", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30130", Category = "PLC/取料2_R轴5_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴5_Axis_Vel_15",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 5_Axis_Vel_15",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴5_Axis_Vel_15 { get; set; }
+
+	[BinaryPoint(Offset = 30132, Source = "30132", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30132", Category = "PLC/取料2_R轴5_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴5_Axis_Vel_16",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 5_Axis_Vel_16",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴5_Axis_Vel_16 { get; set; }
+
+	[BinaryPoint(Offset = 30134, Source = "30134", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30134", Category = "PLC/取料2_R轴5_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴5_Axis_Vel_17",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 5_Axis_Vel_17",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴5_Axis_Vel_17 { get; set; }
+
+	[BinaryPoint(Offset = 30136, Source = "30136", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30136", Category = "PLC/取料2_R轴5_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴5_Axis_Vel_18",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 5_Axis_Vel_18",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴5_Axis_Vel_18 { get; set; }
+
+	[BinaryPoint(Offset = 30138, Source = "30138", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30138", Category = "PLC/取料2_R轴5_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴5_Axis_Vel_19",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 5_Axis_Vel_19",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴5_Axis_Vel_19 { get; set; }
+
+	[BinaryPoint(Offset = 30140, Source = "30140", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30140", Category = "PLC/取料2_R轴5_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴5_Axis_Vel_20",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 5_Axis_Vel_20",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴5_Axis_Vel_20 { get; set; }
+
+	[BinaryPoint(Offset = 30142, Source = "30142", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30142", Category = "PLC/取料2_R轴5_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴5_Axis_Vel_21",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 5_Axis_Vel_21",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴5_Axis_Vel_21 { get; set; }
+
+	[BinaryPoint(Offset = 30144, Source = "30144", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30144", Category = "PLC/取料2_R轴5_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴5_Axis_Vel_22",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 5_Axis_Vel_22",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴5_Axis_Vel_22 { get; set; }
+
+	[BinaryPoint(Offset = 30146, Source = "30146", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30146", Category = "PLC/取料2_R轴5_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴5_Axis_Vel_23",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 5_Axis_Vel_23",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴5_Axis_Vel_23 { get; set; }
+
+	[BinaryPoint(Offset = 30148, Source = "30148", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30148", Category = "PLC/取料2_R轴5_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴5_Axis_Vel_24",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 5_Axis_Vel_24",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴5_Axis_Vel_24 { get; set; }
+
+	[BinaryPoint(Offset = 30150, Source = "30150", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30150", Category = "PLC/取料2_R轴5_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴5_Axis_Vel_25",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 5_Axis_Vel_25",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴5_Axis_Vel_25 { get; set; }
+
+	[BinaryPoint(Offset = 30152, Source = "30152", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30152", Category = "PLC/取料2_R轴5_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴5_Axis_Vel_26",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 5_Axis_Vel_26",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴5_Axis_Vel_26 { get; set; }
+
+	[BinaryPoint(Offset = 30154, Source = "30154", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30154", Category = "PLC/取料2_R轴5_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴5_Axis_Vel_27",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 5_Axis_Vel_27",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴5_Axis_Vel_27 { get; set; }
+
+	[BinaryPoint(Offset = 30156, Source = "30156", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30156", Category = "PLC/取料2_R轴5_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴5_Axis_Vel_28",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 5_Axis_Vel_28",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴5_Axis_Vel_28 { get; set; }
+
+	[BinaryPoint(Offset = 30158, Source = "30158", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30158", Category = "PLC/取料2_R轴5_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴5_Axis_Vel_29",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 5_Axis_Vel_29",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴5_Axis_Vel_29 { get; set; }
+
+	[BinaryPoint(Offset = 30160, Source = "30160", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30160", Category = "PLC/取料2_R轴5_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴5_Axis_Vel_30",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 5_Axis_Vel_30",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴5_Axis_Vel_30 { get; set; }
+
+	[BinaryPoint(Offset = 30162, Source = "30162", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30162", Category = "PLC/取料2_R轴5_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴5_Axis_Vel_31",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 5_Axis_Vel_31",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴5_Axis_Vel_31 { get; set; }
+
+	[BinaryPoint(Offset = 30164, Source = "30164", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30164", Category = "PLC/取料2_R轴5_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴5_Axis_Vel_32",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 5_Axis_Vel_32",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴5_Axis_Vel_32 { get; set; }
+
+	[BinaryPoint(Offset = 30166, Source = "30166", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30166", Category = "PLC/取料2_R轴5_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴5_Axis_Vel_33",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 5_Axis_Vel_33",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴5_Axis_Vel_33 { get; set; }
+
+	[BinaryPoint(Offset = 30168, Source = "30168", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30168", Category = "PLC/取料2_R轴5_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴5_Axis_Vel_34",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 5_Axis_Vel_34",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴5_Axis_Vel_34 { get; set; }
+
+	[BinaryPoint(Offset = 30170, Source = "30170", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30170", Category = "PLC/取料2_R轴5_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴5_Axis_Vel_35",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 5_Axis_Vel_35",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴5_Axis_Vel_35 { get; set; }
+
+	[BinaryPoint(Offset = 30172, Source = "30172", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30172", Category = "PLC/取料2_R轴5_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴5_Axis_Vel_36",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 5_Axis_Vel_36",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴5_Axis_Vel_36 { get; set; }
+
+	[BinaryPoint(Offset = 30174, Source = "30174", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30174", Category = "PLC/取料2_R轴5_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴5_Axis_Vel_37",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 5_Axis_Vel_37",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴5_Axis_Vel_37 { get; set; }
+
+	[BinaryPoint(Offset = 30176, Source = "30176", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30176", Category = "PLC/取料2_R轴5_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴5_Axis_Vel_38",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 5_Axis_Vel_38",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴5_Axis_Vel_38 { get; set; }
+
+	[BinaryPoint(Offset = 30178, Source = "30178", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30178", Category = "PLC/取料2_R轴5_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴5_Axis_Vel_39",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 5_Axis_Vel_39",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴5_Axis_Vel_39 { get; set; }
+
+	[BinaryPoint(Offset = 30180, Source = "30180", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30180", Category = "PLC/取料2_R轴5_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴5_Axis_Vel_40",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 5_Axis_Vel_40",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴5_Axis_Vel_40 { get; set; }
+
+	[BinaryPoint(Offset = 30182, Source = "30182", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30182", Category = "PLC/取料2_R轴5_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴5_Axis_Vel_41",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 5_Axis_Vel_41",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴5_Axis_Vel_41 { get; set; }
+
+	[BinaryPoint(Offset = 30184, Source = "30184", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30184", Category = "PLC/取料2_R轴5_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴5_Axis_Vel_42",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 5_Axis_Vel_42",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴5_Axis_Vel_42 { get; set; }
+
+	[BinaryPoint(Offset = 30186, Source = "30186", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30186", Category = "PLC/取料2_R轴5_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴5_Axis_Vel_43",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 5_Axis_Vel_43",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴5_Axis_Vel_43 { get; set; }
+
+	[BinaryPoint(Offset = 30188, Source = "30188", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30188", Category = "PLC/取料2_R轴5_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴5_Axis_Vel_44",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 5_Axis_Vel_44",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴5_Axis_Vel_44 { get; set; }
+
+	[BinaryPoint(Offset = 30190, Source = "30190", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30190", Category = "PLC/取料2_R轴5_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴5_Axis_Vel_45",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 5_Axis_Vel_45",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴5_Axis_Vel_45 { get; set; }
+
+	[BinaryPoint(Offset = 30192, Source = "30192", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30192", Category = "PLC/取料2_R轴5_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴5_Axis_Vel_46",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 5_Axis_Vel_46",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴5_Axis_Vel_46 { get; set; }
+
+	[BinaryPoint(Offset = 30194, Source = "30194", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30194", Category = "PLC/取料2_R轴5_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴5_Axis_Vel_47",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 5_Axis_Vel_47",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴5_Axis_Vel_47 { get; set; }
+
+	[BinaryPoint(Offset = 30200, Source = "30200", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30200", Category = "PLC/取料2_Z轴6_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴6_Axis_Pos_0",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 6_Axis_Pos_0",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴6_Axis_Pos_0 { get; set; }
+
+	[BinaryPoint(Offset = 30202, Source = "30202", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30202", Category = "PLC/取料2_Z轴6_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴6_Axis_Pos_1",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 6_Axis_Pos_1",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴6_Axis_Pos_1 { get; set; }
+
+	[BinaryPoint(Offset = 30204, Source = "30204", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30204", Category = "PLC/取料2_Z轴6_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴6_Axis_Pos_2",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 6_Axis_Pos_2",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴6_Axis_Pos_2 { get; set; }
+
+	[BinaryPoint(Offset = 30206, Source = "30206", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30206", Category = "PLC/取料2_Z轴6_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴6_Axis_Pos_3",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 6_Axis_Pos_3",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴6_Axis_Pos_3 { get; set; }
+
+	[BinaryPoint(Offset = 30208, Source = "30208", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30208", Category = "PLC/取料2_Z轴6_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴6_Axis_Pos_4",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 6_Axis_Pos_4",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴6_Axis_Pos_4 { get; set; }
+
+	[BinaryPoint(Offset = 30210, Source = "30210", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30210", Category = "PLC/取料2_Z轴6_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴6_Axis_Pos_5",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 6_Axis_Pos_5",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴6_Axis_Pos_5 { get; set; }
+
+	[BinaryPoint(Offset = 30212, Source = "30212", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30212", Category = "PLC/取料2_Z轴6_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴6_Axis_Pos_6",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 6_Axis_Pos_6",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴6_Axis_Pos_6 { get; set; }
+
+	[BinaryPoint(Offset = 30214, Source = "30214", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30214", Category = "PLC/取料2_Z轴6_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴6_Axis_Pos_7",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 6_Axis_Pos_7",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴6_Axis_Pos_7 { get; set; }
+
+	[BinaryPoint(Offset = 30216, Source = "30216", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30216", Category = "PLC/取料2_Z轴6_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴6_Axis_Pos_8",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 6_Axis_Pos_8",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴6_Axis_Pos_8 { get; set; }
+
+	[BinaryPoint(Offset = 30218, Source = "30218", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30218", Category = "PLC/取料2_Z轴6_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴6_Axis_Pos_9",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 6_Axis_Pos_9",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴6_Axis_Pos_9 { get; set; }
+
+	[BinaryPoint(Offset = 30220, Source = "30220", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30220", Category = "PLC/取料2_Z轴6_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴6_Axis_Pos_10",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 6_Axis_Pos_10",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴6_Axis_Pos_10 { get; set; }
+
+	[BinaryPoint(Offset = 30222, Source = "30222", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30222", Category = "PLC/取料2_Z轴6_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴6_Axis_Pos_11",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 6_Axis_Pos_11",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴6_Axis_Pos_11 { get; set; }
+
+	[BinaryPoint(Offset = 30224, Source = "30224", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30224", Category = "PLC/取料2_Z轴6_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴6_Axis_Pos_12",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 6_Axis_Pos_12",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴6_Axis_Pos_12 { get; set; }
+
+	[BinaryPoint(Offset = 30226, Source = "30226", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30226", Category = "PLC/取料2_Z轴6_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴6_Axis_Pos_13",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 6_Axis_Pos_13",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴6_Axis_Pos_13 { get; set; }
+
+	[BinaryPoint(Offset = 30228, Source = "30228", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30228", Category = "PLC/取料2_Z轴6_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴6_Axis_Pos_14",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 6_Axis_Pos_14",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴6_Axis_Pos_14 { get; set; }
+
+	[BinaryPoint(Offset = 30230, Source = "30230", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30230", Category = "PLC/取料2_Z轴6_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴6_Axis_Pos_15",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 6_Axis_Pos_15",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴6_Axis_Pos_15 { get; set; }
+
+	[BinaryPoint(Offset = 30232, Source = "30232", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30232", Category = "PLC/取料2_Z轴6_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴6_Axis_Pos_16",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 6_Axis_Pos_16",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴6_Axis_Pos_16 { get; set; }
+
+	[BinaryPoint(Offset = 30234, Source = "30234", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30234", Category = "PLC/取料2_Z轴6_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴6_Axis_Pos_17",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 6_Axis_Pos_17",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴6_Axis_Pos_17 { get; set; }
+
+	[BinaryPoint(Offset = 30236, Source = "30236", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30236", Category = "PLC/取料2_Z轴6_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴6_Axis_Pos_18",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 6_Axis_Pos_18",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴6_Axis_Pos_18 { get; set; }
+
+	[BinaryPoint(Offset = 30238, Source = "30238", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30238", Category = "PLC/取料2_Z轴6_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴6_Axis_Pos_19",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 6_Axis_Pos_19",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴6_Axis_Pos_19 { get; set; }
+
+	[BinaryPoint(Offset = 30240, Source = "30240", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30240", Category = "PLC/取料2_Z轴6_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴6_Axis_Pos_20",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 6_Axis_Pos_20",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴6_Axis_Pos_20 { get; set; }
+
+	[BinaryPoint(Offset = 30242, Source = "30242", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30242", Category = "PLC/取料2_Z轴6_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴6_Axis_Pos_21",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 6_Axis_Pos_21",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴6_Axis_Pos_21 { get; set; }
+
+	[BinaryPoint(Offset = 30244, Source = "30244", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30244", Category = "PLC/取料2_Z轴6_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴6_Axis_Pos_22",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 6_Axis_Pos_22",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴6_Axis_Pos_22 { get; set; }
+
+	[BinaryPoint(Offset = 30246, Source = "30246", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30246", Category = "PLC/取料2_Z轴6_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴6_Axis_Pos_23",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 6_Axis_Pos_23",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴6_Axis_Pos_23 { get; set; }
+
+	[BinaryPoint(Offset = 30248, Source = "30248", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30248", Category = "PLC/取料2_Z轴6_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴6_Axis_Pos_24",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 6_Axis_Pos_24",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴6_Axis_Pos_24 { get; set; }
+
+	[BinaryPoint(Offset = 30250, Source = "30250", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30250", Category = "PLC/取料2_Z轴6_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴6_Axis_Pos_25",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 6_Axis_Pos_25",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴6_Axis_Pos_25 { get; set; }
+
+	[BinaryPoint(Offset = 30252, Source = "30252", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30252", Category = "PLC/取料2_Z轴6_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴6_Axis_Pos_26",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 6_Axis_Pos_26",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴6_Axis_Pos_26 { get; set; }
+
+	[BinaryPoint(Offset = 30254, Source = "30254", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30254", Category = "PLC/取料2_Z轴6_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴6_Axis_Pos_27",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 6_Axis_Pos_27",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴6_Axis_Pos_27 { get; set; }
+
+	[BinaryPoint(Offset = 30256, Source = "30256", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30256", Category = "PLC/取料2_Z轴6_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴6_Axis_Pos_28",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 6_Axis_Pos_28",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴6_Axis_Pos_28 { get; set; }
+
+	[BinaryPoint(Offset = 30258, Source = "30258", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30258", Category = "PLC/取料2_Z轴6_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴6_Axis_Pos_29",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 6_Axis_Pos_29",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴6_Axis_Pos_29 { get; set; }
+
+	[BinaryPoint(Offset = 30260, Source = "30260", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30260", Category = "PLC/取料2_Z轴6_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴6_Axis_Pos_30",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 6_Axis_Pos_30",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴6_Axis_Pos_30 { get; set; }
+
+	[BinaryPoint(Offset = 30262, Source = "30262", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30262", Category = "PLC/取料2_Z轴6_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴6_Axis_Pos_31",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 6_Axis_Pos_31",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴6_Axis_Pos_31 { get; set; }
+
+	[BinaryPoint(Offset = 30264, Source = "30264", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30264", Category = "PLC/取料2_Z轴6_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴6_Axis_Pos_32",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 6_Axis_Pos_32",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴6_Axis_Pos_32 { get; set; }
+
+	[BinaryPoint(Offset = 30266, Source = "30266", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30266", Category = "PLC/取料2_Z轴6_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴6_Axis_Pos_33",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 6_Axis_Pos_33",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴6_Axis_Pos_33 { get; set; }
+
+	[BinaryPoint(Offset = 30268, Source = "30268", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30268", Category = "PLC/取料2_Z轴6_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴6_Axis_Pos_34",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 6_Axis_Pos_34",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴6_Axis_Pos_34 { get; set; }
+
+	[BinaryPoint(Offset = 30270, Source = "30270", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30270", Category = "PLC/取料2_Z轴6_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴6_Axis_Pos_35",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 6_Axis_Pos_35",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴6_Axis_Pos_35 { get; set; }
+
+	[BinaryPoint(Offset = 30272, Source = "30272", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30272", Category = "PLC/取料2_Z轴6_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴6_Axis_Pos_36",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 6_Axis_Pos_36",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴6_Axis_Pos_36 { get; set; }
+
+	[BinaryPoint(Offset = 30274, Source = "30274", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30274", Category = "PLC/取料2_Z轴6_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴6_Axis_Pos_37",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 6_Axis_Pos_37",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴6_Axis_Pos_37 { get; set; }
+
+	[BinaryPoint(Offset = 30276, Source = "30276", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30276", Category = "PLC/取料2_Z轴6_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴6_Axis_Pos_38",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 6_Axis_Pos_38",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴6_Axis_Pos_38 { get; set; }
+
+	[BinaryPoint(Offset = 30278, Source = "30278", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30278", Category = "PLC/取料2_Z轴6_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴6_Axis_Pos_39",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 6_Axis_Pos_39",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴6_Axis_Pos_39 { get; set; }
+
+	[BinaryPoint(Offset = 30280, Source = "30280", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30280", Category = "PLC/取料2_Z轴6_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴6_Axis_Pos_40",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 6_Axis_Pos_40",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴6_Axis_Pos_40 { get; set; }
+
+	[BinaryPoint(Offset = 30282, Source = "30282", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30282", Category = "PLC/取料2_Z轴6_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴6_Axis_Pos_41",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 6_Axis_Pos_41",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴6_Axis_Pos_41 { get; set; }
+
+	[BinaryPoint(Offset = 30284, Source = "30284", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30284", Category = "PLC/取料2_Z轴6_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴6_Axis_Pos_42",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 6_Axis_Pos_42",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴6_Axis_Pos_42 { get; set; }
+
+	[BinaryPoint(Offset = 30286, Source = "30286", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30286", Category = "PLC/取料2_Z轴6_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴6_Axis_Pos_43",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 6_Axis_Pos_43",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴6_Axis_Pos_43 { get; set; }
+
+	[BinaryPoint(Offset = 30288, Source = "30288", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30288", Category = "PLC/取料2_Z轴6_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴6_Axis_Pos_44",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 6_Axis_Pos_44",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴6_Axis_Pos_44 { get; set; }
+
+	[BinaryPoint(Offset = 30290, Source = "30290", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30290", Category = "PLC/取料2_Z轴6_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴6_Axis_Pos_45",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 6_Axis_Pos_45",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴6_Axis_Pos_45 { get; set; }
+
+	[BinaryPoint(Offset = 30292, Source = "30292", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30292", Category = "PLC/取料2_Z轴6_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴6_Axis_Pos_46",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 6_Axis_Pos_46",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴6_Axis_Pos_46 { get; set; }
+
+	[BinaryPoint(Offset = 30294, Source = "30294", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30294", Category = "PLC/取料2_Z轴6_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴6_Axis_Pos_47",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 6_Axis_Pos_47",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴6_Axis_Pos_47 { get; set; }
+
+	[BinaryPoint(Offset = 30300, Source = "30300", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30300", Category = "PLC/取料2_Z轴6_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴6_Axis_Vel_0",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 6_Axis_Vel_0",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴6_Axis_Vel_0 { get; set; }
+
+	[BinaryPoint(Offset = 30302, Source = "30302", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30302", Category = "PLC/取料2_Z轴6_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴6_Axis_Vel_1",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 6_Axis_Vel_1",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴6_Axis_Vel_1 { get; set; }
+
+	[BinaryPoint(Offset = 30304, Source = "30304", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30304", Category = "PLC/取料2_Z轴6_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴6_Axis_Vel_2",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 6_Axis_Vel_2",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴6_Axis_Vel_2 { get; set; }
+
+	[BinaryPoint(Offset = 30306, Source = "30306", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30306", Category = "PLC/取料2_Z轴6_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴6_Axis_Vel_3",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 6_Axis_Vel_3",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴6_Axis_Vel_3 { get; set; }
+
+	[BinaryPoint(Offset = 30308, Source = "30308", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30308", Category = "PLC/取料2_Z轴6_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴6_Axis_Vel_4",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 6_Axis_Vel_4",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴6_Axis_Vel_4 { get; set; }
+
+	[BinaryPoint(Offset = 30310, Source = "30310", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30310", Category = "PLC/取料2_Z轴6_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴6_Axis_Vel_5",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 6_Axis_Vel_5",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴6_Axis_Vel_5 { get; set; }
+
+	[BinaryPoint(Offset = 30312, Source = "30312", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30312", Category = "PLC/取料2_Z轴6_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴6_Axis_Vel_6",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 6_Axis_Vel_6",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴6_Axis_Vel_6 { get; set; }
+
+	[BinaryPoint(Offset = 30314, Source = "30314", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30314", Category = "PLC/取料2_Z轴6_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴6_Axis_Vel_7",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 6_Axis_Vel_7",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴6_Axis_Vel_7 { get; set; }
+
+	[BinaryPoint(Offset = 30316, Source = "30316", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30316", Category = "PLC/取料2_Z轴6_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴6_Axis_Vel_8",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 6_Axis_Vel_8",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴6_Axis_Vel_8 { get; set; }
+
+	[BinaryPoint(Offset = 30318, Source = "30318", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30318", Category = "PLC/取料2_Z轴6_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴6_Axis_Vel_9",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 6_Axis_Vel_9",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴6_Axis_Vel_9 { get; set; }
+
+	[BinaryPoint(Offset = 30320, Source = "30320", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30320", Category = "PLC/取料2_Z轴6_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴6_Axis_Vel_10",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 6_Axis_Vel_10",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴6_Axis_Vel_10 { get; set; }
+
+	[BinaryPoint(Offset = 30322, Source = "30322", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30322", Category = "PLC/取料2_Z轴6_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴6_Axis_Vel_11",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 6_Axis_Vel_11",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴6_Axis_Vel_11 { get; set; }
+
+	[BinaryPoint(Offset = 30324, Source = "30324", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30324", Category = "PLC/取料2_Z轴6_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴6_Axis_Vel_12",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 6_Axis_Vel_12",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴6_Axis_Vel_12 { get; set; }
+
+	[BinaryPoint(Offset = 30326, Source = "30326", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30326", Category = "PLC/取料2_Z轴6_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴6_Axis_Vel_13",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 6_Axis_Vel_13",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴6_Axis_Vel_13 { get; set; }
+
+	[BinaryPoint(Offset = 30328, Source = "30328", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30328", Category = "PLC/取料2_Z轴6_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴6_Axis_Vel_14",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 6_Axis_Vel_14",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴6_Axis_Vel_14 { get; set; }
+
+	[BinaryPoint(Offset = 30330, Source = "30330", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30330", Category = "PLC/取料2_Z轴6_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴6_Axis_Vel_15",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 6_Axis_Vel_15",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴6_Axis_Vel_15 { get; set; }
+
+	[BinaryPoint(Offset = 30332, Source = "30332", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30332", Category = "PLC/取料2_Z轴6_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴6_Axis_Vel_16",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 6_Axis_Vel_16",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴6_Axis_Vel_16 { get; set; }
+
+	[BinaryPoint(Offset = 30334, Source = "30334", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30334", Category = "PLC/取料2_Z轴6_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴6_Axis_Vel_17",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 6_Axis_Vel_17",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴6_Axis_Vel_17 { get; set; }
+
+	[BinaryPoint(Offset = 30336, Source = "30336", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30336", Category = "PLC/取料2_Z轴6_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴6_Axis_Vel_18",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 6_Axis_Vel_18",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴6_Axis_Vel_18 { get; set; }
+
+	[BinaryPoint(Offset = 30338, Source = "30338", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30338", Category = "PLC/取料2_Z轴6_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴6_Axis_Vel_19",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 6_Axis_Vel_19",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴6_Axis_Vel_19 { get; set; }
+
+	[BinaryPoint(Offset = 30340, Source = "30340", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30340", Category = "PLC/取料2_Z轴6_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴6_Axis_Vel_20",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 6_Axis_Vel_20",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴6_Axis_Vel_20 { get; set; }
+
+	[BinaryPoint(Offset = 30342, Source = "30342", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30342", Category = "PLC/取料2_Z轴6_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴6_Axis_Vel_21",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 6_Axis_Vel_21",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴6_Axis_Vel_21 { get; set; }
+
+	[BinaryPoint(Offset = 30344, Source = "30344", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30344", Category = "PLC/取料2_Z轴6_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴6_Axis_Vel_22",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 6_Axis_Vel_22",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴6_Axis_Vel_22 { get; set; }
+
+	[BinaryPoint(Offset = 30346, Source = "30346", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30346", Category = "PLC/取料2_Z轴6_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴6_Axis_Vel_23",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 6_Axis_Vel_23",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴6_Axis_Vel_23 { get; set; }
+
+	[BinaryPoint(Offset = 30348, Source = "30348", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30348", Category = "PLC/取料2_Z轴6_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴6_Axis_Vel_24",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 6_Axis_Vel_24",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴6_Axis_Vel_24 { get; set; }
+
+	[BinaryPoint(Offset = 30350, Source = "30350", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30350", Category = "PLC/取料2_Z轴6_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴6_Axis_Vel_25",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 6_Axis_Vel_25",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴6_Axis_Vel_25 { get; set; }
+
+	[BinaryPoint(Offset = 30352, Source = "30352", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30352", Category = "PLC/取料2_Z轴6_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴6_Axis_Vel_26",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 6_Axis_Vel_26",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴6_Axis_Vel_26 { get; set; }
+
+	[BinaryPoint(Offset = 30354, Source = "30354", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30354", Category = "PLC/取料2_Z轴6_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴6_Axis_Vel_27",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 6_Axis_Vel_27",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴6_Axis_Vel_27 { get; set; }
+
+	[BinaryPoint(Offset = 30356, Source = "30356", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30356", Category = "PLC/取料2_Z轴6_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴6_Axis_Vel_28",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 6_Axis_Vel_28",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴6_Axis_Vel_28 { get; set; }
+
+	[BinaryPoint(Offset = 30358, Source = "30358", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30358", Category = "PLC/取料2_Z轴6_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴6_Axis_Vel_29",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 6_Axis_Vel_29",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴6_Axis_Vel_29 { get; set; }
+
+	[BinaryPoint(Offset = 30360, Source = "30360", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30360", Category = "PLC/取料2_Z轴6_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴6_Axis_Vel_30",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 6_Axis_Vel_30",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴6_Axis_Vel_30 { get; set; }
+
+	[BinaryPoint(Offset = 30362, Source = "30362", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30362", Category = "PLC/取料2_Z轴6_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴6_Axis_Vel_31",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 6_Axis_Vel_31",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴6_Axis_Vel_31 { get; set; }
+
+	[BinaryPoint(Offset = 30364, Source = "30364", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30364", Category = "PLC/取料2_Z轴6_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴6_Axis_Vel_32",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 6_Axis_Vel_32",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴6_Axis_Vel_32 { get; set; }
+
+	[BinaryPoint(Offset = 30366, Source = "30366", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30366", Category = "PLC/取料2_Z轴6_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴6_Axis_Vel_33",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 6_Axis_Vel_33",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴6_Axis_Vel_33 { get; set; }
+
+	[BinaryPoint(Offset = 30368, Source = "30368", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30368", Category = "PLC/取料2_Z轴6_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴6_Axis_Vel_34",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 6_Axis_Vel_34",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴6_Axis_Vel_34 { get; set; }
+
+	[BinaryPoint(Offset = 30370, Source = "30370", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30370", Category = "PLC/取料2_Z轴6_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴6_Axis_Vel_35",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 6_Axis_Vel_35",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴6_Axis_Vel_35 { get; set; }
+
+	[BinaryPoint(Offset = 30372, Source = "30372", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30372", Category = "PLC/取料2_Z轴6_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴6_Axis_Vel_36",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 6_Axis_Vel_36",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴6_Axis_Vel_36 { get; set; }
+
+	[BinaryPoint(Offset = 30374, Source = "30374", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30374", Category = "PLC/取料2_Z轴6_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴6_Axis_Vel_37",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 6_Axis_Vel_37",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴6_Axis_Vel_37 { get; set; }
+
+	[BinaryPoint(Offset = 30376, Source = "30376", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30376", Category = "PLC/取料2_Z轴6_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴6_Axis_Vel_38",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 6_Axis_Vel_38",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴6_Axis_Vel_38 { get; set; }
+
+	[BinaryPoint(Offset = 30378, Source = "30378", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30378", Category = "PLC/取料2_Z轴6_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴6_Axis_Vel_39",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 6_Axis_Vel_39",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴6_Axis_Vel_39 { get; set; }
+
+	[BinaryPoint(Offset = 30380, Source = "30380", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30380", Category = "PLC/取料2_Z轴6_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴6_Axis_Vel_40",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 6_Axis_Vel_40",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴6_Axis_Vel_40 { get; set; }
+
+	[BinaryPoint(Offset = 30382, Source = "30382", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30382", Category = "PLC/取料2_Z轴6_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴6_Axis_Vel_41",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 6_Axis_Vel_41",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴6_Axis_Vel_41 { get; set; }
+
+	[BinaryPoint(Offset = 30384, Source = "30384", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30384", Category = "PLC/取料2_Z轴6_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴6_Axis_Vel_42",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 6_Axis_Vel_42",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴6_Axis_Vel_42 { get; set; }
+
+	[BinaryPoint(Offset = 30386, Source = "30386", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30386", Category = "PLC/取料2_Z轴6_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴6_Axis_Vel_43",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 6_Axis_Vel_43",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴6_Axis_Vel_43 { get; set; }
+
+	[BinaryPoint(Offset = 30388, Source = "30388", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30388", Category = "PLC/取料2_Z轴6_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴6_Axis_Vel_44",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 6_Axis_Vel_44",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴6_Axis_Vel_44 { get; set; }
+
+	[BinaryPoint(Offset = 30390, Source = "30390", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30390", Category = "PLC/取料2_Z轴6_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴6_Axis_Vel_45",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 6_Axis_Vel_45",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴6_Axis_Vel_45 { get; set; }
+
+	[BinaryPoint(Offset = 30392, Source = "30392", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30392", Category = "PLC/取料2_Z轴6_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴6_Axis_Vel_46",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 6_Axis_Vel_46",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴6_Axis_Vel_46 { get; set; }
+
+	[BinaryPoint(Offset = 30394, Source = "30394", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30394", Category = "PLC/取料2_Z轴6_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_Z轴6_Axis_Vel_47",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_Z Axis 6_Axis_Vel_47",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_Z轴6_Axis_Vel_47 { get; set; }
+
+	[BinaryPoint(Offset = 30400, Source = "30400", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30400", Category = "PLC/取料2_R轴6_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴6_Axis_Pos_0",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 6_Axis_Pos_0",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴6_Axis_Pos_0 { get; set; }
+
+	[BinaryPoint(Offset = 30402, Source = "30402", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30402", Category = "PLC/取料2_R轴6_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴6_Axis_Pos_1",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 6_Axis_Pos_1",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴6_Axis_Pos_1 { get; set; }
+
+	[BinaryPoint(Offset = 30404, Source = "30404", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30404", Category = "PLC/取料2_R轴6_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴6_Axis_Pos_2",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 6_Axis_Pos_2",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴6_Axis_Pos_2 { get; set; }
+
+	[BinaryPoint(Offset = 30406, Source = "30406", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30406", Category = "PLC/取料2_R轴6_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴6_Axis_Pos_3",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 6_Axis_Pos_3",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴6_Axis_Pos_3 { get; set; }
+
+	[BinaryPoint(Offset = 30408, Source = "30408", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30408", Category = "PLC/取料2_R轴6_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴6_Axis_Pos_4",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 6_Axis_Pos_4",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴6_Axis_Pos_4 { get; set; }
+
+	[BinaryPoint(Offset = 30410, Source = "30410", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30410", Category = "PLC/取料2_R轴6_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴6_Axis_Pos_5",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 6_Axis_Pos_5",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴6_Axis_Pos_5 { get; set; }
+
+	[BinaryPoint(Offset = 30412, Source = "30412", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30412", Category = "PLC/取料2_R轴6_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴6_Axis_Pos_6",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 6_Axis_Pos_6",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴6_Axis_Pos_6 { get; set; }
+
+	[BinaryPoint(Offset = 30414, Source = "30414", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30414", Category = "PLC/取料2_R轴6_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴6_Axis_Pos_7",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 6_Axis_Pos_7",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴6_Axis_Pos_7 { get; set; }
+
+	[BinaryPoint(Offset = 30416, Source = "30416", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30416", Category = "PLC/取料2_R轴6_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴6_Axis_Pos_8",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 6_Axis_Pos_8",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴6_Axis_Pos_8 { get; set; }
+
+	[BinaryPoint(Offset = 30418, Source = "30418", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30418", Category = "PLC/取料2_R轴6_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴6_Axis_Pos_9",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 6_Axis_Pos_9",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴6_Axis_Pos_9 { get; set; }
+
+	[BinaryPoint(Offset = 30420, Source = "30420", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30420", Category = "PLC/取料2_R轴6_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴6_Axis_Pos_10",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 6_Axis_Pos_10",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴6_Axis_Pos_10 { get; set; }
+
+	[BinaryPoint(Offset = 30422, Source = "30422", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30422", Category = "PLC/取料2_R轴6_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴6_Axis_Pos_11",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 6_Axis_Pos_11",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴6_Axis_Pos_11 { get; set; }
+
+	[BinaryPoint(Offset = 30424, Source = "30424", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30424", Category = "PLC/取料2_R轴6_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴6_Axis_Pos_12",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 6_Axis_Pos_12",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴6_Axis_Pos_12 { get; set; }
+
+	[BinaryPoint(Offset = 30426, Source = "30426", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30426", Category = "PLC/取料2_R轴6_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴6_Axis_Pos_13",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 6_Axis_Pos_13",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴6_Axis_Pos_13 { get; set; }
+
+	[BinaryPoint(Offset = 30428, Source = "30428", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30428", Category = "PLC/取料2_R轴6_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴6_Axis_Pos_14",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 6_Axis_Pos_14",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴6_Axis_Pos_14 { get; set; }
+
+	[BinaryPoint(Offset = 30430, Source = "30430", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30430", Category = "PLC/取料2_R轴6_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴6_Axis_Pos_15",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 6_Axis_Pos_15",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴6_Axis_Pos_15 { get; set; }
+
+	[BinaryPoint(Offset = 30432, Source = "30432", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30432", Category = "PLC/取料2_R轴6_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴6_Axis_Pos_16",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 6_Axis_Pos_16",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴6_Axis_Pos_16 { get; set; }
+
+	[BinaryPoint(Offset = 30434, Source = "30434", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30434", Category = "PLC/取料2_R轴6_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴6_Axis_Pos_17",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 6_Axis_Pos_17",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴6_Axis_Pos_17 { get; set; }
+
+	[BinaryPoint(Offset = 30436, Source = "30436", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30436", Category = "PLC/取料2_R轴6_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴6_Axis_Pos_18",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 6_Axis_Pos_18",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴6_Axis_Pos_18 { get; set; }
+
+	[BinaryPoint(Offset = 30438, Source = "30438", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30438", Category = "PLC/取料2_R轴6_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴6_Axis_Pos_19",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 6_Axis_Pos_19",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴6_Axis_Pos_19 { get; set; }
+
+	[BinaryPoint(Offset = 30440, Source = "30440", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30440", Category = "PLC/取料2_R轴6_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴6_Axis_Pos_20",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 6_Axis_Pos_20",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴6_Axis_Pos_20 { get; set; }
+
+	[BinaryPoint(Offset = 30442, Source = "30442", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30442", Category = "PLC/取料2_R轴6_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴6_Axis_Pos_21",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 6_Axis_Pos_21",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴6_Axis_Pos_21 { get; set; }
+
+	[BinaryPoint(Offset = 30444, Source = "30444", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30444", Category = "PLC/取料2_R轴6_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴6_Axis_Pos_22",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 6_Axis_Pos_22",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴6_Axis_Pos_22 { get; set; }
+
+	[BinaryPoint(Offset = 30446, Source = "30446", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30446", Category = "PLC/取料2_R轴6_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴6_Axis_Pos_23",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 6_Axis_Pos_23",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴6_Axis_Pos_23 { get; set; }
+
+	[BinaryPoint(Offset = 30448, Source = "30448", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30448", Category = "PLC/取料2_R轴6_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴6_Axis_Pos_24",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 6_Axis_Pos_24",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴6_Axis_Pos_24 { get; set; }
+
+	[BinaryPoint(Offset = 30450, Source = "30450", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30450", Category = "PLC/取料2_R轴6_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴6_Axis_Pos_25",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 6_Axis_Pos_25",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴6_Axis_Pos_25 { get; set; }
+
+	[BinaryPoint(Offset = 30452, Source = "30452", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30452", Category = "PLC/取料2_R轴6_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴6_Axis_Pos_26",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 6_Axis_Pos_26",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴6_Axis_Pos_26 { get; set; }
+
+	[BinaryPoint(Offset = 30454, Source = "30454", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30454", Category = "PLC/取料2_R轴6_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴6_Axis_Pos_27",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 6_Axis_Pos_27",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴6_Axis_Pos_27 { get; set; }
+
+	[BinaryPoint(Offset = 30456, Source = "30456", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30456", Category = "PLC/取料2_R轴6_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴6_Axis_Pos_28",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 6_Axis_Pos_28",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴6_Axis_Pos_28 { get; set; }
+
+	[BinaryPoint(Offset = 30458, Source = "30458", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30458", Category = "PLC/取料2_R轴6_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴6_Axis_Pos_29",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 6_Axis_Pos_29",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴6_Axis_Pos_29 { get; set; }
+
+	[BinaryPoint(Offset = 30460, Source = "30460", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30460", Category = "PLC/取料2_R轴6_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴6_Axis_Pos_30",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 6_Axis_Pos_30",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴6_Axis_Pos_30 { get; set; }
+
+	[BinaryPoint(Offset = 30462, Source = "30462", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30462", Category = "PLC/取料2_R轴6_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴6_Axis_Pos_31",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 6_Axis_Pos_31",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴6_Axis_Pos_31 { get; set; }
+
+	[BinaryPoint(Offset = 30464, Source = "30464", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30464", Category = "PLC/取料2_R轴6_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴6_Axis_Pos_32",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 6_Axis_Pos_32",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴6_Axis_Pos_32 { get; set; }
+
+	[BinaryPoint(Offset = 30466, Source = "30466", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30466", Category = "PLC/取料2_R轴6_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴6_Axis_Pos_33",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 6_Axis_Pos_33",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴6_Axis_Pos_33 { get; set; }
+
+	[BinaryPoint(Offset = 30468, Source = "30468", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30468", Category = "PLC/取料2_R轴6_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴6_Axis_Pos_34",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 6_Axis_Pos_34",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴6_Axis_Pos_34 { get; set; }
+
+	[BinaryPoint(Offset = 30470, Source = "30470", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30470", Category = "PLC/取料2_R轴6_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴6_Axis_Pos_35",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 6_Axis_Pos_35",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴6_Axis_Pos_35 { get; set; }
+
+	[BinaryPoint(Offset = 30472, Source = "30472", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30472", Category = "PLC/取料2_R轴6_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴6_Axis_Pos_36",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 6_Axis_Pos_36",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴6_Axis_Pos_36 { get; set; }
+
+	[BinaryPoint(Offset = 30474, Source = "30474", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30474", Category = "PLC/取料2_R轴6_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴6_Axis_Pos_37",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 6_Axis_Pos_37",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴6_Axis_Pos_37 { get; set; }
+
+	[BinaryPoint(Offset = 30476, Source = "30476", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30476", Category = "PLC/取料2_R轴6_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴6_Axis_Pos_38",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 6_Axis_Pos_38",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴6_Axis_Pos_38 { get; set; }
+
+	[BinaryPoint(Offset = 30478, Source = "30478", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30478", Category = "PLC/取料2_R轴6_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴6_Axis_Pos_39",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 6_Axis_Pos_39",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴6_Axis_Pos_39 { get; set; }
+
+	[BinaryPoint(Offset = 30480, Source = "30480", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30480", Category = "PLC/取料2_R轴6_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴6_Axis_Pos_40",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 6_Axis_Pos_40",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴6_Axis_Pos_40 { get; set; }
+
+	[BinaryPoint(Offset = 30482, Source = "30482", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30482", Category = "PLC/取料2_R轴6_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴6_Axis_Pos_41",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 6_Axis_Pos_41",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴6_Axis_Pos_41 { get; set; }
+
+	[BinaryPoint(Offset = 30484, Source = "30484", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30484", Category = "PLC/取料2_R轴6_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴6_Axis_Pos_42",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 6_Axis_Pos_42",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴6_Axis_Pos_42 { get; set; }
+
+	[BinaryPoint(Offset = 30486, Source = "30486", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30486", Category = "PLC/取料2_R轴6_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴6_Axis_Pos_43",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 6_Axis_Pos_43",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴6_Axis_Pos_43 { get; set; }
+
+	[BinaryPoint(Offset = 30488, Source = "30488", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30488", Category = "PLC/取料2_R轴6_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴6_Axis_Pos_44",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 6_Axis_Pos_44",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴6_Axis_Pos_44 { get; set; }
+
+	[BinaryPoint(Offset = 30490, Source = "30490", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30490", Category = "PLC/取料2_R轴6_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴6_Axis_Pos_45",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 6_Axis_Pos_45",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴6_Axis_Pos_45 { get; set; }
+
+	[BinaryPoint(Offset = 30492, Source = "30492", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30492", Category = "PLC/取料2_R轴6_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴6_Axis_Pos_46",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 6_Axis_Pos_46",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴6_Axis_Pos_46 { get; set; }
+
+	[BinaryPoint(Offset = 30494, Source = "30494", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30494", Category = "PLC/取料2_R轴6_Axis_Pos", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴6_Axis_Pos_47",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 6_Axis_Pos_47",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴6_Axis_Pos_47 { get; set; }
+
+	[BinaryPoint(Offset = 30500, Source = "30500", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30500", Category = "PLC/取料2_R轴6_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴6_Axis_Vel_0",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 6_Axis_Vel_0",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴6_Axis_Vel_0 { get; set; }
+
+	[BinaryPoint(Offset = 30502, Source = "30502", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30502", Category = "PLC/取料2_R轴6_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴6_Axis_Vel_1",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 6_Axis_Vel_1",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴6_Axis_Vel_1 { get; set; }
+
+	[BinaryPoint(Offset = 30504, Source = "30504", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30504", Category = "PLC/取料2_R轴6_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴6_Axis_Vel_2",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 6_Axis_Vel_2",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴6_Axis_Vel_2 { get; set; }
+
+	[BinaryPoint(Offset = 30506, Source = "30506", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30506", Category = "PLC/取料2_R轴6_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴6_Axis_Vel_3",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 6_Axis_Vel_3",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴6_Axis_Vel_3 { get; set; }
+
+	[BinaryPoint(Offset = 30508, Source = "30508", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30508", Category = "PLC/取料2_R轴6_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴6_Axis_Vel_4",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 6_Axis_Vel_4",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴6_Axis_Vel_4 { get; set; }
+
+	[BinaryPoint(Offset = 30510, Source = "30510", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30510", Category = "PLC/取料2_R轴6_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴6_Axis_Vel_5",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 6_Axis_Vel_5",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴6_Axis_Vel_5 { get; set; }
+
+	[BinaryPoint(Offset = 30512, Source = "30512", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30512", Category = "PLC/取料2_R轴6_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴6_Axis_Vel_6",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 6_Axis_Vel_6",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴6_Axis_Vel_6 { get; set; }
+
+	[BinaryPoint(Offset = 30514, Source = "30514", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30514", Category = "PLC/取料2_R轴6_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴6_Axis_Vel_7",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 6_Axis_Vel_7",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴6_Axis_Vel_7 { get; set; }
+
+	[BinaryPoint(Offset = 30516, Source = "30516", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30516", Category = "PLC/取料2_R轴6_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴6_Axis_Vel_8",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 6_Axis_Vel_8",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴6_Axis_Vel_8 { get; set; }
+
+	[BinaryPoint(Offset = 30518, Source = "30518", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30518", Category = "PLC/取料2_R轴6_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴6_Axis_Vel_9",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 6_Axis_Vel_9",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴6_Axis_Vel_9 { get; set; }
+
+	[BinaryPoint(Offset = 30520, Source = "30520", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30520", Category = "PLC/取料2_R轴6_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴6_Axis_Vel_10",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 6_Axis_Vel_10",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴6_Axis_Vel_10 { get; set; }
+
+	[BinaryPoint(Offset = 30522, Source = "30522", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30522", Category = "PLC/取料2_R轴6_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴6_Axis_Vel_11",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 6_Axis_Vel_11",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴6_Axis_Vel_11 { get; set; }
+
+	[BinaryPoint(Offset = 30524, Source = "30524", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30524", Category = "PLC/取料2_R轴6_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴6_Axis_Vel_12",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 6_Axis_Vel_12",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴6_Axis_Vel_12 { get; set; }
+
+	[BinaryPoint(Offset = 30526, Source = "30526", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30526", Category = "PLC/取料2_R轴6_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴6_Axis_Vel_13",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 6_Axis_Vel_13",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴6_Axis_Vel_13 { get; set; }
+
+	[BinaryPoint(Offset = 30528, Source = "30528", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30528", Category = "PLC/取料2_R轴6_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴6_Axis_Vel_14",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 6_Axis_Vel_14",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴6_Axis_Vel_14 { get; set; }
+
+	[BinaryPoint(Offset = 30530, Source = "30530", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30530", Category = "PLC/取料2_R轴6_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴6_Axis_Vel_15",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 6_Axis_Vel_15",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴6_Axis_Vel_15 { get; set; }
+
+	[BinaryPoint(Offset = 30532, Source = "30532", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30532", Category = "PLC/取料2_R轴6_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴6_Axis_Vel_16",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 6_Axis_Vel_16",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴6_Axis_Vel_16 { get; set; }
+
+	[BinaryPoint(Offset = 30534, Source = "30534", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30534", Category = "PLC/取料2_R轴6_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴6_Axis_Vel_17",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 6_Axis_Vel_17",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴6_Axis_Vel_17 { get; set; }
+
+	[BinaryPoint(Offset = 30536, Source = "30536", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30536", Category = "PLC/取料2_R轴6_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴6_Axis_Vel_18",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 6_Axis_Vel_18",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴6_Axis_Vel_18 { get; set; }
+
+	[BinaryPoint(Offset = 30538, Source = "30538", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30538", Category = "PLC/取料2_R轴6_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴6_Axis_Vel_19",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 6_Axis_Vel_19",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴6_Axis_Vel_19 { get; set; }
+
+	[BinaryPoint(Offset = 30540, Source = "30540", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30540", Category = "PLC/取料2_R轴6_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴6_Axis_Vel_20",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 6_Axis_Vel_20",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴6_Axis_Vel_20 { get; set; }
+
+	[BinaryPoint(Offset = 30542, Source = "30542", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30542", Category = "PLC/取料2_R轴6_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴6_Axis_Vel_21",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 6_Axis_Vel_21",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴6_Axis_Vel_21 { get; set; }
+
+	[BinaryPoint(Offset = 30544, Source = "30544", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30544", Category = "PLC/取料2_R轴6_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴6_Axis_Vel_22",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 6_Axis_Vel_22",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴6_Axis_Vel_22 { get; set; }
+
+	[BinaryPoint(Offset = 30546, Source = "30546", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30546", Category = "PLC/取料2_R轴6_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴6_Axis_Vel_23",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 6_Axis_Vel_23",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴6_Axis_Vel_23 { get; set; }
+
+	[BinaryPoint(Offset = 30548, Source = "30548", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30548", Category = "PLC/取料2_R轴6_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴6_Axis_Vel_24",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 6_Axis_Vel_24",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴6_Axis_Vel_24 { get; set; }
+
+	[BinaryPoint(Offset = 30550, Source = "30550", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30550", Category = "PLC/取料2_R轴6_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴6_Axis_Vel_25",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 6_Axis_Vel_25",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴6_Axis_Vel_25 { get; set; }
+
+	[BinaryPoint(Offset = 30552, Source = "30552", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30552", Category = "PLC/取料2_R轴6_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴6_Axis_Vel_26",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 6_Axis_Vel_26",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴6_Axis_Vel_26 { get; set; }
+
+	[BinaryPoint(Offset = 30554, Source = "30554", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30554", Category = "PLC/取料2_R轴6_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴6_Axis_Vel_27",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 6_Axis_Vel_27",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴6_Axis_Vel_27 { get; set; }
+
+	[BinaryPoint(Offset = 30556, Source = "30556", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30556", Category = "PLC/取料2_R轴6_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴6_Axis_Vel_28",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 6_Axis_Vel_28",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴6_Axis_Vel_28 { get; set; }
+
+	[BinaryPoint(Offset = 30558, Source = "30558", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30558", Category = "PLC/取料2_R轴6_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴6_Axis_Vel_29",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 6_Axis_Vel_29",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴6_Axis_Vel_29 { get; set; }
+
+	[BinaryPoint(Offset = 30560, Source = "30560", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30560", Category = "PLC/取料2_R轴6_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴6_Axis_Vel_30",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 6_Axis_Vel_30",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴6_Axis_Vel_30 { get; set; }
+
+	[BinaryPoint(Offset = 30562, Source = "30562", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30562", Category = "PLC/取料2_R轴6_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴6_Axis_Vel_31",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 6_Axis_Vel_31",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴6_Axis_Vel_31 { get; set; }
+
+	[BinaryPoint(Offset = 30564, Source = "30564", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30564", Category = "PLC/取料2_R轴6_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴6_Axis_Vel_32",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 6_Axis_Vel_32",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴6_Axis_Vel_32 { get; set; }
+
+	[BinaryPoint(Offset = 30566, Source = "30566", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30566", Category = "PLC/取料2_R轴6_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴6_Axis_Vel_33",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 6_Axis_Vel_33",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴6_Axis_Vel_33 { get; set; }
+
+	[BinaryPoint(Offset = 30568, Source = "30568", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30568", Category = "PLC/取料2_R轴6_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴6_Axis_Vel_34",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 6_Axis_Vel_34",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴6_Axis_Vel_34 { get; set; }
+
+	[BinaryPoint(Offset = 30570, Source = "30570", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30570", Category = "PLC/取料2_R轴6_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴6_Axis_Vel_35",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 6_Axis_Vel_35",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴6_Axis_Vel_35 { get; set; }
+
+	[BinaryPoint(Offset = 30572, Source = "30572", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30572", Category = "PLC/取料2_R轴6_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴6_Axis_Vel_36",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 6_Axis_Vel_36",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴6_Axis_Vel_36 { get; set; }
+
+	[BinaryPoint(Offset = 30574, Source = "30574", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30574", Category = "PLC/取料2_R轴6_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴6_Axis_Vel_37",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 6_Axis_Vel_37",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴6_Axis_Vel_37 { get; set; }
+
+	[BinaryPoint(Offset = 30576, Source = "30576", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30576", Category = "PLC/取料2_R轴6_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴6_Axis_Vel_38",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 6_Axis_Vel_38",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴6_Axis_Vel_38 { get; set; }
+
+	[BinaryPoint(Offset = 30578, Source = "30578", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30578", Category = "PLC/取料2_R轴6_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴6_Axis_Vel_39",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 6_Axis_Vel_39",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴6_Axis_Vel_39 { get; set; }
+
+	[BinaryPoint(Offset = 30580, Source = "30580", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30580", Category = "PLC/取料2_R轴6_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴6_Axis_Vel_40",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 6_Axis_Vel_40",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴6_Axis_Vel_40 { get; set; }
+
+	[BinaryPoint(Offset = 30582, Source = "30582", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30582", Category = "PLC/取料2_R轴6_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴6_Axis_Vel_41",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 6_Axis_Vel_41",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴6_Axis_Vel_41 { get; set; }
+
+	[BinaryPoint(Offset = 30584, Source = "30584", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30584", Category = "PLC/取料2_R轴6_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴6_Axis_Vel_42",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 6_Axis_Vel_42",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴6_Axis_Vel_42 { get; set; }
+
+	[BinaryPoint(Offset = 30586, Source = "30586", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30586", Category = "PLC/取料2_R轴6_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴6_Axis_Vel_43",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 6_Axis_Vel_43",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴6_Axis_Vel_43 { get; set; }
+
+	[BinaryPoint(Offset = 30588, Source = "30588", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30588", Category = "PLC/取料2_R轴6_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴6_Axis_Vel_44",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 6_Axis_Vel_44",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴6_Axis_Vel_44 { get; set; }
+
+	[BinaryPoint(Offset = 30590, Source = "30590", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30590", Category = "PLC/取料2_R轴6_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴6_Axis_Vel_45",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 6_Axis_Vel_45",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴6_Axis_Vel_45 { get; set; }
+
+	[BinaryPoint(Offset = 30592, Source = "30592", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30592", Category = "PLC/取料2_R轴6_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴6_Axis_Vel_46",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 6_Axis_Vel_46",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴6_Axis_Vel_46 { get; set; }
+
+	[BinaryPoint(Offset = 30594, Source = "30594", Tags = "轴位置", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:30594", Category = "PLC/取料2_R轴6_Axis_Vel", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData =  [
+		DataDefine.KeyValue,"NameByCN", "取料2_R轴6_Axis_Vel_47",
+		DataDefine.KeyValue,"NameByEN", "Pickup 2_R Axis 6_Axis_Vel_47",
+		DataDefine.KeyValue,"NameByVI", "", ])]
+	public float 取料2_R轴6_Axis_Vel_47 { get; set; }
 
 	#endregion
 

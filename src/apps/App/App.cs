@@ -1,4 +1,4 @@
-﻿using System.IO.Ports;
+using System.IO.Ports;
 using System.Text;
 using System.Text.Json;
 using ZC;
@@ -29,8 +29,8 @@ var config = new AppConfig
 config = AppCore.LoadConfig(defaultValue: config);
 if (DevUtils.IsLocalDebugMode && Debugger.IsAttached)
 	config.PlcIpAddress = "127.0.0.1";
-if (config.NozzleConfigs is not { Count: > 0 })
-	config.NozzleConfigs = new(Enumerable.Range(0, 10).Select(i => new NozzleConfig()
+	if (config.NozzleConfigs is not { Count: > 0 })
+	config.NozzleConfigs = new(Enumerable.Range(0, CommonAppConfig.NozzleCount).Select(i => new NozzleConfig()
 		{ Id = i + 1, Name = $"Nozzle{i + 1}", PressureMinValue = 0, PressureMaxValue = 4096 }));
 Console.WriteLine($"Use Config: {JsonSerializer.Serialize(config, Global.Json.DefaultIndentOptions)}");
 var app = new App(config).UseLogger().UseUi(UiApp.StartAsync)
@@ -53,20 +53,30 @@ public sealed class App(AppConfig config) : CommonUiAppCore(config)
 		// IOC.GetOrNull<IAppStartUpVM>()?.SetProgress(40, 500);
 		using var dbClient = IOC.Get<ISqlSugarClient>();
 		dbClient.CodeFirst.InitTables<DbKeyValueItem, AlarmRecord, NgRecord>();
-		IOC.AddSingleton<IDataSocket>(specialName: "Scanner工位1", creator: _ =>
-			new SerialPortSocket(Config.Scanner1ComPort, Config.Scanner1BaudRate)
-			{
-				Parity = Parity.None,
-				DataBits = 8,
-				StopBits = StopBits.One
-			});
-		IOC.AddSingleton<IDataSocket>(specialName: "Scanner工位2", creator: _ =>
-			new SerialPortSocket(Config.Scanner2ComPort, Config.Scanner2BaudRate)
-			{
-				Parity = Parity.None,
-				DataBits = 8,
-				StopBits = StopBits.One
-			});
+		if (Config.UseTcpScanner)
+		{
+			IOC.AddSingleton<IDataSocket>(specialName: "Scanner工位1", creator: _ =>
+				new NetworkSocket(new NetworkSocketConfig(Config.Scanner1TcpIp, Config.Scanner1TcpPort)));
+			IOC.AddSingleton<IDataSocket>(specialName: "Scanner工位2", creator: _ =>
+				new NetworkSocket(new NetworkSocketConfig(Config.Scanner2TcpIp, Config.Scanner2TcpPort)));
+		}
+		else
+		{
+			IOC.AddSingleton<IDataSocket>(specialName: "Scanner工位1", creator: _ =>
+				new SerialPortSocket(Config.Scanner1ComPort, Config.Scanner1BaudRate)
+				{
+					Parity = Parity.None,
+					DataBits = 8,
+					StopBits = StopBits.One
+				});
+			IOC.AddSingleton<IDataSocket>(specialName: "Scanner工位2", creator: _ =>
+				new SerialPortSocket(Config.Scanner2ComPort, Config.Scanner2BaudRate)
+				{
+					Parity = Parity.None,
+					DataBits = 8,
+					StopBits = StopBits.One
+				});
+		}
 #if ASM15_1
 		IOC.AddSingleton<ScrewMachineConnection>(specialName: "Screw工位1",
 			creator: _ => new ScrewMachineConnection(Config.Screw1IpAddress, Config.Screw1Port) { Name = "Screw工位1" });

@@ -74,3 +74,5 @@ Feeder6换料响应,PLC->PC,22309,short,"0=不允许换料，1=允许换料,2=�
 吸头8压力,PLC->PC,22870,float,
 吸头9压力,PLC->PC,22880,float,
 吸头10压力,PLC->PC,22890,float,
+吸头11压力,PLC->PC,22900,float,
+吸头12压力,PLC->PC,22910,float,

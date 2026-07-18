@@ -1,4 +1,4 @@
-﻿using System.Net.Sockets;
+using System.Net.Sockets;
 using System.Text.Json.Serialization;
 using ZC.CFG;
 using ZC.DB;
@@ -30,7 +30,7 @@ public partial class AppConfig : CommonAppConfig
 #elif ASM12
 		ApplicationName = StationName = "ASM12-AUTO";
 		MaterialSpaceCount = 6;
-		NozzleCount = 10;
+		NozzleCount = 12;
 #elif ASM15_1
 		ApplicationName = StationName = "ASM15-1-AUTO";
 		MaterialSpaceCount = 2;

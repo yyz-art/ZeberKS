@@ -1,4 +1,4 @@
-﻿using System.Text;
+using System.Text;
 using System.Text.RegularExpressions;
 using ZC;
 using ZC.DP.Number;
@@ -65,6 +65,29 @@ public abstract partial class WorkServiceBase : MainTaskService
 		return Result.Ok<string>(code);
 	}
 
+	protected Result<string> DoScanCodeTcp(IDataSocket codeScanner)
+	{
+		codeScanner.ReadToDiscard();
+		Span<byte> byteBuffer = stackalloc byte[1024];
+		var triggerBytes = Encoding.UTF8.GetBytes("Trigger");
+		var writeResult = codeScanner.Write(triggerBytes);
+		if (writeResult.IsError())
+			return Result.Err<string>("send scanner trigger failed, connection error!");
+		var readResult = codeScanner.ReadContinuous(byteBuffer, 3000, 500);
+		if (readResult.IsError())
+			return Result.Err<string>("code scanner read timeout!");
+
+		var readLength = readResult.Value;
+		Span<char> charBuffer = stackalloc char[1024];
+		if (false == Encoding.UTF8.TryGetChars(byteBuffer[..readLength], charBuffer, out var codeLength))
+			return Result.Err<string>("code scanner response decode error!");
+
+		var code = charBuffer.Slice(0, codeLength).Trim().ToString();
+		if (string.IsNullOrEmpty(code))
+			return Result.Err<string>("code scanner returned empty!");
+		return Result.Ok<string>(code);
+	}
+
 	protected string GenerateTopic(string msg, string staName)
 	{
 		/*
@@ -92,7 +115,7 @@ public abstract partial class WorkServiceBase : MainTaskService
 
 
 		string factory = "USI"; //supplier
-		string site = "HPH"; //KS or HPH
+		string site = "KS"; //KS or HPH
 		string station = staName; //station_id
 		string input = msg;
 

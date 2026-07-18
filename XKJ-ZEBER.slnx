@@ -58,6 +58,7 @@
 <!--    <Project Path="src/framework/UI/UI.csproj" />-->
   </Folder>
   <Folder Name="/tests/">
+    <Project Path="SG_pointcsv/SG_pointcsv/SG_pointcsv.csproj" />
     <Project Path="src/tests/TestConsole/TestConsole.csproj" />
     <Project Path="src/Tests/TestInput/TestInput/TestInput.csproj" />
   </Folder>

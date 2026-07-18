@@ -144,7 +144,7 @@ public partial class WorkService1 : WorkServiceBase
 				Logger.Info($"[SCAN-CODE-{Plc.Read.扫码枪1触发}] [DOING] ...");
 				if (CommonAppConfig.IsDevTestMode == false)       // 非调试模式才真正调用扫码枪
 				{
-					var scanCodeResult = DoScanCode(CodeScanner); // 调用扫码枪读取条码
+					var scanCodeResult = AppConfig.UseTcpScanner ? DoScanCodeTcp(CodeScanner) : DoScanCode(CodeScanner);
 					if (scanCodeResult.IsError())
 					{
 						Logger.Error($"[SCAN-CODE-{Plc.Read.扫码枪1触发}] [ERROR] {scanCodeResult.Message}");
@@ -185,7 +185,7 @@ public partial class WorkService1 : WorkServiceBase
 				if (Context.MesEnabled)                                            // MES开关开启时执行MES查询
 				{
 					Context.WorkStep = WorkStep.MES_QUERY;                         // 设置工作步骤为MES查询
-					var mes7 = $"ASM_QUERY,{Context.ScanSnCode},7,,SMD,,OK,MO_NUMBER=??? MODEL_NAME=???"; // 构造MSG7查询工单和机种
+					var mes7 = $"SMD_QUERY,{Context.ScanSnCode},7,,SMD,,OK,MO_NUMBER=??? MODEL_NAME=???"; // 构造MSG7查询工单和机种
 					Logger.Info($"[MES QUERY] [DOING] MES << '{mes7}'");
 					var mesMsg7Result = Mes.SendAndReadString(mes7);               // 发送MSG7并读取MES响应
 					if (mesMsg7Result.IsError() || mesMsg7Result.Value!.StartsWith("OK") is false)
@@ -429,43 +429,35 @@ public partial class WorkService1 : WorkServiceBase
 #if ASM15_1
 				var msg3 =                                                           // ASM15_1: 发送MSG3关联KeyPart码
 					$"{AppConfig.StationName},{Context.ScanSnCode},3,{Core.WorkerNo},{AppConfig.Line},,OK,{Context.ScanKeyPartCode},,";
-				var respMsg3Result = Mes.SendAndReadString(msg3);                    // 发送MSG3并读取响应
-				Logger.Info($"[MES IN-STA] [DOING] MES3 << '{msg3}'");
-				if (respMsg3Result.IsError() || respMsg3Result.Value?.StartsWith("OK") == false)
-				{
-					Logger.Error(respMsg3Result.IsError()
-						? $"[MES IN-STA] [ERROR] {respMsg3Result.Message}"
-						: $"[MES IN-STA] [ERROR]  MES3 >> '{respMsg3Result.Value}");
-					Plc.Write.工位1允许生产 = NOT_ALLOW_PRODUCTION_BY_MES;
-					Plc.Write.扫码枪1触发结果 = CodeOfNG;
-					goto SendResult;
-				}
-
-				Logger.Info($"[MES IN-STA] [OK] MES3 >> '{respMsg3Result.Value}'");
+				// var respMsg3Result = Mes.SendAndReadString(msg3);                    // 发送MSG3并读取响应
+				// Logger.Info($"[MES IN-STA] [DOING] MES3 << '{msg3}'");
+				// if (respMsg3Result.IsError() || respMsg3Result.Value?.StartsWith("OK") == false)
+				// {
+				// 	Logger.Error(respMsg3Result.IsError()
+				// 		? $"[MES IN-STA] [ERROR] {respMsg3Result.Message}"
+				// 		: $"[MES IN-STA] [ERROR]  MES3 >> '{respMsg3Result.Value}");
+				// 	Plc.Write.工位1允许生产 = NOT_ALLOW_PRODUCTION_BY_MES;
+				// 	Plc.Write.扫码枪1触发结果 = CodeOfNG;
+				// 	goto SendResult;
+				// }
+				// Logger.Info($"[MES IN-STA] [OK] MES3 >> '{respMsg3Result.Value}'");
 #endif
 
 				Plc.Write.工位1允许生产 = ALLOW_PRODUCTION;                        // 所有校验通过，允许生产
 				Plc.Write.扫码枪1触发结果 = CodeOfOK;                              // 扫码结果OK
 
 				SendResult:
-				var tid = Environment.CurrentManagedThreadId;
-				var swSend = System.Diagnostics.Stopwatch.StartNew();
-				Logger.Debug("[SEND-RESULT] TID={Tid} Enter SendResult, SN={Sn}", tid, Context.ScanSnCode);
 				Context.WorkStep = Plc.Write.工位1允许生产 == 1 ? WorkStep.ALLOW_PRODUCTION : WorkStep.NOT_ALLOW_PRODUCTION; // 设置工作步骤
 				if (Context.DayProductionId == 0)
 					{
-						Logger.Debug("[SEND-RESULT] TID={Tid} Before GetDayProductionId, DayProductionId={Id}, {Elapsed}ms", tid, Context.DayProductionId, swSend.ElapsedMilliseconds);
 						Context.DayProductionId = Core.GetDayProductionId();            // 获取当日生产序号（每天从1开始）
-						Logger.Debug("[SEND-RESULT] TID={Tid} After GetDayProductionId, DayProductionId={Id}, {Elapsed}ms", tid, Context.DayProductionId, swSend.ElapsedMilliseconds);
 					}
 				var now = DateTime.Now;
 				Context.ImagePathRoot = Path.Combine(AppConfig.VisionImagePath,     // 构建图像保存路径：根目录/年月/日/序号_SN
 					now.ToString("yyyy-MM"), now.ToString("dd"), $"{Context.DayProductionId}_{Context.ScanSnCode}");
 				Plc.Write.扫码枪1触发 = 0;                                          // 复位PLC扫码触发信号
-				Logger.Debug("[SEND-RESULT] TID={Tid} Before DONE log, {Elapsed}ms", tid, swSend.ElapsedMilliseconds);
 				Logger.Info(
 					$"[MES IN-STA] [DONE] SCAN=({Plc.Write.扫码枪1触发结果},'{Context.ScanSnCode}') EN={Plc.Write.工位1允许生产}");
-				var tWp1 = swSend.ElapsedMilliseconds;
 				Plc.Write.TryWritePoint(nameof(PlcStruct.工位1允许生产), this, static ctx => // 写入PLC允许生产信号（带重试）
 				{
 					ctx.Context.Logger.Error(
@@ -473,15 +465,9 @@ public partial class WorkService1 : WorkServiceBase
 					Thread.Sleep(5000);                                              // 写入失败时等待5秒后重试
 					return true;
 				});
-				Logger.Debug("[SEND-RESULT] TID={Tid} TryWritePoint(allow) done, +{Elapsed}ms", tid, swSend.ElapsedMilliseconds - tWp1);
-				tWp1 = swSend.ElapsedMilliseconds;
 				Plc.Write.工位1生产序号 = Context.DayProductionId;                  // 写入当日生产序号到PLC
 				Plc.Write.WritePoint(nameof(PlcStruct.工位1生产序号));
-				Logger.Debug("[SEND-RESULT] TID={Tid} WritePoint(seq) done, +{Elapsed}ms", tid, swSend.ElapsedMilliseconds - tWp1);
-				tWp1 = swSend.ElapsedMilliseconds;
 				Plc.Plc.Write($"{PlcStructInfo.扫码枪1扫码内容.Offset}", Context.ScanSnCode, 80); // 写入扫码内容到PLC（80字符）
-				Logger.Debug("[SEND-RESULT] TID={Tid} PlcWrite(scanContent) done, +{Elapsed}ms", tid, swSend.ElapsedMilliseconds - tWp1);
-				tWp1 = swSend.ElapsedMilliseconds;
 				Plc.Write.TryWritePoint(nameof(PlcStruct.扫码枪1触发结果), this, static ctx => // 写入扫码结果信号（带重试）
 				{
 					ctx.Context.Logger.Error(
@@ -489,8 +475,6 @@ public partial class WorkService1 : WorkServiceBase
 					Thread.Sleep(5000);
 					return true;
 				});
-				Logger.Debug("[SEND-RESULT] TID={Tid} TryWritePoint(result) done, +{Elapsed}ms", tid, swSend.ElapsedMilliseconds - tWp1);
-				Logger.Debug("[SEND-RESULT] TID={Tid} Exit SendResult, total {Elapsed}ms", tid, swSend.ElapsedMilliseconds);
 
 				if (CommonAppConfig.IsDevTestMode)                                   // 调试模式：手动复位扫码触发信号
 				{
@@ -603,8 +587,6 @@ public partial class WorkService1 : WorkServiceBase
 
 					var msg2 =
 						$"{AppConfig.StationName},{Context.ScanSnCode},2,{Core.WorkerNo},{AppConfig.Line},,FAIL,1,{failCode},,"; // 携带故障码
-#endif
-						
 					Logger.Info($"[MES OUT-STA] [DOING] RESULT={Plc.Read.工位1数据上报结果} MES << '{msg2}'");
 					var respMsg2Result = Mes.SendAndReadString(msg2);
 					if (respMsg2Result.IsError() || respMsg2Result.Value!.StartsWith("OK") is false)
@@ -618,42 +600,48 @@ public partial class WorkService1 : WorkServiceBase
 						Plc.Write.工位1数据上报响应 = 2;
 						goto SendOutStationResult;
 					}
-					
-					Logger.Info($"[MES OUT-STA] [OK] RESULT={Plc.Read.工位1数据上报结果} SKIP-MES");
+#else
+					Logger.Info($"[MES OUT-STA] [SKIP] RESULT={Plc.Read.工位1数据上报结果} FAIL不上报MES");
+#endif
 				}
 				
 #endif
 
 #if ASM12
 				// ASM12: 出站后查询MES获取产品信息用于图片上传
-				var mes7 = $"SMD_QUERY,{Context.ScanSnCode},7,,SMD,,OK,GET_PN=??? ZEBRA_DTG=??? SN_NOW_GROUP=???";
-				Logger.Info($"[MES OUT-STA] [DOING] MES7 << '{mes7}'");
-				var mesMsg7Result = Mes.SendAndReadString(mes7);                     // 查询产品PN、DTG、分组信息
-				if (mesMsg7Result.IsError() || mesMsg7Result.Value?.StartsWith("OK") == false)
+				if (uploadResultCode == 1)											//仅ok产品才图片上传
 				{
+					var mes7 = $"SMD_QUERY,{Context.ScanSnCode},7,,SMD,,OK,GET_PN=??? ZEBRA_DTG=??? SN_NOW_GROUP=???";
+					Logger.Info($"[MES OUT-STA] [DOING] MES7 << '{mes7}'");
+					var mesMsg7Result = Mes.SendAndReadString(mes7); // 查询产品PN、DTG、分组信息
+					if (mesMsg7Result.IsError() || mesMsg7Result.Value?.StartsWith("OK") == false)
+					{
 
-					Logger.Error(mesMsg7Result.IsError()
-						? $"[MES OUT-STA] [ERROR] {mesMsg7Result.Message}"
-						: $"[MES OUT-STA] [ERROR] MES >> '{mesMsg7Result.Value}'");
-					Plc.Write.工位1数据上报响应 = 2;
-					goto SendOutStationResult;
-				}
+						Logger.Error(mesMsg7Result.IsError()
+							? $"[MES OUT-STA] [ERROR] {mesMsg7Result.Message}"
+							: $"[MES OUT-STA] [ERROR] MES >> '{mesMsg7Result.Value}'");
+						Plc.Write.工位1数据上报响应 = 2;
+						goto SendOutStationResult;
+					}
 
-				Logger.Info($"[MES OUT-STA] [OK] MES7 >> '{mesMsg7Result.Value}'");
-				var topic = GenerateTopic(mesMsg7Result.Value!, AppConfig.StationName); // 根据MES返回生成上传主题
-				Logger.Info($"TOPIC = {topic}");
-				try
-				{
-					Debug.Assert(string.IsNullOrEmpty(Context.ImagePathRoot) == false);
-					var images = Directory.Exists(Context.ImagePathRoot) ?           // 获取图像目录下非NG图片
-						Directory.GetFiles(Context.ImagePathRoot).Where(t=>t.Contains("_NG") ==false).ToArray()
-						: [];
-					CreateImagePackageZip("D:/Vision Files", images, Context.ScanSnCode, topic, uuid, // 打包图片为ZIP
-						t => Logger.Debug(t));
-				}
-				catch (Exception e)
-				{
-					Logger.Error(e);                                                 // 图片打包失败不影响生产流程
+					Logger.Info($"[MES OUT-STA] [OK] MES7 >> '{mesMsg7Result.Value}'");
+					var topic = GenerateTopic(mesMsg7Result.Value!, AppConfig.StationName); // 根据MES返回生成上传主题
+					Logger.Info($"TOPIC = {topic}");
+					try
+					{
+						Debug.Assert(string.IsNullOrEmpty(Context.ImagePathRoot) == false);
+						var images = Directory.Exists(Context.ImagePathRoot)
+							? // 获取图像目录下非NG图片
+							Directory.GetFiles(Context.ImagePathRoot).Where(t => t.Contains("_NG") == false).ToArray()
+							: [];
+						CreateImagePackageZip(AppConfig.ImageZipOutputPath, images, Context.ScanSnCode, topic,
+							uuid, // 打包图片为ZIP
+							t => Logger.Debug(t));
+					}
+					catch (Exception e)
+					{
+						Logger.Error(e); // 图片打包失败不影响生产流程
+					}
 				}
 #endif
 				Plc.Write.工位1数据上报响应 = 1;                                  // MES出站成功，响应=1
@@ -668,6 +656,11 @@ public partial class WorkService1 : WorkServiceBase
 				}
 				else Context.ProductionState = ProductionState.OK;                   // 生产结果OK
 
+#if !ASM15_1
+				var productionResult = Context.ProductionState == ProductionState.OK ? "PASS" : "FAIL";
+#else
+				var productionResult = "PASS";
+#endif
 				// EAP S6F11/6002 产品过站上报
 				var eapData = new Dictionary<string, string>
 				{
@@ -680,6 +673,7 @@ public partial class WorkService1 : WorkServiceBase
 					[EapReportIds.ProductSN] = Context.ScanSnCode,
 					[EapReportIds.LaneNo] = AppConfig.Line ?? "",
 					[EapReportIds.Yield] = Plc.Read.良率.ToString("F2"),
+					[EapReportIds.ProductionResult] =  productionResult,
 				};
 				EapClient.UpdateReportValues(eapData);
 					_ = EapClient.TrySendProductFinishReportAsync(eapData);
@@ -789,7 +783,7 @@ public partial class WorkService1 : WorkServiceBase
 			if (Plc.Read is { 扫码枪1触发: 1, 扫码枪1触发结果: 0 })
 			{
 				Logger.Info($"[SCAN-CODE-1] [DOING] ...");
-				var scanCodeResult = DoScanCode(CodeScanner);                        // 调用扫码枪读取SN码
+				var scanCodeResult = AppConfig.UseTcpScanner ? DoScanCodeTcp(CodeScanner) : DoScanCode(CodeScanner);
 				if (scanCodeResult.IsError())
 				{
 					Logger.Error($"[SCAN-CODE-1] [ERROR] {scanCodeResult.Message}");
@@ -880,7 +874,7 @@ public partial class WorkService1 : WorkServiceBase
 
 			if (Context.TestScanner && Plc.Read.工位1生产状态 != 1)                 // 测试扫码模式：非生产状态时持续扫码
 			{
-				var testScanResult = DoScanCode(CodeScanner);
+				var testScanResult = AppConfig.UseTcpScanner ? DoScanCodeTcp(CodeScanner) : DoScanCode(CodeScanner);
 				if (testScanResult.IsError())
 				{
 					Logger.Error($"test scaner error! {testScanResult.Message}");

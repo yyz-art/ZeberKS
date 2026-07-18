@@ -119,7 +119,8 @@ public class EapClientService : IDisposable
                 [EapReportIds.ModelName] = "机种型号",
                 [EapReportIds.ProductSN] = "产品SN",
                 [EapReportIds.LaneNo] = "轨道编号",
-                [EapReportIds.Yield] = "良率"
+                [EapReportIds.Yield] = "良率",
+                [EapReportIds.ProductionResult] = "生产结果"
             };
             return new JsonObject
             {

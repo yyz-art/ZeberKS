@@ -1,4 +1,4 @@
-﻿using System.Net.Sockets;
+using System.Net.Sockets;
 using ZC.CFG;
 using ZC.DB;
 using ZC.DP;
@@ -58,6 +58,14 @@ public abstract partial class CommonAppConfig : ConfigBase
 		DataDefine.KeyValue, NameByVI, "IMAGE SAVE",
 	], DefaultValue = "true", Description = "IMAGE SAVE")]
 	public string VisionImagePath { get; set; } = "D:\\图像保存";
+
+	[ValueInfo(Category = "IMAGE SAVE", InitAttachData =
+	[
+		DataDefine.KeyValue, NameByCN, "ZIP输出路径",
+		DataDefine.KeyValue, NameByEN, "Image Zip Output Path",
+		DataDefine.KeyValue, NameByVI, "Image Zip Output Path",
+	], DefaultValue = "D:/Vision Files", Description = "Image zip package output directory")]
+	public string ImageZipOutputPath { get; set; } = "D:/Vision Files";
 
 
 	[ValueInfo(Category = "生产配置", InitAttachData =
@@ -252,6 +260,46 @@ public abstract partial class CommonAppConfig : ConfigBase
 		DataDefine.KeyValue, NameByVI, "Scanner2 Port",
 	], DefaultValue = 9600, Description = "Scanner 2 Port")]
 	public int Scanner2BaudRate { get; set; } = 9600;
+
+	[ValueInfo(Category = "连接配置", InitAttachData =
+	[
+		DataDefine.KeyValue, NameByCN, "使用TCP扫码枪",
+		DataDefine.KeyValue, NameByEN, "Use TCP Scanner",
+		DataDefine.KeyValue, NameByVI, "Use TCP Scanner",
+	], DefaultValue = "false", Description = "Use TCP Scanner (true) or Serial (false)")]
+	public bool UseTcpScanner { get; set; } = false;
+
+	[ValueInfo(Category = "连接配置", InitAttachData =
+	[
+		DataDefine.KeyValue, NameByCN, "扫码枪1 TCP IP",
+		DataDefine.KeyValue, NameByEN, "Scanner1 TCP IP",
+		DataDefine.KeyValue, NameByVI, "Scanner1 TCP IP",
+	], DefaultValue = "192.168.1.100", Description = "Scanner 1 TCP IP")]
+	public string Scanner1TcpIp { get; set; } = "192.168.1.100";
+
+	[ValueInfo(Category = "连接配置", InitAttachData =
+	[
+		DataDefine.KeyValue, NameByCN, "扫码枪1 TCP Port",
+		DataDefine.KeyValue, NameByEN, "Scanner1 TCP Port",
+		DataDefine.KeyValue, NameByVI, "Scanner1 TCP Port",
+	], DefaultValue = 5000, Description = "Scanner 1 TCP Port")]
+	public int Scanner1TcpPort { get; set; } = 5000;
+
+	[ValueInfo(Category = "连接配置", InitAttachData =
+	[
+		DataDefine.KeyValue, NameByCN, "扫码枪2 TCP IP",
+		DataDefine.KeyValue, NameByEN, "Scanner2 TCP IP",
+		DataDefine.KeyValue, NameByVI, "Scanner2 TCP IP",
+	], DefaultValue = "192.168.1.101", Description = "Scanner 2 TCP IP")]
+	public string Scanner2TcpIp { get; set; } = "192.168.1.101";
+
+	[ValueInfo(Category = "连接配置", InitAttachData =
+	[
+		DataDefine.KeyValue, NameByCN, "扫码枪2 TCP Port",
+		DataDefine.KeyValue, NameByEN, "Scanner2 TCP Port",
+		DataDefine.KeyValue, NameByVI, "Scanner2 TCP Port",
+	], DefaultValue = 5000, Description = "Scanner 2 TCP Port")]
+	public int Scanner2TcpPort { get; set; } = 5000;
 
 	#endregion
 

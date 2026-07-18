@@ -89,7 +89,6 @@ public partial class MainVM : UiVM<MainView>
 	/// <summary>应用配置（工站名、产线、工号等）</summary>
 	public required AppConfig AppConfig { get; init; } = new();
 
-	/// <summary>配置管理器，用于持久化保存 AppConfig</summary>
 	public required IConfigManager ConfigManager { get; init; }
 
 	/// <summary>配方管理服务</summary>
@@ -274,6 +273,8 @@ public partial class MainVM : UiVM<MainView>
 				8 => Plc.Read.吸头8压力,  
 				9 => Plc.Read.吸头9压力,
 				10 => Plc.Read.吸头10压力,
+				11 => Plc.Read.吸头11压力,
+				12 => Plc.Read.吸头12压力,
 				_ => 0
 			};
 		}
@@ -752,109 +753,6 @@ public partial class MainVM : UiVM<MainView>
 		CoreService.WorkOrderNo = WorkOrderNoInput.Trim();
 
 		ShowToast($"配方 '{modelName}' 加载成功", UiMessageType.Success);
-	}
-
-	#endregion
-
-	#region ==================== NG 弹窗测试 ====================
-
-	/// <summary>
-	/// 测试工位1 NG弹窗：手动读取PLC NG地址，解析后弹出NG详情弹窗。
-	/// 注意：会清零PLC中的NG原因区域，停线时测试。
-	/// </summary>
-	public async Task @TestNgDialogStation1()
-	{
-		WorkLeft.ReadNgItems();
-		await CoreService.WorkPositionContexts[0].ShowNgDetailDialog();
-	}
-
-	/// <summary>
-	/// 测试工位2 NG弹窗：手动读取PLC NG地址，解析后弹出NG详情弹窗。
-	/// 注意：会清零PLC中的NG原因区域，停线时测试。
-	/// </summary>
-	public async Task @TestNgDialogStation2()
-	{
-		WorkRight.ReadNgItems();
-		await CoreService.WorkPositionContexts[1].ShowNgDetailDialog();
-	}
-
-	#endregion
-
-	#region ==================== EAP 测试 ====================
-
-	/// <summary>
-	/// 测试 EAP S5F1 报警上报。推送一个测试报警到 AlarmService，由 EAP 客户端上报。
-	/// </summary>
-	public async Task @TestEapAlarm()
-	{
-		if (!EapClient.IsConnected)
-		{
-			ShowToast("EAP 未连接", UiMessageType.Warning);
-			return;
-		}
-
-		var alarmInfo = new AlarmInfo
-		{
-			Id = 1,
-			Name = "上料轴1_正极限",
-			Value = 1,
-			Time = DateTime.Now
-		};
-
-		AlarmService.PushAlarm(this, alarmInfo, null);
-		ShowToast("EAP S5F1 测试报警已推送", UiMessageType.Success);
-	}
-
-	/// <summary>
-	/// 测试 EAP S6F11/6001 设备状态变更上报。
-	/// </summary>
-	public async Task @TestEapStatusChange()
-	{
-		if (!EapClient.IsConnected)
-		{
-			ShowToast("EAP 未连接", UiMessageType.Warning);
-			return;
-		}
-
-		var status = StatusProvider.GetCurrentStatus();
-		var result = await EapClient.TrySendStatusChangeReportAsync(status);
-		ShowToast(result
-			? $"EAP S6F11/6001 状态变更已上报: {status}"
-			: "EAP S6F11/6001 上报失败",
-			result ? UiMessageType.Success : UiMessageType.Error);
-	}
-
-	/// <summary>
-	/// 测试 EAP S6F11/6002 产品过站上报。
-	/// </summary>
-	public async Task @TestEapProductFinish()
-	{
-		if (!EapClient.IsConnected)
-		{
-			ShowToast("EAP 未连接", UiMessageType.Warning);
-			return;
-		}
-
-		var data = new Dictionary<string, string>
-		{
-			[EapReportIds.EquipmentStatus] = StatusProvider.GetCurrentStatus().ToString(),
-			[EapReportIds.Input] = Plc.Read.已生产数量.ToString(),
-			[EapReportIds.Output] = Plc.Read.已生产数量.ToString(),
-			[EapReportIds.CT] = "0",
-			[EapReportIds.WorkOrder] = CoreService.WorkOrderNo ?? "",
-			[EapReportIds.ProductSN] = "TEST-SN-001",
-			[EapReportIds.ModelName] = "TEST-MODEL",
-			[EapReportIds.LaneNo] = AppConfig.Line ?? "",
-			[EapReportIds.Yield] = Plc.Read.良率.ToString("F2"),
-		};
-
-		EapClient.UpdateReportValues(data);
-
-			var result = await EapClient.TrySendProductFinishReportAsync(data);
-		ShowToast(result
-			? "EAP S6F11/6002 产品过站已上报"
-			: "EAP S6F11/6002 上报失败",
-			result ? UiMessageType.Success : UiMessageType.Error);
 	}
 
 	#endregion

@@ -47,7 +47,6 @@ PLC/X轴1_Axis_Pos,X轴1_Axis_Pos_44,24088,X轴1_Axis_Pos_44,X axis 1_Axis_Pos_4
 PLC/X轴1_Axis_Pos,X轴1_Axis_Pos_45,24090,X轴1_Axis_Pos_45,X axis 1_Axis_Pos_45,Tr?c X 1_V?_trí_tr?c_45
 PLC/X轴1_Axis_Pos,X轴1_Axis_Pos_46,24092,X轴1_Axis_Pos_46,X axis 1_Axis_Pos_46,Tr?c X 1_V?_trí_tr?c_46
 PLC/X轴1_Axis_Pos,X轴1_Axis_Pos_47,24094,X轴1_Axis_Pos_47,X axis 1_Axis_Pos_47,Tr?c X 1_V?_trí_tr?c_47
-
 PLC/X轴1_Axis_Vel,X轴1_Axis_Vel_0,24100,X轴1_Axis_Vel_0,X axis 1_Axis_Vel_0,Tr?c X 1_T?c ?? tr?c_0
 PLC/X轴1_Axis_Vel,X轴1_Axis_Vel_1,24102,X轴1_Axis_Vel_1,X axis 1_Axis_Vel_1,Tr?c X 1_T?c ?? tr?c_1
 PLC/X轴1_Axis_Vel,X轴1_Axis_Vel_2,24104,X轴1_Axis_Vel_2,X axis 1_Axis_Vel_2,Tr?c X 1_T?c ?? tr?c_2
@@ -96,7 +95,6 @@ PLC/X轴1_Axis_Vel,X轴1_Axis_Vel_44,24188,X轴1_Axis_Vel_44,X axis 1_Axis_Vel_4
 PLC/X轴1_Axis_Vel,X轴1_Axis_Vel_45,24190,X轴1_Axis_Vel_45,X axis 1_Axis_Vel_45,Tr?c X 1_T?c ?? tr?c_45
 PLC/X轴1_Axis_Vel,X轴1_Axis_Vel_46,24192,X轴1_Axis_Vel_46,X axis 1_Axis_Vel_46,Tr?c X 1_T?c ?? tr?c_46
 PLC/X轴1_Axis_Vel,X轴1_Axis_Vel_47,24194,X轴1_Axis_Vel_47,X axis 1_Axis_Vel_47,Tr?c X 1_T?c ?? tr?c_47
-
 PLC/X轴2_Axis_Pos,X轴2_Axis_Pos_0,24200,X轴2_Axis_Pos_0,X axis 2_Axis_Pos_0,Tr?c X 2_V? trí tr?c_0
 PLC/X轴2_Axis_Pos,X轴2_Axis_Pos_1,24202,X轴2_Axis_Pos_1,X axis 2_Axis_Pos_1,Tr?c X 2_V? trí tr?c_1
 PLC/X轴2_Axis_Pos,X轴2_Axis_Pos_2,24204,X轴2_Axis_Pos_2,X axis 2_Axis_Pos_2,Tr?c X 2_V? trí tr?c_2
@@ -145,7 +143,6 @@ PLC/X轴2_Axis_Pos,X轴2_Axis_Pos_44,24288,X轴2_Axis_Pos_44,X axis 2_Axis_Pos_4
 PLC/X轴2_Axis_Pos,X轴2_Axis_Pos_45,24290,X轴2_Axis_Pos_45,X axis 2_Axis_Pos_45,Tr?c X 2_V? trí tr?c_45
 PLC/X轴2_Axis_Pos,X轴2_Axis_Pos_46,24292,X轴2_Axis_Pos_46,X axis 2_Axis_Pos_46,Tr?c X 2_V? trí tr?c_46
 PLC/X轴2_Axis_Pos,X轴2_Axis_Pos_47,24294,X轴2_Axis_Pos_47,X axis 2_Axis_Pos_47,Tr?c X 2_V? trí tr?c_47
-
 PLC/X轴2_Axis_Vel,X轴2_Axis_Vel_0,24300,X轴2_Axis_Vel_0,X axis 2_Axis_Vel_0,Tr?c X 2_T?c ?? tr?c_0
 PLC/X轴2_Axis_Vel,X轴2_Axis_Vel_1,24302,X轴2_Axis_Vel_1,X axis 2_Axis_Vel_1,Tr?c X 2_T?c ?? tr?c_1
 PLC/X轴2_Axis_Vel,X轴2_Axis_Vel_2,24304,X轴2_Axis_Vel_2,X axis 2_Axis_Vel_2,Tr?c X 2_T?c ?? tr?c_2
@@ -194,7 +191,6 @@ PLC/X轴2_Axis_Vel,X轴2_Axis_Vel_44,24388,X轴2_Axis_Vel_44,X axis 2_Axis_Vel_4
 PLC/X轴2_Axis_Vel,X轴2_Axis_Vel_45,24390,X轴2_Axis_Vel_45,X axis 2_Axis_Vel_45,Tr?c X 2_T?c ?? tr?c_45
 PLC/X轴2_Axis_Vel,X轴2_Axis_Vel_46,24392,X轴2_Axis_Vel_46,X axis 2_Axis_Vel_46,Tr?c X 2_T?c ?? tr?c_46
 PLC/X轴2_Axis_Vel,X轴2_Axis_Vel_47,24394,X轴2_Axis_Vel_47,X axis 2_Axis_Vel_47,Tr?c X 2_T?c ?? tr?c_47
-
 PLC/上料轴1_Axis_Pos,上料轴1_Axis_Pos_0,24400,上料轴1_Axis_Pos_0,Loading Axis 1_Axis_Pos_0,Tr?c n?p v?t li?u 1_V? trí tr?c_0
 PLC/上料轴1_Axis_Pos,上料轴1_Axis_Pos_1,24402,上料轴1_Axis_Pos_1,Loading Axis 1_Axis_Pos_1,Tr?c n?p v?t li?u 1_V? trí tr?c_1
 PLC/上料轴1_Axis_Pos,上料轴1_Axis_Pos_2,24404,上料轴1_Axis_Pos_2,Loading Axis 1_Axis_Pos_2,Tr?c n?p v?t li?u 1_V? trí tr?c_2
@@ -243,7 +239,6 @@ PLC/上料轴1_Axis_Pos,上料轴1_Axis_Pos_44,24488,上料轴1_Axis_Pos_44,Load
 PLC/上料轴1_Axis_Pos,上料轴1_Axis_Pos_45,24490,上料轴1_Axis_Pos_45,Loading Axis 1_Axis_Pos_45,Tr?c n?p v?t li?u 1_V? trí tr?c_45
 PLC/上料轴1_Axis_Pos,上料轴1_Axis_Pos_46,24492,上料轴1_Axis_Pos_46,Loading Axis 1_Axis_Pos_46,Tr?c n?p v?t li?u 1_V? trí tr?c_46
 PLC/上料轴1_Axis_Pos,上料轴1_Axis_Pos_47,24494,上料轴1_Axis_Pos_47,Loading Axis 1_Axis_Pos_47,Tr?c n?p v?t li?u 1_V? trí tr?c_47
-
 PLC/上料轴1_Axis_Vel,上料轴1_Axis_Vel_0,24500,上料轴1_Axis_Vel_0,Loading Axis 1_Axis_Vel_0,Tr?c n?p v?t li?u 1_T?c ?? tr?c_0
 PLC/上料轴1_Axis_Vel,上料轴1_Axis_Vel_1,24502,上料轴1_Axis_Vel_1,Loading Axis 1_Axis_Vel_1,Tr?c n?p v?t li?u 1_T?c ?? tr?c_1
 PLC/上料轴1_Axis_Vel,上料轴1_Axis_Vel_2,24504,上料轴1_Axis_Vel_2,Loading Axis 1_Axis_Vel_2,Tr?c n?p v?t li?u 1_T?c ?? tr?c_2
@@ -292,7 +287,6 @@ PLC/上料轴1_Axis_Vel,上料轴1_Axis_Vel_44,24588,上料轴1_Axis_Vel_44,Load
 PLC/上料轴1_Axis_Vel,上料轴1_Axis_Vel_45,24590,上料轴1_Axis_Vel_45,Loading Axis 1_Axis_Vel_45,Tr?c n?p v?t li?u 1_T?c ?? tr?c_45
 PLC/上料轴1_Axis_Vel,上料轴1_Axis_Vel_46,24592,上料轴1_Axis_Vel_46,Loading Axis 1_Axis_Vel_46,Tr?c n?p v?t li?u 1_T?c ?? tr?c_46
 PLC/上料轴1_Axis_Vel,上料轴1_Axis_Vel_47,24594,上料轴1_Axis_Vel_47,Loading Axis 1_Axis_Vel_47,Tr?c n?p v?t li?u 1_T?c ?? tr?c_47
-
 PLC/上料轴2_Axis_Pos,上料轴2_Axis_Pos_0,24600,上料轴2_Axis_Pos_0,Loading Axis 2_Axis_Pos_0,Tr?c n?p v?t li?u 2_V? trí tr?c_0
 PLC/上料轴2_Axis_Pos,上料轴2_Axis_Pos_1,24602,上料轴2_Axis_Pos_1,Loading Axis 2_Axis_Pos_1,Tr?c n?p v?t li?u 2_V? trí tr?c_1
 PLC/上料轴2_Axis_Pos,上料轴2_Axis_Pos_2,24604,上料轴2_Axis_Pos_2,Loading Axis 2_Axis_Pos_2,Tr?c n?p v?t li?u 2_V? trí tr?c_2
@@ -341,8 +335,6 @@ PLC/上料轴2_Axis_Pos,上料轴2_Axis_Pos_44,24688,上料轴2_Axis_Pos_44,Load
 PLC/上料轴2_Axis_Pos,上料轴2_Axis_Pos_45,24690,上料轴2_Axis_Pos_45,Loading Axis 2_Axis_Pos_45,Tr?c n?p v?t li?u 2_V? trí tr?c_45
 PLC/上料轴2_Axis_Pos,上料轴2_Axis_Pos_46,24692,上料轴2_Axis_Pos_46,Loading Axis 2_Axis_Pos_46,Tr?c n?p v?t li?u 2_V? trí tr?c_46
 PLC/上料轴2_Axis_Pos,上料轴2_Axis_Pos_47,24694,上料轴2_Axis_Pos_47,Loading Axis 2_Axis_Pos_47,Tr?c n?p v?t li?u 2_V? trí tr?c_47
-
-
 PLC/上料轴2_Axis_Vel,上料轴2_Axis_Vel_0,24700,上料轴2_Axis_Vel_0,Loading Axis 2_Axis_Vel_0,Tr?c n?p v?t li?u 2_T?c ?? tr?c_0
 PLC/上料轴2_Axis_Vel,上料轴2_Axis_Vel_1,24702,上料轴2_Axis_Vel_1,Loading Axis 2_Axis_Vel_1,Tr?c n?p v?t li?u 2_T?c ?? tr?c_1
 PLC/上料轴2_Axis_Vel,上料轴2_Axis_Vel_2,24704,上料轴2_Axis_Vel_2,Loading Axis 2_Axis_Vel_2,Tr?c n?p v?t li?u 2_T?c ?? tr?c_2
@@ -391,7 +383,6 @@ PLC/上料轴2_Axis_Vel,上料轴2_Axis_Vel_44,24788,上料轴2_Axis_Vel_44,Load
 PLC/上料轴2_Axis_Vel,上料轴2_Axis_Vel_45,24790,上料轴2_Axis_Vel_45,Loading Axis 2_Axis_Vel_45,Tr?c n?p v?t li?u 2_T?c ?? tr?c_45
 PLC/上料轴2_Axis_Vel,上料轴2_Axis_Vel_46,24792,上料轴2_Axis_Vel_46,Loading Axis 2_Axis_Vel_46,Tr?c n?p v?t li?u 2_T?c ?? tr?c_46
 PLC/上料轴2_Axis_Vel,上料轴2_Axis_Vel_47,24794,上料轴2_Axis_Vel_47,Loading Axis 2_Axis_Vel_47,Tr?c n?p v?t li?u 2_T?c ?? tr?c_47
-
 PLC/线扫轴_Axis_Pos,线扫轴_Axis_Pos_0,24800,线扫轴_Axis_Pos_0,Line Scan Axis_Axis_Pos_0,Tr?c quét ???ng_V? trí tr?c_0
 PLC/线扫轴_Axis_Pos,线扫轴_Axis_Pos_1,24802,线扫轴_Axis_Pos_1,Line Scan Axis_Axis_Pos_1,Tr?c quét ???ng_V? trí tr?c_1
 PLC/线扫轴_Axis_Pos,线扫轴_Axis_Pos_2,24804,线扫轴_Axis_Pos_2,Line Scan Axis_Axis_Pos_2,Tr?c quét ???ng_V? trí tr?c_2
@@ -440,8 +431,6 @@ PLC/线扫轴_Axis_Pos,线扫轴_Axis_Pos_44,24888,线扫轴_Axis_Pos_44,Line Sc
 PLC/线扫轴_Axis_Pos,线扫轴_Axis_Pos_45,24890,线扫轴_Axis_Pos_45,Line Scan Axis_Axis_Pos_45,Tr?c quét ???ng_V? trí tr?c_45
 PLC/线扫轴_Axis_Pos,线扫轴_Axis_Pos_46,24892,线扫轴_Axis_Pos_46,Line Scan Axis_Axis_Pos_46,Tr?c quét ???ng_V? trí tr?c_46
 PLC/线扫轴_Axis_Pos,线扫轴_Axis_Pos_47,24894,线扫轴_Axis_Pos_47,Line Scan Axis_Axis_Pos_47,Tr?c quét ???ng_V? trí tr?c_47
-
-
 PLC/线扫轴_Axis_Vel,线扫轴_Axis_Vel_0,24900,线扫轴_Axis_Vel_0,Line Scan Axis_Axis_Vel_0,Tr?c quét ???ng_V?n t?c tr?c_0
 PLC/线扫轴_Axis_Vel,线扫轴_Axis_Vel_1,24902,线扫轴_Axis_Vel_1,Line Scan Axis_Axis_Vel_1,Tr?c quét ???ng_V?n t?c tr?c_1
 PLC/线扫轴_Axis_Vel,线扫轴_Axis_Vel_2,24904,线扫轴_Axis_Vel_2,Line Scan Axis_Axis_Vel_2,Tr?c quét ???ng_V?n t?c tr?c_2
@@ -490,7 +479,6 @@ PLC/线扫轴_Axis_Vel,线扫轴_Axis_Vel_44,24988,线扫轴_Axis_Vel_44,Line Sc
 PLC/线扫轴_Axis_Vel,线扫轴_Axis_Vel_45,24990,线扫轴_Axis_Vel_45,Line Scan Axis_Axis_Vel_45,Tr?c quét ???ng_V?n t?c tr?c_45
 PLC/线扫轴_Axis_Vel,线扫轴_Axis_Vel_46,24992,线扫轴_Axis_Vel_46,Line Scan Axis_Axis_Vel_46,Tr?c quét ???ng_V?n t?c tr?c_46
 PLC/线扫轴_Axis_Vel,线扫轴_Axis_Vel_47,24994,线扫轴_Axis_Vel_47,Line Scan Axis_Axis_Vel_47,Tr?c quét ???ng_V?n t?c tr?c_47
-
 PLC/Y轴1_Axis_Pos,Y轴1_Axis_Pos_0,25000,Y轴1_Axis_Pos_0,Y Axis 1_Axis_Pos_0,Tr?c Y 1_V? trí Tr?c_0
 PLC/Y轴1_Axis_Pos,Y轴1_Axis_Pos_1,25002,Y轴1_Axis_Pos_1,Y Axis 1_Axis_Pos_1,Tr?c Y 1_V? trí Tr?c_1
 PLC/Y轴1_Axis_Pos,Y轴1_Axis_Pos_2,25004,Y轴1_Axis_Pos_2,Y Axis 1_Axis_Pos_2,Tr?c Y 1_V? trí Tr?c_2
@@ -539,7 +527,6 @@ PLC/Y轴1_Axis_Pos,Y轴1_Axis_Pos_44,25088,Y轴1_Axis_Pos_44,Y Axis 1_Axis_Pos_4
 PLC/Y轴1_Axis_Pos,Y轴1_Axis_Pos_45,25090,Y轴1_Axis_Pos_45,Y Axis 1_Axis_Pos_45,Tr?c Y 1_V? trí Tr?c_45
 PLC/Y轴1_Axis_Pos,Y轴1_Axis_Pos_46,25092,Y轴1_Axis_Pos_46,Y Axis 1_Axis_Pos_46,Tr?c Y 1_V? trí Tr?c_46
 PLC/Y轴1_Axis_Pos,Y轴1_Axis_Pos_47,25094,Y轴1_Axis_Pos_47,Y Axis 1_Axis_Pos_47,Tr?c Y 1_V? trí Tr?c_47
-
 PLC/Y轴1_AYis_Vel,Y轴1_AYis_Vel_0,25100,Y轴1_AYis_Vel_0,Y Axis 1_Axis_Vel_0,Tr?c Y 1_V?n t?c Tr?c_0
 PLC/Y轴1_AYis_Vel,Y轴1_AYis_Vel_1,25102,Y轴1_AYis_Vel_1,Y Axis 1_Axis_Vel_1,Tr?c Y 1_V?n t?c Tr?c_1
 PLC/Y轴1_AYis_Vel,Y轴1_AYis_Vel_2,25104,Y轴1_AYis_Vel_2,Y Axis 1_Axis_Vel_2,Tr?c Y 1_V?n t?c Tr?c_2
@@ -588,7 +575,6 @@ PLC/Y轴1_AYis_Vel,Y轴1_AYis_Vel_44,25188,Y轴1_AYis_Vel_44,Y Axis 1_Axis_Vel_4
 PLC/Y轴1_AYis_Vel,Y轴1_AYis_Vel_45,25190,Y轴1_AYis_Vel_45,Y Axis 1_Axis_Vel_45,Tr?c Y 1_V?n t?c Tr?c_45
 PLC/Y轴1_AYis_Vel,Y轴1_AYis_Vel_46,25192,Y轴1_AYis_Vel_46,Y Axis 1_Axis_Vel_46,Tr?c Y 1_V?n t?c Tr?c_46
 PLC/Y轴1_AYis_Vel,Y轴1_AYis_Vel_47,25194,Y轴1_AYis_Vel_47,Y Axis 1_Axis_Vel_47,Tr?c Y 1_V?n t?c Tr?c_47
-
 PLC/Y轴2_Axis_Pos,Y轴2_Axis_Pos_0,25200,Y轴2_Axis_Pos_0,Y Axis 2_Axis_Pos_0,Tr?c Y 2_V? trí Tr?c_0
 PLC/Y轴2_Axis_Pos,Y轴2_Axis_Pos_1,25202,Y轴2_Axis_Pos_1,Y Axis 2_Axis_Pos_1,Tr?c Y 2_V? trí Tr?c_1
 PLC/Y轴2_Axis_Pos,Y轴2_Axis_Pos_2,25204,Y轴2_Axis_Pos_2,Y Axis 2_Axis_Pos_2,Tr?c Y 2_V? trí Tr?c_2
@@ -637,7 +623,6 @@ PLC/Y轴2_Axis_Pos,Y轴2_Axis_Pos_44,25288,Y轴2_Axis_Pos_44,Y Axis 2_Axis_Pos_4
 PLC/Y轴2_Axis_Pos,Y轴2_Axis_Pos_45,25290,Y轴2_Axis_Pos_45,Y Axis 2_Axis_Pos_45,Tr?c Y 2_V? trí Tr?c_45
 PLC/Y轴2_Axis_Pos,Y轴2_Axis_Pos_46,25292,Y轴2_Axis_Pos_46,Y Axis 2_Axis_Pos_46,Tr?c Y 2_V? trí Tr?c_46
 PLC/Y轴2_Axis_Pos,Y轴2_Axis_Pos_47,25294,Y轴2_Axis_Pos_47,Y Axis 2_Axis_Pos_47,Tr?c Y 2_V? trí Tr?c_47
-
 PLC/Y轴2_AYis_Vel,Y轴2_AYis_Vel_0,25300,Y轴2_AYis_Vel_0,Y Axis 2_Axis_Vel_0,Tr?c Y 2_V?n t?c Tr?c_0
 PLC/Y轴2_AYis_Vel,Y轴2_AYis_Vel_1,25302,Y轴2_AYis_Vel_1,Y Axis 2_Axis_Vel_1,Tr?c Y 2_V?n t?c Tr?c_1
 PLC/Y轴2_AYis_Vel,Y轴2_AYis_Vel_2,25304,Y轴2_AYis_Vel_2,Y Axis 2_Axis_Vel_2,Tr?c Y 2_V?n t?c Tr?c_2
@@ -686,7 +671,6 @@ PLC/Y轴2_AYis_Vel,Y轴2_AYis_Vel_44,25388,Y轴2_AYis_Vel_44,Y Axis 2_Axis_Vel_4
 PLC/Y轴2_AYis_Vel,Y轴2_AYis_Vel_45,25390,Y轴2_AYis_Vel_45,Y Axis 2_Axis_Vel_45,Tr?c Y 2_V?n t?c Tr?c_45
 PLC/Y轴2_AYis_Vel,Y轴2_AYis_Vel_46,25392,Y轴2_AYis_Vel_46,Y Axis 2_Axis_Vel_46,Tr?c Y 2_V?n t?c Tr?c_46
 PLC/Y轴2_AYis_Vel,Y轴2_AYis_Vel_47,25394,Y轴2_AYis_Vel_47,Y Axis 2_Axis_Vel_47,Tr?c Y 2_V?n t?c Tr?c_47
-
 PLC/相机步进电机1_Axis_Pos,相机步进电机1_Axis_Pos_0,25400,相机步进电机1_Axis_Pos_0,Camera Stepper Motor 1_Axis_Pos_0,??ng c? b??c máy ?nh 1_Tr?c_V? trí_0
 PLC/相机步进电机1_Axis_Pos,相机步进电机1_Axis_Pos_1,25402,相机步进电机1_Axis_Pos_1,Camera Stepper Motor 1_Axis_Pos_1,??ng c? b??c máy ?nh 1_Tr?c_V? trí_1
 PLC/相机步进电机1_Axis_Pos,相机步进电机1_Axis_Pos_2,25404,相机步进电机1_Axis_Pos_2,Camera Stepper Motor 1_Axis_Pos_2,??ng c? b??c máy ?nh 1_Tr?c_V? trí_2
@@ -735,8 +719,6 @@ PLC/相机步进电机1_Axis_Pos,相机步进电机1_Axis_Pos_44,25488,相机步
 PLC/相机步进电机1_Axis_Pos,相机步进电机1_Axis_Pos_45,25490,相机步进电机1_Axis_Pos_45,Camera Stepper Motor 1_Axis_Pos_45,??ng c? b??c máy ?nh 1_Tr?c_V? trí_45
 PLC/相机步进电机1_Axis_Pos,相机步进电机1_Axis_Pos_46,25492,相机步进电机1_Axis_Pos_46,Camera Stepper Motor 1_Axis_Pos_46,??ng c? b??c máy ?nh 1_Tr?c_V? trí_46
 PLC/相机步进电机1_Axis_Pos,相机步进电机1_Axis_Pos_47,25494,相机步进电机1_Axis_Pos_47,Camera Stepper Motor 1_Axis_Pos_47,??ng c? b??c máy ?nh 1_Tr?c_V? trí_47
-
-
 PLC/相机步进电机1_Axis_Vel,相机步进电机1_Axis_Vel_0,25500,相机步进电机1_Axis_Vel_0,Camera Stepper Motor 1_Axis_Vel_0,??ng c? b??c máy ?nh 1_Tr?c_V?n t?c_0
 PLC/相机步进电机1_Axis_Vel,相机步进电机1_Axis_Vel_1,25502,相机步进电机1_Axis_Vel_1,Camera Stepper Motor 1_Axis_Vel_1,??ng c? b??c máy ?nh 1_Tr?c_V?n t?c_1
 PLC/相机步进电机1_Axis_Vel,相机步进电机1_Axis_Vel_2,25504,相机步进电机1_Axis_Vel_2,Camera Stepper Motor 1_Axis_Vel_2,??ng c? b??c máy ?nh 1_Tr?c_V?n t?c_2
@@ -785,7 +767,6 @@ PLC/相机步进电机1_Axis_Vel,相机步进电机1_Axis_Vel_44,25588,相机步
 PLC/相机步进电机1_Axis_Vel,相机步进电机1_Axis_Vel_45,25590,相机步进电机1_Axis_Vel_45,Camera Stepper Motor 1_Axis_Vel_45,??ng c? b??c máy ?nh 1_Tr?c_V?n t?c_45
 PLC/相机步进电机1_Axis_Vel,相机步进电机1_Axis_Vel_46,25592,相机步进电机1_Axis_Vel_46,Camera Stepper Motor 1_Axis_Vel_46,??ng c? b??c máy ?nh 1_Tr?c_V?n t?c_46
 PLC/相机步进电机1_Axis_Vel,相机步进电机1_Axis_Vel_47,25594,相机步进电机1_Axis_Vel_47,Camera Stepper Motor 1_Axis_Vel_47,??ng c? b??c máy ?nh 1_Tr?c_V?n t?c_47
-
 PLC/相机步进电机2_Axis_Pos,相机步进电机2_Axis_Pos_0,25600,相机步进电机2_Axis_Pos_0,Camera Stepper Motor 2_Axis_Pos_0,??ng c? b??c máy ?nh 2_Tr?c_V? trí_0
 PLC/相机步进电机2_Axis_Pos,相机步进电机2_Axis_Pos_1,25602,相机步进电机2_Axis_Pos_1,Camera Stepper Motor 2_Axis_Pos_1,??ng c? b??c máy ?nh 2_Tr?c_V? trí_1
 PLC/相机步进电机2_Axis_Pos,相机步进电机2_Axis_Pos_2,25604,相机步进电机2_Axis_Pos_2,Camera Stepper Motor 2_Axis_Pos_2,??ng c? b??c máy ?nh 2_Tr?c_V? trí_2
@@ -834,7 +815,6 @@ PLC/相机步进电机2_Axis_Pos,相机步进电机2_Axis_Pos_44,25688,相机步
 PLC/相机步进电机2_Axis_Pos,相机步进电机2_Axis_Pos_45,25690,相机步进电机2_Axis_Pos_45,Camera Stepper Motor 2_Axis_Pos_45,??ng c? b??c máy ?nh 2_Tr?c_V? trí_45
 PLC/相机步进电机2_Axis_Pos,相机步进电机2_Axis_Pos_46,25692,相机步进电机2_Axis_Pos_46,Camera Stepper Motor 2_Axis_Pos_46,??ng c? b??c máy ?nh 2_Tr?c_V? trí_46
 PLC/相机步进电机2_Axis_Pos,相机步进电机2_Axis_Pos_47,25694,相机步进电机2_Axis_Pos_47,Camera Stepper Motor 2_Axis_Pos_47,??ng c? b??c máy ?nh 2_Tr?c_V? trí_47
-
 PLC/相机步进电机2_Axis_Vel,相机步进电机2_Axis_Vel_0,25700,相机步进电机2_Axis_Vel_0,Camera Stepper Motor 2_Axis_Vel_0,??ng c? b??c máy ?nh 2_Tr?c_V?n t?c_0
 PLC/相机步进电机2_Axis_Vel,相机步进电机2_Axis_Vel_1,25702,相机步进电机2_Axis_Vel_1,Camera Stepper Motor 2_Axis_Vel_1,??ng c? b??c máy ?nh 2_Tr?c_V?n t?c_1
 PLC/相机步进电机2_Axis_Vel,相机步进电机2_Axis_Vel_2,25704,相机步进电机2_Axis_Vel_2,Camera Stepper Motor 2_Axis_Vel_2,??ng c? b??c máy ?nh 2_Tr?c_V?n t?c_2
@@ -883,7 +863,6 @@ PLC/相机步进电机2_Axis_Vel,相机步进电机2_Axis_Vel_44,25788,相机步
 PLC/相机步进电机2_Axis_Vel,相机步进电机2_Axis_Vel_45,25790,相机步进电机2_Axis_Vel_45,Camera Stepper Motor 2_Axis_Vel_45,??ng c? b??c máy ?nh 2_Tr?c_V?n t?c_45
 PLC/相机步进电机2_Axis_Vel,相机步进电机2_Axis_Vel_46,25792,相机步进电机2_Axis_Vel_46,Camera Stepper Motor 2_Axis_Vel_46,??ng c? b??c máy ?nh 2_Tr?c_V?n t?c_46
 PLC/相机步进电机2_Axis_Vel,相机步进电机2_Axis_Vel_47,25794,相机步进电机2_Axis_Vel_47,Camera Stepper Motor 2_Axis_Vel_47,??ng c? b??c máy ?nh 2_Tr?c_V?n t?c_47
-
 PLC/取料1_Z轴1_Axis_Pos,取料1_Z轴1_Axis_Pos_0,25800,取料1_Z轴1_Axis_Pos_0,Pickup 1_Z Axis 1_Axis_Pos_0,L?y v?t li?u 1_Tr?c Z 1_Tr?c_V? trí_0
 PLC/取料1_Z轴1_Axis_Pos,取料1_Z轴1_Axis_Pos_1,25802,取料1_Z轴1_Axis_Pos_1,Pickup 1_Z Axis 1_Axis_Pos_1,L?y v?t li?u 1_Tr?c Z 1_Tr?c_V? trí_1
 PLC/取料1_Z轴1_Axis_Pos,取料1_Z轴1_Axis_Pos_2,25804,取料1_Z轴1_Axis_Pos_2,Pickup 1_Z Axis 1_Axis_Pos_2,L?y v?t li?u 1_Tr?c Z 1_Tr?c_V? trí_2
@@ -932,7 +911,6 @@ PLC/取料1_Z轴1_Axis_Pos,取料1_Z轴1_Axis_Pos_44,25888,取料1_Z轴1_Axis_Po
 PLC/取料1_Z轴1_Axis_Pos,取料1_Z轴1_Axis_Pos_45,25890,取料1_Z轴1_Axis_Pos_45,Pickup 1_Z Axis 1_Axis_Pos_45,L?y v?t li?u 1_Tr?c Z 1_Tr?c_V? trí_45
 PLC/取料1_Z轴1_Axis_Pos,取料1_Z轴1_Axis_Pos_46,25892,取料1_Z轴1_Axis_Pos_46,Pickup 1_Z Axis 1_Axis_Pos_46,L?y v?t li?u 1_Tr?c Z 1_Tr?c_V? trí_46
 PLC/取料1_Z轴1_Axis_Pos,取料1_Z轴1_Axis_Pos_47,25894,取料1_Z轴1_Axis_Pos_47,Pickup 1_Z Axis 1_Axis_Pos_47,L?y v?t li?u 1_Tr?c Z 1_Tr?c_V? trí_47
-
 PLC/取料1_Z轴1_Axis_Vel,取料1_Z轴1_Axis_Vel_0,25900,取料1_Z轴1_Axis_Vel_0,Pickup 1_Z Axis 1_Axis_Vel_0,L?y v?t li?u 1_Tr?c Z 1_Tr?c_V?n t?c_0
 PLC/取料1_Z轴1_Axis_Vel,取料1_Z轴1_Axis_Vel_1,25902,取料1_Z轴1_Axis_Vel_1,Pickup 1_Z Axis 1_Axis_Vel_1,L?y v?t li?u 1_Tr?c Z 1_Tr?c_V?n t?c_1
 PLC/取料1_Z轴1_Axis_Vel,取料1_Z轴1_Axis_Vel_2,25904,取料1_Z轴1_Axis_Vel_2,Pickup 1_Z Axis 1_Axis_Vel_2,L?y v?t li?u 1_Tr?c Z 1_Tr?c_V?n t?c_2
@@ -981,7 +959,6 @@ PLC/取料1_Z轴1_Axis_Vel,取料1_Z轴1_Axis_Vel_44,25988,取料1_Z轴1_Axis_Ve
 PLC/取料1_Z轴1_Axis_Vel,取料1_Z轴1_Axis_Vel_45,25990,取料1_Z轴1_Axis_Vel_45,Pickup 1_Z Axis 1_Axis_Vel_45,L?y v?t li?u 1_Tr?c Z 1_Tr?c_V?n t?c_45
 PLC/取料1_Z轴1_Axis_Vel,取料1_Z轴1_Axis_Vel_46,25992,取料1_Z轴1_Axis_Vel_46,Pickup 1_Z Axis 1_Axis_Vel_46,L?y v?t li?u 1_Tr?c Z 1_Tr?c_V?n t?c_46
 PLC/取料1_Z轴1_Axis_Vel,取料1_Z轴1_Axis_Vel_47,25994,取料1_Z轴1_Axis_Vel_47,Pickup 1_Z Axis 1_Axis_Vel_47,L?y v?t li?u 1_Tr?c Z 1_Tr?c_V?n t?c_47
-
 PLC/取料1_R轴1_Axis_Pos,取料1_R轴1_Axis_Pos_0,26000,取料1_R轴1_Axis_Pos_0,Pickup 1_R Axis 1_Axis_Pos_0,L?y v?t li?u 1_Tr?c R 1_Tr?c_V? trí_0
 PLC/取料1_R轴1_Axis_Pos,取料1_R轴1_Axis_Pos_1,26002,取料1_R轴1_Axis_Pos_1,Pickup 1_R Axis 1_Axis_Pos_1,L?y v?t li?u 1_Tr?c R 1_Tr?c_V? trí_1
 PLC/取料1_R轴1_Axis_Pos,取料1_R轴1_Axis_Pos_2,26004,取料1_R轴1_Axis_Pos_2,Pickup 1_R Axis 1_Axis_Pos_2,L?y v?t li?u 1_Tr?c R 1_Tr?c_V? trí_2
@@ -1030,7 +1007,6 @@ PLC/取料1_R轴1_Axis_Pos,取料1_R轴1_Axis_Pos_44,26088,取料1_R轴1_Axis_Po
 PLC/取料1_R轴1_Axis_Pos,取料1_R轴1_Axis_Pos_45,26090,取料1_R轴1_Axis_Pos_45,Pickup 1_R Axis 1_Axis_Pos_45,L?y v?t li?u 1_Tr?c R 1_Tr?c_V? trí_45
 PLC/取料1_R轴1_Axis_Pos,取料1_R轴1_Axis_Pos_46,26092,取料1_R轴1_Axis_Pos_46,Pickup 1_R Axis 1_Axis_Pos_46,L?y v?t li?u 1_Tr?c R 1_Tr?c_V? trí_46
 PLC/取料1_R轴1_Axis_Pos,取料1_R轴1_Axis_Pos_47,26094,取料1_R轴1_Axis_Pos_47,Pickup 1_R Axis 1_Axis_Pos_47,L?y v?t li?u 1_Tr?c R 1_Tr?c_V? trí_47
-
 PLC/取料1_R轴1_Axis_Vel,取料1_R轴1_Axis_Vel_0,26100,取料1_R轴1_Axis_Vel_0,Pickup 1_R Axis 1_Axis_Vel_0,L?y v?t li?u 1_Tr?c R 1_Tr?c_V?n t?c_0
 PLC/取料1_R轴1_Axis_Vel,取料1_R轴1_Axis_Vel_1,26102,取料1_R轴1_Axis_Vel_1,Pickup 1_R Axis 1_Axis_Vel_1,L?y v?t li?u 1_Tr?c R 1_Tr?c_V?n t?c_1
 PLC/取料1_R轴1_Axis_Vel,取料1_R轴1_Axis_Vel_2,26104,取料1_R轴1_Axis_Vel_2,Pickup 1_R Axis 1_Axis_Vel_2,L?y v?t li?u 1_Tr?c R 1_Tr?c_V?n t?c_2
@@ -1079,8 +1055,6 @@ PLC/取料1_R轴1_Axis_Vel,取料1_R轴1_Axis_Vel_44,26188,取料1_R轴1_Axis_Ve
 PLC/取料1_R轴1_Axis_Vel,取料1_R轴1_Axis_Vel_45,26190,取料1_R轴1_Axis_Vel_45,Pickup 1_R Axis 1_Axis_Vel_45,L?y v?t li?u 1_Tr?c R 1_Tr?c_V?n t?c_45
 PLC/取料1_R轴1_Axis_Vel,取料1_R轴1_Axis_Vel_46,26192,取料1_R轴1_Axis_Vel_46,Pickup 1_R Axis 1_Axis_Vel_46,L?y v?t li?u 1_Tr?c R 1_Tr?c_V?n t?c_46
 PLC/取料1_R轴1_Axis_Vel,取料1_R轴1_Axis_Vel_47,26194,取料1_R轴1_Axis_Vel_47,Pickup 1_R Axis 1_Axis_Vel_47,L?y v?t li?u 1_Tr?c R 1_Tr?c_V?n t?c_47
-
-
 PLC/取料1_Z轴2_Axis_Pos,取料1_Z轴2_Axis_Pos_0,26200,取料1_Z轴2_Axis_Pos_0,Pickup 1_Z Axis 2_Axis_Pos_0,L?y v?t li?u 1_Tr?c Z 2_Tr?c_V? trí_0
 PLC/取料1_Z轴2_Axis_Pos,取料1_Z轴2_Axis_Pos_1,26202,取料1_Z轴2_Axis_Pos_1,Pickup 1_Z Axis 2_Axis_Pos_1,L?y v?t li?u 1_Tr?c Z 2_Tr?c_V? trí_1
 PLC/取料1_Z轴2_Axis_Pos,取料1_Z轴2_Axis_Pos_2,26204,取料1_Z轴2_Axis_Pos_2,Pickup 1_Z Axis 2_Axis_Pos_2,L?y v?t li?u 1_Tr?c Z 2_Tr?c_V? trí_2
@@ -1129,8 +1103,6 @@ PLC/取料1_Z轴2_Axis_Pos,取料1_Z轴2_Axis_Pos_44,26288,取料1_Z轴2_Axis_Po
 PLC/取料1_Z轴2_Axis_Pos,取料1_Z轴2_Axis_Pos_45,26290,取料1_Z轴2_Axis_Pos_45,Pickup 1_Z Axis 2_Axis_Pos_45,L?y v?t li?u 1_Tr?c Z 2_Tr?c_V? trí_45
 PLC/取料1_Z轴2_Axis_Pos,取料1_Z轴2_Axis_Pos_46,26292,取料1_Z轴2_Axis_Pos_46,Pickup 1_Z Axis 2_Axis_Pos_46,L?y v?t li?u 1_Tr?c Z 2_Tr?c_V? trí_46
 PLC/取料1_Z轴2_Axis_Pos,取料1_Z轴2_Axis_Pos_47,26294,取料1_Z轴2_Axis_Pos_47,Pickup 1_Z Axis 2_Axis_Pos_47,L?y v?t li?u 1_Tr?c Z 2_Tr?c_V? trí_47
-
-
 PLC/取料1_Z轴2_Axis_Vel,取料1_Z轴2_Axis_Vel_0,26300,取料1_Z轴2_Axis_Vel_0,Pickup 1_Z Axis 2_Axis_Vel_0,L?y v?t li?u 1_Tr?c Z 2_Tr?c_V?n t?c_0
 PLC/取料1_Z轴2_Axis_Vel,取料1_Z轴2_Axis_Vel_1,26302,取料1_Z轴2_Axis_Vel_1,Pickup 1_Z Axis 2_Axis_Vel_1,L?y v?t li?u 1_Tr?c Z 2_Tr?c_V?n t?c_1
 PLC/取料1_Z轴2_Axis_Vel,取料1_Z轴2_Axis_Vel_2,26304,取料1_Z轴2_Axis_Vel_2,Pickup 1_Z Axis 2_Axis_Vel_2,L?y v?t li?u 1_Tr?c Z 2_Tr?c_V?n t?c_2
@@ -1179,7 +1151,6 @@ PLC/取料1_Z轴2_Axis_Vel,取料1_Z轴2_Axis_Vel_44,26388,取料1_Z轴2_Axis_Ve
 PLC/取料1_Z轴2_Axis_Vel,取料1_Z轴2_Axis_Vel_45,26390,取料1_Z轴2_Axis_Vel_45,Pickup 1_Z Axis 2_Axis_Vel_45,L?y v?t li?u 1_Tr?c Z 2_Tr?c_V?n t?c_45
 PLC/取料1_Z轴2_Axis_Vel,取料1_Z轴2_Axis_Vel_46,26392,取料1_Z轴2_Axis_Vel_46,Pickup 1_Z Axis 2_Axis_Vel_46,L?y v?t li?u 1_Tr?c Z 2_Tr?c_V?n t?c_46
 PLC/取料1_Z轴2_Axis_Vel,取料1_Z轴2_Axis_Vel_47,26394,取料1_Z轴2_Axis_Vel_47,Pickup 1_Z Axis 2_Axis_Vel_47,L?y v?t li?u 1_Tr?c Z 2_Tr?c_V?n t?c_47
-
 PLC/取料1_R轴2_Axis_Pos,取料1_R轴2_Axis_Pos_0,26400,取料1_R轴2_Axis_Pos_0,Pickup 1_R Axis 2_Axis_Pos_0,L?y v?t li?u 1_Tr?c R 2_Tr?c_V? trí_0
 PLC/取料1_R轴2_Axis_Pos,取料1_R轴2_Axis_Pos_1,26402,取料1_R轴2_Axis_Pos_1,Pickup 1_R Axis 2_Axis_Pos_1,L?y v?t li?u 1_Tr?c R 2_Tr?c_V? trí_1
 PLC/取料1_R轴2_Axis_Pos,取料1_R轴2_Axis_Pos_2,26404,取料1_R轴2_Axis_Pos_2,Pickup 1_R Axis 2_Axis_Pos_2,L?y v?t li?u 1_Tr?c R 2_Tr?c_V? trí_2
@@ -1228,7 +1199,6 @@ PLC/取料1_R轴2_Axis_Pos,取料1_R轴2_Axis_Pos_44,26488,取料1_R轴2_Axis_Po
 PLC/取料1_R轴2_Axis_Pos,取料1_R轴2_Axis_Pos_45,26490,取料1_R轴2_Axis_Pos_45,Pickup 1_R Axis 2_Axis_Pos_45,L?y v?t li?u 1_Tr?c R 2_Tr?c_V? trí_45
 PLC/取料1_R轴2_Axis_Pos,取料1_R轴2_Axis_Pos_46,26492,取料1_R轴2_Axis_Pos_46,Pickup 1_R Axis 2_Axis_Pos_46,L?y v?t li?u 1_Tr?c R 2_Tr?c_V? trí_46
 PLC/取料1_R轴2_Axis_Pos,取料1_R轴2_Axis_Pos_47,26494,取料1_R轴2_Axis_Pos_47,Pickup 1_R Axis 2_Axis_Pos_47,L?y v?t li?u 1_Tr?c R 2_Tr?c_V? trí_47
-
 PLC/取料1_R轴2_Axis_Vel,取料1_R轴2_Axis_Vel_0,26500,取料1_R轴2_Axis_Vel_0,Pickup 1_R Axis 2_Axis_Vel_0,L?y v?t li?u 1_Tr?c R 2_Tr?c_V?n t?c_0
 PLC/取料1_R轴2_Axis_Vel,取料1_R轴2_Axis_Vel_1,26502,取料1_R轴2_Axis_Vel_1,Pickup 1_R Axis 2_Axis_Vel_1,L?y v?t li?u 1_Tr?c R 2_Tr?c_V?n t?c_1
 PLC/取料1_R轴2_Axis_Vel,取料1_R轴2_Axis_Vel_2,26504,取料1_R轴2_Axis_Vel_2,Pickup 1_R Axis 2_Axis_Vel_2,L?y v?t li?u 1_Tr?c R 2_Tr?c_V?n t?c_2
@@ -1277,7 +1247,6 @@ PLC/取料1_R轴2_Axis_Vel,取料1_R轴2_Axis_Vel_44,26588,取料1_R轴2_Axis_Ve
 PLC/取料1_R轴2_Axis_Vel,取料1_R轴2_Axis_Vel_45,26590,取料1_R轴2_Axis_Vel_45,Pickup 1_R Axis 2_Axis_Vel_45,L?y v?t li?u 1_Tr?c R 2_Tr?c_V?n t?c_45
 PLC/取料1_R轴2_Axis_Vel,取料1_R轴2_Axis_Vel_46,26592,取料1_R轴2_Axis_Vel_46,Pickup 1_R Axis 2_Axis_Vel_46,L?y v?t li?u 1_Tr?c R 2_Tr?c_V?n t?c_46
 PLC/取料1_R轴2_Axis_Vel,取料1_R轴2_Axis_Vel_47,26594,取料1_R轴2_Axis_Vel_47,Pickup 1_R Axis 2_Axis_Vel_47,L?y v?t li?u 1_Tr?c R 2_Tr?c_V?n t?c_47
-
 PLC/取料1_Z轴3_Axis_Pos,取料1_Z轴3_Axis_Pos_0,26600,取料1_Z轴3_Axis_Pos_0,Pickup 1_Z Axis 3_Axis_Pos_0,L?y v?t li?u 1_Tr?c Z 3_Tr?c_V? trí_0
 PLC/取料1_Z轴3_Axis_Pos,取料1_Z轴3_Axis_Pos_1,26602,取料1_Z轴3_Axis_Pos_1,Pickup 1_Z Axis 3_Axis_Pos_1,L?y v?t li?u 1_Tr?c Z 3_Tr?c_V? trí_1
 PLC/取料1_Z轴3_Axis_Pos,取料1_Z轴3_Axis_Pos_2,26604,取料1_Z轴3_Axis_Pos_2,Pickup 1_Z Axis 3_Axis_Pos_2,L?y v?t li?u 1_Tr?c Z 3_Tr?c_V? trí_2
@@ -1326,7 +1295,6 @@ PLC/取料1_Z轴3_Axis_Pos,取料1_Z轴3_Axis_Pos_44,26688,取料1_Z轴3_Axis_Po
 PLC/取料1_Z轴3_Axis_Pos,取料1_Z轴3_Axis_Pos_45,26690,取料1_Z轴3_Axis_Pos_45,Pickup 1_Z Axis 3_Axis_Pos_45,L?y v?t li?u 1_Tr?c Z 3_Tr?c_V? trí_45
 PLC/取料1_Z轴3_Axis_Pos,取料1_Z轴3_Axis_Pos_46,26692,取料1_Z轴3_Axis_Pos_46,Pickup 1_Z Axis 3_Axis_Pos_46,L?y v?t li?u 1_Tr?c Z 3_Tr?c_V? trí_46
 PLC/取料1_Z轴3_Axis_Pos,取料1_Z轴3_Axis_Pos_47,26694,取料1_Z轴3_Axis_Pos_47,Pickup 1_Z Axis 3_Axis_Pos_47,L?y v?t li?u 1_Tr?c Z 3_Tr?c_V? trí_47
-
 PLC/取料1_Z轴3_Axis_Vel,取料1_Z轴3_Axis_Vel_0,26700,取料1_Z轴3_Axis_Vel_0,Pickup 1_Z Axis 3_Axis_Vel_0,L?y v?t li?u 1_Tr?c Z 3_Tr?c_V?n t?c_0
 PLC/取料1_Z轴3_Axis_Vel,取料1_Z轴3_Axis_Vel_1,26702,取料1_Z轴3_Axis_Vel_1,Pickup 1_Z Axis 3_Axis_Vel_1,L?y v?t li?u 1_Tr?c Z 3_Tr?c_V?n t?c_1
 PLC/取料1_Z轴3_Axis_Vel,取料1_Z轴3_Axis_Vel_2,26704,取料1_Z轴3_Axis_Vel_2,Pickup 1_Z Axis 3_Axis_Vel_2,L?y v?t li?u 1_Tr?c Z 3_Tr?c_V?n t?c_2
@@ -1375,7 +1343,6 @@ PLC/取料1_Z轴3_Axis_Vel,取料1_Z轴3_Axis_Vel_44,26788,取料1_Z轴3_Axis_Ve
 PLC/取料1_Z轴3_Axis_Vel,取料1_Z轴3_Axis_Vel_45,26790,取料1_Z轴3_Axis_Vel_45,Pickup 1_Z Axis 3_Axis_Vel_45,L?y v?t li?u 1_Tr?c Z 3_Tr?c_V?n t?c_45
 PLC/取料1_Z轴3_Axis_Vel,取料1_Z轴3_Axis_Vel_46,26792,取料1_Z轴3_Axis_Vel_46,Pickup 1_Z Axis 3_Axis_Vel_46,L?y v?t li?u 1_Tr?c Z 3_Tr?c_V?n t?c_46
 PLC/取料1_Z轴3_Axis_Vel,取料1_Z轴3_Axis_Vel_47,26794,取料1_Z轴3_Axis_Vel_47,Pickup 1_Z Axis 3_Axis_Vel_47,L?y v?t li?u 1_Tr?c Z 3_Tr?c_V?n t?c_47
-
 PLC/取料1_R轴3_Axis_Pos,取料1_R轴3_Axis_Pos_0,26800,取料1_R轴3_Axis_Pos_0,Pickup 1_R Axis 3_Axis_Pos_0,L?y v?t li?u 1_Tr?c R 3_Tr?c_V? trí_0
 PLC/取料1_R轴3_Axis_Pos,取料1_R轴3_Axis_Pos_1,26802,取料1_R轴3_Axis_Pos_1,Pickup 1_R Axis 3_Axis_Pos_1,L?y v?t li?u 1_Tr?c R 3_Tr?c_V? trí_1
 PLC/取料1_R轴3_Axis_Pos,取料1_R轴3_Axis_Pos_2,26804,取料1_R轴3_Axis_Pos_2,Pickup 1_R Axis 3_Axis_Pos_2,L?y v?t li?u 1_Tr?c R 3_Tr?c_V? trí_2
@@ -1424,7 +1391,6 @@ PLC/取料1_R轴3_Axis_Pos,取料1_R轴3_Axis_Pos_44,26888,取料1_R轴3_Axis_Po
 PLC/取料1_R轴3_Axis_Pos,取料1_R轴3_Axis_Pos_45,26890,取料1_R轴3_Axis_Pos_45,Pickup 1_R Axis 3_Axis_Pos_45,L?y v?t li?u 1_Tr?c R 3_Tr?c_V? trí_45
 PLC/取料1_R轴3_Axis_Pos,取料1_R轴3_Axis_Pos_46,26892,取料1_R轴3_Axis_Pos_46,Pickup 1_R Axis 3_Axis_Pos_46,L?y v?t li?u 1_Tr?c R 3_Tr?c_V? trí_46
 PLC/取料1_R轴3_Axis_Pos,取料1_R轴3_Axis_Pos_47,26894,取料1_R轴3_Axis_Pos_47,Pickup 1_R Axis 3_Axis_Pos_47,L?y v?t li?u 1_Tr?c R 3_Tr?c_V? trí_47
-
 PLC/取料1_R轴3_Axis_Vel,取料1_R轴3_Axis_Vel_0,26900,取料1_R轴3_Axis_Vel_0,Pickup 1_R Axis 3_Axis_Vel_0,L?y v?t li?u 1_Tr?c R 3_Tr?c_V?n t?c_0
 PLC/取料1_R轴3_Axis_Vel,取料1_R轴3_Axis_Vel_1,26902,取料1_R轴3_Axis_Vel_1,Pickup 1_R Axis 3_Axis_Vel_1,L?y v?t li?u 1_Tr?c R 3_Tr?c_V?n t?c_1
 PLC/取料1_R轴3_Axis_Vel,取料1_R轴3_Axis_Vel_2,26904,取料1_R轴3_Axis_Vel_2,Pickup 1_R Axis 3_Axis_Vel_2,L?y v?t li?u 1_Tr?c R 3_Tr?c_V?n t?c_2
@@ -1473,7 +1439,6 @@ PLC/取料1_R轴3_Axis_Vel,取料1_R轴3_Axis_Vel_44,26988,取料1_R轴3_Axis_Ve
 PLC/取料1_R轴3_Axis_Vel,取料1_R轴3_Axis_Vel_45,26990,取料1_R轴3_Axis_Vel_45,Pickup 1_R Axis 3_Axis_Vel_45,L?y v?t li?u 1_Tr?c R 3_Tr?c_V?n t?c_45
 PLC/取料1_R轴3_Axis_Vel,取料1_R轴3_Axis_Vel_46,26992,取料1_R轴3_Axis_Vel_46,Pickup 1_R Axis 3_Axis_Vel_46,L?y v?t li?u 1_Tr?c R 3_Tr?c_V?n t?c_46
 PLC/取料1_R轴3_Axis_Vel,取料1_R轴3_Axis_Vel_47,26994,取料1_R轴3_Axis_Vel_47,Pickup 1_R Axis 3_Axis_Vel_47,L?y v?t li?u 1_Tr?c R 3_Tr?c_V?n t?c_47
-
 PLC/取料1_Z轴4_Axis_Pos,取料1_Z轴4_Axis_Pos_0,27000,取料1_Z轴4_Axis_Pos_0,Pickup 1_Z Axis 4_Axis_Pos_0,L?y v?t li?u 1_Tr?c Z 4_Tr?c_V? trí_0
 PLC/取料1_Z轴4_Axis_Pos,取料1_Z轴4_Axis_Pos_1,27002,取料1_Z轴4_Axis_Pos_1,Pickup 1_Z Axis 4_Axis_Pos_1,L?y v?t li?u 1_Tr?c Z 4_Tr?c_V? trí_1
 PLC/取料1_Z轴4_Axis_Pos,取料1_Z轴4_Axis_Pos_2,27004,取料1_Z轴4_Axis_Pos_2,Pickup 1_Z Axis 4_Axis_Pos_2,L?y v?t li?u 1_Tr?c Z 4_Tr?c_V? trí_2
@@ -1522,7 +1487,6 @@ PLC/取料1_Z轴4_Axis_Pos,取料1_Z轴4_Axis_Pos_44,27088,取料1_Z轴4_Axis_Po
 PLC/取料1_Z轴4_Axis_Pos,取料1_Z轴4_Axis_Pos_45,27090,取料1_Z轴4_Axis_Pos_45,Pickup 1_Z Axis 4_Axis_Pos_45,L?y v?t li?u 1_Tr?c Z 4_Tr?c_V? trí_45
 PLC/取料1_Z轴4_Axis_Pos,取料1_Z轴4_Axis_Pos_46,27092,取料1_Z轴4_Axis_Pos_46,Pickup 1_Z Axis 4_Axis_Pos_46,L?y v?t li?u 1_Tr?c Z 4_Tr?c_V? trí_46
 PLC/取料1_Z轴4_Axis_Pos,取料1_Z轴4_Axis_Pos_47,27094,取料1_Z轴4_Axis_Pos_47,Pickup 1_Z Axis 4_Axis_Pos_47,L?y v?t li?u 1_Tr?c Z 4_Tr?c_V? trí_47
-
 PLC/取料1_Z轴4_Axis_Vel,取料1_Z轴4_Axis_Vel_0,27100,取料1_Z轴4_Axis_Vel_0,Pickup 1_Z Axis 4_Axis_Vel_0,L?y v?t li?u 1_Tr?c Z 4_Tr?c_V?n t?c_0
 PLC/取料1_Z轴4_Axis_Vel,取料1_Z轴4_Axis_Vel_1,27102,取料1_Z轴4_Axis_Vel_1,Pickup 1_Z Axis 4_Axis_Vel_1,L?y v?t li?u 1_Tr?c Z 4_Tr?c_V?n t?c_1
 PLC/取料1_Z轴4_Axis_Vel,取料1_Z轴4_Axis_Vel_2,27104,取料1_Z轴4_Axis_Vel_2,Pickup 1_Z Axis 4_Axis_Vel_2,L?y v?t li?u 1_Tr?c Z 4_Tr?c_V?n t?c_2
@@ -1571,7 +1535,6 @@ PLC/取料1_Z轴4_Axis_Vel,取料1_Z轴4_Axis_Vel_44,27188,取料1_Z轴4_Axis_Ve
 PLC/取料1_Z轴4_Axis_Vel,取料1_Z轴4_Axis_Vel_45,27190,取料1_Z轴4_Axis_Vel_45,Pickup 1_Z Axis 4_Axis_Vel_45,L?y v?t li?u 1_Tr?c Z 4_Tr?c_V?n t?c_45
 PLC/取料1_Z轴4_Axis_Vel,取料1_Z轴4_Axis_Vel_46,27192,取料1_Z轴4_Axis_Vel_46,Pickup 1_Z Axis 4_Axis_Vel_46,L?y v?t li?u 1_Tr?c Z 4_Tr?c_V?n t?c_46
 PLC/取料1_Z轴4_Axis_Vel,取料1_Z轴4_Axis_Vel_47,27194,取料1_Z轴4_Axis_Vel_47,Pickup 1_Z Axis 4_Axis_Vel_47,L?y v?t li?u 1_Tr?c Z 4_Tr?c_V?n t?c_47
-
 PLC/取料1_R轴4_Axis_Pos,取料1_R轴4_Axis_Pos_0,27200,取料1_R轴4_Axis_Pos_0,Pickup 1_R Axis 4_Axis_Pos_0,L?y v?t li?u 1_Tr?c R 4_Tr?c_V? trí_0
 PLC/取料1_R轴4_Axis_Pos,取料1_R轴4_Axis_Pos_1,27202,取料1_R轴4_Axis_Pos_1,Pickup 1_R Axis 4_Axis_Pos_1,L?y v?t li?u 1_Tr?c R 4_Tr?c_V? trí_1
 PLC/取料1_R轴4_Axis_Pos,取料1_R轴4_Axis_Pos_2,27204,取料1_R轴4_Axis_Pos_2,Pickup 1_R Axis 4_Axis_Pos_2,L?y v?t li?u 1_Tr?c R 4_Tr?c_V? trí_2
@@ -1620,8 +1583,6 @@ PLC/取料1_R轴4_Axis_Pos,取料1_R轴4_Axis_Pos_44,27288,取料1_R轴4_Axis_Po
 PLC/取料1_R轴4_Axis_Pos,取料1_R轴4_Axis_Pos_45,27290,取料1_R轴4_Axis_Pos_45,Pickup 1_R Axis 4_Axis_Pos_45,L?y v?t li?u 1_Tr?c R 4_Tr?c_V? trí_45
 PLC/取料1_R轴4_Axis_Pos,取料1_R轴4_Axis_Pos_46,27292,取料1_R轴4_Axis_Pos_46,Pickup 1_R Axis 4_Axis_Pos_46,L?y v?t li?u 1_Tr?c R 4_Tr?c_V? trí_46
 PLC/取料1_R轴4_Axis_Pos,取料1_R轴4_Axis_Pos_47,27294,取料1_R轴4_Axis_Pos_47,Pickup 1_R Axis 4_Axis_Pos_47,L?y v?t li?u 1_Tr?c R 4_Tr?c_V? trí_47
-
-
 PLC/取料1_R轴4_Axis_Vel,取料1_R轴4_Axis_Vel_0,27300,取料1_R轴4_Axis_Vel_0,Pickup 1_R Axis 4_Axis_Vel_0,L?y v?t li?u 1_Tr?c R 4_Tr?c_V?n t?c_0
 PLC/取料1_R轴4_Axis_Vel,取料1_R轴4_Axis_Vel_1,27302,取料1_R轴4_Axis_Vel_1,Pickup 1_R Axis 4_Axis_Vel_1,L?y v?t li?u 1_Tr?c R 4_Tr?c_V?n t?c_1
 PLC/取料1_R轴4_Axis_Vel,取料1_R轴4_Axis_Vel_2,27304,取料1_R轴4_Axis_Vel_2,Pickup 1_R Axis 4_Axis_Vel_2,L?y v?t li?u 1_Tr?c R 4_Tr?c_V?n t?c_2
@@ -1670,7 +1631,6 @@ PLC/取料1_R轴4_Axis_Vel,取料1_R轴4_Axis_Vel_44,27388,取料1_R轴4_Axis_Ve
 PLC/取料1_R轴4_Axis_Vel,取料1_R轴4_Axis_Vel_45,27390,取料1_R轴4_Axis_Vel_45,Pickup 1_R Axis 4_Axis_Vel_45,L?y v?t li?u 1_Tr?c R 4_Tr?c_V?n t?c_45
 PLC/取料1_R轴4_Axis_Vel,取料1_R轴4_Axis_Vel_46,27392,取料1_R轴4_Axis_Vel_46,Pickup 1_R Axis 4_Axis_Vel_46,L?y v?t li?u 1_Tr?c R 4_Tr?c_V?n t?c_46
 PLC/取料1_R轴4_Axis_Vel,取料1_R轴4_Axis_Vel_47,27394,取料1_R轴4_Axis_Vel_47,Pickup 1_R Axis 4_Axis_Vel_47,L?y v?t li?u 1_Tr?c R 4_Tr?c_V?n t?c_47
-
 PLC/取料1_Z轴5_Axis_Pos,取料1_Z轴5_Axis_Pos_0,27400,取料1_Z轴5_Axis_Pos_0,Pickup 1_Z Axis 5_Axis_Pos_0,L?y v?t li?u 1_Tr?c Z 5_Tr?c_V? trí_0
 PLC/取料1_Z轴5_Axis_Pos,取料1_Z轴5_Axis_Pos_1,27402,取料1_Z轴5_Axis_Pos_1,Pickup 1_Z Axis 5_Axis_Pos_1,L?y v?t li?u 1_Tr?c Z 5_Tr?c_V? trí_1
 PLC/取料1_Z轴5_Axis_Pos,取料1_Z轴5_Axis_Pos_2,27404,取料1_Z轴5_Axis_Pos_2,Pickup 1_Z Axis 5_Axis_Pos_2,L?y v?t li?u 1_Tr?c Z 5_Tr?c_V? trí_2
@@ -1719,7 +1679,6 @@ PLC/取料1_Z轴5_Axis_Pos,取料1_Z轴5_Axis_Pos_44,27488,取料1_Z轴5_Axis_Po
 PLC/取料1_Z轴5_Axis_Pos,取料1_Z轴5_Axis_Pos_45,27490,取料1_Z轴5_Axis_Pos_45,Pickup 1_Z Axis 5_Axis_Pos_45,L?y v?t li?u 1_Tr?c Z 5_Tr?c_V? trí_45
 PLC/取料1_Z轴5_Axis_Pos,取料1_Z轴5_Axis_Pos_46,27492,取料1_Z轴5_Axis_Pos_46,Pickup 1_Z Axis 5_Axis_Pos_46,L?y v?t li?u 1_Tr?c Z 5_Tr?c_V? trí_46
 PLC/取料1_Z轴5_Axis_Pos,取料1_Z轴5_Axis_Pos_47,27494,取料1_Z轴5_Axis_Pos_47,Pickup 1_Z Axis 5_Axis_Pos_47,L?y v?t li?u 1_Tr?c Z 5_Tr?c_V? trí_47
-
 PLC/取料1_Z轴5_Axis_Vel,取料1_Z轴5_Axis_Vel_0,27500,取料1_Z轴5_Axis_Vel_0,Pickup 1_Z Axis 5_Axis_Vel_0,L?y v?t li?u 1_Tr?c Z 5_Tr?c_V?n t?c_0
 PLC/取料1_Z轴5_Axis_Vel,取料1_Z轴5_Axis_Vel_1,27502,取料1_Z轴5_Axis_Vel_1,Pickup 1_Z Axis 5_Axis_Vel_1,L?y v?t li?u 1_Tr?c Z 5_Tr?c_V?n t?c_1
 PLC/取料1_Z轴5_Axis_Vel,取料1_Z轴5_Axis_Vel_2,27504,取料1_Z轴5_Axis_Vel_2,Pickup 1_Z Axis 5_Axis_Vel_2,L?y v?t li?u 1_Tr?c Z 5_Tr?c_V?n t?c_2
@@ -1768,9 +1727,6 @@ PLC/取料1_Z轴5_Axis_Vel,取料1_Z轴5_Axis_Vel_44,27588,取料1_Z轴5_Axis_Ve
 PLC/取料1_Z轴5_Axis_Vel,取料1_Z轴5_Axis_Vel_45,27590,取料1_Z轴5_Axis_Vel_45,Pickup 1_Z Axis 5_Axis_Vel_45,L?y v?t li?u 1_Tr?c Z 5_Tr?c_V?n t?c_45
 PLC/取料1_Z轴5_Axis_Vel,取料1_Z轴5_Axis_Vel_46,27592,取料1_Z轴5_Axis_Vel_46,Pickup 1_Z Axis 5_Axis_Vel_46,L?y v?t li?u 1_Tr?c Z 5_Tr?c_V?n t?c_46
 PLC/取料1_Z轴5_Axis_Vel,取料1_Z轴5_Axis_Vel_47,27594,取料1_Z轴5_Axis_Vel_47,Pickup 1_Z Axis 5_Axis_Vel_47,L?y v?t li?u 1_Tr?c Z 5_Tr?c_V?n t?c_47
-
-
-
 PLC/取料1_R轴5_Axis_Pos,取料1_R轴5_Axis_Pos_0,27600,取料1_R轴5_Axis_Pos_0,Pickup 1_R Axis 5_Axis_Pos_0,L?y v?t li?u 1_Tr?c R 5_Tr?c_V? trí_0
 PLC/取料1_R轴5_Axis_Pos,取料1_R轴5_Axis_Pos_1,27602,取料1_R轴5_Axis_Pos_1,Pickup 1_R Axis 5_Axis_Pos_1,L?y v?t li?u 1_Tr?c R 5_Tr?c_V? trí_1
 PLC/取料1_R轴5_Axis_Pos,取料1_R轴5_Axis_Pos_2,27604,取料1_R轴5_Axis_Pos_2,Pickup 1_R Axis 5_Axis_Pos_2,L?y v?t li?u 1_Tr?c R 5_Tr?c_V? trí_2
@@ -1819,7 +1775,6 @@ PLC/取料1_R轴5_Axis_Pos,取料1_R轴5_Axis_Pos_44,27688,取料1_R轴5_Axis_Po
 PLC/取料1_R轴5_Axis_Pos,取料1_R轴5_Axis_Pos_45,27690,取料1_R轴5_Axis_Pos_45,Pickup 1_R Axis 5_Axis_Pos_45,L?y v?t li?u 1_Tr?c R 5_Tr?c_V? trí_45
 PLC/取料1_R轴5_Axis_Pos,取料1_R轴5_Axis_Pos_46,27692,取料1_R轴5_Axis_Pos_46,Pickup 1_R Axis 5_Axis_Pos_46,L?y v?t li?u 1_Tr?c R 5_Tr?c_V? trí_46
 PLC/取料1_R轴5_Axis_Pos,取料1_R轴5_Axis_Pos_47,27694,取料1_R轴5_Axis_Pos_47,Pickup 1_R Axis 5_Axis_Pos_47,L?y v?t li?u 1_Tr?c R 5_Tr?c_V? trí_47
-
 PLC/取料1_R轴5_Axis_Vel,取料1_R轴5_Axis_Vel_0,27700,取料1_R轴5_Axis_Vel_0,Pickup 1_R Axis 5_Axis_Vel_0,L?y v?t li?u 1_Tr?c R 5_Tr?c_V?n t?c_0
 PLC/取料1_R轴5_Axis_Vel,取料1_R轴5_Axis_Vel_1,27702,取料1_R轴5_Axis_Vel_1,Pickup 1_R Axis 5_Axis_Vel_1,L?y v?t li?u 1_Tr?c R 5_Tr?c_V?n t?c_1
 PLC/取料1_R轴5_Axis_Vel,取料1_R轴5_Axis_Vel_2,27704,取料1_R轴5_Axis_Vel_2,Pickup 1_R Axis 5_Axis_Vel_2,L?y v?t li?u 1_Tr?c R 5_Tr?c_V?n t?c_2
@@ -1868,7 +1823,6 @@ PLC/取料1_R轴5_Axis_Vel,取料1_R轴5_Axis_Vel_44,27788,取料1_R轴5_Axis_Ve
 PLC/取料1_R轴5_Axis_Vel,取料1_R轴5_Axis_Vel_45,27790,取料1_R轴5_Axis_Vel_45,Pickup 1_R Axis 5_Axis_Vel_45,L?y v?t li?u 1_Tr?c R 5_Tr?c_V?n t?c_45
 PLC/取料1_R轴5_Axis_Vel,取料1_R轴5_Axis_Vel_46,27792,取料1_R轴5_Axis_Vel_46,Pickup 1_R Axis 5_Axis_Vel_46,L?y v?t li?u 1_Tr?c R 5_Tr?c_V?n t?c_46
 PLC/取料1_R轴5_Axis_Vel,取料1_R轴5_Axis_Vel_47,27794,取料1_R轴5_Axis_Vel_47,Pickup 1_R Axis 5_Axis_Vel_47,L?y v?t li?u 1_Tr?c R 5_Tr?c_V?n t?c_47
-
 PLC/取料1_Z轴6_Axis_Pos,取料1_Z轴6_Axis_Pos_0,27800,取料1_Z轴6_Axis_Pos_0,Pickup 1_Z Axis 6_Axis_Pos_0,L?y v?t li?u 1_Tr?c Z 6_Tr?c_V? trí_0
 PLC/取料1_Z轴6_Axis_Pos,取料1_Z轴6_Axis_Pos_1,27802,取料1_Z轴6_Axis_Pos_1,Pickup 1_Z Axis 6_Axis_Pos_1,L?y v?t li?u 1_Tr?c Z 6_Tr?c_V? trí_1
 PLC/取料1_Z轴6_Axis_Pos,取料1_Z轴6_Axis_Pos_2,27804,取料1_Z轴6_Axis_Pos_2,Pickup 1_Z Axis 6_Axis_Pos_2,L?y v?t li?u 1_Tr?c Z 6_Tr?c_V? trí_2
@@ -1917,9 +1871,6 @@ PLC/取料1_Z轴6_Axis_Pos,取料1_Z轴6_Axis_Pos_44,27888,取料1_Z轴6_Axis_Po
 PLC/取料1_Z轴6_Axis_Pos,取料1_Z轴6_Axis_Pos_45,27890,取料1_Z轴6_Axis_Pos_45,Pickup 1_Z Axis 6_Axis_Pos_45,L?y v?t li?u 1_Tr?c Z 6_Tr?c_V? trí_45
 PLC/取料1_Z轴6_Axis_Pos,取料1_Z轴6_Axis_Pos_46,27892,取料1_Z轴6_Axis_Pos_46,Pickup 1_Z Axis 6_Axis_Pos_46,L?y v?t li?u 1_Tr?c Z 6_Tr?c_V? trí_46
 PLC/取料1_Z轴6_Axis_Pos,取料1_Z轴6_Axis_Pos_47,27894,取料1_Z轴6_Axis_Pos_47,Pickup 1_Z Axis 6_Axis_Pos_47,L?y v?t li?u 1_Tr?c Z 6_Tr?c_V? trí_47
-
-
-
 PLC/取料1_Z轴6_Axis_Vel,取料1_Z轴6_Axis_Vel_0,27900,取料1_Z轴6_Axis_Vel_0,Pickup 1_Z Axis 6_Axis_Vel_0,L?y v?t li?u 1_Tr?c Z 6_Tr?c_V?n t?c_0
 PLC/取料1_Z轴6_Axis_Vel,取料1_Z轴6_Axis_Vel_1,27902,取料1_Z轴6_Axis_Vel_1,Pickup 1_Z Axis 6_Axis_Vel_1,L?y v?t li?u 1_Tr?c Z 6_Tr?c_V?n t?c_1
 PLC/取料1_Z轴6_Axis_Vel,取料1_Z轴6_Axis_Vel_2,27904,取料1_Z轴6_Axis_Vel_2,Pickup 1_Z Axis 6_Axis_Vel_2,L?y v?t li?u 1_Tr?c Z 6_Tr?c_V?n t?c_2
@@ -1968,7 +1919,6 @@ PLC/取料1_Z轴6_Axis_Vel,取料1_Z轴6_Axis_Vel_44,27988,取料1_Z轴6_Axis_Ve
 PLC/取料1_Z轴6_Axis_Vel,取料1_Z轴6_Axis_Vel_45,27990,取料1_Z轴6_Axis_Vel_45,Pickup 1_Z Axis 6_Axis_Vel_45,L?y v?t li?u 1_Tr?c Z 6_Tr?c_V?n t?c_45
 PLC/取料1_Z轴6_Axis_Vel,取料1_Z轴6_Axis_Vel_46,27992,取料1_Z轴6_Axis_Vel_46,Pickup 1_Z Axis 6_Axis_Vel_46,L?y v?t li?u 1_Tr?c Z 6_Tr?c_V?n t?c_46
 PLC/取料1_Z轴6_Axis_Vel,取料1_Z轴6_Axis_Vel_47,27994,取料1_Z轴6_Axis_Vel_47,Pickup 1_Z Axis 6_Axis_Vel_47,L?y v?t li?u 1_Tr?c Z 6_Tr?c_V?n t?c_47
-
 PLC/取料1_R轴6_Axis_Pos,取料1_R轴6_Axis_Pos_0,28000,取料1_R轴6_Axis_Pos_0,Pickup 1_R Axis 6_Axis_Pos_0,L?y v?t li?u 1_Tr?c R 6_Tr?c_V? trí_0
 PLC/取料1_R轴6_Axis_Pos,取料1_R轴6_Axis_Pos_1,28002,取料1_R轴6_Axis_Pos_1,Pickup 1_R Axis 6_Axis_Pos_1,L?y v?t li?u 1_Tr?c R 6_Tr?c_V? trí_1
 PLC/取料1_R轴6_Axis_Pos,取料1_R轴6_Axis_Pos_2,28004,取料1_R轴6_Axis_Pos_2,Pickup 1_R Axis 6_Axis_Pos_2,L?y v?t li?u 1_Tr?c R 6_Tr?c_V? trí_2
@@ -2017,7 +1967,6 @@ PLC/取料1_R轴6_Axis_Pos,取料1_R轴6_Axis_Pos_44,28088,取料1_R轴6_Axis_Po
 PLC/取料1_R轴6_Axis_Pos,取料1_R轴6_Axis_Pos_45,28090,取料1_R轴6_Axis_Pos_45,Pickup 1_R Axis 6_Axis_Pos_45,L?y v?t li?u 1_Tr?c R 6_Tr?c_V? trí_45
 PLC/取料1_R轴6_Axis_Pos,取料1_R轴6_Axis_Pos_46,28092,取料1_R轴6_Axis_Pos_46,Pickup 1_R Axis 6_Axis_Pos_46,L?y v?t li?u 1_Tr?c R 6_Tr?c_V? trí_46
 PLC/取料1_R轴6_Axis_Pos,取料1_R轴6_Axis_Pos_47,28094,取料1_R轴6_Axis_Pos_47,Pickup 1_R Axis 6_Axis_Pos_47,L?y v?t li?u 1_Tr?c R 6_Tr?c_V? trí_47
-
 PLC/取料1_R轴6_Axis_Vel,取料1_R轴6_Axis_Vel_0,28100,取料1_R轴6_Axis_Vel_0,Pickup 1_R Axis 6_Axis_Vel_0,L?y v?t li?u 1_Tr?c R 6_Tr?c_V?n t?c_0
 PLC/取料1_R轴6_Axis_Vel,取料1_R轴6_Axis_Vel_1,28102,取料1_R轴6_Axis_Vel_1,Pickup 1_R Axis 6_Axis_Vel_1,L?y v?t li?u 1_Tr?c R 6_Tr?c_V?n t?c_1
 PLC/取料1_R轴6_Axis_Vel,取料1_R轴6_Axis_Vel_2,28104,取料1_R轴6_Axis_Vel_2,Pickup 1_R Axis 6_Axis_Vel_2,L?y v?t li?u 1_Tr?c R 6_Tr?c_V?n t?c_2
@@ -2066,7 +2015,6 @@ PLC/取料1_R轴6_Axis_Vel,取料1_R轴6_Axis_Vel_44,28188,取料1_R轴6_Axis_Ve
 PLC/取料1_R轴6_Axis_Vel,取料1_R轴6_Axis_Vel_45,28190,取料1_R轴6_Axis_Vel_45,Pickup 1_R Axis 6_Axis_Vel_45,L?y v?t li?u 1_Tr?c R 6_Tr?c_V?n t?c_45
 PLC/取料1_R轴6_Axis_Vel,取料1_R轴6_Axis_Vel_46,28192,取料1_R轴6_Axis_Vel_46,Pickup 1_R Axis 6_Axis_Vel_46,L?y v?t li?u 1_Tr?c R 6_Tr?c_V?n t?c_46
 PLC/取料1_R轴6_Axis_Vel,取料1_R轴6_Axis_Vel_47,28194,取料1_R轴6_Axis_Vel_47,Pickup 1_R Axis 6_Axis_Vel_47,L?y v?t li?u 1_Tr?c R 6_Tr?c_V?n t?c_47
-
 PLC/取料2_Z轴1_Axis_Pos,取料2_Z轴1_Axis_Pos_0,28200,取料2_Z轴1_Axis_Pos_0,Pickup 2_Z Axis 1_Axis_Pos_0,L?y v?t li?u 2_Tr?c Z 1_Tr?c_V? trí_0
 PLC/取料2_Z轴1_Axis_Pos,取料2_Z轴1_Axis_Pos_1,28202,取料2_Z轴1_Axis_Pos_1,Pickup 2_Z Axis 1_Axis_Pos_1,L?y v?t li?u 2_Tr?c Z 1_Tr?c_V? trí_1
 PLC/取料2_Z轴1_Axis_Pos,取料2_Z轴1_Axis_Pos_2,28204,取料2_Z轴1_Axis_Pos_2,Pickup 2_Z Axis 1_Axis_Pos_2,L?y v?t li?u 2_Tr?c Z 1_Tr?c_V? trí_2
@@ -2115,9 +2063,6 @@ PLC/取料2_Z轴1_Axis_Pos,取料2_Z轴1_Axis_Pos_44,28288,取料2_Z轴1_Axis_Po
 PLC/取料2_Z轴1_Axis_Pos,取料2_Z轴1_Axis_Pos_45,28290,取料2_Z轴1_Axis_Pos_45,Pickup 2_Z Axis 1_Axis_Pos_45,L?y v?t li?u 2_Tr?c Z 1_Tr?c_V? trí_45
 PLC/取料2_Z轴1_Axis_Pos,取料2_Z轴1_Axis_Pos_46,28292,取料2_Z轴1_Axis_Pos_46,Pickup 2_Z Axis 1_Axis_Pos_46,L?y v?t li?u 2_Tr?c Z 1_Tr?c_V? trí_46
 PLC/取料2_Z轴1_Axis_Pos,取料2_Z轴1_Axis_Pos_47,28294,取料2_Z轴1_Axis_Pos_47,Pickup 2_Z Axis 1_Axis_Pos_47,L?y v?t li?u 2_Tr?c Z 1_Tr?c_V? trí_47
-
-
-
 PLC/取料2_Z轴1_Axis_Vel,取料2_Z轴1_Axis_Vel_0,28300,取料2_Z轴1_Axis_Vel_0,Pickup 2_Z Axis 1_Axis_Vel_0,L?y v?t li?u 2_Tr?c Z 1_Tr?c_V?n t?c_0
 PLC/取料2_Z轴1_Axis_Vel,取料2_Z轴1_Axis_Vel_1,28302,取料2_Z轴1_Axis_Vel_1,Pickup 2_Z Axis 1_Axis_Vel_1,L?y v?t li?u 2_Tr?c Z 1_Tr?c_V?n t?c_1
 PLC/取料2_Z轴1_Axis_Vel,取料2_Z轴1_Axis_Vel_2,28304,取料2_Z轴1_Axis_Vel_2,Pickup 2_Z Axis 1_Axis_Vel_2,L?y v?t li?u 2_Tr?c Z 1_Tr?c_V?n t?c_2
@@ -2166,9 +2111,6 @@ PLC/取料2_Z轴1_Axis_Vel,取料2_Z轴1_Axis_Vel_44,28388,取料2_Z轴1_Axis_Ve
 PLC/取料2_Z轴1_Axis_Vel,取料2_Z轴1_Axis_Vel_45,28390,取料2_Z轴1_Axis_Vel_45,Pickup 2_Z Axis 1_Axis_Vel_45,L?y v?t li?u 2_Tr?c Z 1_Tr?c_V?n t?c_45
 PLC/取料2_Z轴1_Axis_Vel,取料2_Z轴1_Axis_Vel_46,28392,取料2_Z轴1_Axis_Vel_46,Pickup 2_Z Axis 1_Axis_Vel_46,L?y v?t li?u 2_Tr?c Z 1_Tr?c_V?n t?c_46
 PLC/取料2_Z轴1_Axis_Vel,取料2_Z轴1_Axis_Vel_47,28394,取料2_Z轴1_Axis_Vel_47,Pickup 2_Z Axis 1_Axis_Vel_47,L?y v?t li?u 2_Tr?c Z 1_Tr?c_V?n t?c_47
-
-
-
 PLC/取料2_R轴1_Axis_Pos,取料2_R轴1_Axis_Pos_0,28400,取料2_R轴1_Axis_Pos_0,Pickup 2_R Axis 1_Axis_Pos_0,L?y v?t li?u 2_Tr?c R 1_Tr?c_V? trí_0
 PLC/取料2_R轴1_Axis_Pos,取料2_R轴1_Axis_Pos_1,28402,取料2_R轴1_Axis_Pos_1,Pickup 2_R Axis 1_Axis_Pos_1,L?y v?t li?u 2_Tr?c R 1_Tr?c_V? trí_1
 PLC/取料2_R轴1_Axis_Pos,取料2_R轴1_Axis_Pos_2,28404,取料2_R轴1_Axis_Pos_2,Pickup 2_R Axis 1_Axis_Pos_2,L?y v?t li?u 2_Tr?c R 1_Tr?c_V? trí_2
@@ -2217,7 +2159,6 @@ PLC/取料2_R轴1_Axis_Pos,取料2_R轴1_Axis_Pos_44,28488,取料2_R轴1_Axis_Po
 PLC/取料2_R轴1_Axis_Pos,取料2_R轴1_Axis_Pos_45,28490,取料2_R轴1_Axis_Pos_45,Pickup 2_R Axis 1_Axis_Pos_45,L?y v?t li?u 2_Tr?c R 1_Tr?c_V? trí_45
 PLC/取料2_R轴1_Axis_Pos,取料2_R轴1_Axis_Pos_46,28492,取料2_R轴1_Axis_Pos_46,Pickup 2_R Axis 1_Axis_Pos_46,L?y v?t li?u 2_Tr?c R 1_Tr?c_V? trí_46
 PLC/取料2_R轴1_Axis_Pos,取料2_R轴1_Axis_Pos_47,28494,取料2_R轴1_Axis_Pos_47,Pickup 2_R Axis 1_Axis_Pos_47,L?y v?t li?u 2_Tr?c R 1_Tr?c_V? trí_47
-
 PLC/取料2_R轴1_Axis_Vel,取料2_R轴1_Axis_Vel_0,28500,取料2_R轴1_Axis_Vel_0,Pickup 2_R Axis 1_Axis_Vel_0,L?y v?t li?u 2_Tr?c R 1_Tr?c_V?n t?c_0
 PLC/取料2_R轴1_Axis_Vel,取料2_R轴1_Axis_Vel_1,28502,取料2_R轴1_Axis_Vel_1,Pickup 2_R Axis 1_Axis_Vel_1,L?y v?t li?u 2_Tr?c R 1_Tr?c_V?n t?c_1
 PLC/取料2_R轴1_Axis_Vel,取料2_R轴1_Axis_Vel_2,28504,取料2_R轴1_Axis_Vel_2,Pickup 2_R Axis 1_Axis_Vel_2,L?y v?t li?u 2_Tr?c R 1_Tr?c_V?n t?c_2
@@ -2266,7 +2207,6 @@ PLC/取料2_R轴1_Axis_Vel,取料2_R轴1_Axis_Vel_44,28588,取料2_R轴1_Axis_Ve
 PLC/取料2_R轴1_Axis_Vel,取料2_R轴1_Axis_Vel_45,28590,取料2_R轴1_Axis_Vel_45,Pickup 2_R Axis 1_Axis_Vel_45,L?y v?t li?u 2_Tr?c R 1_Tr?c_V?n t?c_45
 PLC/取料2_R轴1_Axis_Vel,取料2_R轴1_Axis_Vel_46,28592,取料2_R轴1_Axis_Vel_46,Pickup 2_R Axis 1_Axis_Vel_46,L?y v?t li?u 2_Tr?c R 1_Tr?c_V?n t?c_46
 PLC/取料2_R轴1_Axis_Vel,取料2_R轴1_Axis_Vel_47,28594,取料2_R轴1_Axis_Vel_47,Pickup 2_R Axis 1_Axis_Vel_47,L?y v?t li?u 2_Tr?c R 1_Tr?c_V?n t?c_47
-
 PLC/取料2_Z轴2_Axis_Pos,取料2_Z轴2_Axis_Pos_0,28600,取料2_Z轴2_Axis_Pos_0,Pickup 2_Z Axis 2_Axis_Pos_0,L?y v?t li?u 2_Tr?c Z 2_Tr?c_V? trí_0
 PLC/取料2_Z轴2_Axis_Pos,取料2_Z轴2_Axis_Pos_1,28602,取料2_Z轴2_Axis_Pos_1,Pickup 2_Z Axis 2_Axis_Pos_1,L?y v?t li?u 2_Tr?c Z 2_Tr?c_V? trí_1
 PLC/取料2_Z轴2_Axis_Pos,取料2_Z轴2_Axis_Pos_2,28604,取料2_Z轴2_Axis_Pos_2,Pickup 2_Z Axis 2_Axis_Pos_2,L?y v?t li?u 2_Tr?c Z 2_Tr?c_V? trí_2
@@ -2315,7 +2255,6 @@ PLC/取料2_Z轴2_Axis_Pos,取料2_Z轴2_Axis_Pos_44,28688,取料2_Z轴2_Axis_Po
 PLC/取料2_Z轴2_Axis_Pos,取料2_Z轴2_Axis_Pos_45,28690,取料2_Z轴2_Axis_Pos_45,Pickup 2_Z Axis 2_Axis_Pos_45,L?y v?t li?u 2_Tr?c Z 2_Tr?c_V? trí_45
 PLC/取料2_Z轴2_Axis_Pos,取料2_Z轴2_Axis_Pos_46,28692,取料2_Z轴2_Axis_Pos_46,Pickup 2_Z Axis 2_Axis_Pos_46,L?y v?t li?u 2_Tr?c Z 2_Tr?c_V? trí_46
 PLC/取料2_Z轴2_Axis_Pos,取料2_Z轴2_Axis_Pos_47,28694,取料2_Z轴2_Axis_Pos_47,Pickup 2_Z Axis 2_Axis_Pos_47,L?y v?t li?u 2_Tr?c Z 2_Tr?c_V? trí_47
-
 PLC/取料2_Z轴2_Axis_Vel,取料2_Z轴2_Axis_Vel_0,28700,取料2_Z轴2_Axis_Vel_0,Pickup 2_Z Axis 2_Axis_Vel_0,L?y v?t li?u 2_Tr?c Z 2_Tr?c_V?n t?c_0
 PLC/取料2_Z轴2_Axis_Vel,取料2_Z轴2_Axis_Vel_1,28702,取料2_Z轴2_Axis_Vel_1,Pickup 2_Z Axis 2_Axis_Vel_1,L?y v?t li?u 2_Tr?c Z 2_Tr?c_V?n t?c_1
 PLC/取料2_Z轴2_Axis_Vel,取料2_Z轴2_Axis_Vel_2,28704,取料2_Z轴2_Axis_Vel_2,Pickup 2_Z Axis 2_Axis_Vel_2,L?y v?t li?u 2_Tr?c Z 2_Tr?c_V?n t?c_2
@@ -2364,7 +2303,6 @@ PLC/取料2_Z轴2_Axis_Vel,取料2_Z轴2_Axis_Vel_44,28788,取料2_Z轴2_Axis_Ve
 PLC/取料2_Z轴2_Axis_Vel,取料2_Z轴2_Axis_Vel_45,28790,取料2_Z轴2_Axis_Vel_45,Pickup 2_Z Axis 2_Axis_Vel_45,L?y v?t li?u 2_Tr?c Z 2_Tr?c_V?n t?c_45
 PLC/取料2_Z轴2_Axis_Vel,取料2_Z轴2_Axis_Vel_46,28792,取料2_Z轴2_Axis_Vel_46,Pickup 2_Z Axis 2_Axis_Vel_46,L?y v?t li?u 2_Tr?c Z 2_Tr?c_V?n t?c_46
 PLC/取料2_Z轴2_Axis_Vel,取料2_Z轴2_Axis_Vel_47,28794,取料2_Z轴2_Axis_Vel_47,Pickup 2_Z Axis 2_Axis_Vel_47,L?y v?t li?u 2_Tr?c Z 2_Tr?c_V?n t?c_47
-
 PLC/取料2_R轴2_Axis_Pos,取料2_R轴2_Axis_Pos_0,28800,取料2_R轴2_Axis_Pos_0,Pickup 2_R Axis 2_Axis_Pos_0,L?y v?t li?u 2_Tr?c R 2_Tr?c_V? trí_0
 PLC/取料2_R轴2_Axis_Pos,取料2_R轴2_Axis_Pos_1,28802,取料2_R轴2_Axis_Pos_1,Pickup 2_R Axis 2_Axis_Pos_1,L?y v?t li?u 2_Tr?c R 2_Tr?c_V? trí_1
 PLC/取料2_R轴2_Axis_Pos,取料2_R轴2_Axis_Pos_2,28804,取料2_R轴2_Axis_Pos_2,Pickup 2_R Axis 2_Axis_Pos_2,L?y v?t li?u 2_Tr?c R 2_Tr?c_V? trí_2
@@ -2413,7 +2351,6 @@ PLC/取料2_R轴2_Axis_Pos,取料2_R轴2_Axis_Pos_44,28888,取料2_R轴2_Axis_Po
 PLC/取料2_R轴2_Axis_Pos,取料2_R轴2_Axis_Pos_45,28890,取料2_R轴2_Axis_Pos_45,Pickup 2_R Axis 2_Axis_Pos_45,L?y v?t li?u 2_Tr?c R 2_Tr?c_V? trí_45
 PLC/取料2_R轴2_Axis_Pos,取料2_R轴2_Axis_Pos_46,28892,取料2_R轴2_Axis_Pos_46,Pickup 2_R Axis 2_Axis_Pos_46,L?y v?t li?u 2_Tr?c R 2_Tr?c_V? trí_46
 PLC/取料2_R轴2_Axis_Pos,取料2_R轴2_Axis_Pos_47,28894,取料2_R轴2_Axis_Pos_47,Pickup 2_R Axis 2_Axis_Pos_47,L?y v?t li?u 2_Tr?c R 2_Tr?c_V? trí_47
-
 PLC/取料2_R轴2_Axis_Vel,取料2_R轴2_Axis_Vel_0,28900,取料2_R轴2_Axis_Vel_0,Pickup 2_R Axis 2_Axis_Vel_0,L?y v?t li?u 2_Tr?c R 2_Tr?c_V?n t?c_0
 PLC/取料2_R轴2_Axis_Vel,取料2_R轴2_Axis_Vel_1,28902,取料2_R轴2_Axis_Vel_1,Pickup 2_R Axis 2_Axis_Vel_1,L?y v?t li?u 2_Tr?c R 2_Tr?c_V?n t?c_1
 PLC/取料2_R轴2_Axis_Vel,取料2_R轴2_Axis_Vel_2,28904,取料2_R轴2_Axis_Vel_2,Pickup 2_R Axis 2_Axis_Vel_2,L?y v?t li?u 2_Tr?c R 2_Tr?c_V?n t?c_2
@@ -2462,8 +2399,6 @@ PLC/取料2_R轴2_Axis_Vel,取料2_R轴2_Axis_Vel_44,28988,取料2_R轴2_Axis_Ve
 PLC/取料2_R轴2_Axis_Vel,取料2_R轴2_Axis_Vel_45,28990,取料2_R轴2_Axis_Vel_45,Pickup 2_R Axis 2_Axis_Vel_45,L?y v?t li?u 2_Tr?c R 2_Tr?c_V?n t?c_45
 PLC/取料2_R轴2_Axis_Vel,取料2_R轴2_Axis_Vel_46,28992,取料2_R轴2_Axis_Vel_46,Pickup 2_R Axis 2_Axis_Vel_46,L?y v?t li?u 2_Tr?c R 2_Tr?c_V?n t?c_46
 PLC/取料2_R轴2_Axis_Vel,取料2_R轴2_Axis_Vel_47,28994,取料2_R轴2_Axis_Vel_47,Pickup 2_R Axis 2_Axis_Vel_47,L?y v?t li?u 2_Tr?c R 2_Tr?c_V?n t?c_47
-
-
 PLC/取料2_Z轴3_Axis_Pos,取料2_Z轴3_Axis_Pos_0,29000,取料2_Z轴3_Axis_Pos_0,Pickup 2_Z Axis 3_Axis_Pos_0,L?y v?t li?u 2_Tr?c Z 3_Tr?c_V? trí_0
 PLC/取料2_Z轴3_Axis_Pos,取料2_Z轴3_Axis_Pos_1,29002,取料2_Z轴3_Axis_Pos_1,Pickup 2_Z Axis 3_Axis_Pos_1,L?y v?t li?u 2_Tr?c Z 3_Tr?c_V? trí_1
 PLC/取料2_Z轴3_Axis_Pos,取料2_Z轴3_Axis_Pos_2,29004,取料2_Z轴3_Axis_Pos_2,Pickup 2_Z Axis 3_Axis_Pos_2,L?y v?t li?u 2_Tr?c Z 3_Tr?c_V? trí_2
@@ -2512,7 +2447,6 @@ PLC/取料2_Z轴3_Axis_Pos,取料2_Z轴3_Axis_Pos_44,29088,取料2_Z轴3_Axis_Po
 PLC/取料2_Z轴3_Axis_Pos,取料2_Z轴3_Axis_Pos_45,29090,取料2_Z轴3_Axis_Pos_45,Pickup 2_Z Axis 3_Axis_Pos_45,L?y v?t li?u 2_Tr?c Z 3_Tr?c_V? trí_45
 PLC/取料2_Z轴3_Axis_Pos,取料2_Z轴3_Axis_Pos_46,29092,取料2_Z轴3_Axis_Pos_46,Pickup 2_Z Axis 3_Axis_Pos_46,L?y v?t li?u 2_Tr?c Z 3_Tr?c_V? trí_46
 PLC/取料2_Z轴3_Axis_Pos,取料2_Z轴3_Axis_Pos_47,29094,取料2_Z轴3_Axis_Pos_47,Pickup 2_Z Axis 3_Axis_Pos_47,L?y v?t li?u 2_Tr?c Z 3_Tr?c_V? trí_47
-
 PLC/取料2_Z轴3_Axis_Vel,取料2_Z轴3_Axis_Vel_0,29100,取料2_Z轴3_Axis_Vel_0,Pickup 2_Z Axis 3_Axis_Vel_0,L?y v?t li?u 2_Tr?c Z 3_Tr?c_V?n t?c_0
 PLC/取料2_Z轴3_Axis_Vel,取料2_Z轴3_Axis_Vel_1,29102,取料2_Z轴3_Axis_Vel_1,Pickup 2_Z Axis 3_Axis_Vel_1,L?y v?t li?u 2_Tr?c Z 3_Tr?c_V?n t?c_1
 PLC/取料2_Z轴3_Axis_Vel,取料2_Z轴3_Axis_Vel_2,29104,取料2_Z轴3_Axis_Vel_2,Pickup 2_Z Axis 3_Axis_Vel_2,L?y v?t li?u 2_Tr?c Z 3_Tr?c_V?n t?c_2
@@ -2561,7 +2495,6 @@ PLC/取料2_Z轴3_Axis_Vel,取料2_Z轴3_Axis_Vel_44,29188,取料2_Z轴3_Axis_Ve
 PLC/取料2_Z轴3_Axis_Vel,取料2_Z轴3_Axis_Vel_45,29190,取料2_Z轴3_Axis_Vel_45,Pickup 2_Z Axis 3_Axis_Vel_45,L?y v?t li?u 2_Tr?c Z 3_Tr?c_V?n t?c_45
 PLC/取料2_Z轴3_Axis_Vel,取料2_Z轴3_Axis_Vel_46,29192,取料2_Z轴3_Axis_Vel_46,Pickup 2_Z Axis 3_Axis_Vel_46,L?y v?t li?u 2_Tr?c Z 3_Tr?c_V?n t?c_46
 PLC/取料2_Z轴3_Axis_Vel,取料2_Z轴3_Axis_Vel_47,29194,取料2_Z轴3_Axis_Vel_47,Pickup 2_Z Axis 3_Axis_Vel_47,L?y v?t li?u 2_Tr?c Z 3_Tr?c_V?n t?c_47
-
 PLC/取料2_R轴3_Axis_Pos,取料2_R轴3_Axis_Pos_0,29200,取料2_R轴3_Axis_Pos_0,Pickup 2_R Axis 3_Axis_Pos_0,L?y v?t li?u 2_Tr?c R 3_Tr?c_V? trí_0
 PLC/取料2_R轴3_Axis_Pos,取料2_R轴3_Axis_Pos_1,29202,取料2_R轴3_Axis_Pos_1,Pickup 2_R Axis 3_Axis_Pos_1,L?y v?t li?u 2_Tr?c R 3_Tr?c_V? trí_1
 PLC/取料2_R轴3_Axis_Pos,取料2_R轴3_Axis_Pos_2,29204,取料2_R轴3_Axis_Pos_2,Pickup 2_R Axis 3_Axis_Pos_2,L?y v?t li?u 2_Tr?c R 3_Tr?c_V? trí_2
@@ -2610,7 +2543,6 @@ PLC/取料2_R轴3_Axis_Pos,取料2_R轴3_Axis_Pos_44,29288,取料2_R轴3_Axis_Po
 PLC/取料2_R轴3_Axis_Pos,取料2_R轴3_Axis_Pos_45,29290,取料2_R轴3_Axis_Pos_45,Pickup 2_R Axis 3_Axis_Pos_45,L?y v?t li?u 2_Tr?c R 3_Tr?c_V? trí_45
 PLC/取料2_R轴3_Axis_Pos,取料2_R轴3_Axis_Pos_46,29292,取料2_R轴3_Axis_Pos_46,Pickup 2_R Axis 3_Axis_Pos_46,L?y v?t li?u 2_Tr?c R 3_Tr?c_V? trí_46
 PLC/取料2_R轴3_Axis_Pos,取料2_R轴3_Axis_Pos_47,29294,取料2_R轴3_Axis_Pos_47,Pickup 2_R Axis 3_Axis_Pos_47,L?y v?t li?u 2_Tr?c R 3_Tr?c_V? trí_47
-
 PLC/取料2_R轴3_Axis_Vel,取料2_R轴3_Axis_Vel_0,29300,取料2_R轴3_Axis_Vel_0,Pickup 2_R Axis 3_Axis_Vel_0,L?y v?t li?u 2_Tr?c R 3_Tr?c_V?n t?c_0
 PLC/取料2_R轴3_Axis_Vel,取料2_R轴3_Axis_Vel_1,29302,取料2_R轴3_Axis_Vel_1,Pickup 2_R Axis 3_Axis_Vel_1,L?y v?t li?u 2_Tr?c R 3_Tr?c_V?n t?c_1
 PLC/取料2_R轴3_Axis_Vel,取料2_R轴3_Axis_Vel_2,29304,取料2_R轴3_Axis_Vel_2,Pickup 2_R Axis 3_Axis_Vel_2,L?y v?t li?u 2_Tr?c R 3_Tr?c_V?n t?c_2
@@ -2659,7 +2591,6 @@ PLC/取料2_R轴3_Axis_Vel,取料2_R轴3_Axis_Vel_44,29388,取料2_R轴3_Axis_Ve
 PLC/取料2_R轴3_Axis_Vel,取料2_R轴3_Axis_Vel_45,29390,取料2_R轴3_Axis_Vel_45,Pickup 2_R Axis 3_Axis_Vel_45,L?y v?t li?u 2_Tr?c R 3_Tr?c_V?n t?c_45
 PLC/取料2_R轴3_Axis_Vel,取料2_R轴3_Axis_Vel_46,29392,取料2_R轴3_Axis_Vel_46,Pickup 2_R Axis 3_Axis_Vel_46,L?y v?t li?u 2_Tr?c R 3_Tr?c_V?n t?c_46
 PLC/取料2_R轴3_Axis_Vel,取料2_R轴3_Axis_Vel_47,29394,取料2_R轴3_Axis_Vel_47,Pickup 2_R Axis 3_Axis_Vel_47,L?y v?t li?u 2_Tr?c R 3_Tr?c_V?n t?c_47
-
 PLC/取料2_Z轴4_Axis_Pos,取料2_Z轴4_Axis_Pos_0,29400,取料2_Z轴4_Axis_Pos_0,Pickup 2_Z Axis 4_Axis_Pos_0,L?y v?t li?u 2_Tr?c Z 4_Tr?c_V? trí_0
 PLC/取料2_Z轴4_Axis_Pos,取料2_Z轴4_Axis_Pos_1,29402,取料2_Z轴4_Axis_Pos_1,Pickup 2_Z Axis 4_Axis_Pos_1,L?y v?t li?u 2_Tr?c Z 4_Tr?c_V? trí_1
 PLC/取料2_Z轴4_Axis_Pos,取料2_Z轴4_Axis_Pos_2,29404,取料2_Z轴4_Axis_Pos_2,Pickup 2_Z Axis 4_Axis_Pos_2,L?y v?t li?u 2_Tr?c Z 4_Tr?c_V? trí_2
@@ -2708,7 +2639,6 @@ PLC/取料2_Z轴4_Axis_Pos,取料2_Z轴4_Axis_Pos_44,29488,取料2_Z轴4_Axis_Po
 PLC/取料2_Z轴4_Axis_Pos,取料2_Z轴4_Axis_Pos_45,29490,取料2_Z轴4_Axis_Pos_45,Pickup 2_Z Axis 4_Axis_Pos_45,L?y v?t li?u 2_Tr?c Z 4_Tr?c_V? trí_45
 PLC/取料2_Z轴4_Axis_Pos,取料2_Z轴4_Axis_Pos_46,29492,取料2_Z轴4_Axis_Pos_46,Pickup 2_Z Axis 4_Axis_Pos_46,L?y v?t li?u 2_Tr?c Z 4_Tr?c_V? trí_46
 PLC/取料2_Z轴4_Axis_Pos,取料2_Z轴4_Axis_Pos_47,29494,取料2_Z轴4_Axis_Pos_47,Pickup 2_Z Axis 4_Axis_Pos_47,L?y v?t li?u 2_Tr?c Z 4_Tr?c_V? trí_47
-
 PLC/取料2_Z轴4_Axis_Vel,取料2_Z轴4_Axis_Vel_0,29500,取料2_Z轴4_Axis_Vel_0,Pickup 2_Z Axis 4_Axis_Vel_0,L?y v?t li?u 2_Tr?c Z 4_Tr?c_V?n t?c_0
 PLC/取料2_Z轴4_Axis_Vel,取料2_Z轴4_Axis_Vel_1,29502,取料2_Z轴4_Axis_Vel_1,Pickup 2_Z Axis 4_Axis_Vel_1,L?y v?t li?u 2_Tr?c Z 4_Tr?c_V?n t?c_1
 PLC/取料2_Z轴4_Axis_Vel,取料2_Z轴4_Axis_Vel_2,29504,取料2_Z轴4_Axis_Vel_2,Pickup 2_Z Axis 4_Axis_Vel_2,L?y v?t li?u 2_Tr?c Z 4_Tr?c_V?n t?c_2
@@ -2757,7 +2687,6 @@ PLC/取料2_Z轴4_Axis_Vel,取料2_Z轴4_Axis_Vel_44,29588,取料2_Z轴4_Axis_Ve
 PLC/取料2_Z轴4_Axis_Vel,取料2_Z轴4_Axis_Vel_45,29590,取料2_Z轴4_Axis_Vel_45,Pickup 2_Z Axis 4_Axis_Vel_45,L?y v?t li?u 2_Tr?c Z 4_Tr?c_V?n t?c_45
 PLC/取料2_Z轴4_Axis_Vel,取料2_Z轴4_Axis_Vel_46,29592,取料2_Z轴4_Axis_Vel_46,Pickup 2_Z Axis 4_Axis_Vel_46,L?y v?t li?u 2_Tr?c Z 4_Tr?c_V?n t?c_46
 PLC/取料2_Z轴4_Axis_Vel,取料2_Z轴4_Axis_Vel_47,29594,取料2_Z轴4_Axis_Vel_47,Pickup 2_Z Axis 4_Axis_Vel_47,L?y v?t li?u 2_Tr?c Z 4_Tr?c_V?n t?c_47
-
 PLC/取料2_R轴4_Axis_Pos,取料2_R轴4_Axis_Pos_0,29600,取料2_R轴4_Axis_Pos_0,Pickup 2_R Axis 4_Axis_Pos_0,L?y v?t li?u 2_Tr?c R 4_Tr?c_V? trí_0
 PLC/取料2_R轴4_Axis_Pos,取料2_R轴4_Axis_Pos_1,29602,取料2_R轴4_Axis_Pos_1,Pickup 2_R Axis 4_Axis_Pos_1,L?y v?t li?u 2_Tr?c R 4_Tr?c_V? trí_1
 PLC/取料2_R轴4_Axis_Pos,取料2_R轴4_Axis_Pos_2,29604,取料2_R轴4_Axis_Pos_2,Pickup 2_R Axis 4_Axis_Pos_2,L?y v?t li?u 2_Tr?c R 4_Tr?c_V? trí_2
@@ -2806,7 +2735,6 @@ PLC/取料2_R轴4_Axis_Pos,取料2_R轴4_Axis_Pos_44,29688,取料2_R轴4_Axis_Po
 PLC/取料2_R轴4_Axis_Pos,取料2_R轴4_Axis_Pos_45,29690,取料2_R轴4_Axis_Pos_45,Pickup 2_R Axis 4_Axis_Pos_45,L?y v?t li?u 2_Tr?c R 4_Tr?c_V? trí_45
 PLC/取料2_R轴4_Axis_Pos,取料2_R轴4_Axis_Pos_46,29692,取料2_R轴4_Axis_Pos_46,Pickup 2_R Axis 4_Axis_Pos_46,L?y v?t li?u 2_Tr?c R 4_Tr?c_V? trí_46
 PLC/取料2_R轴4_Axis_Pos,取料2_R轴4_Axis_Pos_47,29694,取料2_R轴4_Axis_Pos_47,Pickup 2_R Axis 4_Axis_Pos_47,L?y v?t li?u 2_Tr?c R 4_Tr?c_V? trí_47
-
 PLC/取料2_R轴4_Axis_Vel,取料2_R轴4_Axis_Vel_0,29700,取料2_R轴4_Axis_Vel_0,Pickup 2_R Axis 4_Axis_Vel_0,L?y v?t li?u 2_Tr?c R 4_Tr?c_V?n t?c_0
 PLC/取料2_R轴4_Axis_Vel,取料2_R轴4_Axis_Vel_1,29702,取料2_R轴4_Axis_Vel_1,Pickup 2_R Axis 4_Axis_Vel_1,L?y v?t li?u 2_Tr?c R 4_Tr?c_V?n t?c_1
 PLC/取料2_R轴4_Axis_Vel,取料2_R轴4_Axis_Vel_2,29704,取料2_R轴4_Axis_Vel_2,Pickup 2_R Axis 4_Axis_Vel_2,L?y v?t li?u 2_Tr?c R 4_Tr?c_V?n t?c_2
@@ -2855,3 +2783,387 @@ PLC/取料2_R轴4_Axis_Vel,取料2_R轴4_Axis_Vel_44,29788,取料2_R轴4_Axis_Ve
 PLC/取料2_R轴4_Axis_Vel,取料2_R轴4_Axis_Vel_45,29790,取料2_R轴4_Axis_Vel_45,Pickup 2_R Axis 4_Axis_Vel_45,L?y v?t li?u 2_Tr?c R 4_Tr?c_V?n t?c_45
 PLC/取料2_R轴4_Axis_Vel,取料2_R轴4_Axis_Vel_46,29792,取料2_R轴4_Axis_Vel_46,Pickup 2_R Axis 4_Axis_Vel_46,L?y v?t li?u 2_Tr?c R 4_Tr?c_V?n t?c_46
 PLC/取料2_R轴4_Axis_Vel,取料2_R轴4_Axis_Vel_47,29794,取料2_R轴4_Axis_Vel_47,Pickup 2_R Axis 4_Axis_Vel_47,L?y v?t li?u 2_Tr?c R 4_Tr?c_V?n t?c_47
+PLC/取料2_Z轴5_Axis_Pos,取料2_Z轴5_Axis_Pos_0,29800,取料2_Z轴5_Axis_Pos_0,Pickup 2_Z Axis 5_Axis_Pos_0,L?y v?t li?u 2_Tr?c Z 5_Tr?c_V? trí_0
+PLC/取料2_Z轴5_Axis_Pos,取料2_Z轴5_Axis_Pos_1,29802,取料2_Z轴5_Axis_Pos_1,Pickup 2_Z Axis 5_Axis_Pos_1,L?y v?t li?u 2_Tr?c Z 5_Tr?c_V? trí_1
+PLC/取料2_Z轴5_Axis_Pos,取料2_Z轴5_Axis_Pos_2,29804,取料2_Z轴5_Axis_Pos_2,Pickup 2_Z Axis 5_Axis_Pos_2,L?y v?t li?u 2_Tr?c Z 5_Tr?c_V? trí_2
+PLC/取料2_Z轴5_Axis_Pos,取料2_Z轴5_Axis_Pos_3,29806,取料2_Z轴5_Axis_Pos_3,Pickup 2_Z Axis 5_Axis_Pos_3,L?y v?t li?u 2_Tr?c Z 5_Tr?c_V? trí_3
+PLC/取料2_Z轴5_Axis_Pos,取料2_Z轴5_Axis_Pos_4,29808,取料2_Z轴5_Axis_Pos_4,Pickup 2_Z Axis 5_Axis_Pos_4,L?y v?t li?u 2_Tr?c Z 5_Tr?c_V? trí_4
+PLC/取料2_Z轴5_Axis_Pos,取料2_Z轴5_Axis_Pos_5,29810,取料2_Z轴5_Axis_Pos_5,Pickup 2_Z Axis 5_Axis_Pos_5,L?y v?t li?u 2_Tr?c Z 5_Tr?c_V? trí_5
+PLC/取料2_Z轴5_Axis_Pos,取料2_Z轴5_Axis_Pos_6,29812,取料2_Z轴5_Axis_Pos_6,Pickup 2_Z Axis 5_Axis_Pos_6,L?y v?t li?u 2_Tr?c Z 5_Tr?c_V? trí_6
+PLC/取料2_Z轴5_Axis_Pos,取料2_Z轴5_Axis_Pos_7,29814,取料2_Z轴5_Axis_Pos_7,Pickup 2_Z Axis 5_Axis_Pos_7,L?y v?t li?u 2_Tr?c Z 5_Tr?c_V? trí_7
+PLC/取料2_Z轴5_Axis_Pos,取料2_Z轴5_Axis_Pos_8,29816,取料2_Z轴5_Axis_Pos_8,Pickup 2_Z Axis 5_Axis_Pos_8,L?y v?t li?u 2_Tr?c Z 5_Tr?c_V? trí_8
+PLC/取料2_Z轴5_Axis_Pos,取料2_Z轴5_Axis_Pos_9,29818,取料2_Z轴5_Axis_Pos_9,Pickup 2_Z Axis 5_Axis_Pos_9,L?y v?t li?u 2_Tr?c Z 5_Tr?c_V? trí_9
+PLC/取料2_Z轴5_Axis_Pos,取料2_Z轴5_Axis_Pos_10,29820,取料2_Z轴5_Axis_Pos_10,Pickup 2_Z Axis 5_Axis_Pos_10,L?y v?t li?u 2_Tr?c Z 5_Tr?c_V? trí_10
+PLC/取料2_Z轴5_Axis_Pos,取料2_Z轴5_Axis_Pos_11,29822,取料2_Z轴5_Axis_Pos_11,Pickup 2_Z Axis 5_Axis_Pos_11,L?y v?t li?u 2_Tr?c Z 5_Tr?c_V? trí_11
+PLC/取料2_Z轴5_Axis_Pos,取料2_Z轴5_Axis_Pos_12,29824,取料2_Z轴5_Axis_Pos_12,Pickup 2_Z Axis 5_Axis_Pos_12,L?y v?t li?u 2_Tr?c Z 5_Tr?c_V? trí_12
+PLC/取料2_Z轴5_Axis_Pos,取料2_Z轴5_Axis_Pos_13,29826,取料2_Z轴5_Axis_Pos_13,Pickup 2_Z Axis 5_Axis_Pos_13,L?y v?t li?u 2_Tr?c Z 5_Tr?c_V? trí_13
+PLC/取料2_Z轴5_Axis_Pos,取料2_Z轴5_Axis_Pos_14,29828,取料2_Z轴5_Axis_Pos_14,Pickup 2_Z Axis 5_Axis_Pos_14,L?y v?t li?u 2_Tr?c Z 5_Tr?c_V? trí_14
+PLC/取料2_Z轴5_Axis_Pos,取料2_Z轴5_Axis_Pos_15,29830,取料2_Z轴5_Axis_Pos_15,Pickup 2_Z Axis 5_Axis_Pos_15,L?y v?t li?u 2_Tr?c Z 5_Tr?c_V? trí_15
+PLC/取料2_Z轴5_Axis_Pos,取料2_Z轴5_Axis_Pos_16,29832,取料2_Z轴5_Axis_Pos_16,Pickup 2_Z Axis 5_Axis_Pos_16,L?y v?t li?u 2_Tr?c Z 5_Tr?c_V? trí_16
+PLC/取料2_Z轴5_Axis_Pos,取料2_Z轴5_Axis_Pos_17,29834,取料2_Z轴5_Axis_Pos_17,Pickup 2_Z Axis 5_Axis_Pos_17,L?y v?t li?u 2_Tr?c Z 5_Tr?c_V? trí_17
+PLC/取料2_Z轴5_Axis_Pos,取料2_Z轴5_Axis_Pos_18,29836,取料2_Z轴5_Axis_Pos_18,Pickup 2_Z Axis 5_Axis_Pos_18,L?y v?t li?u 2_Tr?c Z 5_Tr?c_V? trí_18
+PLC/取料2_Z轴5_Axis_Pos,取料2_Z轴5_Axis_Pos_19,29838,取料2_Z轴5_Axis_Pos_19,Pickup 2_Z Axis 5_Axis_Pos_19,L?y v?t li?u 2_Tr?c Z 5_Tr?c_V? trí_19
+PLC/取料2_Z轴5_Axis_Pos,取料2_Z轴5_Axis_Pos_20,29840,取料2_Z轴5_Axis_Pos_20,Pickup 2_Z Axis 5_Axis_Pos_20,L?y v?t li?u 2_Tr?c Z 5_Tr?c_V? trí_20
+PLC/取料2_Z轴5_Axis_Pos,取料2_Z轴5_Axis_Pos_21,29842,取料2_Z轴5_Axis_Pos_21,Pickup 2_Z Axis 5_Axis_Pos_21,L?y v?t li?u 2_Tr?c Z 5_Tr?c_V? trí_21
+PLC/取料2_Z轴5_Axis_Pos,取料2_Z轴5_Axis_Pos_22,29844,取料2_Z轴5_Axis_Pos_22,Pickup 2_Z Axis 5_Axis_Pos_22,L?y v?t li?u 2_Tr?c Z 5_Tr?c_V? trí_22
+PLC/取料2_Z轴5_Axis_Pos,取料2_Z轴5_Axis_Pos_23,29846,取料2_Z轴5_Axis_Pos_23,Pickup 2_Z Axis 5_Axis_Pos_23,L?y v?t li?u 2_Tr?c Z 5_Tr?c_V? trí_23
+PLC/取料2_Z轴5_Axis_Pos,取料2_Z轴5_Axis_Pos_24,29848,取料2_Z轴5_Axis_Pos_24,Pickup 2_Z Axis 5_Axis_Pos_24,L?y v?t li?u 2_Tr?c Z 5_Tr?c_V? trí_24
+PLC/取料2_Z轴5_Axis_Pos,取料2_Z轴5_Axis_Pos_25,29850,取料2_Z轴5_Axis_Pos_25,Pickup 2_Z Axis 5_Axis_Pos_25,L?y v?t li?u 2_Tr?c Z 5_Tr?c_V? trí_25
+PLC/取料2_Z轴5_Axis_Pos,取料2_Z轴5_Axis_Pos_26,29852,取料2_Z轴5_Axis_Pos_26,Pickup 2_Z Axis 5_Axis_Pos_26,L?y v?t li?u 2_Tr?c Z 5_Tr?c_V? trí_26
+PLC/取料2_Z轴5_Axis_Pos,取料2_Z轴5_Axis_Pos_27,29854,取料2_Z轴5_Axis_Pos_27,Pickup 2_Z Axis 5_Axis_Pos_27,L?y v?t li?u 2_Tr?c Z 5_Tr?c_V? trí_27
+PLC/取料2_Z轴5_Axis_Pos,取料2_Z轴5_Axis_Pos_28,29856,取料2_Z轴5_Axis_Pos_28,Pickup 2_Z Axis 5_Axis_Pos_28,L?y v?t li?u 2_Tr?c Z 5_Tr?c_V? trí_28
+PLC/取料2_Z轴5_Axis_Pos,取料2_Z轴5_Axis_Pos_29,29858,取料2_Z轴5_Axis_Pos_29,Pickup 2_Z Axis 5_Axis_Pos_29,L?y v?t li?u 2_Tr?c Z 5_Tr?c_V? trí_29
+PLC/取料2_Z轴5_Axis_Pos,取料2_Z轴5_Axis_Pos_30,29860,取料2_Z轴5_Axis_Pos_30,Pickup 2_Z Axis 5_Axis_Pos_30,L?y v?t li?u 2_Tr?c Z 5_Tr?c_V? trí_30
+PLC/取料2_Z轴5_Axis_Pos,取料2_Z轴5_Axis_Pos_31,29862,取料2_Z轴5_Axis_Pos_31,Pickup 2_Z Axis 5_Axis_Pos_31,L?y v?t li?u 2_Tr?c Z 5_Tr?c_V? trí_31
+PLC/取料2_Z轴5_Axis_Pos,取料2_Z轴5_Axis_Pos_32,29864,取料2_Z轴5_Axis_Pos_32,Pickup 2_Z Axis 5_Axis_Pos_32,L?y v?t li?u 2_Tr?c Z 5_Tr?c_V? trí_32
+PLC/取料2_Z轴5_Axis_Pos,取料2_Z轴5_Axis_Pos_33,29866,取料2_Z轴5_Axis_Pos_33,Pickup 2_Z Axis 5_Axis_Pos_33,L?y v?t li?u 2_Tr?c Z 5_Tr?c_V? trí_33
+PLC/取料2_Z轴5_Axis_Pos,取料2_Z轴5_Axis_Pos_34,29868,取料2_Z轴5_Axis_Pos_34,Pickup 2_Z Axis 5_Axis_Pos_34,L?y v?t li?u 2_Tr?c Z 5_Tr?c_V? trí_34
+PLC/取料2_Z轴5_Axis_Pos,取料2_Z轴5_Axis_Pos_35,29870,取料2_Z轴5_Axis_Pos_35,Pickup 2_Z Axis 5_Axis_Pos_35,L?y v?t li?u 2_Tr?c Z 5_Tr?c_V? trí_35
+PLC/取料2_Z轴5_Axis_Pos,取料2_Z轴5_Axis_Pos_36,29872,取料2_Z轴5_Axis_Pos_36,Pickup 2_Z Axis 5_Axis_Pos_36,L?y v?t li?u 2_Tr?c Z 5_Tr?c_V? trí_36
+PLC/取料2_Z轴5_Axis_Pos,取料2_Z轴5_Axis_Pos_37,29874,取料2_Z轴5_Axis_Pos_37,Pickup 2_Z Axis 5_Axis_Pos_37,L?y v?t li?u 2_Tr?c Z 5_Tr?c_V? trí_37
+PLC/取料2_Z轴5_Axis_Pos,取料2_Z轴5_Axis_Pos_38,29876,取料2_Z轴5_Axis_Pos_38,Pickup 2_Z Axis 5_Axis_Pos_38,L?y v?t li?u 2_Tr?c Z 5_Tr?c_V? trí_38
+PLC/取料2_Z轴5_Axis_Pos,取料2_Z轴5_Axis_Pos_39,29878,取料2_Z轴5_Axis_Pos_39,Pickup 2_Z Axis 5_Axis_Pos_39,L?y v?t li?u 2_Tr?c Z 5_Tr?c_V? trí_39
+PLC/取料2_Z轴5_Axis_Pos,取料2_Z轴5_Axis_Pos_40,29880,取料2_Z轴5_Axis_Pos_40,Pickup 2_Z Axis 5_Axis_Pos_40,L?y v?t li?u 2_Tr?c Z 5_Tr?c_V? trí_40
+PLC/取料2_Z轴5_Axis_Pos,取料2_Z轴5_Axis_Pos_41,29882,取料2_Z轴5_Axis_Pos_41,Pickup 2_Z Axis 5_Axis_Pos_41,L?y v?t li?u 2_Tr?c Z 5_Tr?c_V? trí_41
+PLC/取料2_Z轴5_Axis_Pos,取料2_Z轴5_Axis_Pos_42,29884,取料2_Z轴5_Axis_Pos_42,Pickup 2_Z Axis 5_Axis_Pos_42,L?y v?t li?u 2_Tr?c Z 5_Tr?c_V? trí_42
+PLC/取料2_Z轴5_Axis_Pos,取料2_Z轴5_Axis_Pos_43,29886,取料2_Z轴5_Axis_Pos_43,Pickup 2_Z Axis 5_Axis_Pos_43,L?y v?t li?u 2_Tr?c Z 5_Tr?c_V? trí_43
+PLC/取料2_Z轴5_Axis_Pos,取料2_Z轴5_Axis_Pos_44,29888,取料2_Z轴5_Axis_Pos_44,Pickup 2_Z Axis 5_Axis_Pos_44,L?y v?t li?u 2_Tr?c Z 5_Tr?c_V? trí_44
+PLC/取料2_Z轴5_Axis_Pos,取料2_Z轴5_Axis_Pos_45,29890,取料2_Z轴5_Axis_Pos_45,Pickup 2_Z Axis 5_Axis_Pos_45,L?y v?t li?u 2_Tr?c Z 5_Tr?c_V? trí_45
+PLC/取料2_Z轴5_Axis_Pos,取料2_Z轴5_Axis_Pos_46,29892,取料2_Z轴5_Axis_Pos_46,Pickup 2_Z Axis 5_Axis_Pos_46,L?y v?t li?u 2_Tr?c Z 5_Tr?c_V? trí_46
+PLC/取料2_Z轴5_Axis_Pos,取料2_Z轴5_Axis_Pos_47,29894,取料2_Z轴5_Axis_Pos_47,Pickup 2_Z Axis 5_Axis_Pos_47,L?y v?t li?u 2_Tr?c Z 5_Tr?c_V? trí_47
+PLC/取料2_Z轴5_Axis_Vel,取料2_Z轴5_Axis_Vel_0,29900,取料2_Z轴5_Axis_Vel_0,Pickup 2_Z Axis 5_Axis_Vel_0,L?y v?t li?u 2_Tr?c Z 5_Tr?c_V?n t?c_0
+PLC/取料2_Z轴5_Axis_Vel,取料2_Z轴5_Axis_Vel_1,29902,取料2_Z轴5_Axis_Vel_1,Pickup 2_Z Axis 5_Axis_Vel_1,L?y v?t li?u 2_Tr?c Z 5_Tr?c_V?n t?c_1
+PLC/取料2_Z轴5_Axis_Vel,取料2_Z轴5_Axis_Vel_2,29904,取料2_Z轴5_Axis_Vel_2,Pickup 2_Z Axis 5_Axis_Vel_2,L?y v?t li?u 2_Tr?c Z 5_Tr?c_V?n t?c_2
+PLC/取料2_Z轴5_Axis_Vel,取料2_Z轴5_Axis_Vel_3,29906,取料2_Z轴5_Axis_Vel_3,Pickup 2_Z Axis 5_Axis_Vel_3,L?y v?t li?u 2_Tr?c Z 5_Tr?c_V?n t?c_3
+PLC/取料2_Z轴5_Axis_Vel,取料2_Z轴5_Axis_Vel_4,29908,取料2_Z轴5_Axis_Vel_4,Pickup 2_Z Axis 5_Axis_Vel_4,L?y v?t li?u 2_Tr?c Z 5_Tr?c_V?n t?c_4
+PLC/取料2_Z轴5_Axis_Vel,取料2_Z轴5_Axis_Vel_5,29910,取料2_Z轴5_Axis_Vel_5,Pickup 2_Z Axis 5_Axis_Vel_5,L?y v?t li?u 2_Tr?c Z 5_Tr?c_V?n t?c_5
+PLC/取料2_Z轴5_Axis_Vel,取料2_Z轴5_Axis_Vel_6,29912,取料2_Z轴5_Axis_Vel_6,Pickup 2_Z Axis 5_Axis_Vel_6,L?y v?t li?u 2_Tr?c Z 5_Tr?c_V?n t?c_6
+PLC/取料2_Z轴5_Axis_Vel,取料2_Z轴5_Axis_Vel_7,29914,取料2_Z轴5_Axis_Vel_7,Pickup 2_Z Axis 5_Axis_Vel_7,L?y v?t li?u 2_Tr?c Z 5_Tr?c_V?n t?c_7
+PLC/取料2_Z轴5_Axis_Vel,取料2_Z轴5_Axis_Vel_8,29916,取料2_Z轴5_Axis_Vel_8,Pickup 2_Z Axis 5_Axis_Vel_8,L?y v?t li?u 2_Tr?c Z 5_Tr?c_V?n t?c_8
+PLC/取料2_Z轴5_Axis_Vel,取料2_Z轴5_Axis_Vel_9,29918,取料2_Z轴5_Axis_Vel_9,Pickup 2_Z Axis 5_Axis_Vel_9,L?y v?t li?u 2_Tr?c Z 5_Tr?c_V?n t?c_9
+PLC/取料2_Z轴5_Axis_Vel,取料2_Z轴5_Axis_Vel_10,29920,取料2_Z轴5_Axis_Vel_10,Pickup 2_Z Axis 5_Axis_Vel_10,L?y v?t li?u 2_Tr?c Z 5_Tr?c_V?n t?c_10
+PLC/取料2_Z轴5_Axis_Vel,取料2_Z轴5_Axis_Vel_11,29922,取料2_Z轴5_Axis_Vel_11,Pickup 2_Z Axis 5_Axis_Vel_11,L?y v?t li?u 2_Tr?c Z 5_Tr?c_V?n t?c_11
+PLC/取料2_Z轴5_Axis_Vel,取料2_Z轴5_Axis_Vel_12,29924,取料2_Z轴5_Axis_Vel_12,Pickup 2_Z Axis 5_Axis_Vel_12,L?y v?t li?u 2_Tr?c Z 5_Tr?c_V?n t?c_12
+PLC/取料2_Z轴5_Axis_Vel,取料2_Z轴5_Axis_Vel_13,29926,取料2_Z轴5_Axis_Vel_13,Pickup 2_Z Axis 5_Axis_Vel_13,L?y v?t li?u 2_Tr?c Z 5_Tr?c_V?n t?c_13
+PLC/取料2_Z轴5_Axis_Vel,取料2_Z轴5_Axis_Vel_14,29928,取料2_Z轴5_Axis_Vel_14,Pickup 2_Z Axis 5_Axis_Vel_14,L?y v?t li?u 2_Tr?c Z 5_Tr?c_V?n t?c_14
+PLC/取料2_Z轴5_Axis_Vel,取料2_Z轴5_Axis_Vel_15,29930,取料2_Z轴5_Axis_Vel_15,Pickup 2_Z Axis 5_Axis_Vel_15,L?y v?t li?u 2_Tr?c Z 5_Tr?c_V?n t?c_15
+PLC/取料2_Z轴5_Axis_Vel,取料2_Z轴5_Axis_Vel_16,29932,取料2_Z轴5_Axis_Vel_16,Pickup 2_Z Axis 5_Axis_Vel_16,L?y v?t li?u 2_Tr?c Z 5_Tr?c_V?n t?c_16
+PLC/取料2_Z轴5_Axis_Vel,取料2_Z轴5_Axis_Vel_17,29934,取料2_Z轴5_Axis_Vel_17,Pickup 2_Z Axis 5_Axis_Vel_17,L?y v?t li?u 2_Tr?c Z 5_Tr?c_V?n t?c_17
+PLC/取料2_Z轴5_Axis_Vel,取料2_Z轴5_Axis_Vel_18,29936,取料2_Z轴5_Axis_Vel_18,Pickup 2_Z Axis 5_Axis_Vel_18,L?y v?t li?u 2_Tr?c Z 5_Tr?c_V?n t?c_18
+PLC/取料2_Z轴5_Axis_Vel,取料2_Z轴5_Axis_Vel_19,29938,取料2_Z轴5_Axis_Vel_19,Pickup 2_Z Axis 5_Axis_Vel_19,L?y v?t li?u 2_Tr?c Z 5_Tr?c_V?n t?c_19
+PLC/取料2_Z轴5_Axis_Vel,取料2_Z轴5_Axis_Vel_20,29940,取料2_Z轴5_Axis_Vel_20,Pickup 2_Z Axis 5_Axis_Vel_20,L?y v?t li?u 2_Tr?c Z 5_Tr?c_V?n t?c_20
+PLC/取料2_Z轴5_Axis_Vel,取料2_Z轴5_Axis_Vel_21,29942,取料2_Z轴5_Axis_Vel_21,Pickup 2_Z Axis 5_Axis_Vel_21,L?y v?t li?u 2_Tr?c Z 5_Tr?c_V?n t?c_21
+PLC/取料2_Z轴5_Axis_Vel,取料2_Z轴5_Axis_Vel_22,29944,取料2_Z轴5_Axis_Vel_22,Pickup 2_Z Axis 5_Axis_Vel_22,L?y v?t li?u 2_Tr?c Z 5_Tr?c_V?n t?c_22
+PLC/取料2_Z轴5_Axis_Vel,取料2_Z轴5_Axis_Vel_23,29946,取料2_Z轴5_Axis_Vel_23,Pickup 2_Z Axis 5_Axis_Vel_23,L?y v?t li?u 2_Tr?c Z 5_Tr?c_V?n t?c_23
+PLC/取料2_Z轴5_Axis_Vel,取料2_Z轴5_Axis_Vel_24,29948,取料2_Z轴5_Axis_Vel_24,Pickup 2_Z Axis 5_Axis_Vel_24,L?y v?t li?u 2_Tr?c Z 5_Tr?c_V?n t?c_24
+PLC/取料2_Z轴5_Axis_Vel,取料2_Z轴5_Axis_Vel_25,29950,取料2_Z轴5_Axis_Vel_25,Pickup 2_Z Axis 5_Axis_Vel_25,L?y v?t li?u 2_Tr?c Z 5_Tr?c_V?n t?c_25
+PLC/取料2_Z轴5_Axis_Vel,取料2_Z轴5_Axis_Vel_26,29952,取料2_Z轴5_Axis_Vel_26,Pickup 2_Z Axis 5_Axis_Vel_26,L?y v?t li?u 2_Tr?c Z 5_Tr?c_V?n t?c_26
+PLC/取料2_Z轴5_Axis_Vel,取料2_Z轴5_Axis_Vel_27,29954,取料2_Z轴5_Axis_Vel_27,Pickup 2_Z Axis 5_Axis_Vel_27,L?y v?t li?u 2_Tr?c Z 5_Tr?c_V?n t?c_27
+PLC/取料2_Z轴5_Axis_Vel,取料2_Z轴5_Axis_Vel_28,29956,取料2_Z轴5_Axis_Vel_28,Pickup 2_Z Axis 5_Axis_Vel_28,L?y v?t li?u 2_Tr?c Z 5_Tr?c_V?n t?c_28
+PLC/取料2_Z轴5_Axis_Vel,取料2_Z轴5_Axis_Vel_29,29958,取料2_Z轴5_Axis_Vel_29,Pickup 2_Z Axis 5_Axis_Vel_29,L?y v?t li?u 2_Tr?c Z 5_Tr?c_V?n t?c_29
+PLC/取料2_Z轴5_Axis_Vel,取料2_Z轴5_Axis_Vel_30,29960,取料2_Z轴5_Axis_Vel_30,Pickup 2_Z Axis 5_Axis_Vel_30,L?y v?t li?u 2_Tr?c Z 5_Tr?c_V?n t?c_30
+PLC/取料2_Z轴5_Axis_Vel,取料2_Z轴5_Axis_Vel_31,29962,取料2_Z轴5_Axis_Vel_31,Pickup 2_Z Axis 5_Axis_Vel_31,L?y v?t li?u 2_Tr?c Z 5_Tr?c_V?n t?c_31
+PLC/取料2_Z轴5_Axis_Vel,取料2_Z轴5_Axis_Vel_32,29964,取料2_Z轴5_Axis_Vel_32,Pickup 2_Z Axis 5_Axis_Vel_32,L?y v?t li?u 2_Tr?c Z 5_Tr?c_V?n t?c_32
+PLC/取料2_Z轴5_Axis_Vel,取料2_Z轴5_Axis_Vel_33,29966,取料2_Z轴5_Axis_Vel_33,Pickup 2_Z Axis 5_Axis_Vel_33,L?y v?t li?u 2_Tr?c Z 5_Tr?c_V?n t?c_33
+PLC/取料2_Z轴5_Axis_Vel,取料2_Z轴5_Axis_Vel_34,29968,取料2_Z轴5_Axis_Vel_34,Pickup 2_Z Axis 5_Axis_Vel_34,L?y v?t li?u 2_Tr?c Z 5_Tr?c_V?n t?c_34
+PLC/取料2_Z轴5_Axis_Vel,取料2_Z轴5_Axis_Vel_35,29970,取料2_Z轴5_Axis_Vel_35,Pickup 2_Z Axis 5_Axis_Vel_35,L?y v?t li?u 2_Tr?c Z 5_Tr?c_V?n t?c_35
+PLC/取料2_Z轴5_Axis_Vel,取料2_Z轴5_Axis_Vel_36,29972,取料2_Z轴5_Axis_Vel_36,Pickup 2_Z Axis 5_Axis_Vel_36,L?y v?t li?u 2_Tr?c Z 5_Tr?c_V?n t?c_36
+PLC/取料2_Z轴5_Axis_Vel,取料2_Z轴5_Axis_Vel_37,29974,取料2_Z轴5_Axis_Vel_37,Pickup 2_Z Axis 5_Axis_Vel_37,L?y v?t li?u 2_Tr?c Z 5_Tr?c_V?n t?c_37
+PLC/取料2_Z轴5_Axis_Vel,取料2_Z轴5_Axis_Vel_38,29976,取料2_Z轴5_Axis_Vel_38,Pickup 2_Z Axis 5_Axis_Vel_38,L?y v?t li?u 2_Tr?c Z 5_Tr?c_V?n t?c_38
+PLC/取料2_Z轴5_Axis_Vel,取料2_Z轴5_Axis_Vel_39,29978,取料2_Z轴5_Axis_Vel_39,Pickup 2_Z Axis 5_Axis_Vel_39,L?y v?t li?u 2_Tr?c Z 5_Tr?c_V?n t?c_39
+PLC/取料2_Z轴5_Axis_Vel,取料2_Z轴5_Axis_Vel_40,29980,取料2_Z轴5_Axis_Vel_40,Pickup 2_Z Axis 5_Axis_Vel_40,L?y v?t li?u 2_Tr?c Z 5_Tr?c_V?n t?c_40
+PLC/取料2_Z轴5_Axis_Vel,取料2_Z轴5_Axis_Vel_41,29982,取料2_Z轴5_Axis_Vel_41,Pickup 2_Z Axis 5_Axis_Vel_41,L?y v?t li?u 2_Tr?c Z 5_Tr?c_V?n t?c_41
+PLC/取料2_Z轴5_Axis_Vel,取料2_Z轴5_Axis_Vel_42,29984,取料2_Z轴5_Axis_Vel_42,Pickup 2_Z Axis 5_Axis_Vel_42,L?y v?t li?u 2_Tr?c Z 5_Tr?c_V?n t?c_42
+PLC/取料2_Z轴5_Axis_Vel,取料2_Z轴5_Axis_Vel_43,29986,取料2_Z轴5_Axis_Vel_43,Pickup 2_Z Axis 5_Axis_Vel_43,L?y v?t li?u 2_Tr?c Z 5_Tr?c_V?n t?c_43
+PLC/取料2_Z轴5_Axis_Vel,取料2_Z轴5_Axis_Vel_44,29988,取料2_Z轴5_Axis_Vel_44,Pickup 2_Z Axis 5_Axis_Vel_44,L?y v?t li?u 2_Tr?c Z 5_Tr?c_V?n t?c_44
+PLC/取料2_Z轴5_Axis_Vel,取料2_Z轴5_Axis_Vel_45,29990,取料2_Z轴5_Axis_Vel_45,Pickup 2_Z Axis 5_Axis_Vel_45,L?y v?t li?u 2_Tr?c Z 5_Tr?c_V?n t?c_45
+PLC/取料2_Z轴5_Axis_Vel,取料2_Z轴5_Axis_Vel_46,29992,取料2_Z轴5_Axis_Vel_46,Pickup 2_Z Axis 5_Axis_Vel_46,L?y v?t li?u 2_Tr?c Z 5_Tr?c_V?n t?c_46
+PLC/取料2_Z轴5_Axis_Vel,取料2_Z轴5_Axis_Vel_47,29994,取料2_Z轴5_Axis_Vel_47,Pickup 2_Z Axis 5_Axis_Vel_47,L?y v?t li?u 2_Tr?c Z 5_Tr?c_V?n t?c_47
+PLC/取料2_R轴5_Axis_Pos,取料2_R轴5_Axis_Pos_0,30000,取料2_R轴5_Axis_Pos_0,Pickup 2_R Axis 5_Axis_Pos_0,L?y v?t li?u 2_Tr?c R 5_Tr?c_V? trí_0
+PLC/取料2_R轴5_Axis_Pos,取料2_R轴5_Axis_Pos_1,30002,取料2_R轴5_Axis_Pos_1,Pickup 2_R Axis 5_Axis_Pos_1,L?y v?t li?u 2_Tr?c R 5_Tr?c_V? trí_1
+PLC/取料2_R轴5_Axis_Pos,取料2_R轴5_Axis_Pos_2,30004,取料2_R轴5_Axis_Pos_2,Pickup 2_R Axis 5_Axis_Pos_2,L?y v?t li?u 2_Tr?c R 5_Tr?c_V? trí_2
+PLC/取料2_R轴5_Axis_Pos,取料2_R轴5_Axis_Pos_3,30006,取料2_R轴5_Axis_Pos_3,Pickup 2_R Axis 5_Axis_Pos_3,L?y v?t li?u 2_Tr?c R 5_Tr?c_V? trí_3
+PLC/取料2_R轴5_Axis_Pos,取料2_R轴5_Axis_Pos_4,30008,取料2_R轴5_Axis_Pos_4,Pickup 2_R Axis 5_Axis_Pos_4,L?y v?t li?u 2_Tr?c R 5_Tr?c_V? trí_4
+PLC/取料2_R轴5_Axis_Pos,取料2_R轴5_Axis_Pos_5,30010,取料2_R轴5_Axis_Pos_5,Pickup 2_R Axis 5_Axis_Pos_5,L?y v?t li?u 2_Tr?c R 5_Tr?c_V? trí_5
+PLC/取料2_R轴5_Axis_Pos,取料2_R轴5_Axis_Pos_6,30012,取料2_R轴5_Axis_Pos_6,Pickup 2_R Axis 5_Axis_Pos_6,L?y v?t li?u 2_Tr?c R 5_Tr?c_V? trí_6
+PLC/取料2_R轴5_Axis_Pos,取料2_R轴5_Axis_Pos_7,30014,取料2_R轴5_Axis_Pos_7,Pickup 2_R Axis 5_Axis_Pos_7,L?y v?t li?u 2_Tr?c R 5_Tr?c_V? trí_7
+PLC/取料2_R轴5_Axis_Pos,取料2_R轴5_Axis_Pos_8,30016,取料2_R轴5_Axis_Pos_8,Pickup 2_R Axis 5_Axis_Pos_8,L?y v?t li?u 2_Tr?c R 5_Tr?c_V? trí_8
+PLC/取料2_R轴5_Axis_Pos,取料2_R轴5_Axis_Pos_9,30018,取料2_R轴5_Axis_Pos_9,Pickup 2_R Axis 5_Axis_Pos_9,L?y v?t li?u 2_Tr?c R 5_Tr?c_V? trí_9
+PLC/取料2_R轴5_Axis_Pos,取料2_R轴5_Axis_Pos_10,30020,取料2_R轴5_Axis_Pos_10,Pickup 2_R Axis 5_Axis_Pos_10,L?y v?t li?u 2_Tr?c R 5_Tr?c_V? trí_10
+PLC/取料2_R轴5_Axis_Pos,取料2_R轴5_Axis_Pos_11,30022,取料2_R轴5_Axis_Pos_11,Pickup 2_R Axis 5_Axis_Pos_11,L?y v?t li?u 2_Tr?c R 5_Tr?c_V? trí_11
+PLC/取料2_R轴5_Axis_Pos,取料2_R轴5_Axis_Pos_12,30024,取料2_R轴5_Axis_Pos_12,Pickup 2_R Axis 5_Axis_Pos_12,L?y v?t li?u 2_Tr?c R 5_Tr?c_V? trí_12
+PLC/取料2_R轴5_Axis_Pos,取料2_R轴5_Axis_Pos_13,30026,取料2_R轴5_Axis_Pos_13,Pickup 2_R Axis 5_Axis_Pos_13,L?y v?t li?u 2_Tr?c R 5_Tr?c_V? trí_13
+PLC/取料2_R轴5_Axis_Pos,取料2_R轴5_Axis_Pos_14,30028,取料2_R轴5_Axis_Pos_14,Pickup 2_R Axis 5_Axis_Pos_14,L?y v?t li?u 2_Tr?c R 5_Tr?c_V? trí_14
+PLC/取料2_R轴5_Axis_Pos,取料2_R轴5_Axis_Pos_15,30030,取料2_R轴5_Axis_Pos_15,Pickup 2_R Axis 5_Axis_Pos_15,L?y v?t li?u 2_Tr?c R 5_Tr?c_V? trí_15
+PLC/取料2_R轴5_Axis_Pos,取料2_R轴5_Axis_Pos_16,30032,取料2_R轴5_Axis_Pos_16,Pickup 2_R Axis 5_Axis_Pos_16,L?y v?t li?u 2_Tr?c R 5_Tr?c_V? trí_16
+PLC/取料2_R轴5_Axis_Pos,取料2_R轴5_Axis_Pos_17,30034,取料2_R轴5_Axis_Pos_17,Pickup 2_R Axis 5_Axis_Pos_17,L?y v?t li?u 2_Tr?c R 5_Tr?c_V? trí_17
+PLC/取料2_R轴5_Axis_Pos,取料2_R轴5_Axis_Pos_18,30036,取料2_R轴5_Axis_Pos_18,Pickup 2_R Axis 5_Axis_Pos_18,L?y v?t li?u 2_Tr?c R 5_Tr?c_V? trí_18
+PLC/取料2_R轴5_Axis_Pos,取料2_R轴5_Axis_Pos_19,30038,取料2_R轴5_Axis_Pos_19,Pickup 2_R Axis 5_Axis_Pos_19,L?y v?t li?u 2_Tr?c R 5_Tr?c_V? trí_19
+PLC/取料2_R轴5_Axis_Pos,取料2_R轴5_Axis_Pos_20,30040,取料2_R轴5_Axis_Pos_20,Pickup 2_R Axis 5_Axis_Pos_20,L?y v?t li?u 2_Tr?c R 5_Tr?c_V? trí_20
+PLC/取料2_R轴5_Axis_Pos,取料2_R轴5_Axis_Pos_21,30042,取料2_R轴5_Axis_Pos_21,Pickup 2_R Axis 5_Axis_Pos_21,L?y v?t li?u 2_Tr?c R 5_Tr?c_V? trí_21
+PLC/取料2_R轴5_Axis_Pos,取料2_R轴5_Axis_Pos_22,30044,取料2_R轴5_Axis_Pos_22,Pickup 2_R Axis 5_Axis_Pos_22,L?y v?t li?u 2_Tr?c R 5_Tr?c_V? trí_22
+PLC/取料2_R轴5_Axis_Pos,取料2_R轴5_Axis_Pos_23,30046,取料2_R轴5_Axis_Pos_23,Pickup 2_R Axis 5_Axis_Pos_23,L?y v?t li?u 2_Tr?c R 5_Tr?c_V? trí_23
+PLC/取料2_R轴5_Axis_Pos,取料2_R轴5_Axis_Pos_24,30048,取料2_R轴5_Axis_Pos_24,Pickup 2_R Axis 5_Axis_Pos_24,L?y v?t li?u 2_Tr?c R 5_Tr?c_V? trí_24
+PLC/取料2_R轴5_Axis_Pos,取料2_R轴5_Axis_Pos_25,30050,取料2_R轴5_Axis_Pos_25,Pickup 2_R Axis 5_Axis_Pos_25,L?y v?t li?u 2_Tr?c R 5_Tr?c_V? trí_25
+PLC/取料2_R轴5_Axis_Pos,取料2_R轴5_Axis_Pos_26,30052,取料2_R轴5_Axis_Pos_26,Pickup 2_R Axis 5_Axis_Pos_26,L?y v?t li?u 2_Tr?c R 5_Tr?c_V? trí_26
+PLC/取料2_R轴5_Axis_Pos,取料2_R轴5_Axis_Pos_27,30054,取料2_R轴5_Axis_Pos_27,Pickup 2_R Axis 5_Axis_Pos_27,L?y v?t li?u 2_Tr?c R 5_Tr?c_V? trí_27
+PLC/取料2_R轴5_Axis_Pos,取料2_R轴5_Axis_Pos_28,30056,取料2_R轴5_Axis_Pos_28,Pickup 2_R Axis 5_Axis_Pos_28,L?y v?t li?u 2_Tr?c R 5_Tr?c_V? trí_28
+PLC/取料2_R轴5_Axis_Pos,取料2_R轴5_Axis_Pos_29,30058,取料2_R轴5_Axis_Pos_29,Pickup 2_R Axis 5_Axis_Pos_29,L?y v?t li?u 2_Tr?c R 5_Tr?c_V? trí_29
+PLC/取料2_R轴5_Axis_Pos,取料2_R轴5_Axis_Pos_30,30060,取料2_R轴5_Axis_Pos_30,Pickup 2_R Axis 5_Axis_Pos_30,L?y v?t li?u 2_Tr?c R 5_Tr?c_V? trí_30
+PLC/取料2_R轴5_Axis_Pos,取料2_R轴5_Axis_Pos_31,30062,取料2_R轴5_Axis_Pos_31,Pickup 2_R Axis 5_Axis_Pos_31,L?y v?t li?u 2_Tr?c R 5_Tr?c_V? trí_31
+PLC/取料2_R轴5_Axis_Pos,取料2_R轴5_Axis_Pos_32,30064,取料2_R轴5_Axis_Pos_32,Pickup 2_R Axis 5_Axis_Pos_32,L?y v?t li?u 2_Tr?c R 5_Tr?c_V? trí_32
+PLC/取料2_R轴5_Axis_Pos,取料2_R轴5_Axis_Pos_33,30066,取料2_R轴5_Axis_Pos_33,Pickup 2_R Axis 5_Axis_Pos_33,L?y v?t li?u 2_Tr?c R 5_Tr?c_V? trí_33
+PLC/取料2_R轴5_Axis_Pos,取料2_R轴5_Axis_Pos_34,30068,取料2_R轴5_Axis_Pos_34,Pickup 2_R Axis 5_Axis_Pos_34,L?y v?t li?u 2_Tr?c R 5_Tr?c_V? trí_34
+PLC/取料2_R轴5_Axis_Pos,取料2_R轴5_Axis_Pos_35,30070,取料2_R轴5_Axis_Pos_35,Pickup 2_R Axis 5_Axis_Pos_35,L?y v?t li?u 2_Tr?c R 5_Tr?c_V? trí_35
+PLC/取料2_R轴5_Axis_Pos,取料2_R轴5_Axis_Pos_36,30072,取料2_R轴5_Axis_Pos_36,Pickup 2_R Axis 5_Axis_Pos_36,L?y v?t li?u 2_Tr?c R 5_Tr?c_V? trí_36
+PLC/取料2_R轴5_Axis_Pos,取料2_R轴5_Axis_Pos_37,30074,取料2_R轴5_Axis_Pos_37,Pickup 2_R Axis 5_Axis_Pos_37,L?y v?t li?u 2_Tr?c R 5_Tr?c_V? trí_37
+PLC/取料2_R轴5_Axis_Pos,取料2_R轴5_Axis_Pos_38,30076,取料2_R轴5_Axis_Pos_38,Pickup 2_R Axis 5_Axis_Pos_38,L?y v?t li?u 2_Tr?c R 5_Tr?c_V? trí_38
+PLC/取料2_R轴5_Axis_Pos,取料2_R轴5_Axis_Pos_39,30078,取料2_R轴5_Axis_Pos_39,Pickup 2_R Axis 5_Axis_Pos_39,L?y v?t li?u 2_Tr?c R 5_Tr?c_V? trí_39
+PLC/取料2_R轴5_Axis_Pos,取料2_R轴5_Axis_Pos_40,30080,取料2_R轴5_Axis_Pos_40,Pickup 2_R Axis 5_Axis_Pos_40,L?y v?t li?u 2_Tr?c R 5_Tr?c_V? trí_40
+PLC/取料2_R轴5_Axis_Pos,取料2_R轴5_Axis_Pos_41,30082,取料2_R轴5_Axis_Pos_41,Pickup 2_R Axis 5_Axis_Pos_41,L?y v?t li?u 2_Tr?c R 5_Tr?c_V? trí_41
+PLC/取料2_R轴5_Axis_Pos,取料2_R轴5_Axis_Pos_42,30084,取料2_R轴5_Axis_Pos_42,Pickup 2_R Axis 5_Axis_Pos_42,L?y v?t li?u 2_Tr?c R 5_Tr?c_V? trí_42
+PLC/取料2_R轴5_Axis_Pos,取料2_R轴5_Axis_Pos_43,30086,取料2_R轴5_Axis_Pos_43,Pickup 2_R Axis 5_Axis_Pos_43,L?y v?t li?u 2_Tr?c R 5_Tr?c_V? trí_43
+PLC/取料2_R轴5_Axis_Pos,取料2_R轴5_Axis_Pos_44,30088,取料2_R轴5_Axis_Pos_44,Pickup 2_R Axis 5_Axis_Pos_44,L?y v?t li?u 2_Tr?c R 5_Tr?c_V? trí_44
+PLC/取料2_R轴5_Axis_Pos,取料2_R轴5_Axis_Pos_45,30090,取料2_R轴5_Axis_Pos_45,Pickup 2_R Axis 5_Axis_Pos_45,L?y v?t li?u 2_Tr?c R 5_Tr?c_V? trí_45
+PLC/取料2_R轴5_Axis_Pos,取料2_R轴5_Axis_Pos_46,30092,取料2_R轴5_Axis_Pos_46,Pickup 2_R Axis 5_Axis_Pos_46,L?y v?t li?u 2_Tr?c R 5_Tr?c_V? trí_46
+PLC/取料2_R轴5_Axis_Pos,取料2_R轴5_Axis_Pos_47,30094,取料2_R轴5_Axis_Pos_47,Pickup 2_R Axis 5_Axis_Pos_47,L?y v?t li?u 2_Tr?c R 5_Tr?c_V? trí_47
+PLC/取料2_R轴5_Axis_Vel,取料2_R轴5_Axis_Vel_0,30100,取料2_R轴5_Axis_Vel_0,Pickup 2_R Axis 5_Axis_Vel_0,L?y v?t li?u 2_Tr?c R 5_Tr?c_V?n t?c_0
+PLC/取料2_R轴5_Axis_Vel,取料2_R轴5_Axis_Vel_1,30102,取料2_R轴5_Axis_Vel_1,Pickup 2_R Axis 5_Axis_Vel_1,L?y v?t li?u 2_Tr?c R 5_Tr?c_V?n t?c_1
+PLC/取料2_R轴5_Axis_Vel,取料2_R轴5_Axis_Vel_2,30104,取料2_R轴5_Axis_Vel_2,Pickup 2_R Axis 5_Axis_Vel_2,L?y v?t li?u 2_Tr?c R 5_Tr?c_V?n t?c_2
+PLC/取料2_R轴5_Axis_Vel,取料2_R轴5_Axis_Vel_3,30106,取料2_R轴5_Axis_Vel_3,Pickup 2_R Axis 5_Axis_Vel_3,L?y v?t li?u 2_Tr?c R 5_Tr?c_V?n t?c_3
+PLC/取料2_R轴5_Axis_Vel,取料2_R轴5_Axis_Vel_4,30108,取料2_R轴5_Axis_Vel_4,Pickup 2_R Axis 5_Axis_Vel_4,L?y v?t li?u 2_Tr?c R 5_Tr?c_V?n t?c_4
+PLC/取料2_R轴5_Axis_Vel,取料2_R轴5_Axis_Vel_5,30110,取料2_R轴5_Axis_Vel_5,Pickup 2_R Axis 5_Axis_Vel_5,L?y v?t li?u 2_Tr?c R 5_Tr?c_V?n t?c_5
+PLC/取料2_R轴5_Axis_Vel,取料2_R轴5_Axis_Vel_6,30112,取料2_R轴5_Axis_Vel_6,Pickup 2_R Axis 5_Axis_Vel_6,L?y v?t li?u 2_Tr?c R 5_Tr?c_V?n t?c_6
+PLC/取料2_R轴5_Axis_Vel,取料2_R轴5_Axis_Vel_7,30114,取料2_R轴5_Axis_Vel_7,Pickup 2_R Axis 5_Axis_Vel_7,L?y v?t li?u 2_Tr?c R 5_Tr?c_V?n t?c_7
+PLC/取料2_R轴5_Axis_Vel,取料2_R轴5_Axis_Vel_8,30116,取料2_R轴5_Axis_Vel_8,Pickup 2_R Axis 5_Axis_Vel_8,L?y v?t li?u 2_Tr?c R 5_Tr?c_V?n t?c_8
+PLC/取料2_R轴5_Axis_Vel,取料2_R轴5_Axis_Vel_9,30118,取料2_R轴5_Axis_Vel_9,Pickup 2_R Axis 5_Axis_Vel_9,L?y v?t li?u 2_Tr?c R 5_Tr?c_V?n t?c_9
+PLC/取料2_R轴5_Axis_Vel,取料2_R轴5_Axis_Vel_10,30120,取料2_R轴5_Axis_Vel_10,Pickup 2_R Axis 5_Axis_Vel_10,L?y v?t li?u 2_Tr?c R 5_Tr?c_V?n t?c_10
+PLC/取料2_R轴5_Axis_Vel,取料2_R轴5_Axis_Vel_11,30122,取料2_R轴5_Axis_Vel_11,Pickup 2_R Axis 5_Axis_Vel_11,L?y v?t li?u 2_Tr?c R 5_Tr?c_V?n t?c_11
+PLC/取料2_R轴5_Axis_Vel,取料2_R轴5_Axis_Vel_12,30124,取料2_R轴5_Axis_Vel_12,Pickup 2_R Axis 5_Axis_Vel_12,L?y v?t li?u 2_Tr?c R 5_Tr?c_V?n t?c_12
+PLC/取料2_R轴5_Axis_Vel,取料2_R轴5_Axis_Vel_13,30126,取料2_R轴5_Axis_Vel_13,Pickup 2_R Axis 5_Axis_Vel_13,L?y v?t li?u 2_Tr?c R 5_Tr?c_V?n t?c_13
+PLC/取料2_R轴5_Axis_Vel,取料2_R轴5_Axis_Vel_14,30128,取料2_R轴5_Axis_Vel_14,Pickup 2_R Axis 5_Axis_Vel_14,L?y v?t li?u 2_Tr?c R 5_Tr?c_V?n t?c_14
+PLC/取料2_R轴5_Axis_Vel,取料2_R轴5_Axis_Vel_15,30130,取料2_R轴5_Axis_Vel_15,Pickup 2_R Axis 5_Axis_Vel_15,L?y v?t li?u 2_Tr?c R 5_Tr?c_V?n t?c_15
+PLC/取料2_R轴5_Axis_Vel,取料2_R轴5_Axis_Vel_16,30132,取料2_R轴5_Axis_Vel_16,Pickup 2_R Axis 5_Axis_Vel_16,L?y v?t li?u 2_Tr?c R 5_Tr?c_V?n t?c_16
+PLC/取料2_R轴5_Axis_Vel,取料2_R轴5_Axis_Vel_17,30134,取料2_R轴5_Axis_Vel_17,Pickup 2_R Axis 5_Axis_Vel_17,L?y v?t li?u 2_Tr?c R 5_Tr?c_V?n t?c_17
+PLC/取料2_R轴5_Axis_Vel,取料2_R轴5_Axis_Vel_18,30136,取料2_R轴5_Axis_Vel_18,Pickup 2_R Axis 5_Axis_Vel_18,L?y v?t li?u 2_Tr?c R 5_Tr?c_V?n t?c_18
+PLC/取料2_R轴5_Axis_Vel,取料2_R轴5_Axis_Vel_19,30138,取料2_R轴5_Axis_Vel_19,Pickup 2_R Axis 5_Axis_Vel_19,L?y v?t li?u 2_Tr?c R 5_Tr?c_V?n t?c_19
+PLC/取料2_R轴5_Axis_Vel,取料2_R轴5_Axis_Vel_20,30140,取料2_R轴5_Axis_Vel_20,Pickup 2_R Axis 5_Axis_Vel_20,L?y v?t li?u 2_Tr?c R 5_Tr?c_V?n t?c_20
+PLC/取料2_R轴5_Axis_Vel,取料2_R轴5_Axis_Vel_21,30142,取料2_R轴5_Axis_Vel_21,Pickup 2_R Axis 5_Axis_Vel_21,L?y v?t li?u 2_Tr?c R 5_Tr?c_V?n t?c_21
+PLC/取料2_R轴5_Axis_Vel,取料2_R轴5_Axis_Vel_22,30144,取料2_R轴5_Axis_Vel_22,Pickup 2_R Axis 5_Axis_Vel_22,L?y v?t li?u 2_Tr?c R 5_Tr?c_V?n t?c_22
+PLC/取料2_R轴5_Axis_Vel,取料2_R轴5_Axis_Vel_23,30146,取料2_R轴5_Axis_Vel_23,Pickup 2_R Axis 5_Axis_Vel_23,L?y v?t li?u 2_Tr?c R 5_Tr?c_V?n t?c_23
+PLC/取料2_R轴5_Axis_Vel,取料2_R轴5_Axis_Vel_24,30148,取料2_R轴5_Axis_Vel_24,Pickup 2_R Axis 5_Axis_Vel_24,L?y v?t li?u 2_Tr?c R 5_Tr?c_V?n t?c_24
+PLC/取料2_R轴5_Axis_Vel,取料2_R轴5_Axis_Vel_25,30150,取料2_R轴5_Axis_Vel_25,Pickup 2_R Axis 5_Axis_Vel_25,L?y v?t li?u 2_Tr?c R 5_Tr?c_V?n t?c_25
+PLC/取料2_R轴5_Axis_Vel,取料2_R轴5_Axis_Vel_26,30152,取料2_R轴5_Axis_Vel_26,Pickup 2_R Axis 5_Axis_Vel_26,L?y v?t li?u 2_Tr?c R 5_Tr?c_V?n t?c_26
+PLC/取料2_R轴5_Axis_Vel,取料2_R轴5_Axis_Vel_27,30154,取料2_R轴5_Axis_Vel_27,Pickup 2_R Axis 5_Axis_Vel_27,L?y v?t li?u 2_Tr?c R 5_Tr?c_V?n t?c_27
+PLC/取料2_R轴5_Axis_Vel,取料2_R轴5_Axis_Vel_28,30156,取料2_R轴5_Axis_Vel_28,Pickup 2_R Axis 5_Axis_Vel_28,L?y v?t li?u 2_Tr?c R 5_Tr?c_V?n t?c_28
+PLC/取料2_R轴5_Axis_Vel,取料2_R轴5_Axis_Vel_29,30158,取料2_R轴5_Axis_Vel_29,Pickup 2_R Axis 5_Axis_Vel_29,L?y v?t li?u 2_Tr?c R 5_Tr?c_V?n t?c_29
+PLC/取料2_R轴5_Axis_Vel,取料2_R轴5_Axis_Vel_30,30160,取料2_R轴5_Axis_Vel_30,Pickup 2_R Axis 5_Axis_Vel_30,L?y v?t li?u 2_Tr?c R 5_Tr?c_V?n t?c_30
+PLC/取料2_R轴5_Axis_Vel,取料2_R轴5_Axis_Vel_31,30162,取料2_R轴5_Axis_Vel_31,Pickup 2_R Axis 5_Axis_Vel_31,L?y v?t li?u 2_Tr?c R 5_Tr?c_V?n t?c_31
+PLC/取料2_R轴5_Axis_Vel,取料2_R轴5_Axis_Vel_32,30164,取料2_R轴5_Axis_Vel_32,Pickup 2_R Axis 5_Axis_Vel_32,L?y v?t li?u 2_Tr?c R 5_Tr?c_V?n t?c_32
+PLC/取料2_R轴5_Axis_Vel,取料2_R轴5_Axis_Vel_33,30166,取料2_R轴5_Axis_Vel_33,Pickup 2_R Axis 5_Axis_Vel_33,L?y v?t li?u 2_Tr?c R 5_Tr?c_V?n t?c_33
+PLC/取料2_R轴5_Axis_Vel,取料2_R轴5_Axis_Vel_34,30168,取料2_R轴5_Axis_Vel_34,Pickup 2_R Axis 5_Axis_Vel_34,L?y v?t li?u 2_Tr?c R 5_Tr?c_V?n t?c_34
+PLC/取料2_R轴5_Axis_Vel,取料2_R轴5_Axis_Vel_35,30170,取料2_R轴5_Axis_Vel_35,Pickup 2_R Axis 5_Axis_Vel_35,L?y v?t li?u 2_Tr?c R 5_Tr?c_V?n t?c_35
+PLC/取料2_R轴5_Axis_Vel,取料2_R轴5_Axis_Vel_36,30172,取料2_R轴5_Axis_Vel_36,Pickup 2_R Axis 5_Axis_Vel_36,L?y v?t li?u 2_Tr?c R 5_Tr?c_V?n t?c_36
+PLC/取料2_R轴5_Axis_Vel,取料2_R轴5_Axis_Vel_37,30174,取料2_R轴5_Axis_Vel_37,Pickup 2_R Axis 5_Axis_Vel_37,L?y v?t li?u 2_Tr?c R 5_Tr?c_V?n t?c_37
+PLC/取料2_R轴5_Axis_Vel,取料2_R轴5_Axis_Vel_38,30176,取料2_R轴5_Axis_Vel_38,Pickup 2_R Axis 5_Axis_Vel_38,L?y v?t li?u 2_Tr?c R 5_Tr?c_V?n t?c_38
+PLC/取料2_R轴5_Axis_Vel,取料2_R轴5_Axis_Vel_39,30178,取料2_R轴5_Axis_Vel_39,Pickup 2_R Axis 5_Axis_Vel_39,L?y v?t li?u 2_Tr?c R 5_Tr?c_V?n t?c_39
+PLC/取料2_R轴5_Axis_Vel,取料2_R轴5_Axis_Vel_40,30180,取料2_R轴5_Axis_Vel_40,Pickup 2_R Axis 5_Axis_Vel_40,L?y v?t li?u 2_Tr?c R 5_Tr?c_V?n t?c_40
+PLC/取料2_R轴5_Axis_Vel,取料2_R轴5_Axis_Vel_41,30182,取料2_R轴5_Axis_Vel_41,Pickup 2_R Axis 5_Axis_Vel_41,L?y v?t li?u 2_Tr?c R 5_Tr?c_V?n t?c_41
+PLC/取料2_R轴5_Axis_Vel,取料2_R轴5_Axis_Vel_42,30184,取料2_R轴5_Axis_Vel_42,Pickup 2_R Axis 5_Axis_Vel_42,L?y v?t li?u 2_Tr?c R 5_Tr?c_V?n t?c_42
+PLC/取料2_R轴5_Axis_Vel,取料2_R轴5_Axis_Vel_43,30186,取料2_R轴5_Axis_Vel_43,Pickup 2_R Axis 5_Axis_Vel_43,L?y v?t li?u 2_Tr?c R 5_Tr?c_V?n t?c_43
+PLC/取料2_R轴5_Axis_Vel,取料2_R轴5_Axis_Vel_44,30188,取料2_R轴5_Axis_Vel_44,Pickup 2_R Axis 5_Axis_Vel_44,L?y v?t li?u 2_Tr?c R 5_Tr?c_V?n t?c_44
+PLC/取料2_R轴5_Axis_Vel,取料2_R轴5_Axis_Vel_45,30190,取料2_R轴5_Axis_Vel_45,Pickup 2_R Axis 5_Axis_Vel_45,L?y v?t li?u 2_Tr?c R 5_Tr?c_V?n t?c_45
+PLC/取料2_R轴5_Axis_Vel,取料2_R轴5_Axis_Vel_46,30192,取料2_R轴5_Axis_Vel_46,Pickup 2_R Axis 5_Axis_Vel_46,L?y v?t li?u 2_Tr?c R 5_Tr?c_V?n t?c_46
+PLC/取料2_R轴5_Axis_Vel,取料2_R轴5_Axis_Vel_47,30194,取料2_R轴5_Axis_Vel_47,Pickup 2_R Axis 5_Axis_Vel_47,L?y v?t li?u 2_Tr?c R 5_Tr?c_V?n t?c_47
+PLC/取料2_Z轴6_Axis_Pos,取料2_Z轴6_Axis_Pos_0,30200,取料2_Z轴6_Axis_Pos_0,Pickup 2_Z Axis 6_Axis_Pos_0,L?y v?t li?u 2_Tr?c Z 6_Tr?c_V? trí_0
+PLC/取料2_Z轴6_Axis_Pos,取料2_Z轴6_Axis_Pos_1,30202,取料2_Z轴6_Axis_Pos_1,Pickup 2_Z Axis 6_Axis_Pos_1,L?y v?t li?u 2_Tr?c Z 6_Tr?c_V? trí_1
+PLC/取料2_Z轴6_Axis_Pos,取料2_Z轴6_Axis_Pos_2,30204,取料2_Z轴6_Axis_Pos_2,Pickup 2_Z Axis 6_Axis_Pos_2,L?y v?t li?u 2_Tr?c Z 6_Tr?c_V? trí_2
+PLC/取料2_Z轴6_Axis_Pos,取料2_Z轴6_Axis_Pos_3,30206,取料2_Z轴6_Axis_Pos_3,Pickup 2_Z Axis 6_Axis_Pos_3,L?y v?t li?u 2_Tr?c Z 6_Tr?c_V? trí_3
+PLC/取料2_Z轴6_Axis_Pos,取料2_Z轴6_Axis_Pos_4,30208,取料2_Z轴6_Axis_Pos_4,Pickup 2_Z Axis 6_Axis_Pos_4,L?y v?t li?u 2_Tr?c Z 6_Tr?c_V? trí_4
+PLC/取料2_Z轴6_Axis_Pos,取料2_Z轴6_Axis_Pos_5,30210,取料2_Z轴6_Axis_Pos_5,Pickup 2_Z Axis 6_Axis_Pos_5,L?y v?t li?u 2_Tr?c Z 6_Tr?c_V? trí_5
+PLC/取料2_Z轴6_Axis_Pos,取料2_Z轴6_Axis_Pos_6,30212,取料2_Z轴6_Axis_Pos_6,Pickup 2_Z Axis 6_Axis_Pos_6,L?y v?t li?u 2_Tr?c Z 6_Tr?c_V? trí_6
+PLC/取料2_Z轴6_Axis_Pos,取料2_Z轴6_Axis_Pos_7,30214,取料2_Z轴6_Axis_Pos_7,Pickup 2_Z Axis 6_Axis_Pos_7,L?y v?t li?u 2_Tr?c Z 6_Tr?c_V? trí_7
+PLC/取料2_Z轴6_Axis_Pos,取料2_Z轴6_Axis_Pos_8,30216,取料2_Z轴6_Axis_Pos_8,Pickup 2_Z Axis 6_Axis_Pos_8,L?y v?t li?u 2_Tr?c Z 6_Tr?c_V? trí_8
+PLC/取料2_Z轴6_Axis_Pos,取料2_Z轴6_Axis_Pos_9,30218,取料2_Z轴6_Axis_Pos_9,Pickup 2_Z Axis 6_Axis_Pos_9,L?y v?t li?u 2_Tr?c Z 6_Tr?c_V? trí_9
+PLC/取料2_Z轴6_Axis_Pos,取料2_Z轴6_Axis_Pos_10,30220,取料2_Z轴6_Axis_Pos_10,Pickup 2_Z Axis 6_Axis_Pos_10,L?y v?t li?u 2_Tr?c Z 6_Tr?c_V? trí_10
+PLC/取料2_Z轴6_Axis_Pos,取料2_Z轴6_Axis_Pos_11,30222,取料2_Z轴6_Axis_Pos_11,Pickup 2_Z Axis 6_Axis_Pos_11,L?y v?t li?u 2_Tr?c Z 6_Tr?c_V? trí_11
+PLC/取料2_Z轴6_Axis_Pos,取料2_Z轴6_Axis_Pos_12,30224,取料2_Z轴6_Axis_Pos_12,Pickup 2_Z Axis 6_Axis_Pos_12,L?y v?t li?u 2_Tr?c Z 6_Tr?c_V? trí_12
+PLC/取料2_Z轴6_Axis_Pos,取料2_Z轴6_Axis_Pos_13,30226,取料2_Z轴6_Axis_Pos_13,Pickup 2_Z Axis 6_Axis_Pos_13,L?y v?t li?u 2_Tr?c Z 6_Tr?c_V? trí_13
+PLC/取料2_Z轴6_Axis_Pos,取料2_Z轴6_Axis_Pos_14,30228,取料2_Z轴6_Axis_Pos_14,Pickup 2_Z Axis 6_Axis_Pos_14,L?y v?t li?u 2_Tr?c Z 6_Tr?c_V? trí_14
+PLC/取料2_Z轴6_Axis_Pos,取料2_Z轴6_Axis_Pos_15,30230,取料2_Z轴6_Axis_Pos_15,Pickup 2_Z Axis 6_Axis_Pos_15,L?y v?t li?u 2_Tr?c Z 6_Tr?c_V? trí_15
+PLC/取料2_Z轴6_Axis_Pos,取料2_Z轴6_Axis_Pos_16,30232,取料2_Z轴6_Axis_Pos_16,Pickup 2_Z Axis 6_Axis_Pos_16,L?y v?t li?u 2_Tr?c Z 6_Tr?c_V? trí_16
+PLC/取料2_Z轴6_Axis_Pos,取料2_Z轴6_Axis_Pos_17,30234,取料2_Z轴6_Axis_Pos_17,Pickup 2_Z Axis 6_Axis_Pos_17,L?y v?t li?u 2_Tr?c Z 6_Tr?c_V? trí_17
+PLC/取料2_Z轴6_Axis_Pos,取料2_Z轴6_Axis_Pos_18,30236,取料2_Z轴6_Axis_Pos_18,Pickup 2_Z Axis 6_Axis_Pos_18,L?y v?t li?u 2_Tr?c Z 6_Tr?c_V? trí_18
+PLC/取料2_Z轴6_Axis_Pos,取料2_Z轴6_Axis_Pos_19,30238,取料2_Z轴6_Axis_Pos_19,Pickup 2_Z Axis 6_Axis_Pos_19,L?y v?t li?u 2_Tr?c Z 6_Tr?c_V? trí_19
+PLC/取料2_Z轴6_Axis_Pos,取料2_Z轴6_Axis_Pos_20,30240,取料2_Z轴6_Axis_Pos_20,Pickup 2_Z Axis 6_Axis_Pos_20,L?y v?t li?u 2_Tr?c Z 6_Tr?c_V? trí_20
+PLC/取料2_Z轴6_Axis_Pos,取料2_Z轴6_Axis_Pos_21,30242,取料2_Z轴6_Axis_Pos_21,Pickup 2_Z Axis 6_Axis_Pos_21,L?y v?t li?u 2_Tr?c Z 6_Tr?c_V? trí_21
+PLC/取料2_Z轴6_Axis_Pos,取料2_Z轴6_Axis_Pos_22,30244,取料2_Z轴6_Axis_Pos_22,Pickup 2_Z Axis 6_Axis_Pos_22,L?y v?t li?u 2_Tr?c Z 6_Tr?c_V? trí_22
+PLC/取料2_Z轴6_Axis_Pos,取料2_Z轴6_Axis_Pos_23,30246,取料2_Z轴6_Axis_Pos_23,Pickup 2_Z Axis 6_Axis_Pos_23,L?y v?t li?u 2_Tr?c Z 6_Tr?c_V? trí_23
+PLC/取料2_Z轴6_Axis_Pos,取料2_Z轴6_Axis_Pos_24,30248,取料2_Z轴6_Axis_Pos_24,Pickup 2_Z Axis 6_Axis_Pos_24,L?y v?t li?u 2_Tr?c Z 6_Tr?c_V? trí_24
+PLC/取料2_Z轴6_Axis_Pos,取料2_Z轴6_Axis_Pos_25,30250,取料2_Z轴6_Axis_Pos_25,Pickup 2_Z Axis 6_Axis_Pos_25,L?y v?t li?u 2_Tr?c Z 6_Tr?c_V? trí_25
+PLC/取料2_Z轴6_Axis_Pos,取料2_Z轴6_Axis_Pos_26,30252,取料2_Z轴6_Axis_Pos_26,Pickup 2_Z Axis 6_Axis_Pos_26,L?y v?t li?u 2_Tr?c Z 6_Tr?c_V? trí_26
+PLC/取料2_Z轴6_Axis_Pos,取料2_Z轴6_Axis_Pos_27,30254,取料2_Z轴6_Axis_Pos_27,Pickup 2_Z Axis 6_Axis_Pos_27,L?y v?t li?u 2_Tr?c Z 6_Tr?c_V? trí_27
+PLC/取料2_Z轴6_Axis_Pos,取料2_Z轴6_Axis_Pos_28,30256,取料2_Z轴6_Axis_Pos_28,Pickup 2_Z Axis 6_Axis_Pos_28,L?y v?t li?u 2_Tr?c Z 6_Tr?c_V? trí_28
+PLC/取料2_Z轴6_Axis_Pos,取料2_Z轴6_Axis_Pos_29,30258,取料2_Z轴6_Axis_Pos_29,Pickup 2_Z Axis 6_Axis_Pos_29,L?y v?t li?u 2_Tr?c Z 6_Tr?c_V? trí_29
+PLC/取料2_Z轴6_Axis_Pos,取料2_Z轴6_Axis_Pos_30,30260,取料2_Z轴6_Axis_Pos_30,Pickup 2_Z Axis 6_Axis_Pos_30,L?y v?t li?u 2_Tr?c Z 6_Tr?c_V? trí_30
+PLC/取料2_Z轴6_Axis_Pos,取料2_Z轴6_Axis_Pos_31,30262,取料2_Z轴6_Axis_Pos_31,Pickup 2_Z Axis 6_Axis_Pos_31,L?y v?t li?u 2_Tr?c Z 6_Tr?c_V? trí_31
+PLC/取料2_Z轴6_Axis_Pos,取料2_Z轴6_Axis_Pos_32,30264,取料2_Z轴6_Axis_Pos_32,Pickup 2_Z Axis 6_Axis_Pos_32,L?y v?t li?u 2_Tr?c Z 6_Tr?c_V? trí_32
+PLC/取料2_Z轴6_Axis_Pos,取料2_Z轴6_Axis_Pos_33,30266,取料2_Z轴6_Axis_Pos_33,Pickup 2_Z Axis 6_Axis_Pos_33,L?y v?t li?u 2_Tr?c Z 6_Tr?c_V? trí_33
+PLC/取料2_Z轴6_Axis_Pos,取料2_Z轴6_Axis_Pos_34,30268,取料2_Z轴6_Axis_Pos_34,Pickup 2_Z Axis 6_Axis_Pos_34,L?y v?t li?u 2_Tr?c Z 6_Tr?c_V? trí_34
+PLC/取料2_Z轴6_Axis_Pos,取料2_Z轴6_Axis_Pos_35,30270,取料2_Z轴6_Axis_Pos_35,Pickup 2_Z Axis 6_Axis_Pos_35,L?y v?t li?u 2_Tr?c Z 6_Tr?c_V? trí_35
+PLC/取料2_Z轴6_Axis_Pos,取料2_Z轴6_Axis_Pos_36,30272,取料2_Z轴6_Axis_Pos_36,Pickup 2_Z Axis 6_Axis_Pos_36,L?y v?t li?u 2_Tr?c Z 6_Tr?c_V? trí_36
+PLC/取料2_Z轴6_Axis_Pos,取料2_Z轴6_Axis_Pos_37,30274,取料2_Z轴6_Axis_Pos_37,Pickup 2_Z Axis 6_Axis_Pos_37,L?y v?t li?u 2_Tr?c Z 6_Tr?c_V? trí_37
+PLC/取料2_Z轴6_Axis_Pos,取料2_Z轴6_Axis_Pos_38,30276,取料2_Z轴6_Axis_Pos_38,Pickup 2_Z Axis 6_Axis_Pos_38,L?y v?t li?u 2_Tr?c Z 6_Tr?c_V? trí_38
+PLC/取料2_Z轴6_Axis_Pos,取料2_Z轴6_Axis_Pos_39,30278,取料2_Z轴6_Axis_Pos_39,Pickup 2_Z Axis 6_Axis_Pos_39,L?y v?t li?u 2_Tr?c Z 6_Tr?c_V? trí_39
+PLC/取料2_Z轴6_Axis_Pos,取料2_Z轴6_Axis_Pos_40,30280,取料2_Z轴6_Axis_Pos_40,Pickup 2_Z Axis 6_Axis_Pos_40,L?y v?t li?u 2_Tr?c Z 6_Tr?c_V? trí_40
+PLC/取料2_Z轴6_Axis_Pos,取料2_Z轴6_Axis_Pos_41,30282,取料2_Z轴6_Axis_Pos_41,Pickup 2_Z Axis 6_Axis_Pos_41,L?y v?t li?u 2_Tr?c Z 6_Tr?c_V? trí_41
+PLC/取料2_Z轴6_Axis_Pos,取料2_Z轴6_Axis_Pos_42,30284,取料2_Z轴6_Axis_Pos_42,Pickup 2_Z Axis 6_Axis_Pos_42,L?y v?t li?u 2_Tr?c Z 6_Tr?c_V? trí_42
+PLC/取料2_Z轴6_Axis_Pos,取料2_Z轴6_Axis_Pos_43,30286,取料2_Z轴6_Axis_Pos_43,Pickup 2_Z Axis 6_Axis_Pos_43,L?y v?t li?u 2_Tr?c Z 6_Tr?c_V? trí_43
+PLC/取料2_Z轴6_Axis_Pos,取料2_Z轴6_Axis_Pos_44,30288,取料2_Z轴6_Axis_Pos_44,Pickup 2_Z Axis 6_Axis_Pos_44,L?y v?t li?u 2_Tr?c Z 6_Tr?c_V? trí_44
+PLC/取料2_Z轴6_Axis_Pos,取料2_Z轴6_Axis_Pos_45,30290,取料2_Z轴6_Axis_Pos_45,Pickup 2_Z Axis 6_Axis_Pos_45,L?y v?t li?u 2_Tr?c Z 6_Tr?c_V? trí_45
+PLC/取料2_Z轴6_Axis_Pos,取料2_Z轴6_Axis_Pos_46,30292,取料2_Z轴6_Axis_Pos_46,Pickup 2_Z Axis 6_Axis_Pos_46,L?y v?t li?u 2_Tr?c Z 6_Tr?c_V? trí_46
+PLC/取料2_Z轴6_Axis_Pos,取料2_Z轴6_Axis_Pos_47,30294,取料2_Z轴6_Axis_Pos_47,Pickup 2_Z Axis 6_Axis_Pos_47,L?y v?t li?u 2_Tr?c Z 6_Tr?c_V? trí_47
+PLC/取料2_Z轴6_Axis_Vel,取料2_Z轴6_Axis_Vel_0,30300,取料2_Z轴6_Axis_Vel_0,Pickup 2_Z Axis 6_Axis_Vel_0,L?y v?t li?u 2_Tr?c Z 6_Tr?c_V?n t?c_0
+PLC/取料2_Z轴6_Axis_Vel,取料2_Z轴6_Axis_Vel_1,30302,取料2_Z轴6_Axis_Vel_1,Pickup 2_Z Axis 6_Axis_Vel_1,L?y v?t li?u 2_Tr?c Z 6_Tr?c_V?n t?c_1
+PLC/取料2_Z轴6_Axis_Vel,取料2_Z轴6_Axis_Vel_2,30304,取料2_Z轴6_Axis_Vel_2,Pickup 2_Z Axis 6_Axis_Vel_2,L?y v?t li?u 2_Tr?c Z 6_Tr?c_V?n t?c_2
+PLC/取料2_Z轴6_Axis_Vel,取料2_Z轴6_Axis_Vel_3,30306,取料2_Z轴6_Axis_Vel_3,Pickup 2_Z Axis 6_Axis_Vel_3,L?y v?t li?u 2_Tr?c Z 6_Tr?c_V?n t?c_3
+PLC/取料2_Z轴6_Axis_Vel,取料2_Z轴6_Axis_Vel_4,30308,取料2_Z轴6_Axis_Vel_4,Pickup 2_Z Axis 6_Axis_Vel_4,L?y v?t li?u 2_Tr?c Z 6_Tr?c_V?n t?c_4
+PLC/取料2_Z轴6_Axis_Vel,取料2_Z轴6_Axis_Vel_5,30310,取料2_Z轴6_Axis_Vel_5,Pickup 2_Z Axis 6_Axis_Vel_5,L?y v?t li?u 2_Tr?c Z 6_Tr?c_V?n t?c_5
+PLC/取料2_Z轴6_Axis_Vel,取料2_Z轴6_Axis_Vel_6,30312,取料2_Z轴6_Axis_Vel_6,Pickup 2_Z Axis 6_Axis_Vel_6,L?y v?t li?u 2_Tr?c Z 6_Tr?c_V?n t?c_6
+PLC/取料2_Z轴6_Axis_Vel,取料2_Z轴6_Axis_Vel_7,30314,取料2_Z轴6_Axis_Vel_7,Pickup 2_Z Axis 6_Axis_Vel_7,L?y v?t li?u 2_Tr?c Z 6_Tr?c_V?n t?c_7
+PLC/取料2_Z轴6_Axis_Vel,取料2_Z轴6_Axis_Vel_8,30316,取料2_Z轴6_Axis_Vel_8,Pickup 2_Z Axis 6_Axis_Vel_8,L?y v?t li?u 2_Tr?c Z 6_Tr?c_V?n t?c_8
+PLC/取料2_Z轴6_Axis_Vel,取料2_Z轴6_Axis_Vel_9,30318,取料2_Z轴6_Axis_Vel_9,Pickup 2_Z Axis 6_Axis_Vel_9,L?y v?t li?u 2_Tr?c Z 6_Tr?c_V?n t?c_9
+PLC/取料2_Z轴6_Axis_Vel,取料2_Z轴6_Axis_Vel_10,30320,取料2_Z轴6_Axis_Vel_10,Pickup 2_Z Axis 6_Axis_Vel_10,L?y v?t li?u 2_Tr?c Z 6_Tr?c_V?n t?c_10
+PLC/取料2_Z轴6_Axis_Vel,取料2_Z轴6_Axis_Vel_11,30322,取料2_Z轴6_Axis_Vel_11,Pickup 2_Z Axis 6_Axis_Vel_11,L?y v?t li?u 2_Tr?c Z 6_Tr?c_V?n t?c_11
+PLC/取料2_Z轴6_Axis_Vel,取料2_Z轴6_Axis_Vel_12,30324,取料2_Z轴6_Axis_Vel_12,Pickup 2_Z Axis 6_Axis_Vel_12,L?y v?t li?u 2_Tr?c Z 6_Tr?c_V?n t?c_12
+PLC/取料2_Z轴6_Axis_Vel,取料2_Z轴6_Axis_Vel_13,30326,取料2_Z轴6_Axis_Vel_13,Pickup 2_Z Axis 6_Axis_Vel_13,L?y v?t li?u 2_Tr?c Z 6_Tr?c_V?n t?c_13
+PLC/取料2_Z轴6_Axis_Vel,取料2_Z轴6_Axis_Vel_14,30328,取料2_Z轴6_Axis_Vel_14,Pickup 2_Z Axis 6_Axis_Vel_14,L?y v?t li?u 2_Tr?c Z 6_Tr?c_V?n t?c_14
+PLC/取料2_Z轴6_Axis_Vel,取料2_Z轴6_Axis_Vel_15,30330,取料2_Z轴6_Axis_Vel_15,Pickup 2_Z Axis 6_Axis_Vel_15,L?y v?t li?u 2_Tr?c Z 6_Tr?c_V?n t?c_15
+PLC/取料2_Z轴6_Axis_Vel,取料2_Z轴6_Axis_Vel_16,30332,取料2_Z轴6_Axis_Vel_16,Pickup 2_Z Axis 6_Axis_Vel_16,L?y v?t li?u 2_Tr?c Z 6_Tr?c_V?n t?c_16
+PLC/取料2_Z轴6_Axis_Vel,取料2_Z轴6_Axis_Vel_17,30334,取料2_Z轴6_Axis_Vel_17,Pickup 2_Z Axis 6_Axis_Vel_17,L?y v?t li?u 2_Tr?c Z 6_Tr?c_V?n t?c_17
+PLC/取料2_Z轴6_Axis_Vel,取料2_Z轴6_Axis_Vel_18,30336,取料2_Z轴6_Axis_Vel_18,Pickup 2_Z Axis 6_Axis_Vel_18,L?y v?t li?u 2_Tr?c Z 6_Tr?c_V?n t?c_18
+PLC/取料2_Z轴6_Axis_Vel,取料2_Z轴6_Axis_Vel_19,30338,取料2_Z轴6_Axis_Vel_19,Pickup 2_Z Axis 6_Axis_Vel_19,L?y v?t li?u 2_Tr?c Z 6_Tr?c_V?n t?c_19
+PLC/取料2_Z轴6_Axis_Vel,取料2_Z轴6_Axis_Vel_20,30340,取料2_Z轴6_Axis_Vel_20,Pickup 2_Z Axis 6_Axis_Vel_20,L?y v?t li?u 2_Tr?c Z 6_Tr?c_V?n t?c_20
+PLC/取料2_Z轴6_Axis_Vel,取料2_Z轴6_Axis_Vel_21,30342,取料2_Z轴6_Axis_Vel_21,Pickup 2_Z Axis 6_Axis_Vel_21,L?y v?t li?u 2_Tr?c Z 6_Tr?c_V?n t?c_21
+PLC/取料2_Z轴6_Axis_Vel,取料2_Z轴6_Axis_Vel_22,30344,取料2_Z轴6_Axis_Vel_22,Pickup 2_Z Axis 6_Axis_Vel_22,L?y v?t li?u 2_Tr?c Z 6_Tr?c_V?n t?c_22
+PLC/取料2_Z轴6_Axis_Vel,取料2_Z轴6_Axis_Vel_23,30346,取料2_Z轴6_Axis_Vel_23,Pickup 2_Z Axis 6_Axis_Vel_23,L?y v?t li?u 2_Tr?c Z 6_Tr?c_V?n t?c_23
+PLC/取料2_Z轴6_Axis_Vel,取料2_Z轴6_Axis_Vel_24,30348,取料2_Z轴6_Axis_Vel_24,Pickup 2_Z Axis 6_Axis_Vel_24,L?y v?t li?u 2_Tr?c Z 6_Tr?c_V?n t?c_24
+PLC/取料2_Z轴6_Axis_Vel,取料2_Z轴6_Axis_Vel_25,30350,取料2_Z轴6_Axis_Vel_25,Pickup 2_Z Axis 6_Axis_Vel_25,L?y v?t li?u 2_Tr?c Z 6_Tr?c_V?n t?c_25
+PLC/取料2_Z轴6_Axis_Vel,取料2_Z轴6_Axis_Vel_26,30352,取料2_Z轴6_Axis_Vel_26,Pickup 2_Z Axis 6_Axis_Vel_26,L?y v?t li?u 2_Tr?c Z 6_Tr?c_V?n t?c_26
+PLC/取料2_Z轴6_Axis_Vel,取料2_Z轴6_Axis_Vel_27,30354,取料2_Z轴6_Axis_Vel_27,Pickup 2_Z Axis 6_Axis_Vel_27,L?y v?t li?u 2_Tr?c Z 6_Tr?c_V?n t?c_27
+PLC/取料2_Z轴6_Axis_Vel,取料2_Z轴6_Axis_Vel_28,30356,取料2_Z轴6_Axis_Vel_28,Pickup 2_Z Axis 6_Axis_Vel_28,L?y v?t li?u 2_Tr?c Z 6_Tr?c_V?n t?c_28
+PLC/取料2_Z轴6_Axis_Vel,取料2_Z轴6_Axis_Vel_29,30358,取料2_Z轴6_Axis_Vel_29,Pickup 2_Z Axis 6_Axis_Vel_29,L?y v?t li?u 2_Tr?c Z 6_Tr?c_V?n t?c_29
+PLC/取料2_Z轴6_Axis_Vel,取料2_Z轴6_Axis_Vel_30,30360,取料2_Z轴6_Axis_Vel_30,Pickup 2_Z Axis 6_Axis_Vel_30,L?y v?t li?u 2_Tr?c Z 6_Tr?c_V?n t?c_30
+PLC/取料2_Z轴6_Axis_Vel,取料2_Z轴6_Axis_Vel_31,30362,取料2_Z轴6_Axis_Vel_31,Pickup 2_Z Axis 6_Axis_Vel_31,L?y v?t li?u 2_Tr?c Z 6_Tr?c_V?n t?c_31
+PLC/取料2_Z轴6_Axis_Vel,取料2_Z轴6_Axis_Vel_32,30364,取料2_Z轴6_Axis_Vel_32,Pickup 2_Z Axis 6_Axis_Vel_32,L?y v?t li?u 2_Tr?c Z 6_Tr?c_V?n t?c_32
+PLC/取料2_Z轴6_Axis_Vel,取料2_Z轴6_Axis_Vel_33,30366,取料2_Z轴6_Axis_Vel_33,Pickup 2_Z Axis 6_Axis_Vel_33,L?y v?t li?u 2_Tr?c Z 6_Tr?c_V?n t?c_33
+PLC/取料2_Z轴6_Axis_Vel,取料2_Z轴6_Axis_Vel_34,30368,取料2_Z轴6_Axis_Vel_34,Pickup 2_Z Axis 6_Axis_Vel_34,L?y v?t li?u 2_Tr?c Z 6_Tr?c_V?n t?c_34
+PLC/取料2_Z轴6_Axis_Vel,取料2_Z轴6_Axis_Vel_35,30370,取料2_Z轴6_Axis_Vel_35,Pickup 2_Z Axis 6_Axis_Vel_35,L?y v?t li?u 2_Tr?c Z 6_Tr?c_V?n t?c_35
+PLC/取料2_Z轴6_Axis_Vel,取料2_Z轴6_Axis_Vel_36,30372,取料2_Z轴6_Axis_Vel_36,Pickup 2_Z Axis 6_Axis_Vel_36,L?y v?t li?u 2_Tr?c Z 6_Tr?c_V?n t?c_36
+PLC/取料2_Z轴6_Axis_Vel,取料2_Z轴6_Axis_Vel_37,30374,取料2_Z轴6_Axis_Vel_37,Pickup 2_Z Axis 6_Axis_Vel_37,L?y v?t li?u 2_Tr?c Z 6_Tr?c_V?n t?c_37
+PLC/取料2_Z轴6_Axis_Vel,取料2_Z轴6_Axis_Vel_38,30376,取料2_Z轴6_Axis_Vel_38,Pickup 2_Z Axis 6_Axis_Vel_38,L?y v?t li?u 2_Tr?c Z 6_Tr?c_V?n t?c_38
+PLC/取料2_Z轴6_Axis_Vel,取料2_Z轴6_Axis_Vel_39,30378,取料2_Z轴6_Axis_Vel_39,Pickup 2_Z Axis 6_Axis_Vel_39,L?y v?t li?u 2_Tr?c Z 6_Tr?c_V?n t?c_39
+PLC/取料2_Z轴6_Axis_Vel,取料2_Z轴6_Axis_Vel_40,30380,取料2_Z轴6_Axis_Vel_40,Pickup 2_Z Axis 6_Axis_Vel_40,L?y v?t li?u 2_Tr?c Z 6_Tr?c_V?n t?c_40
+PLC/取料2_Z轴6_Axis_Vel,取料2_Z轴6_Axis_Vel_41,30382,取料2_Z轴6_Axis_Vel_41,Pickup 2_Z Axis 6_Axis_Vel_41,L?y v?t li?u 2_Tr?c Z 6_Tr?c_V?n t?c_41
+PLC/取料2_Z轴6_Axis_Vel,取料2_Z轴6_Axis_Vel_42,30384,取料2_Z轴6_Axis_Vel_42,Pickup 2_Z Axis 6_Axis_Vel_42,L?y v?t li?u 2_Tr?c Z 6_Tr?c_V?n t?c_42
+PLC/取料2_Z轴6_Axis_Vel,取料2_Z轴6_Axis_Vel_43,30386,取料2_Z轴6_Axis_Vel_43,Pickup 2_Z Axis 6_Axis_Vel_43,L?y v?t li?u 2_Tr?c Z 6_Tr?c_V?n t?c_43
+PLC/取料2_Z轴6_Axis_Vel,取料2_Z轴6_Axis_Vel_44,30388,取料2_Z轴6_Axis_Vel_44,Pickup 2_Z Axis 6_Axis_Vel_44,L?y v?t li?u 2_Tr?c Z 6_Tr?c_V?n t?c_44
+PLC/取料2_Z轴6_Axis_Vel,取料2_Z轴6_Axis_Vel_45,30390,取料2_Z轴6_Axis_Vel_45,Pickup 2_Z Axis 6_Axis_Vel_45,L?y v?t li?u 2_Tr?c Z 6_Tr?c_V?n t?c_45
+PLC/取料2_Z轴6_Axis_Vel,取料2_Z轴6_Axis_Vel_46,30392,取料2_Z轴6_Axis_Vel_46,Pickup 2_Z Axis 6_Axis_Vel_46,L?y v?t li?u 2_Tr?c Z 6_Tr?c_V?n t?c_46
+PLC/取料2_Z轴6_Axis_Vel,取料2_Z轴6_Axis_Vel_47,30394,取料2_Z轴6_Axis_Vel_47,Pickup 2_Z Axis 6_Axis_Vel_47,L?y v?t li?u 2_Tr?c Z 6_Tr?c_V?n t?c_47
+PLC/取料2_R轴6_Axis_Pos,取料2_R轴6_Axis_Pos_0,30400,取料2_R轴6_Axis_Pos_0,Pickup 2_R Axis 6_Axis_Pos_0,L?y v?t li?u 2_Tr?c R 6_Tr?c_V? trí_0
+PLC/取料2_R轴6_Axis_Pos,取料2_R轴6_Axis_Pos_1,30402,取料2_R轴6_Axis_Pos_1,Pickup 2_R Axis 6_Axis_Pos_1,L?y v?t li?u 2_Tr?c R 6_Tr?c_V? trí_1
+PLC/取料2_R轴6_Axis_Pos,取料2_R轴6_Axis_Pos_2,30404,取料2_R轴6_Axis_Pos_2,Pickup 2_R Axis 6_Axis_Pos_2,L?y v?t li?u 2_Tr?c R 6_Tr?c_V? trí_2
+PLC/取料2_R轴6_Axis_Pos,取料2_R轴6_Axis_Pos_3,30406,取料2_R轴6_Axis_Pos_3,Pickup 2_R Axis 6_Axis_Pos_3,L?y v?t li?u 2_Tr?c R 6_Tr?c_V? trí_3
+PLC/取料2_R轴6_Axis_Pos,取料2_R轴6_Axis_Pos_4,30408,取料2_R轴6_Axis_Pos_4,Pickup 2_R Axis 6_Axis_Pos_4,L?y v?t li?u 2_Tr?c R 6_Tr?c_V? trí_4
+PLC/取料2_R轴6_Axis_Pos,取料2_R轴6_Axis_Pos_5,30410,取料2_R轴6_Axis_Pos_5,Pickup 2_R Axis 6_Axis_Pos_5,L?y v?t li?u 2_Tr?c R 6_Tr?c_V? trí_5
+PLC/取料2_R轴6_Axis_Pos,取料2_R轴6_Axis_Pos_6,30412,取料2_R轴6_Axis_Pos_6,Pickup 2_R Axis 6_Axis_Pos_6,L?y v?t li?u 2_Tr?c R 6_Tr?c_V? trí_6
+PLC/取料2_R轴6_Axis_Pos,取料2_R轴6_Axis_Pos_7,30414,取料2_R轴6_Axis_Pos_7,Pickup 2_R Axis 6_Axis_Pos_7,L?y v?t li?u 2_Tr?c R 6_Tr?c_V? trí_7
+PLC/取料2_R轴6_Axis_Pos,取料2_R轴6_Axis_Pos_8,30416,取料2_R轴6_Axis_Pos_8,Pickup 2_R Axis 6_Axis_Pos_8,L?y v?t li?u 2_Tr?c R 6_Tr?c_V? trí_8
+PLC/取料2_R轴6_Axis_Pos,取料2_R轴6_Axis_Pos_9,30418,取料2_R轴6_Axis_Pos_9,Pickup 2_R Axis 6_Axis_Pos_9,L?y v?t li?u 2_Tr?c R 6_Tr?c_V? trí_9
+PLC/取料2_R轴6_Axis_Pos,取料2_R轴6_Axis_Pos_10,30420,取料2_R轴6_Axis_Pos_10,Pickup 2_R Axis 6_Axis_Pos_10,L?y v?t li?u 2_Tr?c R 6_Tr?c_V? trí_10
+PLC/取料2_R轴6_Axis_Pos,取料2_R轴6_Axis_Pos_11,30422,取料2_R轴6_Axis_Pos_11,Pickup 2_R Axis 6_Axis_Pos_11,L?y v?t li?u 2_Tr?c R 6_Tr?c_V? trí_11
+PLC/取料2_R轴6_Axis_Pos,取料2_R轴6_Axis_Pos_12,30424,取料2_R轴6_Axis_Pos_12,Pickup 2_R Axis 6_Axis_Pos_12,L?y v?t li?u 2_Tr?c R 6_Tr?c_V? trí_12
+PLC/取料2_R轴6_Axis_Pos,取料2_R轴6_Axis_Pos_13,30426,取料2_R轴6_Axis_Pos_13,Pickup 2_R Axis 6_Axis_Pos_13,L?y v?t li?u 2_Tr?c R 6_Tr?c_V? trí_13
+PLC/取料2_R轴6_Axis_Pos,取料2_R轴6_Axis_Pos_14,30428,取料2_R轴6_Axis_Pos_14,Pickup 2_R Axis 6_Axis_Pos_14,L?y v?t li?u 2_Tr?c R 6_Tr?c_V? trí_14
+PLC/取料2_R轴6_Axis_Pos,取料2_R轴6_Axis_Pos_15,30430,取料2_R轴6_Axis_Pos_15,Pickup 2_R Axis 6_Axis_Pos_15,L?y v?t li?u 2_Tr?c R 6_Tr?c_V? trí_15
+PLC/取料2_R轴6_Axis_Pos,取料2_R轴6_Axis_Pos_16,30432,取料2_R轴6_Axis_Pos_16,Pickup 2_R Axis 6_Axis_Pos_16,L?y v?t li?u 2_Tr?c R 6_Tr?c_V? trí_16
+PLC/取料2_R轴6_Axis_Pos,取料2_R轴6_Axis_Pos_17,30434,取料2_R轴6_Axis_Pos_17,Pickup 2_R Axis 6_Axis_Pos_17,L?y v?t li?u 2_Tr?c R 6_Tr?c_V? trí_17
+PLC/取料2_R轴6_Axis_Pos,取料2_R轴6_Axis_Pos_18,30436,取料2_R轴6_Axis_Pos_18,Pickup 2_R Axis 6_Axis_Pos_18,L?y v?t li?u 2_Tr?c R 6_Tr?c_V? trí_18
+PLC/取料2_R轴6_Axis_Pos,取料2_R轴6_Axis_Pos_19,30438,取料2_R轴6_Axis_Pos_19,Pickup 2_R Axis 6_Axis_Pos_19,L?y v?t li?u 2_Tr?c R 6_Tr?c_V? trí_19
+PLC/取料2_R轴6_Axis_Pos,取料2_R轴6_Axis_Pos_20,30440,取料2_R轴6_Axis_Pos_20,Pickup 2_R Axis 6_Axis_Pos_20,L?y v?t li?u 2_Tr?c R 6_Tr?c_V? trí_20
+PLC/取料2_R轴6_Axis_Pos,取料2_R轴6_Axis_Pos_21,30442,取料2_R轴6_Axis_Pos_21,Pickup 2_R Axis 6_Axis_Pos_21,L?y v?t li?u 2_Tr?c R 6_Tr?c_V? trí_21
+PLC/取料2_R轴6_Axis_Pos,取料2_R轴6_Axis_Pos_22,30444,取料2_R轴6_Axis_Pos_22,Pickup 2_R Axis 6_Axis_Pos_22,L?y v?t li?u 2_Tr?c R 6_Tr?c_V? trí_22
+PLC/取料2_R轴6_Axis_Pos,取料2_R轴6_Axis_Pos_23,30446,取料2_R轴6_Axis_Pos_23,Pickup 2_R Axis 6_Axis_Pos_23,L?y v?t li?u 2_Tr?c R 6_Tr?c_V? trí_23
+PLC/取料2_R轴6_Axis_Pos,取料2_R轴6_Axis_Pos_24,30448,取料2_R轴6_Axis_Pos_24,Pickup 2_R Axis 6_Axis_Pos_24,L?y v?t li?u 2_Tr?c R 6_Tr?c_V? trí_24
+PLC/取料2_R轴6_Axis_Pos,取料2_R轴6_Axis_Pos_25,30450,取料2_R轴6_Axis_Pos_25,Pickup 2_R Axis 6_Axis_Pos_25,L?y v?t li?u 2_Tr?c R 6_Tr?c_V? trí_25
+PLC/取料2_R轴6_Axis_Pos,取料2_R轴6_Axis_Pos_26,30452,取料2_R轴6_Axis_Pos_26,Pickup 2_R Axis 6_Axis_Pos_26,L?y v?t li?u 2_Tr?c R 6_Tr?c_V? trí_26
+PLC/取料2_R轴6_Axis_Pos,取料2_R轴6_Axis_Pos_27,30454,取料2_R轴6_Axis_Pos_27,Pickup 2_R Axis 6_Axis_Pos_27,L?y v?t li?u 2_Tr?c R 6_Tr?c_V? trí_27
+PLC/取料2_R轴6_Axis_Pos,取料2_R轴6_Axis_Pos_28,30456,取料2_R轴6_Axis_Pos_28,Pickup 2_R Axis 6_Axis_Pos_28,L?y v?t li?u 2_Tr?c R 6_Tr?c_V? trí_28
+PLC/取料2_R轴6_Axis_Pos,取料2_R轴6_Axis_Pos_29,30458,取料2_R轴6_Axis_Pos_29,Pickup 2_R Axis 6_Axis_Pos_29,L?y v?t li?u 2_Tr?c R 6_Tr?c_V? trí_29
+PLC/取料2_R轴6_Axis_Pos,取料2_R轴6_Axis_Pos_30,30460,取料2_R轴6_Axis_Pos_30,Pickup 2_R Axis 6_Axis_Pos_30,L?y v?t li?u 2_Tr?c R 6_Tr?c_V? trí_30
+PLC/取料2_R轴6_Axis_Pos,取料2_R轴6_Axis_Pos_31,30462,取料2_R轴6_Axis_Pos_31,Pickup 2_R Axis 6_Axis_Pos_31,L?y v?t li?u 2_Tr?c R 6_Tr?c_V? trí_31
+PLC/取料2_R轴6_Axis_Pos,取料2_R轴6_Axis_Pos_32,30464,取料2_R轴6_Axis_Pos_32,Pickup 2_R Axis 6_Axis_Pos_32,L?y v?t li?u 2_Tr?c R 6_Tr?c_V? trí_32
+PLC/取料2_R轴6_Axis_Pos,取料2_R轴6_Axis_Pos_33,30466,取料2_R轴6_Axis_Pos_33,Pickup 2_R Axis 6_Axis_Pos_33,L?y v?t li?u 2_Tr?c R 6_Tr?c_V? trí_33
+PLC/取料2_R轴6_Axis_Pos,取料2_R轴6_Axis_Pos_34,30468,取料2_R轴6_Axis_Pos_34,Pickup 2_R Axis 6_Axis_Pos_34,L?y v?t li?u 2_Tr?c R 6_Tr?c_V? trí_34
+PLC/取料2_R轴6_Axis_Pos,取料2_R轴6_Axis_Pos_35,30470,取料2_R轴6_Axis_Pos_35,Pickup 2_R Axis 6_Axis_Pos_35,L?y v?t li?u 2_Tr?c R 6_Tr?c_V? trí_35
+PLC/取料2_R轴6_Axis_Pos,取料2_R轴6_Axis_Pos_36,30472,取料2_R轴6_Axis_Pos_36,Pickup 2_R Axis 6_Axis_Pos_36,L?y v?t li?u 2_Tr?c R 6_Tr?c_V? trí_36
+PLC/取料2_R轴6_Axis_Pos,取料2_R轴6_Axis_Pos_37,30474,取料2_R轴6_Axis_Pos_37,Pickup 2_R Axis 6_Axis_Pos_37,L?y v?t li?u 2_Tr?c R 6_Tr?c_V? trí_37
+PLC/取料2_R轴6_Axis_Pos,取料2_R轴6_Axis_Pos_38,30476,取料2_R轴6_Axis_Pos_38,Pickup 2_R Axis 6_Axis_Pos_38,L?y v?t li?u 2_Tr?c R 6_Tr?c_V? trí_38
+PLC/取料2_R轴6_Axis_Pos,取料2_R轴6_Axis_Pos_39,30478,取料2_R轴6_Axis_Pos_39,Pickup 2_R Axis 6_Axis_Pos_39,L?y v?t li?u 2_Tr?c R 6_Tr?c_V? trí_39
+PLC/取料2_R轴6_Axis_Pos,取料2_R轴6_Axis_Pos_40,30480,取料2_R轴6_Axis_Pos_40,Pickup 2_R Axis 6_Axis_Pos_40,L?y v?t li?u 2_Tr?c R 6_Tr?c_V? trí_40
+PLC/取料2_R轴6_Axis_Pos,取料2_R轴6_Axis_Pos_41,30482,取料2_R轴6_Axis_Pos_41,Pickup 2_R Axis 6_Axis_Pos_41,L?y v?t li?u 2_Tr?c R 6_Tr?c_V? trí_41
+PLC/取料2_R轴6_Axis_Pos,取料2_R轴6_Axis_Pos_42,30484,取料2_R轴6_Axis_Pos_42,Pickup 2_R Axis 6_Axis_Pos_42,L?y v?t li?u 2_Tr?c R 6_Tr?c_V? trí_42
+PLC/取料2_R轴6_Axis_Pos,取料2_R轴6_Axis_Pos_43,30486,取料2_R轴6_Axis_Pos_43,Pickup 2_R Axis 6_Axis_Pos_43,L?y v?t li?u 2_Tr?c R 6_Tr?c_V? trí_43
+PLC/取料2_R轴6_Axis_Pos,取料2_R轴6_Axis_Pos_44,30488,取料2_R轴6_Axis_Pos_44,Pickup 2_R Axis 6_Axis_Pos_44,L?y v?t li?u 2_Tr?c R 6_Tr?c_V? trí_44
+PLC/取料2_R轴6_Axis_Pos,取料2_R轴6_Axis_Pos_45,30490,取料2_R轴6_Axis_Pos_45,Pickup 2_R Axis 6_Axis_Pos_45,L?y v?t li?u 2_Tr?c R 6_Tr?c_V? trí_45
+PLC/取料2_R轴6_Axis_Pos,取料2_R轴6_Axis_Pos_46,30492,取料2_R轴6_Axis_Pos_46,Pickup 2_R Axis 6_Axis_Pos_46,L?y v?t li?u 2_Tr?c R 6_Tr?c_V? trí_46
+PLC/取料2_R轴6_Axis_Pos,取料2_R轴6_Axis_Pos_47,30494,取料2_R轴6_Axis_Pos_47,Pickup 2_R Axis 6_Axis_Pos_47,L?y v?t li?u 2_Tr?c R 6_Tr?c_V? trí_47
+PLC/取料2_R轴6_Axis_Vel,取料2_R轴6_Axis_Vel_0,30500,取料2_R轴6_Axis_Vel_0,Pickup 2_R Axis 6_Axis_Vel_0,L?y v?t li?u 2_Tr?c R 6_Tr?c_V?n t?c_0
+PLC/取料2_R轴6_Axis_Vel,取料2_R轴6_Axis_Vel_1,30502,取料2_R轴6_Axis_Vel_1,Pickup 2_R Axis 6_Axis_Vel_1,L?y v?t li?u 2_Tr?c R 6_Tr?c_V?n t?c_1
+PLC/取料2_R轴6_Axis_Vel,取料2_R轴6_Axis_Vel_2,30504,取料2_R轴6_Axis_Vel_2,Pickup 2_R Axis 6_Axis_Vel_2,L?y v?t li?u 2_Tr?c R 6_Tr?c_V?n t?c_2
+PLC/取料2_R轴6_Axis_Vel,取料2_R轴6_Axis_Vel_3,30506,取料2_R轴6_Axis_Vel_3,Pickup 2_R Axis 6_Axis_Vel_3,L?y v?t li?u 2_Tr?c R 6_Tr?c_V?n t?c_3
+PLC/取料2_R轴6_Axis_Vel,取料2_R轴6_Axis_Vel_4,30508,取料2_R轴6_Axis_Vel_4,Pickup 2_R Axis 6_Axis_Vel_4,L?y v?t li?u 2_Tr?c R 6_Tr?c_V?n t?c_4
+PLC/取料2_R轴6_Axis_Vel,取料2_R轴6_Axis_Vel_5,30510,取料2_R轴6_Axis_Vel_5,Pickup 2_R Axis 6_Axis_Vel_5,L?y v?t li?u 2_Tr?c R 6_Tr?c_V?n t?c_5
+PLC/取料2_R轴6_Axis_Vel,取料2_R轴6_Axis_Vel_6,30512,取料2_R轴6_Axis_Vel_6,Pickup 2_R Axis 6_Axis_Vel_6,L?y v?t li?u 2_Tr?c R 6_Tr?c_V?n t?c_6
+PLC/取料2_R轴6_Axis_Vel,取料2_R轴6_Axis_Vel_7,30514,取料2_R轴6_Axis_Vel_7,Pickup 2_R Axis 6_Axis_Vel_7,L?y v?t li?u 2_Tr?c R 6_Tr?c_V?n t?c_7
+PLC/取料2_R轴6_Axis_Vel,取料2_R轴6_Axis_Vel_8,30516,取料2_R轴6_Axis_Vel_8,Pickup 2_R Axis 6_Axis_Vel_8,L?y v?t li?u 2_Tr?c R 6_Tr?c_V?n t?c_8
+PLC/取料2_R轴6_Axis_Vel,取料2_R轴6_Axis_Vel_9,30518,取料2_R轴6_Axis_Vel_9,Pickup 2_R Axis 6_Axis_Vel_9,L?y v?t li?u 2_Tr?c R 6_Tr?c_V?n t?c_9
+PLC/取料2_R轴6_Axis_Vel,取料2_R轴6_Axis_Vel_10,30520,取料2_R轴6_Axis_Vel_10,Pickup 2_R Axis 6_Axis_Vel_10,L?y v?t li?u 2_Tr?c R 6_Tr?c_V?n t?c_10
+PLC/取料2_R轴6_Axis_Vel,取料2_R轴6_Axis_Vel_11,30522,取料2_R轴6_Axis_Vel_11,Pickup 2_R Axis 6_Axis_Vel_11,L?y v?t li?u 2_Tr?c R 6_Tr?c_V?n t?c_11
+PLC/取料2_R轴6_Axis_Vel,取料2_R轴6_Axis_Vel_12,30524,取料2_R轴6_Axis_Vel_12,Pickup 2_R Axis 6_Axis_Vel_12,L?y v?t li?u 2_Tr?c R 6_Tr?c_V?n t?c_12
+PLC/取料2_R轴6_Axis_Vel,取料2_R轴6_Axis_Vel_13,30526,取料2_R轴6_Axis_Vel_13,Pickup 2_R Axis 6_Axis_Vel_13,L?y v?t li?u 2_Tr?c R 6_Tr?c_V?n t?c_13
+PLC/取料2_R轴6_Axis_Vel,取料2_R轴6_Axis_Vel_14,30528,取料2_R轴6_Axis_Vel_14,Pickup 2_R Axis 6_Axis_Vel_14,L?y v?t li?u 2_Tr?c R 6_Tr?c_V?n t?c_14
+PLC/取料2_R轴6_Axis_Vel,取料2_R轴6_Axis_Vel_15,30530,取料2_R轴6_Axis_Vel_15,Pickup 2_R Axis 6_Axis_Vel_15,L?y v?t li?u 2_Tr?c R 6_Tr?c_V?n t?c_15
+PLC/取料2_R轴6_Axis_Vel,取料2_R轴6_Axis_Vel_16,30532,取料2_R轴6_Axis_Vel_16,Pickup 2_R Axis 6_Axis_Vel_16,L?y v?t li?u 2_Tr?c R 6_Tr?c_V?n t?c_16
+PLC/取料2_R轴6_Axis_Vel,取料2_R轴6_Axis_Vel_17,30534,取料2_R轴6_Axis_Vel_17,Pickup 2_R Axis 6_Axis_Vel_17,L?y v?t li?u 2_Tr?c R 6_Tr?c_V?n t?c_17
+PLC/取料2_R轴6_Axis_Vel,取料2_R轴6_Axis_Vel_18,30536,取料2_R轴6_Axis_Vel_18,Pickup 2_R Axis 6_Axis_Vel_18,L?y v?t li?u 2_Tr?c R 6_Tr?c_V?n t?c_18
+PLC/取料2_R轴6_Axis_Vel,取料2_R轴6_Axis_Vel_19,30538,取料2_R轴6_Axis_Vel_19,Pickup 2_R Axis 6_Axis_Vel_19,L?y v?t li?u 2_Tr?c R 6_Tr?c_V?n t?c_19
+PLC/取料2_R轴6_Axis_Vel,取料2_R轴6_Axis_Vel_20,30540,取料2_R轴6_Axis_Vel_20,Pickup 2_R Axis 6_Axis_Vel_20,L?y v?t li?u 2_Tr?c R 6_Tr?c_V?n t?c_20
+PLC/取料2_R轴6_Axis_Vel,取料2_R轴6_Axis_Vel_21,30542,取料2_R轴6_Axis_Vel_21,Pickup 2_R Axis 6_Axis_Vel_21,L?y v?t li?u 2_Tr?c R 6_Tr?c_V?n t?c_21
+PLC/取料2_R轴6_Axis_Vel,取料2_R轴6_Axis_Vel_22,30544,取料2_R轴6_Axis_Vel_22,Pickup 2_R Axis 6_Axis_Vel_22,L?y v?t li?u 2_Tr?c R 6_Tr?c_V?n t?c_22
+PLC/取料2_R轴6_Axis_Vel,取料2_R轴6_Axis_Vel_23,30546,取料2_R轴6_Axis_Vel_23,Pickup 2_R Axis 6_Axis_Vel_23,L?y v?t li?u 2_Tr?c R 6_Tr?c_V?n t?c_23
+PLC/取料2_R轴6_Axis_Vel,取料2_R轴6_Axis_Vel_24,30548,取料2_R轴6_Axis_Vel_24,Pickup 2_R Axis 6_Axis_Vel_24,L?y v?t li?u 2_Tr?c R 6_Tr?c_V?n t?c_24
+PLC/取料2_R轴6_Axis_Vel,取料2_R轴6_Axis_Vel_25,30550,取料2_R轴6_Axis_Vel_25,Pickup 2_R Axis 6_Axis_Vel_25,L?y v?t li?u 2_Tr?c R 6_Tr?c_V?n t?c_25
+PLC/取料2_R轴6_Axis_Vel,取料2_R轴6_Axis_Vel_26,30552,取料2_R轴6_Axis_Vel_26,Pickup 2_R Axis 6_Axis_Vel_26,L?y v?t li?u 2_Tr?c R 6_Tr?c_V?n t?c_26
+PLC/取料2_R轴6_Axis_Vel,取料2_R轴6_Axis_Vel_27,30554,取料2_R轴6_Axis_Vel_27,Pickup 2_R Axis 6_Axis_Vel_27,L?y v?t li?u 2_Tr?c R 6_Tr?c_V?n t?c_27
+PLC/取料2_R轴6_Axis_Vel,取料2_R轴6_Axis_Vel_28,30556,取料2_R轴6_Axis_Vel_28,Pickup 2_R Axis 6_Axis_Vel_28,L?y v?t li?u 2_Tr?c R 6_Tr?c_V?n t?c_28
+PLC/取料2_R轴6_Axis_Vel,取料2_R轴6_Axis_Vel_29,30558,取料2_R轴6_Axis_Vel_29,Pickup 2_R Axis 6_Axis_Vel_29,L?y v?t li?u 2_Tr?c R 6_Tr?c_V?n t?c_29
+PLC/取料2_R轴6_Axis_Vel,取料2_R轴6_Axis_Vel_30,30560,取料2_R轴6_Axis_Vel_30,Pickup 2_R Axis 6_Axis_Vel_30,L?y v?t li?u 2_Tr?c R 6_Tr?c_V?n t?c_30
+PLC/取料2_R轴6_Axis_Vel,取料2_R轴6_Axis_Vel_31,30562,取料2_R轴6_Axis_Vel_31,Pickup 2_R Axis 6_Axis_Vel_31,L?y v?t li?u 2_Tr?c R 6_Tr?c_V?n t?c_31
+PLC/取料2_R轴6_Axis_Vel,取料2_R轴6_Axis_Vel_32,30564,取料2_R轴6_Axis_Vel_32,Pickup 2_R Axis 6_Axis_Vel_32,L?y v?t li?u 2_Tr?c R 6_Tr?c_V?n t?c_32
+PLC/取料2_R轴6_Axis_Vel,取料2_R轴6_Axis_Vel_33,30566,取料2_R轴6_Axis_Vel_33,Pickup 2_R Axis 6_Axis_Vel_33,L?y v?t li?u 2_Tr?c R 6_Tr?c_V?n t?c_33
+PLC/取料2_R轴6_Axis_Vel,取料2_R轴6_Axis_Vel_34,30568,取料2_R轴6_Axis_Vel_34,Pickup 2_R Axis 6_Axis_Vel_34,L?y v?t li?u 2_Tr?c R 6_Tr?c_V?n t?c_34
+PLC/取料2_R轴6_Axis_Vel,取料2_R轴6_Axis_Vel_35,30570,取料2_R轴6_Axis_Vel_35,Pickup 2_R Axis 6_Axis_Vel_35,L?y v?t li?u 2_Tr?c R 6_Tr?c_V?n t?c_35
+PLC/取料2_R轴6_Axis_Vel,取料2_R轴6_Axis_Vel_36,30572,取料2_R轴6_Axis_Vel_36,Pickup 2_R Axis 6_Axis_Vel_36,L?y v?t li?u 2_Tr?c R 6_Tr?c_V?n t?c_36
+PLC/取料2_R轴6_Axis_Vel,取料2_R轴6_Axis_Vel_37,30574,取料2_R轴6_Axis_Vel_37,Pickup 2_R Axis 6_Axis_Vel_37,L?y v?t li?u 2_Tr?c R 6_Tr?c_V?n t?c_37
+PLC/取料2_R轴6_Axis_Vel,取料2_R轴6_Axis_Vel_38,30576,取料2_R轴6_Axis_Vel_38,Pickup 2_R Axis 6_Axis_Vel_38,L?y v?t li?u 2_Tr?c R 6_Tr?c_V?n t?c_38
+PLC/取料2_R轴6_Axis_Vel,取料2_R轴6_Axis_Vel_39,30578,取料2_R轴6_Axis_Vel_39,Pickup 2_R Axis 6_Axis_Vel_39,L?y v?t li?u 2_Tr?c R 6_Tr?c_V?n t?c_39
+PLC/取料2_R轴6_Axis_Vel,取料2_R轴6_Axis_Vel_40,30580,取料2_R轴6_Axis_Vel_40,Pickup 2_R Axis 6_Axis_Vel_40,L?y v?t li?u 2_Tr?c R 6_Tr?c_V?n t?c_40
+PLC/取料2_R轴6_Axis_Vel,取料2_R轴6_Axis_Vel_41,30582,取料2_R轴6_Axis_Vel_41,Pickup 2_R Axis 6_Axis_Vel_41,L?y v?t li?u 2_Tr?c R 6_Tr?c_V?n t?c_41
+PLC/取料2_R轴6_Axis_Vel,取料2_R轴6_Axis_Vel_42,30584,取料2_R轴6_Axis_Vel_42,Pickup 2_R Axis 6_Axis_Vel_42,L?y v?t li?u 2_Tr?c R 6_Tr?c_V?n t?c_42
+PLC/取料2_R轴6_Axis_Vel,取料2_R轴6_Axis_Vel_43,30586,取料2_R轴6_Axis_Vel_43,Pickup 2_R Axis 6_Axis_Vel_43,L?y v?t li?u 2_Tr?c R 6_Tr?c_V?n t?c_43
+PLC/取料2_R轴6_Axis_Vel,取料2_R轴6_Axis_Vel_44,30588,取料2_R轴6_Axis_Vel_44,Pickup 2_R Axis 6_Axis_Vel_44,L?y v?t li?u 2_Tr?c R 6_Tr?c_V?n t?c_44
+PLC/取料2_R轴6_Axis_Vel,取料2_R轴6_Axis_Vel_45,30590,取料2_R轴6_Axis_Vel_45,Pickup 2_R Axis 6_Axis_Vel_45,L?y v?t li?u 2_Tr?c R 6_Tr?c_V?n t?c_45
+PLC/取料2_R轴6_Axis_Vel,取料2_R轴6_Axis_Vel_46,30592,取料2_R轴6_Axis_Vel_46,Pickup 2_R Axis 6_Axis_Vel_46,L?y v?t li?u 2_Tr?c R 6_Tr?c_V?n t?c_46
+PLC/取料2_R轴6_Axis_Vel,取料2_R轴6_Axis_Vel_47,30594,取料2_R轴6_Axis_Vel_47,Pickup 2_R Axis 6_Axis_Vel_47,L?y v?t li?u 2_Tr?c R 6_Tr?c_V?n t?c_47

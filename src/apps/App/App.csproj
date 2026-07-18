@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
 		<RootNamespace>$(ProjectApplicationBaseName)</RootNamespace>
 		<AssemblyName>$(ProjectApplicationBaseName)</AssemblyName>
@@ -17,6 +17,9 @@
 	<ItemGroup>
 		<ProjectReference Include="$(CommonProjectPath)Common.Base/Common.Base.csproj"/>
 		<ProjectReference Include="$(CommonProjectPath)Common.Core/Common.Core.csproj"/>
+		<ProjectReference Include="..\..\..\SG_pointcsv\SG_pointcsv\SG_pointcsv.csproj"
+		                  OutputItemType="Analyzer"
+		                  ReferenceOutputAssembly="false"/>
 	</ItemGroup>
 	<ItemGroup>
 	  <PackageReference Include="System.IO.Ports" Version="10.0.3" />

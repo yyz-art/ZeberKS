@@ -54,11 +54,7 @@ public partial class CoreService : CoreServiceBase
 		}
 		else
 		{
-			var sw = System.Diagnostics.Stopwatch.StartNew();
 			Dispatcher.UIThread.Invoke(action);
-			var ms = sw.ElapsedMilliseconds;
-			if (ms > 50)
-				Logger.Debug("[UI-DISPATCH] TID={Tid} Dispatch took {Elapsed}ms", Environment.CurrentManagedThreadId, ms);
 		}
 	}
 
@@ -182,6 +178,8 @@ public partial class CoreService : CoreServiceBase
 			nozzleContext.Config = AppConfig.NozzleConfigs.FirstOrDefault(t => t.Id == nozzleContext.Id)!;
 		}
 
+		WorkerNo = AppConfig.WorkerNo;  // ponytail: 启动时从配置同步工号
+
 		return base.OnInitialize(ctx, args);
 	}
 
@@ -252,6 +250,8 @@ public partial class CoreService : CoreServiceBase
 					8 => Plc.Read.吸头8压力,
 					9 => Plc.Read.吸头9压力,
 					10 => Plc.Read.吸头10压力,
+					11 => Plc.Read.吸头11压力,
+					12 => Plc.Read.吸头12压力,
 					_ => 0
 				};
 				if (nozzleContext.Config.IsEnabled is false)
@@ -717,27 +717,17 @@ public partial class CoreService : CoreServiceBase
 
 	public int GetDayProductionId()
 	{
-		var tid = Environment.CurrentManagedThreadId;
-		var sw = System.Diagnostics.Stopwatch.StartNew();
-		Logger.Debug("[DAY-ID] TID={Tid} Enter GetDayProductionId", tid);
 		DayProductionIdContext ctx;
-		Logger.Debug("[DAY-ID] TID={Tid} Before lock, {Elapsed}ms", tid, sw.ElapsedMilliseconds);
 		lock (this)
 		{
-			Logger.Debug("[DAY-ID] TID={Tid} Lock acquired, {Elapsed}ms", tid, sw.ElapsedMilliseconds);
-			var t0 = sw.ElapsedMilliseconds;
 			ctx = KeyValueStorage.GetValue("DayProductionIdContext", DayProductionIdContext.Default).Unwarp();
-			Logger.Debug("[DAY-ID] TID={Tid} KV GetValue done, +{Elapsed}ms (total {Total}ms)", tid, sw.ElapsedMilliseconds - t0, sw.ElapsedMilliseconds);
 			var now = DateTime.Now;
 			if (ctx.Time.Date != now.Date)
 				ctx.Value = 1;
 			else ctx.Value += 1;
 			ctx.Time = now;
-			t0 = sw.ElapsedMilliseconds;
 			KeyValueStorage.SetValue("DayProductionIdContext", ctx).Unwarp();
-			Logger.Debug("[DAY-ID] TID={Tid} KV SetValue done, +{Elapsed}ms (total {Total}ms)", tid, sw.ElapsedMilliseconds - t0, sw.ElapsedMilliseconds);
 		}
-		Logger.Debug("[DAY-ID] TID={Tid} Exit lock, total {Elapsed}ms, newId={Id}", tid, sw.ElapsedMilliseconds, ctx.Value);
 		return ctx.Value;
 	}
 

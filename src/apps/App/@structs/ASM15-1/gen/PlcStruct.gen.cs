@@ -1,5 +1,5 @@
 
-// GENERATE AT 2026/6/12 13:26:21
+// GENERATE AT 2026/7/9 11:59:05
 using ZC.Annotations;
 using ZC.DP.Memory;
 using ZC.DP;
@@ -319,6 +319,14 @@ public partial class PlcStruct
 	[BinaryPoint(Offset = 5890, Source = "5890", Tags = "PLC->PC", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
 	[ValueInfo(Source = "PLC:5890", Category = "PLC/PLC->PC", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData = null)]
 	public partial float 吸头10压力 { get; set; }
+
+	[BinaryPoint(Offset = 5900, Source = "5900", Tags = "PLC->PC", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:5900", Category = "PLC/PLC->PC", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData = null)]
+	public partial float 吸头11压力 { get; set; }
+
+	[BinaryPoint(Offset = 5910, Source = "5910", Tags = "PLC->PC", ReaderData = "PLC", WriterData = "PLC", CustomData = null)]
+	[ValueInfo(Source = "PLC:5910", Category = "PLC/PLC->PC", Unit = "",MinValue = 0, MaxValue = 4096, Description = "", InitAttachData = null)]
+	public partial float 吸头12压力 { get; set; }
 
 	#endregion
 

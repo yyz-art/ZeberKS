@@ -35,4 +35,6 @@ public static class EapReportIds
     public const string LaneNo = "1008";
     /// <summary>1009 - 良率</summary>
     public const string Yield = "1009";
+    /// <summary>1010 - 生产结果（Pass/Fall）</summary>
+    public const string ProductionResult = "1010";
 }
