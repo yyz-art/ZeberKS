@@ -48,7 +48,10 @@ public partial class WorkService1 : WorkServiceBase
 	public required NgService NgService { get; init; }                        // NG记录持久化服务
 	public required EapClientService EapClient { get; init; }                 // EAP客户端服务
 	public required IEquipmentStatusProvider StatusProvider { get; init; }     // 设备状态提供者
-	public IDataSocket CodeScanner { get; set; } = null!;                     // 扫码枪串口连接
+	public IDataSocket CodeScanner { get; set; } = null!;                     // 扫码枪串口连接（SN扫码）
+#if ASM15_1
+	public IDataSocket CodeScannerKeyPart { get; set; } = null!;                   // 扫码枪串口连接（KeyPart扫码）
+#endif
 	public WorkPositionContext Context { get; set; } = null!;                 // 工位1上下文（扫码结果、生产状态等）
 
 	public int 料座感应状态 { get; set; }                                     // 上一次料座感应状态（用于边沿检测）
@@ -59,8 +62,12 @@ public partial class WorkService1 : WorkServiceBase
 	protected override Task OnInitialize(object? ctx, object? args)
 	{
 		Context = Core.WorkPositionContexts.First(t => t.Name == ServiceName); // 从CoreService获取工位1上下文
-		CodeScanner = App.Current.IOC.Get<IDataSocket>("Scanner工位1");        // 从IOC获取扫码枪串口实例
+		CodeScanner = App.Current.IOC.Get<IDataSocket>("Scanner工位1");        // 从IOC获取扫码枪串口实例（SN）
 		Task.Run(() => CodeScanner.Open());                                    // 异步打开扫码枪串口，避免阻塞初始化
+#if ASM15_1
+		CodeScannerKeyPart = App.Current.IOC.Get<IDataSocket>("Scanner工位1_2");   // 从IOC获取扫码枪串口实例（KeyPart）
+		Task.Run(() => CodeScannerKeyPart.Open());
+#endif
 		return base.OnInitialize(ctx, args);
 	}
 
@@ -144,7 +151,16 @@ public partial class WorkService1 : WorkServiceBase
 				Logger.Info($"[SCAN-CODE-{Plc.Read.扫码枪1触发}] [DOING] ...");
 				if (CommonAppConfig.IsDevTestMode == false)       // 非调试模式才真正调用扫码枪
 				{
-					var scanCodeResult = AppConfig.UseTcpScanner ? DoScanCodeTcp(CodeScanner) : DoScanCode(CodeScanner);
+#if ASM15_1
+					var scanner = CodeScannerKeyPart;
+#else
+					var scanner = CodeScanner;
+#endif
+#if SUB1
+					var scanCodeResult = AppConfig.UseTcpScanner ? DoScanCodeTcp(scanner) : DoScanCode(scanner);
+#else
+					var scanCodeResult = DoScanCode(scanner);
+#endif
 					if (scanCodeResult.IsError())
 					{
 						Logger.Error($"[SCAN-CODE-{Plc.Read.扫码枪1触发}] [ERROR] {scanCodeResult.Message}");
@@ -429,18 +445,18 @@ public partial class WorkService1 : WorkServiceBase
 #if ASM15_1
 				var msg3 =                                                           // ASM15_1: 发送MSG3关联KeyPart码
 					$"{AppConfig.StationName},{Context.ScanSnCode},3,{Core.WorkerNo},{AppConfig.Line},,OK,{Context.ScanKeyPartCode},,";
-				// var respMsg3Result = Mes.SendAndReadString(msg3);                    // 发送MSG3并读取响应
-				// Logger.Info($"[MES IN-STA] [DOING] MES3 << '{msg3}'");
-				// if (respMsg3Result.IsError() || respMsg3Result.Value?.StartsWith("OK") == false)
-				// {
-				// 	Logger.Error(respMsg3Result.IsError()
-				// 		? $"[MES IN-STA] [ERROR] {respMsg3Result.Message}"
-				// 		: $"[MES IN-STA] [ERROR]  MES3 >> '{respMsg3Result.Value}");
-				// 	Plc.Write.工位1允许生产 = NOT_ALLOW_PRODUCTION_BY_MES;
-				// 	Plc.Write.扫码枪1触发结果 = CodeOfNG;
-				// 	goto SendResult;
-				// }
-				// Logger.Info($"[MES IN-STA] [OK] MES3 >> '{respMsg3Result.Value}'");
+				var respMsg3Result = Mes.SendAndReadString(msg3);                    // 发送MSG3并读取响应
+				Logger.Info($"[MES IN-STA] [DOING] MES3 << '{msg3}'");
+				if (respMsg3Result.IsError() || respMsg3Result.Value?.StartsWith("OK") == false)
+				{
+					Logger.Error(respMsg3Result.IsError()
+						? $"[MES IN-STA] [ERROR] {respMsg3Result.Message}"
+						: $"[MES IN-STA] [ERROR]  MES3 >> '{respMsg3Result.Value}");
+					Plc.Write.工位1允许生产 = NOT_ALLOW_PRODUCTION_BY_MES;
+					Plc.Write.扫码枪1触发结果 = CodeOfNG;
+					goto SendResult;
+				}
+				Logger.Info($"[MES IN-STA] [OK] MES3 >> '{respMsg3Result.Value}'");
 #endif
 
 				Plc.Write.工位1允许生产 = ALLOW_PRODUCTION;                        // 所有校验通过，允许生产
@@ -530,10 +546,15 @@ public partial class WorkService1 : WorkServiceBase
 				for (var i = 0; i < ScrewCount; i++)                               // ASM15_1: 拼接每颗螺丝的扭矩和圈数数据
 				{
 					var screwNo = i + 1;
+					var screwLimit = AppConfig.ScrewLimitConfigs?.FirstOrDefault(t => t.ScrewNo == screwNo);
+					var torqueLowLimit = screwLimit?.TorqueLowLimit ?? 0;
+					var torqueUpperLimit = screwLimit?.TorqueUpperLimit ?? 0;
+					var turnsLowLimit = screwLimit?.TurnsLowLimit ?? 0;
+					var turnsUpperLimit = screwLimit?.TurnsUpperLimit ?? 0;
 					DataBuilder.Append(
-						$"\"[VR]SCREW{screwNo}(KGF-CM)={ScrewMaxTorque[i]:F2};{AppConfig.ScrewTorqueLowLimit};{AppConfig.ScrewTorqueUpperLimit}\"");
+						$"\"[VR]SCREW{screwNo}(KGF-CM)={ScrewMaxTorque[i]:F2};{torqueLowLimit};{torqueUpperLimit}\"");
 					DataBuilder.Append(
-						$"\"[VR]TURN{screwNo}(Lap)={ScrewTurns[i]:F2};{AppConfig.ScrewTurnsLowLimit};{AppConfig.ScrewTurnsUpperLimit}\"");
+						$"\"[VR]TURN{screwNo}(Lap)={ScrewTurns[i]:F2};{turnsLowLimit};{turnsUpperLimit}\"");
 				}
 #elif ASM12
 				var uuid = Guid.NewGuid().ToString().ToUpper();                    // ASM12: 生成UUID用于图片上传关联
@@ -783,7 +804,11 @@ public partial class WorkService1 : WorkServiceBase
 			if (Plc.Read is { 扫码枪1触发: 1, 扫码枪1触发结果: 0 })
 			{
 				Logger.Info($"[SCAN-CODE-1] [DOING] ...");
+#if SUB1
 				var scanCodeResult = AppConfig.UseTcpScanner ? DoScanCodeTcp(CodeScanner) : DoScanCode(CodeScanner);
+#else
+				var scanCodeResult = DoScanCode(CodeScanner);
+#endif
 				if (scanCodeResult.IsError())
 				{
 					Logger.Error($"[SCAN-CODE-1] [ERROR] {scanCodeResult.Message}");
@@ -859,10 +884,6 @@ public partial class WorkService1 : WorkServiceBase
 			}
 #endif
 
-#if ASM15_1
-		
-#endif
-
 			// ==================== 料座感应 & 测试扫码 ====================
 			if (Plc.Read.工位1料座感应状态 == 0 && 料座感应状态 != 0)               // 料座感应下降沿：关闭NG详情弹窗
 			{
@@ -874,7 +895,11 @@ public partial class WorkService1 : WorkServiceBase
 
 			if (Context.TestScanner && Plc.Read.工位1生产状态 != 1)                 // 测试扫码模式：非生产状态时持续扫码
 			{
+#if SUB1
 				var testScanResult = AppConfig.UseTcpScanner ? DoScanCodeTcp(CodeScanner) : DoScanCode(CodeScanner);
+#else
+				var testScanResult = DoScanCode(CodeScanner);
+#endif
 				if (testScanResult.IsError())
 				{
 					Logger.Error($"test scaner error! {testScanResult.Message}");

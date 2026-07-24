@@ -44,6 +44,9 @@ public partial class WorkService2 : WorkServiceBase
 	public required EapClientService EapClient { get; init; }
 	public required IEquipmentStatusProvider StatusProvider { get; init; }
 	public IDataSocket CodeScanner { get; set; } = null!;
+#if ASM15_1
+	public IDataSocket CodeScannerKeyPart { get; set; } = null!;
+#endif
 	public WorkPositionContext Context { get; set; } = null!;
 
 	public int 料座感应状态 { get; set; }
@@ -53,6 +56,10 @@ public partial class WorkService2 : WorkServiceBase
 		Context = Core.WorkPositionContexts.First(t => t.Name == ServiceName);
 		CodeScanner = App.Current.IOC.Get<IDataSocket>("Scanner工位2");
 		Task.Run(() => CodeScanner.Open());
+#if ASM15_1
+		CodeScannerKeyPart = App.Current.IOC.Get<IDataSocket>("Scanner工位2_2");
+		Task.Run(() => CodeScannerKeyPart.Open());
+#endif
 		return base.OnInitialize(ctx, args);
 	}
 

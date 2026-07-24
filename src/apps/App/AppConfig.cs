@@ -36,6 +36,12 @@ public partial class AppConfig : CommonAppConfig
 		MaterialSpaceCount = 2;
 		NozzleCount = 0;
 		IsUsedScrewInstallDataGrid = true;
+		IsScrewLimitTabVisible = true;
+		ScrewLimitConfigs = new List<ScrewLimitConfig>();
+		for (int i = 1; i <= 16; i++)
+		{
+			ScrewLimitConfigs.Add(new ScrewLimitConfig { ScrewNo = i });
+		}
 #elif ASM15_2
    	ApplicationName = StationName = "ASM15-2-AUTO";
    	MaterialSpaceCount = 3;
@@ -48,6 +54,10 @@ public partial class AppConfig : CommonAppConfig
 	}
 
 	public partial List<NgDefine> NgDefines { get; set; }
+
+#if ASM15_1
+	public partial List<ScrewLimitConfig> ScrewLimitConfigs { get; set; }
+#endif
 
 
 #if ASM15_1

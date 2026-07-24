@@ -1,4 +1,4 @@
-﻿using System.Net.Sockets;
+using System.Net.Sockets;
 using ZC.CFG;
 using ZC.DB;
 using ZC.DP;
@@ -148,6 +148,18 @@ public partial class AppConfig : CommonAppConfig
 		DataDefine.KeyValue, NameByVI, "Scanner2 Port",
 	], DefaultValue = 9600, Description = "Scanner 2 Port")]
 	public int Scanner2BaudRate { get; set; } = 9600;
+
+	public SerialPortSocketConfig Scanner1_2
+	{
+		get => field ??= new SerialPortSocketConfig { Port = Scanner1_2ComPort, BaudRate = Scanner1_2BaudRate };
+		set => SetField(ref field, value);
+	}
+
+	public SerialPortSocketConfig Scanner2_2
+	{
+		get => field ??= new SerialPortSocketConfig { Port = Scanner2_2ComPort, BaudRate = Scanner2_2BaudRate };
+		set => SetField(ref field, value);
+	}
 
 	#endregion
 }

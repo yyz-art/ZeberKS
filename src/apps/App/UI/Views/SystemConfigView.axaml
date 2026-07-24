@@ -1,4 +1,4 @@
-﻿<UiView xmlns="https://github.com/avaloniaui"
+<UiView xmlns="https://github.com/avaloniaui"
 				xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 				xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
 				xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -126,6 +126,24 @@
 					</DataGrid>
 				</Grid>
 
+			</TabItem>
+			<TabItem Header="SCREW LIMITS" IsSelected="False" IsVisible="{Binding IsScrewLimitTabVisible}">
+				<DataGrid ItemsSource="{Binding EditConfig.ScrewLimitConfigs}"
+									AutoGenerateColumns="False"
+									IsReadOnly="False"
+									CanUserSortColumns="True"
+									CanUserResizeColumns="True"
+									GridLinesVisibility="All"
+									BorderBrush="{DynamicResource Brush-Border}"
+									BorderThickness="1">
+					<DataGrid.Columns>
+						<DataGridTextColumn Header="螺丝号" Binding="{Binding ScrewNo}" IsReadOnly="True" Width="80"/>
+						<DataGridTextColumn Header="扭矩下限 (KGF-CM)" Binding="{Binding TorqueLowLimit}" Width="150"/>
+						<DataGridTextColumn Header="扭矩上限 (KGF-CM)" Binding="{Binding TorqueUpperLimit}" Width="150"/>
+						<DataGridTextColumn Header="圈数下限 (Lap)" Binding="{Binding TurnsLowLimit}" Width="150"/>
+						<DataGridTextColumn Header="圈数上限 (Lap)" Binding="{Binding TurnsUpperLimit}" Width="150"/>
+					</DataGrid.Columns>
+				</DataGrid>
 			</TabItem>
 		</TabControl>
 	</Grid>

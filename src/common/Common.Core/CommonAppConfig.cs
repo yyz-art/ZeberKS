@@ -301,6 +301,34 @@ public abstract partial class CommonAppConfig : ConfigBase
 	], DefaultValue = 5000, Description = "Scanner 2 TCP Port")]
 	public int Scanner2TcpPort { get; set; } = 5000;
 
+	[ValueInfo(Category = "连接配置", InitAttachData =
+	[
+		DataDefine.KeyValue, NameByCN, "扫码枪1_2 串口",
+		DataDefine.KeyValue, NameByEN, "Scanner1_2 COM",
+	], DefaultValue = "COM6", Description = "Scanner 1_2 COM (KeyPart)")]
+	public string Scanner1_2ComPort { get; set; } = "COM6";
+
+	[ValueInfo(Category = "连接配置", InitAttachData =
+	[
+		DataDefine.KeyValue, NameByCN, "扫码枪1_2 波特率",
+		DataDefine.KeyValue, NameByEN, "Scanner1_2 BaudRate",
+	], DefaultValue = 9600, Description = "Scanner 1_2 BaudRate")]
+	public int Scanner1_2BaudRate { get; set; } = 9600;
+
+	[ValueInfo(Category = "连接配置", InitAttachData =
+	[
+		DataDefine.KeyValue, NameByCN, "扫码枪2_2 串口",
+		DataDefine.KeyValue, NameByEN, "Scanner2_2 COM",
+	], DefaultValue = "COM7", Description = "Scanner 2_2 COM (KeyPart)")]
+	public string Scanner2_2ComPort { get; set; } = "COM7";
+
+	[ValueInfo(Category = "连接配置", InitAttachData =
+	[
+		DataDefine.KeyValue, NameByCN, "扫码枪2_2 波特率",
+		DataDefine.KeyValue, NameByEN, "Scanner2_2 BaudRate",
+	], DefaultValue = 9600, Description = "Scanner 2_2 BaudRate")]
+	public int Scanner2_2BaudRate { get; set; } = 9600;
+
 	#endregion
 
 	[ValueInfo(Category = "点检配置 / SPOT CHECK", InitAttachData =
@@ -315,4 +343,5 @@ public abstract partial class CommonAppConfig : ConfigBase
 	public static int NozzleCount { get; set; } = 7;
 
 	public static bool IsUsedScrewInstallDataGrid { get; set; }
+	public static bool IsScrewLimitTabVisible { get; set; }
 }

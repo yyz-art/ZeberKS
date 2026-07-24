@@ -156,6 +156,8 @@ public partial class CoreService : CoreServiceBase
 		WorkPositionContext.CreateList(WorkPositionContexts, 2);
 		DeviceStatusContext.CreateList(DeviceStatusContexts);
 #if ASM15_1
+		DeviceStatusContexts.Add(new DeviceStatusContext { Name = "Scanner1_2" });
+		DeviceStatusContexts.Add(new DeviceStatusContext { Name = "Scanner2_2" });
 		DeviceStatusContexts.Add(new DeviceStatusContext { Name = "Calibration" });
 #endif
 	}
@@ -178,7 +180,7 @@ public partial class CoreService : CoreServiceBase
 			nozzleContext.Config = AppConfig.NozzleConfigs.FirstOrDefault(t => t.Id == nozzleContext.Id)!;
 		}
 
-		WorkerNo = AppConfig.WorkerNo;  // ponytail: 启动时从配置同步工号
+		WorkerNo = AppConfig.WorkerNo;  // 启动时从配置同步工号
 
 		return base.OnInitialize(ctx, args);
 	}

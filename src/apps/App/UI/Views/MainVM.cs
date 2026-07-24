@@ -251,6 +251,8 @@ public partial class MainVM : UiVM<MainView>
 				"Scanner1" => WorkLeft.CodeScanner?.IsOpen ?? false ? "Connected" : "Disconnected",  // 扫码枪1 连接状态
 				"Scanner2" => WorkRight.CodeScanner?.IsOpen ?? false ? "Connected" : "Disconnected", // 扫码枪2 连接状态
 #if ASM15_1
+				"Scanner1_2" => WorkLeft.CodeScannerKeyPart?.IsOpen ?? false ? "Connected" : "Disconnected",
+				"Scanner2_2" => WorkRight.CodeScannerKeyPart?.IsOpen ?? false ? "Connected" : "Disconnected",
 				"Calibration" => CalibrationService?.IsConnected == true ? "Connected" : "Disconnected",
 #endif
 				"NozzlePress" => CoreService.IsNozzlePressureOk ? "Passed" : "Failed",         // 吸嘴压力点检状态

@@ -53,6 +53,7 @@ public sealed class App(AppConfig config) : CommonUiAppCore(config)
 		// IOC.GetOrNull<IAppStartUpVM>()?.SetProgress(40, 500);
 		using var dbClient = IOC.Get<ISqlSugarClient>();
 		dbClient.CodeFirst.InitTables<DbKeyValueItem, AlarmRecord, NgRecord>();
+#if SUB1
 		if (Config.UseTcpScanner)
 		{
 			IOC.AddSingleton<IDataSocket>(specialName: "Scanner工位1", creator: _ =>
@@ -61,6 +62,7 @@ public sealed class App(AppConfig config) : CommonUiAppCore(config)
 				new NetworkSocket(new NetworkSocketConfig(Config.Scanner2TcpIp, Config.Scanner2TcpPort)));
 		}
 		else
+#endif
 		{
 			IOC.AddSingleton<IDataSocket>(specialName: "Scanner工位1", creator: _ =>
 				new SerialPortSocket(Config.Scanner1ComPort, Config.Scanner1BaudRate)
@@ -76,6 +78,22 @@ public sealed class App(AppConfig config) : CommonUiAppCore(config)
 					DataBits = 8,
 					StopBits = StopBits.One
 				});
+#if ASM15_1
+			IOC.AddSingleton<IDataSocket>(specialName: "Scanner工位1_2", creator: _ =>
+				new SerialPortSocket(Config.Scanner1_2ComPort, Config.Scanner1_2BaudRate)
+				{
+					Parity = Parity.None,
+					DataBits = 8,
+					StopBits = StopBits.One
+				});
+			IOC.AddSingleton<IDataSocket>(specialName: "Scanner工位2_2", creator: _ =>
+				new SerialPortSocket(Config.Scanner2_2ComPort, Config.Scanner2_2BaudRate)
+				{
+					Parity = Parity.None,
+					DataBits = 8,
+					StopBits = StopBits.One
+				});
+#endif
 		}
 #if ASM15_1
 		IOC.AddSingleton<ScrewMachineConnection>(specialName: "Screw工位1",

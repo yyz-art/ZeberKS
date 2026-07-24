@@ -1,4 +1,4 @@
-﻿using System.Reflection;
+using System.Reflection;
 using System.Globalization;
 using System.Text.Json;
 using Avalonia.Collections;
@@ -74,6 +74,7 @@ public partial class SystemConfigVM : CommonUiVM<SystemConfigView>, INamedObject
 	}
 	// public ObservableList<IPropertyInstance> FilteredPropertyInstances { get; }
 	public DataGridCollectionView GroupedPropertyInstances { get; set; }
+	public bool IsScrewLimitTabVisible { get; } = CommonAppConfig.IsScrewLimitTabVisible;
 
 
 	protected override async Task OnInitialize(object? ctx, object? args)
