@@ -12,6 +12,7 @@ namespace ZitApp.BinStructs;
 [BinaryPointGroup(Name = "PlcToPc", Source = "22000", Tags = "", Start = 22000, End = 22999, Points = ["*"])]
 [BinaryPointGroup(Name = "PcToPlc", Source = "21000", Tags = "", Start = 21000, End = 21999, Points = ["*"])]
 public partial class PlcStruct
+
 {
 
 	#region CSV INCLUDE POINTS: 交互信号PLC->PC

@@ -115,7 +115,7 @@ public class BinStructGenerator : IIncrementalGenerator
 
         code.AppendLine("}");
 
-        context.AddSource($"{structName}.g.cs", code.ToString());
+        context.AddSource($"{structName}.gen.cs", code.ToString());
     }
 
     private void GenerateCsvIncludePoints(StringBuilder code, XElement csvIncludeXml,

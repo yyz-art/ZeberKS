@@ -21,6 +21,7 @@
 				$(SolutionDir).sln/**/*.*;
 				$(SolutionDir)src/**/*.*;"/>
 		<Compile Link="scripts/%(RecursiveDir)%(Filename)%(Extension)" Include="$(SolutionDir)scripts/**/*.cs" Exclude="$(SolutionDir)scripts/private/**/*.cs"/>
+		<None Remove="..\.trae\**" />
 	</ItemGroup>
 
 	<ItemGroup>

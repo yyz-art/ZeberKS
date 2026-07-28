@@ -1,6 +1,7 @@
-using System.IO.Ports;
+﻿using System.IO.Ports;
 using System.Text;
 using System.Text.Json;
+using System.Runtime.CompilerServices;
 using ZC;
 using ZC.DB;
 using ZC.Development;
@@ -120,6 +121,23 @@ public sealed class App(AppConfig config) : CommonUiAppCore(config)
 		IOC.AddSingleton<PlcAlarmTextCatalog>();
 		IOC.AddSingleton<EapClientService>();
 		await StartUi();
+		// 授权校验（仅 Release）
+#if !DEBUG
+		var licenseErr = LicenseHelper.Validate();
+		if (licenseErr != null)
+		{
+			await Avalonia.Threading.Dispatcher.UIThread.InvokeAsync(async () =>
+			{
+				var dialog = new ZitApp.UI.Dialogs.LicenseDialog();
+				dialog.SetMessage(licenseErr);
+				if (Application.Current?.ApplicationLifetime is Avalonia.Controls.ApplicationLifetimes.IClassicDesktopStyleApplicationLifetime desktop)
+					await dialog.ShowDialog(desktop.MainWindow!);
+				else
+					dialog.Show();
+			});
+		}
+#endif
+
 		await base.OnInitialize(ctx, args);
 	}
 

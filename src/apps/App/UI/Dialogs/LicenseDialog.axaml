@@ -1,0 +1,70 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+				xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+				xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+				xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+				mc:Ignorable="d"
+				d:DesignWidth="480"
+				d:DesignHeight="280"
+				x:Class="ZitApp.UI.Dialogs.LicenseDialog"
+				Title="授权验证"
+				Width="480"
+				Height="280"
+				MinWidth="440"
+				MinHeight="240"
+				WindowStartupLocation="CenterOwner"
+				CanResize="False"
+				SystemDecorations="None"
+				Topmost="True"
+				WindowState="Normal"
+				ShowInTaskbar="True"
+				Closing="OnClosing">
+	<Grid RowDefinitions="Auto,*,Auto" Margin="0">
+		<!-- Title -->
+		<Border Grid.Row="0" Background="#C63A2B" Padding="16,12">
+			<TextBlock Name="TitleBlock"
+						FontSize="18"
+						FontWeight="Bold"
+						Foreground="White"
+						Text="授权验证" />
+		</Border>
+
+		<!-- Content -->
+		<Grid Grid.Row="1" RowDefinitions="Auto,*,Auto" Margin="20,16">
+			<TextBlock Name="MessageBlock"
+						Grid.Row="0"
+						FontSize="14"
+						Foreground="#E0E0E0"
+						TextWrapping="Wrap"
+						Text="授权已过期或无效，请输入新的授权码。" />
+
+			<TextBox Name="LicenseInput"
+						Grid.Row="1"
+						Margin="0,12"
+						VerticalAlignment="Top"
+						Watermark="ZC-20271231-xxxxxxxxxxxx"
+						FontFamily="Consolas"
+						FontSize="14"
+						/>
+
+			<TextBlock Name="ErrorBlock"
+						Grid.Row="2"
+						FontSize="13"
+						Foreground="#FF6B6B"
+						TextWrapping="Wrap"
+						IsVisible="False" />
+		</Grid>
+
+		<!-- Bottom buttons -->
+		<Border Grid.Row="2" Background="#1E1E1E" Padding="16,10">
+			<LinearPanel Orientation="Horizontal" HorizontalAlignment="Right" Spacing="10">
+				<Button Name="ActivateBtn"
+						Content="激活"
+						MinWidth="100"
+						Padding="32,8"
+						IsEnabled="True"
+						Click="OnActivateClick" />
+			</LinearPanel>
+		</Border>
+	</Grid>
+</Window>
+

@@ -1,0 +1,12 @@
+﻿{
+  "mcpServers": {
+    "code-review-graph": {
+      "command": "code-review-graph",
+      "args": [
+        "serve"
+      ],
+      "cwd": "D:\\Ver pro\\XKJ-HX-ZEBER - (好版本)",
+      "type": "stdio"
+    }
+  }
+}
