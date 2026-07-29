@@ -1,4 +1,4 @@
-using Avalonia.Threading;
+﻿using Avalonia.Threading;
 using NLog;
 using ZC;
 using ZC.BinStructs;
@@ -131,18 +131,34 @@ public partial class CoreService : CoreServiceBase
 	public partial bool IsNozzlePressureOk { get; set; }
 
 #if ASM15_1
-	public required Asm15CalibrationService CalibrationService { get; init; }
+	public required Calibration1Service Calibration1Service { get; init; }
+	public required Calibration2Service Calibration2Service { get; init; }
 #endif
 
-	public bool IsCalibrationOk
+	public bool IsCalibration1Ok
 	{
 		get
 		{
 #if ASM15_1
-			if (!CalibrationService.CalibrationCheckEnabled) return true;
-			if (!CalibrationService.IsCalibrationOk) return false;
-			if (CalibrationService.CalibrationCompleteTime == DateTime.MinValue) return false;
-			if (DateTime.Now - CalibrationService.CalibrationCompleteTime >
+			if (!Calibration1Service.CalibrationCheckEnabled) return true;
+			if (!Calibration1Service.IsCalibrationOk) return false;
+			if (Calibration1Service.CalibrationCompleteTime == DateTime.MinValue) return false;
+			if (DateTime.Now - Calibration1Service.CalibrationCompleteTime >
+			    TimeSpan.FromHours(AppConfig.CalibrationTimeoutHours)) return false;
+#endif
+			return true;
+		}
+	}
+
+	public bool IsCalibration2Ok
+	{
+		get
+		{
+#if ASM15_1
+			if (!Calibration2Service.CalibrationCheckEnabled) return true;
+			if (!Calibration2Service.IsCalibrationOk) return false;
+			if (Calibration2Service.CalibrationCompleteTime == DateTime.MinValue) return false;
+			if (DateTime.Now - Calibration2Service.CalibrationCompleteTime >
 			    TimeSpan.FromHours(AppConfig.CalibrationTimeoutHours)) return false;
 #endif
 			return true;
@@ -158,7 +174,8 @@ public partial class CoreService : CoreServiceBase
 #if ASM15_1
 		DeviceStatusContexts.Add(new DeviceStatusContext { Name = "Scanner1_2" });
 		DeviceStatusContexts.Add(new DeviceStatusContext { Name = "Scanner2_2" });
-		DeviceStatusContexts.Add(new DeviceStatusContext { Name = "Calibration" });
+		DeviceStatusContexts.Add(new DeviceStatusContext { Name = "Calibration1" });
+		DeviceStatusContexts.Add(new DeviceStatusContext { Name = "Calibration2" });
 #endif
 	}
 

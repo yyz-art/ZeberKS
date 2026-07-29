@@ -1,4 +1,4 @@
-using System.Net.Sockets;
+﻿using System.Net.Sockets;
 using System.Text.Json.Serialization;
 using ZC.CFG;
 using ZC.DB;
@@ -95,17 +95,30 @@ public partial class AppConfig : CommonAppConfig
 
 	[ValueInfo(Category = "连接配置/Connection Configuration", InitAttachData =
 	[
-		DataDefine.KeyValue, NameByCN, "ASM15校准设备 IP",
-		DataDefine.KeyValue, NameByEN, "ASM15 Calibration IP",
-	], DefaultValue = "192.168.1.210", Description = "ASM15 Calibration Device IP")]
-	public string Asm15CalibrationIpAddress { get; set; } = "192.168.1.210";
+		DataDefine.KeyValue, NameByCN, "校准仪1 IP",
+		DataDefine.KeyValue, NameByEN, "Calibration1 IP",
+	], DefaultValue = "192.168.1.210", Description = "Calibration1 Device IP")]
+	public string Calibration1IpAddress { get; set; } = "192.168.1.210";
 
 	[ValueInfo(Category = "连接配置/Connection Configuration", InitAttachData =
 	[
-		DataDefine.KeyValue, NameByCN, "ASM15校准设备 Port",
-		DataDefine.KeyValue, NameByEN, "ASM15 Calibration Port",
-	], DefaultValue = 502, Description = "ASM15 Calibration Device Port")]
-	public int Asm15CalibrationPort { get; set; } = 502;
+		DataDefine.KeyValue, NameByCN, "校准仪1 Port",
+		DataDefine.KeyValue, NameByEN, "Calibration1 Port",
+	], DefaultValue = 502, Description = "Calibration1 Device Port")]
+	public int Calibration1Port { get; set; } = 502;
+	[ValueInfo(Category = "连接配置/Connection Configuration", InitAttachData =
+	[
+		DataDefine.KeyValue, NameByCN, "校准仪2 IP",
+		DataDefine.KeyValue, NameByEN, "Calibration2 IP",
+	], DefaultValue = "192.168.1.211", Description = "Calibration2 Device IP")]
+	public string Calibration2IpAddress { get; set; } = "192.168.1.211";
+
+	[ValueInfo(Category = "连接配置/Connection Configuration", InitAttachData =
+	[
+		DataDefine.KeyValue, NameByCN, "校准仪2 Port",
+		DataDefine.KeyValue, NameByEN, "Calibration2 Port",
+	], DefaultValue = 502, Description = "Calibration2 Device Port")]
+	public int Calibration2Port { get; set; } = 502;
 
 
 	[ValueInfo(Category = "UPPER/LOW LIMIT", InitAttachData =

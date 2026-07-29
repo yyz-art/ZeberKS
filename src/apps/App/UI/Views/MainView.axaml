@@ -1,4 +1,4 @@
-<UiView xmlns="https://github.com/avaloniaui"
+﻿<UiView xmlns="https://github.com/avaloniaui"
 				xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 				xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
 				xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -366,7 +366,7 @@
 							<TextBox Grid.Row="1" Grid.Column="1" Text="{Binding DisplayPlcIp}" IsReadOnly="True" />
 							<Button Grid.Row="1" Grid.Column="2" Content="{DynamicResource I18N.G.打开监视}" Command="{Binding OpenIoMonitorCommand}"/>
 						</Grid>
-						<!-- ASM15 校准检查 -->
+						<!-- Calibration1 -->
 						<Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto,Auto" ColumnSpacing="5" RowSpacing="5"
 									IsVisible="{Binding HasCalibrationService}">
 							<Label FontWeight="Bold" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
@@ -376,12 +376,12 @@
 							<Label Classes="Label" Grid.Row="1" Grid.Column="0"
 									Content="{DynamicResource I18N.G.校准完成时间}" VerticalAlignment="Center" />
 							<Border Grid.Row="1" Grid.Column="1" BorderThickness="1" CornerRadius="3" Padding="4 2"
-										BorderBrush="{Binding CalibrationService.IsCalibrationOk, Converter={StaticResource CalibrationBorderColorCvt}}">
+										BorderBrush="{Binding Calibration1Service.IsCalibrationOk, Converter={StaticResource CalibrationBorderColorCvt}}">
 								<TextBlock VerticalAlignment="Center">
 									<TextBlock.Text>
 										<MultiBinding Converter="{StaticResource CalibrationTimeDisplayCvt}">
-											<Binding Path="CalibrationService.IsCalibrationOk" />
-											<Binding Path="CalibrationService.CalibrationCompleteTime" />
+											<Binding Path="Calibration1Service.IsCalibrationOk" />
+											<Binding Path="Calibration1Service.CalibrationCompleteTime" />
 										</MultiBinding>
 									</TextBlock.Text>
 								</TextBlock>
@@ -389,7 +389,35 @@
 
 							<CheckBox Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"
 												Content="{DynamicResource I18N.G.启用校准检查}"
-												IsChecked="{Binding CalibrationService.CalibrationCheckEnabled, Mode=TwoWay}"
+												IsChecked="{Binding Calibration1Service.CalibrationCheckEnabled, Mode=TwoWay}"
+												VerticalAlignment="Center" Foreground="White"
+												Margin="0,5,0,0" />
+						</Grid>
+						
+						<!-- Calibration2 -->
+						<Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto,Auto" ColumnSpacing="5" RowSpacing="5"
+									IsVisible="{Binding HasCalibrationService}">
+							<Label FontWeight="Bold" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
+									Content="{DynamicResource I18N.G.ASM15校准检查}" Background="#277679" Foreground="White"
+									HorizontalAlignment="Stretch" />
+
+							<Label Classes="Label" Grid.Row="1" Grid.Column="0"
+									Content="{DynamicResource I18N.G.校准完成时间}" VerticalAlignment="Center" />
+							<Border Grid.Row="1" Grid.Column="1" BorderThickness="1" CornerRadius="3" Padding="4 2"
+										BorderBrush="{Binding Calibration2Service.IsCalibrationOk, Converter={StaticResource CalibrationBorderColorCvt}}">
+								<TextBlock VerticalAlignment="Center">
+									<TextBlock.Text>
+										<MultiBinding Converter="{StaticResource CalibrationTimeDisplayCvt}">
+											<Binding Path="Calibration2Service.IsCalibrationOk" />
+											<Binding Path="Calibration2Service.CalibrationCompleteTime" />
+										</MultiBinding>
+									</TextBlock.Text>
+								</TextBlock>
+							</Border>
+
+							<CheckBox Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"
+												Content="{DynamicResource I18N.G.启用校准检查}"
+												IsChecked="{Binding Calibration2Service.CalibrationCheckEnabled, Mode=TwoWay}"
 												VerticalAlignment="Center" Foreground="White"
 												Margin="0,5,0,0" />
 						</Grid>

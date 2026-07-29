@@ -1,4 +1,4 @@
-using System.Collections.Specialized;
+﻿using System.Collections.Specialized;
 using System.Globalization;
 using Avalonia.Media;
 using Avalonia.Threading;
@@ -253,7 +253,8 @@ public partial class MainVM : UiVM<MainView>
 #if ASM15_1
 				"Scanner1_2" => WorkLeft.CodeScannerKeyPart?.IsOpen ?? false ? "Connected" : "Disconnected",
 				"Scanner2_2" => WorkRight.CodeScannerKeyPart?.IsOpen ?? false ? "Connected" : "Disconnected",
-				"Calibration" => CalibrationService?.IsConnected == true ? "Connected" : "Disconnected",
+				"Calibration1" => CoreService.Calibration1Service?.IsConnected == true ? "Connected" : "Disconnected",
+				"Calibration2" => CoreService.Calibration2Service?.IsConnected == true ? "Connected" : "Disconnected",
 #endif
 				"NozzlePress" => CoreService.IsNozzlePressureOk ? "Passed" : "Failed",         // 吸嘴压力点检状态
 				_ => ""
@@ -367,7 +368,8 @@ public partial class MainVM : UiVM<MainView>
 	public bool HasNozzleContexts => CommonAppConfig.NozzleCount > 0;
 
 #if ASM15_1
-	public Asm15CalibrationService CalibrationService => CoreService.CalibrationService;
+	public Calibration1Service Calibration1Service => CoreService.Calibration1Service;
+	public Calibration2Service Calibration2Service => CoreService.Calibration2Service;
 #endif
 	public bool HasCalibrationService =>
 #if ASM15_1

@@ -1,4 +1,4 @@
-#if ASM15_1
+﻿#if ASM15_1
 using System.Net.Sockets;
 using NLog;
 using ZC;
@@ -6,12 +6,10 @@ using ZC.Mvvm;
 
 namespace ZitApp.Services;
 
-[RegisterToIOC(LifetimeType.Singleton)]
-[RegisterToTaskService(TaskStartMode.Automatic)]
 [ObservableObject]
-public partial class Asm15CalibrationService : MainTaskService
+public abstract partial class CalibrationServiceBase : MainTaskService
 {
-	private static readonly Logger Logger = LogManager.GetLogger("ASM15-CALIBRATION");
+	private static readonly Logger Logger = LogManager.GetLogger("CALIBRATION");
 	private static readonly byte[] SendBuffer = [0x00, 0x01, 0x00, 0x00, 0x00, 0x06, 0x01, 0x03, 0x00, 0x02, 0x00, 0x01];
 	private const int ResponseLength = 11;
 	private const int ReconnectDelayMs = 10_000;
@@ -21,11 +19,13 @@ public partial class Asm15CalibrationService : MainTaskService
 	private readonly byte[] _recvBuffer = new byte[ResponseLength];
 	private readonly CancellationTokenSource _receiveCts = new();
 
-	public required AppConfig AppConfig { get; init; }
 	public partial bool IsConnected { get; set; }
 	public partial bool IsCalibrationOk { get; set; }
 	public partial bool CalibrationCheckEnabled { get; set; } = true;
 	public partial DateTime CalibrationCompleteTime { get; set; }
+
+	protected abstract string CalibrationIp { get; }
+	protected abstract int CalibrationPort { get; }
 
 	partial void OnCalibrationCheckEnabledChanged(bool value) =>
 		Logger.Info("[CALIBRATION] calibration check {status}", value ? "enabled" : "disabled");
@@ -41,10 +41,10 @@ public partial class Asm15CalibrationService : MainTaskService
 			try
 			{
 				using var client = new TcpClient();
-				await client.ConnectAsync(AppConfig.Asm15CalibrationIpAddress, AppConfig.Asm15CalibrationPort, ctk);
+				await client.ConnectAsync(CalibrationIp, CalibrationPort, ctk);
 				IsConnected = true;
 				wasConnected = true;
-				Logger.Info("[CALIBRATION] connected to {ip}:{port}", AppConfig.Asm15CalibrationIpAddress, AppConfig.Asm15CalibrationPort);
+				Logger.Info("[CALIBRATION] connected to {ip}:{port}", CalibrationIp, CalibrationPort);
 
 				var stream = client.GetStream();
 				while (!ctk.IsCancellationRequested && client.Connected)

@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Text.Encodings.Web;
 using System.Text.Json;
 using ZC;
@@ -150,7 +150,7 @@ public partial class WorkService2 : WorkServiceBase
 				Logger.Info($"[SCAN-CODE-{Plc.Read.扫码枪2触发}] [OK] CONTENT='{scanCode}'");
 
 #if ASM15_1
-				if (Core.CalibrationService?.CalibrationCheckEnabled == true && !Core.IsCalibrationOk)
+				if (Core.Calibration2Service?.CalibrationCheckEnabled == true && !Core.IsCalibration2Ok)
 				{
 					Logger.Error("[CALIBRATION CHECK] calibration check failed — production blocked!");
 					Context.ErrorMessage = "calibration check failed!";

@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Text.Encodings.Web;
 using System.Text.Json;
 using ZC;
@@ -134,7 +134,7 @@ public partial class WorkService1 : WorkServiceBase
 				}
 
 #if ASM15_1
-				if (Core.CalibrationService?.CalibrationCheckEnabled == true && !Core.IsCalibrationOk) // ASM15_1: 校准检查
+				if (Core.Calibration1Service?.CalibrationCheckEnabled == true && !Core.IsCalibration1Ok) // ASM15_1: 校准检查
 				{
 					Logger.Error("[CALIBRATION CHECK] calibration check failed — production blocked!");
 					Context.ErrorMessage = "calibration check failed!";
