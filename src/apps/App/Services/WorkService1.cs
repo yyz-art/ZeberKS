@@ -156,11 +156,7 @@ public partial class WorkService1 : WorkServiceBase
 #else
 					var scanner = CodeScanner;
 #endif
-#if SUB1
 					var scanCodeResult = AppConfig.UseTcpScanner ? DoScanCodeTcp(scanner) : DoScanCode(scanner);
-#else
-					var scanCodeResult = DoScanCode(scanner);
-#endif
 					if (scanCodeResult.IsError())
 					{
 						Logger.Error($"[SCAN-CODE-{Plc.Read.扫码枪1触发}] [ERROR] {scanCodeResult.Message}");
@@ -804,11 +800,7 @@ public partial class WorkService1 : WorkServiceBase
 			if (Plc.Read is { 扫码枪1触发: 1, 扫码枪1触发结果: 0 })
 			{
 				Logger.Info($"[SCAN-CODE-1] [DOING] ...");
-#if SUB1
 				var scanCodeResult = AppConfig.UseTcpScanner ? DoScanCodeTcp(CodeScanner) : DoScanCode(CodeScanner);
-#else
-				var scanCodeResult = DoScanCode(CodeScanner);
-#endif
 				if (scanCodeResult.IsError())
 				{
 					Logger.Error($"[SCAN-CODE-1] [ERROR] {scanCodeResult.Message}");
@@ -895,11 +887,7 @@ public partial class WorkService1 : WorkServiceBase
 
 			if (Context.TestScanner && Plc.Read.工位1生产状态 != 1)                 // 测试扫码模式：非生产状态时持续扫码
 			{
-#if SUB1
 				var testScanResult = AppConfig.UseTcpScanner ? DoScanCodeTcp(CodeScanner) : DoScanCode(CodeScanner);
-#else
-				var testScanResult = DoScanCode(CodeScanner);
-#endif
 				if (testScanResult.IsError())
 				{
 					Logger.Error($"test scaner error! {testScanResult.Message}");
